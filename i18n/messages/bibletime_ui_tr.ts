@@ -22,47 +22,47 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="736"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="737"/>
         <source>&amp;File</source>
         <translation>&amp;Dosya</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="737"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="738"/>
         <source>&amp;View</source>
         <translation>&amp;Görünüm</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="741"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="742"/>
         <source>&amp;Search</source>
         <translation>&amp;Arama</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="742"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="743"/>
         <source>&amp;Window</source>
         <translation>&amp;Pencere</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="745"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="746"/>
         <source>Sw&amp;itch session</source>
         <translation>Otu&amp;rumu değiştir</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="750"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="751"/>
         <source>Se&amp;ttings</source>
         <translation>A&amp;yarlar</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="753"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="754"/>
         <source>&amp;Help</source>
         <translation>&amp;Yardım</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="130"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="131"/>
         <source>&amp;Show toolbar</source>
         <translation>&amp;Araç çubuğunu göster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="123"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="124"/>
         <source>&amp;Fullscreen mode</source>
         <translation>&amp;Tam ekran hali</translation>
     </message>
@@ -72,82 +72,82 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;Çıkış</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="263"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="264"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>BibleTime ile gelen Kutsal Kitap Çalışma Kılavuzu&apos;nu açın.&lt;br/&gt;Bu Kılavuz, Kutsal Kitap&apos;ı verimli bir şekilde çalışma konusunda bir giriş mahiyetindedir.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="269"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="270"/>
         <source>Information about the BibleTime program</source>
         <translation>BibleTime yazılımıyla ilgili bilgi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="746"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="747"/>
         <source>&amp;Delete session</source>
         <translation>&amp;Oturumu sil</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="744"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="745"/>
         <source>&amp;Arrangement mode</source>
         <translation>&amp;Düzenleme hali</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="156"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="157"/>
         <source>&amp;Manual mode</source>
         <translation>&amp;Elle kontrol hali</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="163"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="164"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>Kendiliğinden &amp;dikey döşe</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="170"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="171"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>Kendiliğinden &amp;yatay döşe</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="191"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="192"/>
         <source>Auto-&amp;cascade</source>
         <translation>Kendiliğinden &amp;basamakla</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="198"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="199"/>
         <source>&amp;Cascade</source>
         <translation>&amp;Basamakla</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="212"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="213"/>
         <source>Tile &amp;vertically</source>
         <translation>Dikey &amp;döşe</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="219"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="220"/>
         <source>Tile &amp;horizontally</source>
         <translation>Yatay &amp;döşe</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="233"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="234"/>
         <source>Cl&amp;ose all windows</source>
         <translation>Tüm pencereleri ka&amp;pat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="236"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="237"/>
         <source>Close all open windows inside BibleTime</source>
         <translation>BibleTime içindeki tüm açık pencereleri kapa</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="246"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="247"/>
         <source>Bookshelf Manager...</source>
         <translation>Kitaplık Yöneticisi...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="253"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="254"/>
         <source>&amp;Handbook</source>
         <translation>&amp;El kitabı</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="260"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="261"/>
         <source>&amp;Bible Study Howto</source>
         <translation>&amp;Kutsal Kitap Çalışma Kılavuzu</translation>
     </message>
@@ -192,17 +192,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="606"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="614"/>
         <source>Please enter a name for the new session.</source>
         <translation>Lütfen yeni oturum için bir isim girin</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="614"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="622"/>
         <source>Session already exists</source>
         <translation>Oturum zaten mevcut</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="615"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="623"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
         <translation>&quot;%1&quot; İsminde bir oturum zaten mevcut. Lütfen başka bir isim girin.</translation>
     </message>
@@ -227,257 +227,257 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="126"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="127"/>
         <source>Toggle fullscreen mode of the main window</source>
         <translation>Ana pencerenin tam ekran halini değiştirin</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="135"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="136"/>
         <source>Search in &amp;open works...</source>
         <translation>&amp;Açık olan eserlerin içerisinde ara...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="142"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="143"/>
         <source>Search in standard &amp;Bible...</source>
         <translation>Standart &amp;Kutsal Kitap içerisinde ara...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="149"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="150"/>
         <source>Save as &amp;new session...</source>
         <translation>&amp;Yeni oturum olarak kaydet...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="152"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="153"/>
         <source>Create and save a new session</source>
         <translation>Yeni bir oturum oluştur ve kaydet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="159"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="160"/>
         <source>Manually arrange the open windows</source>
         <translation>Açık pencereleri el ile düzenle</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="166"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="167"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation>Açık pencereleri, kendiliğinden dikey olarak döşe (yanyana düzenle) </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="173"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="174"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation>Açık pencereleri, kendiliğinden yatay olarak kendiliğinden döşe (üst üste düzenle)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="177"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="178"/>
         <source>Auto-&amp;tile</source>
         <translation>Kendiğinden &amp;döşe</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="180"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="181"/>
         <source>Automatically tile the open windows</source>
         <translation>Açık pencereleri kendiliğinden döşe</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="184"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="185"/>
         <source>Ta&amp;bbed</source>
         <translation>Sek&amp;melere ayrılmış</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="187"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="188"/>
         <source>Automatically tab the open windows</source>
         <translation>Açık pencereleri kendiliğinden sekmelendir</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="194"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="195"/>
         <source>Automatically cascade the open windows</source>
         <translation>Açık pencereleri kendiliğinden basamaklandır</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="201"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="202"/>
         <source>Cascade the open windows</source>
         <translation>Açık pencereleri basamaklandır</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="205"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="206"/>
         <source>&amp;Tile</source>
         <translation>&amp;Döşe</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="208"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="209"/>
         <source>Tile the open windows</source>
         <translation>Açık pencereleri döşe</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="215"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="216"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>Açık pencereleri dikey olarak döşe (yan yana düzenle)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="222"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="223"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>Açık pencereleri yatay olarak döşe (üst üste düzenle)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="226"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="227"/>
         <source>Close &amp;window</source>
         <translation>&amp;Pencere Kapa</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="229"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="230"/>
         <source>Close the current open window</source>
         <translation>Mevcut açık pencereyi kapa</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="240"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="241"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>BibleTime&apos;ı &amp;ayarla</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="242"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="243"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>BibleTime&apos;ın tercihlerini belirle</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="249"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="250"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>Kitaplığını düzenle ve eserleri yükle/güncelle/kaldır/dizinle</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="256"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="257"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation>BibleTime&apos;ın el kitabını aç</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="273"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="274"/>
         <source>&amp;Tip of the day...</source>
         <translation>&amp;Günün ipucu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="276"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="277"/>
         <source>Show tips about BibleTime</source>
         <translation>BibleTime hakkında ipuçları göster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="420"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="421"/>
         <source>Toggle visibility of the bookshelf window</source>
         <translation>Kitaplık penceresinin görünürlüğünü değiştir.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="425"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="426"/>
         <source>Toggle visibility of the bookmarks window</source>
         <translation>Yer imleri penceresinin görünürlüğünü değiştir</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="430"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="431"/>
         <source>Toggle visibility of the mag window</source>
         <translation>Büyüteç penceresinin görünürlüğünü değiştir</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="731"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="732"/>
         <source>Main toolbar</source>
         <translation>Ana araç çubuğu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="732"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="733"/>
         <source>Navigation toolbar</source>
         <translation>Gezinim araç çubuğu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="733"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="734"/>
         <source>Works toolbar</source>
         <translation>Eserler araç çubuğu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="734"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="735"/>
         <source>Tools toolbar</source>
         <translation>Araçlar araç çubuğu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="739"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="740"/>
         <source>Scroll</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="770"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="771"/>
         <source>Show main toolbar</source>
         <translation>Ana araç çubuğunu göster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="771"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="772"/>
         <source>Show navigation bar</source>
         <translation>Gezinim çubuğunu göster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="772"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="773"/>
         <source>Show works toolbar</source>
         <translation>Eserler araç çubuğunu göster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="773"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="774"/>
         <source>Show tools toolbar</source>
         <translation>Araçlar araç çubuğunu göster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="774"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="775"/>
         <source>Show formatting toolbar</source>
         <translation>Biçimlendirme araç çubuğunu göster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="775"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="776"/>
         <source>Show bookshelf</source>
         <translation>Kitaplığı göster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="776"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="777"/>
         <source>Show bookmarks</source>
         <translation>Yer imlerini göster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="777"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="778"/>
         <source>Show mag</source>
         <translation>Büyüteci göster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="738"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="739"/>
         <source>Toolbars</source>
         <translation>Araç çubukları</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="769"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="770"/>
         <source>Show toolbars in text windows</source>
         <translation>Metin penceresi içindeki araç çubuklarını göster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="779"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="780"/>
         <source>Show parallel text headers</source>
         <translation>Paralel metin başlıklarını göster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="743"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="744"/>
         <source>O&amp;pen windows</source>
         <translation>A&amp;çık pencereler</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="756"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="757"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
         <translation>&quot;Bu küçük araç nedir&quot; iletisini göster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="901"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="902"/>
         <source>Whats this widget?</source>
         <translation>Bu küçük araç nedir</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="138"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="139"/>
         <source>Search in all works that are currently open</source>
         <translation>Şu anda açık olan tüm eserler içerisinde ara</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="145"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="146"/>
         <source>Search in the standard Bible</source>
         <translation>Standart Kutsal Kitap içerisinde ara</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="605"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="613"/>
         <source>New Session</source>
         <translation>Yeni Oturum</translation>
     </message>
@@ -517,17 +517,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Girmiş olduğunuz anahtar bu parçayı düzgün bir şekilde açamadı. Lütfen tekrar deneyin.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="267"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="268"/>
         <source>&amp;About BibleTime</source>
         <translation>BibleTime &amp;Hakkında</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="729"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="730"/>
         <source>Bookmarks</source>
         <translation>Yer imleri</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="730"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="731"/>
         <source>Mag</source>
         <translation>Büyüteç</translation>
     </message>
@@ -697,12 +697,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime kullanımı kolay ama kuvvetli bir Kutsal Kitap çalışma aracıdır.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="280"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="282"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime, Genel Kamu Lisansı çerçevesinde yayınlanmıştır. Bu yazılımı, kaynak kodunu da dağıttığınız müddetçe, kişisel, özel, toplumsal veya ticari amaçlar için, hiçbir kısıtlama olmadan kullanabilir ve dağıtabilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="286"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="288"/>
         <source>The complete legally binding license is below.</source>
         <translation>Yasal olarak bağlayıcı olan lisans metininin tam hali aşağıda yer alıyor.</translation>
     </message>
@@ -747,32 +747,32 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>kullanabilirlik uzmanı</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="245"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime, SWORD Projesinden yararlanır. SWORD Projesi, CrossWire Kutsal Kitap Topluluğu&apos;nun ücretsiz Kutsal Kitap yazılımı projesidir. Projenin amacı, birden fazla işletim sisteminde çalışabilen &amp;mdash; GNU Genel Kamu Lisansı korumasına sahip olan&amp;mdash, yazıclımcıların ve Kutsal Kitap topluluklarının yeni bir Kutsal Kitap yazılımını daha hızlı ve daha kolay şekilde yazmalarına yarayan, açık kaynak kodlu araçlar yaratmaktır.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="251"/>
         <source>The SWORD Project: </source>
         <translation>SWORD Projesi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="260"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="262"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt araç takımı sürümü %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="268"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="270"/>
         <source>More info...</source>
         <translation>Ek bilgi...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="274"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="276"/>
         <source>&amp;License</source>
         <translation>&amp;Lisans</translation>
     </message>
@@ -833,27 +833,27 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Şu kişiler BibleTime&apos;ı kendi dillerine çevirdi:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="226"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="228"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
         <translation>Bazı isimler eksik olabilir. Hata veya atlama farkederseniz  lütfen şuraya %1 bildirin.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="239"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>SWORD library version %1</source>
         <translation>SWORD kütüphanesi sürümü %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="262"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
         <source>This program uses Qt version %1.</source>
         <translation>Bu yazılım, Qt&apos;nin şu sürümünü kullanır %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="266"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt, C++ diliyle yaratılmış, birden fazla işletim sisteminde çalışabilen bir kullanıcı arayüzü sistemidir. GNU KGKL çerçevesinde yayınlanmıştır.</translation>
     </message>
@@ -3975,11 +3975,6 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="473"/>
         <source>Morphology</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="522"/>
-        <source>Word lookup</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

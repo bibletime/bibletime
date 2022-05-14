@@ -22,47 +22,47 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="736"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="737"/>
         <source>&amp;File</source>
         <translation>&amp;Fails</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="737"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="738"/>
         <source>&amp;View</source>
         <translation>&amp;Skats</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="741"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="742"/>
         <source>&amp;Search</source>
         <translation>&amp;Meklēt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="742"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="743"/>
         <source>&amp;Window</source>
         <translation>&amp;Logs</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="745"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="746"/>
         <source>Sw&amp;itch session</source>
         <translation>Pārslēgt ses&amp;iju</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="750"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="751"/>
         <source>Se&amp;ttings</source>
         <translation>Iesta&amp;tījumi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="753"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="754"/>
         <source>&amp;Help</source>
         <translation>Palīdzība</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="130"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="131"/>
         <source>&amp;Show toolbar</source>
         <translation>Rādīt &amp;rīkjoslu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="123"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="124"/>
         <source>&amp;Fullscreen mode</source>
         <translation>&amp;Pilnekrāna režīms</translation>
     </message>
@@ -72,82 +72,82 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>I&amp;ziet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="263"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="264"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>Atveriet Bible study rokasgrāmatu grāmatu, kas iekļauta BibleTime.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="269"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="270"/>
         <source>Information about the BibleTime program</source>
         <translation>Informācija par BibleTime programmu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="746"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="747"/>
         <source>&amp;Delete session</source>
         <translation>&amp;Dzēst sesiju</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="744"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="745"/>
         <source>&amp;Arrangement mode</source>
         <translation>&amp;Izvietojuma veids</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="156"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="157"/>
         <source>&amp;Manual mode</source>
         <translation>&amp;Manuāls režīms</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="163"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="164"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>Automātiski kārtot vertikāli</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="170"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="171"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>Automātiski kārtot horizontāli</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="191"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="192"/>
         <source>Auto-&amp;cascade</source>
         <translation>Automātiski kārtot kaskādē</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="198"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="199"/>
         <source>&amp;Cascade</source>
         <translation>Kārtot kaskādē</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="212"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="213"/>
         <source>Tile &amp;vertically</source>
         <translation>Kārtot vertikāli</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="219"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="220"/>
         <source>Tile &amp;horizontally</source>
         <translation>Kārtot horizontāli</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="233"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="234"/>
         <source>Cl&amp;ose all windows</source>
         <translation> Aizvērt visus l&amp;ogus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="236"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="237"/>
         <source>Close all open windows inside BibleTime</source>
         <translation> Aizvērt visus BibleTime atvērtos logus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="246"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="247"/>
         <source>Bookshelf Manager...</source>
         <translation>Grāmatu plaukta pārvaldnieks</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="253"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="254"/>
         <source>&amp;Handbook</source>
         <translation>Rokasgrāmata</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="260"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="261"/>
         <source>&amp;Bible Study Howto</source>
         <translation>Bībeles studiju palīgs</translation>
     </message>
@@ -192,17 +192,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="606"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="614"/>
         <source>Please enter a name for the new session.</source>
         <translation>Lūdzu, ievadiet jaunās sesijas nosaukumu.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="614"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="622"/>
         <source>Session already exists</source>
         <translation>Sesija jau eksistē</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="615"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="623"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
         <translation>Sesija ar nosaukumu &quot;%1&quot; jau pastāv. Lūdzu, norādiet citu nosaukumu.</translation>
     </message>
@@ -227,257 +227,257 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="126"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="127"/>
         <source>Toggle fullscreen mode of the main window</source>
         <translation>Mainīt galvenā loga pilnekrāna režīmu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="135"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="136"/>
         <source>Search in &amp;open works...</source>
         <translation>Meklēt atvērtaj&amp;os darbos ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="142"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="143"/>
         <source>Search in standard &amp;Bible...</source>
         <translation>Meklēt standarta &amp;Bībelē ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="149"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="150"/>
         <source>Save as &amp;new session...</source>
         <translation>Saglabāt kā jaunu sesiju ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="152"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="153"/>
         <source>Create and save a new session</source>
         <translation>Izveido un saglabā jaunu sesiju...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="159"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="160"/>
         <source>Manually arrange the open windows</source>
         <translation>Manuāli sakārto atvērtos logus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="166"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="167"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation>Automātiski sakārto atvērtos logus vertikāli (sakārtot blakus)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="173"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="174"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation>Automātiski sakārto atvērtos logus horizontāli (sakārto vienu virs otra)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="177"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="178"/>
         <source>Auto-&amp;tile</source>
         <translation>Automātiski kārto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="180"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="181"/>
         <source>Automatically tile the open windows</source>
         <translation>Automātiski sakārto atvērtos logus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="184"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="185"/>
         <source>Ta&amp;bbed</source>
         <translation>Cilnēs</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="187"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="188"/>
         <source>Automatically tab the open windows</source>
         <translation>Automātiski sakārto atvērtos logus cilnēs</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="194"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="195"/>
         <source>Automatically cascade the open windows</source>
         <translation>Automātiski sakārto atvērtos logus kaskādē</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="201"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="202"/>
         <source>Cascade the open windows</source>
         <translation>Sakārto atvērtos logus kaskādē</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="205"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="206"/>
         <source>&amp;Tile</source>
         <translation>Flīzēt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="208"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="209"/>
         <source>Tile the open windows</source>
         <translation>Flīzēt atvērtos logus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="215"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="216"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>Atvērtos logus kārto vertikāli (blakus)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="222"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="223"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>Atvērtos logus kārto horizontāli (vienu virs otra)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="226"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="227"/>
         <source>Close &amp;window</source>
         <translation>Aizver &amp;logu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="229"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="230"/>
         <source>Close the current open window</source>
         <translation>Aizvērt šobrīd atvērto logu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="240"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="241"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>&amp;Konfigurēt BibleTime ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="242"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="243"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>Uzstādīt BibleTime preferences</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="249"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="250"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>Konfigurēt grāmatu plauktu un instalēt/atjaunināt/noņemt/indeksēt darbus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="256"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="257"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation>Atvert BibleTime rokasgrāmatu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="273"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="274"/>
         <source>&amp;Tip of the day...</source>
         <translation>&amp;Dienas padoms ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="276"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="277"/>
         <source>Show tips about BibleTime</source>
         <translation>Parādīt padomus par BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="420"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="421"/>
         <source>Toggle visibility of the bookshelf window</source>
         <translation>Pārslēgt grāmatplauktu loga redzamību</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="425"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="426"/>
         <source>Toggle visibility of the bookmarks window</source>
         <translation>Pārslēdgt grāmatzīmju loga redzamību</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="430"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="431"/>
         <source>Toggle visibility of the mag window</source>
         <translation>Pārslēgt lupas lauka redzamību</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="731"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="732"/>
         <source>Main toolbar</source>
         <translation>Galvenā rīkjosla</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="732"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="733"/>
         <source>Navigation toolbar</source>
         <translation>Navigācijas rīkjosla</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="733"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="734"/>
         <source>Works toolbar</source>
         <translation>Darbu rīkjosla</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="734"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="735"/>
         <source>Tools toolbar</source>
         <translation>Rīku rīkjosla</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="739"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="740"/>
         <source>Scroll</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="770"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="771"/>
         <source>Show main toolbar</source>
         <translation>Parādīt galveno rīkjoslu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="771"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="772"/>
         <source>Show navigation bar</source>
         <translation>Rādīt navigācijas joslu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="772"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="773"/>
         <source>Show works toolbar</source>
         <translation>Rādīt darbu rīkjoslu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="773"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="774"/>
         <source>Show tools toolbar</source>
         <translation>Rādīt rīku rīkjoslu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="774"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="775"/>
         <source>Show formatting toolbar</source>
         <translation>Rādīt formatēšanas rīkjoslu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="775"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="776"/>
         <source>Show bookshelf</source>
         <translation>Rādīt grāmatu plauktu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="776"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="777"/>
         <source>Show bookmarks</source>
         <translation>Rādīt grāmatzīmes</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="777"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="778"/>
         <source>Show mag</source>
         <translation>Rādīt lupu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="738"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="739"/>
         <source>Toolbars</source>
         <translation>Rīkjoslas</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="769"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="770"/>
         <source>Show toolbars in text windows</source>
         <translation>Rādīt rīkjoslas teksta logos</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="779"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="780"/>
         <source>Show parallel text headers</source>
         <translation>Parādīt paralēlas teksta galvenes</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="743"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="744"/>
         <source>O&amp;pen windows</source>
         <translation>Atvērt &amp;logus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="756"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="757"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
         <translation>Parādīt dialogu &quot;Kas ir šis logrīks&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="901"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="902"/>
         <source>Whats this widget?</source>
         <translation>Kas ir šis logrīks?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="138"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="139"/>
         <source>Search in all works that are currently open</source>
         <translation>Meklēt visos darbos, kas pašlaik ir atvērti</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="145"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="146"/>
         <source>Search in the standard Bible</source>
         <translation>Meklēt standarta Bībelē</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="605"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="613"/>
         <source>New Session</source>
         <translation>Jauna sesija</translation>
     </message>
@@ -517,17 +517,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Iesniegtā atbloķēšanas atslēga nav pareizi atbloķējusi šo moduli. Lūdzu mēģiniet vēlreiz.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="267"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="268"/>
         <source>&amp;About BibleTime</source>
         <translation>P&amp;ar BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="729"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="730"/>
         <source>Bookmarks</source>
         <translation>Grāmatzīmes</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="730"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="731"/>
         <source>Mag</source>
         <translation>Lupa</translation>
     </message>
@@ -697,12 +697,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime ir viegli izmantot, bet tas jaudīgs Bībeles mācību instruments.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="280"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="282"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime tiek nodota lietošanā saskaņā ar GPL licenci. Jūs varat lejupielādēt un izmantot programmu personiskiem, privātiem, publiskajiem vai komerciāliem mērķiem bez ierobežojumiem, bet to var nodot vai izplatīt tikai tad, ja jūs arī izplatīsit atbilstošo pirmkodu.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="286"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="288"/>
         <source>The complete legally binding license is below.</source>
         <translation>Pilna juridiski saistoša licence ir zemāk.</translation>
     </message>
@@ -747,32 +747,32 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>lietojamības eksperts</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="245"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime izmanto SWORD projektu. SWORD projekts ir CrossWire Bībeles biedrības bezmaksas Bībeles programmatūras projekts. Tās mērķis ir izveidot starpplatformu atvērtā koda rīkus &amp;mdash; uz ko attiecas GNU Vispārējās publiskās licences &amp;mdash; kas ļauj programmētājiem un Bībeles sabiedrībām ātrāk un vienkārši izveidot jaunu Bībeles programmatūru.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="251"/>
         <source>The SWORD Project: </source>
         <translation>SWORD projekts:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="260"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="262"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt rīkkopa versija %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="268"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="270"/>
         <source>More info...</source>
         <translation>Vairāk informācijas...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="274"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="276"/>
         <source>&amp;License</source>
         <translation>&amp;Licence</translation>
     </message>
@@ -833,27 +833,27 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Šie cilvēki tulkoja BibleTime savā valodā:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="226"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="228"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
         <translation>Daži vārdi var būt izlaisti, lūdzu, iesniedziet labojumus %1, ja pamanāt kļūdas vai nepilnības.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="239"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>SWORD library version %1</source>
         <translation>SWORD bibliotēkas versija %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="262"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
         <source>This program uses Qt version %1.</source>
         <translation>Šī programma izmanto Qt versiju %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="266"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt ir vairākplatformu lietojumprogramma un lietotāja saskarnes sistēma, kas izveidota C++ valodā. Tā tiek publicēta saskaņā ar LGPL licenci.</translation>
     </message>
@@ -3978,11 +3978,6 @@ Do you want to continue?</source>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="473"/>
         <source>Morphology</source>
         <translation>Morfoloģija</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="522"/>
-        <source>Word lookup</source>
-        <translation>Vārda uzmeklēšana</translation>
     </message>
 </context>
 <context>

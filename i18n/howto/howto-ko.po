@@ -10,9 +10,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2017-09-21 13:11+0000\n"
-"Last-Translator: rokmcssu <yaraba@daum.net>\n"
+"POT-Creation-Date: 2022-05-14 12:35+0300\n"
+"PO-Revision-Date: 2011-12-12 15:28+0000\n"
+"Last-Translator: Seunghyun. Cho <s970501@ku.edu.np>, 2003\n"
 "Language-Team: Korean (http://www.transifex.com/bibletime/bibletime/language/"
 "ko/)\n"
 "Language: ko\n"
@@ -22,22 +22,18 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Content of: <chapter><title>
-#: docs/howto/en/docbook/howto-basics.docbook:2
 msgid "Bible Study Basics"
 msgstr "성경 공부의 기초들"
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-basics.docbook:4
 msgid "Our Purpose as we Approach the Bible"
 msgstr "성경을 대하는 우리의 목적"
 
 #. type: Content of: <chapter><sect1><para><blockquote><attribution>
-#: docs/howto/en/docbook/howto-basics.docbook:7
 msgid "Jn.5:39-40"
 msgstr "요 5:39-40"
 
 #. type: Content of: <chapter><sect1><para><blockquote><para>
-#: docs/howto/en/docbook/howto-basics.docbook:8
 msgid ""
 "You search the Scriptures, because you think that in them you have eternal "
 "life; and it is these that bear witness of Me; and you are unwilling to come "
@@ -48,7 +44,6 @@ msgstr ""
 "하지 아니하는도다."
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-basics.docbook:14
 msgid ""
 "The chief purpose of the book is to bring us to the Person.  Martin Luther "
 "said <quote>we go to the cradle only for the sake of the baby</quote>; just "
@@ -60,7 +55,6 @@ msgstr ""
 "를 위한 것입니다."
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
-#: docs/howto/en/docbook/howto-basics.docbook:20
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.97, 104."
@@ -69,7 +63,6 @@ msgstr ""
 "pp.97, 104."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
-#: docs/howto/en/docbook/howto-basics.docbook:23
 msgid ""
 "The Jews to whom Jesus spoke [...] imagined that to possess Scripture was "
 "tantamount to possessing life. Hillel used to say, \"He who has gotten to "
@@ -83,7 +76,6 @@ msgstr ""
 "지만 이런식으로 그들은 기만당한 것입니다. [...]"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
-#: docs/howto/en/docbook/howto-basics.docbook:28
 msgid ""
 "There is neither merit nor profit in the reading of Scripture for its own "
 "sake, but only if it effectively introduces us to Jesus Christ. Whenever the "
@@ -96,12 +88,10 @@ msgstr ""
 "소망입니다."
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-basics.docbook:35
 msgid "Approaches to God's Word"
 msgstr "말씀을 대하는 다섯가지 방법"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-basics.docbook:36
 msgid ""
 "Hearing and reading provide a telescopic view of the scripture while study "
 "and memorization provide a microscopic view of scripture. Meditating on the "
@@ -113,12 +103,10 @@ msgstr ""
 "기, 성격 공부 및 암송을 결합시켜 주고 말씀을 우리 마음판에 새기는 것입니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:42
 msgid "Hear"
 msgstr "듣기(Hear)"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:43
 msgid ""
 "Lk.11:28 <quote>blessed are those who hear the word of God, and observe it.</"
 "quote>"
@@ -126,12 +114,10 @@ msgstr ""
 "눅 11:28 <quote>하나님의 말씀을 듣고 지키는 자가 복이 있느니라 </quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:48
 msgid "Read"
 msgstr "읽기(Read)"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:49
 msgid ""
 "Rev.1:3 <quote>Blessed is he who reads and those who hear the words of this "
 "prophecy [...]</quote>"
@@ -140,7 +126,6 @@ msgstr ""
 "quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:52
 msgid ""
 "1 Tim.4:13 <quote>give attention to the public reading of Scripture [...]</"
 "quote>"
@@ -148,13 +133,10 @@ msgstr ""
 "딤전 4:13 <quote>[...]읽는 것과 권하는 것과 가르치는 것에 착념하라 </quote>"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
-#: docs/howto/en/docbook/howto-basics.docbook:57
-#: docs/howto/en/docbook/index.docbook:53
 msgid "Study"
 msgstr "공부(Study)"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:58
 msgid ""
 "Acts 17:11 <quote>Now these were more noble-minded than those in "
 "Thessalonica, for they received the word with great eagerness, examining the "
@@ -165,7 +147,6 @@ msgstr ""
 "quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:63
 msgid ""
 "2 Tim.2:15 <quote>Be diligent [KJV `Study'] to present yourself approved to "
 "God as a workman who does not need to be ashamed, handling accurately the "
@@ -175,12 +156,10 @@ msgstr ""
 "로 인정된 자로 자신을 하나님 앞에 드리기를 힘쓰라. </quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:69
 msgid "Memorize"
 msgstr "암송(Memorize)"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:70
 msgid ""
 "Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against "
 "Thee.</quote>"
@@ -189,12 +168,10 @@ msgstr ""
 "였나이다.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:75
 msgid "Meditate"
 msgstr "묵상(Meditate)"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:76
 msgid ""
 "Ps.1:2-3 <quote>But his delight is in the law of the Lord, And in His law he "
 "meditates day and night. And he will be like a tree firmly planted by "
@@ -206,7 +183,6 @@ msgstr ""
 "아니함 같으니 그 행사가 다 형통하리로다</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:82
 msgid ""
 "The Navigators illustrate this by saying that as the thumb can touch all the "
 "fingers, we can meditate on the Word as we do any of the first four. "
@@ -221,17 +197,14 @@ msgstr ""
 "의 전체적인 메시지에 익숙해지게 하기 위함입니다."
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-basics.docbook:91
 msgid "Types of Bible Studies"
 msgstr "성경 공부의 유형들"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:93
 msgid "Topical Study"
 msgstr "주제별(Topical) 성경공부"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:94
 msgid ""
 "Pick out a certain topic and follow it through, using cross-references or a "
 "concordance."
@@ -240,38 +213,31 @@ msgstr ""
 "니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:98
 msgid "Character Study"
 msgstr "인물별(Character) 성경공부"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:99
 msgid ""
 "Studying the life of a Bible character, e.g. Joseph's life in Gen.37-50."
 msgstr "성경의 한 인물의 삶을 공부합니다, 예. 창 37-50장에서의 요셉의 삶."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:103
 msgid "Expository Study"
 msgstr "주해적(Expository) 성경공부"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:104
 msgid "Studying a certain passage: paragraph, chapter, or book."
 msgstr "특정 구절, 문단, 장 혹은 책을 공부합니다."
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-basics.docbook:109
 msgid "Basics of Correct Interpretation"
 msgstr "바른 해석의 기본"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:111
 msgid "Content"
 msgstr "내용(Content)"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:112
 msgid ""
 "What does it say? What does it say in the original language? Be careful with "
 "definitions. Don't read into it what it doesn't say."
@@ -280,12 +246,10 @@ msgstr ""
 "것이 말하고 있지 않은 것을 읽지 않습니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:117
 msgid "Context"
 msgstr "문맥(Context)"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:118
 msgid ""
 "What do the verses around it say? \"Context is king\" is the rule -- the "
 "passage must make sense within the structure of the entire passage and book."
@@ -294,13 +258,10 @@ msgstr ""
 "은 전체 구절과 책의 구조 안에서 이해되어야 합니다."
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
-#: docs/howto/en/docbook/howto-basics.docbook:123
-#: docs/howto/en/docbook/howto-interpretation.docbook:37
 msgid "Cross-reference"
 msgstr "상호참조(Cross-reference)"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:124
 msgid ""
 "What do other verses about this subject say through the rest of the Bible? "
 "God doesn't contradict Himself, so our interpretation needs to stand the "
@@ -311,12 +272,10 @@ msgstr ""
 "습니다."
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-basics.docbook:131
 msgid "An Expository Study of Matthew 6:1-18"
 msgstr "마태복음 6:1-18을 본문으로 한 주해적(Expository) 성경 공부"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-basics.docbook:132
 msgid ""
 "Let's study together Mt.6:1-18. Read it to yourself, first looking for the "
 "key verse, the verse that sums up the whole passage. Think you have it? Test "
@@ -331,12 +290,10 @@ msgstr ""
 "붙여 적습니다:"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:140
 msgid "Beware of practicing your righteousness before men to be noticed"
 msgstr "사람에게 보이려고 그들 앞에서 너희 의를 행치 않도록 주의하라"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-basics.docbook:144
 msgid ""
 "What does <quote>practicing your righteousness</quote>mean? Does the passage "
 "give any examples? What area of our lives is being addressed? <emphasis>Our "
@@ -347,22 +304,18 @@ msgstr ""
 "emphasis>어떤 부제목들이 이런 생각들을 도와줄까요?"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:151
 msgid "When you give"
 msgstr "기부 할 때"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:154
 msgid "When you fast"
 msgstr "금식 할 때"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:157
 msgid "When you pray"
 msgstr "기도 할 때"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-basics.docbook:160
 msgid ""
 "Now fill in the outline with specific instructions of how to avoid wrong "
 "ways of practicing our righteousness:"
@@ -371,7 +324,6 @@ msgstr ""
 "다:"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:167
 msgid ""
 "don't sound a trumpet. (how might someone <quote>sound a trumpet</"
 "quote>today?)"
@@ -380,72 +332,58 @@ msgstr ""
 "을까?)"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:171
 msgid "do it secretly."
 msgstr "모르게 한다."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:174
 msgid "etc."
 msgstr "기타 등등."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:164
 msgid "When you give <placeholder type=\"orderedlist\" id=\"0\"/>"
 msgstr "기부 할 때 <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-basics.docbook:181
 msgid "Worksheet: How to Use a Concordance"
 msgstr "사전(성서 색인) 사용법 안내서"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:183
 msgid "To Find a Particular Verse"
 msgstr "특별한 구절을 찾을 때"
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:186
 msgid "Pick out a key word or most-unusual word of the verse."
 msgstr "구절에서 핵심 단어나 가장 특이한 단어를 고릅니다."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:190
 msgid "Turn to this word alphabetically."
 msgstr "고른 단어들을 가나다(알파벳)순으로 정렬합니다."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:193
 msgid "Go down the column of listings until you find your verse."
 msgstr "원하는 구절을 찾을때까지 목록을 따라갑니다."
 
 #. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:201
 msgid "<quote>Faithful are the wounds of a friend</quote>"
 msgstr "<quote>친구의 통책은 충성에서 말미암은 것이나</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:206
 msgid "<quote>We are ambassadors of Christ.</quote>"
 msgstr "<quote>우리가 그리스도를 대신하여 사신이 되어</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:210
 msgid "The story of the rich man and Lazarus."
 msgstr "부자와 나사로의 이야기"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:197
 msgid "Find these verses: <placeholder type=\"orderedlist\" id=\"0\"/>"
 msgstr "이 구절들을 찾아보세요: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:215
 msgid "To Do a Topical Study"
 msgstr "주제별 성경공부 하기"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:216
 msgid ""
 "Let's say you wanted to do a study of the word \"redemption.\" First you "
 "would look up that word in the concordance and look up references listed for "
@@ -459,12 +397,10 @@ msgstr ""
 "\"구속하다, 구속된, 몸값, \" 더 나아가 \"구입하다\"나 \"희생\"."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:223
 msgid "To Clarify Word Meanings in the Greek and Hebrew"
 msgstr "헬라어와 히브리어 원문을 통해서 단어의 의미를 명확하게 하기"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:224
 msgid ""
 "What if you noticed a contradiction in the KJV between Mt.7:1 <quote>Judge "
 "not lest you be judged</quote>and 1 Cor.2:15 <quote>He that is spiritual "
@@ -479,12 +415,10 @@ msgstr ""
 "번호를 사용합니다)"
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:232
 msgid "Look up \"judge\"."
 msgstr "\"비판\"을 찾습니다."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:235
 msgid ""
 "Go down the column of entries to Mt.7:1. To the right is a number, 2919. "
 "This refers to the Greek word used. Write it down."
@@ -493,17 +427,14 @@ msgstr ""
 "어 단어를 지칭합니다. 번호를 적어둡니다."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:240
 msgid "Now look up \"judgeth\"."
 msgstr "이제 \"판단\"을 찾습니다."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:243
 msgid "Go down the column to 1 Cor.2:15 . . . . . 350."
 msgstr "고전 2:15의 스트롱 번호를 확인하면 350 입니다."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:246
 msgid ""
 "Turn in the back to the Greek dictionary. (Remember, you're in the NT so the "
 "language is Greek, while the OT is Hebrew.) Compare the meaning of 2919 with "
@@ -514,12 +445,10 @@ msgstr ""
 "름의 답을 얻을 수 있을 것입니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:254
 msgid "To Find Meanings of Names"
 msgstr "이름에 있는 의미 찾기"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:255
 msgid ""
 "By the same process we can find the meaning of a name in the Greek or Hebrew."
 msgstr ""
@@ -527,37 +456,30 @@ msgstr ""
 "브리어 언어를 통해 이름에 있는 의미를 찾을 수 있습니다. "
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:257
 msgid "Look up these names and write down their meaning:"
 msgstr "아래의 이름들을 찾아 이름에 있는 의미를 적어 보세요."
 
 #. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:260
 msgid "Nabal"
 msgstr "나발(Nabal)"
 
 #. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:263
 msgid "Abigail"
 msgstr "아비가일(Abigail)"
 
 #. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:266
 msgid "Joshua"
 msgstr "여호수아(Joshua)"
 
 #. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:269
 msgid "Barnabus"
 msgstr "바나바(Barnabus)"
 
 #. type: Content of: <chapter><title>
-#: docs/howto/en/docbook/howto-importance.docbook:2
 msgid "Importance of God's Word"
 msgstr "하나님의 말씀의 중요성"
 
 #. type: Content of: <chapter><para>
-#: docs/howto/en/docbook/howto-importance.docbook:3
 msgid ""
 "Understanding God's word is of great importance to all who call on God's "
 "name. Study of the Bible is one of the primary ways that we learn to "
@@ -568,17 +490,14 @@ msgstr ""
 "의 하나이다."
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:7
 msgid "A Book that is Unique"
 msgstr "독특한 책"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:8
 msgid "The Bible stands alone in many ways. It is unique in:"
 msgstr "성경은 다음과 같은 면에서 독보적입니다:"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:11
 msgid ""
 "popularity. Bible sales in North America: more than $500 million per year. "
 "The Bible is both the all-time and year-to-year best seller!"
@@ -587,7 +506,6 @@ msgstr ""
 "지금까지도 그리고 매년 베스트셀러입니다!"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:16
 msgid ""
 "authorship. It was written over a period of 1600 years by 40 different "
 "authors from different backgrounds, yet reads as if written by one."
@@ -596,7 +514,6 @@ msgstr ""
 "서 씌여졌지만, 마치 한사람에 의해 씌여진 것 처럼 읽힙니다."
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:21
 msgid ""
 "preservation. F. F. Bruce in <emphasis>Are New Testament Documents Reliable?"
 "</emphasis> compares New Testament manuscripts with other ancient texts:"
@@ -605,150 +522,118 @@ msgstr ""
 "약성경 필사본과 다른 고대 문서들을 비교 했습니다:"
 
 #. type: Content of: <chapter><sect1><table><title>
-#: docs/howto/en/docbook/howto-importance.docbook:28
 msgid "Comparison of New Testament manuscripts with other ancient texts."
 msgstr "신약성경 필사본과 다른 고대 문서과의 비교"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:33
 msgid "Work"
 msgstr "작품"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:34
 msgid "When Written"
 msgstr "씌여진 시기"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:35
 msgid "Earliest Copy"
 msgstr "가장 오래된 사본"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:36
 msgid "Time Lapse"
 msgstr "사본이 경과된 시간"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:37
 msgid "Number of Copies"
 msgstr "사본의 개수"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:42
 msgid "Herodotus"
 msgstr "헤로도투스의 <emphasis>역사</emphasis>"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:43
 msgid "448-428 B.C."
 msgstr "448-428 B.C."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:44
-#: docs/howto/en/docbook/howto-importance.docbook:59
-#: docs/howto/en/docbook/howto-importance.docbook:67
 msgid "900 A.D."
 msgstr "900 A.D."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:45
 msgid "1300 years"
 msgstr "1300년"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:46
 msgid "8"
 msgstr "8"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:49
 msgid "Tacitus"
 msgstr "타키투스의 <emphasis>로마편년사</emphasis>"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:50
 msgid "100 A.D."
 msgstr "100 A.D."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:51
 msgid "1100 A.D."
 msgstr "1100 A.D."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:52
 msgid "1000 years"
 msgstr "1000년"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:53
-#: docs/howto/en/docbook/howto-importance.docbook:69
 msgid "20"
 msgstr "20"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:56
 msgid "Caesar's <emphasis>Gallic War</emphasis>"
 msgstr "카이사르의 <emphasis>갈리아 전기</emphasis>"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "50-58 B.C."
 msgstr "50-58 B.C."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:60
 msgid "950 years"
 msgstr "950년"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:61
 msgid "10"
 msgstr "10"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:64
 msgid "Livy's <emphasis>Roman History</emphasis>"
 msgstr "리비우스의 <emphasis>로마사</emphasis>"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:66
 msgid "59 B.C. - 17 A.D."
 msgstr "59 B.C. - 17 A.D."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:68
 msgid "900 years"
 msgstr "900년"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:72
 msgid "New Testament"
 msgstr "신약 성경"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:73
 msgid "40 A.D. - 100 A.D."
 msgstr "40 A.D. - 100 A.D."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:74
 msgid "130 A.D. Partial manuscripts 350 A.D. Full manuscripts"
 msgstr "130 A.D. 부분 필사본 350 A.D. 전체 필사본"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:76
 msgid "30 - 310 years"
 msgstr "30 - 310년"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:77
 msgid "5000 Greek &amp; 10,000 Latin"
 msgstr "5,000 헬라어 &amp; 10,000 라틴어"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:82
 msgid ""
 "Ten copies of Caesar's <emphasis>Gallic War</emphasis> exist, the earliest "
 "of which was copied 900 years after Caesar wrote the original, etc. For the "
@@ -765,7 +650,6 @@ msgstr ""
 "나 많은 필사본들이 존재합니까? 헬라어 사본 5,000개, 라틴어 사본 10,000개!"
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
-#: docs/howto/en/docbook/howto-importance.docbook:90
 msgid ""
 "Textual critic F. J. A. Hort, \"The New Testament in the Original Greek\", "
 "vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of Life</"
@@ -775,7 +659,6 @@ msgstr ""
 "삶의 질문들</emphasis>p. 25-26 에서 인용"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
-#: docs/howto/en/docbook/howto-importance.docbook:93
 msgid ""
 "\"In the verity and fullness of the evidence on which it rests, the text of "
 "the New Testament stands absolutely and unapproachably alone among other "
@@ -785,12 +668,10 @@ msgstr ""
 "서도 절대적이고도 범접할 수 없는 위치에 서 있습니다.\""
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:99
 msgid "A Book that God Breathed"
 msgstr "하나님의 영이 숨쉬는 책"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:101
 msgid ""
 "<emphasis>Heb.4:12</emphasis> \"<emphasis>For the word of God is living and "
 "active...</emphasis>\" Jesus said <emphasis>(Mt.4:4),</emphasis>\" "
@@ -806,7 +687,6 @@ msgstr ""
 "영은 지속적이면서도 새로운 방법으로 우리의 마음에 말씀하십니다."
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:109
 msgid ""
 "2 Tim.3:16 declares, \" <emphasis>All scripture is inspired by God [lit., "
 "God-breathed].</emphasis>\" Do you believe this? Before you answer, consider "
@@ -817,7 +697,6 @@ msgstr ""
 "예수님의 태도를 깊이 생각해보세요."
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
-#: docs/howto/en/docbook/howto-importance.docbook:114
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.93-95"
@@ -826,7 +705,6 @@ msgstr ""
 "pp.93-95"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
-#: docs/howto/en/docbook/howto-importance.docbook:117
 msgid ""
 "He referred to the human authors, but took it for granted that behind them "
 "all was a single divine Author. He could equally say 'Moses said' or 'God "
@@ -858,7 +736,6 @@ msgstr ""
 "했습니다. 두 진실 모두 서로에게서 떼어놓을 수 없습니다. ..."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
-#: docs/howto/en/docbook/howto-importance.docbook:134
 msgid ""
 "This, then, was Christ's view of the Scriptures. Their witness was God's "
 "witness. The testimony of the Bible is the testimony of God. And the chief "
@@ -871,7 +748,6 @@ msgstr ""
 "니다."
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:140
 msgid ""
 "2 Tim.3:16 goes on, \" <emphasis>and profitable for teaching, for "
 "correction, for training in righteousness, that the man of God may be "
@@ -885,12 +761,10 @@ msgstr ""
 "여 성경이 우리의 권위가 될 것입니다."
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:148
 msgid "A Book that Works"
 msgstr "일하는 책"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:149
 msgid ""
 "What will studying the Bible do for you? 1 Thess.2:13 says that the Bible \" "
 "<emphasis>performs its work in you who believe.</emphasis>\" Beside each "
@@ -901,38 +775,31 @@ msgstr ""
 "구 옆에 말씀이 수행하는 일을 적어 보세요."
 
 #. type: Content of: <chapter><sect1><table><title>
-#: docs/howto/en/docbook/howto-importance.docbook:154
 msgid "What does Bible study do for Christians?"
 msgstr "성경을 공부하는 것이 그리스도인들에게 어떤 영향을 미칠까?"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:158
 msgid "Reference"
 msgstr "참조 구절"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:159
 msgid "Action"
 msgstr "수행하는 일"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:164
 msgid "Eph. 5:26"
 msgstr "엡 5:26"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:165
 msgid ""
 "cleanses -- \"...having cleansed her by the washing of water with the word.\""
 msgstr "깨끗하게 한다 -- \"...물로 씻어 말씀으로 깨끗하게 하사...\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:169
 msgid "Acts 20:32"
 msgstr "행 20:32"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:170
 msgid ""
 "builds up -- \" ...the word of His grace, which is able to build you up and "
 "to give you the inheritance among all those who are sanctified. \""
@@ -941,12 +808,10 @@ msgstr ""
 "사 거룩케 하심을 입은 모든 자 가운데 기업이 있게 하시리라. \""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:175
 msgid "Rom. 15:4"
 msgstr "롬 15:4"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:176
 msgid ""
 "encourages -- \"that through perseverance and the encouragement of the "
 "Scriptures we might have hope.\""
@@ -955,12 +820,10 @@ msgstr ""
 "라.\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:181
 msgid "Rom. 10:17"
 msgstr "롬 10:17"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:182
 msgid ""
 "gives faith -- \"So faith comes from hearing, and hearing by the word of "
 "Christ.\""
@@ -969,12 +832,10 @@ msgstr ""
 "미암았느니라.\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:186
 msgid "1 Cor. 10:11"
 msgstr "고전 10:11"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:187
 msgid ""
 "instructs -- \"Now these things happened to them for an example, and they "
 "were written for our instruction\""
@@ -983,12 +844,10 @@ msgstr ""
 "계로 기록하였느니라.\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:192
 msgid "Mt. 4:4"
 msgstr "마 4:4"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:193
 msgid ""
 "nourishment -- \"But He answered and said, 'It is written, Man shall not "
 "live on bread alone, but on every word that proceeds out of the mouth of "
@@ -999,12 +858,10 @@ msgstr ""
 "하시니.\""
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:202
 msgid "A Book that Liberates"
 msgstr "자유케하는 책"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:203
 msgid ""
 "Jn.8:32 \" <emphasis>and you shall know the truth, and the truth shall make "
 "you free.</emphasis>\"This is usually quoted by itself. Is this a "
@@ -1020,7 +877,6 @@ msgstr ""
 "인해서 답을 찾아 보세요."
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:211
 msgid ""
 "We see that this is a conditional promise, specifically speaking of the "
 "truth of God's word."
@@ -1029,7 +885,6 @@ msgstr ""
 "어서는 특히 더 그렇습니다."
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:213
 msgid ""
 "The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent wind."
 "</emphasis>\" <emphasis>As a result, we are no longer to be children, tossed "
@@ -1044,7 +899,6 @@ msgstr ""
 "\"바람에 흔들리지\" 않고 진리에 기틀을 튼튼히 다질 수 있다는 것입니다."
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:221
 msgid ""
 "<emphasis>But Jesus answered and said to them,</emphasis>\" <emphasis>You "
 "are mistaken [KJV Ye do err], not understanding the Scriptures, or the power "
@@ -1055,82 +909,66 @@ msgstr ""
 "22:29"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:224
 msgid "What 2 things do we need to know to be kept from error?"
 msgstr "오해에 빠지지 않기 위해 알아야 할 두가지는 무엇인가요?"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:228
 msgid "God's word"
 msgstr "하나님의 말씀"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:231
 msgid "God's power"
 msgstr "하나님의 능력"
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:236
 msgid "A Book that Wars"
 msgstr "전쟁을 하는 책"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:237
 msgid "Eph.6:10-18 is one picture of our spiritual armament."
 msgstr "엡 6:10-18은 우리의 영적 무장 사례입니다."
 
 #. type: Content of: <chapter><sect1><table><title>
-#: docs/howto/en/docbook/howto-importance.docbook:239
 msgid "Spiritual Armor"
 msgstr "영적인 무기"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:243
 msgid "Question"
 msgstr "물음"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:244
 msgid "Answer"
 msgstr "답"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:249
 msgid "How many of the weapons listed here are defensive weapons?"
 msgstr "무기 목록 중에 몇 가지가 방어 무기 입니까?"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:251
 msgid "5"
 msgstr "5개"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:254
 msgid "How many are offensive?"
 msgstr "몇 가지가 공격용 무기입니까?"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:255
 msgid "One"
 msgstr "1개"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:258
 msgid "Which one(s)?"
 msgstr "어떤 것이 공격용 무기입니까?"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:259
 msgid "the word - <foreignphrase>rhema</foreignphrase>"
 msgstr "말씀 - <foreignphrase>레마(rhema)</foreignphrase>"
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:267
 msgid "Exhortations"
 msgstr "권면의 말씀"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:268
 msgid ""
 "2 Tim.2:15 (KJV) \" <emphasis>Study to show thyself approved unto God, a "
 "workman that needeth not to be ashamed, rightly dividing the word of truth.</"
@@ -1140,7 +978,6 @@ msgstr ""
 "군으로 인정된 자로 자신을 하나님 앞에 드리기를 힘쓰라.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:272
 msgid ""
 "Col.3:16 \" <emphasis>Let the word of Christ richly dwell within you; with "
 "all wisdom teaching and admonishing one another with psalms and hymns and "
@@ -1152,18 +989,15 @@ msgstr ""
 "님을 찬양하고.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:277
 msgid "If you're rich in something, how much of it do you have?"
 msgstr ""
 "당신이 어떠한 것에 풍성하다면, 당신이 가지고 있는 그것의 양은 얼마나 될까요?"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:279
 msgid "Not a little!"
 msgstr "적지 않습니다!"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:280
 msgid ""
 "Eccl.12:11-12 \" <emphasis>The words of wise men are like goads, and masters "
 "of these collections are like well-driven nails; they are given by one "
@@ -1176,12 +1010,10 @@ msgstr ""
 "을 짓는 것은 끝이 없고 많이 공부하는 것은 몸을 피곤케 하느니라.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:288
 msgid "Appendix: \"Once for All\""
 msgstr "부록: \"단번에(Once for All)\""
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
-#: docs/howto/en/docbook/howto-importance.docbook:290
 msgid ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</"
 "emphasis>InterVarsity Press 1978, pp.106-107"
@@ -1190,7 +1022,6 @@ msgstr ""
 "pp.106-107"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
-#: docs/howto/en/docbook/howto-importance.docbook:293
 msgid ""
 "The truth regarding the finality of God's initiative in Christ is conveyed "
 "by one word of the Greek Testament, namely the adverb <foreignphrase>hapax</"
@@ -1212,7 +1043,6 @@ msgstr ""
 "6:10, 추가 참조 벧전 3:18; 히 9:26-28)라고 말씀합니다."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
-#: docs/howto/en/docbook/howto-importance.docbook:305
 msgid ""
 "Thus we may say that God has spoken once for all and Christ has suffered "
 "once for all. This means that the Christian revelation and the Christian "
@@ -1234,12 +1064,10 @@ msgstr ""
 "<foreignphrase>솔라 그라티아-오직 은혜</foreignphrase> 였습니다."
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:320
 msgid "Supplement: Bible Reading Programs"
 msgstr "보충자료: 체계적인 성경 읽기"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:321
 msgid ""
 "Here are some easy programs to systematically read your Bible. You can do "
 "more than one at a time if you like, for instance #1 with #4, or #2 with #5. "
@@ -1251,12 +1079,10 @@ msgstr ""
 "요!"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:327
 msgid "New Testament in a Year: read one chapter each day, 5 days a week."
 msgstr "일년에 신약 일독: 일주에 5일간 하루에 한장씩 읽기."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:331
 msgid ""
 "Proverbs in a Month: read one chapter of Proverbs each day, corresponding to "
 "the day of the month."
@@ -1265,7 +1091,6 @@ msgstr ""
 "언은 총 31장)."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:335
 msgid ""
 "Psalms in a Month: read 5 Psalms at intervals of 30 each day, for instance "
 "on the 20th you read Ps.20, 50, 80, 110, &amp; 140."
@@ -1274,14 +1099,12 @@ msgstr ""
 "61, 91, 121편을 읽고 20일에는 20, 50, 80, 110, 140편을 읽는 방식입니다."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:340
 msgid ""
 "Psalms &amp; Proverbs in 6 months: read through Psalms and Proverbs one "
 "chapter per day."
 msgstr "6개월에 시편과 잠언 일독: 시편과 잠언을 이어서 하루에 한장씩 읽기."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:344
 msgid ""
 "Old Testament without Psalms &amp; Proverbs in 2 years: if you read one "
 "chapter a day of the Old Testament, skipping over Psalms &amp; Proverbs, you "
@@ -1291,12 +1114,10 @@ msgstr ""
 "지 구약을 하루에 한장 읽기."
 
 #. type: Content of: <chapter><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:2
 msgid "Rules of Bible Interpretation (Hermeneutics)"
 msgstr "성경 해석의 규칙"
 
 #. type: Content of: <chapter><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:3
 msgid ""
 "We already learned about the \"3 Cs\": content, context, cross-reference. We "
 "want to expand that now by delving briefly into biblical hermeneutics, whose "
@@ -1324,7 +1145,6 @@ msgstr ""
 "른 성경과 같이 그것도 억지로 풀다가 스스로 멸망에 이르느니라.\"</emphasis>"
 
 #. type: Content of: <chapter><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:17
 msgid ""
 "How do we go about discovering the intended meaning of a passage? Let's say "
 "your attention has been drawn to a particular verse whose meaning is not "
@@ -1335,12 +1155,10 @@ msgstr ""
 "다음의 규칙들을 기억하세요:"
 
 #. type: Content of: <chapter><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:22
 msgid "Rule 1 - Interpret according to the exact meaning of the words."
 msgstr "규칙 1 - 단어의 정확한 의미를 따라서 해석."
 
 #. type: Content of: <chapter><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:24
 msgid ""
 "The more precise we can be with the exact, original meaning of the words the "
 "better our interpretation will be. Try to find the exact meaning of the key "
@@ -1351,12 +1169,10 @@ msgstr ""
 "아보세요:"
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:30
 msgid "Definition"
 msgstr "정의"
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:31
 msgid ""
 "Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb "
 "tense is also crucial."
@@ -1364,7 +1180,6 @@ msgstr ""
 "헬라어나 히브리어 사전의 정의를 찾아보세요. 동사의 경우, 시제도 중요합니다."
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:38
 msgid ""
 "Compare scripture with scripture. Seeing how the same Greek or Hebrew word "
 "(not the English word) is used in scripture may clarify or throw new light "
@@ -1385,12 +1200,10 @@ msgstr ""
 "의미의 미묘한 차이를 가질 수 있기 때문입니다.</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:53
 msgid "Example 1A"
 msgstr "예 1A"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:54
 msgid ""
 "Jn.20:17 <emphasis>\"Touch me not\"</emphasis> (KJV) sounds harsh, doesn't "
 "it? Sounds like Jesus doesn't want to be touched now that He is risen, that "
@@ -1405,7 +1218,6 @@ msgstr ""
 "emphasis> (AMG Publishers, 1991)에서 찾아보겠습니다."
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:61
 msgid ""
 "Definition: Turning to John 20:17, above the word \"Touch\" we see \"pim680."
 "\" The letters give us a code for the part of speech, and the number refers "
@@ -1434,7 +1246,6 @@ msgstr ""
 "발견할 수 있으십니까?"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:77
 msgid ""
 "<emphasis>Mary is already clinging to Jesus, and he is saying to stop "
 "holding him!</emphasis>"
@@ -1443,12 +1254,10 @@ msgstr ""
 "씀하고 계십니다!</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:82
 msgid "Example 1B"
 msgstr "예 1B"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:83
 msgid ""
 "In James 5:14, <emphasis>Elders are told to pray and anoint someone who is "
 "sick</emphasis>. What is this anointing?"
@@ -1458,7 +1267,6 @@ msgstr ""
 "무엇일까?"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:86
 msgid ""
 "Definition of aleipho (218) - \"to oil\" (Strong's); but we also have "
 "another Greek word translated \"anoint\", chrio (5548) - \"to smear or rub "
@@ -1477,40 +1285,33 @@ msgstr ""
 "행위를 의미합니다.\" (조디에이츠 p.851)"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:100
 msgid "Mt.6:17 But you, when you fast, anoint your head"
 msgstr "마 6:17 너는 금식할 때에 머리에 기름을 바르고 얼굴을 씻으라"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:104
 msgid "Mk.16:1 [the women] brought spices that they might come and anoint Him."
 msgstr "막 16:1 [여자들이] 가서 예수께 바르기 위하여 향품을 사다 두었다가"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:108
 msgid ""
 "Mk.6:13 And they were...anointing with oil many sick people and healing them."
 msgstr "막 6:13 많은 귀신을 쫓아내며 많은 병인에게 기름을 발라 고치더라"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:112
 msgid "Lk.7:38 [...] kissing His feet and anointing them with the perfume"
 msgstr "눅 7:38 [...] 그 발에 입맞추고 향유를 부으니"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:116
 msgid ""
 "Jn.12:3 Mary [...] anointed the feet of Jesus, and wiped them with her hair"
 msgstr "요 12:3 [...] 예수의 발에 붓고 자기 머리털로 그의 발을 씻으니 "
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:97
 msgid ""
 "Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
 msgstr "알레이포에 대한 관주들: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:125
 msgid ""
 "Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me "
 "to preach [...]</quote>"
@@ -1519,27 +1320,22 @@ msgstr ""
 "하시려고 내게 기름을 부으시고 [...]</quote>"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:130
 msgid "Acts 4:27 Jesus, whom Thou hast anointed"
 msgstr "행 4:27 하나님의 기름부으신 거룩한 종 예수를 거스려"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:133
 msgid "Acts 10:38 God anointed Jesus with the Holy Ghost and power"
 msgstr "행 10:38 하나님이 나사렛 예수에게 성령과 능력을 기름붓듯 하셨으매"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:137
 msgid "2 Cor.1:21 Now He who...anointed us is God"
 msgstr "고후 1:21 ... 우리에게 기름을 부으신 이는 하나님이시니"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:122
 msgid "Cross-references of chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
 msgstr "크리오에 대한 관주들: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:142
 msgid ""
 "So what's the difference between aleipho and chrio? Look back over the cross-"
 "references and the definitions, and sum up the difference: <emphasis>"
@@ -1550,7 +1346,6 @@ msgstr ""
 "오\"는 영적인 것입니다.</emphasis>"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:147
 msgid ""
 "As an illustration (although the word is not used) of the practical use of "
 "oil at that time, when the good Samaritan cared for the man beat up by "
@@ -1562,7 +1357,6 @@ msgstr ""
 "부었습니다. 예수님 당시에는 기름을 치료 용도로 사용했던 것입니다."
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:151
 msgid ""
 "Now let's apply what we just learned by this word study to James 5:14 "
 "<emphasis>\"Is any among you sick? Let him call for the elders of the "
@@ -1575,7 +1369,6 @@ msgstr ""
 "며\"는 영적인 것일까요 아니면 실제적인 것일까요? 실제적인 것입니다!"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:157
 msgid ""
 "And the tense in Greek, the aorist participle, would be better translated "
 "\"having anointed,\" so the order is the anointing first, then the prayer "
@@ -1592,12 +1385,10 @@ msgstr ""
 "는 것이 아닙니다!"
 
 #. type: Content of: <chapter><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:167
 msgid "Rule 2 - Interpret within the biblical context"
 msgstr "규칙 2 - 성경적 문맥 안에서 해석"
 
 #. type: Content of: <chapter><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:168
 msgid ""
 "Interpret scripture in harmony with other scripture. What do the verses on "
 "each side say? What is the theme of the chapter? The book? Does your "
@@ -1614,12 +1405,10 @@ msgstr ""
 "아 있다면, 좀더 보아야 합니다"
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:176
 msgid "Example 2A"
 msgstr "예 2A"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:177
 msgid ""
 "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and the "
 "Spirit.\"</emphasis>In context, what is the water under discussion here?"
@@ -1628,7 +1417,6 @@ msgstr ""
 "살펴보았습니다. 문맥상으로 여기에서의 물은 무엇을 의미합니까?"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:180
 msgid ""
 "Water baptism is not under discussion here, which would be a big switch from "
 "the subject being discussed by Jesus and Nicodemus. Watch out for a sudden "
@@ -1642,12 +1430,10 @@ msgstr ""
 "니다."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:187
 msgid "Example 2B"
 msgstr "예 2B"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:188
 msgid ""
 "1 Cor.14:34 <quote>Let the women keep silent in the churches</quote>has to "
 "be taken within the biblical context of 1 Cor.11:5 <quote>every woman [...] "
@@ -1658,12 +1444,10 @@ msgstr ""
 "합니다."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:195
 msgid "Example 2C"
 msgstr "예 2C"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:196
 msgid ""
 "Acts 2:38 <quote>And Peter said to them, \"Repent, and let each of you be "
 "baptized in the name of Jesus Christ for the forgiveness of your sins "
@@ -1687,12 +1471,10 @@ msgstr ""
 "emphasis> 라고 쓸 수 있었을 까요?"
 
 #. type: Content of: <chapter><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:211
 msgid "Rule 3 - Interpret within the historical and cultural context"
 msgstr "규칙 3 - 역사와 문화적인 문맥안에서 해석"
 
 #. type: Content of: <chapter><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:213
 msgid ""
 "At first we are not asking <quote>What does it mean to me?</quote>but "
 "<quote>What did it mean to the original readers?</quote>; later we can ask, "
@@ -1705,12 +1487,10 @@ msgstr ""
 "다. 우리는 저자와 읽는이들의 역사적, 문화적 배경을 고려해야만 합니다."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:221
 msgid "Example 3A"
 msgstr "예 3A"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:223
 msgid ""
 "<quote>3 days &amp; 3 nights</quote>(Mt.12:40) have led some to come up with "
 "a \"Wednesday crucifixion theory,\" esp. the cult of Armstrongism. How could "
@@ -1725,7 +1505,6 @@ msgstr ""
 "을 주지 못합니다."
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:229
 msgid ""
 "We need an historical tidbit: Jews counted any part of a day as a full day, "
 "as we would count buckets of water (if there were six and one-half buckets "
@@ -1745,12 +1524,10 @@ msgstr ""
 "일입니다. 문화적 문맥 안에서의 해석은 우리가 곤란에 빠지지 않도록 해줍니다."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:240
 msgid "Example 3B"
 msgstr "예 3B"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:241
 msgid ""
 "Gen.15:7-21. The historical context is that cutting animals in two and then "
 "walking between the pieces was the normal way of entering a contract in "
@@ -1766,12 +1543,10 @@ msgstr ""
 "을 만드셨습니다."
 
 #. type: Content of: <chapter><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:251
 msgid "Rule 4 - Interpret according to the normal usage of words in language"
 msgstr "규칙 4 - 단어의 일반적인 언어 사용법을 따라 해석"
 
 #. type: Content of: <chapter><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:253
 msgid ""
 "Let literal language be literal and figurative language be figurative. And "
 "watch out for idioms, which have special meanings."
@@ -1780,17 +1555,14 @@ msgstr ""
 "의미를 갖는 관용구나 방언에 주의하세요."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:257
 msgid "Example 4A"
 msgstr "예 4A"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:259
 msgid "<quote>evil eye</quote>in Mt.6:23."
 msgstr "마 6:23의 <quote>악한 눈</quote>."
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:260
 msgid ""
 "Rule 1, definition of \"evil\" and \"eye\" - no help here. Rule 2, context: "
 "seems to confuse us even more. It doesn't seem to fit with what goes before "
@@ -1801,7 +1573,6 @@ msgstr ""
 "습니다! 이것은 우리가 제대로 이해하지 못하고 있는 것을 알려줄 것입니다!!"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:264
 msgid ""
 "What we have here is a Hebrew idiom, <quote>evil eye</quote>. Let's look up "
 "other uses of this idiom: Mt.20:15 \" <emphasis>Is it not lawful for me to "
@@ -1818,22 +1589,18 @@ msgstr ""
 "어떻게 문맥과 완전히 들어 맞는지 확인해 보세요."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:275
 msgid "Example 4B"
 msgstr "예 4B"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:276
 msgid "Is.59:1 <quote>The Lord's hand is not short;</quote>"
 msgstr "이 59:1 <quote>여호와의 손이 짧지 않다;</quote>"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:278
 msgid "Deut.33:27 <quote>Underneath are the everlasting arms.</quote>"
 msgstr "신 33:27 <quote>그 영원하신 팔이 네 아래 있도다.</quote>"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:280
 msgid ""
 "References to body parts of God are used by Latter-Day Saints to prove that "
 "God was once a man just as we are. Once they convince people of that, they "
@@ -1859,26 +1626,22 @@ msgstr ""
 "들은 자신들이 우스꽝스러운 처지에 놓인 것에 웃어야만 했습니다."
 
 #. type: Content of: <chapter><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:297
 msgid ""
 "Rule 5 - Understand the purpose of parables and the difference between a "
 "parable and an allegory"
 msgstr "규칙 5 - 비유의 목적과 비유와 풍유의 차이에 대한 이해"
 
 #. type: Content of: <chapter><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:299
 msgid ""
 "An allegory is: <emphasis>A story where each element has a meaning.</"
 "emphasis>"
 msgstr "풍유는: <emphasis>각 요소가 의미를 가지고 있는 이야기.</emphasis>"
 
 #. type: Content of: <chapter><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:302
 msgid "Every parable is an allegory, true or false?"
 msgstr "모든 비유는 풍유다. 이것은 참일까 거짓일까?"
 
 #. type: Content of: <chapter><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:303
 msgid ""
 "Some parables are allegories, for instance, the parable of the sower is an "
 "allegory: the seed is the word of God, the thorns are worries and greed, "
@@ -1895,12 +1658,10 @@ msgstr ""
 "습니다; 비유가 그 구절을 설명한다면 좋겠지요."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:311
 msgid "Example 5A"
 msgstr "예 5A"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:312
 msgid ""
 "The parable of the widow with the unrighteous judge in Lk.18:1-8. This story "
 "illustrates one lesson: boldness in prayer.  If we draw it into an allegory, "
@@ -1910,7 +1671,6 @@ msgstr ""
 "니다. 이것을 풍유로 풀어낸다면 과연 우리는 무엇을 얻게 될까요?"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:315
 msgid ""
 "All sorts of violence happens to the meanings: God is reluctant to protect "
 "the rights of widows, prayer \"bothers\" Him, etc."
@@ -1919,12 +1679,10 @@ msgstr ""
 "다, 기도는 하나님을 \"귀챦게\" 합니다, 기타 등등."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:320
 msgid "Example 5B"
 msgstr "예 5B"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:321
 msgid ""
 "The parable of the unrighteous steward in Lk.16:1-9. What is the point of "
 "the parable? Is it an allegory?"
@@ -1933,7 +1691,6 @@ msgstr ""
 "니까?"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:323
 msgid ""
 "The steward is commended for only one thing, his shrewdness in using what he "
 "had to prepare for a time when he wouldn't have it. But he is not commended "
@@ -1944,38 +1701,31 @@ msgstr ""
 "지 않았습니다."
 
 #. type: Content of the bibletime entity
-#: docs/howto/en/docbook/index.docbook:5
 msgid "<application>BibleTime</application>"
 msgstr "<application>BibleTime</application>"
 
 #. type: Content of the kapp entity
-#: docs/howto/en/docbook/index.docbook:6
 msgid "&bibletimehandbook;"
 msgstr "성경 공부 요령"
 
 #. type: Content of: <book><bookinfo><title>
-#: docs/howto/en/docbook/index.docbook:14
 msgid "The Biblestudy HowTo"
 msgstr "성경 공부 요령"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
-#: docs/howto/en/docbook/index.docbook:17
 msgid "Bob"
 msgstr "밥"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
-#: docs/howto/en/docbook/index.docbook:18
 msgid "Harman"
 msgstr "하만"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
-#: docs/howto/en/docbook/index.docbook:22
 msgid "The BibleTime Team"
 msgstr "The BibleTime Team"
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
-#: docs/howto/en/docbook/index.docbook:26
 msgid ""
 "<copyright> <year>1999-2016</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
@@ -1984,7 +1734,6 @@ msgstr ""
 "devel@crosswire.org)</holder> </copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
-#: docs/howto/en/docbook/index.docbook:31
 msgid ""
 "This document was originally created by Mr. Bob Harman and is licensed under "
 "the terms of the license <ulink url=\"http://creativecommons.org/licenses/by-"
@@ -1995,19 +1744,16 @@ msgstr ""
 "Share Alike\"</ulink> 입니다."
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
-#: docs/howto/en/docbook/index.docbook:35
 msgid ""
 "Scripture quotes are from the New American Standard Bible unless otherwise "
 "indicated."
 msgstr "특별히 명시되지 않는 한, 성구들은 개역판을 인용합니다."
 
 #. type: Content of: <book><bookinfo><abstract><title>
-#: docs/howto/en/docbook/index.docbook:39
 msgid "Abstract"
 msgstr "개요"
 
 #. type: Content of: <book><bookinfo><abstract><para>
-#: docs/howto/en/docbook/index.docbook:40
 msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
 "Bible."
@@ -2016,7 +1762,6 @@ msgstr ""
 "다."
 
 #. type: Content of: <book><bookinfo><abstract><para>
-#: docs/howto/en/docbook/index.docbook:43
 msgid ""
 "It is the hope of the &bibletime; team that this HowTo will provoke the "
 "readers to study the scriptures to see what they say. This particular study "
@@ -2032,11 +1777,9 @@ msgstr ""
 "태도로 시작한다면 주께서는 여러분을 실망시키지 않으실 것입니다."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
-#: docs/howto/en/docbook/index.docbook:52
 msgid "Bible"
 msgstr "성경"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
-#: docs/howto/en/docbook/index.docbook:54
 msgid "HowTo"
 msgstr "요령"
