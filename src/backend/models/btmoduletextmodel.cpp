@@ -169,7 +169,7 @@ QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) cons
         QString text = entryDisplay.text(moduleList, keyName,
                                          m_displayOptions, m_filterOptions);
         text.replace("#CHAPTERTITLE#", "");
-        text = ColorManager::instance().replaceColors(text);
+        text = ColorManager::replaceColors(text);
         return text;
     }
     else if (role == ModuleEntry::ReferenceRole){
@@ -250,7 +250,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
                     rawText = "<span style=\"color:gray\"><small>" + tr("Click to edit") + "</small></span>";
                 text += QString::number(verse) + "  " + rawText;
 
-                text = ColorManager::instance().replaceColors(text);
+                text = ColorManager::replaceColors(text);
                 return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
             }
         }
@@ -262,7 +262,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
                                                             Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
 
         text.replace("#CHAPTERTITLE#", chapterTitle);
-        text = ColorManager::instance().replaceColors(text);
+        text = ColorManager::replaceColors(text);
         return text;
     }
     return QString();

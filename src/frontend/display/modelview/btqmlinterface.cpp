@@ -118,21 +118,18 @@ void BtQmlInterface::setActiveLink(const QString& link) {
     Q_EMIT activeLinkChanged();
 }
 
-QColor BtQmlInterface::getBackgroundColor() const {
-    return ColorManager::instance().getBackgroundColor();
-}
+QColor BtQmlInterface::getBackgroundColor() const
+{ return ColorManager::getBackgroundColor(); }
 
-QColor BtQmlInterface::getBackgroundHighlightColor() const {
-    return ColorManager::instance().getBackgroundHighlightColor();
-}
+QColor BtQmlInterface::getBackgroundHighlightColor() const
+{ return ColorManager::getBackgroundHighlightColor(); }
 
 int BtQmlInterface::getBackgroundHighlightColorIndex() const {
     return m_backgroundHighlightColorIndex;
 }
 
-QColor BtQmlInterface::getForegroundColor() const {
-    return ColorManager::instance().getForegroundColor();
-}
+QColor BtQmlInterface::getForegroundColor() const
+{ return ColorManager::getForegroundColor(); }
 
 int BtQmlInterface::getCurrentModelIndex() const {
     if (m_swordKey == nullptr)

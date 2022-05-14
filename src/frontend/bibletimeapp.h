@@ -37,7 +37,6 @@ class BibleTimeApp : public QApplication {
 
         bool initBtConfig();
         void initLightDarkPalette();
-        void initColorManager();
         bool initDisplayTemplateManager();
         void initIcons();
 

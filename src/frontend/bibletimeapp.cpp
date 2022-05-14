@@ -255,7 +255,4 @@ bool BibleTimeApp::initDisplayTemplateManager() {
     return false;
 }
 
-void BibleTimeApp::initColorManager()
-{ ColorManager::instance().loadColorMaps(); }
-
 void BibleTimeApp::initIcons() { m_icons = new BtIcons(); }

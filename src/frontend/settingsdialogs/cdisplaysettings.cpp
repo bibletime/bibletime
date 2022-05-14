@@ -320,13 +320,12 @@ void CDisplaySettingsPage::updateStylePreview() {
 
     // Update colors:
     QPalette p = m_stylePreviewViewer->palette();
-    p.setColor(QPalette::Window,
-               ColorManager::instance().getBackgroundColor(styleName));
+    p.setColor(QPalette::Window, ColorManager::getBackgroundColor(styleName));
     p.setColor(QPalette::WindowText,
-               ColorManager::instance().getForegroundColor(styleName));
+               ColorManager::getForegroundColor(styleName));
     m_stylePreviewViewer->setPalette(p);
 
-    text = ColorManager::instance().replaceColors(text, styleName);
+    text = ColorManager::replaceColors(text, styleName);
     m_stylePreviewViewer->setText(text);
 }
 

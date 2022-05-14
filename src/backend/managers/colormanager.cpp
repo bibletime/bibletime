@@ -12,6 +12,7 @@
 
 #include "colormanager.h"
 
+#include <map>
 #include <QApplication>
 #include <QColor>
 #include <QDir>
@@ -27,42 +28,23 @@
 #include "../../backend/managers/cdisplaytemplatemgr.h"
 
 
+namespace ColorManager {
 namespace {
 
 inline bool darkMode()
 { return qApp->palette().color(QPalette::Base).value() < 128; }
 
-QString getColorByPattern(
-        std::map<QString, std::map<QString, QString> > const & maps,
-        QString const & pattern,
-        QString const & templateName)
-{
-    BT_ASSERT(!templateName.isEmpty());
-    auto const mapIt(maps.find(templateName));
-    BT_ASSERT(mapIt != maps.end());
-    auto const valueIt(mapIt->second.find(pattern));
-    BT_ASSERT(valueIt != mapIt->second.end());
-    BT_ASSERT(!valueIt->second.isEmpty());
-    return valueIt->second;
-}
+using ColorMaps = std::map<QString, std::map<QString, QString> >;
 
-} // anonymous namespace
-
-ColorManager & ColorManager::instance() {
-    static ColorManager r;
-    return r;
-}
-
-ColorManager::ColorManager() = default;
-
-
-void ColorManager::loadColorMaps() {
+ColorMaps createColorMaps() {
     namespace DU = util::directory;
     QDir::Filters const readableFileFilter(QDir::Files | QDir::Readable);
     QStringList const cssFilter("*.css");
 
+    ColorMaps colorMaps;
+
     auto const loadColorMap =
-            [this](QString const & filePath) {
+            [&colorMaps](QString const & filePath) {
                 QFileInfo const cssInfo(filePath);
                 static QString const cMapPathTemplate("%1/%2.cmap");
                 auto cMapPath(cMapPathTemplate.arg(cssInfo.path())
@@ -109,7 +91,7 @@ void ColorManager::loadColorMaps() {
                     for (auto const & colorKey : cMapSettings.childKeys())
                         colorMap[colorKey] = cMapSettings.value(colorKey).toString();
                 }
-                m_colorMaps[std::move(fileName)] = std::move(colorMap);
+                colorMaps[std::move(fileName)] = std::move(colorMap);
             };
 
     // Load global app stylesheets
@@ -121,43 +103,69 @@ void ColorManager::loadColorMaps() {
     auto const & utd = DU::getUserDisplayTemplatesDir();
     for (auto const & file : utd.entryList(cssFilter, readableFileFilter))
         loadColorMap(utd.canonicalPath() + "/" + file);
+
+    return colorMaps;
 }
 
-QString ColorManager::replaceColors(QString content) {
+auto const & colorMaps() {
+    static auto const maps = createColorMaps();
+    return maps;
+}
+
+QString getColorByPattern(QString const & pattern, QString const & templateName)
+{
+    BT_ASSERT(!templateName.isEmpty());
+    auto const & maps = colorMaps();
+    auto const mapIt(maps.find(templateName));
+    BT_ASSERT(mapIt != maps.end());
+    auto const valueIt(mapIt->second.find(pattern));
+    BT_ASSERT(valueIt != mapIt->second.end());
+    BT_ASSERT(!valueIt->second.isEmpty());
+    return valueIt->second;
+}
+
+} // anonymous namespace
+
+
+QString replaceColors(QString content) {
     return replaceColors(std::move(content),
                          CDisplayTemplateMgr::activeTemplateName());
 }
 
-QString
-ColorManager::replaceColors(QString content, QString const & templateName) {
+QString replaceColors(QString content, QString const & templateName) {
     static QString const pattern("#%1#");
-    for (auto const & [key, value] : m_colorMaps[templateName])
+    auto const & maps = colorMaps();
+    auto const mapsIt = maps.find(templateName);
+    BT_ASSERT(mapsIt != maps.end());
+    for (auto const & [key, value] : mapsIt->second)
         content.replace(pattern.arg(key), value);
     return content;
 }
 
-QString ColorManager::getBackgroundColor()
+QString getBackgroundColor()
 { return getBackgroundColor(CDisplayTemplateMgr::activeTemplateName()); }
 
-QString ColorManager::getBackgroundColor(QString const & templateName)
-{ return getColorByPattern(m_colorMaps, "BACKGROUND_COLOR", templateName); }
+QString getBackgroundColor(QString const & templateName)
+{ return getColorByPattern("BACKGROUND_COLOR", templateName); }
 
-QString ColorManager::getBackgroundHighlightColor() {
+QString getBackgroundHighlightColor() {
     return getBackgroundHighlightColor(
                 CDisplayTemplateMgr::activeTemplateName());
 }
 
-QString ColorManager::getBackgroundHighlightColor(QString const & templateName)
-{ return getColorByPattern(m_colorMaps, "BACKGROUND_HIGHLIGHT", templateName); }
+QString getBackgroundHighlightColor(QString const & templateName)
+{ return getColorByPattern("BACKGROUND_HIGHLIGHT", templateName); }
 
-QString ColorManager::getForegroundColor()
+QString getForegroundColor()
 { return getForegroundColor(CDisplayTemplateMgr::activeTemplateName()); }
 
-QString ColorManager::getForegroundColor(QString const & templateName)
-{ return getColorByPattern(m_colorMaps, "FOREGROUND_COLOR", templateName); }
+QString getForegroundColor(QString const & templateName)
+{ return getColorByPattern("FOREGROUND_COLOR", templateName); }
 
-QString ColorManager::getCrossRefColor()
+QString getCrossRefColor()
 { return getCrossRefColor(CDisplayTemplateMgr::activeTemplateName()); }
 
-QString ColorManager::getCrossRefColor(QString const & templateName)
-{ return getColorByPattern(m_colorMaps, "CROSSREF_COLOR", templateName); }
+QString getCrossRefColor(QString const & templateName)
+{ return getColorByPattern("CROSSREF_COLOR", templateName); }
+
+} // namespace ColorManager

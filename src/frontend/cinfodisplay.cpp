@@ -92,15 +92,15 @@ void CInfoDisplay::unsetInfo() {
 
 void CInfoDisplay::updateColors() {
     QPalette p = m_textBrowser->palette();
-    p.setColor(QPalette::Base, ColorManager::instance().getBackgroundColor());
-    p.setColor(QPalette::Text, ColorManager::instance().getForegroundColor());
+    p.setColor(QPalette::Base, ColorManager::getBackgroundColor());
+    p.setColor(QPalette::Text, ColorManager::getForegroundColor());
     m_textBrowser->setPalette(p);
 }
 
 void CInfoDisplay::setInfo(const QString & renderedData, const QString & lang) {
     QString text = Rendering::formatInfo(renderedData, lang);
     text.replace("#CHAPTERTITLE#", "");
-    text = ColorManager::instance().replaceColors(text);
+    text = ColorManager::replaceColors(text);
     m_textBrowser->setText(text);
 }
 

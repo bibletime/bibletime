@@ -224,9 +224,6 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
-    // Initalize color manager
-    app.initColorManager();
-
     app.initIcons();
 
     BibleTime *mainWindow = new BibleTime();

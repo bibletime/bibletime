@@ -12,34 +12,20 @@
 
 #pragma once
 
-#include <map>
 #include <QString>
 
 
-class ColorManager {
+namespace ColorManager {
 
-public: // methods:
+QString replaceColors(QString content);
+QString replaceColors(QString content, QString const & templateName);
+QString getBackgroundColor();
+QString getBackgroundColor(QString const & templateName);
+QString getBackgroundHighlightColor();
+QString getBackgroundHighlightColor(QString const & templateName);
+QString getForegroundColor();
+QString getForegroundColor(QString const & templateName);
+QString getCrossRefColor();
+QString getCrossRefColor(QString const & templateName);
 
-    static ColorManager & instance();
-
-    void loadColorMaps();
-    QString replaceColors(QString content);
-    QString replaceColors(QString content, QString const & templateName);
-    QString getBackgroundColor();
-    QString getBackgroundColor(QString const & templateName);
-    QString getBackgroundHighlightColor();
-    QString getBackgroundHighlightColor(QString const & templateName);
-    QString getForegroundColor();
-    QString getForegroundColor(QString const & templateName);
-    QString getCrossRefColor();
-    QString getCrossRefColor(QString const & templateName);
-
-private: // methods:
-
-    ColorManager();
-
-private: // fields:
-
-    std::map<QString, std::map<QString, QString> > m_colorMaps;
-
-}; /* class ColorManager */
+}; /* namespace ColorManager */
