@@ -238,8 +238,9 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
           .replace("#LANG_CSS#", langCSS)
           .replace("#PAGE_DIRECTION#", settings.textDirectionAsHtmlDirAttr())
           .replace("#CONTENT#", newContent)
-          .replace("#MODTYPE#", displayTypeString)
-          .replace("#MODNAME#", moduleName)
+          .replace("#BODY_CLASSES#",
+                   displayTypeString + " "
+                   + displayTypeString + "_" + moduleName)
           .replace("#DISPLAY_TEMPLATES_PATH#", DU::getDisplayTemplatesDir().absolutePath());
 
     if (templateIsCss)
