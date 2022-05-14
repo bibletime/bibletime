@@ -2,19 +2,19 @@
 ; disabled, stable-3.0 is the currently active branch
 host = https://www.transifex.com
 
-[bibletime.bibletime_ui]
+[o:bibletime:p:bibletime:r:bibletime_ui]
 file_filter = i18n/messages/bibletime_ui_<lang>.ts
 source_file = i18n/messages/bibletime_ui.ts
 source_lang = en
 type = TS
 
-[bibletime.handbook]
+[o:bibletime:p:bibletime:r:handbook]
 file_filter = i18n/handbook/handbook-<lang>.po
 source_file = i18n/handbook/handbook.pot
 source_lang = en
 type = PO
 
-[bibletime.howto]
+[o:bibletime:p:bibletime:r:howto]
 file_filter = i18n/howto/howto-<lang>.po
 source_file = i18n/howto/howto.pot
 source_lang = en
