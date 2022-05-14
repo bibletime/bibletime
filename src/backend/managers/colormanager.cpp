@@ -36,11 +36,10 @@ inline bool darkMode()
 QString getColorByPattern(
         std::map<QString, std::map<QString, QString> > const & maps,
         QString const & pattern,
-        QString const & style)
+        QString const & templateName)
 {
-    auto const activeTemplate =
-            style.isEmpty() ? CDisplayTemplateMgr::activeTemplateName() : style;
-    auto const mapIt(maps.find(activeTemplate));
+    BT_ASSERT(!templateName.isEmpty());
+    auto const mapIt(maps.find(templateName));
     BT_ASSERT(mapIt != maps.end());
     auto const valueIt(mapIt->second.find(pattern));
     BT_ASSERT(valueIt != mapIt->second.end());
@@ -138,17 +137,31 @@ ColorManager::replaceColors(QString content, QString const & templateName) {
     return content;
 }
 
-QString ColorManager::getBackgroundColor(QString const & style)
-{ return getColorByPattern(m_colorMaps, "BACKGROUND_COLOR", style); }
+QString ColorManager::getBackgroundColor()
+{ return getBackgroundColor(CDisplayTemplateMgr::activeTemplateName()); }
 
-QString ColorManager::getBackgroundHighlightColor(QString const & style)
-{ return getColorByPattern(m_colorMaps, "BACKGROUND_HIGHLIGHT", style); }
+QString ColorManager::getBackgroundColor(QString const & templateName)
+{ return getColorByPattern(m_colorMaps, "BACKGROUND_COLOR", templateName); }
 
-QString ColorManager::getForegroundColor(QString const & style)
-{ return getColorByPattern(m_colorMaps, "FOREGROUND_COLOR", style); }
+QString ColorManager::getBackgroundHighlightColor() {
+    return getBackgroundHighlightColor(
+                CDisplayTemplateMgr::activeTemplateName());
+}
 
-QString ColorManager::getCrossRefColor(QString const & style)
-{ return getColorByPattern(m_colorMaps, "CROSSREF_COLOR", style); }
+QString ColorManager::getBackgroundHighlightColor(QString const & templateName)
+{ return getColorByPattern(m_colorMaps, "BACKGROUND_HIGHLIGHT", templateName); }
+
+QString ColorManager::getForegroundColor()
+{ return getForegroundColor(CDisplayTemplateMgr::activeTemplateName()); }
+
+QString ColorManager::getForegroundColor(QString const & templateName)
+{ return getColorByPattern(m_colorMaps, "FOREGROUND_COLOR", templateName); }
+
+QString ColorManager::getCrossRefColor()
+{ return getCrossRefColor(CDisplayTemplateMgr::activeTemplateName()); }
+
+QString ColorManager::getCrossRefColor(QString const & templateName)
+{ return getColorByPattern(m_colorMaps, "CROSSREF_COLOR", templateName); }
 
 void ColorManager::initLightDarkPalette() {
     int lightDarkMode = btConfig().value<int>("GUI/lightDarkMode", 0);
