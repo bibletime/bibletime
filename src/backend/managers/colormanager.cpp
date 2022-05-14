@@ -38,9 +38,8 @@ QString getColorByPattern(
         QString const & pattern,
         QString const & style)
 {
-    QString activeTemplate;
-    if (style.isEmpty())
-        activeTemplate = CDisplayTemplateMgr::activeTemplateName();
+    auto const activeTemplate =
+            style.isEmpty() ? CDisplayTemplateMgr::activeTemplateName() : style;
     auto const mapIt(maps.find(activeTemplate));
     BT_ASSERT(mapIt != maps.end());
     auto const valueIt(mapIt->second.find(pattern));
