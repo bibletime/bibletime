@@ -34,33 +34,6 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
       m_firstEntry(0),
       m_maxEntries(0),
       m_textFilter(nullptr) {
-    QHash<int, QByteArray> roleNames;
-    roleNames[ModuleEntry::ReferenceRole] =  "keyName";             // reference
-    roleNames[ModuleEntry::TextRole] = "line";                      // not used
-
-    roleNames[ModuleEntry::Text0Role] = "text0";                    // text in column 0
-    roleNames[ModuleEntry::Text1Role] = "text1";                    // text in column 1
-    roleNames[ModuleEntry::Text2Role] = "text2";                    // text in column 2
-    roleNames[ModuleEntry::Text3Role] = "text3";                    // text in column 3
-    roleNames[ModuleEntry::Text4Role] = "text4";                    // text in column 4
-    roleNames[ModuleEntry::Text5Role] = "text5";                    // text in column 5
-    roleNames[ModuleEntry::Text6Role] = "text6";                    // text in column 6
-    roleNames[ModuleEntry::Text7Role] = "text7";                    // text in column 7
-    roleNames[ModuleEntry::Text8Role] = "text8";                    // text in column 8
-    roleNames[ModuleEntry::Text9Role] = "text9";                    // text in column 9
-
-    roleNames[ModuleEntry::Title0Role] = "title0";                  // title in column 0
-    roleNames[ModuleEntry::Title1Role] = "title1";                  // title in column 1
-    roleNames[ModuleEntry::Title2Role] = "title2";                  // title in column 2
-    roleNames[ModuleEntry::Title3Role] = "title3";                  // title in column 3
-    roleNames[ModuleEntry::Title4Role] = "title4";                  // title in column 4
-    roleNames[ModuleEntry::Title5Role] = "title5";                  // title in column 5
-    roleNames[ModuleEntry::Title6Role] = "title6";                  // title in column 6
-    roleNames[ModuleEntry::Title7Role] = "title7";                  // title in column 7
-    roleNames[ModuleEntry::Title8Role] = "title8";                  // title in column 8
-    roleNames[ModuleEntry::Title9Role] = "title9";                  // title in column 9
-
-    setRoleNames(roleNames);
     m_displayOptions.verseNumbers = 1;
     m_displayOptions.lineBreaks = 1;
     m_filterOptions.footnotes = 0;
@@ -277,11 +250,34 @@ int BtModuleTextModel::rowCount(const QModelIndex & /*parent*/) const {
 }
 
 QHash<int, QByteArray> BtModuleTextModel::roleNames() const {
-    return m_roleNames;
-}
-
-void BtModuleTextModel::setRoleNames(const QHash<int, QByteArray> &roleNames) {
-    m_roleNames = roleNames;
+    static auto const roleNames_ =
+            []() {
+                QHash<int, QByteArray> r;
+                r[ModuleEntry::ReferenceRole] = "keyName"; // reference
+                r[ModuleEntry::TextRole] = "line";         // not used
+                r[ModuleEntry::Text0Role] = "text0";       // text in column 0
+                r[ModuleEntry::Text1Role] = "text1";       // text in column 1
+                r[ModuleEntry::Text2Role] = "text2";       // text in column 2
+                r[ModuleEntry::Text3Role] = "text3";       // text in column 3
+                r[ModuleEntry::Text4Role] = "text4";       // text in column 4
+                r[ModuleEntry::Text5Role] = "text5";       // text in column 5
+                r[ModuleEntry::Text6Role] = "text6";       // text in column 6
+                r[ModuleEntry::Text7Role] = "text7";       // text in column 7
+                r[ModuleEntry::Text8Role] = "text8";       // text in column 8
+                r[ModuleEntry::Text9Role] = "text9";       // text in column 9
+                r[ModuleEntry::Title0Role] = "title0";     // title in column 0
+                r[ModuleEntry::Title1Role] = "title1";     // title in column 1
+                r[ModuleEntry::Title2Role] = "title2";     // title in column 2
+                r[ModuleEntry::Title3Role] = "title3";     // title in column 3
+                r[ModuleEntry::Title4Role] = "title4";     // title in column 4
+                r[ModuleEntry::Title5Role] = "title5";     // title in column 5
+                r[ModuleEntry::Title6Role] = "title6";     // title in column 6
+                r[ModuleEntry::Title7Role] = "title7";     // title in column 7
+                r[ModuleEntry::Title8Role] = "title8";     // title in column 8
+                r[ModuleEntry::Title9Role] = "title9";     // title in column 9
+                return r;
+            }();
+    return roleNames_;
 }
 
 bool BtModuleTextModel::isBible() const {

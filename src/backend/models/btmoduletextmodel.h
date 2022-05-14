@@ -156,10 +156,6 @@ public:
     /** Used by model to get the roleNames and corresponding role numbers. */
     QHash<int, QByteArray> roleNames() const override;
 
-    /** Sets names that correspond to role numbers. Qml
-     * ListView uses names instead of roles to get data. */
-    void setRoleNames(const QHash<int, QByteArray> &roleNames);
-
     /** Set the filter options used for rendering module text. */
     void setFilterOptions(FilterOptions filterOptions);
 
@@ -188,7 +184,6 @@ private:
     QString lexiconData(const QModelIndex & index, int role = Qt::DisplayRole) const;
 
     BtConstModuleList m_moduleInfoList;
-    QHash<int, QByteArray> m_roleNames;
     QStringList m_modules;
     QString m_highlightWords;
 
