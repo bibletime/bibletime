@@ -31,8 +31,11 @@
 namespace ColorManager {
 namespace {
 
-inline bool darkMode()
-{ return qApp->palette().color(QPalette::Base).value() < 128; }
+bool darkMode() {
+    auto const & palette = qApp->palette();
+    return palette.color(QPalette::WindowText).value()
+            > palette.color(QPalette::Window).value();
+}
 
 using ColorMaps = std::map<QString, std::map<QString, QString> >;
 
