@@ -3589,6 +3589,11 @@ Ar norite tęsti?</translation>
         <translation>Jidiš</translation>
     </message>
     <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="415"/>
+        <source>Yoruba</source>
+        <translation>Jorubų</translation>
+    </message>
+    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="418"/>
         <source>Zapotec, Mitla</source>
         <translation>Mitlos Zapotekų</translation>
@@ -3859,11 +3864,6 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="413"/>
         <source>Mixtec, Diuxi-Tilantongo</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="415"/>
-        <source>Yoryba</source>
-        <translation>Jorubų</translation>
     </message>
     <message>
         <location filename="../../src/backend/filters/osistohtml.cpp" line="413"/>

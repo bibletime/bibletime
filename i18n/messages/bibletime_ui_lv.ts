@@ -3587,6 +3587,11 @@ Do you want to continue?</source>
         <translation>Jidišs</translation>
     </message>
     <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="415"/>
+        <source>Yoruba</source>
+        <translation>Joruba</translation>
+    </message>
+    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="418"/>
         <source>Zapotec, Mitla</source>
         <translation>Zapotec, Mitla</translation>
@@ -3857,11 +3862,6 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="413"/>
         <source>Mixtec, Diuxi-Tilantongo</source>
         <translation>Mixtec, Diuxi-Tilantongo</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="415"/>
-        <source>Yoryba</source>
-        <translation>Joruba</translation>
     </message>
     <message>
         <location filename="../../src/backend/filters/osistohtml.cpp" line="413"/>

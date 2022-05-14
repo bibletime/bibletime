@@ -3589,6 +3589,11 @@ Czy chcesz kontynuować?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="415"/>
+        <source>Yoruba</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="418"/>
         <source>Zapotec, Mitla</source>
         <translation type="unfinished"></translation>
@@ -3858,11 +3863,6 @@ Czy chcesz kontynuować?</translation>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="413"/>
         <source>Mixtec, Diuxi-Tilantongo</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="415"/>
-        <source>Yoryba</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

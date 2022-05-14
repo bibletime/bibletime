@@ -3588,6 +3588,11 @@ Er du sikker på at du vil fortsætte?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="415"/>
+        <source>Yoruba</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="418"/>
         <source>Zapotec, Mitla</source>
         <translation>Zapotekisk</translation>
@@ -3858,11 +3863,6 @@ Er du sikker på at du vil fortsætte?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="413"/>
         <source>Mixtec, Diuxi-Tilantongo</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="415"/>
-        <source>Yoryba</source>
-        <translation>Yoruba</translation>
     </message>
     <message>
         <location filename="../../src/backend/filters/osistohtml.cpp" line="413"/>

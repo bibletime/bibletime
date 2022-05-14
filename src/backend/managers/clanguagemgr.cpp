@@ -412,7 +412,7 @@ void CLanguageMgr::init() {
     m_langList.append( new Language("xh", "Xhosa", QObject::tr("Xhosa")) );
     m_langList.append( new Language("xtd", "Mixtec, Diuxi-Tilantongo", QObject::tr("Mixtec, Diuxi-Tilantongo")) );
     m_langList.append( new Language("yi", "Yiddish", QObject::tr("Yiddish")) );
-    m_langList.append( new Language("yo", "Yoruba", QObject::tr("Yoryba")) );
+    m_langList.append( new Language("yo", "Yoruba", QObject::tr("Yoruba")) );
     //  m_langList.append( new Language("za", "Zhuang", QObject::tr("Zhuang")) );
     m_langList.append( new Language("zab", "Zapotec, San Juan Guelav\u00eda", QObject::tr("Zapotec, San Juan Guelav\u00eda")) );
     m_langList.append( new Language("zaw", "Zapotec, Mitla", QObject::tr("Zapotec, Mitla")) );
