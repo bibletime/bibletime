@@ -40,11 +40,6 @@ class RoleItemModel;
 class BtQmlInterface : public QObject {
 
     Q_OBJECT
-
-    enum Format {
-        HTML,
-        Text
-    };
     Q_PROPERTY(QColor       backgroundColor         READ getBackgroundColor NOTIFY backgroundColorChanged)
     Q_PROPERTY(QColor       backgroundHighlightColor READ getBackgroundHighlightColor NOTIFY backgroundHighlightColorChanged)
     Q_PROPERTY(int          backgroundHighlightColorIndex READ getBackgroundHighlightColorIndex NOTIFY backgroundHighlightColorIndexChanged)
@@ -102,7 +97,9 @@ public:
     int getBackgroundHighlightColorIndex() const;
     void changeColorTheme();
     void copyRange(int index1, int index2) const;
-    void copyVerseRange(const QString& ref1, const QString& ref2, const CSwordModuleInfo * module) const;
+    void copyVerseRange(QString const & ref1,
+                        QString const & ref2,
+                        CSwordModuleInfo const & module) const;
     QString getBibleUrlFromLink(const QString& url);
     int getContextMenuIndex() const;
     int getContextMenuColumn() const;
@@ -169,14 +166,12 @@ private Q_SLOTS:
 
 private:
     void configModuleByType(const QString& type, const QStringList& availableModuleNames);
-    bool copyKey(CSwordKey const * const key, Format const format, bool const addText) const;
     QString decodeLemma(const QString& value);
     QString decodeMorph(const QString& value);
     QFont font(int column) const;
     void getFontsFromSettings();
     QString getReferenceFromUrl(const QString& url);
     const CSwordModuleInfo* module() const;
-    static std::unique_ptr<Rendering::CTextRendering> newRenderer(Format const format, bool const addText);
     QString stripHtml(const QString& html);
 
     bool m_firstHref;

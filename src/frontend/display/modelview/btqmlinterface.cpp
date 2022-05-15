@@ -461,74 +461,55 @@ void BtQmlInterface::copyRange(int index1, int index2) const {
     clipboard->setText(text);
 }
 
-void BtQmlInterface::copyVerseRange(const QString& ref1, const QString& ref2, const CSwordModuleInfo * module) const {
-    CSwordVerseKey dummy(module);
-    CSwordVerseKey vk(module);
+void BtQmlInterface::copyVerseRange(QString const & ref1,
+                                    QString const & ref2,
+                                    CSwordModuleInfo const & module) const
+{
+    CSwordVerseKey dummy(&module);
+    CSwordVerseKey vk(&module);
     dummy.setKey(ref1);
     vk.setLowerBound(dummy);
     dummy.setKey(ref2);
     vk.setUpperBound(dummy);
-    copyKey(&vk, BtQmlInterface::Text, true);
-}
 
+    // Copy key:
+    if (!vk.module())
+        return;
 
-bool BtQmlInterface::copyKey(CSwordKey const * const key,
-                             Format const format,
-                             bool const addText) const
-{
-    if (!key || !key->module())
-        return false;
+    auto const render =
+            [](){
+                DisplayOptions displayOptions;
+                displayOptions.lineBreaks = true;
+                displayOptions.verseNumbers = true;
 
-    QString text;
-    BtConstModuleList modules;
-    modules.append(key->module());
+                FilterOptions filterOptions;
+                filterOptions.footnotes = 0;
+                filterOptions.greekAccents = 1;
+                filterOptions.headings = 1;
+                filterOptions.hebrewCantillation = 1;
+                filterOptions.hebrewPoints = 1;
+                filterOptions.lemmas = 0;
+                filterOptions.morphSegmentation = 1;
+                filterOptions.morphTags = 0;
+                filterOptions.redLetterWords = 1;
+                filterOptions.scriptureReferences = 0;
+                filterOptions.strongNumbers = 0;
+                filterOptions.textualVariants = 0;
 
-    auto const render = newRenderer(format, addText);
-    CSwordVerseKey const * const vk =
-            dynamic_cast<CSwordVerseKey const *>(key);
-    if (vk && vk->isBoundSet()) {
-        text = render->renderKeyRange(vk->lowerBound(),
-                                      vk->upperBound(),
-                                      modules);
+                return std::make_unique<Rendering::CPlainTextExportRendering>(
+                            true,
+                            displayOptions,
+                            filterOptions);
+            }();
+    if (vk.isBoundSet()) {
+        QGuiApplication::clipboard()->setText(
+                    render->renderKeyRange(vk.lowerBound(),
+                                           vk.upperBound(),
+                                           {&module}));
     } else {
-        text = render->renderSingleKey(key->key(), modules);
+        QGuiApplication::clipboard()->setText(
+                    render->renderSingleKey(vk.key(), {&module}));
     }
-
-    QClipboard *clipboard = QGuiApplication::clipboard();
-    clipboard->setText(text);
-    return true;
-}
-
-std::unique_ptr<Rendering::CTextRendering> BtQmlInterface::newRenderer(Format const format,
-                                                                       bool const addText)
-{
-    DisplayOptions displayOptions;
-    displayOptions.lineBreaks = true;
-    displayOptions.verseNumbers = true;
-
-    FilterOptions filterOptions;
-    filterOptions.footnotes = 0;
-    filterOptions.greekAccents = 1;
-    filterOptions.headings = 1;
-    filterOptions.hebrewCantillation = 1;
-    filterOptions.hebrewPoints = 1;
-    filterOptions.lemmas = 0;
-    filterOptions.morphSegmentation = 1;
-    filterOptions.morphTags = 0;
-    filterOptions.redLetterWords = 1;
-    filterOptions.scriptureReferences = 0;
-    filterOptions.strongNumbers = 0;
-    filterOptions.textualVariants = 0;
-
-    using R = std::unique_ptr<Rendering::CTextRendering>;
-    BT_ASSERT((format == Text) || (format == HTML));
-    if (format == HTML)
-        return R{new Rendering::CTextRendering(addText,
-                                               displayOptions,
-                                               filterOptions)};
-    return R{new Rendering::CPlainTextExportRendering(addText,
-                                                      displayOptions,
-                                                      filterOptions)};
 }
 
 QString BtQmlInterface::getHighlightWords() const {
