@@ -148,7 +148,6 @@ Q_SIGNALS:
     void backgroundHighlightColorIndexChanged();
     void contextMenuIndexChanged();
     void contextMenuColumnChanged();
-    void contextMenu(int x, int y, int moduleNum);
     void currentModelIndexChanged();
     void fontChanged();
     void foregroundColorChanged();
