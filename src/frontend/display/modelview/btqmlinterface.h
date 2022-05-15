@@ -74,7 +74,6 @@ public:
     Q_INVOKABLE void changeReference(int i);
     Q_INVOKABLE void dragHandler(int index);
     Q_INVOKABLE QString getRawText(int row, int column);
-    Q_INVOKABLE QStringList getModuleNames() const;
     Q_INVOKABLE bool moduleIsWritable(int column);
     Q_INVOKABLE void openContextMenu(int x, int y,int width);
     Q_INVOKABLE void openEditor(int row, int column);

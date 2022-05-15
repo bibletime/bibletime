@@ -149,10 +149,6 @@ int BtQmlInterface::getCurrentModelIndex() const {
     return 0;
 }
 
-QStringList BtQmlInterface::getModuleNames() const {
-    return m_moduleNames;
-}
-
 int BtQmlInterface::getNumModules() const {
     return m_moduleNames.count();
 }
