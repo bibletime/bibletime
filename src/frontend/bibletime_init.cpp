@@ -15,13 +15,13 @@
 #include <QApplication>
 #include <QDebug>
 #include <QDockWidget>
-#include <QLabel>
 #include <QMdiSubWindow>
 #include <QMenu>
 #include <QMenuBar>
 #include <QMetaObject>
 #include <QPointer>
 #include <QSplitter>
+#include <QTextEdit>
 #include <QTimerEvent>
 #include <QToolBar>
 #include <QToolButton>
@@ -55,17 +55,17 @@
 
 namespace {
 
-class DebugWindow : public QLabel {
+class DebugWindow : public QTextEdit {
 
 public: // methods:
 
     DebugWindow()
-        : QLabel(nullptr, Qt::Dialog)
+        : QTextEdit(nullptr)
         , m_updateTimerId(startTimer(100))
     {
+        setWindowFlags(Qt::Dialog);
         setAttribute(Qt::WA_DeleteOnClose);
-        setTextFormat(Qt::RichText);
-        setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        setReadOnly(true);
         retranslateUi();
         show();
     }
@@ -98,13 +98,12 @@ public: // methods:
                     }
                     w = w->parent();
                 } while (w);
-                setText(objectHierarchy);
+                setHtml(objectHierarchy);
             } else {
                 setText(tr("No widget"));
             }
-            resize(minimumSizeHint());
         } else {
-            QLabel::timerEvent(event);
+            QTextEdit::timerEvent(event);
         }
     }
 

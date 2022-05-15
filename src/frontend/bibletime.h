@@ -35,7 +35,6 @@ class CDisplayWindow;
 class CKeyChooser;
 class CMDIArea;
 class QAction;
-class QLabel;
 class QMdiSubWindow;
 class QMenu;
 class QActionGroup;
@@ -457,7 +456,7 @@ private: // fields:
     QPointer<Search::CSearchDialog> m_searchDialog;
 
     QAction * m_debugWidgetAction = nullptr;
-    QPointer<QLabel> m_debugWindow;
+    QPointer<QWidget> m_debugWindow;
 
 };
 
