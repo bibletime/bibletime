@@ -79,7 +79,7 @@ public:
     Q_INVOKABLE bool moduleIsWritable(int column);
     Q_INVOKABLE void openContextMenu(int x, int y,int width);
     Q_INVOKABLE void openEditor(int row, int column);
-    Q_INVOKABLE void referenceChosen();
+    void referenceChosen();
     Q_INVOKABLE void setMagReferenceByUrl(const QString& url);
     Q_INVOKABLE void setRawText(int row, int column, const QString& text);
     Q_INVOKABLE void clearSelectedText();
