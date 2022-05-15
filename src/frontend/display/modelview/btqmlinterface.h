@@ -75,7 +75,6 @@ public:
     Q_INVOKABLE void dragHandler(int index);
     Q_INVOKABLE QString getRawText(int row, int column);
     Q_INVOKABLE bool moduleIsWritable(int column);
-    Q_INVOKABLE void openContextMenu(int x, int y,int width);
     Q_INVOKABLE void openEditor(int row, int column);
     void referenceChosen();
     Q_INVOKABLE void setMagReferenceByUrl(const QString& url);

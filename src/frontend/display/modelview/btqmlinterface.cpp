@@ -208,14 +208,6 @@ void BtQmlInterface::setHoveredLink(QString const & link) {
     m_activeLink = link;
 }
 
-void BtQmlInterface::openContextMenu(int x, int y, int width) {
-    double xRatio = x / static_cast<double>(width);
-    int column = int(xRatio * m_moduleNames.count());
-    if (column < 0 || column >= m_moduleNames.count())
-        return;
-    Q_EMIT contextMenu(x, y, column);
-}
-
 QString BtQmlInterface::getLemmaFromLink(const QString& url) {
     QString reference;
 
