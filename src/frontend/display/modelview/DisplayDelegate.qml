@@ -111,25 +111,9 @@ Item {
     }
 
     function getColumnItem(column) {
-        if (column === 0)
-            return columnView0;
-        if (column === 1)
-            return columnView1;
-        if (column === 2)
-            return columnView2;
-        if (column === 3)
-            return columnView3;
-        if (column === 4)
-            return columnView4;
-        if (column === 5)
-            return columnView5;
-        if (column === 6)
-            return columnView6;
-        if (column === 7)
-            return columnView7;
-        if (column === 8)
-            return columnView8;
-        return columnView9;
+        return [columnView0, columnView1, columnView2, columnView3,
+                columnView4, columnView5, columnView6, columnView7,
+                columnView8, columnView9][column];
     }
 
     width: listView.width
