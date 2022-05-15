@@ -45,7 +45,6 @@ class BtQmlInterface : public QObject {
         HTML,
         Text
     };
-    Q_PROPERTY(QString      activeLink              READ getActiveLink  NOTIFY activeLinkChanged    WRITE setActiveLink)
     Q_PROPERTY(QColor       backgroundColor         READ getBackgroundColor NOTIFY backgroundColorChanged)
     Q_PROPERTY(QColor       backgroundHighlightColor READ getBackgroundHighlightColor NOTIFY backgroundHighlightColorChanged)
     Q_PROPERTY(int          backgroundHighlightColorIndex READ getBackgroundHighlightColorIndex NOTIFY backgroundHighlightColorIndexChanged)
@@ -73,7 +72,7 @@ class BtQmlInterface : public QObject {
 public:
     Q_INVOKABLE void cancelMagTimer();
     Q_INVOKABLE void changeReference(int i);
-    Q_INVOKABLE void dragHandler(int index,const QString& link);
+    Q_INVOKABLE void dragHandler(int index);
     Q_INVOKABLE QString getRawText(int row, int column);
     Q_INVOKABLE QStringList getModuleNames() const;
     Q_INVOKABLE bool moduleIsWritable(int column);
@@ -86,8 +85,8 @@ public:
     Q_INVOKABLE bool hasSelectedText();
     Q_INVOKABLE void saveSelectedText(int index, const QString& text);
     Q_INVOKABLE void setKeyFromLink(const QString& link);
-    Q_INVOKABLE bool shiftKeyDown();
     Q_INVOKABLE int indexToVerse(int index);
+    Q_INVOKABLE void setHoveredLink(QString const & link);
 
     BtQmlInterface(QObject *parent = nullptr);
     ~BtQmlInterface() override;
@@ -98,7 +97,7 @@ public:
     void getPreviousMatchingItem(int index);
 
 
-    QString getActiveLink() const;
+    QString const & activeLink() const noexcept { return m_activeLink; }
     QColor getBackgroundColor() const;
     QColor getBackgroundHighlightColor() const;
     QColor getForegroundColor() const;
@@ -137,7 +136,6 @@ public:
     void pageUp();
     void referenceChoosen();
     void scrollToSwordKey(CSwordKey * key);
-    void setActiveLink(const QString& link);
     void setContextMenuIndex(int index);
     void setContextMenuColumn(int index);
     void setFilterOptions(FilterOptions filterOptions);
@@ -147,7 +145,6 @@ public:
     void settingsChanged();
 
 Q_SIGNALS:
-    void activeLinkChanged();
     void backgroundColorChanged();
     void backgroundHighlightColorChanged();
     void backgroundHighlightColorIndexChanged();

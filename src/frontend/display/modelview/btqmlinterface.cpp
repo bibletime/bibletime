@@ -109,15 +109,6 @@ void BtQmlInterface::setContextMenuColumn(int index) {
     Q_EMIT contextMenuColumnChanged();
 }
 
-QString BtQmlInterface::getActiveLink() const {
-    return m_activeLink;
-}
-
-void BtQmlInterface::setActiveLink(const QString& link) {
-    m_activeLink = link;
-    Q_EMIT activeLinkChanged();
-}
-
 QColor BtQmlInterface::getBackgroundColor() const
 { return ColorManager::getBackgroundColor(); }
 
@@ -212,6 +203,13 @@ void BtQmlInterface::openEditor(int row, int column) {
 
 int BtQmlInterface::indexToVerse(int index) {
     return m_moduleTextModel->indexToVerse(index);
+}
+
+void BtQmlInterface::setHoveredLink(QString const & link) {
+    if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+        return;
+    setMagReferenceByUrl(link);
+    m_activeLink = link;
 }
 
 void BtQmlInterface::openContextMenu(int x, int y, int width) {
@@ -371,13 +369,13 @@ void BtQmlInterface::changeReference(int i) {
     Q_EMIT updateReference(reference);
 }
 
-void BtQmlInterface::dragHandler(int index, const QString& activeLink) {
+void BtQmlInterface::dragHandler(int index) {
     QString moduleName;
     QString keyName;
 
     QRegExp rx("sword://Bible/(.*)/(.*)\\|\\|(.*)=(.*)");
     rx.setMinimal(false);
-    int pos1 = rx.indexIn(activeLink);
+    int pos1 = rx.indexIn(m_activeLink);
 
     if (pos1 > -1) {
         moduleName = rx.cap(1);
@@ -654,8 +652,3 @@ void BtQmlInterface::clearSelectedText() {
 void BtQmlInterface::saveSelectedText(int index, const QString& text) {
     m_selectedText.insert(index, text);
 }
-
-bool BtQmlInterface::shiftKeyDown() {
-    return QGuiApplication::keyboardModifiers() & Qt::ShiftModifier;
-}
-
