@@ -433,15 +433,6 @@ bool BtQmlInterface::moduleIsWritable(int column) {
     return module->isWritable();
 }
 
-void BtQmlInterface::configModuleByType(const QString& type, const QStringList& availableModuleNames) {
-    CSwordModuleInfo* module = btConfig().getDefaultSwordModuleByType(type);
-    if (!module && availableModuleNames.count() > 0) {
-        QString moduleName = availableModuleNames.at(0);
-        module = CSwordBackend::instance()->findModuleByName(moduleName);
-        btConfig().setDefaultSwordModuleByType(type, module);
-    }
-}
-
 void BtQmlInterface::changeColorTheme() {
     Q_EMIT backgroundHighlightColorChanged();
     Q_EMIT backgroundColorChanged();

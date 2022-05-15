@@ -165,7 +165,6 @@ private Q_SLOTS:
     void slotSetHighlightWords();
 
 private:
-    void configModuleByType(const QString& type, const QStringList& availableModuleNames);
     QString decodeLemma(const QString& value);
     QString decodeMorph(const QString& value);
     QFont font(int column) const;
