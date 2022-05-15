@@ -70,14 +70,14 @@ class BtQmlInterface : public QObject {
     Q_PROPERTY(QVariant     textModel               READ getTextModel NOTIFY textModelChanged)
 
 public:
-    Q_INVOKABLE void cancelMagTimer();
+    void cancelMagTimer();
     Q_INVOKABLE void changeReference(int i);
     Q_INVOKABLE void dragHandler(int index);
-    Q_INVOKABLE QString getRawText(int row, int column);
+    QString getRawText(int row, int column);
     Q_INVOKABLE bool moduleIsWritable(int column);
     Q_INVOKABLE void openEditor(int row, int column);
     void referenceChosen();
-    Q_INVOKABLE void setMagReferenceByUrl(const QString& url);
+    void setMagReferenceByUrl(const QString& url);
     Q_INVOKABLE void setRawText(int row, int column, const QString& text);
     Q_INVOKABLE void clearSelectedText();
     Q_INVOKABLE bool hasSelectedText();
