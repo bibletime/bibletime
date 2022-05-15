@@ -100,10 +100,8 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
 
 BtModelViewReadDisplay::~BtModelViewReadDisplay() = default;
 
-bool BtModelViewReadDisplay::copy(TextType const format, TextPart const part) {
-    QGuiApplication::clipboard()->setText(text(format, part));
-    return true;
-}
+void BtModelViewReadDisplay::copyAsPlainText(TextPart const part)
+{ QGuiApplication::clipboard()->setText(text(PlainText, part)); }
 
 void BtModelViewReadDisplay::copySelectedText()
 { QGuiApplication::clipboard()->setText(qmlInterface()->getSelectedText()); }

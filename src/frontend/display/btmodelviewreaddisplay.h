@@ -84,17 +84,11 @@ public: // methods:
 
     ~BtModelViewReadDisplay() override;
 
-    /**
-        \brief Copies the given text with the specified format into the
-               applications clipboard.
-    */
-    bool copy(TextType const format, TextPart const part);
-
-    void copyAnchorOnly() { copy(PlainText, AnchorOnly); }
-    void copyAnchorTextOnly() { copy(PlainText, AnchorTextOnly); }
-    void copyAnchorWithText() { copy(PlainText, AnchorWithText); }
+    void copyAnchorOnly() { copyAsPlainText(AnchorOnly); }
+    void copyAnchorTextOnly() { copyAsPlainText(AnchorTextOnly); }
+    void copyAnchorWithText() { copyAsPlainText(AnchorWithText); }
     void saveAnchorWithText() { save(PlainText, AnchorWithText); }
-    void copyAll() { copy(PlainText, Document); }
+    void copyAll() { copyAsPlainText(Document); }
 
     /** \brief Copies the currently selected text. */
     void copySelectedText();
@@ -189,6 +183,10 @@ public: // methods:
 
     /** \returns whether the display has an active anchor. */
     bool hasActiveAnchor() const { return !m_activeAnchor.isEmpty(); }
+
+private: /* Methods: */
+
+    void copyAsPlainText(TextPart const part);
 
 Q_SIGNALS:
     void completed();
