@@ -348,7 +348,6 @@ void BtQmlInterface::setModules(const QStringList &modules) {
 }
 
 void BtQmlInterface::referenceChosen() {
-    Q_EMIT referenceChange();
     Q_EMIT currentModelIndexChanged();
 }
 

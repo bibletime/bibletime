@@ -154,7 +154,6 @@ Q_SIGNALS:
     void pageUpChanged();
     void pixelsPerMMChanged();
     void positionItemOnScreen(int index);
-    void referenceChange();
     void newBibleReference(const QString& reference);
     void textChanged();
     void textModelChanged();
