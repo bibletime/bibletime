@@ -616,10 +616,8 @@ int CDisplayWindow::getLastSelectedIndex() const {
 }
 
 CSwordKey* CDisplayWindow::getMouseClickedKey() const {
-    if (BtModelViewReadDisplay * const v =
-            dynamic_cast<BtModelViewReadDisplay *>(m_displayWidget)) {
-        return  v->quickWidget()->getMouseClickedKey();
-    }
+    if (m_displayWidget)
+        return m_displayWidget->quickWidget()->getMouseClickedKey();
     return nullptr;
 }
 
