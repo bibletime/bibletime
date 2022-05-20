@@ -54,17 +54,19 @@ CExportManager::CExportManager(bool const showProgress,
                                QString const & progressLabel,
                                FilterOptions const & filterOptions,
                                DisplayOptions const & displayOptions)
-{
-    m_filterOptions = filterOptions;
-    m_displayOptions = displayOptions;
-
-    if (showProgress) {
-        m_progressDialog =
-                std::make_unique<QProgressDialog>(nullptr, Qt::Dialog);
-        m_progressDialog->setWindowTitle("BibleTime");
-        m_progressDialog->setLabelText(progressLabel);
-    }
-}
+    : m_filterOptions(filterOptions)
+    , m_displayOptions(displayOptions)
+    , m_progressDialog(
+        showProgress
+        ? [&progressLabel]{
+            auto dialog =
+                    std::make_unique<QProgressDialog>(nullptr, Qt::Dialog);
+            dialog->setWindowTitle("BibleTime");
+            dialog->setLabelText(progressLabel);
+            return dialog;
+        }()
+        : nullptr)
+{}
 
 CExportManager::~CExportManager() = default;
 
