@@ -167,10 +167,6 @@ QStringList targetList() {
 bool setTargetList( const QStringList& targets ) {
     namespace DU = util::directory;
 
-    //saves a new Sword config using the provided target list
-    //QString filename = KGlobal::dirs()->saveLocation("data", "bibletime/") + "sword.conf"; //default is to assume the real location isn't writable
-    //QString filename = util::DirectoryUtil::getUserBaseDir().canonicalPath().append("/.sword/sword.conf");
-    //bool directAccess = false;
     QString filename = swordConfigFilename();
     {
         QFile f(filename);
@@ -261,7 +257,6 @@ QString swordConfigFilename() {
 #ifdef Q_OS_WIN
              << DU::getUserHomeDir().absolutePath().append("/Sword/sword.conf");
     return DU::getUserHomeDir().absolutePath().append("/Sword/sword.conf");
-//    return DU::getApplicationDir().absolutePath().append("/sword.conf");
 #else
              << DU::getUserHomeDir().absolutePath().append("/.sword/sword.conf");
     return DU::getUserHomeDir().absolutePath().append("/.sword/sword.conf");
