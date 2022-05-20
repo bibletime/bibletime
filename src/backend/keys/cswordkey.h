@@ -104,11 +104,9 @@ protected: // methods:
 
     CSwordKey(CSwordModuleInfo const * const module = nullptr)
         : m_module(module)
-        , m_valid(true) {}
+    {}
 
-    CSwordKey(CSwordKey const & copy)
-        : m_module(copy.m_module)
-        , m_valid(copy.m_valid) {}
+    CSwordKey(CSwordKey const & copy) = default;
 
     /**
       \returns the encoded key appropriate for use directly with Sword.
@@ -118,6 +116,6 @@ protected: // methods:
 protected: // fields:
 
     const CSwordModuleInfo * m_module;
+    bool m_valid = true;
 
-    bool m_valid;
 };
