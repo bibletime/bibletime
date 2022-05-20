@@ -225,7 +225,6 @@ CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/FILE_HEADER.cpp.in"
 ADD_CUSTOM_TARGET(fix_cpp_headers
     find "${CMAKE_CURRENT_SOURCE_DIR}"
         -path "${CMAKE_CURRENT_SOURCE_DIR}/.git" -prune -o
-        -path "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/windows" -prune -o
         -path "${CMAKE_CURRENT_BINARY_DIR}" -prune -o
         -type f "\\(" -name "'*.h'" -o -name "'*.cpp'" -o -name "'*.qml'" "\\)"
         -exec "${CMAKE_CURRENT_SOURCE_DIR}/cmake/fix_cpp_header.sh" "{}"
