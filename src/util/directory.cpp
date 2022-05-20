@@ -45,7 +45,6 @@ std::unique_ptr<QDir> cachedUserDisplayTemplatesDir;
 std::unique_ptr<QDir> cachedUserBaseDir;
 std::unique_ptr<QDir> cachedUserHomeDir;
 std::unique_ptr<QDir> cachedUserHomeSwordDir;
-std::unique_ptr<QDir> cachedUserHomeSwordModsDir;
 std::unique_ptr<QDir> cachedUserSessionsDir;
 std::unique_ptr<QDir> cachedUserCacheDir;
 std::unique_ptr<QDir> cachedUserIndexDir;
@@ -183,11 +182,15 @@ bool initDirectoryCache() {
     }
 #endif
 
-    cachedUserHomeSwordModsDir.reset(new QDir(*cachedUserHomeSwordDir));
-    if (!cachedUserHomeSwordModsDir->cd("mods.d")) {
-        if (!cachedUserHomeSwordModsDir->mkdir("mods.d") || !cachedUserHomeSwordModsDir->cd("mods.d")) {
-            qWarning() << "Could not create user home " << SWORD_DIR << " mods.d directory.";
-            return false;
+    { /// \todo Check and comment whether this is needed:
+        auto userHomeSwordModsDir = *cachedUserHomeSwordDir;
+        if (!userHomeSwordModsDir.cd("mods.d")) {
+            if (!userHomeSwordModsDir.mkdir("mods.d")
+                || !userHomeSwordModsDir.cd("mods.d"))
+            {
+                qWarning() << "Could not create user home " << SWORD_DIR << " mods.d directory.";
+                return false;
+            }
         }
     }
 
@@ -375,10 +378,6 @@ const QDir &getUserHomeDir() {
 
 const QDir &getUserHomeSwordDir() {
     return *cachedUserHomeSwordDir;
-}
-
-const QDir &getUserHomeSwordModsDir() {
-    return *cachedUserHomeSwordModsDir;
 }
 
 const QDir &getUserSessionsDir() {

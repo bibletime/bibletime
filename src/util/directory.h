@@ -108,11 +108,6 @@ const QDir &getUserHomeDir();
     $HOME\.sword on linux */
 const QDir &getUserHomeSwordDir();
 
-/** Return the path to the user's home .sword (or Sword) mods.d directory.
-    %APPDATA%\Sword\mods.d on Windows
-    $HOME\.sword\mods.d on linux */
-const QDir &getUserHomeSwordModsDir();
-
 /** Return the path to the user's settings directory.*/
 const QDir &getUserBaseDir();
 
