@@ -216,27 +216,6 @@ bool initDirectoryCache() {
     return true;
 } // bool initDirectoryCache();
 
-void removeRecursive(const QString &dir) {
-    //Check for validity of argument
-    if (dir.isEmpty()) return;
-    QDir d(dir);
-    if (!d.exists()) return;
-
-    //remove all files in this dir
-    d.setFilter( QDir::Files | QDir::Hidden | QDir::NoSymLinks );
-    for (auto const & fileInfo : d.entryInfoList())
-        d.remove(fileInfo.fileName());
-
-    //remove all subdirs recursively
-    d.setFilter( QDir::Dirs | QDir::NoSymLinks );
-    for (auto const & dirInfo : d.entryInfoList())
-        if (dirInfo.isDir()
-            && dirInfo.fileName() != "."
-            && dirInfo.fileName() != "..")
-            removeRecursive(dirInfo.absoluteFilePath());
-    d.rmdir(dir);
-}
-
 /** Returns the size of the directory including the size of all it's files and it's subdirs.
  */
 ::qint64 getDirSizeRecursive(QString const & dir) {

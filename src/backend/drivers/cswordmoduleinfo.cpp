@@ -532,7 +532,7 @@ void CSwordModuleInfo::deleteIndex() {
 }
 
 void CSwordModuleInfo::deleteIndexForModule(const QString & name) {
-    util::directory::removeRecursive(getGlobalBaseIndexLocation() + "/" + name);
+    QDir(getGlobalBaseIndexLocation() + "/" + name).removeRecursively();
 }
 
 ::qint64 CSwordModuleInfo::indexSize() const {
