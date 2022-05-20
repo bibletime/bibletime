@@ -250,19 +250,15 @@ QString convertDirSeparators(const QString& path) {
     return result;
 }
 
-#ifdef Q_OS_WIN
+#if defined(Q_OS_WIN)
 const QDir &getApplicationSwordDir() {
     return *cachedApplicationSwordDir;
 }
-#endif
 
-#if defined Q_OS_WIN
 const QDir &getSharedSwordDir() {
     return *cachedSharedSwordDir;
 }
-#endif
-
-#ifdef Q_OS_MACOS
+#elif defined(Q_OS_MACOS)
 const QDir &getSwordLocalesDir() {
     return *cachedSwordLocalesDir;
 }
