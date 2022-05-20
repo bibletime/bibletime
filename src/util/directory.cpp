@@ -59,11 +59,6 @@ std::unique_ptr<QDir> cachedSharedSwordDir;
 std::unique_ptr<QDir> cachedSwordLocalesDir;
 #endif
 
-#ifdef Q_OS_ANDROID
-std::unique_ptr<QDir> cachedSharedSwordDir;  // Directory that AndBible uses
-static const char AND_BIBLE[] = "/sdcard/Android/data/net.bible.android.activity/files";
-#endif
-
 #if defined Q_OS_WIN
 static const char BIBLETIME[] = "Bibletime";
 static const char SWORD_DIR[] = "Sword";
@@ -89,15 +84,6 @@ bool initDirectoryCache() {
             return false;
         }
     }
-
-#ifdef Q_OS_ANDROID
-    cachedSharedSwordDir.reset(new QDir());
-    if (!cachedSharedSwordDir->cd(AND_BIBLE)) {
-        cachedSharedSwordDir->mkpath(AND_BIBLE);
-        cachedSharedSwordDir->cd(AND_BIBLE);
-    }
-#endif
-
 
 #ifdef Q_OS_WIN
     cachedApplicationSwordDir.reset(new QDir(wDir)); // application sword dir for Windows only
@@ -125,7 +111,6 @@ bool initDirectoryCache() {
 
 #ifdef Q_OS_WINCE
     cachedSwordPathDir.reset(new QDir(wDir));
-#elif defined (ANDROID)
 #else
     cachedSwordPathDir.reset(new QDir());
     auto swordPath(qgetenv(SWORD_PATH));
@@ -181,13 +166,6 @@ bool initDirectoryCache() {
     cachedUserHomeDir.reset(new QDir(""));
 #elif defined (Q_OS_WIN) && !defined(Q_OS_WIN32)
     cachedUserHomeDir.reset(new QDir(QCoreApplication::applicationDirPath()));
-#elif defined(ANDROID)
-    cachedUserHomeDir.reset(new QDir(qgetenv("EXTERNAL_STORAGE")));
-    if(!cachedUserHomeDir->exists() || !cachedUserHomeDir->isReadable())
-    {
-        qWarning() << "No external storage found, use application home.";
-        cachedUserHomeDir->setPath(QDir::homePath());
-    }
 #elif defined Q_OS_WIN32
 #define BUFSIZE 4096
     wchar_t homeDir[BUFSIZE];
@@ -214,11 +192,6 @@ bool initDirectoryCache() {
             return false;
         }
     }
-#endif
-
-#if defined Q_OS_ANDROID
-    // help for SWMgr to find the right place
-    qputenv(SWORD_PATH, cachedUserHomeSwordDir->absolutePath().toLocal8Bit());
 #endif
 
     cachedUserHomeSwordModsDir.reset(new QDir(*cachedUserHomeSwordDir));
@@ -328,11 +301,10 @@ const QDir &getApplicationSwordDir() {
 }
 #endif
 
-#if defined Q_OS_WIN || defined Q_OS_ANDROID
+#if defined Q_OS_WIN
 const QDir &getSharedSwordDir() {
     return *cachedSharedSwordDir;
 }
-
 #endif
 
 #ifdef Q_OS_MACOS

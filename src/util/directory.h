@@ -63,7 +63,7 @@ QString convertDirSeparators(const QString& path);
 const QDir &getApplicationSwordDir();
 #endif
 
-#if defined Q_OS_WIN || defined Q_OS_ANDROID
+#if defined Q_OS_WIN
 /** Return the path to the shared Sword directory */
 const QDir &getSharedSwordDir();
 #endif
