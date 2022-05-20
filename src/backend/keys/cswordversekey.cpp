@@ -59,6 +59,8 @@ CSwordVerseKey::CSwordVerseKey(sword::VerseKey const * k,
     , m_key(*k)
 {}
 
+CSwordVerseKey::~CSwordVerseKey() { delete m_afterChangedSignaller.data(); }
+
 sword::SWKey const & CSwordVerseKey::asSwordKey() const noexcept
 { return m_key; }
 
@@ -374,4 +376,17 @@ bool CSwordVerseKey::previous( const JumpType type ) {
 
     emitAfterChanged();
     return ret;
+}
+
+const BtSignal * CSwordVerseKey::afterChangedSignaller() {
+    if (m_afterChangedSignaller.isNull())
+        m_afterChangedSignaller = new BtSignal();
+
+    return m_afterChangedSignaller;
+}
+
+
+void CSwordVerseKey::emitAfterChanged() {
+    if (!m_afterChangedSignaller.isNull())
+        m_afterChangedSignaller->emitSignal();
 }

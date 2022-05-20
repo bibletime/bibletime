@@ -14,7 +14,9 @@
 
 #include "cswordkey.h"
 
+#include <QPointer>
 #include <QString>
+#include "../btsignal.h"
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -109,6 +111,8 @@ class CSwordVerseKey final : public CSwordKey {
         CSwordVerseKey(const sword::VerseKey *k,
                        const CSwordModuleInfo *module);
 
+        ~CSwordVerseKey() override;
+
         sword::SWKey const & asSwordKey() const noexcept final override;
 
         CSwordVerseKey * copy() const final override;
@@ -173,6 +177,11 @@ class CSwordVerseKey final : public CSwordKey {
             m_key.setVersificationSystem(name);
         }
 
+        const BtSignal * afterChangedSignaller();
+
+        /** This is called after a key change to emit a signal. */
+        void emitAfterChanged();
+
     protected:
 
         const char * rawKey() const final override;
@@ -180,5 +189,6 @@ class CSwordVerseKey final : public CSwordKey {
     private: // fields:
 
         sword::VerseKey m_key;
+        QPointer<BtSignal> m_afterChangedSignaller;
 
 };

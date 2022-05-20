@@ -12,9 +12,7 @@
 
 #pragma once
 
-#include <QPointer>
 #include <QString>
-#include "../btsignal.h"
 
 
 class CSwordModuleInfo;
@@ -93,8 +91,6 @@ public: // methods:
     */
     QString strippedText();
 
-    const BtSignal * afterChangedSignaller();
-
     /**
       \returns a new CSwordkey subclass instance for the given module, depending
                on the type of the module.
@@ -103,11 +99,6 @@ public: // methods:
 
     /** Check whether key is valid. Can be invalidated during av11n mapping. */
     bool isValid() const { return m_valid; }
-
-    /**
-      This is called after a key change to emit a signal
-    */
-    void emitAfterChanged();
 
 protected: // methods:
 
@@ -127,7 +118,6 @@ protected: // methods:
 protected: // fields:
 
     const CSwordModuleInfo * m_module;
-    QPointer<BtSignal> m_afterChangedSignaller;
 
     bool m_valid;
 };

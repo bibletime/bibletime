@@ -42,9 +42,7 @@
 #pragma GCC diagnostic pop
 
 
-CSwordKey::~CSwordKey() noexcept {
-    delete m_afterChangedSignaller.data();
-}
+CSwordKey::~CSwordKey() noexcept = default;
 
 QString CSwordKey::normalizedKey() const { return key(); }
 
@@ -126,11 +124,6 @@ QString CSwordKey::strippedText() {
     return QString::fromUtf8(m.stripText());
 }
 
-void CSwordKey::emitAfterChanged() {
-    if (!m_afterChangedSignaller.isNull())
-        m_afterChangedSignaller->emitSignal();
-}
-
 CSwordKey * CSwordKey::createInstance(const CSwordModuleInfo * module) {
     if (!module)
         return nullptr;
@@ -161,11 +154,4 @@ CSwordKey * CSwordKey::createInstance(const CSwordModuleInfo * module) {
             return nullptr;
 
     }
-}
-
-const BtSignal * CSwordKey::afterChangedSignaller() {
-    if (m_afterChangedSignaller.isNull())
-        m_afterChangedSignaller = new BtSignal();
-
-    return m_afterChangedSignaller;
 }
