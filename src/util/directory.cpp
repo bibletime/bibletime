@@ -12,7 +12,7 @@
 
 #include "directory.h"
 
-#include <memory>
+#include <optional>
 #include <QByteArray>
 #include <QCoreApplication>
 #include <QDebug>
@@ -35,25 +35,25 @@ namespace directory {
 
 namespace {
 
-std::unique_ptr<QDir> cachedIconDir;
-std::unique_ptr<QDir> cachedLicenseDir;
-std::unique_ptr<QDir> cachedPicsDir;
-std::unique_ptr<QDir> cachedLocaleDir;
-std::unique_ptr<QDir> cachedDocDir;
-std::unique_ptr<QDir> cachedDisplayTemplatesDir;
-std::unique_ptr<QDir> cachedUserDisplayTemplatesDir;
-std::unique_ptr<QDir> cachedUserBaseDir;
-std::unique_ptr<QDir> cachedUserHomeDir;
-std::unique_ptr<QDir> cachedUserHomeSwordDir;
-std::unique_ptr<QDir> cachedUserCacheDir;
-std::unique_ptr<QDir> cachedUserIndexDir;
+std::optional<QDir> cachedIconDir;
+std::optional<QDir> cachedLicenseDir;
+std::optional<QDir> cachedPicsDir;
+std::optional<QDir> cachedLocaleDir;
+std::optional<QDir> cachedDocDir;
+std::optional<QDir> cachedDisplayTemplatesDir;
+std::optional<QDir> cachedUserDisplayTemplatesDir;
+std::optional<QDir> cachedUserBaseDir;
+std::optional<QDir> cachedUserHomeDir;
+std::optional<QDir> cachedUserHomeSwordDir;
+std::optional<QDir> cachedUserCacheDir;
+std::optional<QDir> cachedUserIndexDir;
 #ifdef Q_OS_WIN
-std::unique_ptr<QDir> cachedApplicationSwordDir; // Only Windows installs the sword directory which contains locales.d
-std::unique_ptr<QDir> cachedSharedSwordDir;
+std::optional<QDir> cachedApplicationSwordDir; // Only Windows installs the sword directory which contains locales.d
+std::optional<QDir> cachedSharedSwordDir;
 #endif
 
 #ifdef Q_OS_MACOS
-std::unique_ptr<QDir> cachedSwordLocalesDir;
+std::optional<QDir> cachedSwordLocalesDir;
 #endif
 
 #if defined Q_OS_WIN
@@ -82,13 +82,13 @@ bool initDirectoryCache() {
     }
 
 #ifdef Q_OS_WIN
-    cachedApplicationSwordDir.reset(new QDir(wDir)); // application sword dir for Windows only
+    cachedApplicationSwordDir.emplace(wDir); // application sword dir for Windows only
     if (!cachedApplicationSwordDir->cd("share/sword") || !cachedApplicationSwordDir->isReadable()) {
         qWarning() << "Cannot find sword directory relative to" << QCoreApplication::applicationDirPath();
         return false;
     }
     // Sword dir for Windows only:
-    cachedSharedSwordDir.reset(new QDir(qEnvironmentVariable("ProgramData")));
+    cachedSharedSwordDir.emplace(qEnvironmentVariable("ProgramData"));
     if (!cachedSharedSwordDir->cd(SWORD_DIR)) {
         if (!cachedSharedSwordDir->mkdir(SWORD_DIR) || !cachedSharedSwordDir->cd(SWORD_DIR)) {
             qWarning() << "Cannot find " << programDataDir << " \\Sword";
@@ -98,7 +98,7 @@ bool initDirectoryCache() {
 #endif
 
 #ifdef Q_OS_MACOS
-    cachedSwordLocalesDir.reset(new QDir(wDir)); // application sword dir for Windows only
+    cachedSwordLocalesDir.emplace(wDir); // application sword dir for Windows only
     if (!cachedSwordLocalesDir->cd("share/sword/locales.d") || !cachedSwordLocalesDir->isReadable()) {
         qWarning() << "Cannot find sword locales directory relative to" << QCoreApplication::applicationDirPath();
         return false;
@@ -108,25 +108,25 @@ bool initDirectoryCache() {
     // We unset the SWORD_PATH so libsword finds paths correctly:
     ::qunsetenv("SWORD_PATH");
 
-    cachedIconDir.reset(new QDir(wDir)); // Icon dir
+    cachedIconDir.emplace(wDir); // Icon dir
     if (!cachedIconDir->cd("share/bibletime/icons") || !cachedIconDir->isReadable()) {
         qWarning() << "Cannot find icon directory relative to" << wDir.absolutePath();
         return false;
     }
 
-    cachedLicenseDir.reset(new QDir(wDir));
+    cachedLicenseDir.emplace(wDir);
     if (!cachedLicenseDir->cd("share/bibletime/license") || !cachedLicenseDir->isReadable()) {
         qWarning() << "Cannot find license directory relative to" << wDir.absolutePath();
         return false;
     }
 
-    cachedPicsDir.reset(new QDir(wDir));
+    cachedPicsDir.emplace(wDir);
     if (!cachedPicsDir->cd("share/bibletime/pics") || !cachedPicsDir->isReadable()) {
         qWarning() << "Cannot find pics directory relative to" << wDir.absolutePath();
         return false;
     }
 
-    cachedLocaleDir.reset(new QDir(wDir));
+    cachedLocaleDir.emplace(wDir);
     if (!cachedLocaleDir->cd("share/bibletime/locale")) {
         qWarning() << "Cannot find locale directory relative to" << wDir.absolutePath();
         return false;
@@ -136,30 +136,30 @@ bool initDirectoryCache() {
     QString langCode(localeName.section('_', 0, 0));
 
 
-    cachedDocDir.reset(new QDir(wDir));
+    cachedDocDir.emplace(wDir);
     if (!cachedDocDir->cd(BT_RUNTIME_DOCDIR)) {
         qWarning() << "Cannot find documentation directory relative to"
                    << wDir.absolutePath();
         return false;
     }
 
-    cachedDisplayTemplatesDir.reset(new QDir(wDir)); //display templates dir
+    cachedDisplayTemplatesDir.emplace(wDir); //display templates dir
     if (!cachedDisplayTemplatesDir->cd("share/bibletime/display-templates/")) {
         qWarning() << "Cannot find display template directory relative to" << wDir.absolutePath();
         return false;
     }
 
 #ifdef Q_OS_WINRT
-    cachedUserHomeDir.reset(new QDir(""));
+    cachedUserHomeDir.emplace("");
 #elif defined (Q_OS_WIN) && !defined(Q_OS_WIN32)
-    cachedUserHomeDir.reset(new QDir(QCoreApplication::applicationDirPath()));
+    cachedUserHomeDir.emplace(QCoreApplication::applicationDirPath());
 #elif defined Q_OS_WIN32
-    cachedUserHomeDir.reset(new QDir(qEnvironmentVariable("APPDATA")));
+    cachedUserHomeDir.emplace(qEnvironmentVariable("APPDATA"));
 #else
-    cachedUserHomeDir.reset(new QDir(qgetenv("HOME")));
+    cachedUserHomeDir.emplace(qgetenv("HOME"));
 #endif
 
-    cachedUserBaseDir.reset(new QDir(*cachedUserHomeDir));
+    cachedUserBaseDir.emplace(*cachedUserHomeDir);
     if (!cachedUserBaseDir->cd(BIBLETIME)) {
         if (!cachedUserBaseDir->mkpath(BIBLETIME) || !cachedUserBaseDir->cd(BIBLETIME)) {
             qWarning() << "Could not create user settings directory relative to" << cachedUserHomeDir->absolutePath();
@@ -167,7 +167,7 @@ bool initDirectoryCache() {
         }
     }
 
-    cachedUserHomeSwordDir.reset(new QDir(*cachedUserHomeDir));
+    cachedUserHomeSwordDir.emplace(*cachedUserHomeDir);
 #if !defined(Q_OS_WIN) || defined(Q_OS_WIN32)
     if (!cachedUserHomeSwordDir->cd(SWORD_DIR)) {
         if (!cachedUserHomeSwordDir->mkpath(SWORD_DIR) || !cachedUserHomeSwordDir->cd(SWORD_DIR)) {
@@ -189,7 +189,7 @@ bool initDirectoryCache() {
         }
     }
 
-    cachedUserCacheDir.reset(new QDir(*cachedUserBaseDir));
+    cachedUserCacheDir.emplace(*cachedUserBaseDir);
     if (!cachedUserCacheDir->cd("cache")) {
         if (!cachedUserCacheDir->mkdir("cache") || !cachedUserCacheDir->cd("cache")) {
             qWarning() << "Could not create user cache directory.";
@@ -197,7 +197,7 @@ bool initDirectoryCache() {
         }
     }
 
-    cachedUserIndexDir.reset(new QDir(*cachedUserBaseDir));
+    cachedUserIndexDir.emplace(*cachedUserBaseDir);
     if (!cachedUserIndexDir->cd("indices")) {
         if (!cachedUserIndexDir->mkdir("indices") || !cachedUserIndexDir->cd("indices")) {
             qWarning() << "Could not create user indices directory.";
@@ -205,7 +205,7 @@ bool initDirectoryCache() {
         }
     }
 
-    cachedUserDisplayTemplatesDir.reset(new QDir(*cachedUserBaseDir));
+    cachedUserDisplayTemplatesDir.emplace(*cachedUserBaseDir);
     if (!cachedUserDisplayTemplatesDir->cd("display-templates")) {
         if (!cachedUserDisplayTemplatesDir->mkdir("display-templates") || !cachedUserDisplayTemplatesDir->cd("display-templates")) {
             qWarning() << "Could not create user display templates directory.";
