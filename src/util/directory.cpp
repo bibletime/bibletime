@@ -68,7 +68,6 @@ static const char SWORD_DIR[] = "Library/Application Support/Sword";
 static const char BIBLETIME[] = ".bibletime";
 static const char SWORD_DIR[] = ".sword";
 #endif
-static const char SWORD_PATH[] = "SWORD_PATH";
 } // anonymous namespace
 
 bool initDirectoryCache() {
@@ -108,11 +107,8 @@ bool initDirectoryCache() {
     }
 #endif
 
-    auto swordPath(qgetenv(SWORD_PATH));
-    if (swordPath.data()) {
-        // We unset the SWORD_PATH so libsword finds paths correctly
-        qputenv(SWORD_PATH, "");
-    }
+    // We unset the SWORD_PATH so libsword finds paths correctly:
+    ::qunsetenv("SWORD_PATH");
 
     cachedIconDir.reset(new QDir(wDir)); // Icon dir
     if (!cachedIconDir->cd("share/bibletime/icons") || !cachedIconDir->isReadable()) {
