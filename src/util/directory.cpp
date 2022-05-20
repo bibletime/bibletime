@@ -25,9 +25,6 @@
 #include <QStringList>
 #include <QtGlobal>
 #include "btassert.h"
-#ifdef Q_OS_WIN32
-#include <windows.h>
-#endif
 
 
 namespace util {
