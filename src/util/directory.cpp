@@ -87,8 +87,8 @@ bool initDirectoryCache() {
         qWarning() << "Cannot find sword directory relative to" << QCoreApplication::applicationDirPath();
         return false;
     }
-    QByteArray programDataDir = qgetenv("ProgramData");
-    cachedSharedSwordDir.reset(new QDir(programDataDir)); // sword dir for Windows only
+    // Sword dir for Windows only:
+    cachedSharedSwordDir.reset(new QDir(qEnvironmentVariable("ProgramData")));
     if (!cachedSharedSwordDir->cd(SWORD_DIR)) {
         if (!cachedSharedSwordDir->mkdir(SWORD_DIR) || !cachedSharedSwordDir->cd(SWORD_DIR)) {
             qWarning() << "Cannot find " << programDataDir << " \\Sword";
@@ -154,11 +154,7 @@ bool initDirectoryCache() {
 #elif defined (Q_OS_WIN) && !defined(Q_OS_WIN32)
     cachedUserHomeDir.reset(new QDir(QCoreApplication::applicationDirPath()));
 #elif defined Q_OS_WIN32
-#define BUFSIZE 4096
-    wchar_t homeDir[BUFSIZE];
-    GetEnvironmentVariable(TEXT("APPDATA"), homeDir, BUFSIZE);
-    QString qHomeDir = QString::fromWCharArray(homeDir);
-    cachedUserHomeDir.reset(new QDir(qHomeDir));
+    cachedUserHomeDir.reset(new QDir(qEnvironmentVariable("APPDATA")));
 #else
     cachedUserHomeDir.reset(new QDir(qgetenv("HOME")));
 #endif
