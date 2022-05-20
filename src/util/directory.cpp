@@ -45,7 +45,6 @@ std::unique_ptr<QDir> cachedUserDisplayTemplatesDir;
 std::unique_ptr<QDir> cachedUserBaseDir;
 std::unique_ptr<QDir> cachedUserHomeDir;
 std::unique_ptr<QDir> cachedUserHomeSwordDir;
-std::unique_ptr<QDir> cachedUserSessionsDir;
 std::unique_ptr<QDir> cachedUserCacheDir;
 std::unique_ptr<QDir> cachedUserIndexDir;
 #ifdef Q_OS_WIN
@@ -191,14 +190,6 @@ bool initDirectoryCache() {
                 qWarning() << "Could not create user home " << SWORD_DIR << " mods.d directory.";
                 return false;
             }
-        }
-    }
-
-    cachedUserSessionsDir.reset(new QDir(*cachedUserBaseDir));
-    if (!cachedUserSessionsDir->cd("sessions")) {
-        if (!cachedUserSessionsDir->mkdir("sessions") || !cachedUserSessionsDir->cd("sessions")) {
-            qWarning() << "Could not create user sessions directory.";
-            return false;
         }
     }
 
@@ -378,10 +369,6 @@ const QDir &getUserHomeDir() {
 
 const QDir &getUserHomeSwordDir() {
     return *cachedUserHomeSwordDir;
-}
-
-const QDir &getUserSessionsDir() {
-    return *cachedUserSessionsDir;
 }
 
 const QDir &getUserCacheDir() {

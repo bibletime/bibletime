@@ -111,9 +111,6 @@ const QDir &getUserHomeSwordDir();
 /** Return the path to the user's settings directory.*/
 const QDir &getUserBaseDir();
 
-/** Return the path to the user's sessions directory.*/
-const QDir &getUserSessionsDir();
-
 /** Return the path to the user's cache directory.*/
 const QDir &getUserCacheDir();
 
