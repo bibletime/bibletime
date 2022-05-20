@@ -80,7 +80,7 @@ bool initDirectoryCache() {
 
 #ifdef Q_OS_WIN
     cachedApplicationSwordDir.emplace(wDir); // application sword dir for Windows only
-    if (!cachedApplicationSwordDir->cd("share/sword") || !cachedApplicationSwordDir->isReadable()) {
+    if (!cachedApplicationSwordDir->cd("share/sword")) {
         qWarning() << "Cannot find sword directory relative to" << QCoreApplication::applicationDirPath();
         return false;
     }
@@ -96,7 +96,7 @@ bool initDirectoryCache() {
 
 #ifdef Q_OS_MACOS
     cachedSwordLocalesDir.emplace(wDir); // application sword dir for Windows only
-    if (!cachedSwordLocalesDir->cd("share/sword/locales.d") || !cachedSwordLocalesDir->isReadable()) {
+    if (!cachedSwordLocalesDir->cd("share/sword/locales.d")) {
         qWarning() << "Cannot find sword locales directory relative to" << QCoreApplication::applicationDirPath();
         return false;
     }
@@ -106,19 +106,19 @@ bool initDirectoryCache() {
     ::qunsetenv("SWORD_PATH");
 
     cachedIconDir.emplace(wDir); // Icon dir
-    if (!cachedIconDir->cd("share/bibletime/icons") || !cachedIconDir->isReadable()) {
+    if (!cachedIconDir->cd("share/bibletime/icons")) {
         qWarning() << "Cannot find icon directory relative to" << wDir.absolutePath();
         return false;
     }
 
     cachedLicenseDir.emplace(wDir);
-    if (!cachedLicenseDir->cd("share/bibletime/license") || !cachedLicenseDir->isReadable()) {
+    if (!cachedLicenseDir->cd("share/bibletime/license")) {
         qWarning() << "Cannot find license directory relative to" << wDir.absolutePath();
         return false;
     }
 
     cachedPicsDir.emplace(wDir);
-    if (!cachedPicsDir->cd("share/bibletime/pics") || !cachedPicsDir->isReadable()) {
+    if (!cachedPicsDir->cd("share/bibletime/pics")) {
         qWarning() << "Cannot find pics directory relative to" << wDir.absolutePath();
         return false;
     }
