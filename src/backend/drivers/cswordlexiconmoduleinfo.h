@@ -25,7 +25,7 @@ namespace sword { class SWModule; }
 /**
   The implementation of CModuleInfo for the Sword lexiccons and citionaries.
 */
-class CSwordLexiconModuleInfo: public CSwordModuleInfo {
+class CSwordLexiconModuleInfo final: public CSwordModuleInfo {
         Q_OBJECT
 
     public: // methods:
@@ -60,7 +60,7 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
         const QStringList &entries() const;
 
         /** Jumps to the closest entry in the module. */
-        bool snap() const override;
+        bool snap() const final override;
 
         CSwordKey * createKey() const final override;
 

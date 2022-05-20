@@ -25,7 +25,7 @@ class TreeKeyIdx;
 }
 
 /** \brief Class for generic book support. */
-class CSwordBookModuleInfo: public CSwordModuleInfo {
+class CSwordBookModuleInfo final: public CSwordModuleInfo {
 
     Q_OBJECT
 

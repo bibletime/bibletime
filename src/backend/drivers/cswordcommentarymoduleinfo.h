@@ -20,7 +20,7 @@
 
   This CSwordModule implementation provides access to Sword's commentary modules.
 */
-class CSwordCommentaryModuleInfo: public CSwordBibleModuleInfo {
+class CSwordCommentaryModuleInfo final: public CSwordBibleModuleInfo {
         Q_OBJECT
 
     public: // methods:
@@ -31,5 +31,5 @@ class CSwordCommentaryModuleInfo: public CSwordBibleModuleInfo {
                                     backend,
                                     CSwordModuleInfo::Commentary) {}
 
-        bool isWritable() const override;
+        bool isWritable() const final override;
 };
