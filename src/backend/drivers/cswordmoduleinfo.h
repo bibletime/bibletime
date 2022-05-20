@@ -19,6 +19,7 @@
 #include <QIcon>
 #include <QMetaType>
 #include <QString>
+#include <QtGlobal>
 #include <vector>
 #include "../cswordmodulesearch.h"
 #include "../language.h"
@@ -259,7 +260,7 @@ wrong, or if the config file was write protected return false.
     /**
       \returns index size
     */
-    size_t indexSize() const;
+    ::qint64 indexSize() const;
 
     /**
       This function uses CLucene to perform and index based search.

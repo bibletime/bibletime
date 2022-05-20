@@ -239,13 +239,13 @@ void removeRecursive(const QString &dir) {
 
 /** Returns the size of the directory including the size of all it's files and it's subdirs.
  */
-size_t getDirSizeRecursive(QString const & dir) {
+::qint64 getDirSizeRecursive(QString const & dir) {
     //Check for validity of argument
     QDir d(dir);
     if (!d.exists())
         return 0u;
 
-    size_t size = 0u;
+    ::qint64 size = 0u;
 
     //First get the size of all files int this folder
     d.setFilter(QDir::Files);

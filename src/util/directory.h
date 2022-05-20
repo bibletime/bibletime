@@ -13,6 +13,7 @@
 #pragma once
 
 #include <cstddef>
+#include <QtGlobal>
 #include <QString>
 
 
@@ -48,7 +49,7 @@ void removeRecursive(const QString &dir);
  *
  * @return The size of the dir in bytes
  */
-std::size_t getDirSizeRecursive(QString const & dir);
+::qint64 getDirSizeRecursive(QString const & dir);
 
 /** Convert directory path separators to those for each platform
  *  Windows = "\", Others = "/"

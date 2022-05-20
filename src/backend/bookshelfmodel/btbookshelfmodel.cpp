@@ -59,7 +59,7 @@ QVariant BtBookshelfModel::data(CSwordModuleInfo * module, int role) const {
         case ModuleHasIndexRole:
             return module->hasIndex();
         case ModuleIndexSizeRole:
-            return static_cast<qulonglong>(module->indexSize());
+            return module->indexSize();
         case ModuleDescriptionRole:
             return module->config(CSwordModuleInfo::Description);
         case Qt::ToolTipRole:
