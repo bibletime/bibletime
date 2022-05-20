@@ -59,17 +59,14 @@ CExportManager::CExportManager(bool const showProgress,
     m_displayOptions = displayOptions;
 
     if (showProgress) {
-        m_progressDialog = new QProgressDialog{nullptr, Qt::Dialog};
+        m_progressDialog =
+                std::make_unique<QProgressDialog>(nullptr, Qt::Dialog);
         m_progressDialog->setWindowTitle("BibleTime");
         m_progressDialog->setLabelText(progressLabel);
-    } else {
-        m_progressDialog = nullptr;
     }
 }
 
-CExportManager::~CExportManager() {
-    delete m_progressDialog;
-}
+CExportManager::~CExportManager() = default;
 
 bool CExportManager::saveKey(CSwordKey const * const key,
                              Format const format,

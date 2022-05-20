@@ -126,6 +126,6 @@ private: // fields:
     FilterOptions m_filterOptions;
     DisplayOptions m_displayOptions;
 
-    QProgressDialog * m_progressDialog;
+    std::unique_ptr<QProgressDialog> m_progressDialog;
 
 };
