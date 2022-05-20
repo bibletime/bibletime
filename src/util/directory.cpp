@@ -67,14 +67,12 @@ static const char AND_BIBLE[] = "/sdcard/Android/data/net.bible.android.activity
 #if defined Q_OS_WIN || defined Q_OS_SYMBIAN
 static const char BIBLETIME[] = "Bibletime";
 static const char SWORD_DIR[] = "Sword";
-#else
-#ifdef Q_OS_MAC
+#elif defined(Q_OS_MAC)
 static const char BIBLETIME[] = "Library/Application Support/BibleTime";
 static const char SWORD_DIR[] = "Library/Application Support/Sword";
 #else
 static const char BIBLETIME[] = ".bibletime";
 static const char SWORD_DIR[] = ".sword";
-#endif
 #endif
 static const char SWORD_PATH[] = "SWORD_PATH";
 } // anonymous namespace
@@ -217,8 +215,7 @@ bool initDirectoryCache() {
     }
 
     cachedUserHomeSwordDir.reset(new QDir(*cachedUserHomeDir));
-#if defined(Q_OS_WIN) && !defined(Q_OS_WIN32)
-#else
+#if !defined(Q_OS_WIN) || defined(Q_OS_WIN32)
     if (!cachedUserHomeSwordDir->cd(SWORD_DIR)) {
         if (!cachedUserHomeSwordDir->mkpath(SWORD_DIR) || !cachedUserHomeSwordDir->cd(SWORD_DIR)) {
             qWarning() << "Could not create user home " << SWORD_DIR << " directory.";
