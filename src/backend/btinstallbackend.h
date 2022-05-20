@@ -13,7 +13,6 @@
 #pragma once
 
 #include <memory>
-#include <QDir>
 #include <QString>
 #include <QStringList>
 
@@ -38,9 +37,6 @@ bool isRemote(const sword::InstallSource& source);
 /** Returns the list of available install target paths. */
 QStringList targetList();
 
-/** Saves the list of available install target paths to the sword config. Return success indicator.*/
-bool setTargetList( const QStringList& targets );
-
 QStringList sourceNameList();
 
 /** Returns the path of the sword installer configuration file. */
@@ -48,18 +44,6 @@ QString configPath();
 
 /** Returns the name of the sword installer configuration file. */
 QString configFilename();
-
-/** Sets the passive mode for as default.
-* \todo see if we can en/disable this per source.
-*/
-void initPassiveFtpMode();
-
-/** Returns the file name for the Sword config file. */
-QString swordConfigFilename();
-
-/** Returns the Sword directory ($HOME/.sword/) as a QDir, created with absolute path (not canonical).
-*/
-QDir swordDir();
 
 /** Returns backend Sword manager for the source. */
 std::unique_ptr<CSwordBackend> backend(sword::InstallSource const & is);

@@ -12,13 +12,9 @@
 
 #include "btinstallbackend.h"
 
-#include <map>
 #include <QByteArray>
 #include <QDebug>
 #include <QDir>
-#include <QFile>
-#include <QIODevice>
-#include <QList>
 #include <type_traits>
 #include <utility>
 #include "../util/btassert.h"
@@ -164,58 +160,6 @@ QStringList targetList() {
     return names;
 }
 
-bool setTargetList( const QStringList& targets ) {
-    namespace DU = util::directory;
-
-    QString filename = swordConfigFilename();
-    {
-        QFile f(filename);
-        if (!f.exists()) {
-            if (!f.open(QIODevice::ReadWrite)) {
-                qWarning() << "The Sword config file can't be created!";
-                return false;
-            }
-            f.close();
-            qDebug() << "The Sword config file \"" << filename
-                     << "\" had to be (re)created!";
-        }
-    }
-
-    filename = util::directory::convertDirSeparators(filename);
-    SWConfig conf(filename.toLocal8Bit());
-    conf.getSections().clear();
-
-#ifdef Q_OS_WIN
-    // On Windows, add the sword directory to the config file.
-    QString swordPath = DU::convertDirSeparators( DU::getApplicationSwordDir().absolutePath());
-    conf["Install"].insert(
-        std::make_pair( SWBuf("LocalePath"), swordPath.toLocal8Bit().data() )
-    );
-#endif
-
-    bool setDataPath = false;
-    for (auto const & target : targets) {
-        QString t = DU::convertDirSeparators(target);
-#ifdef Q_OS_WIN
-        if (t.contains(DU::convertDirSeparators(DU::getUserHomeDir().canonicalPath().append("\\Sword")))) {
-#else
-        if (t.contains(DU::getUserHomeDir().canonicalPath().append("/.sword"))) {
-#endif
-            //we don't want $HOME/.sword in the config
-            continue;
-        }
-        else {
-            qDebug() << "Add path to the conf file" << filename << ":" << t;
-            conf["Install"].insert( std::make_pair(!setDataPath ? SWBuf("DataPath") : SWBuf("AugmentPath"), t.toLocal8Bit().data()) );
-            setDataPath = true;
-        }
-    }
-    qDebug() << "Saving Sword configuration ...";
-    conf.save();
-    CSwordBackend::instance()->reloadModules(CSwordBackend::PathChanged);
-    return true;
-}
-
 QStringList sourceNameList() {
     BtInstallMgr mgr;
     BT_ASSERT(mgr.installConf);
@@ -242,35 +186,6 @@ QStringList sourceNameList() {
     }
 
     return names;
-}
-
-
-void initPassiveFtpMode() {
-    SWConfig config(configFilename().toLatin1());
-    config["General"]["PassiveFTP"] = "true";
-    config.save();
-}
-QString swordConfigFilename() {
-    namespace DU = util::directory;
-
-    qDebug() << "Sword config:"
-#ifdef Q_OS_WIN
-             << DU::getUserHomeDir().absolutePath().append("/Sword/sword.conf");
-    return DU::getUserHomeDir().absolutePath().append("/Sword/sword.conf");
-#else
-             << DU::getUserHomeDir().absolutePath().append("/.sword/sword.conf");
-    return DU::getUserHomeDir().absolutePath().append("/.sword/sword.conf");
-#endif
-}
-
-QDir swordDir() {
-    namespace DU = util::directory;
-
-#ifdef Q_OS_WIN
-    return QDir(DU::getUserHomeDir().absolutePath().append("/Sword/"));
-#else
-    return QDir(DU::getUserHomeDir().absolutePath().append("/.sword/"));
-#endif
 }
 
 std::unique_ptr<CSwordBackend> backend(sword::InstallSource const & is) {
