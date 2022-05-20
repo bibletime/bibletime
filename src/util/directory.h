@@ -77,9 +77,6 @@ const QDir &getSwordLocalesDir();
 
 #endif
 
-/** Return the path to the SWORD_PATH env var directory */
-const QDir &getSwordPathDir();
-
 /** Return the path to the icons. */
 const QDir &getIconDir();
 

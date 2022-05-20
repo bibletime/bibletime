@@ -49,7 +49,6 @@ std::unique_ptr<QDir> cachedUserHomeSwordModsDir;
 std::unique_ptr<QDir> cachedUserSessionsDir;
 std::unique_ptr<QDir> cachedUserCacheDir;
 std::unique_ptr<QDir> cachedUserIndexDir;
-std::unique_ptr<QDir> cachedSwordPathDir;
 #ifdef Q_OS_WIN
 std::unique_ptr<QDir> cachedApplicationSwordDir; // Only Windows installs the sword directory which contains locales.d
 std::unique_ptr<QDir> cachedSharedSwordDir;
@@ -109,17 +108,11 @@ bool initDirectoryCache() {
     }
 #endif
 
-#ifdef Q_OS_WINCE
-    cachedSwordPathDir.reset(new QDir(wDir));
-#else
-    cachedSwordPathDir.reset(new QDir());
     auto swordPath(qgetenv(SWORD_PATH));
     if (swordPath.data()) {
-        cachedSwordPathDir.reset(new QDir(swordPath.data()));
         // We unset the SWORD_PATH so libsword finds paths correctly
         qputenv(SWORD_PATH, "");
     }
-#endif
 
     cachedIconDir.reset(new QDir(wDir)); // Icon dir
     if (!cachedIconDir->cd("share/bibletime/icons") || !cachedIconDir->isReadable()) {
@@ -312,10 +305,6 @@ const QDir &getSwordLocalesDir() {
     return *cachedSwordLocalesDir;
 }
 #endif
-
-const QDir &getSwordPathDir() {
-    return *cachedSwordPathDir;
-}
 
 const QDir &getIconDir() {
     return *cachedIconDir;
