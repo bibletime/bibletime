@@ -678,9 +678,8 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
         }
 
         case GlossaryTo: {
-            if (m_cachedCategory != Glossary) {
-                return QString();
-            };
+            if (m_cachedCategory != Glossary)
+                return {};
 
             const QString lang(getSimpleConfigEntry("GlossaryTo"));
             return lang.isEmpty() ? QString() : lang;
