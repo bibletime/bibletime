@@ -81,8 +81,7 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
                        drag.setPixmap(
                                module->moduleIcon().pixmap(
                                    m_parentWindow->mainToolBar()->iconSize()));
-                       std::unique_ptr<CSwordKey> key(
-                                   CSwordKey::createInstance(module));
+                       std::unique_ptr<CSwordKey> key(module->createKey());
                        key->setKey(keyName);
                        // This works across applications:
                        mimedata->setText(key->strippedText());
@@ -256,8 +255,7 @@ BtModelViewReadDisplay::text(TextType const format, TextPart const part) {
         auto const decodedLink(
                     ReferenceManager::decodeHyperlink(m_activeAnchor));
         if (decodedLink && decodedLink->module) {
-            std::unique_ptr<CSwordKey> key(
-                        CSwordKey::createInstance(decodedLink->module));
+            std::unique_ptr<CSwordKey> key(decodedLink->module->createKey());
             key->setKey(decodedLink->key);
             return key->strippedText();
         }
@@ -268,8 +266,7 @@ BtModelViewReadDisplay::text(TextType const format, TextPart const part) {
         auto const decodedLink(
                     ReferenceManager::decodeHyperlink(m_activeAnchor));
         if (decodedLink && decodedLink->module) {
-            std::unique_ptr<CSwordKey> key(
-                        CSwordKey::createInstance(decodedLink->module));
+            std::unique_ptr<CSwordKey> key(decodedLink->module->createKey());
             key->setKey(decodedLink->key);
 
             FilterOptions filterOptions;

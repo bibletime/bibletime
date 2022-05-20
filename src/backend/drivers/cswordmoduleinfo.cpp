@@ -554,7 +554,7 @@ CSwordModuleInfo::searchIndexed(QString const & searchedText,
     BT_ASSERT(wcharBuffer);
 
     // work around Swords thread insafety for Bibles and Commentaries
-    m_swordModule.setKey(CSwordKey::createInstance(this)->asSwordKey());
+    m_swordModule.setKey(createKey()->asSwordKey());
 
     // do not use any stop words
     lucene::analysis::standard::StandardAnalyzer analyzer(stop_words);

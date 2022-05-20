@@ -391,6 +391,8 @@ wrong, or if the config file was write protected return false.
     */
     static QString englishCategoryName(const CSwordModuleInfo::Category & category);
 
+    virtual CSwordKey * createKey() const = 0;
+
 public Q_SLOTS:
 
     void cancelIndexing(std::memory_order const memoryOrder =

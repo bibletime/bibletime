@@ -69,8 +69,7 @@ void BtTextBrowser::mouseMoveEvent(QMouseEvent * event) {
                             CSwordBackend::instance()->findModuleByName(
                                 decodedLink->module->name()))
                 {
-                    std::unique_ptr<CSwordKey> key(
-                                CSwordKey::createInstance(module));
+                    std::unique_ptr<CSwordKey> key(module->createKey());
                     key->setKey(decodedLink->key);
                     mimedata->setText(key->strippedText());
                 }

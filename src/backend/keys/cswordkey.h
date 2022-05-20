@@ -91,12 +91,6 @@ public: // methods:
     */
     QString strippedText();
 
-    /**
-      \returns a new CSwordkey subclass instance for the given module, depending
-               on the type of the module.
-    */
-    static CSwordKey * createInstance(const CSwordModuleInfo * module);
-
     /** Check whether key is valid. Can be invalidated during av11n mapping. */
     bool isValid() const { return m_valid; }
 

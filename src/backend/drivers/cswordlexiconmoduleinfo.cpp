@@ -22,6 +22,7 @@
 #include <QRegExp>
 #include <QTextCodec>
 #include "../../util/directory.h"
+#include "../keys/cswordldkey.h"
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -181,3 +182,5 @@ QString CSwordLexiconModuleInfo::normalizeStrongsKey(const QString &key) const {
     return newKey;
 }
 
+CSwordKey * CSwordLexiconModuleInfo::createKey() const
+{ return new CSwordLDKey(swordModule().getKey(), this); }

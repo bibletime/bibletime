@@ -58,7 +58,7 @@ void CSearchResultView::initView() {
             reserve(selectedItems.size());
             try {
                 for (auto const * const i : self.selectedItems()) {
-                    append(CSwordKey::createInstance(m));
+                    append(m->createKey());
                     last()->setKey(i->text(0));
                 }
             } catch (...) {

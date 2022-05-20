@@ -62,6 +62,8 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
         /** Jumps to the closest entry in the module. */
         bool snap() const override;
 
+        CSwordKey * createKey() const final override;
+
     private: // fields:
 
         /**

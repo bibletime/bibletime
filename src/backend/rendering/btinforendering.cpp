@@ -278,7 +278,7 @@ QString decodeFootnote(QString const & data) {
     if (!module)
         return QString();
 
-    QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
+    QSharedPointer<CSwordKey> key(module->createKey());
     key->setKey(keyname);
     key->renderedText(CSwordKey::ProcessEntryAttributesOnly); // force entryAttributes
 
@@ -328,7 +328,7 @@ QString decodeStrongs(QString const & data) {
         CSwordModuleInfo * module = getStrongsModule(wantHebrew);
         QString text;
         if (module) {
-            QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
+            QSharedPointer<CSwordKey> key(module->createKey());
             auto lexModule = qobject_cast<CSwordLexiconModuleInfo *>(module);
             key->setKey(lexModule->normalizeStrongsKey(strongs));
             text = key->renderedText();
@@ -398,7 +398,7 @@ QString decodeMorph(QString const & data) {
         QString text;
         // BT_ASSERT(module);
         if (module) {
-            QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
+            QSharedPointer<CSwordKey> key(module->createKey());
 
             // skip H or G (language sign) if we have to skip it
             const bool isOk = key->setKey(skipFirstChar ? value.mid(1) : value);
@@ -433,7 +433,7 @@ QString decodeSwordReference(QString const & data) {
         if (auto * const module =
                     CSwordBackend::instance()->findModuleByName(rx.cap(2)))
         {
-            std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
+            std::unique_ptr<CSwordKey> key(module->createKey());
             auto reference = rx.cap(3);
             key->setKey(reference);
             return QString("<div class=\"crossrefinfo\" lang=\"%1\">"

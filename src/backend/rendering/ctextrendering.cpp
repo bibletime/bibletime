@@ -163,8 +163,7 @@ const QString CTextRendering::renderKeyTree(const KeyTree &tree) {
     //optimization for entries with the same key
 
     if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
-        std::unique_ptr<CSwordKey> key(
-                CSwordKey::createInstance(modules.first()));
+        std::unique_ptr<CSwordKey> key(modules.first()->createKey());
         for (auto const & item : tree) {
             key->setKey(item.key());
             t.append(renderEntry(item, key.get()));
@@ -263,7 +262,7 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
         return ""; // no module present for rendering
 
     std::unique_ptr<CSwordKey> scoped_key(
-            !k ? CSwordKey::createInstance(modules.first()) : nullptr);
+            !k ? modules.first()->createKey() : nullptr);
     CSwordKey * const key = k ? k : scoped_key.get();
     BT_ASSERT(key);
 

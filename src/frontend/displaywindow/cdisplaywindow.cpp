@@ -107,7 +107,7 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
                    if (auto * const b = moduleChooserBar())
                        b->setVisible(show);
                });
-    m_swordKey = CSwordKey::createInstance(modules.first());
+    m_swordKey = modules.first()->createKey();
 }
 
 CDisplayWindow::~CDisplayWindow() {

@@ -554,7 +554,8 @@ QString BookmarkItem::key() const {
 }
 
 QString BookmarkItem::toolTip() const {
-    if (!module())
+    auto const * const m = module();
+    if (!m)
         return QString();
 
     FilterOptions filterOptions = btConfig().getFilterOptions();
@@ -562,14 +563,14 @@ QString BookmarkItem::toolTip() const {
     filterOptions.scriptureReferences = false;
     CSwordBackend::instance()->setFilterOptions(filterOptions);
 
-    std::unique_ptr<CSwordKey> k(CSwordKey::createInstance(module()));
+    std::unique_ptr<CSwordKey> k(m->createKey());
     BT_ASSERT(k);
     k->setKey(key());
 
-    // Language const * lang = module()->language();
+    // Language const * lang = m->language();
     // BtConfig::FontSettingsPair fontPair = getBtConfig().getFontForLanguage(lang);
 
-    QString const header(toHeader(key(), module()->name()));
+    QString const header(toHeader(key(), m->name()));
     QString ret("<b>");
     ret.append(header).append(")</b>");
     QString const txt(text());

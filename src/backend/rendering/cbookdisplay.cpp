@@ -77,7 +77,7 @@ const QString Rendering::CBookDisplay::text(
     int displayLevel = book->config( CSwordModuleInfo::DisplayLevel ).toInt();
 
     std::unique_ptr<CSwordTreeKey> key(
-            dynamic_cast<CSwordTreeKey *>(CSwordKey::createInstance(book)));
+                static_cast<CSwordTreeKey *>(book->createKey()));
     key->setKey(keyName); //set the key to position we'd like to get
 
     auto const offset = key->offset();

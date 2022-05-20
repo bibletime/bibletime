@@ -16,6 +16,7 @@
 #include <QFile>
 #include "../../util/btassert.h"
 #include "../managers/cswordbackend.h"
+#include "../keys/cswordversekey.h"
 
 // Sword includes:
 #include <versekey.h>
@@ -144,4 +145,10 @@ unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) const {
     bookNumber = ((key->getTestament() > 1) ? key->BMAX[0] : 0) + key->getBook();
 
     return bookNumber;
+}
+
+CSwordKey * CSwordBibleModuleInfo::createKey() const {
+    auto * const key = swordModule().getKey();
+    BT_ASSERT(dynamic_cast<sword::VerseKey *>(key));
+    return new CSwordVerseKey(static_cast<sword::VerseKey *>(key), this);
 }

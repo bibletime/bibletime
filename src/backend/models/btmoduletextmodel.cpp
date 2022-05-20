@@ -348,7 +348,7 @@ int BtModuleTextModel::indexToVerse(int index) const
 CSwordKey* BtModuleTextModel::indexToKey(int index, int moduleNum) const
 {
     const CSwordModuleInfo* module = m_moduleInfoList.at(moduleNum);
-    CSwordKey* key = CSwordKey::createInstance(module);
+    auto * const key = module->createKey();
     QString keyName = indexToKeyName(index);
     key->setKey(keyName);
     return key;

@@ -73,7 +73,7 @@ CInfoDisplay::CInfoDisplay(BibleTime * parent)
                        return;
 
                    auto const * const m = decodedLink->module;
-                   std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(m));
+                   std::unique_ptr<CSwordKey> key(m->createKey());
                    key->setKey(decodedLink->key);
 
                    setInfo(key->renderedText(), m->language()->abbrev());

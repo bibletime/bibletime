@@ -15,6 +15,7 @@
 #include <memory>
 #include <QList>
 #include <QtGlobal>
+#include "../../util/btassert.h"
 #include "../drivers/btmodulelist.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../keys/cswordkey.h"
@@ -41,8 +42,8 @@ QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
         return QString(i.key()).append("\n");
 
     const BtConstModuleList modules = i.modules();
-    std::unique_ptr<CSwordKey> const key(
-                CSwordKey::createInstance(modules.first()));
+    BT_ASSERT(!modules.isEmpty());
+    std::unique_ptr<CSwordKey> const key(modules.first()->createKey());
     QString renderedText = QString(i.key());
     if (modules.count() > 1) {
         for (auto const * const module : modules)

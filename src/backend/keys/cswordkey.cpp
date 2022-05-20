@@ -17,9 +17,6 @@
 #include <string>
 #include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
-#include "cswordldkey.h"
-#include "cswordtreekey.h"
-#include "cswordversekey.h"
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -32,8 +29,6 @@
 #endif
 #include <swkey.h>
 #include <swmodule.h>
-#include <treekey.h>
-#include <treekeyidx.h>
 #include <utilstr.h>
 #include <versekey.h>
 #ifdef __clang__
@@ -122,36 +117,4 @@ QString CSwordKey::strippedText() {
     m.getKey()->setText(std::string(rawKey()).c_str());
 
     return QString::fromUtf8(m.stripText());
-}
-
-CSwordKey * CSwordKey::createInstance(const CSwordModuleInfo * module) {
-    if (!module)
-        return nullptr;
-
-    sword::SWKey * const key = module->swordModule().getKey();
-
-    switch (module->type()) {
-
-        case CSwordModuleInfo::Bible: // Fall through
-        case CSwordModuleInfo::Commentary:
-
-            BT_ASSERT(dynamic_cast<sword::VerseKey *>(key));
-            return new CSwordVerseKey(static_cast<sword::VerseKey *>(key),
-                                      module);
-
-        case CSwordModuleInfo::Lexicon:
-
-            return new CSwordLDKey(key, module);
-
-        case CSwordModuleInfo::GenericBook:
-
-            BT_ASSERT(dynamic_cast<sword::TreeKeyIdx *>(key));
-            return new CSwordTreeKey(dynamic_cast<sword::TreeKeyIdx *>(key),
-                                     module );
-
-        default:
-
-            return nullptr;
-
-    }
 }

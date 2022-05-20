@@ -14,6 +14,7 @@
 
 #include <QByteArray>
 #include "../../util/btassert.h"
+#include "../keys/cswordtreekey.h"
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -65,3 +66,6 @@ sword::TreeKeyIdx * CSwordBookModuleInfo::tree() const {
     BT_ASSERT(dynamic_cast<sword::TreeKeyIdx *>(currentKey));
     return static_cast<sword::TreeKeyIdx *>(currentKey);
 }
+
+CSwordKey * CSwordBookModuleInfo::createKey() const
+{ return new CSwordTreeKey(tree(), this); }

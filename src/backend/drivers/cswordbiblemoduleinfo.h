@@ -107,6 +107,8 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
             return m_upperBound;
         }
 
+        CSwordKey * createKey() const final override;
+
     private: // methods:
 
         void initBounds() const;

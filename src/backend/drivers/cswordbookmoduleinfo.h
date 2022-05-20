@@ -46,6 +46,8 @@ public: // Methods:
     */
     sword::TreeKeyIdx * tree() const;
 
+    CSwordKey * createKey() const final override;
+
 private: // Fields:
 
     int const m_depth;
