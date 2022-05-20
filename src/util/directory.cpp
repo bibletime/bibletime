@@ -64,7 +64,7 @@ std::unique_ptr<QDir> cachedSharedSwordDir;  // Directory that AndBible uses
 static const char AND_BIBLE[] = "/sdcard/Android/data/net.bible.android.activity/files";
 #endif
 
-#if defined Q_OS_WIN || defined Q_OS_SYMBIAN
+#if defined Q_OS_WIN
 static const char BIBLETIME[] = "Bibletime";
 static const char SWORD_DIR[] = "Sword";
 #elif defined(Q_OS_MAC)
@@ -188,14 +188,6 @@ bool initDirectoryCache() {
         qWarning() << "No external storage found, use application home.";
         cachedUserHomeDir->setPath(QDir::homePath());
     }
-#elif defined Q_OS_SYMBIAN
-    cachedUserHomeDir.reset(new QDir(QCoreApplication::applicationDirPath()[0] + ":\\"));
-    if (!cachedUserHomeDir->cd("data")) {
-        if(!cachedUserHomeDir->mkpath("data") || !cachedUserHomeDir->cd("data")) {
-            qWarning() << "Could not create user home directory" << cachedUserHomeDir->absolutePath();
-            return false;
-        }
-    }
 #elif defined Q_OS_WIN32
 #define BUFSIZE 4096
     wchar_t homeDir[BUFSIZE];
@@ -224,7 +216,7 @@ bool initDirectoryCache() {
     }
 #endif
 
-#if defined Q_OS_ANDROID || defined Q_OS_SYMBIAN
+#if defined Q_OS_ANDROID
     // help for SWMgr to find the right place
     qputenv(SWORD_PATH, cachedUserHomeSwordDir->absolutePath().toLocal8Bit());
 #endif
