@@ -866,36 +866,27 @@ QString CSwordModuleInfo::aboutText() const {
             .arg(tr("About"))
             .arg(config(AboutInformation)); // May contain HTML, don't escape
 
-    QMap<CSwordModuleInfo::ConfigEntry, QString> entryMap;
-    entryMap[DistributionLicense] = tr("Distribution license");
-    entryMap[DistributionSource] = tr("Distribution source");
-    entryMap[DistributionNotes] = tr("Distribution notes");
-    entryMap[TextSource] = tr("Text source");
-    entryMap[CopyrightNotes] = tr("Copyright notes");
-    entryMap[CopyrightHolder] = tr("Copyright holder");
-    entryMap[CopyrightDate] = tr("Copyright date");
-    entryMap[CopyrightContactName] = tr("Copyright contact name");
-    entryMap[CopyrightContactAddress] = tr("Copyright contact address");
-    entryMap[CopyrightContactEmail] = tr("Copyright contact email");
-
     text += ("<hr><table>");
 
-    static auto const entries = {
-        DistributionLicense,
-        DistributionSource,
-        DistributionNotes,
-        TextSource,
-        CopyrightNotes,
-        CopyrightHolder,
-        CopyrightDate,
-        CopyrightContactName,
-        CopyrightContactAddress,
-        CopyrightContactEmail
+    struct Entry { ConfigEntry const type; char const * const text; };
+    auto const entries = {
+        Entry{DistributionLicense, QT_TR_NOOP("Distribution license")},
+        Entry{DistributionSource, QT_TR_NOOP("Distribution source")},
+        Entry{DistributionNotes, QT_TR_NOOP("Distribution notes")},
+        Entry{TextSource, QT_TR_NOOP("Text source")},
+        Entry{CopyrightNotes, QT_TR_NOOP("Copyright notes")},
+        Entry{CopyrightHolder, QT_TR_NOOP("Copyright holder")},
+        Entry{CopyrightDate, QT_TR_NOOP("Copyright date")},
+        Entry{CopyrightContactName, QT_TR_NOOP("Copyright contact name")},
+        Entry{CopyrightContactAddress, QT_TR_NOOP("Copyright contact address")},
+        Entry{CopyrightContactEmail, QT_TR_NOOP("Copyright contact email")},
     };
-    for (auto const entry : entries)
-        if (!config(entry).isEmpty())
-            text += row.arg(entryMap[entry].toHtmlEscaped())
-                       .arg(config(entry).toHtmlEscaped());
+    for (auto const & entry : entries) {
+        auto const value = config(entry.type);
+        if (!value.isEmpty())
+            text += row.arg(tr(entry.text).toHtmlEscaped())
+                       .arg(value.toHtmlEscaped());
+    }
 
     text += "</table></font>";
 
