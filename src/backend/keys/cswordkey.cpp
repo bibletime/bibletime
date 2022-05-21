@@ -58,8 +58,7 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
     BT_ASSERT(m_module);
 
     auto & m = m_module->swordModule();
-    sword::VerseKey * vk_mod = dynamic_cast<sword::VerseKey *>(m.getKey());
-    if (vk_mod)
+    if (auto * const vk_mod = dynamic_cast<sword::VerseKey *>(m.getKey()))
         vk_mod->setIntros(true);
 
     m.getKey()->setText(rawKey());
