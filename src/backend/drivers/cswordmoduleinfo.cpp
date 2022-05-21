@@ -26,6 +26,7 @@
 #include <QTextDocument>
 #include <string>
 #include <string_view>
+#include <type_traits>
 #include "../../util/btassert.h"
 #include "../../util/cresmgr.h"
 #include "../../util/directory.h"
@@ -834,18 +835,11 @@ QString CSwordModuleInfo::aboutText() const {
     }
 
     QString options;
-
-    unsigned int opts;
-
-    for (opts = CSwordModuleInfo::filterTypesMIN;
-         opts <= CSwordModuleInfo::filterTypesMAX;
-         ++opts)
-    {
-        if (has(static_cast < CSwordModuleInfo::FilterTypes > (opts))) {
+    for (auto const filterType : FilterTypes_E) {
+        if (has(filterType)) {
             if (!options.isEmpty())
                 options += QString::fromLatin1(", ");
-            using FT = CSwordModuleInfo::FilterTypes;
-            options += CSwordBackend::translatedOptionName(static_cast<FT>(opts));
+            options += CSwordBackend::translatedOptionName(filterType);
         }
     }
 

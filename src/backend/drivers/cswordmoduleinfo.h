@@ -21,6 +21,7 @@
 #include <QString>
 #include <QtGlobal>
 #include <vector>
+#include "../../util/btenum.h"
 #include "../cswordmodulesearch.h"
 #include "../language.h"
 
@@ -59,7 +60,7 @@ public: // types:
      * These are the options which could be supported by modules and by this backend.
      * It's used in @ref CSwordBackend::setOption.
      */
-    enum FilterTypes {
+    BT_ENUM(FilterTypes,
         footnotes, /**< Footnotes embedded in the module's text */
         strongNumbers, /**< strong numbers, usually in the text for the info display */
         headings, /**< additional section headings */
@@ -72,10 +73,7 @@ public: // types:
         redLetterWords, /**< Jesus words in red, color is template specific */
         textualVariants, /**< variants */
         morphSegmentation, /**< morph word segmentation, supported by OSIS */
-        filterTypesMIN = footnotes, /**< first entry of this enum */
-        filterTypesMAX = morphSegmentation /**< last item in this enum */
-        //     transliteration /* The following are handled in a special way */
-    };
+    );
 
     /** The text direction of a module */
     enum TextDirection { /* The text direction of the modules's text */
