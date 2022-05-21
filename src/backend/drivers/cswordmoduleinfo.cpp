@@ -970,29 +970,6 @@ QString CSwordModuleInfo::categoryName(const CSwordModuleInfo::Category & catego
     }
 }
 
-QString CSwordModuleInfo::englishCategoryName(const CSwordModuleInfo::Category & category) {
-    switch (category) {
-        case CSwordModuleInfo::Bibles:
-            return "Bibles";
-        case CSwordModuleInfo::Commentaries:
-            return "Commentaries";
-        case CSwordModuleInfo::Books:
-            return "Books";
-        case CSwordModuleInfo::Cult:
-            return "Cults/Unorthodox";
-        case CSwordModuleInfo::Images:
-            return "Maps and Images";
-        case CSwordModuleInfo::DailyDevotional:
-            return "Daily Devotionals";
-        case CSwordModuleInfo::Lexicons:
-            return  "Lexicons and Dictionaries";
-        case CSwordModuleInfo::Glossary:
-            return "Glossaries";
-        default:
-            return "Unknown";
-    }
-}
-
 QString CSwordModuleInfo::getSimpleConfigEntry(const QString & name) const {
     QString ret = isUnicode()
                   ? QString::fromUtf8(m_swordModule.getConfigEntry(name.toUtf8().constData()))
