@@ -880,7 +880,7 @@ QString CSwordModuleInfo::aboutText() const {
 
     text += ("<hr><table>");
 
-    static CSwordModuleInfo::ConfigEntry const entries[] = {
+    static auto const entries = {
         DistributionLicense,
         DistributionSource,
         DistributionNotes,
@@ -892,13 +892,10 @@ QString CSwordModuleInfo::aboutText() const {
         CopyrightContactAddress,
         CopyrightContactEmail
     };
-    for (CSwordModuleInfo::ConfigEntry const * it = &entries[0u];
-         it != &entries[sizeof(entries) / sizeof(entries[0u])];
-         ++it)
-        if (!config(*it).isEmpty())
-            text += row
-                    .arg(entryMap[*it].toHtmlEscaped())
-                    .arg(config(*it).toHtmlEscaped());
+    for (auto const entry : entries)
+        if (!config(entry).isEmpty())
+            text += row.arg(entryMap[entry].toHtmlEscaped())
+                       .arg(config(entry).toHtmlEscaped());
 
     text += "</table></font>";
 
