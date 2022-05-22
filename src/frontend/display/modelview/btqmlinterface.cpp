@@ -61,13 +61,6 @@ BtQmlInterface::BtQmlInterface(QObject* parent)
 BtQmlInterface::~BtQmlInterface() {
 }
 
-static bool moduleIsBook(const CSwordModuleInfo* module) {
-    CSwordModuleInfo::ModuleType moduleType = module->type();
-    if (moduleType == CSwordModuleInfo::GenericBook)
-        return true;
-    return false;
-}
-
 static bool moduleIsBibleOrCommentary(const CSwordModuleInfo* module) {
     CSwordModuleInfo::ModuleType moduleType = module->type();
     if (moduleType == CSwordModuleInfo::Bible ||
@@ -123,7 +116,7 @@ int BtQmlInterface::getCurrentModelIndex() const {
         int index = m_moduleTextModel->verseKeyToIndex(*verseKey);
         return index;
     }
-    else if (moduleIsBook(module())) {
+    else if (module()->type() == CSwordModuleInfo::GenericBook) {
         const CSwordBookModuleInfo *m = qobject_cast<const CSwordBookModuleInfo*>(module());
         CSwordTreeKey key(m->tree(), m);
         QString keyName = m_swordKey->key();
