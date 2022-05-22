@@ -466,15 +466,12 @@ void BtQmlInterface::copyVerseRange(QString const & ref1,
                             displayOptions,
                             filterOptions);
             }();
-    if (vk.isBoundSet()) {
-        QGuiApplication::clipboard()->setText(
-                    render->renderKeyRange(vk.lowerBound(),
-                                           vk.upperBound(),
-                                           {&module}));
-    } else {
-        QGuiApplication::clipboard()->setText(
-                    render->renderSingleKey(vk.key(), {&module}));
-    }
+    QGuiApplication::clipboard()->setText(
+                vk.isBoundSet()
+                ? render->renderKeyRange(vk.lowerBound(),
+                                         vk.upperBound(),
+                                         {&module})
+                : render->renderSingleKey(vk.key(), {&module}));
 }
 
 QString BtQmlInterface::getHighlightWords() const {
