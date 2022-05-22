@@ -123,9 +123,6 @@ public: // methods:
     */
     void installPopup(QMenu * const popup) { m_popup = popup; }
 
-    /** \returns the popup menu which was set by installPopupMenu() */
-    QMenu * installedPopup() { return m_popup; }
-
     /**
        \param[in] format The format to use for the text.
        \param[in] part The part of the text to return.

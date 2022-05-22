@@ -296,9 +296,8 @@ void BtModelViewReadDisplay::contextMenu(QContextMenuEvent* event) {
     QString lemma = m_widget->qmlInterface()->getLemmaFromLink(activeLink);
     setLemma(lemma);
 
-    if (QMenu* popup = installedPopup()) {
-        popup->exec(event->globalPos());
-    }
+    if (m_popup)
+        m_popup->exec(event->globalPos());
 }
 
 BtQmlInterface * BtModelViewReadDisplay::qmlInterface() const {
