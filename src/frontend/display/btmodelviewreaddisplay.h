@@ -165,9 +165,6 @@ public: // methods:
 
     BtQuickWidget * quickWidget() { return m_widget->quickWidget(); }
 
-    BtQuickWidget const * quickWidget() const
-    { return m_widget->quickWidget(); }
-
     BtQmlInterface * qmlInterface() const;
 
     /** \returns whether the display has an active anchor. */
