@@ -196,6 +196,5 @@ private: // fields:
     QString m_nodeInfo;
 
     BtQmlScrollView* m_widget;
-    QString m_currentAnchorCache;
 
 };
