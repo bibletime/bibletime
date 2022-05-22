@@ -68,13 +68,6 @@ static bool moduleIsBook(const CSwordModuleInfo* module) {
     return false;
 }
 
-static bool moduleIsLexicon(const CSwordModuleInfo* module) {
-    CSwordModuleInfo::ModuleType moduleType = module->type();
-    if (moduleType == CSwordModuleInfo::Lexicon)
-        return true;
-    return false;
-}
-
 static bool moduleIsBibleOrCommentary(const CSwordModuleInfo* module) {
     CSwordModuleInfo::ModuleType moduleType = module->type();
     if (moduleType == CSwordModuleInfo::Bible ||
@@ -140,7 +133,7 @@ int BtQmlInterface::getCurrentModelIndex() const {
         if(p != key)
             return static_cast<int>(key.offset() / 4u); /// \todo Check range!
     }
-    else if (moduleIsLexicon(module())){
+    else if (module()->type() == CSwordModuleInfo::Lexicon) {
         const CSwordLexiconModuleInfo *li =
                 qobject_cast<const CSwordLexiconModuleInfo*>(m_swordKey->module());
         int index = li->entries().indexOf(m_swordKey->key());
