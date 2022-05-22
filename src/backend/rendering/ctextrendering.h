@@ -127,16 +127,16 @@ class CTextRendering {
 
         virtual ~CTextRendering() {}
 
-        const QString renderKeyTree(const KeyTree &tree);
+        QString renderKeyTree(const KeyTree &tree);
 
-        const QString renderKeyRange(
+        QString renderKeyRange(
                 CSwordVerseKey const & lowerBound,
                 CSwordVerseKey const & upperBound,
                 const BtConstModuleList &modules,
                 const QString &hightlightKey = QString(),
                 const KeyTreeItem::Settings &settings = KeyTreeItem::Settings());
 
-        const QString renderSingleKey(
+        QString renderSingleKey(
                 const QString &key,
                 const BtConstModuleList &modules,
                 const KeyTreeItem::Settings &settings = KeyTreeItem::Settings());

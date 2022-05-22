@@ -153,7 +153,7 @@ BtConstModuleList CTextRendering::collectModules(const KeyTree &tree) const {
     return modules;
 }
 
-const QString CTextRendering::renderKeyTree(const KeyTree &tree) {
+QString CTextRendering::renderKeyTree(const KeyTree &tree) {
     //CSwordBackend::instance()()->setDisplayOptions( m_displayOptions );
     CSwordBackend::instance()->setFilterOptions(m_filterOptions);
 
@@ -177,7 +177,7 @@ const QString CTextRendering::renderKeyTree(const KeyTree &tree) {
     return finishText(t, tree);
 }
 
-const QString CTextRendering::renderKeyRange(
+QString CTextRendering::renderKeyRange(
         CSwordVerseKey const & lowerBound,
         CSwordVerseKey const & upperBound,
         const BtConstModuleList &modules,
@@ -219,7 +219,7 @@ const QString CTextRendering::renderKeyRange(
     return renderKeyTree(tree);
 }
 
-const QString CTextRendering::renderSingleKey(
+QString CTextRendering::renderSingleKey(
         const QString &key,
         const BtConstModuleList &modules,
         const KeyTreeItem::Settings &settings)
