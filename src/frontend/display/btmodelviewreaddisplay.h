@@ -188,9 +188,6 @@ private: /* Methods: */
 
     void copyAsPlainText(TextPart const part);
 
-Q_SIGNALS:
-    void completed();
-
 private: // fields:
 
     CDisplayWindow* m_parentWindow;
