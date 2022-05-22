@@ -226,19 +226,14 @@ BtModelViewReadDisplay::text(TextType const format, TextPart const part) {
             BT_ASSERT(module->type() == CSwordModuleInfo::Lexicon ||
                       module->type() == CSwordModuleInfo::Commentary ||
                       module->type() == CSwordModuleInfo::GenericBook);
-            if (module->type() == CSwordModuleInfo::Lexicon ||
-                    module->type() == CSwordModuleInfo::Commentary ||
-                    module->type() == CSwordModuleInfo::GenericBook) {
+            FilterOptions filterOptions;
+            CSwordBackend::instance()->setFilterOptions(filterOptions);
 
-                FilterOptions filterOptions;
-                CSwordBackend::instance()->setFilterOptions(filterOptions);
-
-                text = QString(key->strippedText()).append("\n(")
-                        .append(key->key())
-                        .append(", ")
-                        .append(key->module()->name())
-                        .append(")");
-            }
+            text = QString(key->strippedText()).append("\n(")
+                    .append(key->key())
+                    .append(", ")
+                    .append(key->module()->name())
+                    .append(")");
         }
         break;
     }
