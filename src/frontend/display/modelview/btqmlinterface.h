@@ -19,7 +19,6 @@
 #include <QObject>
 #include <QMap>
 #include <QString>
-#include <QTimer>
 #include "../../../backend/rendering/ctextrendering.h"
 #include "bttextfilter.h"
 
@@ -188,6 +187,5 @@ private:
     int m_contextMenuColumn;
     QString m_activeLink;
     std::optional<FindState> m_findState;
-    QTimer m_timer;
     QMap<int, QString> m_selectedText;
 };
