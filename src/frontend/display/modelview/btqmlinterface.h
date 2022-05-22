@@ -57,8 +57,6 @@ class BtQmlInterface : public QObject {
     Q_PROPERTY(QColor       foregroundColor         READ getForegroundColor NOTIFY foregroundColorChanged)
     Q_PROPERTY(QString      highlightWords          READ getHighlightWords NOTIFY highlightWordsChanged)
     Q_PROPERTY(int          numModules              READ getNumModules NOTIFY numModulesChanged)
-    Q_PROPERTY(bool         pageDown                READ getPageDown   NOTIFY pageDownChanged)
-    Q_PROPERTY(bool         pageUp                  READ getPageUp     NOTIFY pageUpChanged)
     Q_PROPERTY(double       pixelsPerMM             READ getPixelsPerMM NOTIFY pixelsPerMMChanged)
     Q_PROPERTY(QVariant     textModel               READ getTextModel NOTIFY textModelChanged)
 
@@ -117,8 +115,6 @@ public:
     CSwordKey* getMouseClickedKey() const;
     QString getLemmaFromLink(const QString& url);
     int getNumModules() const;
-    bool getPageDown() const;
-    bool getPageUp() const;
     double getPixelsPerMM() const;
     QString getSelectedText();
     QVariant getTextModel();

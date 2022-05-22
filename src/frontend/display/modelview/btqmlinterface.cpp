@@ -123,14 +123,6 @@ int BtQmlInterface::getNumModules() const {
     return m_moduleNames.count();
 }
 
-bool BtQmlInterface::getPageDown() const {
-    return true;
-}
-
-bool BtQmlInterface::getPageUp() const {
-    return true;
-}
-
 double BtQmlInterface::getPixelsPerMM() const {
     QScreen* screen = QGuiApplication::screens().at(0);
     double millimeterPerInch = 25.4;
