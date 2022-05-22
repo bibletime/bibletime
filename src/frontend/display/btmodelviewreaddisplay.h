@@ -64,11 +64,6 @@ class BtModelViewReadDisplay : public QWidget {
 
 public: // types:
 
-    enum TextType {
-        HTMLText, /* Used for HTML markup */
-        PlainText /* Plain text without links etc. */
-    };
-
     enum TextPart {
         Document, /* All text */
         SelectedText, /* Only the selected text */
@@ -87,7 +82,7 @@ public: // methods:
     void copyAnchorOnly() { copyAsPlainText(AnchorOnly); }
     void copyAnchorTextOnly() { copyAsPlainText(AnchorTextOnly); }
     void copyAnchorWithText() { copyAsPlainText(AnchorWithText); }
-    void saveAnchorWithText() { save(PlainText, AnchorWithText); }
+    void saveAnchorWithText() { save(AnchorWithText); }
     void copyAll() { copyAsPlainText(Document); }
 
     /** \brief Copies the currently selected text. */
@@ -103,7 +98,7 @@ public: // methods:
         \brief Saves the given text with the specified format into the
                applications clipboard.
     */
-    bool save(TextType const format, TextPart const part);
+    void save(TextPart const part);
 
     void print(TextPart const,
                DisplayOptions const & displayOptions,
@@ -128,8 +123,7 @@ public: // methods:
        \param[in] part The part of the text to return.
        \returns the right text part in the specified format.
     */
-    QString text(TextType const format = HTMLText,
-                 TextPart const part = Document);
+    QString text(TextPart const part = Document);
 
     void reloadModules();
 
@@ -143,8 +137,6 @@ public: // methods:
     // --------------------
 
     void contextMenu(QContextMenuEvent * event);
-
-    QString getCurrentSource() { return m_currentSource; }
 
     void highlightText(const QString& text, bool caseSensitive);
 
@@ -190,8 +182,6 @@ private: // fields:
     CDisplayWindow* m_parentWindow;
     QMenu* m_popup;
     QString m_activeAnchor; //< Holds the current anchor
-
-    QString m_currentSource;
 
     QString m_nodeInfo;
 

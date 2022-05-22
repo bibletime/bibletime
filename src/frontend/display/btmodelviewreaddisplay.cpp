@@ -99,7 +99,7 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
 BtModelViewReadDisplay::~BtModelViewReadDisplay() = default;
 
 void BtModelViewReadDisplay::copyAsPlainText(TextPart const part)
-{ QGuiApplication::clipboard()->setText(text(PlainText, part)); }
+{ QGuiApplication::clipboard()->setText(text(part)); }
 
 void BtModelViewReadDisplay::copySelectedText()
 { QGuiApplication::clipboard()->setText(qmlInterface()->getSelectedText()); }
@@ -122,25 +122,16 @@ void BtModelViewReadDisplay::copyByReferences() {
     }
 }
 
-bool BtModelViewReadDisplay::save(TextType const format, TextPart const part) {
-    const QString content = text(format, part);
-    QString filter;
-    switch (format) {
-    case HTMLText:
-        filter = QObject::tr("HTML files") + " (*.html *.htm);;";
-        break;
-    case PlainText:
-        filter = QObject::tr("Text files") + " (*.txt);;";
-        break;
-    }
-    filter += QObject::tr("All files") + " (*)";
-
-    const QString filename = QFileDialog::getSaveFileName(nullptr, QObject::tr("Save document ..."), "", filter);
-
-    if (!filename.isEmpty()) {
-        util::tool::savePlainFile(filename, content);
-    }
-    return true;
+void BtModelViewReadDisplay::save(TextPart const part) {
+    auto const filename =
+            QFileDialog::getSaveFileName(
+                nullptr,
+                QObject::tr("Save document ..."),
+                "",
+                QObject::tr("Text files") + " (*.txt);;"
+                + QObject::tr("All files") + " (*)");
+    if (!filename.isEmpty())
+        util::tool::savePlainFile(filename, text(part));
 }
 
 void BtModelViewReadDisplay::print(TextPart const type,
@@ -210,31 +201,26 @@ void BtModelViewReadDisplay::reloadModules() {
 }
 
 QString
-BtModelViewReadDisplay::text(TextType const format, TextPart const part) {
+BtModelViewReadDisplay::text(TextPart const part) {
     QString text;
     switch (part) {
     case Document: {
-        if (format == HTMLText) {
-            text = m_currentSource;
-        }
-        else {
-            CSwordKey* const key = m_parentWindow->key();
-            const CSwordModuleInfo *module = key->module();
-            //This is never used for Bibles, so it is not implemented for
-            //them.  If it should be, see CReadDisplay::print() for example
-            //code.
-            BT_ASSERT(module->type() == CSwordModuleInfo::Lexicon ||
-                      module->type() == CSwordModuleInfo::Commentary ||
-                      module->type() == CSwordModuleInfo::GenericBook);
-            FilterOptions filterOptions;
-            CSwordBackend::instance()->setFilterOptions(filterOptions);
+        CSwordKey* const key = m_parentWindow->key();
+        const CSwordModuleInfo *module = key->module();
+        //This is never used for Bibles, so it is not implemented for
+        //them.  If it should be, see CReadDisplay::print() for example
+        //code.
+        BT_ASSERT(module->type() == CSwordModuleInfo::Lexicon ||
+                  module->type() == CSwordModuleInfo::Commentary ||
+                  module->type() == CSwordModuleInfo::GenericBook);
+        FilterOptions filterOptions;
+        CSwordBackend::instance()->setFilterOptions(filterOptions);
 
-            text = QString(key->strippedText()).append("\n(")
-                    .append(key->key())
-                    .append(", ")
-                    .append(key->module()->name())
-                    .append(")");
-        }
+        text = QString(key->strippedText()).append("\n(")
+                .append(key->key())
+                .append(", ")
+                .append(key->module()->name())
+                .append(")");
         break;
     }
 

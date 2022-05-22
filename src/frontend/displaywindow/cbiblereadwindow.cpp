@@ -25,7 +25,6 @@
 #include "../../util/directory.h"
 #include "../../util/cresmgr.h"
 #include "../../util/tool.h"
-#include "../bibletimeapp.h"
 #include "../cexportmanager.h"
 #include "../cmdiarea.h"
 #include "../display/btmodelviewreaddisplay.h"
@@ -218,14 +217,6 @@ void CBibleReadWindow::setupPopupMenu() {
     m_actions.saveMenu->addAction(m_actions.save.referenceAndText);
     m_actions.saveMenu->addAction(m_actions.save.chapterAsPlain);
     m_actions.saveMenu->addAction(m_actions.save.chapterAsHTML);
-
-    // Save raw HTML action for debugging purposes
-    if (btApp->debugMode()) {
-        QAction* debugAction = new QAction("Raw HTML", this);
-        BT_CONNECT(debugAction, &QAction::triggered,
-                   this,        &CBibleReadWindow::saveRawHTML);
-        m_actions.saveMenu->addAction(debugAction);
-    } // end of Save Raw HTML
     popup()->addMenu(m_actions.saveMenu);
 
     m_actions.printMenu = new QMenu(tr("Print..."), popup());

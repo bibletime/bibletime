@@ -26,7 +26,6 @@
 #include "../../util/cresmgr.h"
 #include "../../util/tool.h"
 #include "../bibletime.h"
-#include "../bibletimeapp.h"
 #include "../cexportmanager.h"
 #include "../cmdiarea.h"
 #include "../display/btmodelviewreaddisplay.h"
@@ -527,14 +526,6 @@ void CDisplayWindow::setupPopupMenu() {
     m_actions.saveMenu->addAction(m_actions.save.entryAsPlain);
     m_actions.saveMenu->addAction(m_actions.save.entryAsHTML);
 
-    // Save raw HTML action for debugging purposes
-    if (btApp->debugMode()) {
-        QAction* debugAction = new QAction("Raw HTML", this);
-        BT_CONNECT(debugAction, &QAction::triggered,
-                   this,        &CDisplayWindow::saveRawHTML);
-        m_actions.saveMenu->addAction(debugAction);
-    } // end of Save Raw HTML
-
     popup()->addMenu(m_actions.saveMenu);
 
     m_actions.printMenu = new QMenu(
@@ -885,27 +876,3 @@ void CDisplayWindow::printAll()
 
 void CDisplayWindow::printAnchorWithText()
 { m_displayWidget->printAnchorWithText(m_displayOptions, m_filterOptions); }
-
-/** Saving the raw HTML for debugging purposes */
-void CDisplayWindow::saveRawHTML() {
-    auto const savefilename =
-            QFileDialog::getSaveFileName(
-                nullptr,
-                QObject::tr("Save file"),
-                "",
-                QObject::tr("HTML files") + " (*.html *.htm);;"
-                + QObject::tr("All files") + " (*)");
-    if (savefilename.isEmpty())
-        return;
-    if (m_displayWidget) {
-        QFile file(savefilename);
-        if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-            qWarning() << "saveRawHTML: could not open file" << savefilename;
-            return;
-        }
-        QString source = m_displayWidget->getCurrentSource();
-        file.write(source.toUtf8());
-        file.close();
-        file.flush();
-    }
-}

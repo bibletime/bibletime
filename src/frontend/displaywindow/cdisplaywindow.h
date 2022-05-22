@@ -261,8 +261,6 @@ protected Q_SLOTS:
 
     void printAnchorWithText();
 
-    void saveRawHTML();
-
 private: // methods:
 
     template <typename Name, typename ... Args>
