@@ -15,7 +15,7 @@
 #include <QApplication>
 #include <QClipboard>
 #include <QScreen>
-#include <QTimer>
+#include <QTimerEvent>
 #include <utility>
 #include "../../../backend/config/btconfig.h"
 #include "../../../backend/drivers/cswordbookmoduleinfo.h"
@@ -39,23 +39,12 @@
 BtQmlInterface::BtQmlInterface(QObject* parent)
     : QObject(parent),
       m_firstHref(false),
-      m_linkTimer(new QTimer(this)),
       m_moduleTextModel(new BtModuleTextModel(this)),
       m_swordKey(nullptr),
       m_backgroundHighlightColorIndex(-1),
       m_caseSensitive(false) {
 
     m_moduleTextModel->setTextFilter(&m_textFilter);
-    m_linkTimer->setSingleShot(true);
-
-    BT_CONNECT(m_linkTimer, &QTimer::timeout,
-               [this] {
-                   auto infoList(Rendering::detectInfo(
-                                     getReferenceFromUrl(m_timeoutUrl)));
-                   if (!infoList.isEmpty())
-                       BibleTime::instance()->infoDisplay()->setInfo(
-                                   std::move(infoList));
-               });
 }
 
 BtQmlInterface::~BtQmlInterface() {
@@ -248,14 +237,19 @@ void BtQmlInterface::setRawText(int row, int column, const QString& text) {
 }
 
 void BtQmlInterface::cancelMagTimer() {
-    m_linkTimer->stop();
+    if (m_linkTimerId) {
+        killTimer(*m_linkTimerId);
+        m_linkTimerId.reset();
+    }
 }
 
 void BtQmlInterface::setMagReferenceByUrl(const QString& url) {
     if (url.isEmpty())
         return;
     m_timeoutUrl = url;
-    m_linkTimer->start(400);
+    cancelMagTimer();
+    if (auto const timerId = startTimer(400))
+        m_linkTimerId.emplace(timerId);
 }
 
 void BtQmlInterface::settingsChanged() {
@@ -500,6 +494,18 @@ void BtQmlInterface::slotSetHighlightWords() {
     m_moduleTextModel->setFindState(m_findState);
     Q_EMIT highlightWordsChanged();
     QApplication::restoreOverrideCursor();
+}
+
+void BtQmlInterface::timerEvent(QTimerEvent * const event) {
+    if (m_linkTimerId && event->timerId() == *m_linkTimerId) {
+        event->accept();
+        cancelMagTimer();
+        auto infoList(Rendering::detectInfo(getReferenceFromUrl(m_timeoutUrl)));
+        if (!infoList.isEmpty())
+            BibleTime::instance()->infoDisplay()->setInfo(std::move(infoList));
+    } else {
+        QObject::timerEvent(event);
+    }
 }
 
 void BtQmlInterface::findText(const QString& /*text*/,

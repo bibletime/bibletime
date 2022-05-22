@@ -26,7 +26,6 @@
 class CSwordKey;
 class CSwordModuleInfo;
 
-class QTimer;
 class RoleItemModel;
 
 /**
@@ -159,6 +158,10 @@ Q_SIGNALS:
     void updateReference(const QString& reference);
     void dragOccuring(const QString& moduleName, const QString& keyName);
 
+protected: // Methods:
+
+    void timerEvent(QTimerEvent * event) final override;
+
 private Q_SLOTS:
     void slotSetHighlightWords();
 
@@ -171,8 +174,10 @@ private:
     const CSwordModuleInfo* module() const;
     QString stripHtml(const QString& html);
 
+private: // Fields:
+
     bool m_firstHref;
-    QTimer* m_linkTimer;
+    std::optional<int> m_linkTimerId;
     BtModuleTextModel* m_moduleTextModel;
     CSwordKey* m_swordKey;
 
