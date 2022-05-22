@@ -61,16 +61,10 @@ BtQmlInterface::BtQmlInterface(QObject* parent)
 BtQmlInterface::~BtQmlInterface() {
 }
 
-static bool moduleIsBibleOrCommentary(const CSwordModuleInfo* module) {
-    CSwordModuleInfo::ModuleType moduleType = module->type();
-    if (moduleType == CSwordModuleInfo::Bible ||
-            moduleType == CSwordModuleInfo::Commentary)
-        return true;
-    return false;
-}
-
 bool BtQmlInterface::isBibleOrCommentary() {
-    return moduleIsBibleOrCommentary(module());
+    auto const moduleType = module()->type();
+    return moduleType == CSwordModuleInfo::Bible
+            || moduleType == CSwordModuleInfo::Commentary;
 }
 
 void BtQmlInterface::setFilterOptions(FilterOptions filterOptions) {
@@ -111,12 +105,14 @@ QColor BtQmlInterface::getForegroundColor() const
 int BtQmlInterface::getCurrentModelIndex() const {
     if (m_swordKey == nullptr)
         return 0;
-    if (moduleIsBibleOrCommentary(module())) {
+    auto const moduleType = module()->type();
+    if (moduleType == CSwordModuleInfo::Bible
+        || moduleType == CSwordModuleInfo::Commentary)
+    {
         CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_swordKey);
         int index = m_moduleTextModel->verseKeyToIndex(*verseKey);
         return index;
-    }
-    else if (module()->type() == CSwordModuleInfo::GenericBook) {
+    } else if (moduleType == CSwordModuleInfo::GenericBook) {
         const CSwordBookModuleInfo *m = qobject_cast<const CSwordBookModuleInfo*>(module());
         CSwordTreeKey key(m->tree(), m);
         QString keyName = m_swordKey->key();
@@ -125,8 +121,7 @@ int BtQmlInterface::getCurrentModelIndex() const {
         p.positionToRoot();
         if(p != key)
             return static_cast<int>(key.offset() / 4u); /// \todo Check range!
-    }
-    else if (module()->type() == CSwordModuleInfo::Lexicon) {
+    } else if (moduleType == CSwordModuleInfo::Lexicon) {
         const CSwordLexiconModuleInfo *li =
                 qobject_cast<const CSwordLexiconModuleInfo*>(m_swordKey->module());
         int index = li->entries().indexOf(m_swordKey->key());
