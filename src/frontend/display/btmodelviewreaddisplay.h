@@ -197,7 +197,6 @@ private: // fields:
     QString m_currentSource;
 
     QString m_nodeInfo;
-    int m_magTimerId;
 
     BtQmlScrollView* m_widget;
     QString m_currentAnchorCache;

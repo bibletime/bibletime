@@ -50,7 +50,6 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
     : QWidget(parentWidget)
     , m_parentWindow(displayWindow)
     , m_popup(nullptr)
-    , m_magTimerId(0)
     , m_widget(nullptr)
 {
     setObjectName("BtModelViewReadDisplay");
