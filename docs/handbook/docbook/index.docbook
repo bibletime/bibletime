@@ -5,7 +5,6 @@
   <!ENTITY bibletime '<application>BibleTime</application>'>
   <!ENTITY sword '<application>SWORD</application>'>
   <!ENTITY cbs '<application>Crosswire Bible Society</application>'>
-  <!ENTITY kde '<application>KDE</application>'>
   <!ENTITY qt '<application>Qt</application>'>
 
   <!ENTITY Shift 'Shift'>
