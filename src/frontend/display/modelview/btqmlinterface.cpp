@@ -285,14 +285,14 @@ void BtQmlInterface::setKey( CSwordKey* key ) {
     m_swordKey = key;
 }
 
-void BtQmlInterface::setKeyFromLink(const QString& link) {
+void BtQmlInterface::setBibleKey(const QString& link) {
     QRegExp rx("sword://Bible/(.*)/(.*)\\|\\|(.*)=(.*)");
     rx.setMinimal(false);
     int pos1 = rx.indexIn(link);
     QString keyName;
     if (pos1 > -1) {
         keyName = rx.cap(2);
-        Q_EMIT newBibleReference(keyName);
+        Q_EMIT setBibleReference(keyName);
     }
 }
 

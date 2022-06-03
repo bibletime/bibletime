@@ -85,7 +85,7 @@ Rectangle {
         if ((Math.abs(mousePressedX - x) < dragDistance) && (Math.abs(mousePressedY - y) < dragDistance)) {
             return;
         }
-        if (isCrossReference(pressedLink)) {
+        if (isBibleReference(pressedLink)) {
             // Start drag operation for cross reference link
             if (!draggingInProgress) {
                 draggingInProgress = true;
@@ -116,12 +116,12 @@ Rectangle {
         deselectByItem();
         if (openPersonalCommentary(mousePressedX, mousePressedY))
             return;
-        if (! isCrossReference(pressedLink))
+        if (! isBibleReference(pressedLink))
             return;
-        btQmlInterface.setKeyFromLink(pressedLink);
+        btQmlInterface.setBibleKey(pressedLink);
     }
 
-    function isCrossReference(url) {
+    function isBibleReference(url) {
         if (url === "" || url.includes("lemmamorph") || url.includes("footnote"))
             return false;
         return true;

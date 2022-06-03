@@ -73,7 +73,7 @@ public:
     Q_INVOKABLE void clearSelectedText();
     Q_INVOKABLE bool hasSelectedText();
     Q_INVOKABLE void saveSelectedText(int index, const QString& text);
-    Q_INVOKABLE void setKeyFromLink(const QString& link);
+    Q_INVOKABLE void setBibleKey(const QString& link);
     Q_INVOKABLE int indexToVerse(int index);
     Q_INVOKABLE void setHoveredLink(QString const & link);
 
@@ -148,7 +148,7 @@ Q_SIGNALS:
     void pageUpChanged();
     void pixelsPerMMChanged();
     void positionItemOnScreen(int index);
-    void newBibleReference(const QString& reference);
+    void setBibleReference(const QString& reference);
     void textChanged();
     void textModelChanged();
     void updateReference(const QString& reference);
