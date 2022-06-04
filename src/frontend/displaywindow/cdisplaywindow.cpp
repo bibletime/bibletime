@@ -33,6 +33,7 @@
 #include "../display/modelview/btquickwidget.h"
 #include "../keychooser/ckeychooser.h"
 #include "../keychooser/bthistory.h"
+#include "../messagedialog.h"
 #include "bttoolbarpopupaction.h"
 #include "btmodulechooserbar.h"
 #include "btdisplaysettingsbutton.h"
@@ -668,6 +669,22 @@ void CDisplayWindow::slotRemoveModule(int index) {
     lookup();
     modulesChanged();
     Q_EMIT sigModuleListChanged();
+}
+
+void CDisplayWindow::setBibleReference(const QString& reference) {
+    if (moduleType() == CSwordModuleInfo::Bible) {
+        lookupKey(reference);
+        return;
+    }
+    CSwordModuleInfo* bibleModule = btConfig().getDefaultSwordModuleByType("standardBible");
+    if (bibleModule) {
+        BibleTime *mainWindow = btMainWindow();
+        BT_ASSERT(mainWindow);
+        mainWindow->createReadDisplayWindow(bibleModule, reference);
+        return;
+    }
+    message::showInformation(this, tr("Choose Standard Bible"),
+                             tr("Please choose a Bible in the Settings > Configure dialog."));
 }
 
 /** Sets the keychooser widget for this display window. */

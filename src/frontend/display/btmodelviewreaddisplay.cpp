@@ -94,6 +94,12 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
                    key->setKey(reference);
                    m_parentWindow->lookupKey(reference);
                });
+    BT_CONNECT(m_widget->qmlInterface(), &BtQmlInterface::setBibleReference,
+               this, &BtModelViewReadDisplay::setBibleReference);
+}
+
+void BtModelViewReadDisplay::setBibleReference(const QString& reference) {
+    m_parentWindow->setBibleReference(reference);
 }
 
 BtModelViewReadDisplay::~BtModelViewReadDisplay() = default;

@@ -151,6 +151,9 @@ public:
 
     CSwordKey* getMouseClickedKey() const;
 
+    /* set new reference in this module, or open standard bible */
+    void setBibleReference(const QString& reference);
+
 Q_SIGNALS:
     /** The module list was set because backend was reloaded.*/
     void sigModuleListSet(QStringList modules);

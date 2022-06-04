@@ -170,6 +170,10 @@ public: // methods:
     /** \returns whether the display has an active anchor. */
     bool hasActiveAnchor() const { return !m_activeAnchor.isEmpty(); }
 
+private Q_SLOTS:
+
+    void setBibleReference (const QString& reference);
+
 private: /* Methods: */
 
     void copyAsPlainText(TextPart const part);
