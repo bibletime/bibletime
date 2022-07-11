@@ -334,6 +334,8 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
                  : swModule.getEntryAttributes()["Heading"]["Preverse"])
             {
                 auto preverseHeading(QString::fromUtf8(vp.second.c_str()));
+                if (preverseHeading.isEmpty())
+                    continue;
 
                 /// \todo This is only a preliminary workaround to strip the tags:
                 {
