@@ -276,7 +276,6 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
     //declarations out of the loop for optimization
     QString entry;
     bool isRTL;
-    QString preverseHeading;
     QString key_renderedText;
 
     for (auto const & modulePtr : modules) {
@@ -334,26 +333,24 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
             for (auto const & vp
                  : swModule.getEntryAttributes()["Heading"]["Preverse"])
             {
-                QString unfiltered(QString::fromUtf8(vp.second.c_str()));
+                auto preverseHeading(QString::fromUtf8(vp.second.c_str()));
 
                 /// \todo This is only a preliminary workaround to strip the tags:
                 {
                     static QRegExp const staticFilter(
                             "(.*)<title[^>]*>(.*)</title>(.*)");
                     QRegExp filter(staticFilter);
-                    while (filter.indexIn(unfiltered) >= 0)
-                        unfiltered = filter.cap(1) + filter.cap(2) + filter.cap(3);
+                    while (filter.indexIn(preverseHeading) >= 0)
+                        preverseHeading = filter.cap(1) + filter.cap(2) + filter.cap(3);
                 }
 
                 // Filter out offending self-closing div tags, which are bad HTML
                 {
                     static QRegExp const staticFilter("(.*)<div[^>]*/>(.*)");
                     QRegExp filter(staticFilter);
-                    while (filter.indexIn(unfiltered) >= 0)
-                        unfiltered = filter.cap(1) + filter.cap(2);
+                    while (filter.indexIn(preverseHeading) >= 0)
+                        preverseHeading = filter.cap(1) + filter.cap(2);
                 }
-
-                preverseHeading = unfiltered;
 
                 /// \todo Take care of the heading type!
                 if (!preverseHeading.isEmpty()) {
