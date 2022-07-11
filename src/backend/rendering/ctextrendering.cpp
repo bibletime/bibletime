@@ -13,7 +13,7 @@
 #include "ctextrendering.h"
 
 #include <memory>
-#include <QRegExp>
+#include <QStringRef>
 #include <QtAlgorithms>
 #include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
@@ -337,21 +337,58 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
                 if (preverseHeading.isEmpty())
                     continue;
 
-                /// \todo This is only a preliminary workaround to strip the tags:
+                static QString const greaterOrS(">\x20\x09\x0d\x0a");
+                for (auto i = preverseHeading.indexOf('<');
+                     i >= 0;
+                     i = preverseHeading.indexOf('<', i))
                 {
-                    static QRegExp const staticFilter(
-                            "(.*)<title[^>]*>(.*)</title>(.*)");
-                    QRegExp filter(staticFilter);
-                    while (filter.indexIn(preverseHeading) >= 0)
-                        preverseHeading = filter.cap(1) + filter.cap(2) + filter.cap(3);
-                }
-
-                // Filter out offending self-closing div tags, which are bad HTML
-                {
-                    static QRegExp const staticFilter("(.*)<div[^>]*/>(.*)");
-                    QRegExp filter(staticFilter);
-                    while (filter.indexIn(preverseHeading) >= 0)
-                        preverseHeading = filter.cap(1) + filter.cap(2);
+                    auto ref = preverseHeading.midRef(i + 1);
+                    if (ref.startsWith("title")) {
+                        ref = ref.mid(5); // strlen("title")
+                        if (!ref.isEmpty() && greaterOrS.contains(ref[0])) {
+                            auto const charsUntilTagEnd = ref.indexOf('>');
+                            if (charsUntilTagEnd < 0)
+                                break;
+                            // Remove entire <title> tag:
+                            preverseHeading.remove(i, charsUntilTagEnd + 7);
+                        } else {
+                            i += 7; // strlen("<title?")
+                        }
+                    } else if (ref.startsWith("/title")) {
+                        ref = ref.mid(6); // strlen("/title")
+                        if (!ref.isEmpty() && greaterOrS.contains(ref[0])) {
+                            auto const charsUntilTagEnd = ref.indexOf('>');
+                            if (charsUntilTagEnd < 0)
+                                break;
+                            // Remove entire </title> tag:
+                            preverseHeading.remove(i, charsUntilTagEnd + 8);
+                        } else {
+                            i += 8; // strlen("</title?")
+                        }
+                    } else if (ref.startsWith("div")) {
+                        ref = ref.mid(3); // strlen("div")
+                        if (!ref.isEmpty() && greaterOrS.contains(ref[0])) {
+                            auto const charsUntilTagEnd = ref.indexOf('>');
+                            if (charsUntilTagEnd < 0)
+                                break;
+                            if (charsUntilTagEnd > 0) {
+                                if (ref[charsUntilTagEnd - 1] == '/') {
+                                    // Remove entire invalid empty <div/> tag:
+                                    preverseHeading.remove(
+                                                i,
+                                                charsUntilTagEnd + 5);
+                                } else {
+                                    i += charsUntilTagEnd + 5;
+                                }
+                            } else {
+                                i += 5; // strlen("<div>")
+                            }
+                        } else {
+                            i += 5; // strlen("<div?")
+                        }
+                    } else {
+                        i += 3; // strlen("<?>")
+                    }
                 }
 
                 /// \todo Take care of the heading type!
