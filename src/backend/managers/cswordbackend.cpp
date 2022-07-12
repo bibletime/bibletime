@@ -298,21 +298,9 @@ void CSwordBackend::Private::shutdownModules() {
     cipherFilters.clear();
 }
 
-void CSwordBackend::setOption(const CSwordModuleInfo::FilterTypes type,
+void CSwordBackend::setOption(CSwordModuleInfo::FilterOption const & option,
                               const int state)
-{
-    char const * optionValue;
-    if (type == CSwordModuleInfo::textualVariants) {
-        switch (state) {
-        case 0: optionValue = "Primary Reading"; break;
-        case 1: optionValue = "Secondary Reading"; break;
-        default: optionValue = "All Readings"; break;
-        }
-    } else {
-        optionValue = state ? "On" : "Off";
-    }
-    m_manager.setGlobalOption(optionName(type), optionValue);
-}
+{ m_manager.setGlobalOption(option.optionName, option.valueToString(state)); }
 
 void CSwordBackend::setFilterOptions(const FilterOptions & options) {
     setOption(CSwordModuleInfo::footnotes,           options.footnotes);
@@ -348,37 +336,6 @@ CSwordModuleInfo * CSwordBackend::findSwordModuleByPointer(const sword::SWModule
     for (auto * const mod : m_dataModel->moduleList())
         if (&mod->swordModule() == swmodule)
             return mod;
-    return nullptr;
-}
-
-char const *
-CSwordBackend::optionName(CSwordModuleInfo::FilterTypes const option) {
-    switch (option) {
-        case CSwordModuleInfo::footnotes:
-            return "Footnotes";
-        case CSwordModuleInfo::strongNumbers:
-            return "Strong's Numbers";
-        case CSwordModuleInfo::headings:
-            return "Headings";
-        case CSwordModuleInfo::morphTags:
-            return "Morphological Tags";
-        case CSwordModuleInfo::lemmas:
-            return "Lemmas";
-        case CSwordModuleInfo::hebrewPoints:
-            return "Hebrew Vowel Points";
-        case CSwordModuleInfo::hebrewCantillation:
-            return "Hebrew Cantillation";
-        case CSwordModuleInfo::greekAccents:
-            return "Greek Accents";
-        case CSwordModuleInfo::redLetterWords:
-            return "Words of Christ in Red";
-        case CSwordModuleInfo::textualVariants:
-            return "Textual Variants";
-        case CSwordModuleInfo::scriptureReferences:
-            return "Cross-references";
-        case CSwordModuleInfo::morphSegmentation:
-            return "Morph Segmentation";
-    }
     return nullptr;
 }
 

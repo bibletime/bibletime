@@ -150,7 +150,7 @@ public: // methods:
       \param[in] type The filter type whose state to set.
       \param[in] state The new filter option state.
     */
-    void setOption(const CSwordModuleInfo::FilterTypes type, const int state);
+    void setOption(CSwordModuleInfo::FilterOption const & type, const int state);
 
     void setFilterOptions(const FilterOptions & options);
 
@@ -190,12 +190,6 @@ public: // methods:
                merged together.
     */
     sword::SWConfig * getConfig() const { return m_manager.config; }
-
-    /**
-      \param[in] option The option name to return.
-      \returns The name of the option given by the parameter.
-    */
-    static char const * optionName(const CSwordModuleInfo::FilterTypes option);
 
     /**
       \brief Reloads all Sword modules.

@@ -21,7 +21,6 @@
 #include <QString>
 #include <QtGlobal>
 #include <vector>
-#include "../../util/btenum.h"
 #include "../cswordmodulesearch.h"
 #include "../language.h"
 
@@ -56,24 +55,30 @@ class CSwordModuleInfo: public QObject {
 
 public: // types:
 
-    /**
-     * These are the options which could be supported by modules and by this backend.
-     * It's used in @ref CSwordBackend::setOption.
-     */
-    BT_ENUM(FilterTypes,
-        footnotes, /**< Footnotes embedded in the module's text */
-        strongNumbers, /**< strong numbers, usually in the text for the info display */
-        headings, /**< additional section headings */
-        morphTags, /**< morphology */
-        lemmas, /**< lemma tags */
-        hebrewPoints,/**< Hebrew vowel points */
-        hebrewCantillation, /**<Hewbrew caantillation points */
-        greekAccents, /**< Greek accents may be switched on and off */
-        scriptureReferences, /**< scripture references may be switched on and off, just makes sense in Bibles */
-        redLetterWords, /**< Jesus words in red, color is template specific */
-        textualVariants, /**< variants */
-        morphSegmentation, /**< morph word segmentation, supported by OSIS */
-    );
+    struct FilterOption {
+        static char const * valueToOnOff(int value) noexcept;
+        static char const * valueToReadings(int value) noexcept;
+
+        char const * optionName;
+        std::string configOptionName;
+        char const * translatableOptionName;
+        char const * (*valueToString)(int value) noexcept = &valueToOnOff;
+    };
+
+    /* These are the options which could be supported by modules and by this
+       backend: */
+    static FilterOption const footnotes; /**< Footnotes embedded in the module's text */
+    static FilterOption const strongNumbers; /**< strong numbers, usually in the text for the info display */
+    static FilterOption const headings; /**< additional section headings */
+    static FilterOption const morphTags; /**< morphology */
+    static FilterOption const lemmas; /**< lemma tags */
+    static FilterOption const hebrewPoints;/**< Hebrew vowel points */
+    static FilterOption const hebrewCantillation; /**< Hebrew cantillation points */
+    static FilterOption const greekAccents; /**< Greek accents may be switched on and off */
+    static FilterOption const scriptureReferences; /**< scripture references may be switched on and off, just makes sense in Bibles */
+    static FilterOption const redLetterWords; /**< Jesus words in red, color is template specific */
+    static FilterOption const textualVariants; /**< variants */
+    static FilterOption const morphSegmentation; /**< morph word segmentation, supported by OSIS */
 
     /** The text direction of a module */
     enum TextDirection { /* The text direction of the modules's text */
@@ -298,7 +303,7 @@ wrong, or if the config file was write protected return false.
     */
     bool has(const CSwordModuleInfo::Feature) const;
 
-    bool has(const CSwordModuleInfo::FilterTypes ) const;
+    bool has(CSwordModuleInfo::FilterOption const &) const;
 
     /** \returns the text direction of the module's text. */
     CSwordModuleInfo::TextDirection textDirection() const;

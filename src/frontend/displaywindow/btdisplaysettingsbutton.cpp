@@ -236,7 +236,9 @@ void BtDisplaySettingsButton::addMenuEntry(QAction *action, bool checked) {
     m_popup->addAction(action);
 }
 
-bool BtDisplaySettingsButton::isOptionAvailable(const CSwordModuleInfo::FilterTypes option) {
+bool BtDisplaySettingsButton::isOptionAvailable(
+        CSwordModuleInfo::FilterOption const & option)
+{
     for (auto const * const module : m_modules)
         if (module->has(option))
             return true;

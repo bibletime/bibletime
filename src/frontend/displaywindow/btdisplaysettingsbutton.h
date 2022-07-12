@@ -56,7 +56,7 @@ class BtDisplaySettingsButton: public QToolButton {
         void retranslateToolTip();
         void repopulateMenu();
 
-        bool isOptionAvailable(const CSwordModuleInfo::FilterTypes option);
+        bool isOptionAvailable(CSwordModuleInfo::FilterOption const & option);
         void addMenuEntry(QAction *action, bool checked);
 
     private:

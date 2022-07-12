@@ -101,65 +101,83 @@ inline CSwordModuleInfo::Category retrieveCategory(
     }
 }
 
-QString translatedFilterOptionName(CSwordModuleInfo::FilterTypes const option) {
-    switch (option) {
-    case CSwordModuleInfo::footnotes:
-        return QObject::tr("Footnotes");
-    case CSwordModuleInfo::strongNumbers:
-        return QObject::tr("Strong's numbers");
-    case CSwordModuleInfo::headings:
-        return QObject::tr("Headings");
-    case CSwordModuleInfo::morphTags:
-        return QObject::tr("Morphological tags");
-    case CSwordModuleInfo::lemmas:
-        return QObject::tr("Lemmas");
-    case CSwordModuleInfo::hebrewPoints:
-        return QObject::tr("Hebrew vowel points");
-    case CSwordModuleInfo::hebrewCantillation:
-        return QObject::tr("Hebrew cantillation marks");
-    case CSwordModuleInfo::greekAccents:
-        return QObject::tr("Greek accents");
-    case CSwordModuleInfo::redLetterWords:
-        return QObject::tr("Red letter words");
-    case CSwordModuleInfo::textualVariants:
-        return QObject::tr("Textual variants");
-    case CSwordModuleInfo::scriptureReferences:
-        return QObject::tr("Scripture cross-references");
-    case CSwordModuleInfo::morphSegmentation:
-        return QObject::tr("Morph segmentation");
-    }
-    return {};
-}
-
-std::string const &
-configFilterOptionName(CSwordModuleInfo::FilterTypes const option) {
-    static std::string const names[] = {
-        "Footnotes", "Strongs", "Headings", "Morph", "Lemma", "HebrewPoints",
-        "Cantillation", "GreekAccents", "Scripref", "RedLetterWords", "Variants",
-        "MorphSegmentation"
-    };
-    switch (option) {
-    case CSwordModuleInfo::footnotes: [[fallthrough]];
-    case CSwordModuleInfo::strongNumbers: [[fallthrough]];
-    case CSwordModuleInfo::headings: [[fallthrough]];
-    case CSwordModuleInfo::morphTags: [[fallthrough]];
-    case CSwordModuleInfo::lemmas: [[fallthrough]];
-    case CSwordModuleInfo::hebrewPoints: [[fallthrough]];
-    case CSwordModuleInfo::hebrewCantillation: [[fallthrough]];
-    case CSwordModuleInfo::greekAccents: [[fallthrough]];
-    case CSwordModuleInfo::scriptureReferences: [[fallthrough]];
-    case CSwordModuleInfo::redLetterWords: [[fallthrough]];
-    case CSwordModuleInfo::textualVariants: [[fallthrough]];
-    case CSwordModuleInfo::morphSegmentation:
-        return names[static_cast<int>(option)];
-    }
-    static std::string const empty;
-    return empty;
-}
-
 static const TCHAR * stop_words[] = { nullptr };
 
 } // anonymous namespace
+
+char const *
+CSwordModuleInfo::FilterOption::valueToOnOff(int const value) noexcept
+{ return value ? "On" : "Off"; }
+
+char const *
+CSwordModuleInfo::FilterOption::valueToReadings(int const value) noexcept {
+    switch (value) {
+    case 0: return "Primary Reading";
+    case 1: return "Secondary Reading";
+    default: return "All Readings";
+    }
+}
+
+CSwordModuleInfo::FilterOption const CSwordModuleInfo::footnotes{
+    "Footnotes",
+    "Footnotes",
+    QT_TRANSLATE_NOOP("QObject", "Footnotes")};
+
+CSwordModuleInfo::FilterOption const CSwordModuleInfo::strongNumbers{
+    "Strong's Numbers",
+    "Strongs",
+    QT_TRANSLATE_NOOP("QObject", "Strong's numbers")};
+
+CSwordModuleInfo::FilterOption const CSwordModuleInfo::headings{
+    "Headings",
+    "Headings",
+     QT_TRANSLATE_NOOP("QObject", "Headings")};
+
+CSwordModuleInfo::FilterOption const CSwordModuleInfo::morphTags{
+     "Morphological Tags",
+     "Morph",
+     QT_TRANSLATE_NOOP("QObject", "Morphological tags")};
+
+CSwordModuleInfo::FilterOption const CSwordModuleInfo::lemmas{
+    "Lemmas",
+    "Lemma",
+    QT_TRANSLATE_NOOP("QObject", "Lemmas")};
+
+CSwordModuleInfo::FilterOption const CSwordModuleInfo::hebrewPoints{
+    "Hebrew Vowel Points",
+    "HebrewPoints",
+    QT_TRANSLATE_NOOP("QObject", "Hebrew vowel points")};
+
+CSwordModuleInfo::FilterOption const CSwordModuleInfo::hebrewCantillation{
+    "Hebrew Cantillation",
+    "Cantillation",
+    QT_TRANSLATE_NOOP("QObject", "Hebrew cantillation marks")};
+
+CSwordModuleInfo::FilterOption const CSwordModuleInfo::greekAccents{
+    "Greek Accents",
+    "GreekAccents",
+    QT_TRANSLATE_NOOP("QObject", "Greek accents")};
+
+CSwordModuleInfo::FilterOption const CSwordModuleInfo::scriptureReferences{
+    "Cross-references",
+    "Scripref",
+    QT_TRANSLATE_NOOP("QObject", "Scripture cross-references")};
+
+CSwordModuleInfo::FilterOption const CSwordModuleInfo::redLetterWords{
+    "Words of Christ in Red",
+    "RedLetterWords",
+    QT_TRANSLATE_NOOP("QObject", "Red letter words")};
+
+CSwordModuleInfo::FilterOption const CSwordModuleInfo::textualVariants{
+    "Textual Variants",
+    "Variants",
+    QT_TRANSLATE_NOOP("QObject", "Textual variants"),
+    &CSwordModuleInfo::FilterOption::valueToReadings};
+
+CSwordModuleInfo::FilterOption const CSwordModuleInfo::morphSegmentation{
+    "Morph Segmentation",
+    "MorphSegmentation",
+    QT_TRANSLATE_NOOP("QObject", "Morph segmentation")};
 
 CSwordModuleInfo::CSwordModuleInfo(sword::SWModule & module,
                                    CSwordBackend & backend,
@@ -792,9 +810,9 @@ bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const {
     return false;
 }
 
-bool CSwordModuleInfo::has(const CSwordModuleInfo::FilterTypes option) const {
+bool CSwordModuleInfo::has(CSwordModuleInfo::FilterOption const & option) const {
     /// \todo This is a BAD workaround to see if the filter is GBF, OSIS or ThML!
-    auto const & originalOptionName = configFilterOptionName(option);
+    auto const & originalOptionName = option.configOptionName;
     std::string const optionNames[] = {
         "OSIS" + originalOptionName,
         "GBF" + originalOptionName,
@@ -890,11 +908,25 @@ QString CSwordModuleInfo::aboutText() const {
     }
 
     QString options;
-    for (auto const filterType : FilterTypes_E) {
-        if (has(filterType)) {
+    static constexpr auto const allFilterOptions = {
+        &footnotes,
+        &strongNumbers,
+        &headings,
+        &morphTags,
+        &lemmas,
+        &hebrewPoints,
+        &hebrewCantillation,
+        &greekAccents,
+        &scriptureReferences,
+        &redLetterWords,
+        &textualVariants,
+        &morphSegmentation,
+    };
+    for (auto const * const filterOption : allFilterOptions) {
+        if (has(*filterOption)) {
             if (!options.isEmpty())
                 options += QString::fromLatin1(", ");
-            options += translatedFilterOptionName(filterType);
+            options += QObject::tr(filterOption->translatableOptionName);
         }
     }
 
