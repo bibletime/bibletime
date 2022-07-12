@@ -198,12 +198,6 @@ public: // methods:
     static QString optionName(const CSwordModuleInfo::FilterTypes option);
 
     /**
-      \param[in] option The configuration option name to return.
-      \returns the text used for the configuration option given.
-    */
-    static QString configOptionName(const CSwordModuleInfo::FilterTypes option);
-
-    /**
       \brief Reloads all Sword modules.
       \param[in] reason The reason for the reload.
     */

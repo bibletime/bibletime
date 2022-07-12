@@ -383,36 +383,6 @@ QString CSwordBackend::optionName(const CSwordModuleInfo::FilterTypes option) {
     return QString();
 }
 
-QString CSwordBackend::configOptionName(const CSwordModuleInfo::FilterTypes option) {
-    switch (option) {
-        case CSwordModuleInfo::footnotes:
-            return "Footnotes";
-        case CSwordModuleInfo::strongNumbers:
-            return "Strongs";
-        case CSwordModuleInfo::headings:
-            return "Headings";
-        case CSwordModuleInfo::morphTags:
-            return "Morph";
-        case CSwordModuleInfo::lemmas:
-            return "Lemma";
-        case CSwordModuleInfo::hebrewPoints:
-            return "HebrewPoints";
-        case CSwordModuleInfo::hebrewCantillation:
-            return "Cantillation";
-        case CSwordModuleInfo::greekAccents:
-            return "GreekAccents";
-        case CSwordModuleInfo::redLetterWords:
-            return "RedLetterWords";
-        case CSwordModuleInfo::textualVariants:
-            return "Variants";
-        case CSwordModuleInfo::scriptureReferences:
-            return "Scripref";
-        case CSwordModuleInfo::morphSegmentation:
-            return "MorphSegmentation";
-    }
-    return QString();
-}
-
 QString CSwordBackend::booknameLanguage() const
 { return BtLocaleMgr::defaultLocaleName(); }
 

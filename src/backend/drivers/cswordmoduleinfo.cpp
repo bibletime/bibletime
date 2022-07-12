@@ -131,6 +131,36 @@ QString translatedFilterOptionName(CSwordModuleInfo::FilterTypes const option) {
     return {};
 }
 
+std::string configFilterOptionName(CSwordModuleInfo::FilterTypes const option) {
+    switch (option) {
+    case CSwordModuleInfo::footnotes:
+        return "Footnotes";
+    case CSwordModuleInfo::strongNumbers:
+        return "Strongs";
+    case CSwordModuleInfo::headings:
+        return "Headings";
+    case CSwordModuleInfo::morphTags:
+        return "Morph";
+    case CSwordModuleInfo::lemmas:
+        return "Lemma";
+    case CSwordModuleInfo::hebrewPoints:
+        return "HebrewPoints";
+    case CSwordModuleInfo::hebrewCantillation:
+        return "Cantillation";
+    case CSwordModuleInfo::greekAccents:
+        return "GreekAccents";
+    case CSwordModuleInfo::redLetterWords:
+        return "RedLetterWords";
+    case CSwordModuleInfo::textualVariants:
+        return "Variants";
+    case CSwordModuleInfo::scriptureReferences:
+        return "Scripref";
+    case CSwordModuleInfo::morphSegmentation:
+        return "MorphSegmentation";
+    }
+    return {};
+}
+
 static const TCHAR * stop_words[] = { nullptr };
 
 } // anonymous namespace
@@ -768,8 +798,7 @@ bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const {
 
 bool CSwordModuleInfo::has(const CSwordModuleInfo::FilterTypes option) const {
     /// \todo This is a BAD workaround to see if the filter is GBF, OSIS or ThML!
-    auto const originalOptionName =
-            m_backend.configOptionName(option).toStdString();
+    auto const originalOptionName = configFilterOptionName(option);
     std::string const optionNames[] = {
         "OSIS" + originalOptionName,
         "GBF" + originalOptionName,
