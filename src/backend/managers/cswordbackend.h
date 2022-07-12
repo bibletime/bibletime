@@ -247,8 +247,6 @@ protected: // methods:
     */
     CSwordBackend();
 
-    /** Reimplemented from sword::SWMgr. */
-
 private: // fields:
 
     struct Private: public sword::SWMgr {
