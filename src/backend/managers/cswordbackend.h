@@ -195,7 +195,7 @@ public: // methods:
       \param[in] option The option name to return.
       \returns The name of the option given by the parameter.
     */
-    static QString optionName(const CSwordModuleInfo::FilterTypes option);
+    static char const * optionName(const CSwordModuleInfo::FilterTypes option);
 
     /**
       \brief Reloads all Sword modules.

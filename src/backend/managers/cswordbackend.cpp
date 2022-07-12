@@ -311,9 +311,7 @@ void CSwordBackend::setOption(const CSwordModuleInfo::FilterTypes type,
     } else {
         optionValue = state ? "On" : "Off";
     }
-    m_manager.setGlobalOption(
-                optionName(type).toUtf8().constData(),
-                optionValue);
+    m_manager.setGlobalOption(optionName(type), optionValue);
 }
 
 void CSwordBackend::setFilterOptions(const FilterOptions & options) {
@@ -353,7 +351,8 @@ CSwordModuleInfo * CSwordBackend::findSwordModuleByPointer(const sword::SWModule
     return nullptr;
 }
 
-QString CSwordBackend::optionName(const CSwordModuleInfo::FilterTypes option) {
+char const *
+CSwordBackend::optionName(CSwordModuleInfo::FilterTypes const option) {
     switch (option) {
         case CSwordModuleInfo::footnotes:
             return "Footnotes";
@@ -380,7 +379,7 @@ QString CSwordBackend::optionName(const CSwordModuleInfo::FilterTypes option) {
         case CSwordModuleInfo::morphSegmentation:
             return "Morph Segmentation";
     }
-    return QString();
+    return nullptr;
 }
 
 QString CSwordBackend::booknameLanguage() const
