@@ -28,4 +28,4 @@ QString getForegroundColor(QString const & templateName);
 QString getCrossRefColor();
 QString getCrossRefColor(QString const & templateName);
 
-}; /* namespace ColorManager */
+} /* namespace ColorManager */
