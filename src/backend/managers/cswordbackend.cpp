@@ -390,9 +390,10 @@ QStringList CSwordBackend::swordDirList() const {
     QSet<QString> swordDirSet;
     QStringList configs;
 
+    auto const userHomeSwordDir = util::directory::getUserHomeSwordDir();
     auto const privateSwordConfigFile =
             util::directory::convertDirSeparators(
-                util::directory::getUserHomeSwordDir().absolutePath() += "/sword.conf");
+                userHomeSwordDir.absolutePath() += "/sword.conf");
     if (QFile(privateSwordConfigFile).exists()) {
         // Use the private sword.conf file:
         configs << privateSwordConfigFile;
@@ -444,7 +445,7 @@ QStringList CSwordBackend::swordDirList() const {
     }
 
     // Add the private sword path to the set if not there already:
-    swordDirSet << util::directory::getUserHomeSwordDir().absolutePath();
+    swordDirSet << userHomeSwordDir.absolutePath();
 
     QStringList swordDirs;
     for (auto dir: swordDirSet)
