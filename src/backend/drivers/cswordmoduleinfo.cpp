@@ -131,34 +131,30 @@ QString translatedFilterOptionName(CSwordModuleInfo::FilterTypes const option) {
     return {};
 }
 
-std::string configFilterOptionName(CSwordModuleInfo::FilterTypes const option) {
+std::string const &
+configFilterOptionName(CSwordModuleInfo::FilterTypes const option) {
+    static std::string const names[] = {
+        "Footnotes", "Strongs", "Headings", "Morph", "Lemma", "HebrewPoints",
+        "Cantillation", "GreekAccents", "Scripref", "RedLetterWords", "Variants",
+        "MorphSegmentation"
+    };
     switch (option) {
-    case CSwordModuleInfo::footnotes:
-        return "Footnotes";
-    case CSwordModuleInfo::strongNumbers:
-        return "Strongs";
-    case CSwordModuleInfo::headings:
-        return "Headings";
-    case CSwordModuleInfo::morphTags:
-        return "Morph";
-    case CSwordModuleInfo::lemmas:
-        return "Lemma";
-    case CSwordModuleInfo::hebrewPoints:
-        return "HebrewPoints";
-    case CSwordModuleInfo::hebrewCantillation:
-        return "Cantillation";
-    case CSwordModuleInfo::greekAccents:
-        return "GreekAccents";
-    case CSwordModuleInfo::redLetterWords:
-        return "RedLetterWords";
-    case CSwordModuleInfo::textualVariants:
-        return "Variants";
-    case CSwordModuleInfo::scriptureReferences:
-        return "Scripref";
+    case CSwordModuleInfo::footnotes: [[fallthrough]];
+    case CSwordModuleInfo::strongNumbers: [[fallthrough]];
+    case CSwordModuleInfo::headings: [[fallthrough]];
+    case CSwordModuleInfo::morphTags: [[fallthrough]];
+    case CSwordModuleInfo::lemmas: [[fallthrough]];
+    case CSwordModuleInfo::hebrewPoints: [[fallthrough]];
+    case CSwordModuleInfo::hebrewCantillation: [[fallthrough]];
+    case CSwordModuleInfo::greekAccents: [[fallthrough]];
+    case CSwordModuleInfo::scriptureReferences: [[fallthrough]];
+    case CSwordModuleInfo::redLetterWords: [[fallthrough]];
+    case CSwordModuleInfo::textualVariants: [[fallthrough]];
     case CSwordModuleInfo::morphSegmentation:
-        return "MorphSegmentation";
+        return names[static_cast<int>(option)];
     }
-    return {};
+    static std::string const empty;
+    return empty;
 }
 
 static const TCHAR * stop_words[] = { nullptr };
@@ -798,7 +794,7 @@ bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const {
 
 bool CSwordModuleInfo::has(const CSwordModuleInfo::FilterTypes option) const {
     /// \todo This is a BAD workaround to see if the filter is GBF, OSIS or ThML!
-    auto const originalOptionName = configFilterOptionName(option);
+    auto const & originalOptionName = configFilterOptionName(option);
     std::string const optionNames[] = {
         "OSIS" + originalOptionName,
         "GBF" + originalOptionName,
