@@ -34,9 +34,6 @@ bool deleteSource(const QString &name);
 /** Tells if the source is remote or local. */
 bool isRemote(const sword::InstallSource& source);
 
-/** Returns the list of available install target paths. */
-QStringList targetList();
-
 QStringList sourceNameList();
 
 /** Returns the path of the sword installer configuration file. */

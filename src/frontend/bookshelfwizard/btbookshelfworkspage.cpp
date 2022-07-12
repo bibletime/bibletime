@@ -348,9 +348,8 @@ static bool installPathIsUsable(QString const & path) {
 
 void BtBookshelfWorksPage::slotInitPathCombo() {
     m_pathCombo->clear();
-    QStringList const targets(BtInstallBackend::targetList());
     bool haveUsableTargets = false;
-    for (auto const & target : targets) {
+    for (auto const & target : CSwordBackend::instance()->swordDirList()) {
         if (installPathIsUsable(target)) {
             m_pathCombo->addItem(util::directory::convertDirSeparators(target));
             haveUsableTargets = true;

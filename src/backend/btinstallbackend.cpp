@@ -155,11 +155,6 @@ QString configFilename() {
     return configPath().append("/InstallMgr.conf");
 }
 
-QStringList targetList() {
-    QStringList names = CSwordBackend::instance()->swordDirList();
-    return names;
-}
-
 QStringList sourceNameList() {
     BtInstallMgr mgr;
     BT_ASSERT(mgr.installConf);
