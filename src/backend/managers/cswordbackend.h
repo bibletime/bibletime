@@ -250,7 +250,6 @@ protected: // methods:
     /** Reimplemented from sword::SWMgr. */
 
     QStringList getSharedSwordConfigFiles() const;
-    QString getPrivateSwordConfigPath() const;
 
 private: // fields:
 
