@@ -249,8 +249,6 @@ protected: // methods:
 
     /** Reimplemented from sword::SWMgr. */
 
-    QStringList getSharedSwordConfigFiles() const;
-
 private: // fields:
 
     struct Private: public sword::SWMgr {

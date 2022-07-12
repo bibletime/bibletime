@@ -382,19 +382,6 @@ void CSwordBackend::Private::reloadConfig() {
     }
 }
 
-// Get one or more shared sword config (sword.conf) files
-QStringList CSwordBackend::getSharedSwordConfigFiles() const {
-#ifdef Q_OS_WIN
-    //  %ProgramData%\Sword\sword.conf
-    return QStringList(
-                util::directory::convertDirSeparators(
-                    qEnvironmentVariable("SWORD_PATH")) += "/Sword/sword.conf");
-#else
-    // /etc/sword.conf, /usr/local/etc/sword.conf
-    return QString(m_manager.globalConfPath).split(":");
-#endif
-}
-
 // Return a list of used Sword dirs. Useful for the installer.
 QStringList CSwordBackend::swordDirList() const {
     namespace DU = util::directory;
@@ -415,9 +402,7 @@ QStringList CSwordBackend::swordDirList() const {
           build the private one. Once the private sword.conf exist, the shared
           ones will not be searched again.
         */
-        configs = getSharedSwordConfigFiles();
-
-#ifdef Q_OS_WIN
+        #ifdef Q_OS_WIN
         /*
           On Windows, add the shared sword directory to the set so the new
           private sword.conf will have it. The user could decide to delete this
@@ -425,7 +410,15 @@ QStringList CSwordBackend::swordDirList() const {
         */
         swordDirSet << DU::convertDirSeparators(
                            qEnvironmentVariable("SWORD_PATH"));
-#endif
+
+        //  %ProgramData%\Sword\sword.conf
+        configs << util::directory::convertDirSeparators(
+                       qEnvironmentVariable("SWORD_PATH"))
+                   + "/Sword/sword.conf");
+        #else
+        // /etc/sword.conf, /usr/local/etc/sword.conf
+        configs << QString(m_manager.globalConfPath).split(":");
+        #endif
     }
 
     // Search the sword.conf file(s) for sword directories that could contain modules
