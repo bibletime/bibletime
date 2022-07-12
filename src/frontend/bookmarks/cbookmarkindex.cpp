@@ -447,7 +447,7 @@ void CBookmarkIndex::dropEvent(QDropEvent * event) {
     auto const connection =
             BT_CONNECT(this, &CBookmarkIndex::collapsed,
                        [this](QModelIndex const & index) { expand(index); });
-    auto cleanup = qScopeGuard([this, &connection]() noexcept
+    auto cleanup = qScopeGuard([&connection]() noexcept
                                { disconnect(connection); });
     QModelIndex const index = indexAt(event->pos());
     QModelIndex parentIndex;
