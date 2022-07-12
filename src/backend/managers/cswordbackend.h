@@ -251,7 +251,6 @@ protected: // methods:
 
     QStringList getSharedSwordConfigFiles() const;
     QString getPrivateSwordConfigPath() const;
-    QString getPrivateSwordConfigFile() const;
 
 private: // fields:
 

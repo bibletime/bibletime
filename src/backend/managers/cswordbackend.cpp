@@ -400,10 +400,6 @@ QString CSwordBackend::getPrivateSwordConfigPath() const {
     return util::directory::getUserHomeSwordDir().absolutePath();
 }
 
-QString CSwordBackend::getPrivateSwordConfigFile() const {
-    return util::directory::convertDirSeparators(getPrivateSwordConfigPath() += "/sword.conf");
-}
-
 // Return a list of used Sword dirs. Useful for the installer.
 QStringList CSwordBackend::swordDirList() const {
     namespace DU = util::directory;
@@ -412,9 +408,12 @@ QStringList CSwordBackend::swordDirList() const {
     QSet<QString> swordDirSet;
     QStringList configs;
 
-    if (QFile(getPrivateSwordConfigFile()).exists()) {
+    auto const privateSwordConfigFile =
+            util::directory::convertDirSeparators(
+                getPrivateSwordConfigPath() += "/sword.conf");
+    if (QFile(privateSwordConfigFile).exists()) {
         // Use the private sword.conf file:
-        configs << getPrivateSwordConfigFile();
+        configs << privateSwordConfigFile;
     } else {
         /*
           Did not find private sword.conf, will use shared sword.conf files to
