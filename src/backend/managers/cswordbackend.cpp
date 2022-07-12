@@ -383,37 +383,6 @@ QString CSwordBackend::optionName(const CSwordModuleInfo::FilterTypes option) {
     return QString();
 }
 
-QString CSwordBackend::translatedOptionName(const CSwordModuleInfo::FilterTypes option) {
-    switch (option) {
-        case CSwordModuleInfo::footnotes:
-            return QObject::tr("Footnotes");
-        case CSwordModuleInfo::strongNumbers:
-            return QObject::tr("Strong's numbers");
-        case CSwordModuleInfo::headings:
-            return QObject::tr("Headings");
-        case CSwordModuleInfo::morphTags:
-            return QObject::tr("Morphological tags");
-        case CSwordModuleInfo::lemmas:
-            return QObject::tr("Lemmas");
-        case CSwordModuleInfo::hebrewPoints:
-            return QObject::tr("Hebrew vowel points");
-        case CSwordModuleInfo::hebrewCantillation:
-            return QObject::tr("Hebrew cantillation marks");
-        case CSwordModuleInfo::greekAccents:
-            return QObject::tr("Greek accents");
-        case CSwordModuleInfo::redLetterWords:
-            return QObject::tr("Red letter words");
-        case CSwordModuleInfo::textualVariants:
-            return QObject::tr("Textual variants");
-        case CSwordModuleInfo::scriptureReferences:
-            return QObject::tr("Scripture cross-references");
-        case CSwordModuleInfo::morphSegmentation:
-            return QObject::tr("Morph segmentation");
-    }
-    return QString();
-}
-
-
 QString CSwordBackend::configOptionName(const CSwordModuleInfo::FilterTypes option) {
     switch (option) {
         case CSwordModuleInfo::footnotes:

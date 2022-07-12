@@ -204,12 +204,6 @@ public: // methods:
     static QString configOptionName(const CSwordModuleInfo::FilterTypes option);
 
     /**
-      \param[in] option The translated option name.
-      \returns the translated name of the option given.
-    */
-    static QString translatedOptionName(const CSwordModuleInfo::FilterTypes option);
-
-    /**
       \brief Reloads all Sword modules.
       \param[in] reason The reason for the reload.
     */

@@ -101,6 +101,36 @@ inline CSwordModuleInfo::Category retrieveCategory(
     }
 }
 
+QString translatedFilterOptionName(CSwordModuleInfo::FilterTypes const option) {
+    switch (option) {
+    case CSwordModuleInfo::footnotes:
+        return QObject::tr("Footnotes");
+    case CSwordModuleInfo::strongNumbers:
+        return QObject::tr("Strong's numbers");
+    case CSwordModuleInfo::headings:
+        return QObject::tr("Headings");
+    case CSwordModuleInfo::morphTags:
+        return QObject::tr("Morphological tags");
+    case CSwordModuleInfo::lemmas:
+        return QObject::tr("Lemmas");
+    case CSwordModuleInfo::hebrewPoints:
+        return QObject::tr("Hebrew vowel points");
+    case CSwordModuleInfo::hebrewCantillation:
+        return QObject::tr("Hebrew cantillation marks");
+    case CSwordModuleInfo::greekAccents:
+        return QObject::tr("Greek accents");
+    case CSwordModuleInfo::redLetterWords:
+        return QObject::tr("Red letter words");
+    case CSwordModuleInfo::textualVariants:
+        return QObject::tr("Textual variants");
+    case CSwordModuleInfo::scriptureReferences:
+        return QObject::tr("Scripture cross-references");
+    case CSwordModuleInfo::morphSegmentation:
+        return QObject::tr("Morph segmentation");
+    }
+    return {};
+}
+
 static const TCHAR * stop_words[] = { nullptr };
 
 } // anonymous namespace
@@ -839,7 +869,7 @@ QString CSwordModuleInfo::aboutText() const {
         if (has(filterType)) {
             if (!options.isEmpty())
                 options += QString::fromLatin1(", ");
-            options += CSwordBackend::translatedOptionName(filterType);
+            options += translatedFilterOptionName(filterType);
         }
     }
 
