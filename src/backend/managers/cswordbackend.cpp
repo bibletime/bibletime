@@ -301,25 +301,19 @@ void CSwordBackend::Private::shutdownModules() {
 void CSwordBackend::setOption(const CSwordModuleInfo::FilterTypes type,
                               const int state)
 {
+    char const * optionValue;
     if (type == CSwordModuleInfo::textualVariants) {
         switch (state) {
-        case 0:
-            m_manager.setGlobalOption(optionName(type).toUtf8().constData(),
-                                      "Primary Reading");
-            break;
-        case 1:
-            m_manager.setGlobalOption(optionName(type).toUtf8().constData(),
-                                      "Secondary Reading");
-            break;
-        default:
-            m_manager.setGlobalOption(optionName(type).toUtf8().constData(),
-                                      "All Readings");
-            break;
+        case 0: optionValue = "Primary Reading"; break;
+        case 1: optionValue = "Secondary Reading"; break;
+        default: optionValue = "All Readings"; break;
         }
     } else {
-        m_manager.setGlobalOption(optionName(type).toUtf8().constData(),
-                                  state ? "On" : "Off");
+        optionValue = state ? "On" : "Off";
     }
+    m_manager.setGlobalOption(
+                optionName(type).toUtf8().constData(),
+                optionValue);
 }
 
 void CSwordBackend::setFilterOptions(const FilterOptions & options) {
