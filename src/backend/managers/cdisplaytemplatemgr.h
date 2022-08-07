@@ -33,11 +33,7 @@ class CDisplayTemplateMgr {
         */
         struct Settings {
 
-            Settings()
-                : langAbbrev("en")
-                , textDirection(CSwordModuleInfo::LeftToRight) {}
-
-            char const * textDirectionAsHtmlDirAttr() const {
+            char const * textDirectionAsHtmlDirAttr() const noexcept {
                 return textDirection == CSwordModuleInfo::LeftToRight ? "ltr" : "rtl";
             }
 
@@ -48,13 +44,14 @@ class CDisplayTemplateMgr {
             QString title;
 
             /** The language for the HTML page. */
-            QString langAbbrev;
+            QString langAbbrev{"en"};
 
             /** The CSS ID which is used in the content part of the page */
             QString pageCSS_ID;
 
             /** The language direction for the HTML page. */
-            CSwordModuleInfo::TextDirection textDirection;
+            CSwordModuleInfo::TextDirection textDirection =
+                    CSwordModuleInfo::LeftToRight;
 
         };
 
