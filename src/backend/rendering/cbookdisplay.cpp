@@ -91,7 +91,7 @@ const QString Rendering::CBookDisplay::text(
         const QString renderedText = render.renderKeyTree(tree);
         key->setOffset( offset );
         return renderedText;
-    };
+    }
 
     /**
     * Check whether displaying displayLevel levels together is possible.
@@ -103,7 +103,7 @@ const QString Rendering::CBookDisplay::text(
 
     while (key->positionToParent() && (key->key() != "/") && !key->key().isEmpty() ) {//add parents
         ++possibleLevels;
-    };
+    }
 
     //   key->key(keyName); //set the key to the start position
 
@@ -111,7 +111,7 @@ const QString Rendering::CBookDisplay::text(
 
     while (key->positionToFirstChild()) { //add childs
         ++possibleLevels;
-    };
+    }
 
     if (possibleLevels < displayLevel) { //too few levels available!
         //display current level, we could also decide to display the available levels together
@@ -120,7 +120,7 @@ const QString Rendering::CBookDisplay::text(
         const QString renderedText = render.renderKeyTree(tree);
         key->setOffset( offset );
         return renderedText;
-    };
+    }
 
     if ((displayLevel > 2) && (displayLevel == possibleLevels)) { //fix not to diplay the whole module
         --displayLevel;
@@ -136,8 +136,8 @@ const QString Rendering::CBookDisplay::text(
             const QString renderedText = render.renderKeyTree(tree);
             key->setOffset( offset );
             return renderedText;
-        };
-    };
+        }
+    }
 
     // no we can display all sub levels together! We checked before that this is possible!
     itemSettings.highlight = (key->key() == keyName);
