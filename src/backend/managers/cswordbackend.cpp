@@ -388,15 +388,12 @@ QStringList CSwordBackend::swordDirList() const {
 
     // Get the set of sword directories that could contain modules:
     QSet<QString> swordDirSet;
-    QStringList configs;
+    QList<QFileInfo> configs;
 
     auto const userHomeSwordDir = util::directory::getUserHomeSwordDir();
-    auto const privateSwordConfigFile =
-            util::directory::convertDirSeparators(
-                userHomeSwordDir.absolutePath() += "/sword.conf");
-    if (QFile(privateSwordConfigFile).exists()) {
+    if (auto conf = QFileInfo(userHomeSwordDir, "sword.conf"); conf.exists()) {
         // Use the private sword.conf file:
-        configs << privateSwordConfigFile;
+        configs << std::move(conf);
     } else {
         /*
           Did not find private sword.conf, will use shared sword.conf files to
@@ -404,34 +401,37 @@ QStringList CSwordBackend::swordDirList() const {
           ones will not be searched again.
         */
         #ifdef Q_OS_WIN
-        auto const swordPath =
-                DU::convertDirSeparators(qEnvironmentVariable("SWORD_PATH"));
+        auto const swordPath = qEnvironmentVariable("SWORD_PATH");
+        for (auto const & path : swordPath.split(QDir::listSeparator())) {
+            QDir dir(path);
 
-        /*
-          On Windows, add the shared sword directory to the set so the new
-          private sword.conf will have it. The user could decide to delete this
-          shared path and it will not automatically come back.
-        */
-        swordDirSet << swordPath;
+            /*
+              On Windows, add the shared sword directory to the set so the new
+              private sword.conf will have it. The user could decide to delete this
+              shared path and it will not automatically come back.
+            */
+            swordDirSet << dir.absolutePath();
 
-        //  %ProgramData%\Sword\sword.conf
-        configs << swordPath + "/Sword/sword.conf");
+            // %ProgramData%\Sword\sword.conf
+            if (auto conf = QFileInfo(dir, "Sword/sword.conf"); conf.exists())
+                configs << std::move(conf);
+        }
+
         #else
         // /etc/sword.conf, /usr/local/etc/sword.conf
-        configs << QString(m_manager.globalConfPath).split(":");
+        for (auto const & path : QString(m_manager.globalConfPath).split(":"))
+            if (auto conf = QFileInfo(path); conf.exists())
+                configs << std::move(conf);
         #endif
     }
 
     // Search the sword.conf file(s) for sword directories that could contain modules
-    for (auto const & filename : configs) {
-        if (!QFileInfo(filename).exists())
-            continue;
-
+    for (auto const & fileInfo : configs) {
         /*
           Get all DataPath and AugmentPath entries from the config file and add
           them to the list:
         */
-        sword::SWConfig conf(filename.toUtf8().constData());
+        sword::SWConfig conf(fileInfo.absoluteFilePath().toUtf8().constData());
         swordDirSet << QDir(QTextCodec::codecForLocale()->toUnicode(conf["Install"]["DataPath"].c_str())).absolutePath();
 
         const sword::ConfigEntMap group(conf["Install"]);
