@@ -351,7 +351,7 @@ void BtBookshelfWorksPage::slotInitPathCombo() {
     bool haveUsableTargets = false;
     for (auto const & target : CSwordBackend::instance()->swordDirList()) {
         if (installPathIsUsable(target)) {
-            m_pathCombo->addItem(util::directory::convertDirSeparators(target));
+            m_pathCombo->addItem(QDir::toNativeSeparators(target));
             haveUsableTargets = true;
         }
     }

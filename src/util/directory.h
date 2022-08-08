@@ -43,11 +43,6 @@ bool initDirectoryCache();
  */
 ::qint64 getDirSizeRecursive(QString const & dir);
 
-/** Convert directory path separators to those for each platform
- *  Windows = "\", Others = "/"
- */
-QString convertDirSeparators(const QString& path);
-
 #if defined(Q_OS_WIN) // Windows only directory
 /** Return the path to the sword dir., Windows only
     C:\Program Files\BibleTime\share\sword

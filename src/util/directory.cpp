@@ -240,16 +240,6 @@ bool initDirectoryCache() {
     return size;
 }
 
-QString convertDirSeparators(const QString& path) {
-    QString result = path;
-#ifdef Q_OS_WIN
-    result.replace("/", "\\");
-#else
-    result.replace("\\", "/");
-#endif
-    return result;
-}
-
 #if defined(Q_OS_WIN)
 const QDir &getApplicationSwordDir() {
     return *cachedApplicationSwordDir;
