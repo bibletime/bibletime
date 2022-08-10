@@ -142,7 +142,7 @@ CTextRendering::CTextRendering(
     , m_addText(addText)
 {}
 
-BtConstModuleList CTextRendering::collectModules(const KeyTree &tree) const {
+BtConstModuleList CTextRendering::collectModules(KeyTree const & tree) {
     //collect all modules which are available and used by child items
     BtConstModuleList modules;
 

@@ -143,7 +143,7 @@ class CTextRendering {
 
     protected: // methods:
 
-        BtConstModuleList collectModules(const KeyTree &tree) const;
+        static BtConstModuleList collectModules(KeyTree const & tree);
         virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr);
         virtual QString finishText(const QString &text, const KeyTree &tree);
         virtual QString entryLink(KeyTreeItem const & item,
