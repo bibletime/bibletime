@@ -43,10 +43,10 @@ a {
     font-size:90%;
     text-align:left;
 }
-.entry[dir=rtl] {
+.entry[direction=rtl] {
     text-align:right !important;
 }
-#printer .entry[dir=rtl] {
+#printer .entry[direction=rtl] {
     text-align:right !important;
 }
 td.entry, td.currententry {
@@ -58,7 +58,7 @@ td.entry, td.currententry {
     padding:3px;
     text-align:justify;
 }
-.currententry[dir=rtl] {
+.currententry[direction=rtl] {
     text-align:right !important;
 }
 .currententry.inline {
@@ -100,7 +100,7 @@ td.entry + td.entry {
     padding:0 2px 0 0;
     vertical-align:super;
 }
-.entry[dir=rtl] .entryname, .currententry[dir=rtl] .entryname {
+.entry[direction=rtl] .entryname, .currententry[direction=rtl] .entryname {
     padding: 0 0 0 2px;
     font-size: 80%;
     vertical-align:super;

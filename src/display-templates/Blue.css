@@ -43,10 +43,10 @@ td.entry, td.currententry {
     font-size: 90%;
     text-align: left;
 }
-.entry[dir=rtl] {
+.entry[direction=rtl] {
     text-align: right !important;
 }
-#printer .entry[dir=rtl] {
+#printer .entry[direction=rtl] {
     text-align:right !important;
 }
 
@@ -57,7 +57,7 @@ td.entry, td.currententry {
     text-align: justify;
     background-color: #CURRENT_ENTRY#;
 }
-.currententry[dir=rtl] {
+.currententry[direction=rtl] {
     text-align:right !important;
 }
 .currententry.inline {
@@ -101,7 +101,7 @@ td.entry + td.entry {
     padding:0 2px 0 0;
     vertical-align:super;
 }
-.entry[dir=rtl] .entryname, .currententry[dir=rtl] .entryname {
+.entry[direction=rtl] .entryname, .currententry[direction=rtl] .entryname {
     padding: 0 0 0 2px;
     font-size: 80%;
     vertical-align: super;
@@ -299,13 +299,13 @@ a[name="crossref"] {
     margin-bottom:10px;
     margin-left:15px;
 }
-#infodisplay .entry[dir=rtl] {
+#infodisplay .entry[direction=rtl] {
     text-align: right !important;
 }
 #infodisplay .entry .entry { /*No smaller font size for nested entries*/
     margin:0px;
 }
-#infodisplay .entry .entry[dir=rtl] { /*No smaller font size for nested entries*/
+#infodisplay .entry .entry[direction=rtl] { /*No smaller font size for nested entries*/
     text-align: right !important;
 }
 #infodisplay .entryname {
