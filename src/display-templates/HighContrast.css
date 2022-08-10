@@ -41,7 +41,7 @@ a {
     font-size: 90%;
     text-align: left;
 }
-.entry[dir=rtl],#printer .entry[dir=rtl]  {
+.entry[direction=rtl],#printer .entry[direction=rtl]  {
     text-align: right;
 }
 div.entry, td.entry, td.currententry {
@@ -57,7 +57,7 @@ div.entry, td.entry, td.currententry {
 /*    background-color: #A5A5FF; */
     background-color: #CURRENT_ENTRY#;
 }
-.currententry[dir=rtl] {
+.currententry[direction=rtl] {
     text-align: right;
 }
 .currententry.inline {
@@ -98,7 +98,7 @@ td.entry + td.entry {
     color: black;
     /*font-style: italic;*/
 }
-.entry[dir=rtl] .entryname, .currententry[dir=rtl] .entryname {
+.entry[direction=rtl] .entryname, .currententry[direction=rtl] .entryname {
     padding:0 0 0 1px;
     font-size:60%;
     /*vertical-align:top; */
