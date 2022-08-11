@@ -68,8 +68,8 @@ table .entry:nth-child(even) {
 
 #printer .entry { text-indent:15px; }
 /* Often needed to format BiDi text in the right way */
-/* .entry[direction=rtl] { text-align:right !important; } */b
-/* #printer .entry[direction=rtl] { } */
+/* .entry[dir=rtl] { text-align:right !important; } */b
+/* #printer .entry[dir=rtl] { } */
 
 /* Special formatting for the block element entries */
 div.entry, td.entry { }
@@ -89,7 +89,7 @@ td.entry, td.currententry {
 .currententry.inline {
     line-height:1.6em;
 }
-/* .currententry[direction=rtl] { */
+/* .currententry[dir=rtl] { */
 /* } */
 div.currententry { }
 span.currententry { }
@@ -103,7 +103,7 @@ td.entry + td.entry {
 #bible div.entry {
     border-left:10px solid white;
 }
-#bible div.entry[direction=rtl] {
+#bible div.entry[dir=rtl] {
     border-left:none;
     border-right:10px solid white;
     text-align:right;
@@ -111,7 +111,7 @@ td.entry + td.entry {
 #bible div.currententry {
     border-left:10px solid #99B4FF;
 }
-#bible div.currententry[direction=rtl] {
+#bible div.currententry[dir=rtl] {
     border-left:none;
     border-right:10px solid #99B4FF;
 }
@@ -128,7 +128,7 @@ td.entry + td.entry {
 .entryname { size:60%; vertical-align:super;}
 .entryname a { text-decoration:none !important; color:#8F2627 !important; font-style:italic; padding:0; }
 
-.entry[direction=rtl] .entryname, .currententry[direction=rtl] .entryname { }
+.entry[dir=rtl] .entryname, .currententry[dir=rtl] .entryname { }
 .entryname a, #printer .entryname { }
 /*  As you can see #printer is used to format pages which are send to the printer. Printer pages should be clean and easy to read */
 #printer .entry  .entry, #printer .entry .sectiontitle , #printer .entry .booktitle { }
@@ -308,7 +308,7 @@ a[name="crossref"] {
 
 #printer .rangeheading {}
 
-*[direction=rtl] { text-align:right !important; }
+*[dir=rtl] { text-align:right !important; }
 
 .highlightwords {
     background-color: #HIGHLIGHT#;

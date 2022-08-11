@@ -23,8 +23,8 @@ a { }
 .entry { }
 #printer .entry { }
 /* Often needed to format BiDi text in the right way */
-.entry[direction=rtl] { }
-#printer .entry[direction=rtl] { }
+.entry[dir=rtl] { }
+#printer .entry[dir=rtl] { }
 /* Special formatting for the block element entries */
 div.entry, td.entry { }
 
@@ -35,7 +35,7 @@ td.currententry { }
  */
 .currententry {
 }
-.currententry[direction=rtl] {
+.currententry[dir=rtl] {
 }
 div.currententry { }
 span.currententry { }
@@ -55,7 +55,7 @@ td.entry + td.entry { }
 
 /* An entryname is embedded in an .entry tag and contains the name of the key, which belongs to the text of the .entry */
 .entryname { }
-.entry[direction=rtl] .entryname, .currententry[direction=rtl] .entryname { }
+.entry[dir=rtl] .entryname, .currententry[dir=rtl] .entryname { }
 .entryname a, #printer .entryname { }
 /*  As you can see #printer is used to format pages which are send to the printer. Printer pages should be clean and easy to read */
 #printer .entry  .entry, #printer .entry .sectiontitle , #printer .entry .booktitle { }
