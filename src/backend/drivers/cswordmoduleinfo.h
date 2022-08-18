@@ -33,12 +33,9 @@ class CSwordBackend;
 class CSwordKey;
 namespace sword {
 class ListKey;
-class SWKey;
 class SWModule;
 class SWVersion;
 } // namespace sword
-
-namespace Rendering { class CEntryDisplay; }
 
 /**
  * Base class for Sword modules.
