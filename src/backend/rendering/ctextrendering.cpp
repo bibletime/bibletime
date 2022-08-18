@@ -424,9 +424,8 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
         if (m_addText)
             entry.append(key_renderedText);
 
-        if (!i.childList().empty())
-            for (auto const & item : i.childList())
-                entry.append(renderEntry(item));
+        for (auto const & item : i.childList())
+            entry.append(renderEntry(item));
 
         entry.append("</div>");
 
