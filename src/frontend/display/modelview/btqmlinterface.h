@@ -166,7 +166,6 @@ private:
     void getFontsFromSettings();
     QString getReferenceFromUrl(const QString& url);
     const CSwordModuleInfo* module() const;
-    QString stripHtml(const QString& html);
 
 private: // Fields:
 

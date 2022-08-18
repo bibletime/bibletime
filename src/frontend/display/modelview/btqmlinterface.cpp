@@ -129,16 +129,6 @@ double BtQmlInterface::getPixelsPerMM() const {
     return screen->physicalDotsPerInchX() / millimeterPerInch;
 }
 
-QString BtQmlInterface::stripHtml(const QString& html) {
-    QString t = html;
-    //since t is a complete HTML page at the moment, strip away headers and footers of a HTML page
-    QRegExp re("(?:<html.*>.+<body.*>)", Qt::CaseInsensitive); //remove headers, case insensitive
-    re.setMinimal(true);
-    t.replace(re, "");
-    t.replace(QRegExp("</body></html>", Qt::CaseInsensitive), "");//remove footer
-    return t;
-}
-
 QString BtQmlInterface::getRawText(int row, int column) {
     BT_ASSERT(column >= 0 && column <= m_moduleNames.count());
     CSwordVerseKey key = m_moduleTextModel->indexToVerseKey(row);
@@ -146,8 +136,15 @@ QString BtQmlInterface::getRawText(int row, int column) {
     CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
     CSwordVerseKey mKey(module);
     mKey.setKey(key.key());
-    QString rawText = mKey.rawText();
-    return stripHtml(rawText);
+    auto rawText = mKey.rawText();
+
+    /* Since rawText is a complete HTML page at the moment, strip away headers
+       and footers of a HTML page: */
+    QRegExp re("(?:<html.*>.+<body.*>)", Qt::CaseInsensitive);
+    re.setMinimal(true);
+    rawText.replace(re, "");
+    rawText.replace(QRegExp("</body></html>", Qt::CaseInsensitive), "");
+    return rawText;
 }
 
 void BtQmlInterface::openEditor(int row, int column) {
