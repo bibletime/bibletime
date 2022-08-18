@@ -57,7 +57,6 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
                                          const Settings &settings)
     : m_settings(settings)
     , m_key(startKey)
-    , m_stopKey(stopKey)
 {
     BT_ASSERT(module);
     m_moduleList.append(module);
@@ -71,7 +70,7 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
         CSwordVerseKey stop(module);
         stop.setKey(stopKey);
 
-        if (!m_key.isEmpty() && !m_stopKey.isEmpty()) { //we have a range of keys
+        if (!m_key.isEmpty() && !stopKey.isEmpty()) { //we have a range of keys
             bool ok = true;
 
             while (ok && ((start < stop) || (start == stop)) ) { //range

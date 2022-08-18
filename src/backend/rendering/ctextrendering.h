@@ -110,7 +110,6 @@ class CTextRendering {
                 mutable CSwordKey const * m_mappedKey = nullptr;
                 mutable KeyTree m_childList;
 
-                QString m_stopKey;
                 QString m_alternativeContent;
 
         }; /* class KeyTreeItem */
