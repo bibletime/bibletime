@@ -16,6 +16,7 @@
 #include <QStringRef>
 #include <QtAlgorithms>
 #include "../../util/btassert.h"
+#include "../config/btconfig.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../keys/cswordkey.h"
 #include "../keys/cswordversekey.h"
@@ -133,8 +134,14 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
     m_alternativeContent.prepend("<div class=\"rangeheading\" dir=\"ltr\">").append("</div>"); //insert the right tags
 }
 
+CTextRendering::CTextRendering(bool const addText)
+    : CTextRendering(addText,
+                     btConfig().getDisplayOptions(),
+                     btConfig().getFilterOptions())
+{}
+
 CTextRendering::CTextRendering(
-        bool addText,
+        bool const addText,
         DisplayOptions const & displayOptions,
         FilterOptions const & filterOptions)
     : m_displayOptions(displayOptions)

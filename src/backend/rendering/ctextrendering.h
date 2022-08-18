@@ -15,7 +15,6 @@
 #include <list>
 #include <QString>
 #include "../btglobal.h"
-#include "../config/btconfig.h"
 #include "../drivers/btmodulelist.h"
 
 
@@ -118,12 +117,10 @@ class CTextRendering {
 
     public: // methods:
 
-        CTextRendering(
-            bool addText,
-            DisplayOptions const & displayOptions =
-                    btConfig().getDisplayOptions(),
-            FilterOptions const & filterOptions =
-                    btConfig().getFilterOptions());
+        CTextRendering(bool addText);
+        CTextRendering(bool addText,
+                       DisplayOptions const & displayOptions,
+                       FilterOptions const & filterOptions);
 
         virtual ~CTextRendering() {}
 
