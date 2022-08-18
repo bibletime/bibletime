@@ -44,10 +44,10 @@ a {
     text-align:left;
 }
 .entry[dir=rtl] {
-    text-align:right !important;
+    text-align:#TEXT_ALIGN# !important;
 }
 #printer .entry[dir=rtl] {
-    text-align:right !important;
+    text-align:#TEXT_ALIGN# !important;
 }
 td.entry, td.currententry {
     vertical-align:top;
@@ -59,7 +59,7 @@ td.entry, td.currententry {
     text-align:justify;
 }
 .currententry[dir=rtl] {
-    text-align:right !important;
+    text-align:#TEXT_ALIGN# !important;
 }
 .currententry.inline {
     line-height:1.4em;

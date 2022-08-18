@@ -100,6 +100,7 @@ void CInfoDisplay::updateColors() {
 void CInfoDisplay::setInfo(const QString & renderedData, const QString & lang) {
     QString text = Rendering::formatInfo(renderedData, lang);
     text.replace("#CHAPTERTITLE#", "");
+    text.replace("#TEXT_ALIGN#", "left");
     text = ColorManager::replaceColors(text);
     m_textBrowser->setText(text);
 }

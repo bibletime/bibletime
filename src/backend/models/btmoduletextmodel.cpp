@@ -142,6 +142,7 @@ QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) cons
         QString text = entryDisplay.text(moduleList, keyName,
                                          m_displayOptions, m_filterOptions);
         text.replace("#CHAPTERTITLE#", "");
+        text.replace("#TEXT_ALIGN#", "left");
         text = ColorManager::replaceColors(text);
         return text;
     }
@@ -167,6 +168,7 @@ QString BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
                                                      Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey :
                                                      Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
         text.replace("#CHAPTERTITLE#", "");
+        text.replace("#TEXT_ALIGN#", "left");
         return text;
     }
     return QString();
@@ -235,6 +237,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
                                                             Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
 
         text.replace("#CHAPTERTITLE#", chapterTitle);
+        text.replace("#TEXT_ALIGN#", "left");
         text = ColorManager::replaceColors(text);
         return text;
     }
