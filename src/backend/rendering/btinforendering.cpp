@@ -58,17 +58,23 @@
 namespace {
 
 QString decodeAbbreviation(QString const & data) {
+    /// \todo Is "text" correct?
+    /* before:
     return QString("<div class=\"abbreviation\"><h3>%1: %2</h3><p>%3</p></div>")
         .arg(QObject::tr("Abbreviation"))
         .arg("text")
         .arg(data);
+    */
+    return QStringLiteral(
+                "<div class=\"abbreviation\"><h3>%1: text</h3><p>%2</p></div>")
+            .arg(QObject::tr("Abbreviation"), data);
 }
 
 QString decodeCrossReference(QString const & data,
                              BtConstModuleList const & modules)
 {
     if (data.isEmpty())
-        return QString("<div class=\"crossrefinfo\"><h3>%1</h3></div>")
+        return QStringLiteral("<div class=\"crossrefinfo\"><h3>%1</h3></div>")
                .arg(QObject::tr("Cross references"));
 
     // qWarning("setting crossref %s", data.latin1());
@@ -85,7 +91,7 @@ QString decodeCrossReference(QString const & data,
     const CSwordModuleInfo * module(nullptr);
 
     // a prefixed module gives the module to look into
-    QRegExp re("^[^ ]+:");
+    QRegExp const re(QStringLiteral("^[^ ]+:"));
     // re.setMinimal(true);
     int pos = re.indexIn(data);
     if (pos != -1)
@@ -98,7 +104,8 @@ QString decodeCrossReference(QString const & data,
     }
 
     if (!module)
-        module = btConfig().getDefaultSwordModuleByType("standardBible");
+        module = btConfig().getDefaultSwordModuleByType(
+                     QStringLiteral("standardBible"));
 
     if (!module && modules.size() > 0)
         module = modules.at(0);
@@ -144,20 +151,16 @@ QString decodeCrossReference(QString const & data,
     // qWarning("rendered the tree: %s", renderer.renderKeyTree(tree).latin1());
     /* spans containing rtl text need dir=rtl on their parent tag to be aligned
        properly */
-    QString lang = "en";  // default english
-    if (module)
-        lang = module->language()->abbrev();
-
-    return QString("<div class=\"crossrefinfo\" lang=\"%1\"><h3>%2</h3>"
-                   "<div class=\"para\" dir=\"%3\">%4</div></div>")
-           .arg(lang)
-           .arg(QObject::tr("Cross references"))
-           .arg(module ? module->textDirectionAsHtml() : "")
+    return QStringLiteral("<div class=\"crossrefinfo\" lang=\"%1\"><h3>%2</h3>"
+                          "<div class=\"para\" dir=\"%3\">%4</div></div>")
+           .arg(module ? module->language()->abbrev() : QStringLiteral("en"),
+                QObject::tr("Cross references"),
+                module ? module->textDirectionAsHtml() : QString())
            .arg(renderer.renderKeyTree(tree));
 }
 
 QString decodeFootnote(QString const & data) {
-    QStringList list = data.split("/");
+    QStringList list = data.split('/');
     BT_ASSERT(list.count() >= 3);
     if (!list.count())
         return QString();
@@ -172,7 +175,7 @@ QString decodeFootnote(QString const & data) {
     // remove the first and the last and then rejoin it to get a key
     list.pop_back();
     list.pop_front();
-    const QString keyname = list.join("/");
+    const QString keyname = list.join('/');
 
     CSwordModuleInfo * const module =
             CSwordBackend::instance()->findModuleByName(modulename);
@@ -197,11 +200,9 @@ QString decodeFootnote(QString const & data) {
                                  ? static_cast<const char *>(text.toUtf8())
                                  : static_cast<const char *>(text.toLatin1())));
 
-    return QString("<div class=\"footnoteinfo\" lang=\"%1\"><h3>%2</h3><p>%3"
-                   "</p></div>")
-           .arg(module->language()->abbrev())
-           .arg(QObject::tr("Footnote"))
-           .arg(text);
+    return QStringLiteral("<div class=\"footnoteinfo\" lang=\"%1\"><h3>%2</h3>"
+                          "<p>%3</p></div>")
+           .arg(module->language()->abbrev(), QObject::tr("Footnote"), text);
 }
 
 CSwordModuleInfo * getFirstAvailableStrongsModule(bool wantHebrew) {
@@ -222,18 +223,18 @@ CSwordModuleInfo * getFirstAvailableStrongsModule(bool wantHebrew) {
 }
 
 CSwordModuleInfo * getStrongsModule(bool const wantHebrew) {
-    static QString const types[] = {"standardGreekStrongsLexicon",
-                                    "standardHebrewStrongsLexicon"};
-    if (auto * const m =
-                btConfig().getDefaultSwordModuleByType(types[wantHebrew]))
-        return m;
-    return getFirstAvailableStrongsModule(wantHebrew);
+    auto * const m =
+            btConfig().getDefaultSwordModuleByType(
+                wantHebrew
+                ? QStringLiteral("standardHebrewStrongsLexicon")
+                : QStringLiteral("standardGreekStrongsLexicon"));
+    return m ? m : getFirstAvailableStrongsModule(wantHebrew);
 }
 
 QString decodeStrongs(QString const & data) {
     QString ret;
     for (auto const & strongs : data.split('|')) {
-        bool const wantHebrew = strongs.left(1) == "H";
+        bool const wantHebrew = strongs.left(1) == 'H';
         CSwordModuleInfo * module = getStrongsModule(wantHebrew);
         QString text;
         if (module) {
@@ -244,31 +245,28 @@ QString decodeStrongs(QString const & data) {
         }
         //if the module could not be found just display an empty lemma info
 
-        QString lang = "en";  // default english
-        if (module)
-            lang = module->language()->abbrev();
         ret.append(
-            QString("<div class=\"strongsinfo\" lang=\"%1\"><h3>%2: %3"
-                    "</h3><p>%4</p></div>")
-            .arg(lang)
-            .arg(QObject::tr("Strongs"))
-            .arg(strongs)
-            .arg(text)
+            QStringLiteral("<div class=\"strongsinfo\" lang=\"%1\"><h3>%2: %3"
+                           "</h3><p>%4</p></div>")
+            .arg(module ? module->language()->abbrev() : QStringLiteral("en"),
+                 QObject::tr("Strongs"),
+                 strongs,
+                 text)
         );
     }
     return ret;
 }
 
 QString decodeMorph(QString const & data) {
-    QStringList morphs = data.split("|");
+    QStringList morphs = data.split('|');
     QString ret;
 
     for (auto const & morph : morphs) {
         //qDebug() << "CInfoDisplay::decodeMorph, morph: " << morph;
         CSwordModuleInfo * module = nullptr;
         bool skipFirstChar = false;
-        QString value = "";
-        QString valueClass = "";
+        QString value;
+        QString valueClass;
 
         int valStart = morph.indexOf(':');
         if (valStart > -1) {
@@ -288,12 +286,14 @@ QString decodeMorph(QString const & data) {
                 switch (value.at(0).toLatin1()) {
                     case 'G':
                         module = btConfig().getDefaultSwordModuleByType(
-                                     "standardGreekMorphLexicon");
+                                     QStringLiteral(
+                                         "standardGreekMorphLexicon"));
                         skipFirstChar = true;
                         break;
                     case 'H':
                         module = btConfig().getDefaultSwordModuleByType(
-                                     "standardHebrewMorphLexicon");
+                                     QStringLiteral(
+                                         "standardHebrewMorphLexicon"));
                         skipFirstChar = true;
                         break;
                     default:
@@ -309,7 +309,7 @@ QString decodeMorph(QString const & data) {
             //if it is still not set use the default
             if (!module)
                 module = btConfig().getDefaultSwordModuleByType(
-                             "standardGreekMorphLexicon");
+                             QStringLiteral("standardGreekMorphLexicon"));
         }
 
         QString text;
@@ -326,7 +326,7 @@ QString decodeMorph(QString const & data) {
                 /// \todo: what if the module doesn't exist?
                 key->setModule(
                             btConfig().getDefaultSwordModuleByType(
-                                "standardHebrewMorphLexicon"));
+                                QStringLiteral("standardHebrewMorphLexicon")));
                 key->setKey(skipFirstChar ? value.mid(1) : value);
             }
 
@@ -334,23 +334,22 @@ QString decodeMorph(QString const & data) {
         }
 
         // if the module wasn't found just display an empty morph info
-        QString lang = "en";  // default to english
-        if (module)
-            lang = module->language()->abbrev();
-        ret.append(QString("<div class=\"morphinfo\" lang=\"%1\"><h3>%2: %3"
-                           "</h3><p>%4</p></div>")
-                    .arg(lang)
-                    .arg(QObject::tr("Morphology"))
-                    .arg(value)
-                    .arg(text)
-                  );
+        ret.append(QStringLiteral("<div class=\"morphinfo\" lang=\"%1\">"
+                                  "<h3>%2: %3</h3><p>%4</p></div>")
+                   .arg(module
+                        ? module->language()->abbrev()
+                        : QStringLiteral("en"),
+                        QObject::tr("Morphology"),
+                        value,
+                        text));
     }
 
     return ret;
 }
 
 QString decodeSwordReference(QString const & data) {
-    QRegExp rx("sword://(bible|lexicon)/(.*)/(.*)", Qt::CaseInsensitive);
+    QRegExp rx(QStringLiteral("sword://(bible|lexicon)/(.*)/(.*)"),
+               Qt::CaseInsensitive);
     rx.setMinimal(false);
     if (rx.indexIn(data) >= 0) {
         if (auto * const module =
@@ -359,11 +358,11 @@ QString decodeSwordReference(QString const & data) {
             std::unique_ptr<CSwordKey> key(module->createKey());
             auto reference = rx.cap(3);
             key->setKey(reference);
-            return QString("<div class=\"crossrefinfo\" lang=\"%1\">"
-                           "<h3>%2</h3><p>%3</p></div>")
-                    .arg(module->language()->abbrev())
-                    .arg(std::move(reference))
-                    .arg(key->renderedText());
+            return QStringLiteral("<div class=\"crossrefinfo\" lang=\"%1\">"
+                                  "<h3>%2</h3><p>%3</p></div>")
+                    .arg(module->language()->abbrev(),
+                         std::move(reference),
+                         key->renderedText());
         }
     }
     return {};
@@ -375,24 +374,24 @@ namespace Rendering {
 
 ListInfoData detectInfo(QString const & data) {
     ListInfoData list;
-    auto const attrList(data.split("||"));
+    auto const attrList(data.split(QStringLiteral("||")));
 
     for (auto const & attrPair : attrList) {
-        auto const attr(attrPair.split("="));
+        auto const attr(attrPair.split('='));
         if (attr.size() == 2) {
             auto const & attrName = attr[0];
             auto const & attrValue = attr[1];
-            if (attrName == "note") {
+            if (attrName == QStringLiteral("note")) {
                 list.append(qMakePair(Footnote, attrValue));
-            } else if (attrName == "lemma") {
+            } else if (attrName == QStringLiteral("lemma")) {
                 list.append(qMakePair(Lemma, attrValue));
-            } else if (attrName == "morph") {
+            } else if (attrName == QStringLiteral("morph")) {
                 list.append(qMakePair(Morph, attrValue));
-            } else if (attrName == "expansion") {
+            } else if (attrName == QStringLiteral("expansion")) {
                 list.append(qMakePair(Abbreviation, attrValue));
-            } else if (attrName == "crossrefs") {
+            } else if (attrName == QStringLiteral("crossrefs")) {
                 list.append(qMakePair(CrossReference, attrValue));
-            } else if (attrName == "href") {
+            } else if (attrName == QStringLiteral("href")) {
                 list.append(qMakePair(Reference, attrValue));
             }
         }
@@ -432,18 +431,18 @@ QString formatInfo(const ListInfoData & list,  BtConstModuleList const & modules
                 text.append(value);
                 continue;
             case Reference:
-                if (value.contains("strongs:")) {
+                if (value.contains(QStringLiteral("strongs:"))) {
                     auto v(value.right(value.size() - value.lastIndexOf('/')
                                        - 1));
-                    if (value.contains("GREEK")) {
+                    if (value.contains(QStringLiteral("GREEK"))) {
                         v.prepend('G');
-                    } else if (value.contains("HEBREW")) {
+                    } else if (value.contains(QStringLiteral("HEBREW"))) {
                         v.prepend('H');
                     } else {
                         BT_ASSERT(false && "not implemented");
                     }
                     text.append(decodeStrongs(v));
-                } else if (value.contains("sword:")) {
+                } else if (value.contains(QStringLiteral("sword:"))) {
                     text.append(decodeSwordReference(value));
                     continue;
                 } else {
@@ -463,17 +462,16 @@ QString formatInfo(QString const & info, QString const & lang) {
     BT_ASSERT(mgr);
 
     CDisplayTemplateMgr::Settings settings;
-    settings.pageCSS_ID = "infodisplay";
+    settings.pageCSS_ID = QStringLiteral("infodisplay");
 
-    QString div = "<div class=\"infodisplay\"";
-    if (!lang.isEmpty())
-        div.append(" lang=\"").append(lang).append("\"");
-    div.append(">");
-
-    QString content(mgr->fillTemplate(CDisplayTemplateMgr::activeTemplateName(),
-                                      div + info + "</div>",
-                                      settings));
-    return content;
+    return mgr->fillTemplate(
+                CDisplayTemplateMgr::activeTemplateName(),
+                QStringLiteral("<div class=\"infodisplay\"%1>%2</div>")
+                    .arg(lang.isEmpty()
+                         ? QString()
+                         : QStringLiteral(" lang=\"%1\"").arg(lang),
+                         info),
+                settings);
 }
 
 } // namespace Rendering {
