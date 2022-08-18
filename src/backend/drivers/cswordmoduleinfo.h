@@ -165,11 +165,6 @@ public: // methods:
     CSwordModuleInfo & operator=(CSwordModuleInfo &&) = delete;
     CSwordModuleInfo & operator=(CSwordModuleInfo const &) = delete;
 
-    void setDisplay(Rendering::CEntryDisplay * display = nullptr) noexcept
-    { m_display = display; }
-
-    Rendering::CEntryDisplay * getDisplay() const noexcept { return m_display; }
-
     /**
     * Returns the base directory for search indices
     */
@@ -420,7 +415,6 @@ Q_SIGNALS:
 
 private: // fields:
 
-    Rendering::CEntryDisplay * m_display = nullptr;
     sword::SWModule & m_swordModule;
     CSwordBackend & m_backend;
     ModuleType const m_type;

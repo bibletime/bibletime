@@ -200,18 +200,14 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
         using namespace std::literals;
         if (modType == "Biblical Texts"sv) {
             newModule = std::make_unique<CSwordBibleModuleInfo>(*curMod, *this);
-            newModule->setDisplay(&m_chapterDisplay);
         } else if (modType == "Commentaries"sv) {
             newModule = std::make_unique<CSwordCommentaryModuleInfo>(*curMod,
                                                                      *this);
-            newModule->setDisplay(&m_entryDisplay);
         } else if (modType == "Lexicons / Dictionaries"sv) {
             newModule = std::make_unique<CSwordLexiconModuleInfo>(*curMod,
                                                                   *this);
-            newModule->setDisplay(&m_entryDisplay);
         } else if (modType == "Generic Books"sv) {
             newModule = std::make_unique<CSwordBookModuleInfo>(*curMod, *this);
-            newModule->setDisplay(&m_bookDisplay);
         } else {
             continue;
         }
