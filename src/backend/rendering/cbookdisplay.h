@@ -31,12 +31,12 @@ namespace Rendering {
 */
 class CBookDisplay final: public CEntryDisplay {
 
-    public: // methods:
+public: // methods:
 
-        const QString text(const BtConstModuleList &modules,
-                           const QString &key,
-                           const DisplayOptions &displayOptions,
-                           const FilterOptions &filterOptions) final override;
+    QString text(BtConstModuleList const & modules,
+                 QString const & key,
+                 DisplayOptions const & displayOptions,
+                 FilterOptions const & filterOptions) final override;
 
 }; /* class CBookDisplay */
 

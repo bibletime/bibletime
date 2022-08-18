@@ -41,22 +41,24 @@
 
 using namespace Rendering;
 
-const QString CEntryDisplay::text(
-        const BtConstModuleList &modules,
-        const QString &keyName,
-        const DisplayOptions &displayOptions,
-        const FilterOptions &filterOptions) {
+QString CEntryDisplay::text(
+        BtConstModuleList const & modules,
+        QString const & keyName,
+        DisplayOptions const & displayOptions,
+        FilterOptions const & filterOptions)
+{
     return textKeyRendering(modules, keyName, displayOptions, filterOptions,
                      CTextRendering::KeyTreeItem::Settings::CompleteShort);
 }
 
-const QString CEntryDisplay::textKeyRendering(
-        const BtConstModuleList &modules,
-        const QString &keyName,
-        const DisplayOptions &displayOptions,
-        const FilterOptions &filterOptions,
-        CTextRendering::KeyTreeItem::Settings::KeyRenderingFace keyRendering) {
-
+QString CEntryDisplay::textKeyRendering(
+        BtConstModuleList const & modules,
+        QString const & keyName,
+        DisplayOptions const & displayOptions,
+        FilterOptions const & filterOptions,
+        CTextRendering::KeyTreeItem::Settings::KeyRenderingFace const
+            keyRendering)
+{
     if (keyName.isEmpty())
         return QString("");
 

@@ -55,11 +55,11 @@ void setupRenderTree(CSwordTreeKey & swordTree,
 
 } // anonymous namespace
 
-const QString Rendering::CBookDisplay::text(
-        const BtConstModuleList &modules,
-        const QString &keyName,
-        const DisplayOptions &displayOptions,
-        const FilterOptions &filterOptions)
+QString Rendering::CBookDisplay::text(
+        BtConstModuleList const & modules,
+        QString const & keyName,
+        DisplayOptions const & displayOptions,
+        FilterOptions const & filterOptions)
 {
     using CSBMI = CSwordBookModuleInfo;
 

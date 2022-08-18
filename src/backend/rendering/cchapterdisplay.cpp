@@ -33,11 +33,11 @@
 #pragma GCC diagnostic pop
 
 
-const QString Rendering::CChapterDisplay::text(
-        const BtConstModuleList &modules,
-        const QString &keyName,
-        const DisplayOptions &displayOptions,
-        const FilterOptions &filterOptions)
+QString Rendering::CChapterDisplay::text(
+        BtConstModuleList const & modules,
+        QString const & keyName,
+        DisplayOptions const & displayOptions,
+        FilterOptions const & filterOptions)
 {
     using CSBMI = CSwordBibleModuleInfo;
 
