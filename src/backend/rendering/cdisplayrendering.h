@@ -40,6 +40,14 @@ public: // methods:
     void setDisplayTemplateName(QString displayTemplateName) noexcept
     { m_displayTemplateName = std::move(displayTemplateName); }
 
+    QString renderDisplayEntry(
+            BtConstModuleList const & modules,
+            QString const & key,
+            CTextRendering::KeyTreeItem::Settings::KeyRenderingFace
+                    keyRendering =
+                        CTextRendering::KeyTreeItem::Settings::CompleteShort)
+            const;
+
 protected: // methods:
 
     QString entryLink(KeyTreeItem const & item,

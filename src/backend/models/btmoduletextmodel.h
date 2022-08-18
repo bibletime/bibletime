@@ -21,6 +21,7 @@
 #include "../keys/cswordversekey.h"
 #include "../keys/cswordtreekey.h"
 #include "../keys/cswordldkey.h"
+#include "../rendering/cdisplayrendering.h"
 
 
 class CSwordModuleInfo;
@@ -190,7 +191,6 @@ private:
     int m_firstEntry;
     int m_maxEntries;
     BtModuleTextFilter * m_textFilter;
-    DisplayOptions m_displayOptions;
-    FilterOptions m_filterOptions;
+    Rendering::CDisplayRendering m_displayRendering;
     std::optional<FindState> m_findState;
 };

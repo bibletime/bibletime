@@ -24,32 +24,46 @@
 #include "../keys/cswordldkey.h"
 #include "../managers/colormanager.h"
 #include "../managers/cswordbackend.h"
-#include "../rendering/centrydisplay.h"
 #include "../rendering/ctextrendering.h"
+
+
+namespace {
+
+DisplayOptions const defaultDisplayOptions = []() noexcept {
+    DisplayOptions opts;
+    opts.lineBreaks = 1;
+    opts.verseNumbers = 1;
+    return opts;
+}();
+
+FilterOptions const defaultFilterOptions = []() noexcept {
+    FilterOptions opts;
+    opts.footnotes = 0;
+    opts.greekAccents = 1;
+    opts.headings = 1;
+    opts.hebrewCantillation = 1;
+    opts.hebrewPoints = 1;
+    opts.lemmas = 0;
+    opts.morphSegmentation = 1;
+    opts.morphTags = 1;
+    opts.redLetterWords = 1;
+    opts.scriptureReferences = 0;
+    opts.strongNumbers = 0;
+    opts.textualVariants = 0;
+    return opts;
+}();
+
+} // anonymous namespace
 
 BtModuleTextFilter::~BtModuleTextFilter() {}
 
-
 BtModuleTextModel::BtModuleTextModel(QObject *parent)
-    : QAbstractListModel(parent),
-      m_firstEntry(0),
-      m_maxEntries(0),
-      m_textFilter(nullptr) {
-    m_displayOptions.verseNumbers = 1;
-    m_displayOptions.lineBreaks = 1;
-    m_filterOptions.footnotes = 0;
-    m_filterOptions.greekAccents = 1;
-    m_filterOptions.headings = 1;
-    m_filterOptions.hebrewCantillation = 1;
-    m_filterOptions.hebrewPoints = 1;
-    m_filterOptions.lemmas = 0;
-    m_filterOptions.morphSegmentation = 1;
-    m_filterOptions.morphTags = 1;
-    m_filterOptions.redLetterWords = 1;
-    m_filterOptions.scriptureReferences = 0;
-    m_filterOptions.strongNumbers = 0;
-    m_filterOptions.textualVariants = 0;
-}
+    : QAbstractListModel(parent)
+    , m_firstEntry(0)
+    , m_maxEntries(0)
+    , m_textFilter(nullptr)
+    , m_displayRendering(defaultDisplayOptions, defaultFilterOptions)
+{}
 
 void BtModuleTextModel::reloadModules() {
 
@@ -140,10 +154,7 @@ QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) cons
     if (role == ModuleEntry::TextRole || role == ModuleEntry::Text0Role) {
         if (keyName.isEmpty())
             return {};
-        auto text = Rendering::CEntryDisplay::text(moduleList,
-                                                   keyName,
-                                                   m_displayOptions,
-                                                   m_filterOptions);
+        auto text = m_displayRendering.renderDisplayEntry(moduleList, keyName);
         text.replace("#CHAPTERTITLE#", "");
         text.replace("#TEXT_ALIGN#", "left");
         text = ColorManager::replaceColors(text);
@@ -167,11 +178,10 @@ QString BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
         if (key.key().isEmpty())
             return {};
         auto text =
-            Rendering::CEntryDisplay::text(
+            m_displayRendering.renderDisplayEntry(
                 moduleList,
                 key.key(),
-                m_displayOptions, m_filterOptions,
-                m_displayOptions.verseNumbers
+                m_displayRendering.displayOptions().verseNumbers
                 ? Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey
                 : Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
         text.replace("#CHAPTERTITLE#", "");
@@ -239,12 +249,10 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
 
         if (!key.key().isEmpty())
             text +=
-                Rendering::CEntryDisplay::text(
+                m_displayRendering.renderDisplayEntry(
                     modules,
                     key.key(),
-                    m_displayOptions,
-                    m_filterOptions,
-                    m_displayOptions.verseNumbers
+                    m_displayRendering.displayOptions().verseNumbers
                     ? Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey
                     : Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
 
@@ -423,18 +431,18 @@ void BtModuleTextModel::setHighlightWords(
 }
 
 void BtModuleTextModel::setDisplayOptions(const DisplayOptions & displayOptions) {
-    if (m_displayOptions.displayOptionsAreEqual(displayOptions))
+    if (m_displayRendering.displayOptions().displayOptionsAreEqual(displayOptions))
         return;
     beginResetModel();
-    m_displayOptions = displayOptions;
+    m_displayRendering.setDisplayOptions(displayOptions);
     endResetModel();
 }
 
 void BtModuleTextModel::setFilterOptions(FilterOptions filterOptions) {
-    if (m_filterOptions.filterOptionsAreEqual(filterOptions))
+    if (m_displayRendering.filterOptions().filterOptionsAreEqual(filterOptions))
             return;
     beginResetModel();
-    m_filterOptions = filterOptions;
+    m_displayRendering.setFilterOptions(filterOptions);
     endResetModel();
 }
 
