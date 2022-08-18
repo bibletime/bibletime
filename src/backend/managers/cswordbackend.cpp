@@ -51,8 +51,6 @@
 #pragma GCC diagnostic pop
 
 
-using namespace Rendering;
-
 CSwordBackend * CSwordBackend::m_instance = nullptr;
 
 CSwordBackend::CSwordBackend()
