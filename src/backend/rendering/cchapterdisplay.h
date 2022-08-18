@@ -23,14 +23,14 @@ namespace Rendering {
   A CEntryDisplay implementation made for Bibles to display whole chapters at
   once.
 */
-class CChapterDisplay: public CEntryDisplay {
+class CChapterDisplay final: public CEntryDisplay {
 
     public: // methods:
 
         const QString text(const BtConstModuleList &modules,
                            const QString &key,
                            const DisplayOptions &displayOptions,
-                           const FilterOptions &filterOptions) override;
+                           const FilterOptions &filterOptions) final override;
 
 }; /* class CChapterDisplay */
 
