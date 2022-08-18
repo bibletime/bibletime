@@ -15,6 +15,7 @@
 #include <QApplication>
 #include <QRegExp>
 
+#include "../../util/btassert.h"
 #include "../drivers/cswordbookmoduleinfo.h"
 #include "../keys/cswordkey.h"
 #include "../keys/cswordversekey.h"
@@ -49,8 +50,7 @@ QString CEntryDisplay::text(
         CTextRendering::KeyTreeItem::Settings::KeyRenderingFace const
             keyRendering)
 {
-    if (keyName.isEmpty())
-        return QString("");
+    BT_ASSERT(!keyName.isEmpty());
 
     //no highlighted key and no extra key link in the text
     CTextRendering::KeyTreeItem::Settings normal_settings{false, keyRendering};

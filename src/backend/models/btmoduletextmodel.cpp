@@ -137,8 +137,9 @@ QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) cons
     moduleList << lexiconModule;
     QString keyName = lexiconModule->entries()[row];
 
-    if (role == ModuleEntry::TextRole ||
-            role == ModuleEntry::Text0Role) {
+    if (role == ModuleEntry::TextRole || role == ModuleEntry::Text0Role) {
+        if (keyName.isEmpty())
+            return {};
         auto text = Rendering::CEntryDisplay::text(moduleList,
                                                    keyName,
                                                    m_displayOptions,
@@ -163,6 +164,8 @@ QString BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
         key.setOffset(bookIndex);
         BtConstModuleList moduleList;
         moduleList << bookModule;
+        if (key.key().isEmpty())
+            return {};
         auto text =
             Rendering::CEntryDisplay::text(
                 moduleList,
@@ -234,15 +237,16 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
             }
         }
 
-        text +=
-            Rendering::CEntryDisplay::text(
-                modules,
-                key.key(),
-                m_displayOptions,
-                m_filterOptions,
-                m_displayOptions.verseNumbers
-                ? Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey
-                : Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
+        if (!key.key().isEmpty())
+            text +=
+                Rendering::CEntryDisplay::text(
+                    modules,
+                    key.key(),
+                    m_displayOptions,
+                    m_filterOptions,
+                    m_displayOptions.verseNumbers
+                    ? Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey
+                    : Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
 
         text.replace("#CHAPTERTITLE#", chapterTitle);
         text.replace("#TEXT_ALIGN#", "left");
