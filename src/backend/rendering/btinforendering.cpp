@@ -142,7 +142,7 @@ QString decodeCrossReference(QString const & data,
     }
 
     // qWarning("rendered the tree: %s", renderer.renderKeyTree(tree).latin1());
-    /* spanns containing rtl text need dir=rtl on their parent tag to be aligned
+    /* spans containing rtl text need dir=rtl on their parent tag to be aligned
        properly */
     QString lang = "en";  // default english
     if (module)
