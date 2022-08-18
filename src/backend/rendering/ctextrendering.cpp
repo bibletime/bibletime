@@ -394,7 +394,7 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
 
                 /// \todo Take care of the heading type!
                 if (!preverseHeading.isEmpty()) {
-                    entry.append("<div ")
+                    entry.append("<div")
                          .append(langAttr)
                          .append(" class=\"sectiontitle\">")
                          .append(preverseHeading)
@@ -430,7 +430,7 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
         } else {
             renderedText.append("\t\t<td class=\"")
                 .append(i.settings().highlight ? "currententry" : "entry")
-                .append("\" ")
+                .append("\"")
                 .append(langAttr)
                 .append(textDirectionAttribute)
                 .append("\n\t\t\t" ).append(entry).append("\n\t\t</td>\n");
