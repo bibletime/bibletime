@@ -43,8 +43,6 @@ class CEntryDisplay {
                                const FilterOptions &filterOptions,
                                CTextRendering::KeyTreeItem::Settings::KeyRenderingFace keyRendering);
 
-        virtual char display(CSwordModuleInfo & mod) { (void)mod; return 'c';}
-
 }; /* class CEntryDisplay */
 
 } /* namespace Rendering */
