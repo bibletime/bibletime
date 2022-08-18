@@ -152,11 +152,7 @@ QString decodeCrossReference(QString const & data,
                    "<div class=\"para\" dir=\"%3\">%4</div></div>")
            .arg(lang)
            .arg(QObject::tr("Cross references"))
-           .arg(module
-                ? ((module->textDirection() == CSwordModuleInfo::LeftToRight)
-                   ? "ltr"
-                   : "rtl")
-                : "")
+           .arg(module ? module->textDirectionAsHtml() : "")
            .arg(renderer.renderKeyTree(tree));
 }
 
