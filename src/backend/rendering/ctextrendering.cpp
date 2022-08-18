@@ -281,11 +281,6 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
     QString renderedText((modules.count() > 1) ? "\n\t\t<tr>\n" : "\n");
     // Only insert the table stuff if we are displaying parallel.
 
-    //declarations out of the loop for optimization
-    QString entry;
-    bool isRTL;
-    QString key_renderedText;
-
     for (auto const & modulePtr : modules) {
         BT_ASSERT(modulePtr);
         if (myVK) {
@@ -303,14 +298,15 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
         i.setMappedKey(key->key() != i.key() ? key : nullptr);
 
 
-        isRTL = (modulePtr->textDirection() == CSwordModuleInfo::RightToLeft);
-        entry = QString();
+        bool const isRTL = (modulePtr->textDirection() == CSwordModuleInfo::RightToLeft);
+        QString entry;
 
         auto & swModule = modulePtr->swordModule();
         auto const langAttr =
                 QString(" xml:lang=\"%1\" lang=\"%1\"").arg(
                     modulePtr->language()->abbrev());
 
+        QString key_renderedText;
         if (key->isValid() && i.key() == key->key()) {
             key_renderedText = key->renderedText();
 
