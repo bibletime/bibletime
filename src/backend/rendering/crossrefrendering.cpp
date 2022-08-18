@@ -38,18 +38,16 @@ QString CrossRefRendering::finishText(QString const & text,
 QString CrossRefRendering::entryLink(KeyTreeItem const & item,
                                      CSwordModuleInfo const & module) const
 {
-    QString linkText;
 
-    const bool isBible = (module.type() == CSwordModuleInfo::Bible);
+    bool const isBible = (module.type() == CSwordModuleInfo::Bible);
     CSwordVerseKey vk(&module); // only valid for bible modules, i.e. isBible == true
-    if (isBible) {
+    if (isBible)
         vk.setKey(item.key());
-    }
 
+    QString linkText;
     switch (item.settings().keyRenderingFace) {
         case KeyTreeItem::Settings::NoKey:
-            linkText = QString();
-            break; //no key is valid for all modules
+            return {}; //no key is valid for all modules
         case KeyTreeItem::Settings::CompleteShort:
             if (isBible) {
                 linkText = vk.shortText();
@@ -77,14 +75,12 @@ QString CrossRefRendering::entryLink(KeyTreeItem const & item,
         }
     }
 
-    if (!linkText.isEmpty()) { //if we have a valid link text
-        //     qWarning("rendering");
-        return QString("<a href=\"%1\">%2</a>")
-               .arg(ReferenceManager::encodeHyperlink(module, item.key()))
-               .arg(linkText);
-    }
+    if (linkText.isEmpty()) // if we have an invalid link text
+        return {};
 
-    return QString();
+    return QStringLiteral("<a href=\"%1\">%2</a>")
+           .arg(ReferenceManager::encodeHyperlink(module, item.key()),
+                linkText);
 }
 
 } // namespace Rendering
