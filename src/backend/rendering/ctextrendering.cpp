@@ -117,20 +117,21 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
             m_alternativeContent = QString::fromUtf8(vk.getRangeText());
         }
         else if (vk.getLowerBound().getChapter() != vk.getUpperBound().getChapter()) {
-            m_alternativeContent = QString("%1 - %2:%3")
+            m_alternativeContent = QStringLiteral("%1 - %2:%3")
                                    .arg(QString::fromUtf8(vk.getLowerBound().getText()))
                                    .arg(vk.getUpperBound().getChapter())
                                    .arg(vk.getUpperBound().getVerse());
         }
         else { //only verses differ (same book, same chapter)
-            m_alternativeContent = QString("%1 - %2")
+            m_alternativeContent = QStringLiteral("%1 - %2")
                                    .arg(QString::fromUtf8(vk.getLowerBound().getText()))
                                    .arg(vk.getUpperBound().getVerse());
         }
     }
-
-    m_alternativeContent.append(" (").append(module->name()).append(")");
-    m_alternativeContent.prepend("<div class=\"rangeheading\" dir=\"ltr\">").append("</div>"); //insert the right tags
+    m_alternativeContent =
+            QStringLiteral("<div class=\"rangeheading\" dir=\"ltr\">%1 (%2)"
+                           "</div>")
+                .arg(m_alternativeContent, module->name());
 }
 
 CTextRendering::CTextRendering(bool const addText)
@@ -240,9 +241,9 @@ QString CTextRendering::renderSingleKey(
 QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
 {
     if (i.hasAlternativeContent()) {
-        QString ret = i.settings().highlight
-                      ? "<div class=\"currententry\">"
-                      : "<div class=\"entry\">";
+        auto ret = i.settings().highlight
+                   ? QStringLiteral("<div class=\"currententry\">")
+                   : QStringLiteral("<div class=\"entry\">");
         ret.append(i.getAlternativeContent());
 
         if (!i.childList().empty()) {
@@ -253,21 +254,21 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
             if (modules.count() == 1)
                 // insert the direction into the surrounding div:
                 ret.insert(5,
-                           QString("dir=\"%1\" ")
+                           QStringLiteral("dir=\"%1\" ")
                                .arg(modules.first()->textDirectionAsHtml()));
 
             for (auto const & item : tree)
                 ret.append(renderEntry(item));
         }
 
-        ret.append("</div>");
+        ret.append(QStringLiteral("</div>"));
         return ret; // WARNING: Return already here!
     }
 
 
     BtConstModuleList const & modules(i.modules());
     if (modules.isEmpty())
-        return ""; // no module present for rendering
+        return {}; // no module present for rendering
 
     std::unique_ptr<CSwordKey> scoped_key(
             !k ? modules.first()->createKey() : nullptr);
@@ -278,7 +279,10 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
     if (myVK)
         myVK->setIntros(true);
 
-    QString renderedText((modules.count() > 1) ? "\n\t\t<tr>\n" : "\n");
+    bool const oneModule = modules.size() == 1;
+    auto renderedText(oneModule
+                      ? QStringLiteral("\n")
+                      : QStringLiteral("\n\t\t<tr>\n"));
     // Only insert the table stuff if we are displaying parallel.
 
     for (auto const & modulePtr : modules) {
@@ -299,7 +303,7 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
 
         auto & swModule = modulePtr->swordModule();
         auto const langAttr =
-                QString(" xml:lang=\"%1\" lang=\"%1\"").arg(
+                QStringLiteral(" xml:lang=\"%1\" lang=\"%1\"").arg(
                     modulePtr->language()->abbrev());
 
         QString key_renderedText;
@@ -315,14 +319,15 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
                     auto const lowerBoundIndex = vk->lowerBound().index();
                     auto const upperBoundIndex = vk->upperBound().index();
                     for (auto i = lowerBoundIndex; i < upperBoundIndex; ++i) {
-                        key_renderedText += " ";
+                        key_renderedText += ' ';
                         pk.setIndex(i + 1);
                         key_renderedText += pk.renderedText();
                     }
                 }
             }
         } else {
-            key_renderedText = "<span class=\"inactive\">&#8212;</span>";
+            key_renderedText =
+                    QStringLiteral("<span class=\"inactive\">&#8212;</span>");
         }
 
         QString entry;
@@ -338,13 +343,14 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
                 if (preverseHeading.isEmpty())
                     continue;
 
-                static QString const greaterOrS(">\x20\x09\x0d\x0a");
+                static QString const greaterOrS(
+                            QStringLiteral(">\x20\x09\x0d\x0a"));
                 for (auto i = preverseHeading.indexOf('<');
                      i >= 0;
                      i = preverseHeading.indexOf('<', i))
                 {
                     auto ref = preverseHeading.midRef(i + 1);
-                    if (ref.startsWith("title")) {
+                    if (ref.startsWith(QStringLiteral("title"))) {
                         ref = ref.mid(5); // strlen("title")
                         if (!ref.isEmpty() && greaterOrS.contains(ref[0])) {
                             auto const charsUntilTagEnd = ref.indexOf('>');
@@ -355,7 +361,7 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
                         } else {
                             i += 7; // strlen("<title?")
                         }
-                    } else if (ref.startsWith("/title")) {
+                    } else if (ref.startsWith(QStringLiteral("/title"))) {
                         ref = ref.mid(6); // strlen("/title")
                         if (!ref.isEmpty() && greaterOrS.contains(ref[0])) {
                             auto const charsUntilTagEnd = ref.indexOf('>');
@@ -366,7 +372,7 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
                         } else {
                             i += 8; // strlen("</title?")
                         }
-                    } else if (ref.startsWith("div")) {
+                    } else if (ref.startsWith(QStringLiteral("div"))) {
                         ref = ref.mid(3); // strlen("div")
                         if (!ref.isEmpty() && greaterOrS.contains(ref[0])) {
                             auto const charsUntilTagEnd = ref.indexOf('>');
@@ -393,21 +399,19 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
                 }
 
                 /// \todo Take care of the heading type!
-                if (!preverseHeading.isEmpty()) {
-                    entry.append("<div")
-                         .append(langAttr)
-                         .append(" class=\"sectiontitle\">")
-                         .append(preverseHeading)
-                         .append("</div>");
-                }
+                if (!preverseHeading.isEmpty())
+                    entry = QStringLiteral(
+                                "<div%1 class=\"sectiontitle\">%2</div>")
+                            .arg(langAttr, preverseHeading);
             }
         }
 
-        entry.append(m_displayOptions.lineBreaks  ? "<div class=\""  : "<div class=\"inline ");
-
-        if (modules.count() == 1) //insert only the class if we're not in a td
-            entry.append( i.settings().highlight  ? "currententry " : "entry " );
-        entry.append("\"");
+        entry.append(m_displayOptions.lineBreaks
+                     ? QStringLiteral("<div class=\"")
+                     : QStringLiteral("<div class=\"inline "));
+        if (oneModule && i.settings().highlight)
+            entry.append(QStringLiteral("current"));
+        entry.append(QStringLiteral("entry\""));
         auto const textDirectionAttribute =
                 QStringLiteral(" dir=\"%1\">").arg(
                     modulePtr->textDirectionAsHtml());
@@ -415,7 +419,10 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
 
         //keys should normally be left-to-right, but this doesn't apply in all cases
         if(key->isValid() && i.key() == key->key())
-            entry.append("<span class=\"entryname\" dir=\"ltr\">").append(entryLink(i, *modulePtr)).append("</span>");
+            entry.append(
+                    QStringLiteral(
+                            "<span class=\"entryname\" dir=\"ltr\">%1</span>")
+                    .arg(entryLink(i, *modulePtr)));
 
         if (m_addText)
             entry.append(key_renderedText);
@@ -423,22 +430,25 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
         for (auto const & item : i.childList())
             entry.append(renderEntry(item));
 
-        entry.append("</div>");
+        entry.append(QStringLiteral("</div>"));
 
-        if (modules.count() == 1) {
-            renderedText.append("\t\t").append(entry).append("\n");
+        if (oneModule) {
+            renderedText.append(QStringLiteral("\t\t%1\n").arg(entry));
         } else {
-            renderedText.append("\t\t<td class=\"")
-                .append(i.settings().highlight ? "currententry" : "entry")
-                .append("\"")
-                .append(langAttr)
-                .append(textDirectionAttribute)
-                .append("\n\t\t\t" ).append(entry).append("\n\t\t</td>\n");
+            renderedText.append(
+                        QStringLiteral("\t\t<td class=\"%1entry\"%2%3\n\t\t\t%4"
+                                       "\n\t\t</td>\n")
+                        .arg(i.settings().highlight
+                             ? QStringLiteral("current")
+                             : QString(),
+                             langAttr,
+                             textDirectionAttribute,
+                             entry));
         }
     }
 
-    if (modules.count() > 1)
-        renderedText.append("\t\t</tr>\n");
+    if (!oneModule)
+        renderedText.append(QStringLiteral("\t\t</tr>\n"));
 
     //  qDebug("CTextRendering: %s", renderedText.latin1());
     return renderedText;
@@ -454,7 +464,7 @@ QString CTextRendering::finishText(QString const & text, KeyTree const & tree)
         settings.langAbbrev = firstModule->language()->abbrev();
         settings.textDirection = firstModule->textDirection();
     } else {
-        settings.langAbbrev = "unknown";
+        settings.langAbbrev = QStringLiteral("unknown");
     }
 
     return CDisplayTemplateMgr::instance()->fillTemplate(
