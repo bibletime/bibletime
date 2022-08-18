@@ -226,6 +226,7 @@ void BtSearchResultArea::updatePreview(const QString& key) {
 
         QString text2 = CSwordModuleSearch::highlightSearchedText(text, searchedText);
         text2.replace("#CHAPTERTITLE#", "");
+        text2.replace("#TEXT_ALIGN#", "left");
         text2 = ColorManager::instance().replaceColors(text2);
         m_previewDisplay->setText(text2);
         m_previewDisplay->scrollToAnchor( CDisplayRendering::keyToHTMLAnchor(key) );

@@ -44,10 +44,10 @@ td.entry, td.currententry {
     text-align: left;
 }
 .entry[dir=rtl] {
-    text-align: right !important;
+    text-align: #TEXT_ALIGN# !important;
 }
 #printer .entry[dir=rtl] {
-    text-align:right !important;
+    text-align:#TEXT_ALIGN# !important;
 }
 
 /* Keep the values the same as in .entry (take the border into account!) */
@@ -58,7 +58,7 @@ td.entry, td.currententry {
     background-color: #CURRENT_ENTRY#;
 }
 .currententry[dir=rtl] {
-    text-align:right !important;
+    text-align:#TEXT_ALIGN# !important;
 }
 .currententry.inline {
     line-height:1.4em;
@@ -300,13 +300,13 @@ a[name="crossref"] {
     margin-left:15px;
 }
 #infodisplay .entry[dir=rtl] {
-    text-align: right !important;
+    text-align: #TEXT_ALIGN# !important;
 }
 #infodisplay .entry .entry { /*No smaller font size for nested entries*/
     margin:0px;
 }
 #infodisplay .entry .entry[dir=rtl] { /*No smaller font size for nested entries*/
-    text-align: right !important;
+    text-align: #TEXT_ALIGN# !important;
 }
 #infodisplay .entryname {
     padding:2px;

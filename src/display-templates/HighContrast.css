@@ -42,7 +42,7 @@ a {
     text-align: left;
 }
 .entry[dir=rtl],#printer .entry[dir=rtl]  {
-    text-align: right;
+    text-align: #TEXT_ALIGN#;
 }
 div.entry, td.entry, td.currententry {
     vertical-align:top;
@@ -58,7 +58,7 @@ div.entry, td.entry, td.currententry {
     background-color: #CURRENT_ENTRY#;
 }
 .currententry[dir=rtl] {
-    text-align: right;
+    text-align: #TEXT_ALIGN#;
 }
 .currententry.inline {
     line-height:1.4em;

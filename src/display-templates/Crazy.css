@@ -68,7 +68,7 @@ table .entry:nth-child(even) {
 
 #printer .entry { text-indent:15px; }
 /* Often needed to format BiDi text in the right way */
-/* .entry[dir=rtl] { text-align:right !important; } */b
+/* .entry[dir=rtl] { text-align:#TEXT_ALIGN# !important; } */b
 /* #printer .entry[dir=rtl] { } */
 
 /* Special formatting for the block element entries */
@@ -106,7 +106,7 @@ td.entry + td.entry {
 #bible div.entry[dir=rtl] {
     border-left:none;
     border-right:10px solid white;
-    text-align:right;
+    text-align:#TEXT_ALIGN#;
 }
 #bible div.currententry {
     border-left:10px solid #99B4FF;
@@ -308,7 +308,7 @@ a[name="crossref"] {
 
 #printer .rangeheading {}
 
-*[dir=rtl] { text-align:right !important; }
+*[dir=rtl] { text-align:#TEXT_ALIGN# !important; }
 
 .highlightwords {
     background-color: #HIGHLIGHT#;
