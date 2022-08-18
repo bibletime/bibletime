@@ -24,15 +24,6 @@
 
 namespace Rendering {
 
-CPlainTextExportRendering::CPlainTextExportRendering(
-        bool addText,
-        const DisplayOptions &displayOptions,
-        const FilterOptions &filterOptions)
-        : CTextRendering(addText, displayOptions, filterOptions)
-{
-    // Intentionally empty
-}
-
 QString CPlainTextExportRendering::renderEntry(KeyTreeItem const & i,
                                                CSwordKey * k) const
 {

@@ -13,7 +13,6 @@
 #pragma once
 
 #include <QString>
-#include "../config/btconfig.h"
 #include "ctextrendering.h"
 
 
@@ -32,10 +31,7 @@ class CPlainTextExportRendering: public CTextRendering {
 
     public: // methods:
 
-        CPlainTextExportRendering(
-            bool addText,
-            const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
-            const FilterOptions &filterOptions = btConfig().getFilterOptions());
+        using CTextRendering::CTextRendering;
 
     protected: // methods:
 
