@@ -22,29 +22,20 @@ struct FilterOptions;
 
 namespace Rendering {
 
-class CEntryDisplay {
+namespace CEntryDisplay {
 
-public: // methods:
+/**
+  \returns the rendered text using the modules in the list and using the
+           key parameter.
+*/
+QString text(
+        BtConstModuleList const & modules,
+        QString const & key,
+        DisplayOptions const & displayOptions,
+        FilterOptions const & filterOptions,
+        CTextRendering::KeyTreeItem::Settings::KeyRenderingFace keyRendering =
+                CTextRendering::KeyTreeItem::Settings::CompleteShort);
 
-    virtual ~CEntryDisplay() {}
-
-    /**
-      \returns the rendered text using the modules in the list and using the
-               key parameter.
-    */
-    virtual QString text(BtConstModuleList const & modules,
-                         QString const & key,
-                         DisplayOptions const & displayOptions,
-                         FilterOptions const & filterOptions);
-
-    QString textKeyRendering(
-            BtConstModuleList const & modules,
-            QString const & key,
-            DisplayOptions const & displayOptions,
-            FilterOptions const & filterOptions,
-            CTextRendering::KeyTreeItem::Settings::KeyRenderingFace
-                keyRendering);
-
-}; /* class CEntryDisplay */
+}; /* namespace CEntryDisplay */
 
 } /* namespace Rendering */

@@ -139,9 +139,10 @@ QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) cons
 
     if (role == ModuleEntry::TextRole ||
             role == ModuleEntry::Text0Role) {
-        Rendering::CEntryDisplay entryDisplay;
-        QString text = entryDisplay.text(moduleList, keyName,
-                                         m_displayOptions, m_filterOptions);
+        auto text = Rendering::CEntryDisplay::text(moduleList,
+                                                   keyName,
+                                                   m_displayOptions,
+                                                   m_filterOptions);
         text.replace("#CHAPTERTITLE#", "");
         text.replace("#TEXT_ALIGN#", "left");
         text = ColorManager::replaceColors(text);
@@ -160,14 +161,16 @@ QString BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
         CSwordTreeKey key(bookModule->tree(), bookModule);
         int bookIndex = index.row() * 4;
         key.setOffset(bookIndex);
-        Rendering::CEntryDisplay entryDisplay;
         BtConstModuleList moduleList;
         moduleList << bookModule;
-        QString text = entryDisplay.textKeyRendering(moduleList, key.key(),
-                                                     m_displayOptions, m_filterOptions,
-                                                     m_displayOptions.verseNumbers ?
-                                                     Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey :
-                                                     Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
+        auto text =
+            Rendering::CEntryDisplay::text(
+                moduleList,
+                key.key(),
+                m_displayOptions, m_filterOptions,
+                m_displayOptions.verseNumbers
+                ? Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey
+                : Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
         text.replace("#CHAPTERTITLE#", "");
         text.replace("#TEXT_ALIGN#", "left");
         return text;
@@ -231,11 +234,15 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
             }
         }
 
-        text += Rendering::CEntryDisplay().textKeyRendering(modules,
-                                                            key.key(), m_displayOptions, m_filterOptions,
-                                                            m_displayOptions.verseNumbers ?
-                                                            Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey :
-                                                            Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
+        text +=
+            Rendering::CEntryDisplay::text(
+                modules,
+                key.key(),
+                m_displayOptions,
+                m_filterOptions,
+                m_displayOptions.verseNumbers
+                ? Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey
+                : Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
 
         text.replace("#CHAPTERTITLE#", chapterTitle);
         text.replace("#TEXT_ALIGN#", "left");

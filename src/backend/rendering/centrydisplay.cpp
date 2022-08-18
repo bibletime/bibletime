@@ -45,16 +45,6 @@ QString CEntryDisplay::text(
         BtConstModuleList const & modules,
         QString const & keyName,
         DisplayOptions const & displayOptions,
-        FilterOptions const & filterOptions)
-{
-    return textKeyRendering(modules, keyName, displayOptions, filterOptions,
-                     CTextRendering::KeyTreeItem::Settings::CompleteShort);
-}
-
-QString CEntryDisplay::textKeyRendering(
-        BtConstModuleList const & modules,
-        QString const & keyName,
-        DisplayOptions const & displayOptions,
         FilterOptions const & filterOptions,
         CTextRendering::KeyTreeItem::Settings::KeyRenderingFace const
             keyRendering)
