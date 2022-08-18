@@ -34,7 +34,6 @@
 #include "../config/btconfig.h"
 #include "../keys/cswordkey.h"
 #include "../managers/cswordbackend.h"
-#include "../rendering/centrydisplay.h"
 #include "../cswordmodulesearch.h"
 #include "cswordbiblemoduleinfo.h"
 #include "cswordlexiconmoduleinfo.h"
