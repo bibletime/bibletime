@@ -722,10 +722,6 @@ void CDisplayWindow::lookupSwordKey(CSwordKey * newKey) {
     if (m_swordKey != newKey)
         m_swordKey->setKey(newKey->key());
 
-    /// \todo next-TODO how about options?
-    auto * const display = modules().first()->getDisplay();
-    BT_ASSERT(display);
-
     m_displayWidget->setDisplayOptions(displayOptions());
     m_displayWidget->setFilterOptions(filterOptions());
     m_displayWidget->scrollToKey(newKey);
