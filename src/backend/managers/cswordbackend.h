@@ -28,9 +28,6 @@
 #include "../filters/teitohtml.h"
 #include "../filters/thmltohtml.h"
 #include "../language.h"
-#include "../rendering/cbookdisplay.h"
-#include "../rendering/cchapterdisplay.h"
-#include "../rendering/centrydisplay.h"
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -270,11 +267,6 @@ private: // fields:
         Filters::ThmlToHtml  m_thmlFilter;
 
     } m_manager;
-
-    // Displays:
-    Rendering::CChapterDisplay m_chapterDisplay;
-    Rendering::CEntryDisplay   m_entryDisplay;
-    Rendering::CBookDisplay    m_bookDisplay;
 
     std::shared_ptr<BtBookshelfModel> const m_dataModel;
     std::shared_ptr<AvailableLanguagesCacheContainer const>
