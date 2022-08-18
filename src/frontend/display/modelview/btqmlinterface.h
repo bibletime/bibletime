@@ -162,8 +162,6 @@ private Q_SLOTS:
     void slotSetHighlightWords();
 
 private:
-    QString decodeLemma(const QString& value);
-    QString decodeMorph(const QString& value);
     QFont font(int column) const;
     void getFontsFromSettings();
     QString getReferenceFromUrl(const QString& url);
