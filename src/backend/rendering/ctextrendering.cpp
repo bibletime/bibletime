@@ -297,10 +297,6 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
         // indicate that key was changed
         i.setMappedKey(key->key() != i.key() ? key : nullptr);
 
-
-        bool const isRTL = (modulePtr->textDirection() == CSwordModuleInfo::RightToLeft);
-        QString entry;
-
         auto & swModule = modulePtr->swordModule();
         auto const langAttr =
                 QString(" xml:lang=\"%1\" lang=\"%1\"").arg(
@@ -329,6 +325,7 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
             key_renderedText = "<span class=\"inactive\">&#8212;</span>";
         }
 
+        QString entry;
         if (m_filterOptions.headings && key->isValid() && i.key() == key->key()) {
 
             // only process EntryAttributes, do not render, this might destroy the EntryAttributes again
@@ -411,6 +408,7 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
         if (modules.count() == 1) //insert only the class if we're not in a td
             entry.append( i.settings().highlight  ? "currententry " : "entry " );
         entry.append("\"");
+        bool const isRTL = (modulePtr->textDirection() == CSwordModuleInfo::RightToLeft);
         entry.append(langAttr).append(isRTL ? " dir=\"rtl\">" : " dir=\"ltr\">");
 
         //keys should normally be left-to-right, but this doesn't apply in all cases
