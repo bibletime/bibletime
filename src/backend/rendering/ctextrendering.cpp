@@ -160,7 +160,7 @@ BtConstModuleList CTextRendering::collectModules(KeyTree const & tree) {
     return modules;
 }
 
-QString CTextRendering::renderKeyTree(const KeyTree &tree) {
+QString CTextRendering::renderKeyTree(KeyTree const & tree) const {
     //CSwordBackend::instance()()->setDisplayOptions( m_displayOptions );
     CSwordBackend::instance()->setFilterOptions(m_filterOptions);
 
@@ -236,7 +236,7 @@ QString CTextRendering::renderSingleKey(
     return renderKeyTree(tree);
 }
 
-QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
+QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
 {
     if (i.hasAlternativeContent()) {
         QString ret = i.settings().highlight
@@ -451,7 +451,9 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
     return renderedText;
 }
 
-QString CTextRendering::finishText(QString const & text, KeyTree const & tree) {
+QString CTextRendering::finishText(QString const & text, KeyTree const & tree)
+    const
+{
     CDisplayTemplateMgr::Settings settings;
     settings.modules = collectModules(tree);
     if (settings.modules.count() == 1) {
@@ -472,5 +474,5 @@ QString CTextRendering::finishText(QString const & text, KeyTree const & tree) {
     \fn CTextRendering::entryLink( KeyTreeItem& item )
  */
 QString CTextRendering::entryLink(KeyTreeItem const & item,
-                                  CSwordModuleInfo const &)
+                                  CSwordModuleInfo const &) const
 { return item.key(); }

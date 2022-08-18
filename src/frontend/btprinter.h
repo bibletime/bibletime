@@ -34,10 +34,11 @@ public: // methods:
 private: // methods:
 
     QString entryLink(KeyTreeItem const & item,
-                      CSwordModuleInfo const & module) override;
+                      CSwordModuleInfo const & module) const override;
 
     QString renderEntry(KeyTreeItem const & item,
-                        CSwordKey * const key = nullptr) override;
-    QString finishText(QString const & text, KeyTree const & tree) override;
+                        CSwordKey * const key = nullptr) const override;
+    QString finishText(QString const & text, KeyTree const & tree)
+            const override;
 
 };

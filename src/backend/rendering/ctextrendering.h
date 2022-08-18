@@ -140,7 +140,7 @@ class CTextRendering {
             m_displayOptions = displayOptions;
         }
 
-        QString renderKeyTree(const KeyTree &tree);
+        QString renderKeyTree(KeyTree const & tree) const;
 
         QString renderKeyRange(
                 CSwordVerseKey const & lowerBound,
@@ -157,10 +157,12 @@ class CTextRendering {
     protected: // methods:
 
         static BtConstModuleList collectModules(KeyTree const & tree);
-        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr);
-        virtual QString finishText(const QString &text, const KeyTree &tree);
+        virtual QString renderEntry(KeyTreeItem const & item,
+                                    CSwordKey * key = nullptr) const;
+        virtual QString finishText(QString const & text,
+                                   KeyTree const & tree) const;
         virtual QString entryLink(KeyTreeItem const & item,
-                                  CSwordModuleInfo const & module);
+                                  CSwordModuleInfo const & module) const;
 
     protected: // fields:
 

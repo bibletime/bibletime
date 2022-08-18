@@ -39,8 +39,10 @@ class CPlainTextExportRendering: public CTextRendering {
 
     protected: // methods:
 
-        QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr) override;
-        QString finishText(const QString &text, const KeyTree &tree) override;
+        QString renderEntry(KeyTreeItem const & item, CSwordKey * key = nullptr)
+                const override;
+        QString finishText(QString const & text, KeyTree const & tree)
+                const override;
 
 }; /* class CPlainTextExportRendering */
 

@@ -28,13 +28,15 @@ CrossRefRendering::CrossRefRendering(const DisplayOptions &displayOptions,
     // Intentionally empty
 }
 
-QString CrossRefRendering::finishText(const QString &text, const KeyTree &tree) {
+QString CrossRefRendering::finishText(QString const & text,
+                                      KeyTree const & tree) const
+{
     Q_UNUSED(tree)
     return text;
 }
 
 QString CrossRefRendering::entryLink(KeyTreeItem const & item,
-                                     CSwordModuleInfo const & module)
+                                     CSwordModuleInfo const & module) const
 {
     QString linkText;
 

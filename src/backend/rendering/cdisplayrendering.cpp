@@ -35,7 +35,7 @@ CDisplayRendering::CDisplayRendering(DisplayOptions const & displayOptions,
 {}
 
 QString CDisplayRendering::entryLink(KeyTreeItem const & item,
-                                     CSwordModuleInfo const & module)
+                                     CSwordModuleInfo const & module) const
 {
     QString linkText;
 
@@ -144,7 +144,8 @@ QString CDisplayRendering::keyToHTMLAnchor(QString const & key) {
 }
 
 QString
-CDisplayRendering::finishText(QString const & text, KeyTree const & tree) {
+CDisplayRendering::finishText(QString const & text, KeyTree const & tree) const
+{
     BtConstModuleList modules = collectModules(tree);
 
     //marking words is very slow, we have to find a better solution

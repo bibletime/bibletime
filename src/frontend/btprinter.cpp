@@ -52,7 +52,7 @@ void BtPrinter::printKeyTree(KeyTree const & tree) {
 }
 
 QString BtPrinter::entryLink(KeyTreeItem const & item,
-                             CSwordModuleInfo const & module)
+                             CSwordModuleInfo const & module) const
 {
     if (module.type() != CSwordModuleInfo::Bible)
         return item.key();
@@ -75,7 +75,7 @@ QString BtPrinter::entryLink(KeyTreeItem const & item,
     }
 }
 
-QString BtPrinter::renderEntry(KeyTreeItem const & i, CSwordKey * key) {
+QString BtPrinter::renderEntry(KeyTreeItem const & i, CSwordKey * key) const {
     Q_UNUSED(key)
     BtPrinter::KeyTreeItem const * const printItem =
             static_cast<BtPrinter::KeyTreeItem const *>(&i);
@@ -94,7 +94,8 @@ QString BtPrinter::renderEntry(KeyTreeItem const & i, CSwordKey * key) {
     return CDisplayRendering::renderEntry(i);
 }
 
-QString BtPrinter::finishText(QString const & text, KeyTree const & tree) {
+QString BtPrinter::finishText(QString const & text, KeyTree const & tree) const
+{
     BtConstModuleList const modules = collectModules(tree);
     BT_ASSERT(!modules.empty());
 

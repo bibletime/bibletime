@@ -31,9 +31,10 @@ public: // methods:
 protected: // methods:
 
     QString entryLink(KeyTreeItem const & item,
-                      CSwordModuleInfo const & module) override;
+                      CSwordModuleInfo const & module) const override;
 
-    QString finishText(const QString &text, const KeyTree &tree) override;
+    QString finishText(QString const & text, KeyTree const & tree)
+            const override;
 
 }; /* class CrossRefRendering */
 

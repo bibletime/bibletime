@@ -33,8 +33,8 @@ CPlainTextExportRendering::CPlainTextExportRendering(
     // Intentionally empty
 }
 
-QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
-                                               CSwordKey * k)
+QString CPlainTextExportRendering::renderEntry(KeyTreeItem const & i,
+                                               CSwordKey * k) const
 {
     Q_UNUSED(k)
 
@@ -62,7 +62,9 @@ QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
     return renderedText;
 }
 
-QString CPlainTextExportRendering::finishText(const QString &text, const KeyTree &tree) {
+QString CPlainTextExportRendering::finishText(QString const & text,
+                                              KeyTree const & tree) const
+{
     Q_UNUSED(tree)
     return text;
 }
