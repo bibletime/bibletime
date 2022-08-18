@@ -19,6 +19,7 @@
 #include <set>
 #include "../../util/btassert.h"
 #include "../bookshelfmodel/btbookshelfmodel.h"
+#include "../btglobal.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../drivers/btconstmoduleset.h"
 #include "../filters/gbftohtml.h"
