@@ -16,6 +16,7 @@
 #include <QIcon>
 #include <QMenu>
 #include <QToolBar>
+#include "../../backend/config/btconfigcore.h"
 #include "../../backend/keys/cswordversekey.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
