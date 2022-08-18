@@ -42,16 +42,4 @@ ListInfoData detectInfo(QString const & data);
 QString formatInfo(const ListInfoData & info,  BtConstModuleList const & modules = BtConstModuleList());
 QString formatInfo(QString const & info, QString const & lang = QString());
 
-QString decodeAbbreviation(QString const & data);
-
-/**
-*   \param modules render references to each Bible module in the list, if empty use standard Bible.
-*       If module was provided in reference (KJV:John.1.1) this parameter has no effect.
-*/
-QString decodeCrossReference(QString const & data, BtConstModuleList const & modules = BtConstModuleList());
-QString decodeFootnote(QString const & data);
-QString decodeStrongs(QString const & data);
-QString decodeMorph(QString const & data);
-QString decodeSwordReference(QString const & data);
-
 } /* namespace Rendering { */
