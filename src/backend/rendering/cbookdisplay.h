@@ -29,14 +29,14 @@ namespace Rendering {
   A CEntryDisplay implementation which works on tree-based GenBook modules of
   Sword.
 */
-class CBookDisplay: public CEntryDisplay {
+class CBookDisplay final: public CEntryDisplay {
 
     public: // methods:
 
         const QString text(const BtConstModuleList &modules,
                            const QString &key,
                            const DisplayOptions &displayOptions,
-                           const FilterOptions &filterOptions) override;
+                           const FilterOptions &filterOptions) final override;
 
 }; /* class CBookDisplay */
 
