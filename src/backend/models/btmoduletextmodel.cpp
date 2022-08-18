@@ -24,6 +24,7 @@
 #include "../keys/cswordldkey.h"
 #include "../managers/colormanager.h"
 #include "../managers/cswordbackend.h"
+#include "../rendering/centrydisplay.h"
 #include "../rendering/ctextrendering.h"
 
 BtModuleTextFilter::~BtModuleTextFilter() {}
