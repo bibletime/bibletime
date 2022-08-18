@@ -15,6 +15,7 @@
 #include <QApplication>
 #include <QClipboard>
 #include <QScreen>
+#include <QRegularExpression>
 #include <QTimerEvent>
 #include <utility>
 #include "../../../backend/config/btconfig.h"
@@ -139,11 +140,18 @@ QString BtQmlInterface::getRawText(int row, int column) {
     auto rawText = mKey.rawText();
 
     /* Since rawText is a complete HTML page at the moment, strip away headers
-       and footers of a HTML page: */
-    QRegExp re("(?:<html.*>.+<body.*>)", Qt::CaseInsensitive);
-    re.setMinimal(true);
-    rawText.replace(re, "");
-    rawText.replace(QRegExp("</body></html>", Qt::CaseInsensitive), "");
+       and footers of a HTML page, keeping only the contents of <body>: */
+    static auto const reFlags =
+            QRegularExpression::CaseInsensitiveOption
+            | QRegularExpression::DotMatchesEverythingOption
+            | QRegularExpression::DontCaptureOption
+            | QRegularExpression::UseUnicodePropertiesOption;
+    static QRegularExpression const reBefore("^.*?<body(\\s[^>]*?)?>", reFlags);
+    static QRegularExpression const reAfter("</body>.*?$", reFlags);
+    if (auto const m = reBefore.match(rawText); m.hasMatch())
+        rawText.remove(0, m.capturedLength());
+    if (auto const m = reAfter.match(rawText); m.hasMatch())
+        rawText.chop(m.capturedLength());
     return rawText;
 }
 
