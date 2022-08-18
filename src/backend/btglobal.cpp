@@ -35,7 +35,9 @@ FilterOptions::FilterOptions()
       morphSegmentation(0) {
 }
 
-bool FilterOptions::filterOptionsAreEqual(const FilterOptions& opts) {
+bool FilterOptions::filterOptionsAreEqual(FilterOptions const & opts)
+    const noexcept
+{
     return opts.footnotes == footnotes &&
             opts.strongNumbers == strongNumbers &&
             opts.headings == headings &&
@@ -50,7 +52,9 @@ bool FilterOptions::filterOptionsAreEqual(const FilterOptions& opts) {
             opts.morphSegmentation == morphSegmentation;
 }
 
-bool DisplayOptions::displayOptionsAreEqual(const DisplayOptions& opts) {
+bool DisplayOptions::displayOptionsAreEqual(DisplayOptions const & opts)
+    const noexcept
+{
     return opts.lineBreaks == lineBreaks &&
             opts.verseNumbers == verseNumbers;
 }
