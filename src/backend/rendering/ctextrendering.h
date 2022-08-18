@@ -121,7 +121,7 @@ class CTextRendering {
                        DisplayOptions const & displayOptions,
                        FilterOptions const & filterOptions);
 
-        virtual ~CTextRendering() {}
+        virtual ~CTextRendering();
 
         FilterOptions const & filterOptions() const noexcept
         { return m_filterOptions; }
