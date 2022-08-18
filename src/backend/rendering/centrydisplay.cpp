@@ -12,17 +12,11 @@
 
 #include "centrydisplay.h"
 
-#include <QApplication>
-#include <QRegExp>
-
 #include "../../util/btassert.h"
-#include "../drivers/cswordbookmoduleinfo.h"
-#include "../keys/cswordkey.h"
+#include "../drivers/cswordmoduleinfo.h"
 #include "../keys/cswordversekey.h"
-#include "../managers/cdisplaytemplatemgr.h"
-#include "../managers/referencemanager.h"
 #include "cdisplayrendering.h"
-#include "ctextrendering.h"
+
 
 // Sword includes:
 #pragma GCC diagnostic push
