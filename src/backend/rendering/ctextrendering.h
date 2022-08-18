@@ -124,6 +124,22 @@ class CTextRendering {
 
         virtual ~CTextRendering() {}
 
+        FilterOptions const & filterOptions() const noexcept
+        { return m_filterOptions; }
+
+        void setFilterOptions(FilterOptions const & filterOptions) noexcept {
+            static_assert(noexcept(m_filterOptions = filterOptions));
+            m_filterOptions = filterOptions;
+        }
+
+        DisplayOptions const & displayOptions() const noexcept
+        { return m_displayOptions; }
+
+        void setDisplayOptions(DisplayOptions const & displayOptions) noexcept {
+            static_assert(noexcept(m_displayOptions = displayOptions));
+            m_displayOptions = displayOptions;
+        }
+
         QString renderKeyTree(const KeyTree &tree);
 
         QString renderKeyRange(
@@ -148,8 +164,8 @@ class CTextRendering {
 
     protected: // fields:
 
-        DisplayOptions const m_displayOptions;
-        FilterOptions const m_filterOptions;
+        DisplayOptions m_displayOptions;
+        FilterOptions m_filterOptions;
         bool const m_addText;
 
 }; /* class CTextRendering */
