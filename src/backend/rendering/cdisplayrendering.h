@@ -15,7 +15,6 @@
 #include "ctextrendering.h"
 
 #include <utility>
-#include "../config/btconfig.h"
 
 
 namespace Rendering {
@@ -31,9 +30,9 @@ public: // methods:
 
     static QString keyToHTMLAnchor(QString const& key);
 
-    CDisplayRendering(
-        DisplayOptions const & displayOptions = btConfig().getDisplayOptions(),
-        FilterOptions const & filterOptions = btConfig().getFilterOptions());
+    CDisplayRendering();
+    CDisplayRendering(DisplayOptions const & displayOptions,
+                      FilterOptions const & filterOptions);
 
     QString const & displayTemplateName() const noexcept
     { return m_displayTemplateName; }
