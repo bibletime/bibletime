@@ -408,8 +408,10 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
         if (modules.count() == 1) //insert only the class if we're not in a td
             entry.append( i.settings().highlight  ? "currententry " : "entry " );
         entry.append("\"");
-        bool const isRTL = (modulePtr->textDirection() == CSwordModuleInfo::RightToLeft);
-        entry.append(langAttr).append(isRTL ? " dir=\"rtl\">" : " dir=\"ltr\">");
+        auto const textDirectionAttribute =
+                QStringLiteral(" dir=\"%1\">").arg(
+                    modulePtr->textDirectionAsHtml());
+        entry.append(langAttr).append(textDirectionAttribute);
 
         //keys should normally be left-to-right, but this doesn't apply in all cases
         if(key->isValid() && i.key() == key->key())
@@ -430,11 +432,8 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
                 .append(i.settings().highlight ? "currententry" : "entry")
                 .append("\" ")
                 .append(langAttr)
-                .append(" dir=\"")
-                .append(isRTL ? "rtl" : "ltr")
-                .append("\">\n")
-                .append( "\t\t\t" ).append( entry ).append("\n")
-                .append("\t\t</td>\n");
+                .append(textDirectionAttribute)
+                .append("\n\t\t\t" ).append(entry).append("\n\t\t</td>\n");
         }
     }
 
