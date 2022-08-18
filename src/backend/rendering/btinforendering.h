@@ -39,7 +39,8 @@ using ListInfoData = QList<InfoData>;
 ListInfoData detectInfo(QString const & data);
 
 /** Process list of InfoData and format all data into string */
-QString formatInfo(const ListInfoData & info,  BtConstModuleList const & modules = BtConstModuleList());
+QString formatInfo(ListInfoData const & info,
+                   BtConstModuleList const & modules);
 QString formatInfo(QString const & info, QString const & lang = QString());
 
 } /* namespace Rendering { */
