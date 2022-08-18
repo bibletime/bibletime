@@ -52,8 +52,6 @@ QString CEntryDisplay::text(
     if (keyName.isEmpty())
         return QString("");
 
-    CDisplayRendering render(displayOptions, filterOptions);
-
     //no highlighted key and no extra key link in the text
     CTextRendering::KeyTreeItem::Settings normal_settings{false, keyRendering};
     const CSwordModuleInfo *module = modules.first();
@@ -89,5 +87,6 @@ QString CEntryDisplay::text(
         }
     }
     tree.emplace_back(keyName, modules, normal_settings);
-    return render.renderKeyTree(tree);
+
+    return CDisplayRendering(displayOptions, filterOptions).renderKeyTree(tree);
 }
