@@ -139,7 +139,7 @@ QString CDisplayRendering::entryLink(KeyTreeItem const & item,
 
     case KeyTreeItem::Settings::ExpandedLong:
         if (isBible) {
-            linkText = QString("%1 (%2)").arg(vk.key()).arg(module.name());
+            linkText = QStringLiteral("%1 (%2)").arg(vk.key(), module.name());
             break;
         }
         [[fallthrough]];
@@ -160,20 +160,23 @@ QString CDisplayRendering::entryLink(KeyTreeItem const & item,
                 if (vk.bookName() != baseKey.bookName()) {
                     linkText = vk.shortText();
                 } else if (vk.chapter() != baseKey.chapter()) {
-                    linkText = QString("%1:%2").arg(vk.chapter()).arg(vk.verse());
+                    linkText =
+                            QStringLiteral("%1:%2")
+                            .arg(vk.chapter())
+                            .arg(vk.verse());
                 } else {
                     linkText = QString::number(vk.verse());
                 }
 
                 if(vk.isBoundSet()) {
-                    linkText += "-";
+                    linkText += '-';
                     auto const upper = vk.upperBound();
                     auto const lower = vk.lowerBound();
                     if (upper.book() != lower.book()) {
                         linkText += upper.shortText();
                     } else if(upper.chapter() != lower.chapter()) {
-                        linkText += QString("%1:%2").arg(upper.chapter())
-                                                    .arg(lower.verse());
+                        linkText += QStringLiteral("%1:%2").arg(upper.chapter())
+                                                           .arg(lower.verse());
                     } else {
                         linkText += QString::number(upper.verse());
                     }
@@ -193,20 +196,23 @@ QString CDisplayRendering::entryLink(KeyTreeItem const & item,
 
 
     if (linkText.isEmpty()) {
-        return QString("<a name=\"").append(keyToHTMLAnchor(item.key())).append("\"></a>");
+        return QStringLiteral("<a name=\"%1\"></a>").arg(
+                    keyToHTMLAnchor(item.key()));
     }
     else {
-        return QString("<a name=\"").append(keyToHTMLAnchor(item.key())).append("\" ")
-               .append("href=\"")
-               .append(ReferenceManager::encodeHyperlink(module, item.key()))
-               .append("\">").append(linkText).append("</a>\n");
+        return QStringLiteral("<a name=\"%1\" href=\"%2\">%3</a>\n")
+                .arg(keyToHTMLAnchor(item.key()),
+                     ReferenceManager::encodeHyperlink(module, item.key()),
+                     linkText);
     }
 }
 
 QString CDisplayRendering::keyToHTMLAnchor(QString const & key) {
     // Be careful not to remove non-ASCII characters, this causes problems
     // with many languages.
-    return key.trimmed().remove(QRegExp("\\s")).replace(QString(":"), QString("_"));
+    return key.trimmed()
+            .remove(QRegExp(QStringLiteral("\\s")))
+            .replace(':', '_');
 }
 
 QString
