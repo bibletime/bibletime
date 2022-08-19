@@ -30,25 +30,24 @@ QString CPlainTextExportRendering::renderEntry(KeyTreeItem const & i,
     Q_UNUSED(k)
 
     if (!m_addText)
-        return QString(i.key()).append("\n");
+        return QString(i.key()).append('\n');
 
-    const BtConstModuleList modules = i.modules();
+    auto const modules = i.modules();
     BT_ASSERT(!modules.isEmpty());
     std::unique_ptr<CSwordKey> const key(modules.first()->createKey());
-    QString renderedText = QString(i.key());
-    if (modules.count() > 1) {
+    auto renderedText = i.key();
+    if (modules.count() > 1)
         for (auto const * const module : modules)
-            renderedText += "   " + module->name();
-    }
-    renderedText += ":\n";
+            renderedText += QStringLiteral("   ") + module->name();
+    renderedText += QStringLiteral(":\n");
 
     for (auto const * const module : modules) {
         key->setModule(module);
         key->setKey(i.key());
-        QString entry = key->strippedText().append("\n");
+        QString entry = key->strippedText().append('\n');
         if (modules.count() > 1)
-            entry.append("\n");
-        renderedText.append( entry );
+            entry.append('\n');
+        renderedText.append(entry);
     }
     return renderedText;
 }
