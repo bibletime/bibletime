@@ -47,7 +47,28 @@
 CSwordLexiconModuleInfo::CSwordLexiconModuleInfo(sword::SWModule & module,
                                                  CSwordBackend & backend)
         : CSwordModuleInfo(module, backend, Lexicon)
-{ testForStrongsKeys(); }
+{
+    /**
+      See if module keys are consistent with Strong's references
+      and determine if keys start with "G" or "H" and the number
+      of digits in the keys.
+    */
+    module.setPosition(sword::TOP);
+    module.increment();
+    QString key = QString::fromUtf8(module.getKeyText());
+    QRegExp rx1("[GH][0-9]+");
+    if (rx1.exactMatch(key)) {
+        m_hasStrongsKeys = true;
+        m_hasLeadingStrongsLetter = true;
+        m_strongsDigitsLength = key.length() - 1;
+    } else {
+        QRegExp rx2("[0-9]+");
+        if (rx2.exactMatch(key)) {
+            m_hasStrongsKeys = true;
+            m_strongsDigitsLength = key.length();
+        }
+    }
+}
 
 const QStringList &CSwordLexiconModuleInfo::entries() const {
     namespace DU = util::directory;
@@ -142,26 +163,6 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
 
 bool CSwordLexiconModuleInfo::snap() const
 { return swordModule().getRawEntry(); }
-
-void CSwordLexiconModuleInfo::testForStrongsKeys() {
-    auto & m = swordModule();
-    m.setPosition(sword::TOP);
-    m.increment();
-    QString key = QString::fromUtf8(m.getKeyText());
-    QRegExp rx1("[GH][0-9]+");
-    if (rx1.exactMatch(key)) {
-        m_hasStrongsKeys = true;
-        m_hasLeadingStrongsLetter = true;
-        m_strongsDigitsLength = key.length() - 1;
-    } else {
-        QRegExp rx2("[0-9]+");
-        if (rx2.exactMatch(key)) {
-            m_hasStrongsKeys = true;
-            m_strongsDigitsLength = key.length();
-        }
-    }
-    return;
-}
 
 bool CSwordLexiconModuleInfo:: hasStrongsKeys() const {
     return m_hasStrongsKeys;

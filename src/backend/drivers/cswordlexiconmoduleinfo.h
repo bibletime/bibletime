@@ -60,13 +60,6 @@ class CSwordLexiconModuleInfo final: public CSwordModuleInfo {
 
     private: // fields:
 
-        /**
-          See if module keys are consistent with Strong's references
-          and determine if keys start with "G" or "H" and the number
-          of digits in the keys.
-         */
-        void testForStrongsKeys();
-
         bool m_hasStrongsKeys = false;
         bool m_hasLeadingStrongsLetter = false;
         int m_strongsDigitsLength = 0;
