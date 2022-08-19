@@ -59,13 +59,13 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) :
 
         // Load regular templates:
         {
-            const QStringList filter("*.tmpl");
+            const QStringList filter(QStringLiteral("*.tmpl"));
             // Preload global display templates from disk:
             for (auto const & file : td.entryList(filter, readableFileFilter))
-                loadTemplate(td.canonicalPath() + "/" + file);
+                loadTemplate(td.canonicalPath() + '/' + file);
             // Preload user display templates from disk:
             for (auto const & file : utd.entryList(filter, readableFileFilter))
-                loadTemplate(utd.canonicalPath() + "/" + file);
+                loadTemplate(utd.canonicalPath() + '/' + file);
         }
 
         if (!m_templateMap.contains(CSSTEMPLATEBASE)) {
@@ -75,13 +75,13 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) :
 
         // Load CSS templates:
         {
-            const QStringList cssfilter("*.css");
+            const QStringList cssfilter(QStringLiteral("*.css"));
             // Load global app stylesheets
             for (auto const & file : td.entryList(cssfilter, readableFileFilter))
-                loadCSSTemplate(td.canonicalPath() + "/" + file);
+                loadCSSTemplate(td.canonicalPath() + '/' + file);
             // Load user app stylesheets
             for (auto const & file : utd.entryList(cssfilter, readableFileFilter))
-                loadCSSTemplate(utd.canonicalPath() + "/" + file);
+                loadCSSTemplate(utd.canonicalPath() + '/' + file);
         }
     }
 
@@ -107,41 +107,42 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
                                           const Settings & settings) const
 {
     BT_ASSERT(name != CSSTEMPLATEBASE);
-    BT_ASSERT(name.endsWith(".css") || name.endsWith(".tmpl"));
-    BT_ASSERT(!name.endsWith(".css") || m_cssMap.contains(name));
-    BT_ASSERT(!name.endsWith(".tmpl") || m_templateMap.contains(name));
-    const bool templateIsCss = name.endsWith(".css");
+    BT_ASSERT(name.endsWith(QStringLiteral(".css"))
+              || name.endsWith(QStringLiteral(".tmpl")));
+    BT_ASSERT(!name.endsWith(QStringLiteral(".css"))
+              || m_cssMap.contains(name));
+    BT_ASSERT(!name.endsWith(QStringLiteral(".tmpl"))
+              || m_templateMap.contains(name));
+    const bool templateIsCss = name.endsWith(QStringLiteral(".css"));
 
     QString displayTypeString;
     QString moduleName;
 
     if (!settings.pageCSS_ID.isEmpty()) {
         displayTypeString = settings.pageCSS_ID;
-        moduleName = "";
     }
     else {
         if (settings.modules.count()) {
             switch (settings.modules.first()->type()) {
 
                 case CSwordModuleInfo::Bible:
-                    displayTypeString = "bible";
+                    displayTypeString = QStringLiteral("bible");
                     break;
 
                 case CSwordModuleInfo::GenericBook:
-                    displayTypeString = "book";
+                    displayTypeString = QStringLiteral("book");
                     break;
 
                 case CSwordModuleInfo::Commentary:
                 case CSwordModuleInfo::Lexicon:
                 default:
-                    displayTypeString = "singleentry";
+                    displayTypeString = QStringLiteral("singleentry");
                     break;
             }
             moduleName = settings.modules.first()->name();
         }
         else { //use bible as default type if no modules are set
-            displayTypeString = "bible";
-            moduleName = "";
+            displayTypeString = QStringLiteral("bible");
         }
     }
 
@@ -153,29 +154,30 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
         // qDebug() << "There were more than 1 module, create headers";
         QString header;
 
-        for (auto const * const mi : settings.modules) {
-            header.append("<th style=\"width:")
-            .append(QString::number(static_cast<int>(100.0 / moduleCount)))
-            .append("%;\">")
-            .append(mi->name())
-            .append("</th>");
-        }
+        for (auto const * const mi : settings.modules)
+            header.append(
+                        QStringLiteral("<th style=\"width:%1%;\">%2</th>")
+                        .arg(QString::number(static_cast<int>(100.0 / moduleCount)),
+                             mi->name()));
 
-        newContent = QString("<table><tr>")
-                     .append(header)
-                     .append("</tr>")
-                     .append(content)
-                     .append("</table>");
+        newContent = QStringLiteral("<table><tr>%1</tr>%2</table>")
+                     .arg(header, content);
     }
 
     QString langCSS;
     {
         const QFont & f = btConfig().getDefaultFont();
-        langCSS.append("#content{font-family:").append(f.family())
-               .append(";font-size:").append(QString::number(f.pointSizeF(), 'f'))
-               .append("pt;font-weight:").append(f.bold() ? "bold" : "normal")
-               .append(";font-style:").append(f.italic() ? "italic" : "normal")
-               .append('}');
+        langCSS.append(
+                    QStringLiteral("#content{font-family:%1;font-size:%2pt;"
+                                   "font-weight:%3;font-style:%4}")
+                    .arg(f.family(),
+                         QString::number(f.pointSizeF(), 'f'),
+                         f.bold()
+                         ? QStringLiteral("bold")
+                         : QStringLiteral("normal"),
+                         f.italic()
+                         ? QStringLiteral("italic")
+                         : QStringLiteral("normal")));
     }
     {
         auto const availableLanguages =
@@ -198,32 +200,37 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
                 auto const fontStyleString =
                         [&f]() {
                             switch ((int) f.style()) {
-                            case QFont::StyleItalic: return "italic";
-                            case QFont::StyleOblique: return "oblique";
+                            case QFont::StyleItalic:
+                                return QStringLiteral("italic");
+                            case QFont::StyleOblique:
+                                return QStringLiteral("oblique");
                             case QFont::StyleNormal:
                             default:
-                                return "normal";
+                                return QStringLiteral("normal");
                             }
                         }();
 
                 auto const textDecorationString =
-                        [&f]() {
-                            if (f.underline())
-                                return f.strikeOut()
-                                        ? "underline line-through"
-                                        : "underline";
-                            return f.strikeOut() ? "line-through" : "none";
-                        }();
+                        f.underline()
+                        ? (f.strikeOut()
+                           ? QStringLiteral("underline line-through")
+                           : QStringLiteral("underline"))
+                        : (f.strikeOut()
+                           ? QStringLiteral("line-through")
+                           : QStringLiteral("none"));
 
                 /// \todo Add support translating more QFont properties to CSS.
 
-                langCSS.append("*[lang=").append(lang->abbrev()).append("]{")
-                       .append("font-family:").append(f.family())
-                       .append(";font-size:").append(QString::number(f.pointSizeF(), 'f'))
-                       .append("pt;font-weight:").append(QString::number(fontWeight))
-                       .append(";font-style:").append(fontStyleString)
-                       .append(";text-decoration:").append(textDecorationString)
-                       .append('}');
+                langCSS.append(
+                            QStringLiteral("*[lang=%1]{font-family:%2;"
+                                           "font-size:%3pt;font-weight:%4;"
+                                           "font-style:%5;text-decoration:%6}")
+                            .arg(lang->abbrev(),
+                                 f.family(),
+                                 QString::number(f.pointSizeF(), 'f'),
+                                 QString::number(fontWeight),
+                                 fontStyleString,
+                                 textDecorationString));
             }
         }
     }
@@ -232,26 +239,29 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
     QString output(m_templateMap[templateIsCss
                                  ? QString(CSSTEMPLATEBASE)
                                  : name]); // don't change the map's content directly, use a copy
-    output.replace("#TITLE#", settings.title)
-          .replace("#LANG_ABBREV#", settings.langAbbrev)
-          .replace("#DISPLAYTYPE#", displayTypeString)
-          .replace("#LANG_CSS#", langCSS)
-          .replace("#PAGE_DIRECTION#", settings.textDirectionAsHtmlDirAttr())
-          .replace("#CONTENT#", newContent)
-          .replace("#BODY_CLASSES#",
-                   displayTypeString + " "
-                   + displayTypeString + "_" + moduleName)
-          .replace("#DISPLAY_TEMPLATES_PATH#", DU::getDisplayTemplatesDir().absolutePath());
+    output.replace(QStringLiteral("#TITLE#"), settings.title)
+          .replace(QStringLiteral("#LANG_ABBREV#"), settings.langAbbrev)
+          .replace(QStringLiteral("#DISPLAYTYPE#"), displayTypeString)
+          .replace(QStringLiteral("#LANG_CSS#"), langCSS)
+          .replace(QStringLiteral("#PAGE_DIRECTION#"),
+                   settings.textDirectionAsHtmlDirAttr())
+          .replace(QStringLiteral("#CONTENT#"), newContent)
+          .replace(QStringLiteral("#BODY_CLASSES#"),
+                   QStringLiteral("%1 %1_%2").arg(displayTypeString,
+                                                  moduleName))
+          .replace(QStringLiteral("#DISPLAY_TEMPLATES_PATH#"),
+                   DU::getDisplayTemplatesDir().absolutePath());
 
     if (templateIsCss)
-        output.replace("#THEME_STYLE#", m_cssMap[name]);
+        output.replace(QStringLiteral("#THEME_STYLE#"), m_cssMap[name]);
 
     return output;
 }
 
 QString CDisplayTemplateMgr::activeTemplateName() {
-    const QString tn = btConfig().value<QString>("GUI/activeTemplateName",
-                                                 QString());
+    auto const tn =
+            btConfig().value<QString>(QStringLiteral("GUI/activeTemplateName"),
+                                      QString());
     return (tn.isEmpty()
             || !instance()->m_availableTemplateNamesCache.contains(tn))
            ? defaultTemplateName()
@@ -259,7 +269,7 @@ QString CDisplayTemplateMgr::activeTemplateName() {
 }
 
 void CDisplayTemplateMgr::loadTemplate(const QString & filename) {
-    BT_ASSERT(filename.endsWith(".tmpl"));
+    BT_ASSERT(filename.endsWith(QStringLiteral(".tmpl")));
     BT_ASSERT(QFileInfo(filename).isFile());
     const QString templateString = readFileToString(filename);
     if (!templateString.isEmpty())
@@ -267,7 +277,7 @@ void CDisplayTemplateMgr::loadTemplate(const QString & filename) {
 }
 
 void CDisplayTemplateMgr::loadCSSTemplate(const QString & filename) {
-    BT_ASSERT(filename.endsWith(".css"));
+    BT_ASSERT(filename.endsWith(QStringLiteral(".css")));
     const QFileInfo fi(filename);
     BT_ASSERT(fi.isFile());
     if (fi.isReadable())
