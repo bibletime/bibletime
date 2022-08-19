@@ -30,13 +30,7 @@ class CSwordLexiconModuleInfo final: public CSwordModuleInfo {
 
     public: // methods:
         CSwordLexiconModuleInfo(sword::SWModule & module,
-                                CSwordBackend & backend)
-                : CSwordModuleInfo(module, backend, Lexicon),
-                m_hasStrongsKeys(false),
-                m_hasLeadingStrongsLetter(false),
-                m_strongsDigitsLength(0) {
-            testForStrongsKeys();
-        }
+                                CSwordBackend & backend);
 
         /**
           Return true if this lexicon has Strong's keys
@@ -73,9 +67,9 @@ class CSwordLexiconModuleInfo final: public CSwordModuleInfo {
          */
         void testForStrongsKeys();
 
-        bool m_hasStrongsKeys;
-        bool m_hasLeadingStrongsLetter;
-        int m_strongsDigitsLength;
+        bool m_hasStrongsKeys = false;
+        bool m_hasLeadingStrongsLetter = false;
+        int m_strongsDigitsLength = 0;
 
         /**
           This is the list which caches the entres of the module.

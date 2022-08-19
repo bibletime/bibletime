@@ -44,6 +44,11 @@
 //Change it once the format changed to make all systems rebuild their caches
 #define CACHE_FORMAT "3"
 
+CSwordLexiconModuleInfo::CSwordLexiconModuleInfo(sword::SWModule & module,
+                                                 CSwordBackend & backend)
+        : CSwordModuleInfo(module, backend, Lexicon)
+{ testForStrongsKeys(); }
+
 const QStringList &CSwordLexiconModuleInfo::entries() const {
     namespace DU = util::directory;
 
