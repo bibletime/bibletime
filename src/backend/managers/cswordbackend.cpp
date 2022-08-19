@@ -133,11 +133,11 @@ void CSwordBackend::uninstallModules(BtConstModuleSet const & toBeDeleted) {
     for (CSwordModuleInfo const * const mInfo : toBeDeleted) {
         // Find the install path for the sword manager:
         QString dataPath = mInfo->config(CSwordModuleInfo::DataPath);
-        if (dataPath.left(2) == "./")
+        if (dataPath.left(2) == QStringLiteral("./"))
             dataPath = dataPath.mid(2);
 
         QString prefixPath =
-            mInfo->config(CSwordModuleInfo::AbsoluteDataPath) + "/";
+            mInfo->config(CSwordModuleInfo::AbsoluteDataPath) + '/';
         if (prefixPath.contains(dataPath)) {
             // Remove module part to get the prefix path:
             prefixPath = prefixPath.remove(prefixPath.indexOf(dataPath),
@@ -385,7 +385,9 @@ QStringList CSwordBackend::swordDirList() const {
     QList<QFileInfo> configs;
 
     auto const userHomeSwordDir = util::directory::getUserHomeSwordDir();
-    if (auto conf = QFileInfo(userHomeSwordDir, "sword.conf"); conf.exists()) {
+    if (auto conf = QFileInfo(userHomeSwordDir, QStringLiteral("sword.conf"));
+        conf.exists())
+    {
         // Use the private sword.conf file:
         configs << std::move(conf);
     } else {
@@ -407,13 +409,14 @@ QStringList CSwordBackend::swordDirList() const {
             swordDirSet << dir.absolutePath();
 
             // %ProgramData%\Sword\sword.conf
-            if (auto conf = QFileInfo(dir, "Sword/sword.conf"); conf.exists())
+            if (auto conf = QFileInfo(dir, QStringLiteral("Sword/sword.conf"));
+                conf.exists())
                 configs << std::move(conf);
         }
 
         #else
         // /etc/sword.conf, /usr/local/etc/sword.conf
-        for (auto const & path : QString(m_manager.globalConfPath).split(":"))
+        for (auto const & path : QString(m_manager.globalConfPath).split(':'))
             if (auto conf = QFileInfo(path); conf.exists())
                 configs << std::move(conf);
         #endif
@@ -450,7 +453,7 @@ QStringList CSwordBackend::swordDirList() const {
 void CSwordBackend::deleteOrphanedIndices() {
     const QStringList entries = QDir(CSwordModuleInfo::getGlobalBaseIndexLocation()).entryList(QDir::Dirs);
     for (auto const & entry : entries) {
-        if (entry == "." || entry == "..")
+        if (entry == '.' || entry == QStringLiteral(".."))
             continue;
         if (CSwordModuleInfo * const module = findModuleByName(entry)) {
             if (!module->hasIndex()) { //index files found, but wrong version etc.
@@ -458,7 +461,10 @@ void CSwordBackend::deleteOrphanedIndices() {
                 CSwordModuleInfo::deleteIndexForModule(entry);
             }
         } else { //no module exists
-            if (btConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices", true)) {
+            if (btConfig().value<bool>(
+                    QStringLiteral(
+                        "settings/behaviour/autoDeleteOrphanedIndices"), true))
+            {
                 qDebug() << "deleting orphaned index in directory" << entry;
                 CSwordModuleInfo::deleteIndexForModule(entry);
             }
