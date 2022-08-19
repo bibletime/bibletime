@@ -165,7 +165,8 @@ QString CSwordVerseKey::key() const {
 }
 
 QString CSwordVerseKey::normalizedKey() const {
-    if (m_key.getLocale() == std::string_view("en"))
+    using namespace std::string_view_literals;
+    if (m_key.getLocale() == "en"sv)
         return key();
     sword::VerseKey clone(m_key);
     clone.setLocale("en");
