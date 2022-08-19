@@ -113,7 +113,7 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
     {
         auto t = QString::fromUtf8(buf.c_str());
         {
-            QRegExp tag("([.,;:]?<W[HGT][^>]*>\\s*)+");
+            QRegExp tag(QStringLiteral("([.,;:]?<W[HGT][^>]*>\\s*)+"));
             auto pos = tag.indexIn(t);
             if (pos == -1) //no strong or morph code found in this text
                 return 1; //WARNING: Return already here
@@ -133,7 +133,7 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
     //list is now a list of words with 1-n Strongs at the end, which belong to this word.
 
     //now create the necessary HTML in list entries and concat them to the result
-    QRegExp tag("<W([HGT])([^>]*)>");
+    QRegExp tag(QStringLiteral("<W([HGT])([^>]*)>"));
     tag.setMinimal(true);
 
     QString result;
@@ -145,7 +145,9 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
         //If not, leave out the strongs info, because it can't be tight to a text
         //Comparing the first char with < is not enough, because the tokenReplace is done already
         //so there might be html tags already.
-        if (e.trimmed().remove(QRegExp("[.,;:]")).left(2) == "<W") {
+        if (e.trimmed().remove(QRegExp(QStringLiteral("[.,;:]"))).left(2)
+            == QStringLiteral("<W"))
+        {
             result += e;
             continue;
         }
@@ -158,7 +160,7 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
         int tagAttributeStart = -1;
 
         while (pos != -1) { //work on all strong/lemma tags in this section, should be between 1-3 loops
-            const bool isMorph = (tag.cap(1) == "T");
+            const bool isMorph = (tag.cap(1) == QStringLiteral("T"));
             auto const value = isMorph ? tag.cap(2) : tag.cap(2).prepend( tag.cap(1) );
 
             if (value.isEmpty()) {
@@ -167,12 +169,16 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
 
             //insert the span
             if (!insertedTag) { //we have to insert a new tag end and beginning, i.e. our first loop
-                e.replace(pos, tag.matchedLength(), "</span>");
+                e.replace(pos, tag.matchedLength(), QStringLiteral("</span>"));
                 pos += 7;
 
                 //skip blanks, commas, dots and stuff at the beginning, it doesn't belong to the morph code
-                QString rep("<span ");
-                rep.append(isMorph ? "morph" : "lemma").append("=\"").append(value).append("\">");
+                auto rep =
+                        QStringLiteral("<span %1=\"%2\">")
+                        .arg(isMorph
+                             ? QStringLiteral("morph")
+                             : QStringLiteral("lemma"),
+                             value);
 
                 hasMorphAttr = isMorph;
                 hasLemmaAttr = !isMorph;
@@ -186,9 +192,9 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
                     c = e[startPos];
                 }
 
-                e.insert( startPos, rep );
                 tagAttributeStart = startPos + 6; //to point to the start of the attributes
-                pos += rep.length();
+                pos += rep.size();
+                e.insert(startPos, std::move(rep));
             }
             else { //add the attribute to the existing tag
                 e.remove(pos, tag.matchedLength());
@@ -199,12 +205,15 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
 
                 if ((!isMorph && hasLemmaAttr) || (isMorph && hasMorphAttr)) { //we append another attribute value, e.g. 3000 gets 3000|5000
                     //search the existing attribute start
-                    QRegExp attrRegExp( isMorph ? "morph=\".+(?=\")" : "lemma=\".+(?=\")" );
+                    QRegExp attrRegExp(isMorph
+                                       ? QStringLiteral("morph=\".+(?=\")")
+                                       : QStringLiteral("lemma=\".+(?=\")"));
                     attrRegExp.setMinimal(true);
                     const int foundPos = e.indexOf(attrRegExp, tagAttributeStart);
 
                     if (foundPos != -1) {
-                        e.insert(foundPos + attrRegExp.matchedLength(), QString("|").append(value));
+                        e.insert(foundPos + attrRegExp.matchedLength(),
+                                 QStringLiteral("|") + value);
                         pos += value.length() + 1;
 
                         hasLemmaAttr = !isMorph;
@@ -215,8 +224,12 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
                     hasMorphAttr = isMorph;
                     hasLemmaAttr = !isMorph;
 
-                    auto attr = QString(isMorph ? "morph" : "lemma").append("=\"").append(value).append("\" ");
-                    pos += attr.length();
+                    auto attr = QStringLiteral("%1=\"%2\" ")
+                                .arg(isMorph
+                                     ? QStringLiteral("morph")
+                                     : QStringLiteral("lemma"),
+                                     value);
+                    pos += attr.size();
                     e.insert(tagAttributeStart, std::move(attr));
                 }
 
