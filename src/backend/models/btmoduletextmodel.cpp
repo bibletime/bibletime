@@ -115,7 +115,7 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
     else if (isLexicon())
         text = lexiconData(index, role);
     else
-        text = "invalid";
+        text = QStringLiteral("invalid");
 
     if (m_textFilter) {
         text = m_textFilter->processText(text);
@@ -127,7 +127,7 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
             // t = highlightFindPreviousNextField(t); now inlined:
             int from = 0;
             for (int i = 0; i < m_findState->subIndex; ++i) {
-                int pos = t.indexOf("\"highlightwords\"", from);
+                int pos = t.indexOf(QStringLiteral("\"highlightwords\""), from);
                 if (pos == -1)
                     return t;
                 else {
@@ -135,7 +135,7 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
                 }
             }
             int position = from + 14; // highlightwords = 14, quote was already added
-            t.insert(position, "2");
+            t.insert(position, '2');
         }
         return QVariant(t);
     }
@@ -155,8 +155,8 @@ QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) cons
         if (keyName.isEmpty())
             return {};
         auto text = m_displayRendering.renderDisplayEntry(moduleList, keyName);
-        text.replace("#CHAPTERTITLE#", "");
-        text.replace("#TEXT_ALIGN#", "left");
+        text.replace(QStringLiteral("#CHAPTERTITLE#"), QString());
+        text.replace(QStringLiteral("#TEXT_ALIGN#"), QStringLiteral("left"));
         text = ColorManager::replaceColors(text);
         return text;
     }
@@ -184,8 +184,8 @@ QString BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
                 m_displayRendering.displayOptions().verseNumbers
                 ? Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey
                 : Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
-        text.replace("#CHAPTERTITLE#", "");
-        text.replace("#TEXT_ALIGN#", "left");
+        text.replace(QStringLiteral("#CHAPTERTITLE#"), QString());
+        text.replace(QStringLiteral("#TEXT_ALIGN#"), QStringLiteral("left"));
         return text;
     }
     return QString();
@@ -211,7 +211,9 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
 
         QString chapterTitle;
         if (verse == 1)
-            chapterTitle = key.bookName() + " " + QString::number(key.chapter());
+            chapterTitle =
+                    QStringLiteral("%1 %2").arg(key.bookName(),
+                                                QString::number(key.chapter()));
 
         BtConstModuleList modules;
         if ( role == ModuleEntry::TextRole) {
@@ -230,20 +232,25 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
             // Title only for verse 1 of Personal commentary
             if (role >= ModuleEntry::Title0Role && role <= ModuleEntry::Title9Role) {
                 if (module->isWritable() && verse == 1)
-                    return "<center><h3>" + chapterTitle + "</h3></center>";
-                return "";
+                    return QStringLiteral("<center><h3>%1</h3></center>")
+                            .arg(chapterTitle);
+                return {};
             }
 
             // Personal commentary
             if (module->isWritable()) {
-                QString text;
-                QString rawText = mKey.rawText();
-                if (rawText.isEmpty())
-                    rawText = "<span style=\"color:gray\"><small>" + tr("Click to edit") + "</small></span>";
-                text += QString::number(verse) + "  " + rawText;
-
-                text = ColorManager::replaceColors(text);
-                return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
+                auto const & rawText = mKey.rawText();
+                auto text =
+                        QStringLiteral("%1 %2")
+                        .arg(QString::number(verse),
+                             rawText.isEmpty()
+                             ? QStringLiteral("<span style=\"color:gray\">"
+                                              "<small>%1</small></span>")
+                               .arg(tr("Click to edit"))
+                             : rawText);
+                return CSwordModuleSearch::highlightSearchedText(
+                            ColorManager::replaceColors(std::move(text)),
+                            m_highlightWords);
             }
         }
 
@@ -256,8 +263,8 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
                     ? Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey
                     : Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
 
-        text.replace("#CHAPTERTITLE#", chapterTitle);
-        text.replace("#TEXT_ALIGN#", "left");
+        text.replace(QStringLiteral("#CHAPTERTITLE#"), chapterTitle);
+        text.replace(QStringLiteral("#TEXT_ALIGN#"), QStringLiteral("left"));
         text = ColorManager::replaceColors(text);
         return text;
     }
@@ -389,21 +396,15 @@ CSwordTreeKey BtModuleTextModel::indexToBookKey(int index) const
 
 QString BtModuleTextModel::indexToKeyName(int index) const {
     if (index < 0)
-        return "";
-    QString keyName = "???";
-    if (isBible() || isCommentary()) {
-        CSwordVerseKey key = indexToVerseKey(index);
-        keyName = key.key();
-    }
-    else if (isBook()) {
-        CSwordTreeKey key = indexToBookKey(index);
-        keyName = key.key();
-    }
-    else if (isLexicon()) {
-        const CSwordLexiconModuleInfo *lexiconModule = qobject_cast<const CSwordLexiconModuleInfo*>(m_moduleInfoList.at(0));
-        keyName = lexiconModule->entries()[index];
-    }
-    return keyName;
+        return {};
+    if (isBible() || isCommentary())
+        return indexToVerseKey(index).key();
+    if (isBook())
+        return indexToBookKey(index).key();
+    if (isLexicon())
+        return qobject_cast<CSwordLexiconModuleInfo const *>(
+                    m_moduleInfoList.at(0))->entries()[index];
+    return QStringLiteral("???");
 }
 
 int BtModuleTextModel::getFirstEntryIndex() const {
