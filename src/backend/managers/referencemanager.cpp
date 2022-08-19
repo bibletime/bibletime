@@ -25,14 +25,10 @@
 
 namespace {
 
-template <typename Prefix>
-bool removeCaseInsensitivePrefix(QStringRef & ref, Prefix && prefix) {
-    using Prefix_ = std::remove_reference_t<Prefix>;
-    static_assert(std::is_array_v<Prefix_>);
-    static_assert(std::extent_v<Prefix_> > 0u);
-    static_assert(std::is_same_v<char const, std::remove_extent_t<Prefix_>>);
+inline bool
+removeCaseInsensitivePrefix(QStringRef & ref, QString const & prefix) {
     if (ref.startsWith(prefix, Qt::CaseInsensitive)) {
-        ref = ref.mid(sizeof(prefix) - 1u);
+        ref = ref.mid(prefix.size() - 1);
         return true;
     }
     return false;
@@ -44,24 +40,25 @@ bool removeCaseInsensitivePrefix(QStringRef & ref, Prefix && prefix) {
 QString ReferenceManager::encodeHyperlink(CSwordModuleInfo const & module,
                                           QString const & key)
 {
-    auto const initStr =
-        [&module]() noexcept -> char const * {
-            switch (module.type()) {
-                case CSwordModuleInfo::Bible: return "sword://Bible/";
-                case CSwordModuleInfo::Commentary: return "sword://Commentary/";
-                case CSwordModuleInfo::Lexicon: return "sword://Lexicon/";
-                case CSwordModuleInfo::GenericBook: return "sword://Book/";
-                default: return nullptr;
-            }
-        }();
-    if (!initStr)
-        return {};
-    QString ret(initStr);
+    QString type;
+    switch (module.type()) {
+        case CSwordModuleInfo::Bible:
+            type = QStringLiteral("Bible");
+            break;
+        case CSwordModuleInfo::Commentary:
+            type = QStringLiteral("Commentary");
+            break;
+        case CSwordModuleInfo::Lexicon:
+            type = QStringLiteral("Lexicon");
+            break;
+        case CSwordModuleInfo::GenericBook:
+            type = QStringLiteral("Book");
+            break;
+        default:
+            return {};
+    }
     BT_ASSERT(!module.name().isEmpty());
-    ret.append(module.name());
-    ret.append('/');
-    ret.append(key);
-    return ret;
+    return QStringLiteral("sword://%1/%2/%3").arg(type, module.name(), key);
 }
 
 /** Decodes the given hyperlink. */
@@ -86,10 +83,10 @@ ReferenceManager::decodeHyperlink(QString const & hyperlink) {
 
     static auto const preferredModule =
             [](ReferenceManager::Type const type) -> CSwordModuleInfo * {
-                char const * typeStr;
+                QString typeStr;
                 switch (type) {
                     #define RET_CASE(t,str) \
-                        case t: typeStr = "standard" str; break
+                        case t: typeStr = QStringLiteral("standard" str); break
                     RET_CASE(Bible, "Bible");
                     RET_CASE(Commentary, "Commentary");
                     RET_CASE(Lexicon, "Lexicon");
@@ -105,14 +102,17 @@ ReferenceManager::decodeHyperlink(QString const & hyperlink) {
 
     DecodedHyperlink ret;
     int slashPos; // position of the last parsed slash
-    if (removeCaseInsensitivePrefix(ref, "sword://")) { //Bible, Commentary or Lexicon
-        if (removeCaseInsensitivePrefix(ref, "bible/")) {
+    if (removeCaseInsensitivePrefix(ref, QStringLiteral("sword://"))) { //Bible, Commentary or Lexicon
+        if (removeCaseInsensitivePrefix(ref, QStringLiteral("bible/"))) {
             ret.type = ReferenceManager::Bible;
-        } else if (removeCaseInsensitivePrefix(ref, "commentary/")) {
+        } else if (removeCaseInsensitivePrefix(ref,
+                                               QStringLiteral("commentary/")))
+        {
             ret.type = ReferenceManager::Commentary;
-        } else if (removeCaseInsensitivePrefix(ref, "lexicon/")) {
+        } else if (removeCaseInsensitivePrefix(ref, QStringLiteral("lexicon/")))
+        {
             ret.type = ReferenceManager::Lexicon;
-        } else if (removeCaseInsensitivePrefix(ref, "book/")) {
+        } else if (removeCaseInsensitivePrefix(ref, QStringLiteral("book/"))) {
             ret.type = ReferenceManager::GenericBook;
         } else {
             return {};
@@ -132,9 +132,11 @@ ReferenceManager::decodeHyperlink(QString const & hyperlink) {
         }
     } else {
         struct { Type hebrew; Type greek; } types;
-        if (removeCaseInsensitivePrefix(ref, "morph://")) {
+        if (removeCaseInsensitivePrefix(ref, QStringLiteral("morph://"))) {
             types = {MorphHebrew, MorphGreek};
-        } else if (removeCaseInsensitivePrefix(ref, "strongs://")) {
+        } else if (removeCaseInsensitivePrefix(ref,
+                                               QStringLiteral("strongs://")))
+        {
             types = {StrongsHebrew, StrongsGreek};
         } else {
             return {};
@@ -145,9 +147,9 @@ ReferenceManager::decodeHyperlink(QString const & hyperlink) {
         if (slashPos <= 0) // if language or key is empty (0 or -1)
             return {};
         auto const language(ref.left(slashPos).toString().toLower());
-        if (language == "hebrew") {
+        if (language == QStringLiteral("hebrew")) {
             ret.type = types.hebrew;
-        } else if (language == "greek") {
+        } else if (language == QStringLiteral("greek")) {
             ret.type = types.greek;
         } else {
             return {};
@@ -185,14 +187,14 @@ QString ReferenceManager::parseVerseReference(
 
     bool const haveLocaleForSourceLanguage =
             [&locale = std::as_const(sourceLanguage)]() {
-                if (locale == "locales")
+                if (locale == QStringLiteral("locales"))
                     return false;
                 auto const & locales = BtLocaleMgr::internalSwordLocales();
                 return locales.find(locale.toUtf8().constData())
                         != locales.end();
             }();
     if (!haveLocaleForSourceLanguage)
-        sourceLanguage = "en_US";
+        sourceLanguage = QStringLiteral("en_US");
 
     auto const * const destinationLanguage =
             haveLocaleForSourceLanguage ? "en" : "en_US";
@@ -212,7 +214,7 @@ QString ReferenceManager::parseVerseReference(
     BT_ASSERT(!strcmp(dummy.getLocale(), sourceLanguage.toUtf8().constData()));
 
     QString ret;
-    for (auto const & ref : ref.split(";")) {
+    for (auto const & ref : ref.split(';')) {
         /* The listkey may contain more than one item, because a ref like
            "Gen 1:3,5" is parsed into two single refs */
         auto lk(dummy.parseVerseList(ref.toUtf8().constData(),
@@ -230,13 +232,15 @@ QString ReferenceManager::parseVerseReference(
                         dynamic_cast<sword::VerseKey *>(lk.getElement(i)))
             {
                 k->setLocale(destinationLanguage);
-                ret.append(QString::fromUtf8(k->getRangeText())).append("; ");
+                ret.append(QStringLiteral("%1; ")
+                           .arg(QString::fromUtf8(k->getRangeText())));
             } else { // A single ref
                 sword::VerseKey vk;
                 vk.setLocale(sourceLanguage.toUtf8().constData());
                 vk = lk.getElement(i)->getText();
                 vk.setLocale(destinationLanguage);
-                ret.append(QString::fromUtf8(vk.getText())).append("; ");
+                ret.append(QStringLiteral("%1; ")
+                           .arg(QString::fromUtf8(vk.getText())));
             }
         }
     }
