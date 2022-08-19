@@ -12,7 +12,6 @@
 
 #include "referencemanager.h"
 
-#include <QRegExp>
 #include <QDebug>
 #include <utility>
 #include "../../util/btassert.h"
