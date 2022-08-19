@@ -79,13 +79,13 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
     }
 
     QString dir(DU::getUserCacheDir().absolutePath());
-    QFile f1( QString(dir).append("/").append(name()));
+    QFile cacheFile( QString(dir).append("/").append(name()));
 
     /*
      * Try the module's cache
      */
-    if ( f1.open( QIODevice::ReadOnly ) ) {
-        QDataStream s( &f1 );
+    if (cacheFile.open(QIODevice::ReadOnly)) {
+        QDataStream s(&cacheFile);
         QString ModuleVersion, CacheVersion, QDataStreamVersion;
         s >> ModuleVersion;
         s >> CacheVersion;
@@ -103,12 +103,12 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
                 && QDataStreamVersion == QString::number(s.version())) {
             s >> m_entries;
 
-            f1.close();
+            cacheFile.close();
             qDebug() << "Read" << m_entries.count() << "entries from lexicon cache for module" << name();
             return m_entries;
         }
 
-        f1.close();
+        cacheFile.close();
     }
 
     /*
@@ -145,16 +145,13 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
 
     if (m_entries.count()) {
         //create cache
-        QString dir(DU::getUserCacheDir().absolutePath());
-        QFile f2( QString(dir).append("/").append(name()) );
-
-        if (f2.open( QIODevice::WriteOnly )) {
-            QDataStream s( &f2 );
+        if (cacheFile.open( QIODevice::WriteOnly )) {
+            QDataStream s(&cacheFile);
             s << config(CSwordModuleInfo::ModuleVersion) //store module version
             << QString(CACHE_FORMAT) //store BT version -- format may change
             << QString::number(s.version()) //store QDataStream version -- format may change
             << m_entries;
-            f2.close();
+            cacheFile.close();
         }
     }
 
