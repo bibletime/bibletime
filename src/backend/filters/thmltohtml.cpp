@@ -77,7 +77,10 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
     {
         auto t = QString::fromUtf8(buf.c_str());
         {
-            QRegExp tag("([.,;]?<sync[^>]+(type|value)=\"([^\"]+)\"[^>]+(type|value)=\"([^\"]+)\"([^<]*)>)+");
+            QRegExp const tag(
+                        QStringLiteral("([.,;]?<sync[^>]+(type|value)="
+                                       "\"([^\"]+)\"[^>]+(type|value)="
+                                       "\"([^\"]+)\"([^<]*)>)+"));
             auto pos = tag.indexIn(t);
             if (pos == -1) //no strong or morph code found in this text
                 return 1; //WARNING: Return already here
@@ -94,8 +97,10 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
             list.append(std::move(t));
     }
 
-    QRegExp tag("<sync[^>]+(type|value|class)=\"([^\"]+)\"[^>]+(type|value|class)=\"([^\"]+)\"[^>]+((type|value|class)=\"([^\"]+)\")*([^<]*)>");
-
+    QRegExp const tag(
+                QStringLiteral("<sync[^>]+(type|value|class)=\"([^\"]+)\"[^>]+"
+                               "(type|value|class)=\"([^\"]+)\"[^>]+"
+                               "((type|value|class)=\"([^\"]+)\")*([^<]*)>"));
     QString result;
     for (auto & e : list) {
 
@@ -126,12 +131,12 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
 
                 auto const attrName = tag.cap(i);
                 auto const attrValue = tag.cap(i + 1);
-                if (attrName == "type") {
-                    isMorph   = (attrValue == "morph");
-                    isStrongs = (attrValue == "Strongs");
-                } else if (attrName == "value") {
+                if (attrName == QStringLiteral("type")) {
+                    isMorph   = (attrValue == QStringLiteral("morph"));
+                    isStrongs = (attrValue == QStringLiteral("Strongs"));
+                } else if (attrName == QStringLiteral("value")) {
                     value = attrValue;
-                } else if (attrName == "class") {
+                } else if (attrName == QStringLiteral("class")) {
                     valueClass = attrValue;
                 } else { // optional 3rd attribute pair is not present:
                     BT_ASSERT(attrName.isEmpty());
@@ -139,10 +144,8 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
             }
 
             // prepend the class qualifier to the value
-            if (!valueClass.isEmpty()) {
-                value = valueClass + ":" + value;
-                //     value.append(":").append(value);
-            }
+            if (!valueClass.isEmpty())
+                value = QStringLiteral("%1:%2").arg(valueClass, value);
 
             if (value.isEmpty()) {
                 break;
@@ -150,10 +153,10 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
 
             //insert the span
             if (!insertedTag) {
-                e.replace(pos, tag.matchedLength(), "</span>");
+                e.replace(pos, tag.matchedLength(), QStringLiteral("</span>"));
                 pos += 7;
 
-                QString rep = QString("<span lemma=\"").append(value).append("\">");
+                auto rep = QStringLiteral("<span lemma=\"%1\">").arg(value);
                 int startPos = 0;
                 QChar c = e[startPos];
 
@@ -165,20 +168,23 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
                 hasLemmaAttr = isStrongs;
                 hasMorphAttr = isMorph;
 
-                e.insert( startPos, rep );
                 pos += rep.length();
+                e.insert(startPos, std::move(rep));
             }
             else { //add the attribute to the existing tag
                 e.remove(pos, tag.matchedLength());
 
                 if ((!isMorph && hasLemmaAttr) || (isMorph && hasMorphAttr)) { //we append another attribute value, e.g. 3000 gets 3000|5000
                     //search the existing attribute start
-                    QRegExp attrRegExp( isMorph ? "morph=\".+(?=\")" : "lemma=\".+(?=\")" );
+                    QRegExp attrRegExp(isMorph
+                                       ? QStringLiteral("morph=\".+(?=\")")
+                                       : QStringLiteral("lemma=\".+(?=\")"));
                     attrRegExp.setMinimal(true);
                     const int foundAttrPos = e.indexOf(attrRegExp, pos);
 
                     if (foundAttrPos != -1) {
-                        e.insert(foundAttrPos + attrRegExp.matchedLength(), QString("|").append(value));
+                        e.insert(foundAttrPos + attrRegExp.matchedLength(),
+                                 QStringLiteral("|%1").arg(value));
                         pos += value.length() + 1;
 
                         hasLemmaAttr = !isMorph;
@@ -186,17 +192,20 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
                     }
                 }
                 else { //attribute was not yet inserted
-                    const int attrPos = e.indexOf(QRegExp("morph=|lemma="), 0);
+                    QRegExp const re(QStringLiteral("morph=|lemma="));
+                    const int attrPos = e.indexOf(re, 0);
 
                     if (attrPos >= 0) {
-                        QString attr;
-                        attr.append(isMorph ? "morph" : "lemma").append("=\"").append(value).append("\" ");
-                        e.insert(attrPos, attr); /// \bug e.replace() instead?
-
                         hasMorphAttr = isMorph;
                         hasLemmaAttr = !isMorph;
 
+                        auto attr = QStringLiteral("%1=\"%2\" ")
+                                    .arg(isMorph
+                                         ? QStringLiteral("morph")
+                                         : QStringLiteral("lemma"),
+                                         value);
                         pos += attr.length();
+                        e.insert(attrPos, std::move(attr)); /// \bug e.replace() instead?
                     }
                 }
             }
@@ -288,7 +297,8 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                             buf.append("<span class=\"crossreference\">");
                             QStringList const refs(
                                 QString::fromUtf8(
-                                    myUserData->lastTextNode.c_str()).split(";"));
+                                    myUserData->lastTextNode.c_str()).split(
+                                            ';'));
                             QString oldRef; // the previous reference to use as a base for the next refs
                             for (auto const & ref : refs) {
                                 if (!oldRef.isEmpty())
@@ -326,7 +336,8 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                     myUserData->inscriptRef = true;
                     myUserData->suspendTextPassThru = false;
 
-                    CSwordModuleInfo * mod = btConfig().getDefaultSwordModuleByType("standardBible");
+                    auto * mod = btConfig().getDefaultSwordModuleByType(
+                                     QStringLiteral("standardBible"));
                     if (! mod)
                         mod = CSwordBackend::instance()->findFirstAvailableModule(CSwordModuleInfo::Bible);
 
@@ -381,10 +392,12 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
             buf.append("<img src=\"")
                .append(
                     QUrl::fromLocalFile(
-                        QTextCodec::codecForLocale()->toUnicode(
-                            myUserData->module->getConfigEntry(
-                                "AbsoluteDataPath")
-                        ).append('/').append(QString::fromUtf8(value))
+                        QStringLiteral("%1/%2").arg(
+                            QTextCodec::codecForLocale()->toUnicode(
+                                myUserData->module->getConfigEntry(
+                                    "AbsoluteDataPath")
+                            ),
+                            QString::fromUtf8(value))
                     ).toString().toUtf8().constData())
                .append("\" />");
         } else { // Let unknown token pass thru:
