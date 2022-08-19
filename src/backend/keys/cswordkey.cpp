@@ -87,21 +87,24 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
     // This is yucky, but if we want strong lexicon refs we have to do it here.
     if (m_module->type() == CSwordModuleInfo::Lexicon) {
         const QString t(text);
-        const QRegExp rx("(GREEK|HEBREW) for 0*([1-9]\\d*)");    // ignore 0's before number
+        QRegExp const rx(QStringLiteral("(GREEK|HEBREW) for 0*([1-9]\\d*)"));
         int pos = 0;
         while ((pos = rx.indexIn(t, pos)) != -1) {
-            const QString language = rx.cap(1);
-            const QString langcode = QString(language.at(0));    // "G" or "H"
-            const QString number = rx.cap(2);
-            const QString paddednumber = number.rightJustified(5, '0');    // Form 00123
+            auto language = rx.cap(1);
+            auto langcode = language.at(0); // "G" or "H"
+            auto number = rx.cap(2);
+            auto paddednumber = number.rightJustified(5, '0'); // Form 00123
 
             text.replace(
-                QRegExp(QString(
-                            "(>[^<>]+)"            // Avoid replacing inside tags
-                            "\\b(0*%1)\\b").arg(number)),    // And span around 0's
-                QString("\\1<span lemma=\"%1%2\"><a href=\"strongs://%3/%4\">\\2</a></span>")
-                    .arg(langcode, paddednumber, language, paddednumber)
-            );
+                QRegExp(QStringLiteral(
+                            "(>[^<>]+)" // Avoid replacing inside tags
+                            "\\b(0*%1)\\b") // And span around 0's
+                        .arg(std::move(number))),
+                QStringLiteral("\\1<span lemma=\"%1%2\">"
+                               "<a href=\"strongs://%3/%2\">\\2</a></span>")
+                    .arg(std::move(langcode),
+                         std::move(paddednumber),
+                         std::move(language)));
             pos += rx.matchedLength();
         }
     }
