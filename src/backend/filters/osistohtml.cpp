@@ -54,7 +54,8 @@ void renderReference(char const * const osisRef,
         if (!mod || (mod->type() != CSwordModuleInfo::Bible
                      && mod->type() != CSwordModuleInfo::Commentary))
         {
-            mod = btConfig().getDefaultSwordModuleByType("standardBible");
+            mod = btConfig().getDefaultSwordModuleByType(
+                      QStringLiteral("standardBible"));
             if (!mod)
                 mod = CSwordBackend::instance()->findFirstAvailableModule(
                           CSwordModuleInfo::Bible);
@@ -63,7 +64,7 @@ void renderReference(char const * const osisRef,
         // BT_ASSERT(mod); There's no necessarily a module or standard Bible
 
         //if the osisRef like "GerLut:key" contains a module, use that
-        auto const pos = ref.indexOf(":");
+        auto const pos = ref.indexOf(':');
 
         QString hrefRef;
         if ((pos >= 0)
