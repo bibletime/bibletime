@@ -78,8 +78,8 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
         return m_entries;
     }
 
-    QString dir(DU::getUserCacheDir().absolutePath());
-    QFile cacheFile( QString(dir).append("/").append(name()));
+    QFile cacheFile(QStringLiteral("%1/%2")
+                    .arg(DU::getUserCacheDir().absolutePath(), name()));
 
     /*
      * Try the module's cache
