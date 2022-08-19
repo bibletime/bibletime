@@ -19,7 +19,8 @@
 #include <QFile>
 #include <QIODevice>
 #include <QList>
-#include <QRegExp>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
 #include <QTextCodec>
 #include "../../util/directory.h"
 #include "../keys/cswordldkey.h"
@@ -56,14 +57,14 @@ CSwordLexiconModuleInfo::CSwordLexiconModuleInfo(sword::SWModule & module,
     module.setPosition(sword::TOP);
     module.increment();
     QString key = QString::fromUtf8(module.getKeyText());
-    QRegExp rx1("[GH][0-9]+");
-    if (rx1.exactMatch(key)) {
+    QRegularExpression rx1(QStringLiteral("^[GH][0-9]+$"));
+    if (rx1.match(key).hasMatch()) {
         m_hasStrongsKeys = true;
         m_hasLeadingStrongsLetter = true;
         m_strongsDigitsLength = key.length() - 1;
     } else {
-        QRegExp rx2("[0-9]+");
-        if (rx2.exactMatch(key)) {
+        QRegularExpression rx2(QStringLiteral("^[0-9]+$"));
+        if (rx2.match(key).hasMatch()) {
             m_hasStrongsKeys = true;
             m_strongsDigitsLength = key.length();
         }
@@ -166,23 +167,28 @@ bool CSwordLexiconModuleInfo:: hasStrongsKeys() const {
 }
 
 QString CSwordLexiconModuleInfo::normalizeStrongsKey(const QString &key) const {
+    if (auto const match =
+                QRegularExpression(QStringLiteral("^([GH]?)0*([0-9]+?)$"))
+                    .match(key);
+        match.hasMatch())
+    {
+        auto const lang = match.capturedRef(1);
+        auto const digits = match.capturedRef(2);
 
-    QRegExp rx("([GH]?)([0-9]+)");
-    if (! rx.exactMatch(key))
-        return key;
-    QString StrongsChar = rx.cap(1);
-    QString digits = rx.cap(2);
-
-    while (digits.length() < m_strongsDigitsLength)
-        digits = "0" +digits;
-
-    while (digits.length() > m_strongsDigitsLength && digits.at(0) == "0")
-        digits = digits.right(digits.length()-1);
-
-    QString newKey = digits;
-    if (m_hasLeadingStrongsLetter)
-        newKey = StrongsChar + digits;
-    return newKey;
+        auto size = qMax(digits.size(), m_strongsDigitsLength);
+        auto numPaddingZeroesRequired = size - digits.size();
+        if (m_hasLeadingStrongsLetter)
+            size += lang.size();
+        QString normalized;
+        normalized.reserve(size);
+        if (m_hasLeadingStrongsLetter)
+            normalized.append(lang);
+        while (numPaddingZeroesRequired--)
+            normalized.append('0');
+        normalized.append(digits);
+        return normalized;
+    }
+    return key;
 }
 
 CSwordKey * CSwordLexiconModuleInfo::createKey() const
