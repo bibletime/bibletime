@@ -167,7 +167,7 @@ bool CSwordLexiconModuleInfo:: hasStrongsKeys() const {
 
 QString CSwordLexiconModuleInfo::normalizeStrongsKey(const QString &key) const {
 
-    QRegExp rx("([GH]*)([0-9]+)");
+    QRegExp rx("([GH]?)([0-9]+)");
     if (! rx.exactMatch(key))
         return key;
     QString StrongsChar = rx.cap(1);
