@@ -24,6 +24,7 @@
 
 
 class CSwordModuleInfo;
+class QTextStream;
 
 namespace Search {
 
@@ -45,14 +46,17 @@ class CSearchAnalysisScene : public QGraphicsScene {
          */
         void resizeHeight(int height);
 
-    public Q_SLOTS:
-        void saveAsHTML();
+        void saveAsHTML() const;
 
     protected Q_SLOTS:
         /**
         * No descriptions
         */
         void slotResized();
+
+    private:
+
+        void saveAsHTML(QTextStream & out) const;
 
     private:
 

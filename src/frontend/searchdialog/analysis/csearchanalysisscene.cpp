@@ -17,6 +17,7 @@
 #include <QFileDialog>
 #include <QMap>
 #include <QTextCodec>
+#include <QTextStream>
 #include <QTextDocument>
 #include <QVector>
 #include <type_traits>
@@ -115,12 +116,7 @@ CSearchAnalysisScene::CSearchAnalysisScene(
                              analysisItem.rect().height());
         xPos += static_cast<int>(analysisItem.width() + SPACE_BETWEEN_PARTS);
 
-        QString toolTip("<center><b>");
-        toolTip.append(analysisItem.bookName().toHtmlEscaped())
-               .append("</b></center><hr/><table cellspacing=\"0\" "
-                       "cellpadding=\"3\" width=\"100%\" height=\"100%\" "
-                       "align=\"center\">");
-
+        QStringList toolTipItems;
         int i = 0;
         for (auto const & result : m_results) {
             auto const * const info = result.module;
@@ -132,18 +128,26 @@ CSearchAnalysisScene::CSearchAnalysisScene(
                         * static_cast<double>(100.0))
                        / static_cast<double>(count))
                     : 0.0;
-            toolTip.append("<tr bgcolor=\"white\"><td><b><font color=\"")
-                   .append(getColor(i).name()).append("\">")
-                   .append(info ? info->name() : QString())
-                   .append("</font></b></td><td>")
-                   .append(QString::number(analysisItem.counts()[i]))
-                   .append(" (")
-                   .append(QString::number(percent, 'g', 2))
-                   .append("%)</td></tr>");
+            toolTipItems.append(
+                        QStringLiteral("%1\">%2</span></b></td><td>%3 (%4")
+                        .arg(getColor(i).name(),
+                             info ? info->name() : QString(),
+                             QString::number(analysisItem.counts()[i]),
+                             QString::number(percent, 'g', 2)));
             ++i;
         }
-        toolTip.append("</table>");
-        analysisItem.setToolTip(toolTip);
+        #define ROW_START "<tr bgcolor=\"white\"><td><b><span style=\"color:"
+        #define ROW_END "%)</td></tr>"
+        analysisItem.setToolTip(
+                    QStringLiteral(
+                        "<center><b>%1</b></center><hr/>"
+                        "<table cellspacing=\"0\" cellpadding=\"3\" "
+                            "width=\"100%\" height=\"100%\" align=\"center\">"
+                        ROW_START "%2" ROW_END "</table>")
+                    .arg(analysisItem.bookName().toHtmlEscaped(),
+                         toolTipItems.join(QStringLiteral(ROW_END ROW_START))));
+        #undef ROW_START
+        #undef ROW_END
     }
     setSceneRect(0, 0, xPos + BAR_WIDTH + (m_results.size() - 1)*BAR_DELTAX + RIGHT_BORDER, height() );
     slotResized();
@@ -197,78 +201,90 @@ QColor CSearchAnalysisScene::getColor(int index) {
     }
 }
 
-void CSearchAnalysisScene::saveAsHTML() {
+void CSearchAnalysisScene::saveAsHTML() const {
     auto const fileName =
             QFileDialog::getSaveFileName(
                 nullptr,
                 tr("Save Search Analysis"),
                 QString(),
-                QObject::tr("HTML files") +" (*.html *.htm);;"
-                + QObject::tr("All files") + " (*)");
+                QObject::tr("HTML files") + QStringLiteral(" (*.html *.htm);;")
+                + QObject::tr("All files") + QStringLiteral(" (*)"));
     if (fileName.isEmpty())
         return;
 
-    QString text("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-                 "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
-                 "\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">"
-                 "<html xmlns=\"http://www.w3.org/1999/xhtml\"><head><title>");
-    {
-        const QString title(tr("BibleTime Search Analysis"));
-        text += title;
-        text += "</title>"
-                "<style type=\"text/css\">"
-                    "body{background-color:#fff;color:#000}"
-                    "table{border-collapse:collapse}"
-                    "td{border:1px solid #333}"
-                    "th{font-size:130%;text-align:left;vertical-align:top}"
-                    "td,th{text-align:left;padding:0.2em 0.5em}"
-                    ".r{text-align:right}"
-                "</style>"
-                "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>"
-            "</head><body><h1>";
-        text += title;
-    }
-    text += "</h1><p><span style=\"font-weight:bold\">";
-    text += tr("Search text:");
-    text += "</span>&nbsp;";
-    text += m_searchedText.toHtmlEscaped();
-    text += "</p><table><caption>";
-    text += tr("Results by work and book");
-    text += "</caption><tr><th>";
-    text += tr("Book");
-    text += "</th>";
+    struct UserData { CSearchAnalysisScene const & obj; } userData{*this};
+    static auto const writer =
+            +[](QTextStream & out, void * userPtr)
+            { static_cast<UserData const * >(userPtr)->obj.saveAsHTML(out); };
+    util::tool::savePlainFile(fileName,
+                              *writer,
+                              &userData,
+                              QTextCodec::codecForName("UTF-8"));
+}
 
-    for (auto const & result : m_results) {
-        text += "<th>";
-        text += result.module->name().toHtmlEscaped();
-        text += "</th>";
-    }
-    text += "</tr>";
+void CSearchAnalysisScene::saveAsHTML(QTextStream & out) const {
+    auto const title(tr("BibleTime Search Analysis"));
+    out << QStringLiteral(
+               "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+               "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
+               "\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">"
+               "<html xmlns=\"http://www.w3.org/1999/xhtml\"><head><title>")
+        << title
+        << QStringLiteral(
+               "</title>"
+               "<style type=\"text/css\">"
+                   "body{background-color:#fff;color:#000}"
+                   "table{border-collapse:collapse}"
+                   "td{border:1px solid #333}"
+                   "th{font-size:130%;text-align:left;vertical-align:top}"
+                   "td,th{text-align:left;padding:0.2em 0.5em}"
+                   ".r{text-align:right}"
+               "</style>"
+               "<meta http-equiv=\"Content-Type\" "
+                   "content=\"text/html; charset=utf-8\"/>"
+           "</head><body><h1>")
+        << title
+        << QStringLiteral("</h1><p><span style=\"font-weight:bold\">")
+        << tr("Search text:")
+        << QStringLiteral("</span>&nbsp;")
+        << m_searchedText.toHtmlEscaped()
+        << QStringLiteral("</p><table><caption>")
+        << tr("Results by work and book")
+        << QStringLiteral("</caption><tr><th>")
+        << tr("Book")
+        << QStringLiteral("</th>");
+
+    for (auto const & result : m_results)
+        out << QStringLiteral("<th>")
+            << result.module->name().toHtmlEscaped()
+            << QStringLiteral("</th>");
+    out << QStringLiteral("</tr>");
 
     for (auto const & vp : m_itemList) {
         auto const & analysisItem = *vp.second;
-        text += "<tr><td>";
-        text += analysisItem.bookName().toHtmlEscaped();
-        text += "</td>";
+        out << QStringLiteral("<tr><td>")
+            << analysisItem.bookName().toHtmlEscaped()
+            << QStringLiteral("</td>");
         for (auto const count : analysisItem.counts())
-            text += "<td class=\"r\">" + QString::number(count) + "</td>";
-        text += "</tr>";
+            out << QStringLiteral("<td class=\"r\">")
+                << QString::number(count)
+                << QStringLiteral("</td>");
+        out << QStringLiteral("</tr>");
     }
-    text += "<tr><th class=\"r\">";
-    text += tr("Total hits");
-    text += "</th>";
+    out << QStringLiteral("<tr><th class=\"r\">")
+        << tr("Total hits")
+        << QStringLiteral("</th>");
 
     for (auto const & result : m_results) {
-        text += "<td class=\"r\">";
-        text += QString::number(result.results.size());
-        text += "</td>";
+        out << QStringLiteral("<td class=\"r\">")
+            << QString::number(result.results.size())
+            << QStringLiteral("</td>");
     }
 
-    text += "</tr></table><p style=\"text-align:center;font-size:x-small\">";
-    text += tr("Created by <a href=\"https://bibletime.info/\">BibleTime</a>");
-    text += "</p></body></html>";
-
-    util::tool::savePlainFile(fileName, text, QTextCodec::codecForName("UTF-8"));
+    out << QStringLiteral("</tr></table><p style=\"text-align:center;"
+                          "font-size:x-small\">")
+        << tr("Created by <a href=\"https://bibletime.info/\">BibleTime</a>")
+        << QStringLiteral("</p></body></html>");
 }
 
 void CSearchAnalysisScene::resizeHeight(int height) {
