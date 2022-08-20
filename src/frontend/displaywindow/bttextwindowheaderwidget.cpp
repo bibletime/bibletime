@@ -42,15 +42,20 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(
     m_iconLabel->setAlignment(Qt::AlignCenter);
     layout->addWidget(m_iconLabel);
 
-    m_label = new QLabel("", this);
-    m_label->setStyleSheet("QLabel{font-weight:bold}");
+    m_label = new QLabel(QString(), this);
+    m_label->setStyleSheet(QStringLiteral("QLabel{font-weight:bold}"));
     layout->addWidget(m_label);
 
     m_button = new QToolButton( this );
     m_button->setPopupMode( QToolButton::InstantPopup );
     m_button->setArrowType(Qt::NoArrow);
-    m_button->setStyleSheet("QToolButton{margin:0px;}QToolButton::menu-indicator{subcontrol-position: center center;}");
-    m_button->setToolTip( tr("Add/remove/replace") );
+    m_button->setStyleSheet(
+                QStringLiteral(
+                    "QToolButton{margin:0px;}"
+                    "QToolButton::menu-indicator{"
+                        "subcontrol-position:center center"
+                    "}"));
+    m_button->setToolTip(tr("Add/remove/replace"));
 
     auto * const popup  = new QMenu(m_button);
         m_removeAction = new QAction(tr("Remove"), popup);
