@@ -33,7 +33,6 @@ BtBookshelfRemoveFinalPage::BtBookshelfRemoveFinalPage(QWidget * parent)
     : BtBookshelfWizardPage(parent)
 {
     m_verticalLayout = new QVBoxLayout(this);
-    m_verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
 
     m_verticalLayout->addItem(new QSpacerItem(20,
                                               40,
@@ -42,7 +41,6 @@ BtBookshelfRemoveFinalPage::BtBookshelfRemoveFinalPage(QWidget * parent)
 
     m_msgLabel = new QLabel(this);
     m_msgLabel->setAlignment(Qt::AlignCenter);
-    m_msgLabel->setObjectName(QStringLiteral("msgLabel"));
     m_msgLabel->setWordWrap(true);
     m_verticalLayout->addWidget(m_msgLabel);
 
