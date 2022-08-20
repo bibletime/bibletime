@@ -109,7 +109,10 @@ QStringList queryParser(QString const & queryString) {
         // remove all the NOT(!) tokens - these do not need to be
         // highlighted in the highlighter
         //-----------------------------------------------------------
-        if (((*it) == "!") || ((*it) == "NOT") || ((*it) == "-")) {
+        if (((*it) == '!')
+            || ((*it) == QStringLiteral("NOT"))
+            || ((*it) == '-'))
+        {
             it = tokenList.erase(it);
             if (it == tokenList.end())
                 break;
@@ -122,8 +125,12 @@ QStringList queryParser(QString const & queryString) {
         // remove all the operator tokens - these do not need to be
         // highlighted in the highlighter
         //-----------------------------------------------------------
-        else if ( ((*it) == "||")  || ((*it) == "OR") || ((*it) == "+") ||
-                  ((*it) == "AND") || ((*it) == "&&") ) {
+        else if (((*it) == QStringLiteral("||"))
+                 || ((*it) == QStringLiteral("OR"))
+                 || ((*it) == '+')
+                 || ((*it) == QStringLiteral("AND"))
+                 || ((*it) == QStringLiteral("&&")))
+        {
             it = tokenList.erase(it);
             if (it == tokenList.end())
                 break;
@@ -134,13 +141,13 @@ QStringList queryParser(QString const & queryString) {
         //What??? error: invalid conversion from 'const void*' to 'int'
         // and how come "contains" returns bool but is used as int?
         //else if ( (pos = (*it).contains("^")) >= 0 ) {
-        else if ( (pos = (*it).indexOf("^") ) >= 0 ) {
+        else if ( (pos = (*it).indexOf('^') ) >= 0 ) {
             (*it) = (*it).left(pos - 1);
         }
         // if the token contains a ~ then trim the remainder of the
         // token from the ~
-        else if ( (pos = (*it).indexOf("~") ) >= 0 ) {
-            (*it) = (*it).left(pos - 2) + "*";
+        else if ( (pos = (*it).indexOf('~') ) >= 0 ) {
+            (*it) = (*it).left(pos - 2) + '*';
         }
     }
     return(tokenList);
@@ -156,13 +163,13 @@ QString highlightSearchedText(QString const & content,
     static Qt::CaseSensitivity const cs = Qt::CaseInsensitive;
 
     //   int index = 0;
-    int index = ret.indexOf("<body", 0);
+    int index = ret.indexOf(QStringLiteral("<body"));
 
     // Work around Qt5 QML bug
     // QTBUG-36837 "background-color" css style in QML TextEdit does not work on most tags
-    const QString rep1("<span class=\"highlightwords\">");
-    const QString rep3("class=\"highlightwords\" ");
-    const QString rep2("</span>");
+    auto const rep1 = QStringLiteral("<span class=\"highlightwords\">");
+    auto const rep3 = QStringLiteral("class=\"highlightwords\" ");
+    auto const rep2 = QStringLiteral("</span>");
     const unsigned int repLength = rep1.length() + rep1.length();
     const unsigned int rep3Length = rep3.length();
 
@@ -170,9 +177,11 @@ QString highlightSearchedText(QString const & content,
     // search the searched text for "strong:" until it is not found anymore
     // split the search string - some possibilities are "\\s|\\|", "\\s|\\+", or "\\s|\\|\\+"
     // \todo find all possible seperators
-    for (auto const & newSearchText : searchedText.split(QRegExp("\\s"))) {
+    for (auto const & newSearchText
+         : searchedText.split(QRegExp(QStringLiteral("\\s"))))
+    {
         // strong search text index for finding "strong:"
-        int sstIndex = newSearchText.indexOf("strong:");
+        int sstIndex = newSearchText.indexOf(QStringLiteral("strong:"));
         if (sstIndex == -1)
             continue;
 
@@ -185,11 +194,14 @@ QString highlightSearchedText(QString const & content,
 
         // get the strongs number -> the text following "strong:" to the end of the string.
         // find all the "lemma=" inside the the content
-        while ((strongIndex = ret.indexOf("lemma=", strongIndex, cs)) != -1) {
+        while ((strongIndex =
+                    ret.indexOf(QStringLiteral("lemma="), strongIndex, cs))
+               != -1)
+        {
             // get the strongs number after the lemma and compare it with the
             // strongs number we are looking for
-            int const idx1 = ret.indexOf("\"", strongIndex) + 1;
-            int const idx2 = ret.indexOf("\"", idx1 + 1);
+            int const idx1 = ret.indexOf('"', strongIndex) + 1;
+            int const idx2 = ret.indexOf('"', idx1 + 1);
 
             // this is interesting because we could have a strongs number like: G3218|G300
             // To handle this we will use some extra cpu cycles and do a partial match against
@@ -242,24 +254,24 @@ QString highlightSearchedText(QString const & content,
         QString & word = words.first();
         QRegExp findExp;
         auto length = word.length();
-        if (word.contains("*")) {
+        if (word.contains('*')) {
             --length;
-            word.replace('*', "\\S*"); //match within a word
+            word.replace('*', QStringLiteral("\\S*")); //match within a word
             findExp = QRegExp(word);
             findExp.setMinimal(true);
         }
-        else if (word.contains("?")) {
+        else if (word.contains('?')) {
             --length;
-            word.replace('?', "\\S?"); //match within a word
+            word.replace('?', QStringLiteral("\\S?")); //match within a word
             findExp = QRegExp(word);
             findExp.setMinimal(true);
         }
         else {
-            findExp = QRegExp("\\b" + word + "\\b");
+            findExp = QRegExp(QStringLiteral("\\b%1\\b").arg(word));
         }
 
         //       index = 0; //for every word start at the beginning
-        index = ret.indexOf("<body", 0);
+        index = ret.indexOf(QStringLiteral("<body"));
         findExp.setCaseSensitivity(cs);
         //while ( (index = ret.find(findExp, index)) != -1 ) { //while we found the word
         while ( (index = findExp.indexIn(ret, index)) != -1 ) { //while we found the word
@@ -279,15 +291,17 @@ QString highlightSearchedText(QString const & content,
 QString prepareSearchText(QString const & orig, SearchType const searchType) {
     if (searchType == FullType)
         return orig;
-    static const QRegExp syntaxCharacters("[+\\-()!\"~]");
-    static const QRegExp andWords("\\band\\b", Qt::CaseInsensitive);
-    static const QRegExp orWords("\\bor\\b", Qt::CaseInsensitive);
+    static const QRegExp syntaxCharacters(QStringLiteral("[+\\-()!\"~]"));
+    static const QRegExp andWords(QStringLiteral("\\band\\b"),
+                                  Qt::CaseInsensitive);
+    static const QRegExp orWords(QStringLiteral("\\bor\\b"),
+                                 Qt::CaseInsensitive);
     QString text(orig.simplified());
     text.remove(syntaxCharacters);
-    text.replace(andWords, "\"and\"");
-    text.replace(orWords, "\"or\"");
+    text.replace(andWords, QStringLiteral("\"and\""));
+    text.replace(orWords, QStringLiteral("\"or\""));
     if (searchType == AndType)
-        text.replace(" ", " AND ");
+        text.replace(' ', QStringLiteral(" AND "));
     return text;
 }
 
