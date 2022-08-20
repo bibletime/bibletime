@@ -53,11 +53,11 @@
 
 #define BTCONFIG_API_VERSION 1
 namespace {
-const QString BTCONFIG_API_VERSION_KEY = "btconfig_api_version";
-QString const GROUP_SESSIONS = "sessions";
-QString const GROUP_SESSIONS_PREFIX = GROUP_SESSIONS + '/';
-QString const KEY_CURRENT_SESSION = "sessions/currentSession";
-QString const KEY_SESSION_NAME = "sessions/%1/name";
+auto const BTCONFIG_API_VERSION_KEY = QStringLiteral("btconfig_api_version");
+auto const GROUP_SESSIONS = QStringLiteral("sessions");
+auto const GROUP_SESSIONS_PREFIX = QStringLiteral("sessions/");
+auto const KEY_CURRENT_SESSION = QStringLiteral("sessions/currentSession");
+auto const KEY_SESSION_NAME = QStringLiteral("sessions/%1/name");
 } // anonymous namespace
 
 /*
@@ -77,14 +77,22 @@ BtConfig::BtConfig(const QString & settingsFile)
     m_instance = this;
 
     if (m_defaultSearchScopes.isEmpty()) {
-        m_defaultSearchScopes.insert(QT_TR_NOOP("Old testament"),          QString("Gen - Mal"));
-        m_defaultSearchScopes.insert(QT_TR_NOOP("Moses/Pentateuch/Torah"), QString("Gen - Deut"));
-        m_defaultSearchScopes.insert(QT_TR_NOOP("History"),                QString("Jos - Est"));
-        m_defaultSearchScopes.insert(QT_TR_NOOP("Prophets"),               QString("Isa - Mal"));
-        m_defaultSearchScopes.insert(QT_TR_NOOP("New testament"),          QString("Mat - Rev"));
-        m_defaultSearchScopes.insert(QT_TR_NOOP("Gospels"),                QString("Mat - Joh"));
-        m_defaultSearchScopes.insert(QT_TR_NOOP("Letters/Epistles"),       QString("Rom - Jude"));
-        m_defaultSearchScopes.insert(QT_TR_NOOP("Paul's Epistles"),        QString("Rom - Phile"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("Old testament"),
+                                     QStringLiteral("Gen - Mal"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("Moses/Pentateuch/Torah"),
+                                     QStringLiteral("Gen - Deut"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("History"),
+                                     QStringLiteral("Jos - Est"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("Prophets"),
+                                     QStringLiteral("Isa - Mal"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("New testament"),
+                                     QStringLiteral("Mat - Rev"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("Gospels"),
+                                     QStringLiteral("Mat - Joh"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("Letters/Epistles"),
+                                     QStringLiteral("Rom - Jude"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("Paul's Epistles"),
+                                     QStringLiteral("Rom - Phile"));
     }
 
 #ifdef Q_OS_WIN
@@ -102,7 +110,8 @@ BtConfig::BtConfig(const QString & settingsFile)
             continue;
 
         auto sessionName =
-                sessionsConf.value<QString>(sessionKey + "/name");
+                sessionsConf.value<QString>(
+                    sessionKey + QStringLiteral("/name"));
         if (!sessionName.isEmpty())
             m_sessionNames.insert(std::move(sessionKey),
                                   std::move(sessionName));
@@ -133,7 +142,7 @@ BtConfig::InitState BtConfig::initBtConfig() {
     BT_ASSERT(!m_instance);
 
     const QString confFileName = util::directory::getUserBaseDir().absolutePath()
-                                 + "/bibletimerc";
+                                 + QStringLiteral("/bibletimerc");
     bool confExisted = QFile::exists(confFileName);
     m_instance = new BtConfig(confFileName);
     if (!confExisted) {
@@ -213,12 +222,12 @@ void BtConfig::setModuleEncryptionKey(const QString & name,
                                       const QString & key)
 {
     BT_ASSERT(!name.isEmpty());
-    setValue("Module keys/" + name, key);
+    setValue(QStringLiteral("Module keys/") + name, key);
 }
 
 QString BtConfig::getModuleEncryptionKey(const QString & name) {
     BT_ASSERT(!name.isEmpty());
-    return value<QString>("Module keys/" + name, QString());
+    return value<QString>(QStringLiteral("Module keys/") + name, QString());
 }
 
 BtConfig::ShortcutsMap BtConfig::getShortcuts(QString const & shortcutGroup) {
@@ -264,55 +273,57 @@ void BtConfig::setShortcuts(QString const & shortcutGroup,
 
 FilterOptions BtConfig::loadFilterOptionsFromGroup(BtConfigCore const & group) {
     FilterOptions os;
-    auto const subConf = group.group("presentation");
-    os.footnotes           = subConf.value<bool>("footnotes", true);
-    os.strongNumbers       = subConf.value<bool>("strongNumbers", true);
-    os.headings            = subConf.value<bool>("headings", true);
-    os.morphTags           = subConf.value<bool>("morphTags", true);
-    os.lemmas              = subConf.value<bool>("lemmas", true);
-    os.redLetterWords      = subConf.value<bool>("redLetterWords", true);
-    os.hebrewPoints        = subConf.value<bool>("hebrewPoints", true);
-    os.hebrewCantillation  = subConf.value<bool>("hebrewCantillation", true);
-    os.greekAccents        = subConf.value<bool>("greekAccents", true);
-    os.textualVariants     = subConf.value<bool>("textualVariants", false);
-    os.scriptureReferences = subConf.value<bool>("scriptureReferences", true);
-    os.morphSegmentation   = subConf.value<bool>("morphSegmentation", true);
+    auto const subConf = group.group(QStringLiteral("presentation"));
+    os.footnotes           = subConf.value<bool>(QStringLiteral("footnotes"), true);
+    os.strongNumbers       = subConf.value<bool>(QStringLiteral("strongNumbers"), true);
+    os.headings            = subConf.value<bool>(QStringLiteral("headings"), true);
+    os.morphTags           = subConf.value<bool>(QStringLiteral("morphTags"), true);
+    os.lemmas              = subConf.value<bool>(QStringLiteral("lemmas"), true);
+    os.redLetterWords      = subConf.value<bool>(QStringLiteral("redLetterWords"), true);
+    os.hebrewPoints        = subConf.value<bool>(QStringLiteral("hebrewPoints"), true);
+    os.hebrewCantillation  = subConf.value<bool>(QStringLiteral("hebrewCantillation"), true);
+    os.greekAccents        = subConf.value<bool>(QStringLiteral("greekAccents"), true);
+    os.textualVariants     = subConf.value<bool>(QStringLiteral("textualVariants"), false);
+    os.scriptureReferences = subConf.value<bool>(QStringLiteral("scriptureReferences"), true);
+    os.morphSegmentation   = subConf.value<bool>(QStringLiteral("morphSegmentation"), true);
     return os;
 }
 
 void BtConfig::storeFilterOptionsToGroup(FilterOptions const & os,
                                          BtConfigCore & group)
 {
-    auto subConf = group.group("presentation");
-    subConf.setValue("footnotes", static_cast<bool>(os.footnotes));
-    subConf.setValue("strongNumbers", static_cast<bool>(os.strongNumbers));
-    subConf.setValue("headings", static_cast<bool>(os.headings));
-    subConf.setValue("morphTags", static_cast<bool>(os.morphTags));
-    subConf.setValue("lemmas", static_cast<bool>(os.lemmas));
-    subConf.setValue("redLetterWords", static_cast<bool>(os.redLetterWords));
-    subConf.setValue("hebrewPoints", static_cast<bool>(os.hebrewPoints));
-    subConf.setValue("hebrewCantillation", static_cast<bool>(os.hebrewCantillation));
-    subConf.setValue("greekAccents", static_cast<bool>(os.greekAccents));
-    subConf.setValue("textualVariants", static_cast<bool>(os.textualVariants));
-    subConf.setValue("scriptureReferences", static_cast<bool>(os.scriptureReferences));
-    subConf.setValue("morphSegmentation", static_cast<bool>(os.morphSegmentation));
+    auto subConf = group.group(QStringLiteral("presentation"));
+    subConf.setValue(QStringLiteral("footnotes"), static_cast<bool>(os.footnotes));
+    subConf.setValue(QStringLiteral("strongNumbers"), static_cast<bool>(os.strongNumbers));
+    subConf.setValue(QStringLiteral("headings"), static_cast<bool>(os.headings));
+    subConf.setValue(QStringLiteral("morphTags"), static_cast<bool>(os.morphTags));
+    subConf.setValue(QStringLiteral("lemmas"), static_cast<bool>(os.lemmas));
+    subConf.setValue(QStringLiteral("redLetterWords"), static_cast<bool>(os.redLetterWords));
+    subConf.setValue(QStringLiteral("hebrewPoints"), static_cast<bool>(os.hebrewPoints));
+    subConf.setValue(QStringLiteral("hebrewCantillation"), static_cast<bool>(os.hebrewCantillation));
+    subConf.setValue(QStringLiteral("greekAccents"), static_cast<bool>(os.greekAccents));
+    subConf.setValue(QStringLiteral("textualVariants"), static_cast<bool>(os.textualVariants));
+    subConf.setValue(QStringLiteral("scriptureReferences"), static_cast<bool>(os.scriptureReferences));
+    subConf.setValue(QStringLiteral("morphSegmentation"), static_cast<bool>(os.morphSegmentation));
 }
 
 DisplayOptions
 BtConfig::loadDisplayOptionsFromGroup(BtConfigCore const & group) {
     DisplayOptions os;
-    auto const subConf = group.group("presentation");
-    os.lineBreaks   = subConf.value<bool>("lineBreaks", false);
-    os.verseNumbers = subConf.value<bool>("verseNumbers", true);
+    auto const subConf = group.group(QStringLiteral("presentation"));
+    os.lineBreaks   = subConf.value<bool>(QStringLiteral("lineBreaks"), false);
+    os.verseNumbers = subConf.value<bool>(QStringLiteral("verseNumbers"), true);
     return os;
 }
 
 void BtConfig::storeDisplayOptionsToGroup(DisplayOptions const & os,
                                           BtConfigCore & group)
 {
-    auto subConf = group.group("presentation");
-    subConf.setValue("lineBreaks", static_cast<bool>(os.lineBreaks));
-    subConf.setValue("verseNumbers", static_cast<bool>(os.verseNumbers));
+    auto subConf = group.group(QStringLiteral("presentation"));
+    subConf.setValue(QStringLiteral("lineBreaks"),
+                     static_cast<bool>(os.lineBreaks));
+    subConf.setValue(QStringLiteral("verseNumbers"),
+                     static_cast<bool>(os.verseNumbers));
 }
 
 void BtConfig::setFontForLanguage(Language const & language,
@@ -324,15 +335,17 @@ void BtConfig::setFontForLanguage(Language const & language,
     BT_ASSERT(!englishName.isEmpty());
 
     // write the language to the settings
-    setValue("fonts/" + englishName, fontAsString);
-    setValue("font standard settings/" + englishName, fontSettings.first);
+    setValue(QStringLiteral("fonts/") + englishName, fontAsString);
+    setValue(QStringLiteral("font standard settings/") + englishName,
+             fontSettings.first);
 
     auto const & abbrev = language.abbrev();
     BT_ASSERT(!abbrev.isEmpty());
 
     // (over-)write the language to the settings using abbreviation:
-    setValue("fonts/" + abbrev, std::move(fontAsString));
-    setValue("font standard settings/" + abbrev, fontSettings.first);
+    setValue(QStringLiteral("fonts/") + abbrev, std::move(fontAsString));
+    setValue(QStringLiteral("font standard settings/") + abbrev,
+             fontSettings.first);
 
     // Update cache:
     m_fontCache[&language] = fontSettings;
@@ -353,22 +366,25 @@ BtConfig::getFontForLanguage(Language const & language) {
     auto const & abbrev = language.abbrev();
     BT_ASSERT(!abbrev.isEmpty());
 
-    if (auto const v = qVariantValue("font standard settings/" + abbrev);
+    if (auto const v =
+            qVariantValue(QStringLiteral("font standard settings/") + abbrev);
         v.canConvert<bool>())
     {
         fontSettings.first = v.value<bool>();
     } else {
         fontSettings.first =
-                value<bool>("font standard settings/" + englishName, false);
+                value<bool>(
+                    QStringLiteral("font standard settings/") + englishName,
+                    false);
     }
 
     QFont font;
     if (fontSettings.first) {
-        auto const v = qVariantValue("fonts/" + abbrev);
+        auto const v = qVariantValue(QStringLiteral("fonts/") + abbrev);
         auto fontName =
                 v.canConvert<QString>()
                 ? v.value<QString>()
-                : value<QString>("fonts/" + englishName,
+                : value<QString>(QStringLiteral("fonts/") + englishName,
                                  getDefaultFont().toString());
         if (!font.fromString(std::move(fontName))) {
             /// \todo
@@ -385,8 +401,10 @@ BtConfig::getFontForLanguage(Language const & language) {
 }
 
 BtConfig::StringMap BtConfig::getSearchScopesForCurrentLocale(const QStringList& scopeModules) {
-    auto const storedMap = value<BtConfig::StringMap>("properties/searchScopes",
-                                                      m_defaultSearchScopes);
+    auto const storedMap =
+            value<BtConfig::StringMap>(
+                QStringLiteral("properties/searchScopes"),
+                m_defaultSearchScopes);
     StringMap map;
 
     // Apply translation for default search scope names:
@@ -399,12 +417,13 @@ BtConfig::StringMap BtConfig::getSearchScopesForCurrentLocale(const QStringList&
     }
 
     // Convert map to current locale:
+    static auto const separator = QStringLiteral("; ");
     for (auto & data : map) {
         sword::ListKey list = parseVerseListWithModules(data, scopeModules);
         data.clear();
         for (int i = 0; i < list.getCount(); i++) {
             data.append(QString::fromUtf8(list.getElement(i)->getRangeText()));
-            data.append("; ");
+            data.append(separator);
         }
     }
     return map;
@@ -427,7 +446,7 @@ void BtConfig::setSearchScopesWithCurrentLocale(const QStringList& scopeModules,
             if (verse != nullptr) {
                 verse->setLocale("en");
                 data.append(QString::fromUtf8(verse->getRangeText()));
-                data.append(";");
+                data.append(';');
             } else {
                 parsingWorked = false;
                 break;
@@ -439,11 +458,11 @@ void BtConfig::setSearchScopesWithCurrentLocale(const QStringList& scopeModules,
         else
             iter = searchScopes.erase(iter);
     }
-    setValue("properties/searchScopes", searchScopes);
+    setValue(QStringLiteral("properties/searchScopes"), searchScopes);
 }
 
 QString BtConfig::booknameLanguage() {
-    static QString const key("GUI/booknameLanguage");
+    static auto const key = QStringLiteral("GUI/booknameLanguage");
     auto r = value<QString>(key, QLocale().name());
 
     // Maintain backwards compatibility with BibleTime versions older than 3.1:
@@ -469,11 +488,12 @@ sword::ListKey BtConfig::parseVerseListWithModules(const QString& data, const QS
 }
 
 void BtConfig::deleteSearchScopesWithCurrentLocale() {
-    remove("properties/searchScopes");
+    remove(QStringLiteral("properties/searchScopes"));
 }
 
 CSwordModuleInfo *BtConfig::getDefaultSwordModuleByType(const QString & moduleType) {
-    const QString moduleName = value<QString>("settings/defaults/" + moduleType, QString());
+    auto const moduleName =
+            value<QString>(QStringLiteral("settings/defaults/") + moduleType);
     if (moduleName.isEmpty())
         return nullptr;
 
@@ -483,7 +503,7 @@ CSwordModuleInfo *BtConfig::getDefaultSwordModuleByType(const QString & moduleTy
 void BtConfig::setDefaultSwordModuleByType(const QString &moduleType,
                                            const CSwordModuleInfo * const module)
 {
-    setValue("settings/defaults/" + moduleType,
+    setValue(QStringLiteral("settings/defaults/") + moduleType,
              module != nullptr ? module->name() : QString());
 }
 
