@@ -52,7 +52,7 @@
 
 namespace {
 inline QString toHeader(QString const & key, QString const & moduleName)
-{ return QString::fromLatin1("%1 (%2)").arg(key).arg(moduleName); }
+{ return QStringLiteral("%1 (%2)").arg(key).arg(moduleName); }
 }
 
 class BtBookmarksModelPrivate {
@@ -223,7 +223,7 @@ public: // types:
 public: // methods:
 
     BtBookmarksModelPrivate(BtBookmarksModel * parent)
-        : m_rootItem(new BookmarkFolder("Root"))
+        : m_rootItem(new BookmarkFolder(QStringLiteral("Root")))
         , q_ptr(parent)
     {
         m_saveTimer.setInterval(30 * 1000);
@@ -232,7 +232,8 @@ public: // methods:
     ~BtBookmarksModelPrivate() { delete m_rootItem; }
 
     static QString defaultBookmarksFile() {
-        return util::directory::getUserBaseDir().absolutePath() + "/bookmarks.xml";
+        return util::directory::getUserBaseDir().absolutePath()
+                + QStringLiteral("/bookmarks.xml");
     }
 
     BookmarkItemBase * item(const QModelIndex & index) const {
@@ -297,7 +298,7 @@ public: // methods:
 
         doc.setContent(bookmarksFile);
         QDomElement document = doc.documentElement();
-        if ( document.tagName() != "SwordBookmarks" ) {
+        if (document.tagName() != QStringLiteral("SwordBookmarks")) {
             qWarning("Not a BibleTime Bookmark XML file");
             return QList<BookmarkItemBase*>();
         }
@@ -321,10 +322,11 @@ public: // methods:
 
     /** Create a new item from a document element. */
     BookmarkItemBase * handleXmlElement(QDomElement & element, BookmarkItemBase * parent) {
-        if (element.tagName() == "Folder") {
+        if (element.tagName() == QStringLiteral("Folder")) {
             BookmarkFolder* newFolder = new BookmarkFolder(QString(), parent);
-            if (element.hasAttribute("caption")) {
-                newFolder->setText(element.attribute("caption"));
+            if (element.hasAttribute(QStringLiteral("caption"))) {
+                newFolder->setText(element.attribute(
+                                       QStringLiteral("caption")));
             }
             QDomNodeList childList = element.childNodes();
             for (int i = 0; i < childList.length(); i++) {
@@ -333,20 +335,24 @@ public: // methods:
             }
             return newFolder;
         }
-        if (element.tagName() == "Bookmark") {
+        if (element.tagName() == QStringLiteral("Bookmark")) {
             BookmarkItem* newBookmarkItem = new BookmarkItem(parent);
-            if (element.hasAttribute("modulename")) {
+            if (element.hasAttribute(QStringLiteral("modulename"))) {
                 //we use the name in all cases, even if the module isn't installed anymore
-                newBookmarkItem->setModule(element.attribute("modulename"));
+                newBookmarkItem->setModule(
+                            element.attribute(QStringLiteral("modulename")));
             }
-            if (element.hasAttribute("key")) {
-                newBookmarkItem->setKey(element.attribute("key"));
+            if (element.hasAttribute(QStringLiteral("key"))) {
+                newBookmarkItem->setKey(
+                            element.attribute(QStringLiteral("key")));
             }
-            if (element.hasAttribute("description")) {
-                newBookmarkItem->setDescription(element.attribute("description"));
+            if (element.hasAttribute(QStringLiteral("description"))) {
+                newBookmarkItem->setDescription(
+                            element.attribute(QStringLiteral("description")));
             }
-            if (element.hasAttribute("title")) {
-                newBookmarkItem->setText(element.attribute("title"));
+            if (element.hasAttribute(QStringLiteral("title"))) {
+                newBookmarkItem->setText(
+                            element.attribute(QStringLiteral("title")));
             }
             return newBookmarkItem;
         }
@@ -380,11 +386,16 @@ public: // methods:
     QString serializeTreeFromRootItem(BookmarkItemBase * rootItem) {
         BT_ASSERT(rootItem);
 
-        QDomDocument doc("DOC");
-        doc.appendChild( doc.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"UTF-8\"" ) );
+        QDomDocument doc(QStringLiteral("DOC"));
+        doc.appendChild(
+                    doc.createProcessingInstruction(
+                        QStringLiteral("xml"),
+                        QStringLiteral("version=\"1.0\" encoding=\"UTF-8\"")));
 
-        QDomElement content = doc.createElement("SwordBookmarks");
-        content.setAttribute("syntaxVersion", CURRENT_SYNTAX_VERSION);
+        auto content =
+                doc.createElement(QStringLiteral("SwordBookmarks"));
+        content.setAttribute(QStringLiteral("syntaxVersion"),
+                             CURRENT_SYNTAX_VERSION);
         doc.appendChild(content);
 
         //append the XML nodes of all child items
@@ -401,8 +412,10 @@ public: // methods:
         BookmarkItem* bookmarkItem = nullptr;
 
         if ((folderItem = dynamic_cast<BookmarkFolder*>(item))) {
-            QDomElement elem = parentElement.ownerDocument().createElement("Folder");
-            elem.setAttribute("caption", folderItem->text());
+            auto elem =
+                    parentElement.ownerDocument().createElement(
+                        QStringLiteral("Folder"));
+            elem.setAttribute(QStringLiteral("caption"), folderItem->text());
 
             parentElement.appendChild(elem);
 
@@ -411,14 +424,23 @@ public: // methods:
             }
         }
         else if ((bookmarkItem = dynamic_cast<BookmarkItem*>(item))) {
-            QDomElement elem = parentElement.ownerDocument().createElement("Bookmark");
+            auto elem =
+                    parentElement.ownerDocument().createElement(
+                        QStringLiteral("Bookmark"));
 
-            elem.setAttribute("key", bookmarkItem->englishKey());
-            elem.setAttribute("description", bookmarkItem->description());
-            elem.setAttribute("modulename", bookmarkItem->moduleName());
-            elem.setAttribute("moduledescription", bookmarkItem->module() ? bookmarkItem->module()->config(CSwordModuleInfo::Description) : QString());
+            elem.setAttribute(QStringLiteral("key"),
+                              bookmarkItem->englishKey());
+            elem.setAttribute(QStringLiteral("description"),
+                              bookmarkItem->description());
+            elem.setAttribute(QStringLiteral("modulename"),
+                              bookmarkItem->moduleName());
+            elem.setAttribute(QStringLiteral("moduledescription"),
+                              bookmarkItem->module()
+                              ? bookmarkItem->module()->config(
+                                    CSwordModuleInfo::Description)
+                              : QString());
         if (!bookmarkItem->text().isEmpty()) {
-            elem.setAttribute("title", bookmarkItem->text());
+            elem.setAttribute(QStringLiteral("title"), bookmarkItem->text());
         }
             parentElement.appendChild(elem);
         }
@@ -570,13 +592,12 @@ QString BookmarkItem::toolTip() const {
     // Language const * lang = m->language();
     // BtConfig::FontSettingsPair fontPair = getBtConfig().getFontForLanguage(lang);
 
-    QString const header(toHeader(key(), m->name()));
-    QString ret("<b>");
-    ret.append(header).append(")</b>");
-    QString const txt(text());
-    if (txt != header)
-        ret.append("<br>").append(txt);
-    return ret.append("<hr>").append(description());
+    auto const header = toHeader(key(), m->name());
+    auto const & txt = text();
+    if (txt == header)
+        return QStringLiteral("<b>%1)</b><hr>%2").arg(header, description());
+    return QStringLiteral("<b>%1)</b><br>%2<hr>%3")
+            .arg(header, txt, description());
 }
 
 
@@ -649,9 +670,9 @@ QVariant BtBookmarksModel::data(const QModelIndex & index, int role) const {
         case TypeRole:
             {
                 if(isBookmark(index))
-                    return "bookmark";
+                    return QStringLiteral("bookmark");
                 else
-                    return "folder";
+                    return QStringLiteral("folder");
             }
     }
     return QVariant();
