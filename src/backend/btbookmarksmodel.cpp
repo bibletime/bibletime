@@ -35,6 +35,7 @@
 #include <QTextStream>
 #include <QTime>
 #include <QTimer>
+#include <utility>
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "../util/cresmgr.h"
@@ -1011,12 +1012,15 @@ void BtBookmarksModel::sortItems(QModelIndex const & parent,
 }
 
 QHash<int, QByteArray> BtBookmarksModel::roleNames() const {
-    QHash<int, QByteArray> roleNames;
-    roleNames[Qt::DisplayRole] = "display";
-    roleNames[Qt::DecorationRole] = "icon";
-    roleNames[Qt::EditRole] = "edit";
-    roleNames[TypeRole] = "itemtype";
-    return roleNames;
+    static auto const staticRoleNames = {
+        std::make_pair(static_cast<int>(Qt::DisplayRole),
+                       QByteArrayLiteral("display")),
+        std::make_pair(static_cast<int>(Qt::DecorationRole),
+                       QByteArrayLiteral("icon")),
+        std::make_pair(static_cast<int>(Qt::EditRole),
+                       QByteArrayLiteral("edit")),
+        std::make_pair(static_cast<int>(TypeRole),
+                       QByteArrayLiteral("itemtype"))
+    };
+    return staticRoleNames;
 }
-
-
