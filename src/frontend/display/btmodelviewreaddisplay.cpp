@@ -52,7 +52,6 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
     , m_popup(nullptr)
     , m_widget(nullptr)
 {
-    setObjectName("BtModelViewReadDisplay");
     QHBoxLayout* layout = new QHBoxLayout(this);
     setLayout(layout);
     m_widget = new BtQmlScrollView(this, this);
