@@ -148,8 +148,8 @@ void CRangeChooserDialog::initConnections() {
                    m_resultList->clear();
                    auto const range =
                            m_rangeEdit->toPlainText().replace(
-                               QRegExp("\\s{0,}-\\s{0,}"),
-                               "-");
+                               QRegExp(QStringLiteral("\\s{0,}-\\s{0,}")),
+                               QStringLiteral("-"));
 
                    auto const & backend = CSwordBackend::instance();
                    for (auto const & moduleName : m_scopeModules) {
@@ -260,13 +260,13 @@ void CRangeChooserDialog::resetEditControls() {
     m_rangeEdit->setEnabled(item != nullptr);
     m_resultList->setEnabled(item != nullptr);
     m_deleteRangeButton->setEnabled(item != nullptr);
-    m_nameEdit->setText(item != nullptr ? rangeItem->caption() : "");
-    m_rangeEdit->setText(item != nullptr ? rangeItem->range() : "");
+    m_nameEdit->setText(item != nullptr ? rangeItem->caption() : QString());
+    m_rangeEdit->setText(item != nullptr ? rangeItem->range() : QString());
 
     if (item != nullptr)
         m_nameEdit->setFocus();
 
-    nameEditTextChanged(item != nullptr ? rangeItem->caption() : "");
+    nameEditTextChanged(item != nullptr ? rangeItem->caption() : QString());
 }
 
 void CRangeChooserDialog::accept() {
