@@ -128,12 +128,12 @@ bool BtInstallThread::removeModule() {
         return false;
 
     qDebug() << "Removing module" << installedModule->name();
-    QString prefixPath = m->config(CSwordModuleInfo::AbsoluteDataPath) + "/";
+    QString prefixPath = m->config(CSwordModuleInfo::AbsoluteDataPath) + '/';
     QString dataPath = m->config(CSwordModuleInfo::DataPath);
     auto const moduleName(m->name());
     backend.reset();
 
-    if (dataPath.left(2) == "./")
+    if (dataPath.left(2) == QStringLiteral("./"))
         dataPath = dataPath.mid(2);
 
     if (prefixPath.contains(dataPath)) {
