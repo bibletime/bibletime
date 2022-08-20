@@ -30,10 +30,8 @@ BtBookshelfTaskPage::BtBookshelfTaskPage(QWidget * parent)
     : BtBookshelfWizardPage(parent)
 {
     m_verticalLayout = new QVBoxLayout(this);
-    m_verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
 
     m_warningLabel = new QLabel(this);
-    m_warningLabel->setObjectName(QStringLiteral("warningLabel"));
     m_warningLabel->setWordWrap(true);
 
     m_verticalLayout->addWidget(m_warningLabel);
@@ -43,11 +41,8 @@ BtBookshelfTaskPage::BtBookshelfTaskPage(QWidget * parent)
     m_groupBox = new QGroupBox(this);
     { // Setup radio buttons:
         QVBoxLayout * const vLayout = new QVBoxLayout(m_groupBox);
-        vLayout->setObjectName(QStringLiteral("verticalLayout2"));
 
         m_installRadioButton = new QRadioButton(m_groupBox);
-        m_installRadioButton->setObjectName(
-                QStringLiteral("installRadioButton"));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -58,14 +53,12 @@ BtBookshelfTaskPage::BtBookshelfTaskPage(QWidget * parent)
         vLayout->addWidget(m_installRadioButton);
 
         m_updateRadioButton = new QRadioButton(m_groupBox);
-        m_updateRadioButton->setObjectName(QStringLiteral("updateRadioButton"));
         sizePolicy.setHeightForWidth(
                 m_updateRadioButton->sizePolicy().hasHeightForWidth());
         m_updateRadioButton->setSizePolicy(sizePolicy);
         vLayout->addWidget(m_updateRadioButton);
 
         m_removeRadioButton = new QRadioButton(m_groupBox);
-        m_removeRadioButton->setObjectName(QStringLiteral("removeRadioButton"));
         vLayout->addWidget(m_removeRadioButton);
     }
     m_verticalLayout->addWidget(m_groupBox);
