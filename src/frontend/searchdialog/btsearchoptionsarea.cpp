@@ -36,7 +36,7 @@
 
 
 namespace {
-const QString SearchTypeKey = "GUI/SearchDialog/searchType";
+auto const SearchTypeKey = QStringLiteral("GUI/SearchDialog/searchType");
 } // anonymous namespace
 
 namespace Search {
@@ -216,7 +216,8 @@ void BtSearchOptionsArea::initConnections() {
                [this](int const index) {
                    BtConstModuleList moduleList;
                    for (auto const & name
-                        : m_modulesCombo->itemText(index).split(", "))
+                        : m_modulesCombo->itemText(index).split(
+                            QStringLiteral(", ")))
                        moduleList.append(
                             CSwordBackend::instance()->findModuleByName(name));
                    // Set the list and the combobox list and text:
@@ -248,7 +249,7 @@ void BtSearchOptionsArea::setModules(const BtConstModuleList &modules) {
             m_modules.append(modulePtr);
             t.append(modulePtr->name());
             if (modulePtr != modules.last())
-                t += QString::fromLatin1(", "); // so that it will become a readable list (WLC, LXX, GerLut...)
+                t += QStringLiteral(", "); // so that it will become a readable list (WLC, LXX, GerLut...)
         }
     }
     //m_modulesLabel->setText(t);
@@ -270,14 +271,16 @@ void BtSearchOptionsArea::setModules(const BtConstModuleList &modules) {
     for (int i = 0; i < m_modulesCombo->count(); ++i) {
         historyList.append(m_modulesCombo->itemText(i));
     }
-    btConfig().setValue("history/searchModuleHistory", historyList);
+    btConfig().setValue(QStringLiteral("history/searchModuleHistory"),
+                        historyList);
 }
 
 QStringList BtSearchOptionsArea::getUniqueWorksList() {
     QSet<QString> moduleSet;
     for (auto const & value
-         : btConfig().value<QStringList>("history/searchModuleHistory", QStringList()))
-        for (auto const & name : value.split(", "))
+         : btConfig().value<QStringList>(
+             QStringLiteral("history/searchModuleHistory")))
+        for (auto const & name : value.split(QStringLiteral(", ")))
             moduleSet.insert(name);
     return moduleSet.values();
 }
@@ -293,9 +296,9 @@ void BtSearchOptionsArea::chooseModules() {
 }
 
 void BtSearchOptionsArea::reset() {
-
-    QString currentSearchScope = btConfig().value<QString>("searchScopeCurrent");
-    int index = m_rangeChooserCombo->findText(currentSearchScope);
+    int index = m_rangeChooserCombo->findText(
+                    btConfig().value<QString>(
+                        QStringLiteral("searchScopeCurrent")));
     if (index >= 0)
         m_rangeChooserCombo->setCurrentIndex(index);
     else
@@ -304,8 +307,10 @@ void BtSearchOptionsArea::reset() {
 }
 
 void BtSearchOptionsArea::saveSettings() {
-    btConfig().setValue("searchScopeCurrent", m_rangeChooserCombo->currentText());
-    btConfig().setValue("properties/searchTexts", m_searchTextCombo->historyItems());
+    btConfig().setValue(QStringLiteral("searchScopeCurrent"),
+                        m_rangeChooserCombo->currentText());
+    btConfig().setValue(QStringLiteral("properties/searchTexts"),
+                        m_searchTextCombo->historyItems());
     CSwordModuleSearch::SearchType t = CSwordModuleSearch::FullType;
     if (m_typeAndButton->isChecked()) {
         t = CSwordModuleSearch::AndType;
@@ -317,7 +322,9 @@ void BtSearchOptionsArea::saveSettings() {
 }
 
 void BtSearchOptionsArea::readSettings() {
-    const QStringList texts = btConfig().value<QStringList>("properties/searchTexts", QStringList());
+    auto const texts =
+            btConfig().value<QStringList>(
+                QStringLiteral("properties/searchTexts"));
     //for some reason the slot was called when setting the upmost item
     #if 0
     disconnect(m_searchTextCombo, &CHistoryComboBox::editTextChanged,
@@ -331,7 +338,10 @@ void BtSearchOptionsArea::readSettings() {
                this,              &BtSearchOptionsArea::slotValidateText);
     #endif
 
-    m_modulesCombo->insertItems(0, btConfig().value<QStringList>("history/searchModuleHistory", QStringList()));
+    m_modulesCombo->insertItems(
+                0,
+                btConfig().value<QStringList>(
+                    QStringLiteral("history/searchModuleHistory")));
     for (int i = 0; i < m_modulesCombo->count(); ++i) {
         m_modulesCombo->setItemData(i, m_modulesCombo->itemText(i), Qt::ToolTipRole);
     }
@@ -352,7 +362,7 @@ void BtSearchOptionsArea::readSettings() {
 void BtSearchOptionsArea::refreshRanges() {
     //the first option is fixed, the others can be edited using the "Setup ranges" button.
     m_rangeChooserCombo->clear();
-    m_rangeChooserCombo->insertItem(0, QString("[") + tr("No search scope") + QString("]"));
+    m_rangeChooserCombo->insertItem(0, tr("[No search scope]"));
     /// \todo what about this?
     //m_rangeChooserCombo->insertItem(tr("Last search result"));
 
