@@ -63,7 +63,7 @@ QVariant BtBookshelfModel::data(CSwordModuleInfo * module, int role) const {
         case ModuleDescriptionRole:
             return module->config(CSwordModuleInfo::Description);
         case Qt::ToolTipRole:
-            return QString("<b>%1:</b><br/>%2")
+            return QStringLiteral("<b>%1:</b><br/>%2")
                        .arg(module->name())
                        .arg(module->config(CSwordModuleInfo::Description));
         default:
