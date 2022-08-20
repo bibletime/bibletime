@@ -171,7 +171,7 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
         */
 
         // strong search text index for finding "strong:"
-        int sstIndex = searchedText.indexOf("strong:", 0);
+        int sstIndex = searchedText.indexOf(QStringLiteral("strong:"), 0);
         if (sstIndex != -1) {
             /*
               Get the strongs number from the search text. First find the first
@@ -179,7 +179,7 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
               token
             */
             sstIndex += 7;
-            const int sTokenIndex = searchedText.indexOf(" ", sstIndex);
+            const int sTokenIndex = searchedText.indexOf(' ', sstIndex);
             const QString sNumber(searchedText.mid(sstIndex, sTokenIndex - sstIndex));
 
             setupStrongsResults(m, result.results, item, sNumber);
