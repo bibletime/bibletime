@@ -61,9 +61,7 @@ BtBookshelfSourcesPage::BtBookshelfSourcesPage(QWidget * parent)
 {
     // Setup UI:
     m_verticalLayout = new QVBoxLayout(this);
-    m_verticalLayout->setObjectName(QStringLiteral("m_verticalLayout"));
     m_sourcesTableView = new QTableView(this);
-    m_sourcesTableView->setObjectName(QStringLiteral("sourcesListView"));
     m_sourcesTableView->horizontalHeader()->setVisible(false);
     m_sourcesTableView->verticalHeader()->setVisible(false);
     m_verticalLayout->addWidget(m_sourcesTableView);
