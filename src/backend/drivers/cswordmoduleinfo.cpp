@@ -942,7 +942,7 @@ QString CSwordModuleInfo::aboutText() const {
                 .arg(tr("Take care, this work contains cult / questionable "
                         "material!"));
 
-    text += QString("<b>%1:</b><br/>%2</font>")
+    text += QString("<b>%1:</b><br/>%2")
             .arg(tr("About"))
             .arg(config(AboutInformation)); // May contain HTML, don't escape
 
@@ -968,7 +968,7 @@ QString CSwordModuleInfo::aboutText() const {
                        .arg(value.toHtmlEscaped());
     }
 
-    text += "</table></font>";
+    text += "</table>";
 
     return text;
 }
