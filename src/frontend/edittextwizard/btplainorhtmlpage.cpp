@@ -12,7 +12,6 @@
 
 #include "btplainorhtmlpage.h"
 
-#include <QApplication>
 #include <QGroupBox>
 #include <QRadioButton>
 #include <QSizePolicy>
@@ -56,12 +55,7 @@ void BtPlainOrHtmlPage::setHtmlMode(bool html) {
 
 void BtPlainOrHtmlPage::retranslateUi() {
     m_plainTextRadioButton->setText(
-                QApplication::translate(
-                    "Personal Commentary Editor",
-                    "Edit Plain text"));
-
+                tr("Personal Commentary Editor", "Edit Plain text"));
     m_htmlRadioButton->setText(
-                QApplication::translate(
-                    "Personal Commentary Editor",
-                    "Edit HTML text"));
+                tr("Personal Commentary Editor", "Edit HTML text"));
 }
