@@ -187,7 +187,7 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
             /// \todo item->setOpen(true);
             strongsAvailable = true;
         }
-    };
+    }
 
     // Allow to hide the module strongs if there are any available
     setRootIsDecorated( strongsAvailable );
