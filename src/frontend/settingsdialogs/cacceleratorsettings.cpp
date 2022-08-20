@@ -96,37 +96,35 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
                     } else {
                         list.append(&windowType);
                     }
-                    QString conflicts;
-                    int numConflicts = 0;
-                    for (auto const * const windowType2 : list) {
-                        auto const & editor = windowType2->keyChooser;
-                        if (auto conflict = editor->findConflictWithKeys(keys);
+                    QStringList conflicts;
+                    auto const conflictTr = tr("\"%1\" in the \"%2\" group");
+                    for (auto const * const windowType2 : list)
+                        if (auto conflict =
+                                windowType2->keyChooser->findConflictWithKeys(
+                                    keys);
                             !conflict.isEmpty())
-                        {
-                            conflicts
-                                .append("<li>")
-                                .append(tr("\"%1\" in the \"%2\" group")
-                                            .arg(std::move(conflict))
-                                            .arg(windowType2->title))
-                                .append("</li>");
-                            ++numConflicts;
-                        }
-                    }
+                            conflicts.append(conflictTr
+                                             .arg(std::move(conflict))
+                                             .arg(windowType2->title));
 
                     if (!conflicts.isEmpty()) {
                         if (message::showQuestion(
                                 this,
                                 tr("Shortcut conflict detected"),
-                                tr("The shortcut \"%1\" you want to assign to "
-                                   "\"%2\" in the \"%3\" group conflicts with "
-                                   "the following %n shortcut(s):",
-                                   nullptr,
-                                   numConflicts)
-                                    .arg(keys.toString()).arg(actionName)
-                                    .arg(windowType.title)
-                                + "<ul>" + conflicts + "</ul>"
-                                + tr("Do you want to clear these conflicting "
-                                     "shortcuts and continue?"),
+                                QStringLiteral("%1<ul><li>%2</li></ul>%3")
+                                    .arg(
+                                        tr("The shortcut \"%1\" you want to "
+                                           "assign to \"%2\" in the \"%3\" "
+                                           "group conflicts with the following "
+                                           "%n shortcut(s):",
+                                           nullptr,
+                                           conflicts.size())
+                                        .arg(keys.toString())
+                                        .arg(actionName)
+                                        .arg(windowType.title),
+                                    conflicts.join(QStringLiteral("</li><li>")),
+                                    tr("Do you want to clear these conflicting "
+                                       "shortcuts and continue?")),
                                 QMessageBox::Yes | QMessageBox::No,
                                 QMessageBox::Yes) == QMessageBox::Yes)
                         {
