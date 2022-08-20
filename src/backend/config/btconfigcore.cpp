@@ -35,7 +35,8 @@ BtConfigCore::BtConfigCore(std::shared_ptr<QSettings> state,
     : m_state(std::move(state))
     , m_groupPrefix(std::move(groupPrefix))
 {
-    BT_DEBUG_ONLY(static QRegExp const groupRegExp("^([^/]+/)*$");)
+    BT_DEBUG_ONLY(
+            static QRegExp const groupRegExp(QStringLiteral("^([^/]+/)*$"));)
     BT_ASSERT(groupRegExp.exactMatch(m_groupPrefix));
 }
 
