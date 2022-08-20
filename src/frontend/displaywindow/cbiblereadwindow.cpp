@@ -37,7 +37,6 @@
 void CBibleReadWindow::applyProfileSettings(BtConfigCore const & conf) {
     CDisplayWindow::applyProfileSettings(conf);
 
-    setObjectName("CBibleReadWindow");
     setFilterOptions(BtConfig::loadFilterOptionsFromGroup(conf));
     setDisplayOptions(BtConfig::loadDisplayOptionsFromGroup(conf));
 
