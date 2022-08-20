@@ -38,8 +38,16 @@ BtSearchSyntaxHelpDialog::BtSearchSyntaxHelpDialog(QWidget *parent, Qt::WindowFl
     QFont font = m_textBrowser->font();
     font.setPointSize(font.pointSize()+2);
     m_textBrowser->setFont(font);
+    m_textBrowser->setOpenLinks(false);
     BT_CONNECT(m_textBrowser, &QTextBrowser::anchorClicked,
-               [](QUrl const & url) { QDesktopServices::openUrl(url); });
+               [this](QUrl const & url) {
+                   if (url.scheme().isEmpty()) {
+                       if (auto fragment = url.fragment(); !fragment.isEmpty())
+                           m_textBrowser->scrollToAnchor(std::move(fragment));
+                   } else {
+                       QDesktopServices::openUrl(url);
+                   }
+               });
     l->addWidget(m_textBrowser);
 
     m_buttons = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
