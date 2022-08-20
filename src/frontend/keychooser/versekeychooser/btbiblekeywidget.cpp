@@ -90,10 +90,10 @@ BtBibleKeyWidget::BtBibleKeyWidget(
     QToolButton* clearRef = new QToolButton(this);
     clearRef->setIcon(CResMgr::icon_clearEdit());
     clearRef->setAutoRaise(true);
-    clearRef->setStyleSheet("QToolButton{margin:0px;}");
+    clearRef->setStyleSheet(QStringLiteral("QToolButton{margin:0px;}"));
     BT_CONNECT(clearRef, &QToolButton::clicked,
                [this]{
-                   m_textbox->setText("");
+                   m_textbox->setText(QString());
                    m_textbox->setFocus();
                });
 
