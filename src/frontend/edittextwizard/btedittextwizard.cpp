@@ -22,8 +22,8 @@
 void translateQWizardStandardButtons(QWizard * wizard);
 
 namespace {
-QString const GeometryKey = "GUI/EditTextWizard/geometry";
-QString const HtmlModeKey = "GUI/EditTextWizard/htmlMode";
+auto const GeometryKey = QStringLiteral("GUI/EditTextWizard/geometry");
+auto const HtmlModeKey = QStringLiteral("GUI/EditTextWizard/htmlMode");
 } // anonymous namespace
 
 BtEditTextWizard::BtEditTextWizard(QWidget * parent, Qt::WindowFlags flags)
