@@ -34,7 +34,12 @@ BtDropdownChooserButton::BtDropdownChooserButton(
     setFixedHeight(ARROW_HEIGHT);
     setFocusPolicy(Qt::NoFocus);
     setPopupMode(QToolButton::InstantPopup);
-    setStyleSheet("QToolButton{margin:0px;}QToolButton::menu-indicator{subcontrol-position: center center;}");
+    setStyleSheet(
+                QStringLiteral(
+                    "QToolButton{margin:0px;}"
+                    "QToolButton::menu-indicator{"
+                        "subcontrol-position:center center"
+                    "}"));
 
     setMenu(new BtVerseKeyMenu(this));
 }
