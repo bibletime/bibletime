@@ -50,7 +50,9 @@ public: // methods:
         : m_action(action)
         , m_defaultKeys(std::move(defaultKeys))
     {
-        setText(action->text().replace(QRegExp("&(.)"), "\\1"));
+        setText(action->text().replace(
+                    QRegExp(QStringLiteral("&(.)")),
+                    QStringLiteral("\\1")));
         setIcon(action->icon());
         setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
@@ -268,7 +270,7 @@ void BtShortcutsEditor::slotSelectionChanged() {
 
     QString bothKeys = shortcut;
     if (!alternate.isEmpty())
-        bothKeys = bothKeys + "; " + alternate;
+        bothKeys = bothKeys + QStringLiteral("; ") + alternate;
     m_customPushButton->setText(bothKeys);
 
     if ( bothKeys == defaultKeys.toString())
@@ -286,11 +288,11 @@ void BtShortcutsEditor::noneButtonClicked(bool checked) {
     if (m_currentRow < 0)
         return;
     auto & item = *getShortcutsEditor(*m_table, m_currentRow);
-    m_customPushButton->setText("");
+    m_customPushButton->setText(QString());
     item.deleteHotkeys();
     item.setFirstHotkey();
-    m_table->item(m_currentRow, 1)->setText("");
-    m_table->item(m_currentRow, 2)->setText("");
+    m_table->item(m_currentRow, 1)->setText(QString());
+    m_table->item(m_currentRow, 2)->setText(QString());
 }
 
 // called when the default radio button is clicked
@@ -305,7 +307,7 @@ void BtShortcutsEditor::defaultButtonClicked(bool checked) {
     item.setFirstHotkey(defaultKeys);
     m_customPushButton->setText(defaultKeys.toString());
     m_table->item(m_currentRow, 1)->setText(defaultKeys.toString());
-    m_table->item(m_currentRow, 2)->setText("");
+    m_table->item(m_currentRow, 2)->setText(QString());
 }
 
 // called when the custom radio button is clicked
@@ -324,7 +326,7 @@ void BtShortcutsEditor::customButtonClicked(bool checked) {
         QString newPriKeys = m_dlg->getFirstKeys();
         QString newAltKeys = m_dlg->getSecondKeys();
         if (newPriKeys == newAltKeys)
-            newAltKeys = "";
+            newAltKeys = QString();
         auto & item = *getShortcutsEditor(*m_table, m_currentRow);
         item.setFirstHotkey(newPriKeys);
         item.setSecondHotkey(newAltKeys);
@@ -344,11 +346,11 @@ void BtShortcutsEditor::clearConflictWithKeys(QKeySequence const & keys) {
     for (int row = 0; row < m_table->rowCount(); row++) {
         auto & item = *getShortcutsEditor(*m_table, row);
         if (m_table->item(row, 1)->text() == keyString) {
-            m_table->item(row, 1)->setText("");
+            m_table->item(row, 1)->setText(QString());
             item.setFirstHotkey();
         }
         if (m_table->item(row, 2)->text() == keyString) {
-            m_table->item(row, 2)->setText("");
+            m_table->item(row, 2)->setText(QString());
             item.setSecondHotkey();
         }
     }
