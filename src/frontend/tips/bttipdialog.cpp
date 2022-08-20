@@ -38,29 +38,37 @@ class QUrl;
 namespace {
 
 inline QString vertical_align(const QString &text) {
-    return "<table height=\"100%\"><tr><td style=\"vertical-align:middle\" "
-            "height=\"100%\">" + text + "</td></tr></table>";
+    return QStringLiteral(
+                "<table height=\"100%\"><tr>"
+                "<td style=\"vertical-align:middle\" height=\"100%\">%1</td>"
+                "</tr></table>").arg(text);
 }
 
 inline QString make_style(QWidget *widget) {
-    const QPalette &p = widget->palette();
-    return "<style type=\"text/css\">"
-        "body{"
-            "background-color:" + p.color(QPalette::Base).name() + ";"
-            "color:" + p.color(QPalette::Text).name() + "}"
-        "h3{font-weight:bold;text-align:center}"
-        "a{text-decoration:underline}"
-        "a:link{color:" + p.color(QPalette::Link).name() + "}"
-        "a:visited{color:" + p.color(QPalette::LinkVisited).name() + "}"
-    "</style>";
+    auto const & p = widget->palette();
+    return QStringLiteral(
+                "<style type=\"text/css\">"
+                    "body{"
+                        "background-color:%1;"
+                        "color:%2"
+                    "}"
+                    "h3{font-weight:bold;text-align:center}"
+                    "a{text-decoration:underline}"
+                    "a:link{color:%3}"
+                    "a:visited{color:%4}"
+                "</style>")
+            .arg(p.color(QPalette::Base).name(),
+                 p.color(QPalette::Text).name(),
+                 p.color(QPalette::Link).name(),
+                 p.color(QPalette::LinkVisited).name());
 }
 
 inline QString make_html(QWidget *widget, const QString &text) {
-    return "<html><head>" + make_style(widget) + "</head><body>"
-            + vertical_align(text) + "</body></html>";
+    return QStringLiteral("<html><head>%1</head><body>%2</body></html>")
+            .arg(make_style(widget), vertical_align(text));
 }
 
-const QString LastTipNumberKey = "GUI/lastTipNumber";
+auto const LastTipNumberKey = QStringLiteral("GUI/lastTipNumber");
 
 } // anonymous namespace
 
@@ -78,7 +86,8 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
     m_tipView = new QTextBrowser(this);
     m_tipView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_tipView->setOpenExternalLinks(true);
-    m_tipView->setStyleSheet("QTextEdit { background-color: rgb(255, 255, 255) }");
+    m_tipView->setStyleSheet(
+                QStringLiteral("QTextEdit{background-color:rgb(255,255,255)}"));
     QFont font = m_tipView->font();
     font.setPointSize(font.pointSize()+2);
     m_tipView->setFont(font);
@@ -88,8 +97,9 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
 
     m_showTipsCheckBox = new QCheckBox;
     m_showTipsCheckBox->setText(tr("Show tips at startup"));
-    bool showTips = btConfig().value<bool>("GUI/showTipAtStartup", true);
-    m_showTipsCheckBox->setChecked(showTips);
+    m_showTipsCheckBox->setChecked(
+                btConfig().value<bool>(QStringLiteral("GUI/showTipAtStartup"),
+                                       true));
     hLayout->addWidget(m_showTipsCheckBox);
 
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Close,
