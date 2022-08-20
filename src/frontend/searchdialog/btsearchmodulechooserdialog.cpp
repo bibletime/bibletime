@@ -26,7 +26,8 @@
 
 
 namespace {
-const QString groupingOrderKey("GUI/SearchDialog/ModuleChooserDialog/grouping");
+auto const groupingOrderKey(
+        QStringLiteral("GUI/SearchDialog/ModuleChooserDialog/grouping"));
 }
 
 BtSearchModuleChooserDialog::BtSearchModuleChooserDialog(QWidget *parent,
