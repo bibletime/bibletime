@@ -101,11 +101,11 @@ void BtShortcutsDialog::keyReleaseEvent(QKeyEvent* event) {
     QKeySequence keys(key);
     QString keyStr = keys.toString();
     if ( (event->modifiers() & Qt::AltModifier) == Qt::AltModifier)
-        keyStr = "Alt+" + keyStr;
+        keyStr = QStringLiteral("Alt+") + keyStr;
     if ( (event->modifiers() & Qt::ShiftModifier) == Qt::ShiftModifier)
-        keyStr = "Shift+" + keyStr;
+        keyStr = QStringLiteral("Shift+") + keyStr;
     if ( (event->modifiers() & Qt::ControlModifier) == Qt::ControlModifier)
-        keyStr = "Ctrl+" + keyStr;
+        keyStr = QStringLiteral("Ctrl+") + keyStr;
 
     keyChangeRequest(keyStr);
 }
