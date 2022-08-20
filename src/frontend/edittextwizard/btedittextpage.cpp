@@ -33,9 +33,9 @@
 class QTextCharFormat;
 
 namespace {
-const QString CHTMLWriteDisplayGroup = "HtmlWriteDisplay";
-const QString CHTMLWriteDisplayFontKey = "font";
-const QString CHTMLWriteDisplayFontColorKey = "fontColor";
+auto const CHTMLWriteDisplayGroup = QStringLiteral("HtmlWriteDisplay");
+auto const CHTMLWriteDisplayFontKey = QStringLiteral("font");
+auto const CHTMLWriteDisplayFontColorKey = QStringLiteral("fontColor");
 }
 
 
