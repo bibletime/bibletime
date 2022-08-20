@@ -145,8 +145,9 @@ void CDisplayWindow::windowActivated() {
 QString CDisplayWindow::windowCaption() {
     if (m_modules.isEmpty())
         return {};
-    return QString(m_swordKey->key()).append(" (").append(m_modules.join(" | "))
-                .append(")");
+    return QStringLiteral("%1 (%2)")
+            .arg(m_swordKey->key(),
+                 m_modules.join(QStringLiteral(" | ")));
 }
 
 /** Returns the used modules as a pointer list */
@@ -164,26 +165,26 @@ void CDisplayWindow::storeProfileSettings(BtConfigCore & conf) const {
             managers. Might be related to Qt bug QTBUG-7634.
     */
     const QRect rect(w->x(), w->y(), w->width(), w->height());
-    conf.setValue<QRect>("windowRect", rect);
-    conf.setValue<bool>("staysOnTop",
+    conf.setValue<QRect>(QStringLiteral("windowRect"), rect);
+    conf.setValue<bool>(QStringLiteral("staysOnTop"),
                         w->windowFlags() & Qt::WindowStaysOnTopHint);
-    conf.setValue<bool>("staysOnBottom",
+    conf.setValue<bool>(QStringLiteral("staysOnBottom"),
                         w->windowFlags() & Qt::WindowStaysOnBottomHint);
-    conf.setValue("maximized", w->isMaximized());
+    conf.setValue(QStringLiteral("maximized"), w->isMaximized());
 
     bool hasFocus = (w == dynamic_cast<CDisplayWindow *>(mdi()->activeSubWindow()));
-    conf.setValue("hasFocus", hasFocus);
+    conf.setValue(QStringLiteral("hasFocus"), hasFocus);
     // conf.setSessionValue("type", static_cast<int>(modules().first()->type()));
 
     // Save current key:
     if (auto const * const k = m_swordKey)
-        conf.setValue("key", k->normalizedKey());
+        conf.setValue(QStringLiteral("key"), k->normalizedKey());
 
     // Save list of modules:
-    conf.setValue("modules", m_modules);
+    conf.setValue(QStringLiteral("modules"), m_modules);
 
     // Default for "not a write window":
-    conf.setValue("writeWindowType", int(0));
+    conf.setValue(QStringLiteral("writeWindowType"), int(0));
 }
 
 void CDisplayWindow::applyProfileSettings(BtConfigCore const & conf) {
@@ -197,14 +198,14 @@ void CDisplayWindow::applyProfileSettings(BtConfigCore const & conf) {
             because they give slightly incorrect results with some window
             managers. Might be related to Qt bug QTBUG-7634.
     */
-    const QRect rect = conf.value<QRect>("windowRect");
+    const QRect rect = conf.value<QRect>(QStringLiteral("windowRect"));
     w->resize(rect.width(), rect.height());
     w->move(rect.x(), rect.y());
-    if (conf.value<bool>("staysOnTop", false))
+    if (conf.value<bool>(QStringLiteral("staysOnTop"), false))
         w->setWindowFlags(w->windowFlags() | Qt::WindowStaysOnTopHint);
-    if (conf.value<bool>("staysOnBottom", false))
+    if (conf.value<bool>(QStringLiteral("staysOnBottom"), false))
         w->setWindowFlags(w->windowFlags() | Qt::WindowStaysOnBottomHint);
-    if (conf.value<bool>("maximized"))
+    if (conf.value<bool>(QStringLiteral("maximized")))
         w->showMaximized();
 
     setUpdatesEnabled(true);
@@ -213,27 +214,27 @@ void CDisplayWindow::applyProfileSettings(BtConfigCore const & conf) {
 void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     auto * actn = new QAction(QIcon(), tr("Copy"), a);
     actn->setShortcut(QKeySequence::Copy);
-    a->addAction("copySelectedText", actn);
+    a->addAction(QStringLiteral("copySelectedText"), actn);
 
     actn = new QAction(QIcon(), tr("Copy by references..."), a);
     actn->setShortcut(Qt::CTRL + Qt::Key_R);
-    a->addAction("copyByReferences", actn);
+    a->addAction(QStringLiteral("copyByReferences"), actn);
 
     actn = new QAction(QIcon(), tr("Find..."), a);
     actn->setShortcut(QKeySequence::Find);
-    a->addAction("findText", actn);
+    a->addAction(QStringLiteral("findText"), actn);
 
     actn = new QAction(QIcon(), tr("Change location"), a);
     actn->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
-    a->addAction("openLocation", actn);
+    a->addAction(QStringLiteral("openLocation"), actn);
 
     actn = new QAction(QIcon(), tr("Page down"), a);
     actn->setShortcut(QKeySequence(Qt::Key_PageDown));
-    a->addAction("pageDown", actn);
+    a->addAction(QStringLiteral("pageDown"), actn);
 
     actn = new QAction(QIcon(), tr("Page up"), a);
     actn->setShortcut(QKeySequence(Qt::Key_PageUp));
-    a->addAction("pageUp", actn);
+    a->addAction(QStringLiteral("pageUp"), actn);
 
     actn = new QAction(CResMgr::displaywindows::general::search::icon(),
                        tr("Search with works of this window"), a);
@@ -257,22 +258,22 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     a->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, action);
 
     actn = new QAction(tr("Copy reference only"), a);
-    a->addAction("copyReferenceOnly", actn);
+    a->addAction(QStringLiteral("copyReferenceOnly"), actn);
 
     actn = new QAction(tr("Save entry as HTML"), a);
-    a->addAction("saveHtml", actn);
+    a->addAction(QStringLiteral("saveHtml"), actn);
 
     actn = new QAction(tr("Print reference only"), a);
-    a->addAction("printReferenceOnly", actn);
+    a->addAction(QStringLiteral("printReferenceOnly"), actn);
 
     actn = new QAction(tr("Entry with text"), a);
-    a->addAction("copyEntryWithText", actn);
+    a->addAction(QStringLiteral("copyEntryWithText"), actn);
 
     actn = new QAction(tr("Entry as plain text"), a);
-    a->addAction("saveEntryAsPlain", actn);
+    a->addAction(QStringLiteral("saveEntryAsPlain"), actn);
 
     actn = new QAction(tr("Entry with text"), a);
-    a->addAction("printEntryWithText", actn);
+    a->addAction(QStringLiteral("printEntryWithText"), actn);
 
     actn = new QAction( /* QIcon(CResMgr::displaywindows::general::findStrongs::icon), */ tr("Strong's Search"), a);
     actn->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
@@ -286,10 +287,10 @@ void CDisplayWindow::initActions() {
     initAction(DWG::search::actionName,
                [this]{ BibleTime::instance()->openSearchDialog(modules()); });
     initAddAction(
-                "openLocation",
+                QStringLiteral("openLocation"),
                 [this]{
                     if (btConfig().session().value<bool>(
-                            "GUI/showToolbarsInEachWindow",
+                            QStringLiteral("GUI/showToolbarsInEachWindow"),
                             true))
                     {
                         m_keyChooser->setFocus();
@@ -297,24 +298,24 @@ void CDisplayWindow::initActions() {
                         kc->setFocus();
                     }
                 });
-    initAddAction("pageDown",
+    initAddAction(QStringLiteral("pageDown"),
                   [this]{
                       if (m_displayWidget)
                           m_displayWidget->pageDown();
                   });
-    initAddAction("pageUp",
+    initAddAction(QStringLiteral("pageUp"),
                   [this]{
                       if (m_displayWidget)
                           m_displayWidget->pageUp();
                   });
 
-    initAddAction("copySelectedText",
+    initAddAction(QStringLiteral("copySelectedText"),
                   m_displayWidget,
                   &BtModelViewReadDisplay::copySelectedText);
-    initAddAction("copyByReferences",
+    initAddAction(QStringLiteral("copyByReferences"),
                   m_displayWidget,
                   &BtModelViewReadDisplay::copyByReferences);
-    initAddAction("findText",
+    initAddAction(QStringLiteral("findText"),
                   m_displayWidget,
                   &BtModelViewReadDisplay::openFindTextDialog);
     initAddAction(DWG::backInHistory::actionName,
@@ -335,7 +336,7 @@ void CDisplayWindow::initActions() {
                 CResMgr::displaywindows::general::forwardInHistory::actionName);
     addAction(m_actions.forwardInHistory);
 
-    m_actions.findText = &ac->action("findText");
+    m_actions.findText = &ac->action(QStringLiteral("findText"));
 
     m_actions.findStrongs =
             &initAddAction(
@@ -346,28 +347,31 @@ void CDisplayWindow::initActions() {
                          : m_displayWidget->getCurrentNodeInfo().split(
                              '|',
                              Qt::SkipEmptyParts))
-                        searchText.append("strong:").append(strongNumber)
-                                .append(' ');
+                        searchText.append(
+                                    QStringLiteral("strong:%1 ")
+                                    .arg(strongNumber));
                     BibleTime::instance()->openSearchDialog(modules(),
                                                             searchText);
                 });
 
     m_actions.copy.reference =
-            &initAddAction("copyReferenceOnly",
+            &initAddAction(QStringLiteral("copyReferenceOnly"),
                            m_displayWidget,
                            &BtModelViewReadDisplay::copyAnchorOnly);
 
-    m_actions.copy.entry = &initAddAction("copyEntryWithText",
+    m_actions.copy.entry = &initAddAction(QStringLiteral("copyEntryWithText"),
                                           m_displayWidget,
                                           &BtModelViewReadDisplay::copyAll);
 
-    m_actions.copy.selectedText = &ac->action("copySelectedText");
+    m_actions.copy.selectedText =
+            &ac->action(QStringLiteral("copySelectedText"));
 
-    m_actions.copy.byReferences = &ac->action("copyByReferences");
+    m_actions.copy.byReferences =
+            &ac->action(QStringLiteral("copyByReferences"));
 
     m_actions.save.entryAsPlain =
             &initAddAction(
-                "saveEntryAsPlain",
+                QStringLiteral("saveEntryAsPlain"),
                 [this]{
                     CExportManager mgr(true,
                                        tr("Saving"),
@@ -381,7 +385,7 @@ void CDisplayWindow::initActions() {
 
     m_actions.save.entryAsHTML =
             &initAddAction(
-                "saveHtml",
+                QStringLiteral("saveHtml"),
                 [this]{
                     CExportManager mgr(true,
                                        tr("Saving"),
@@ -394,17 +398,18 @@ void CDisplayWindow::initActions() {
                 });
 
     m_actions.print.reference =
-            &initAddAction("printReferenceOnly",
+            &initAddAction(QStringLiteral("printReferenceOnly"),
                            this,
                            &CDisplayWindow::printAnchorWithText);
     addAction(m_actions.print.reference);
 
-    m_actions.print.entry = &initAddAction("printEntryWithText",
+    m_actions.print.entry = &initAddAction(QStringLiteral("printEntryWithText"),
                                            this,
                                            &CDisplayWindow::printAll);
 
     // init with the user defined settings
-    m_actionCollection->readShortcuts("Displaywindow shortcuts");
+    m_actionCollection->readShortcuts(
+                QStringLiteral("Displaywindow shortcuts"));
 }
 
 void CDisplayWindow::initConnections() {
@@ -478,7 +483,10 @@ void CDisplayWindow::initView() {
     m_headerBar = new QToolBar(this);
     m_headerBar->setMovable(false);
     m_headerBar->setWindowTitle(tr("Text area header"));
-    m_headerBar->setVisible(btConfig().session().value<bool>("GUI/showTextWindowHeaders", true));
+    m_headerBar->setVisible(
+                btConfig().session().value<bool>(
+                    QStringLiteral("GUI/showTextWindowHeaders"),
+                    true));
 
     addToolBar(headerBar());
 }
@@ -632,15 +640,17 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 
         lookup();
 
-        m_actionCollection->readShortcuts("Displaywindow shortcuts");
-        m_actionCollection->readShortcuts("Readwindow shortcuts");
+        m_actionCollection->readShortcuts(
+                    QStringLiteral("Displaywindow shortcuts"));
+        m_actionCollection->readShortcuts(
+                    QStringLiteral("Readwindow shortcuts"));
         Q_EMIT sigModuleListSet(m_modules);
     }
 
     if (m_displayWidget)
         m_displayWidget->settingsChanged();
 
-    actionCollection()->readShortcuts("Lexicon shortcuts");
+    actionCollection()->readShortcuts(QStringLiteral("Lexicon shortcuts"));
 }
 
 void CDisplayWindow::slotAddModule(int index, QString module) {
@@ -675,7 +685,9 @@ void CDisplayWindow::setBibleReference(const QString& reference) {
         lookupKey(reference);
         return;
     }
-    CSwordModuleInfo* bibleModule = btConfig().getDefaultSwordModuleByType("standardBible");
+    auto * const bibleModule =
+            btConfig().getDefaultSwordModuleByType(
+                QStringLiteral("standardBible"));
     if (bibleModule) {
         BibleTime *mainWindow = btMainWindow();
         BT_ASSERT(mainWindow);
@@ -740,7 +752,11 @@ void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
         m_moduleChooserBar = bar;
         bar->setWindowTitle(tr("Work chooser buttons"));
         bar->setLayoutDirection(Qt::LeftToRight);
-        bar->setVisible(btConfig().session().value<bool>("GUI/showTextWindowModuleSelectorButtons", true));
+        bar->setVisible(
+                    btConfig().session().value<bool>(
+                        QStringLiteral(
+                            "GUI/showTextWindowModuleSelectorButtons"),
+                        true));
     }
 }
 
@@ -756,7 +772,9 @@ bool CDisplayWindow::init() {
     parentWidget()->setFocusPolicy(Qt::ClickFocus);
     initActions();
     initToolbars();
-    if (!conf.session().value<bool>("GUI/showToolbarsInEachWindow", true))
+    if (!conf.session().value<bool>(
+            QStringLiteral("GUI/showToolbarsInEachWindow"),
+            true))
         setToolBarsHidden();
     btMainWindow()->clearMdiToolBars();
     clearMainWindowToolBars();
@@ -782,13 +800,21 @@ static void prepareToolBar(QToolBar* bar, const QString& title, bool visible) {
 
 /** Setup the Navigation toolbar. */
 void CDisplayWindow::setMainToolBar( QToolBar* bar ) {
-    prepareToolBar(bar, tr("Navigation"), btConfig().session().value<bool>("GUI/showTextWindowNavigator", true));
+    prepareToolBar(bar,
+                   tr("Navigation"),
+                   btConfig().session().value<bool>(
+                       QStringLiteral("GUI/showTextWindowNavigator"),
+                       true));
     m_mainToolBar = bar;
 }
 
 /** Setup the Tools toolbar. */
 void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
-    prepareToolBar(bar, tr("Tool"), btConfig().session().value<bool>("GUI/showTextWindowToolButtons", true));
+    prepareToolBar(bar,
+                   tr("Tool"),
+                   btConfig().session().value<bool>(
+                       QStringLiteral("GUI/showTextWindowToolButtons"),
+                       true));
     m_buttonsToolBar = bar;
 }
 
