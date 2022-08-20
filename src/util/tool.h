@@ -29,10 +29,8 @@ namespace tool {
 
   \param[in] filename the filename to save to.
   \param[in] text the string data to save.
-  \param[in] forceOverwrite whether to force the overwrite.
   \param[in] fileCodec the codec to use to save the given string data.
-  \note if the file exists, and forceOverwrite is false, a confirmation dialog
-        is shown to ask the user whether to overwrite the existing file.
+  \warning if a file with the given name already exists, it is first removed.
   \returns whether the file was properly saved.
 */
 bool savePlainFile(const QString & filename,
