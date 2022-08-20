@@ -231,9 +231,8 @@ QMimeData * CSearchResultView::mimeData ( const QList<QTreeWidgetItem *> items )
     return new BTMimeData(std::move(bookmarks));
 }
 
-QStringList CSearchResultView::mimeTypes () const {
-    return QStringList("BibleTime/Bookmark");
-}
+QStringList CSearchResultView::mimeTypes() const
+{ return QStringList(QStringLiteral("BibleTime/Bookmark")); }
 
 } //end of namespace
 
