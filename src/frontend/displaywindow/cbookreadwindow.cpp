@@ -37,13 +37,14 @@ void CBookReadWindow::applyProfileSettings(BtConfigCore const & conf) {
     CDisplayWindow::applyProfileSettings(conf);
 
     BT_ASSERT(m_treeAction);
-    if (conf.value<bool>("treeShown", true) != m_treeAction->isChecked())
+    if (conf.value<bool>(QStringLiteral("treeShown"), true)
+        != m_treeAction->isChecked())
         m_treeAction->activate(QAction::Trigger);
 }
 
 void CBookReadWindow::storeProfileSettings(BtConfigCore & conf) const {
     CDisplayWindow::storeProfileSettings(conf);
-    conf.setValue("treeShown", m_treeAction->isChecked());
+    conf.setValue(QStringLiteral("treeShown"), m_treeAction->isChecked());
 }
 
 void CBookReadWindow::initActions() {
@@ -51,13 +52,13 @@ void CBookReadWindow::initActions() {
     BtActionCollection* ac = actionCollection();
     insertKeyboardActions(ac);
 
-    m_treeAction = &ac->action("toggleTree");
+    m_treeAction = &ac->action(QStringLiteral("toggleTree"));
     BT_ASSERT(m_treeAction);
     BT_CONNECT(m_treeAction, &QAction::triggered,
                this, &CBookReadWindow::treeToggled);
     addAction(m_treeAction);
 
-    ac->readShortcuts("Book shortcuts");
+    ac->readShortcuts(QStringLiteral("Book shortcuts"));
 }
 
 void CBookReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
@@ -67,7 +68,7 @@ void CBookReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
                            tr("Toggle tree view"), a);
     qaction->setCheckable(true);
     // qaction->setShortcut(CResMgr::displaywindows::bookWindow::toggleTree::accel);
-    a->addAction("toggleTree", qaction);
+    a->addAction(QStringLiteral("toggleTree"), qaction);
 }
 
 /** No descriptions */
