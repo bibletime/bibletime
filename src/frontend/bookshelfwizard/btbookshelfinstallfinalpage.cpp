@@ -44,7 +44,6 @@ BtBookshelfInstallFinalPage::BtBookshelfInstallFinalPage(QWidget * parent)
 {
     // Setup UI:
     m_verticalLayout = new QVBoxLayout(this);
-    m_verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
 
     m_verticalLayout->addItem(new QSpacerItem(20,
                                               40,
@@ -62,7 +61,6 @@ BtBookshelfInstallFinalPage::BtBookshelfInstallFinalPage(QWidget * parent)
     m_verticalLayout->addWidget(m_msgLabel2);
 
     m_progressBar = new QProgressBar(this);
-    m_progressBar->setObjectName("progressBar");
     m_progressBar->setMinimum(0);
     m_progressBar->setMaximum(100);
     m_verticalLayout->addWidget(m_progressBar,Qt::AlignCenter);
