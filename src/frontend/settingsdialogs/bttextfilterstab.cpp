@@ -40,7 +40,8 @@ BtTextFiltersTab::BtTextFiltersTab(CSwordSettingsPage *parent)
     layout->addWidget(m_explanationLabel);
 
     {
-        auto const conf = btConfig().session().group("presentation");
+        auto const conf =
+                btConfig().session().group(QStringLiteral("presentation"));
         TEXT_FILTERS_TAB_ADD_ROW(verseNumbers, true);
         TEXT_FILTERS_TAB_ADD_ROW(headings, true);
         TEXT_FILTERS_TAB_ADD_ROW(hebrewPoints, true);
@@ -60,7 +61,7 @@ BtTextFiltersTab::BtTextFiltersTab(CSwordSettingsPage *parent)
     conf.setValue(#name, m_ ## name ## Check->isChecked())
 
 void BtTextFiltersTab::save() {
-    auto conf = btConfig().session().group("presentation");
+    auto conf = btConfig().session().group(QStringLiteral("presentation"));
     TEXT_FILTERS_TAB_SAVE(verseNumbers);
     TEXT_FILTERS_TAB_SAVE(headings);
     TEXT_FILTERS_TAB_SAVE(hebrewPoints);
@@ -73,7 +74,7 @@ void BtTextFiltersTab::save() {
 
 
 void BtTextFiltersTab::retranslateUi() {
-    util::tool::initExplanationLabel(m_explanationLabel, "",
+    util::tool::initExplanationLabel(m_explanationLabel, QString(),
           tr("Filters control the appearance of text. Here you can specify "
              "default settings for all filters. These settings apply to newly "
              "opened display windows only. You can override these settings in "
