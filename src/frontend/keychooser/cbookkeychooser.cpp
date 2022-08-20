@@ -267,10 +267,7 @@ void CBookKeyChooser::keyChooserChanged(int newIndex) {
         items.append(currentText);
     }
 
-    QString newKey("/");
-    newKey.append(items.join("/"));
-
-    m_key->setKey(newKey);
+    m_key->setKey('/' + items.join('/'));
     setKey(m_key);
 }
 
