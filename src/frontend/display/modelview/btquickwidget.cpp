@@ -37,8 +37,8 @@ BtQuickWidget::BtQuickWidget(BtQmlScrollView* parent)
 
     setAcceptDrops(true);
 
-    engine()->addImportPath("qrc:/qml");
-    setSource(QUrl("qrc:/qml/DisplayView.qml"));
+    engine()->addImportPath(QStringLiteral("qrc:/qml"));
+    setSource(QUrl(QStringLiteral("qrc:/qml/DisplayView.qml")));
 
     m_scrollTimer.setInterval(100);
     m_scrollTimer.setSingleShot(false);
@@ -94,7 +94,7 @@ void BtQuickWidget::dropEvent(QDropEvent * const e) {
 
 // Reimplementation from QQuickWidget
 void BtQuickWidget::dragMoveEvent( QDragMoveEvent* e ) {
-    if (e->mimeData()->hasFormat("BibleTime/Bookmark")) {
+    if (e->mimeData()->hasFormat(QStringLiteral("BibleTime/Bookmark"))) {
         e->acceptProposedAction();
         return;
     }
