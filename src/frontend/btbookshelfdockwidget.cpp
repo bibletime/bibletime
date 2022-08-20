@@ -49,9 +49,6 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     BT_ASSERT(!m_instance);
     m_instance = this;
 
-    setObjectName("BookshelfDock");
-
-
     // Setup actions and menus:
     initMenus();
 
