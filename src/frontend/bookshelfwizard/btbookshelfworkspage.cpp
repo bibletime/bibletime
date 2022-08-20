@@ -104,7 +104,6 @@ BtBookshelfWorksPage::BtBookshelfWorksPage(WizardTaskType iType,
 
     // Setup UI:
     QVBoxLayout * const verticalLayout = new QVBoxLayout(this);
-    verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
 
     QHBoxLayout * horizontalLayout = new QHBoxLayout;
     m_nameFilterLabel = new QLabel(this);
@@ -115,7 +114,6 @@ BtBookshelfWorksPage::BtBookshelfWorksPage(WizardTaskType iType,
     verticalLayout->addLayout(horizontalLayout);
 
     m_bookshelfView = new BtBookshelfView(this);
-    m_bookshelfView->setObjectName(QStringLiteral("worksTreeView"));
     m_bookshelfView->setHeaderHidden(false);
     m_bookshelfView->header()->setSectionResizeMode(
             QHeaderView::ResizeToContents);
