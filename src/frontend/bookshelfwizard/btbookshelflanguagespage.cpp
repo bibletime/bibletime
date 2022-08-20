@@ -48,9 +48,7 @@ BtBookshelfLanguagesPage::BtBookshelfLanguagesPage(QWidget * parent)
 {
     // Setup UI:
     m_verticalLayout = new QVBoxLayout(this);
-    m_verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
     m_languagesListView = new QListView(this);
-    m_languagesListView->setObjectName(QStringLiteral("languagesListView"));
     m_verticalLayout->addWidget(m_languagesListView);
 
     // Create languages Model:
