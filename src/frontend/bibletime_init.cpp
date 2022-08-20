@@ -129,7 +129,6 @@ void BibleTime::initView() {
     addDockWidget(Qt::LeftDockWidgetArea, m_bookshelfDock);
 
     m_bookmarksDock = new QDockWidget(this);
-    m_bookmarksDock->setObjectName("BookmarksDock");
     m_bookmarksPage = new CBookmarkIndex(this);
     m_bookmarksDock->setWidget(m_bookmarksPage);
     addDockWidget(Qt::LeftDockWidgetArea, m_bookmarksDock);
@@ -137,7 +136,6 @@ void BibleTime::initView() {
     m_bookshelfDock->loadBookshelfState();
 
     m_magDock = new QDockWidget(this);
-    m_magDock->setObjectName("MagDock");
     m_infoDisplay = new CInfoDisplay(this);
     m_infoDisplay->resize(150, 150);
     m_magDock->setWidget(m_infoDisplay);
@@ -371,9 +369,8 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     retranslateUiActions(a);
 }
 
-static QToolBar* createToolBar(const QString& name, QWidget* parent, bool visible) {
+static QToolBar* createToolBar(QWidget* parent, bool visible) {
     QToolBar* bar = new QToolBar(parent);
-    bar->setObjectName(name);
     bar->setFloatable(false);
     bar->setMovable(true);
     bar->setVisible(visible);
@@ -399,7 +396,7 @@ void BibleTime::createMenuAndToolBar()
     // Create menubar
     menuBar();
 
-    m_mainToolBar = createToolBar("MainToolBar", this, true);
+    m_mainToolBar = createToolBar(this, true);
     addToolBar(m_mainToolBar);
 
     // Set visibility of main window toolbars based on config
@@ -407,15 +404,14 @@ void BibleTime::createMenuAndToolBar()
             !btConfig().session().value<bool>("GUI/showToolbarsInEachWindow",
                                               true);
 
-    m_navToolBar = createToolBar("NavToolBar", this, visible);
+    m_navToolBar = createToolBar(this, visible);
     addToolBar(m_navToolBar);
 
     m_worksToolBar = new BtModuleChooserBar(this);
-    m_worksToolBar->setObjectName("WorksToolBar");
     m_worksToolBar->setVisible(visible);
     addToolBar(m_worksToolBar);
 
-    m_toolsToolBar = createToolBar("ToolsToolBar", this, visible);
+    m_toolsToolBar = createToolBar(this, visible);
     addToolBar(m_toolsToolBar);
 }
 
