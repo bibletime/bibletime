@@ -73,7 +73,6 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
     // QMdiSubWindow handles this procedure.
     //setAttribute(Qt::WA_DeleteOnClose);
 
-    setObjectName("CDisplayWindow");
     m_actionCollection = new BtActionCollection(this);
 
     for (auto const * const mod : modules)
