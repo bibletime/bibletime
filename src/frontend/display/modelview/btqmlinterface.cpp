@@ -146,8 +146,10 @@ QString BtQmlInterface::getRawText(int row, int column) {
             | QRegularExpression::DotMatchesEverythingOption
             | QRegularExpression::DontCaptureOption
             | QRegularExpression::UseUnicodePropertiesOption;
-    static QRegularExpression const reBefore("^.*?<body(\\s[^>]*?)?>", reFlags);
-    static QRegularExpression const reAfter("</body>.*?$", reFlags);
+    static QRegularExpression const reBefore(
+                QStringLiteral("^.*?<body(\\s[^>]*?)?>"), reFlags);
+    static QRegularExpression const reAfter(
+                QStringLiteral("</body>.*?$"), reFlags);
     if (auto const m = reBefore.match(rawText); m.hasMatch())
         rawText.remove(0, m.capturedLength());
     if (auto const m = reAfter.match(rawText); m.hasMatch())
@@ -178,7 +180,7 @@ void BtQmlInterface::setHoveredLink(QString const & link) {
 QString BtQmlInterface::getLemmaFromLink(const QString& url) {
     QString reference;
 
-    QRegExp rx("sword://lemmamorph/([a-s]+)=([GH][0-9]+)");
+    QRegExp rx(QStringLiteral("sword://lemmamorph/([a-s]+)=([GH][0-9]+)"));
     rx.setMinimal(false);
     int pos1 = rx.indexIn(url);
     if (pos1 > -1) {
@@ -190,7 +192,7 @@ QString BtQmlInterface::getLemmaFromLink(const QString& url) {
 QString BtQmlInterface::getBibleUrlFromLink(const QString& url) {
     QString reference;
 
-    QRegExp rx("(sword://Bible/.*)\\|\\|(.*)=(.*)");
+    QRegExp rx(QStringLiteral("(sword://Bible/.*)\\|\\|(.*)=(.*)"));
     rx.setMinimal(false);
     int pos1 = rx.indexIn(url);
     if (pos1 > -1) {
@@ -201,28 +203,31 @@ QString BtQmlInterface::getBibleUrlFromLink(const QString& url) {
 
 QString BtQmlInterface::getReferenceFromUrl(const QString& url) {
     {
-        QRegExp rx("sword://(bible|lexicon)/(.*)/(.*)(\\|\\|)",
+        QRegExp rx(QStringLiteral("sword://(bible|lexicon)/(.*)/(.*)(\\|\\|)"),
                    Qt::CaseInsensitive);
         rx.setMinimal(false);
         if (rx.indexIn(url) > -1)
-            return "href=sword://" + rx.cap(1) + "/" + rx.cap(2) + "/"
-                   + rx.cap(3);
+            return QStringLiteral("href=sword://%1/%2/%3")
+                                  .arg(rx.cap(1), rx.cap(2), rx.cap(3));
     }{
-        QRegExp rx("sword://(bible|lexicon)/(.*)/(.*)", Qt::CaseInsensitive);
+        QRegExp rx(QStringLiteral("sword://(bible|lexicon)/(.*)/(.*)"),
+                   Qt::CaseInsensitive);
         rx.setMinimal(false);
         if (rx.indexIn(url) > -1)
-            return "href=sword://" + rx.cap(1) + "/" + rx.cap(2) + "/"
-                   + rx.cap(3);
+            return QStringLiteral("href=sword://%1/%2/%3")
+                    .arg(rx.cap(1), rx.cap(2), rx.cap(3));
     }{
-        QRegExp rx("sword://footnote/(.*)=(.*)", Qt::CaseInsensitive);
+        QRegExp rx(QStringLiteral("sword://footnote/(.*)=(.*)"),
+                   Qt::CaseInsensitive);
         rx.setMinimal(false);
         if (rx.indexIn(url) > -1)
-            return "note=" + rx.cap(1);
+            return QStringLiteral("note=") + rx.cap(1);
     }{
-        QRegExp rx("sword://lemmamorph/(.*)=(.*)/(.*)", Qt::CaseInsensitive);
+        QRegExp rx(QStringLiteral("sword://lemmamorph/(.*)=(.*)/(.*)"),
+                   Qt::CaseInsensitive);
         rx.setMinimal(false);
         if (rx.indexIn(url) > -1)
-            return rx.cap(1) + "=" + rx.cap(2);
+            return QStringLiteral("%1=%2").arg(rx.cap(1), rx.cap(2));
     }
     return {};
 }
@@ -291,7 +296,7 @@ void BtQmlInterface::setKey( CSwordKey* key ) {
 }
 
 void BtQmlInterface::setBibleKey(const QString& link) {
-    QRegExp rx("sword://Bible/(.*)/(.*)\\|\\|(.*)=(.*)");
+    QRegExp rx(QStringLiteral("sword://Bible/(.*)/(.*)\\|\\|(.*)=(.*)"));
     rx.setMinimal(false);
     int pos1 = rx.indexIn(link);
     QString keyName;
@@ -332,7 +337,7 @@ void BtQmlInterface::dragHandler(int index) {
     QString moduleName;
     QString keyName;
 
-    QRegExp rx("sword://Bible/(.*)/(.*)\\|\\|(.*)=(.*)");
+    QRegExp rx(QStringLiteral("sword://Bible/(.*)/(.*)\\|\\|(.*)=(.*)"));
     rx.setMinimal(false);
     int pos1 = rx.indexIn(m_activeLink);
 
@@ -417,7 +422,8 @@ void BtQmlInterface::copyRange(int index1, int index2) const {
     for (int i=index1; i<=index2; ++i) {
         QString keyName = m_moduleTextModel->indexToKeyName(i);
         key->setKey(keyName);
-        text += keyName + "\n" + key->strippedText() + "\n\n";
+        text.append(QStringLiteral("%1\n%2\n\n")
+                    .arg(keyName, key->strippedText()));
     }
     QClipboard *clipboard = QGuiApplication::clipboard();
     clipboard->setText(text);
@@ -522,7 +528,7 @@ void BtQmlInterface::findText(const QString& /*text*/,
 int BtQmlInterface::countHighlightsInItem(int index) {
     QModelIndex mIndex = m_moduleTextModel->index(index);
     QString text = m_moduleTextModel->data(mIndex, ModuleEntry::Text1Role).toString();
-    int num = text.count("\"highlightwords");
+    int num = text.count(QStringLiteral("\"highlightwords"));
     return num;
 }
 
