@@ -35,7 +35,6 @@ BtBookshelfSourcesProgressPage::BtBookshelfSourcesProgressPage(QWidget * parent)
 {
     // Setup UI:
     QVBoxLayout * const vLayout = new QVBoxLayout(this);
-    vLayout->setObjectName(QStringLiteral("verticalLayout"));
 
     vLayout->addItem(new QSpacerItem(20,
                                      40,
@@ -44,12 +43,10 @@ BtBookshelfSourcesProgressPage::BtBookshelfSourcesProgressPage(QWidget * parent)
 
     m_msgLabel = new QLabel(this);
     m_msgLabel->setAlignment(Qt::AlignCenter);
-    m_msgLabel->setObjectName(QStringLiteral("msgLabel"));
     m_msgLabel->setWordWrap(true);
     vLayout->addWidget(m_msgLabel);
 
     m_progressBar = new QProgressBar(this);
-    m_progressBar->setObjectName("progressBar");
     m_progressBar->setMinimum(0);
     m_progressBar->setMaximum(100);
     vLayout->addWidget(m_progressBar, Qt::AlignCenter);
