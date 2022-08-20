@@ -67,7 +67,7 @@ void BtWelcomeDialog::retranslateUi() {
     setWindowTitle(tr("Welcome to BibleTime"));
 
     m_label->setText(
-                QString("<p>%1</p><p>%2</p><p>%3</p>")
+                QStringLiteral("<p>%1</p><p>%2</p><p>%3</p>")
                     .arg(tr("BibleTime is an easy to use but powerful Bible "
                             "study tool."))
                     .arg(tr("Before you can use this application some works "
@@ -81,7 +81,7 @@ void BtWelcomeDialog::retranslateUi() {
     m_laterButton->setText(tr("Install later"));
 
     m_installButton->setText(
-                QString("      %1      ").arg(tr("Install works...")));
+                QStringLiteral("      %1      ").arg(tr("Install works...")));
 
     QFont font(m_installButton->font());
     font.setBold(true);
