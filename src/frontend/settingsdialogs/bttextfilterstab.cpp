@@ -25,7 +25,7 @@
 #define TEXT_FILTERS_TAB_ADD_ROW(name,def) \
         m_ ## name ## Check = new QCheckBox(this); \
         m_ ## name ## Check->setChecked(conf.value<bool>(#name,(def))); \
-        layout->addWidget(m_ ## name ## Check);
+        layout->addWidget(m_ ## name ## Check)
 
 BtTextFiltersTab::BtTextFiltersTab(CSwordSettingsPage *parent)
     : QWidget(parent)
