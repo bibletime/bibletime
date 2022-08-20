@@ -33,27 +33,27 @@ void CCommentaryReadWindow::insertKeyboardActions(BtActionCollection* const a) {
 
     qaction = new QAction(tr("Next book"), a);
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
-    a->addAction("nextBook", qaction);
+    a->addAction(QStringLiteral("nextBook"), qaction);
 
     qaction = new QAction(tr("Previous book"), a);
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousBook::accel);
-    a->addAction( "previousBook", qaction);
+    a->addAction(QStringLiteral("previousBook"), qaction);
 
     qaction = new QAction(tr("Next chapter"), a);
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
-    a->addAction("nextChapter", qaction);
+    a->addAction(QStringLiteral("nextChapter"), qaction);
 
     qaction = new QAction(tr("Previous chapter"), a);
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
-    a->addAction("previousChapter", qaction);
+    a->addAction(QStringLiteral("previousChapter"), qaction);
 
     qaction = new QAction(tr("Next verse"), a);
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
-    a->addAction("nextVerse", qaction);
+    a->addAction(QStringLiteral("nextVerse"), qaction);
 
     qaction = new QAction(tr("Previous verse"), a);
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
-    a->addAction("previousVerse", qaction);
+    a->addAction(QStringLiteral("previousVerse"), qaction);
 
     qaction = new QAction(CResMgr::displaywindows::commentaryWindow::syncWindow::icon(),
         tr("Synchronize"), a);
@@ -68,26 +68,37 @@ void CCommentaryReadWindow::initActions() {
     BtActionCollection* ac = actionCollection();
     insertKeyboardActions(ac);
 
-    initAddAction("nextBook", this, &CCommentaryReadWindow::nextBook);
-    initAddAction("previousBook", this, &CCommentaryReadWindow::previousBook);
-    initAddAction("nextChapter", this, &CCommentaryReadWindow::nextChapter);
-    initAddAction("previousChapter",
+    initAddAction(QStringLiteral("nextBook"),
+                  this,
+                  &CCommentaryReadWindow::nextBook);
+    initAddAction(QStringLiteral("previousBook"),
+                  this,
+                  &CCommentaryReadWindow::previousBook);
+    initAddAction(QStringLiteral("nextChapter"),
+                  this,
+                  &CCommentaryReadWindow::nextChapter);
+    initAddAction(QStringLiteral("previousChapter"),
                   this,
                   &CCommentaryReadWindow::previousChapter);
-    initAddAction("nextVerse", this, &CCommentaryReadWindow::nextVerse);
-    initAddAction("previousVerse", this, &CCommentaryReadWindow::previousVerse);
+    initAddAction(QStringLiteral("nextVerse"),
+                  this,
+                  &CCommentaryReadWindow::nextVerse);
+    initAddAction(QStringLiteral("previousVerse"),
+                  this,
+                  &CCommentaryReadWindow::previousVerse);
 
     QAction & qaction = ac->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
     m_syncButton = &qaction;
     addAction(&qaction);
 
-    actionCollection()->readShortcuts("Commentary shortcuts");
+    actionCollection()->readShortcuts(QStringLiteral("Commentary shortcuts"));
 }
 
 void CCommentaryReadWindow::applyProfileSettings(BtConfigCore const & conf) {
     CDisplayWindow::applyProfileSettings(conf);
     BT_ASSERT(m_syncButton);
-    m_syncButton->setChecked(conf.value<bool>("syncEnabled", false));
+    m_syncButton->setChecked(
+                conf.value<bool>(QStringLiteral("syncEnabled"), false));
 }
 
 void CCommentaryReadWindow::storeProfileSettings(BtConfigCore & conf)
@@ -95,7 +106,7 @@ void CCommentaryReadWindow::storeProfileSettings(BtConfigCore & conf)
 {
     CDisplayWindow::storeProfileSettings(conf);
     BT_ASSERT(m_syncButton);
-    conf.setValue("syncEnabled", m_syncButton->isChecked());
+    conf.setValue(QStringLiteral("syncEnabled"), m_syncButton->isChecked());
 }
 
 void CCommentaryReadWindow::initToolbars() {
@@ -116,7 +127,7 @@ void CCommentaryReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
     verseKey()->setLocale( CSwordBackend::instance()->booknameLanguage().toLatin1() );
     keyChooser()->refreshContent();
 
-    actionCollection()->readShortcuts("Commentary shortcuts");
+    actionCollection()->readShortcuts(QStringLiteral("Commentary shortcuts"));
 }
 
 /** rapper around key() to return the right type of key. */
