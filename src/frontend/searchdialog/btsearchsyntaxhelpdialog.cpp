@@ -15,7 +15,9 @@
 #include <QDesktopServices>
 #include <QDialogButtonBox>
 #include <QTextBrowser>
+#include <QUrl>
 #include <QVBoxLayout>
+#include <utility>
 #include "../../util/btconnect.h"
 #include "../messagedialog.h"
 
@@ -33,6 +35,7 @@ BtSearchSyntaxHelpDialog::BtSearchSyntaxHelpDialog(QWidget *parent, Qt::WindowFl
     QFont font = m_textBrowser->font();
     font.setPointSize(font.pointSize()+2);
     m_textBrowser->setFont(font);
+    m_textBrowser->setOpenLinks(false);
     BT_CONNECT(m_textBrowser, SIGNAL(anchorClicked(QUrl)),
                this,      SLOT(linkClicked(QUrl)));
     l->addWidget(m_textBrowser);
@@ -221,7 +224,13 @@ void BtSearchSyntaxHelpDialog::retranslateUi() {
 }
 
 void BtSearchSyntaxHelpDialog::linkClicked(const QUrl &url) {
-    QDesktopServices::openUrl(url);
+    if (url.scheme().isEmpty()) {
+        auto fragment = url.fragment();
+        if (!fragment.isEmpty())
+            m_textBrowser->scrollToAnchor(std::move(fragment));
+    } else {
+        QDesktopServices::openUrl(url);
+    }
 }
 
 } // namespace Search
