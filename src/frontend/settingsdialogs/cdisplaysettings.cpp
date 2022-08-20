@@ -56,7 +56,9 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     //startup logo
     m_showLogoLabel = new QLabel(this);
     m_showLogoCheck = new QCheckBox(this);
-    m_showLogoCheck->setChecked(btConfig().value<bool>("GUI/showSplashScreen", true));
+    m_showLogoCheck->setChecked(
+                btConfig().value<bool>(QStringLiteral("GUI/showSplashScreen"),
+                                       true));
     formLayout->addRow(m_showLogoLabel, m_showLogoCheck);
 
     m_swordLocaleCombo = new QComboBox(this);
@@ -111,7 +113,8 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     mainLayout->addWidget(m_transifexLabel);
 
     retranslateUi(); // also calls updateStylePreview();
-    m_lightDarkCombo->setCurrentIndex(btConfig().value<int>("GUI/lightDarkMode"));
+    m_lightDarkCombo->setCurrentIndex(
+                btConfig().value<int>(QStringLiteral("GUI/lightDarkMode")));
 }
 
 void CDisplaySettingsPage::retranslateUi() {
@@ -162,7 +165,7 @@ void CDisplaySettingsPage::resetLanguage() {
             atv.resize(i);
         }
     }
-    btConfig().setValue("GUI/booknameLanguage", best);
+    btConfig().setValue(QStringLiteral("GUI/booknameLanguage"), best);
 }
 
 QVector<QString> CDisplaySettingsPage::bookNameAbbreviationsTryVector() {
@@ -337,13 +340,14 @@ void CDisplaySettingsPage::updateStylePreview() {
                "serve the intended purpose. At runtime, the translated text is "
                "automatically split into multiple verses when empty lines (two "
                "consecutive newline characters) are encountered.");
-    for (auto const & verse : previewText.split("\n\n", Qt::SkipEmptyParts))
+    for (auto const & verse
+         : previewText.split(QStringLiteral("\n\n"), Qt::SkipEmptyParts))
         tree.emplace_back(verse, settings);
 
     CDisplayRendering render;
     render.setDisplayTemplateName(styleName);
     QString text = render.renderKeyTree(tree);
-    text.replace("#CHAPTERTITLE#", "");
+    text.replace(QStringLiteral("#CHAPTERTITLE#"), QString());
 
     // Update colors:
     QPalette p = m_stylePreviewViewer->palette();
@@ -357,8 +361,13 @@ void CDisplaySettingsPage::updateStylePreview() {
 }
 
 void CDisplaySettingsPage::save() const {
-    btConfig().setValue("GUI/showSplashScreen", m_showLogoCheck->isChecked() );
-    btConfig().setValue("GUI/activeTemplateName", m_styleChooserCombo->currentText());
-    btConfig().setValue("GUI/booknameLanguage", m_swordLocaleCombo->itemData(m_swordLocaleCombo->currentIndex()));
-    btConfig().setValue("GUI/lightDarkMode", m_lightDarkCombo->currentIndex());
+    btConfig().setValue(QStringLiteral("GUI/showSplashScreen"),
+                        m_showLogoCheck->isChecked());
+    btConfig().setValue(QStringLiteral("GUI/activeTemplateName"),
+                        m_styleChooserCombo->currentText());
+    btConfig().setValue(QStringLiteral("GUI/booknameLanguage"),
+                        m_swordLocaleCombo->itemData(
+                            m_swordLocaleCombo->currentIndex()));
+    btConfig().setValue(QStringLiteral("GUI/lightDarkMode"),
+                        m_lightDarkCombo->currentIndex());
 }
