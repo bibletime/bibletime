@@ -70,9 +70,10 @@ BtIndexDialog::BtIndexDialog(QWidget * parent, Qt::WindowFlags f)
     m_moduleList->setSortingEnabled(false);
 
     m_autoDeleteOrphanedIndicesBox->setChecked(
-                btConfig().value<bool>("settings/behaviour/"
-                                            "autoDeleteOrphanedIndices",
-                                       true));
+                btConfig().value<bool>(
+                    QStringLiteral(
+                        "settings/behaviour/autoDeleteOrphanedIndices"),
+                    true));
 
     // connect our signals/slots
     BT_CONNECT(m_createButton, &QPushButton::clicked,
@@ -150,8 +151,9 @@ void BtIndexDialog::retranslateUi() {
 }
 
 void BtIndexDialog::autoDeleteOrphanedIndicesChanged(int newState) {
-    btConfig().setValue("settings/behaviour/autoDeleteOrphanedIndices",
-                        newState == Qt::Checked);
+    btConfig().setValue(
+                QStringLiteral("settings/behaviour/autoDeleteOrphanedIndices"),
+                newState == Qt::Checked);
 }
 
 /** Creates indices for selected modules if no index currently exists */
