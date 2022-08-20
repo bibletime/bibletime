@@ -167,7 +167,7 @@ void BtStandardWorksTab::save() {
 
 void BtStandardWorksTab::retranslateUi() {
     util::tool::initExplanationLabel(
-        m_explanationLabel, "",
+        m_explanationLabel, QString(),
         tr("Standard works are used when no particular work is specified, for example "
            "when a hyperlink into a Bible or lexicon was clicked."));
 
