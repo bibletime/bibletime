@@ -125,7 +125,7 @@ bool deleteSource(const QString &name) {
         QString sce(sourceConfigEntry.c_str());
         QStringList l = sce.split('|');
         l.removeLast();
-        sce = l.join("|").append("|");
+        sce = l.join('|').append('|');
         it = config["Sources"].begin();
         while (it != config["Sources"].end()) {
             if (it->second == sce) {
@@ -148,12 +148,12 @@ bool isRemote(const sword::InstallSource& source) {
 }
 
 QString configPath() {
-    return util::directory::getUserHomeSwordDir().absolutePath().append("/InstallMgr");
+    return util::directory::getUserHomeSwordDir().absolutePath()
+            + QStringLiteral("/InstallMgr");
 }
 
-QString configFilename() {
-    return configPath().append("/InstallMgr.conf");
-}
+QString configFilename()
+{ return configPath() + QStringLiteral("/InstallMgr.conf"); }
 
 QStringList sourceNameList() {
     BtInstallMgr mgr;
