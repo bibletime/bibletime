@@ -73,7 +73,8 @@ void BtSourcesThread::run() {
             msg += sourceNames[failedSources[i]];
             if (++i >= numFailedSources)
                 break;
-            msg += ", ";
+            static auto const separator = QStringLiteral(", ");
+            msg.append(separator);
         }
         Q_EMIT showMessage(std::move(msg));
         m_finishedSuccessfully.store(true, std::memory_order_release);
