@@ -19,10 +19,26 @@
 class CSwordModuleInfo;
 class QIcon;
 class QLabel;
+class QTextStream;
 class QWidget;
 
 namespace util {
 namespace tool {
+
+/**
+  Creates the file filename and writes to it using a callback..
+
+  \param[in] filename the filename to save to.
+  \param[in] writer the writer callback.
+  \param[in] userPtr arbitrary data passed on to the callback.
+  \param[in] fileCodec the codec to use to save the given string data.
+  \warning if a file with the given name already exists, it is first removed.
+  \returns whether the file was properly saved.
+*/
+bool savePlainFile(const QString & filename,
+                   void (&writer)(QTextStream &, void *),
+                   void * userPtr,
+                   QTextCodec * fileCodec = QTextCodec::codecForLocale());
 
 /**
   Creates the file filename and save the given text into the file.
