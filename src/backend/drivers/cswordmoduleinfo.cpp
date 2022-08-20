@@ -71,17 +71,19 @@ inline CSwordModuleInfo::Category retrieveCategory(
     QString const cat(module.getConfigEntry("Category"));
 
     // Category has to be checked before type:
-    if (cat == "Cults / Unorthodox / Questionable Material") {
+    if (cat == QStringLiteral("Cults / Unorthodox / Questionable Material")) {
         return CSwordModuleInfo::Cult;
-    } else if (cat == "Daily Devotional"
+    } else if (cat == QStringLiteral("Daily Devotional")
                || module.getConfig().has("Feature","DailyDevotion"))
     {
         return CSwordModuleInfo::DailyDevotional;
-    } else if (cat == "Glossaries"
+    } else if (cat == QStringLiteral("Glossaries")
                || module.getConfig().has("Feature", "Glossary"))
     {
         return CSwordModuleInfo::Glossary;
-    } else if (cat == "Images" || cat == "Maps") {
+    } else if (cat == QStringLiteral("Images")
+               || cat == QStringLiteral("Maps"))
+    {
         return CSwordModuleInfo::Images;
     } else {
         switch (type) {
@@ -200,10 +202,12 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule & module,
         ? Language::fromAbbrev(
               util::tool::fixSwordBcp47(module.getLanguage()))
         : std::shared_ptr<Language const>())
-    , m_cachedHasVersion(!QString((*m_backend.getConfig())[module.getName()]["Version"]).isEmpty())
+    , m_cachedHasVersion(
+          ((*m_backend.getConfig())[module.getName()]["Version"]).size() > 0)
 {
-    m_hidden = btConfig().value<QStringList>("state/hiddenModules",
-                                             QStringList()).contains(m_cachedName);
+    m_hidden = btConfig().value<QStringList>(
+                   QStringLiteral("state/hiddenModules"))
+               .contains(m_cachedName);
 
     if (m_cachedHasVersion
         && (minimumSwordVersion() > sword::SWVersion::currentVersion))
@@ -298,12 +302,13 @@ QString CSwordModuleInfo::getGlobalBaseIndexLocation() {
 }
 
 QString CSwordModuleInfo::getModuleBaseIndexLocation() const {
-    return getGlobalBaseIndexLocation() + QString("/") + m_cachedName.toLocal8Bit();
+    return QStringLiteral("%1/%2").arg(getGlobalBaseIndexLocation(),
+                                       m_cachedName.toLocal8Bit());
 }
 
 QString CSwordModuleInfo::getModuleStandardIndexLocation() const {
     // This for now returns the location of the main index
-    return getModuleBaseIndexLocation() + QString("/standard");
+    return getModuleBaseIndexLocation() + QStringLiteral("/standard");
 }
 
 bool CSwordModuleInfo::hasIndex() const {
@@ -315,17 +320,19 @@ bool CSwordModuleInfo::hasIndex() const {
 
     // Are the index version and module version OK?
     QSettings module_config(getModuleBaseIndexLocation()
-                            + QString("/bibletime-index.conf"),
+                            + QStringLiteral("/bibletime-index.conf"),
                             QSettings::IniFormat);
 
     if (m_cachedHasVersion
-        && module_config.value("module-version").toString()
+        && module_config.value(QStringLiteral("module-version")).toString()
            != config(CSwordModuleInfo::ModuleVersion))
     {
         return false;
     }
 
-    if (module_config.value("index-version").toUInt() != INDEX_VERSION) {
+    if (module_config.value(QStringLiteral("index-version")).toUInt()
+        != INDEX_VERSION)
+    {
         qDebug("%s: INDEX_VERSION is not compatible with this version of "
                "BibleTime.",
                m_cachedName.toUtf8().constData());
@@ -380,7 +387,7 @@ void CSwordModuleInfo::buildIndex() {
         lucene::analysis::standard::StandardAnalyzer an(stop_words);
         const QString index(getModuleStandardIndexLocation());
 
-        QDir dir("/");
+        QDir dir(QStringLiteral("/"));
         dir.mkpath(getGlobalBaseIndexLocation());
         dir.mkpath(getModuleBaseIndexLocation());
         dir.mkpath(getModuleStandardIndexLocation());
@@ -585,12 +592,13 @@ void CSwordModuleInfo::buildIndex() {
             deleteIndex();
         } else {
             QSettings module_config(getModuleBaseIndexLocation()
-                                    + QString("/bibletime-index.conf"),
+                                    + QStringLiteral("/bibletime-index.conf"),
                                     QSettings::IniFormat);
             if (m_cachedHasVersion)
-                module_config.setValue("module-version",
+                module_config.setValue(QStringLiteral("module-version"),
                                        config(CSwordModuleInfo::ModuleVersion));
-            module_config.setValue("index-version", INDEX_VERSION);
+            module_config.setValue(QStringLiteral("index-version"),
+                                   INDEX_VERSION);
             Q_EMIT hasIndexChanged(true);
         }
     // } catch (CLuceneError & e) {
@@ -606,7 +614,8 @@ void CSwordModuleInfo::deleteIndex() {
 }
 
 void CSwordModuleInfo::deleteIndexForModule(const QString & name) {
-    QDir(getGlobalBaseIndexLocation() + "/" + name).removeRecursively();
+    QDir(QStringLiteral("%1/%2").arg(getGlobalBaseIndexLocation(), name))
+            .removeRecursively();
 }
 
 ::qint64 CSwordModuleInfo::indexSize() const {
@@ -688,7 +697,7 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
     switch (entry) {
 
         case AboutInformation:
-            return getFormattedConfigEntry("About");
+            return getFormattedConfigEntry(QStringLiteral("About"));
 
         case CipherKey: {
             if (btConfig().getModuleEncryptionKey(m_cachedName).isNull()) {
@@ -699,7 +708,7 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
         }
 
         case AbsoluteDataPath: {
-            QString path(getSimpleConfigEntry("AbsoluteDataPath"));
+            auto path(getSimpleConfigEntry(QStringLiteral("AbsoluteDataPath")));
             if (!path.endsWith('/')) /// \todo is this needed?
                 path.append('/');
 
@@ -707,13 +716,13 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
         }
 
         case DataPath: {
-            QString path(getSimpleConfigEntry("DataPath"));
+            QString path(getSimpleConfigEntry(QStringLiteral("DataPath")));
 
             // Make sure we remove the dataFile part if it's a Lexicon
             if (m_type == CSwordModuleInfo::GenericBook
                 || m_type == CSwordModuleInfo::Lexicon)
             {
-                int pos = path.lastIndexOf("/"); // Last slash in the string
+                int pos = path.lastIndexOf('/'); // Last slash in the string
                 if (pos != -1)
                     path = path.left(pos + 1); // Include the slash
             }
@@ -721,81 +730,89 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
         }
 
         case Description:
-            return getFormattedConfigEntry("Description");
+            return getFormattedConfigEntry(QStringLiteral("Description"));
 
         case ModuleVersion: {
-            const QString version(getSimpleConfigEntry("Version"));
-            return version.isEmpty() ? "1.0" : version;
+            auto const version(getSimpleConfigEntry(QStringLiteral("Version")));
+            return version.isEmpty() ? QStringLiteral("1.0") : version;
         }
 
         case MinimumSwordVersion: {
-            const QString minimumVersion(getSimpleConfigEntry("MinimumVersion"));
-            return minimumVersion.isEmpty() ? "0.0" : minimumVersion;
+            auto const minimumVersion =
+                    getSimpleConfigEntry(QStringLiteral("MinimumVersion"));
+            return minimumVersion.isEmpty()
+                    ? QStringLiteral("0.0")
+                    : minimumVersion;
         }
 
         case TextDir: {
-            const QString dir(getSimpleConfigEntry("Direction"));
-            return dir.isEmpty() ? QString("LtoR") : dir;
+            auto const dir = getSimpleConfigEntry(QStringLiteral("Direction"));
+            return dir.isEmpty() ? QStringLiteral("LtoR") : dir;
         }
 
         case DisplayLevel: {
-            const QString level(getSimpleConfigEntry("DisplayLevel"));
-            return level.isEmpty() ? QString("1") : level;
+            auto const level =
+                    getSimpleConfigEntry(QStringLiteral("DisplayLevel"));
+            return level.isEmpty() ? QStringLiteral("1") : level;
         }
 
         case GlossaryFrom: {
             if (m_cachedCategory != Glossary)
-                return QString();
+                return {};
 
-            const QString lang(getSimpleConfigEntry("GlossaryFrom"));
-            return lang.isEmpty() ? QString() : lang;
+            return getSimpleConfigEntry(QStringLiteral("GlossaryFrom"));
         }
 
         case GlossaryTo: {
             if (m_cachedCategory != Glossary)
                 return {};
 
-            const QString lang(getSimpleConfigEntry("GlossaryTo"));
-            return lang.isEmpty() ? QString() : lang;
+            return getSimpleConfigEntry(QStringLiteral("GlossaryTo"));
         }
 
         case Markup: {
-            const QString markup(getSimpleConfigEntry("SourceType"));
-            return markup.isEmpty() ? QString("Unknown") : markup;
+            auto const markup =
+                    getSimpleConfigEntry(QStringLiteral("SourceType"));
+            return markup.isEmpty() ? QStringLiteral("Unknown") : markup;
         }
 
         case DistributionLicense:
-            return getFormattedConfigEntry("DistributionLicense");
+            return getFormattedConfigEntry(
+                        QStringLiteral("DistributionLicense"));
 
         case DistributionSource:
-            return getFormattedConfigEntry("DistributionSource");
+            return getFormattedConfigEntry(
+                        QStringLiteral("DistributionSource"));
 
         case DistributionNotes:
-            return getFormattedConfigEntry("DistributionNotes");
+            return getFormattedConfigEntry(QStringLiteral("DistributionNotes"));
 
         case TextSource:
-            return getFormattedConfigEntry("TextSource");
+            return getFormattedConfigEntry(QStringLiteral("TextSource"));
 
         case CopyrightNotes:
-            return getFormattedConfigEntry("CopyrightNotes");
+            return getFormattedConfigEntry(QStringLiteral("CopyrightNotes"));
 
         case CopyrightHolder:
-            return getFormattedConfigEntry("CopyrightHolder");
+            return getFormattedConfigEntry(QStringLiteral("CopyrightHolder"));
 
         case CopyrightDate:
-            return getFormattedConfigEntry("CopyrightDate");
+            return getFormattedConfigEntry(QStringLiteral("CopyrightDate"));
 
         case CopyrightContactName:
-            return getFormattedConfigEntry("CopyrightContactName");
+            return getFormattedConfigEntry(
+                        QStringLiteral("CopyrightContactName"));
 
         case CopyrightContactAddress:
-            return getFormattedConfigEntry("CopyrightContactAddress");
+            return getFormattedConfigEntry(
+                        QStringLiteral("CopyrightContactAddress"));
 
         case CopyrightContactEmail:
-            return getFormattedConfigEntry("CopyrightContactEmail");
+            return getFormattedConfigEntry(
+                        QStringLiteral("CopyrightContactEmail"));
 
         default:
-            return QString();
+            return {};
     }
 }
 
@@ -812,11 +829,12 @@ bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const {
 bool CSwordModuleInfo::has(CSwordModuleInfo::FilterOption const & option) const {
     /// \todo This is a BAD workaround to see if the filter is GBF, OSIS or ThML!
     auto const & originalOptionName = option.configOptionName;
+    using namespace std::string_literals;
     std::string const optionNames[] = {
-        "OSIS" + originalOptionName,
-        "GBF" + originalOptionName,
-        "ThML" + originalOptionName,
-        "UTF8" + originalOptionName,
+        "OSIS"s + originalOptionName,
+        "GBF"s + originalOptionName,
+        "ThML"s + originalOptionName,
+        "UTF8"s + originalOptionName,
         originalOptionName
     };
     for (auto [it, end] =
@@ -833,8 +851,11 @@ bool CSwordModuleInfo::has(CSwordModuleInfo::FilterOption const & option) const 
     return false;
 }
 
-CSwordModuleInfo::TextDirection CSwordModuleInfo::textDirection() const
-{ return (config(TextDir) == "RtoL") ? RightToLeft : LeftToRight; }
+CSwordModuleInfo::TextDirection CSwordModuleInfo::textDirection() const {
+    return (config(TextDir) == QStringLiteral("RtoL"))
+            ? RightToLeft
+            : LeftToRight;
+}
 
 char const * CSwordModuleInfo::textDirectionAsHtml() const
 { return textDirection() == RightToLeft ? "rtl" : "ltr"; }
@@ -858,10 +879,10 @@ void CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
 }
 
 QString CSwordModuleInfo::aboutText() const {
-    static const QString row("<tr><td><b>%1</b></td><td>%2</td></tr>");
+    static auto const row(
+                QStringLiteral("<tr><td><b>%1</b></td><td>%2</td></tr>"));
 
-    QString text;
-    text += "<table>";
+    auto text(QStringLiteral("<table>"));
 
     text += row
             .arg(tr("Version"))
@@ -924,7 +945,7 @@ QString CSwordModuleInfo::aboutText() const {
     for (auto const * const filterOption : allFilterOptions) {
         if (has(*filterOption)) {
             if (!options.isEmpty())
-                options += QString::fromLatin1(", ");
+                options += QStringLiteral(", ");
             options += QObject::tr(filterOption->translatableOptionName);
         }
     }
@@ -934,19 +955,19 @@ QString CSwordModuleInfo::aboutText() const {
                 .arg(tr("Features"))
                 .arg(options.toHtmlEscaped());
 
-    text += "</table><hr>";
+    text += QStringLiteral("</table><hr>");
 
     // Clearly say the module contains cult/questionable materials
     if (m_cachedCategory == Cult)
-        text += QString("<br/><b>%1</b><br/><br/>")
+        text += QStringLiteral("<br/><b>%1</b><br/><br/>")
                 .arg(tr("Take care, this work contains cult / questionable "
                         "material!"));
 
-    text += QString("<b>%1:</b><br/>%2")
+    text += QStringLiteral("<b>%1:</b><br/>%2")
             .arg(tr("About"))
             .arg(config(AboutInformation)); // May contain HTML, don't escape
 
-    text += ("<hr><table>");
+    text += QStringLiteral("<hr><table>");
 
     struct Entry { ConfigEntry const type; char const * const text; };
     auto const entries = {
@@ -968,9 +989,7 @@ QString CSwordModuleInfo::aboutText() const {
                        .arg(value.toHtmlEscaped());
     }
 
-    text += "</table>";
-
-    return text;
+    return text + QStringLiteral("</table>");
 }
 
 bool CSwordModuleInfo::isUnicode() const noexcept
@@ -1068,10 +1087,17 @@ QString CSwordModuleInfo::getSimpleConfigEntry(const QString & name) const {
 QString CSwordModuleInfo::getFormattedConfigEntry(const QString & name) const {
     const QStringList localeNames(QLocale(CSwordBackend::instance()->booknameLanguage()).uiLanguages());
     for (int i = localeNames.size() - 1; i >= -1; --i) {
-        sword::SWBuf RTF_Buffer =
-                m_swordModule.getConfigEntry(
-                    QString(i >= 0 ? name + "_" + localeNames[i] : name)
+        sword::SWBuf RTF_Buffer;
+        if (i >= 0) {
+            RTF_Buffer =
+                    m_swordModule.getConfigEntry(name.toUtf8().constData());
+        } else {
+            RTF_Buffer =
+                    m_swordModule.getConfigEntry(
+                        QStringLiteral("%1_%2")
+                        .arg(name, localeNames[i])
                         .toUtf8().constData());
+        }
         if (RTF_Buffer.length() > 0) {
             sword::RTFHTML RTF_Filter;
             RTF_Filter.processText(RTF_Buffer, nullptr, nullptr);
@@ -1080,7 +1106,7 @@ QString CSwordModuleInfo::getFormattedConfigEntry(const QString & name) const {
                    : QString::fromLatin1(RTF_Buffer.c_str());
         }
     }
-    return QString();
+    return {};
 }
 
 bool CSwordModuleInfo::setHidden(bool hide) {
@@ -1088,14 +1114,15 @@ bool CSwordModuleInfo::setHidden(bool hide) {
         return false;
 
     m_hidden = hide;
-    QStringList hiddenModules(btConfig().value<QStringList>("state/hiddenModules"));
+    static auto const configKey = QStringLiteral("state/hiddenModules");
+    QStringList hiddenModules(btConfig().value<QStringList>(configKey));
     BT_ASSERT(hiddenModules.contains(m_cachedName) != hide);
     if (hide) {
         hiddenModules.append(m_cachedName);
     } else {
         hiddenModules.removeOne(m_cachedName);
     }
-    btConfig().setValue("state/hiddenModules", hiddenModules);
+    btConfig().setValue(configKey, hiddenModules);
     Q_EMIT hiddenChanged(hide);
     return true;
 }
