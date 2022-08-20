@@ -111,8 +111,9 @@ void CSearchDialog::startSearch() {
     // first check the search string for errors
     {
         QString TestString(originalSearchText);
-        QRegExp ReservedWords("heading:|footnote:|morph:|strong:");
-        if (TestString.replace(ReservedWords, "").simplified().isEmpty()) {
+        QRegExp ReservedWords(
+                    QStringLiteral("heading:|footnote:|morph:|strong:"));
+        if (TestString.replace(ReservedWords, QString()).simplified().isEmpty()) {
             return;
         }
     }
@@ -136,18 +137,21 @@ void CSearchDialog::startSearch() {
         QStringList moduleNameList;
         for (auto const * const m : unindexedModules)
             moduleNameList.append(m->name());
-        QString moduleNames("<br><center>");
-        moduleNames.append(moduleNameList.join(", "));
-        moduleNames.append("</center><br>");
 
         // Ask the user about unindexed modules:
-        int result = message::showQuestion(
-                this, tr("Missing indices"),
-                tr("The following modules need to be indexed before they can be"
-                   " searched in:") + moduleNames + tr("Indexing could take a l"
-                   "ong time. Click \"Yes\" to index the modules and start the "
-                   "search, or \"No\" to cancel the search."),
-                QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+        auto const result =
+                message::showQuestion(
+                    this,
+                    tr("Missing indices"),
+                    QStringLiteral("%1<br><center>%2</center><br>%3")
+                    .arg(tr("The following modules need to be indexed before "
+                            "they can be searched in:"),
+                         moduleNameList.join(QStringLiteral(", ")),
+                         tr("Indexing could take a long time. Click \"Yes\" to "
+                            "index the modules and start the search, or \"No\" "
+                            "to cancel the search.")),
+                    QMessageBox::Yes | QMessageBox::No,
+                    QMessageBox::Yes);
 
         // User didn't press "Yes":
         if ((result & (QMessageBox::Yes | QMessageBox::Default)) == 0x0) {
