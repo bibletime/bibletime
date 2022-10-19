@@ -99,27 +99,30 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
     */
     // m_fontChooser->setSampleText("SOMETHING");
 
-    BT_CONNECT(m_fontChooser, &QFontDialog::currentFontChanged,
-               [this](QFont const & newFont) {
-                   auto & work =
-                           m_workSettings[m_languageComboBox->currentIndex()];
-                   work.settings.second = newFont;
-               });
-    BT_CONNECT(m_languageComboBox,
-               qOverload<int>(&QComboBox::currentIndexChanged),
-               [this](int const newIndex) {
-                   auto const i = static_cast<std::size_t>(newIndex);
-                   auto const & p = m_workSettings[i].settings;
-                   useOwnFontClicked(p.first);
-                   m_languageCheckBox->setChecked(p.first);
-                   m_fontChooser->setCurrentFont(p.second);
-               });
+    if (m_languageComboBox->count() > 0) {
+        BT_CONNECT(m_fontChooser, &QFontDialog::currentFontChanged,
+                   [this](QFont const & newFont) {
+            auto & work =
+                    m_workSettings[m_languageComboBox->currentIndex()];
+            work.settings.second = newFont;
+        });
+        BT_CONNECT(m_languageComboBox,
+                   qOverload<int>(&QComboBox::currentIndexChanged),
+                   [this](int const newIndex) {
+            auto const i = static_cast<std::size_t>(newIndex);
+            auto const & p = m_workSettings[i].settings;
+            useOwnFontClicked(p.first);
+            m_languageCheckBox->setChecked(p.first);
+            m_fontChooser->setCurrentFont(p.second);
+        });
 
-    auto const & v =
-            m_workSettings[m_languageComboBox->currentIndex()].settings;
-    m_fontChooser->setCurrentFont(v.second);
-    useOwnFontClicked(v.first);
-    m_languageCheckBox->setChecked(v.first);
+        auto const & v =
+                m_workSettings[m_languageComboBox->currentIndex()].settings;
+        m_fontChooser->setCurrentFont(v.second);
+        useOwnFontClicked(v.first);
+        m_languageCheckBox->setChecked(v.first);
+    }
+
     m_fontChooser->setMinimumSize(m_fontChooser->sizeHint());
 
     QVBoxLayout *fLayout = new QVBoxLayout;
