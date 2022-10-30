@@ -368,7 +368,7 @@ void CBibleReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
     verseKey()->setLocale( CSwordBackend::instance()->booknameLanguage().toLatin1() );
     keyChooser()->refreshContent();
 
-    actionCollection()->readShortcuts("Bible shortcuts");
+    actionCollection()->readShortcuts(QStringLiteral("Bible shortcuts"));
 }
 
 /** No descriptions */
