@@ -25,14 +25,14 @@ QStringList splitText(QString const & text) {
     while (from < text.length()) {
 
         // Get text before tag
-        int end = text.indexOf("<", from);
+        int end = text.indexOf('<', from);
         if (end == -1)
             end = text.length();
         parts.append(text.mid(from, end-from));
         from = end;
 
         //Get tag text
-        end = text.indexOf(">", from);
+        end = text.indexOf('>', from);
         if (end == -1)
             end = text.length();
         parts.append(text.mid(from, end-from+1));
@@ -59,10 +59,12 @@ int rewriteFootnoteAsLink(QStringList & parts, int i, QString const & part) {
     static QRegularExpression const rx(R"regex(note="([^"]*))regex");
     if (auto const match = rx.match(part); match.hasMatch()) {
         auto const & footnoteText = parts.at(i + 1);
-        parts[i] = "<a class=\"footnote\" href=\"sword://footnote/"
-                   + match.captured(1) + "=" + footnoteText + "\">";
-        parts[i+1] = "(" + footnoteText + ")";
-        parts[i+2] = "</a>";
+        parts[i] =
+            QStringLiteral(
+                R"HTML(<a class="footnote" href="sword://footnote/%1=%2">)HTML")
+            .arg(match.captured(1)).arg(footnoteText);
+        parts[i+1] = QStringLiteral("(%1)").arg(footnoteText);
+        parts[i+2] = QStringLiteral("</a>");
         return 3;
     }
     return 1;
@@ -75,16 +77,15 @@ int rewriteFootnoteAsLink(QStringList & parts, int i, QString const & part) {
 void rewriteHref(QStringList & parts, int i, QString const & part) {
     static QRegularExpression const rx(
                 R"regex(<a\s+(\w+)="([^"]*)"\s+(\w+)="([^"]*)")regex");
-    if (auto const match = rx.match(part); match.hasMatch()) {
-        if (match.captured(1) == "href")
-            parts[i] = "<a " + match.captured(1) + "=\"" + match.captured(2)
-                       + "||" + match.captured(3) + "=" + match.captured(4)
-                       + R"HTML(" name="crossref">)HTML";
-        else
-            parts[i] = "<a " + match.captured(3) + "=\"" + match.captured(4)
-                       + "||" + match.captured(1) + "=" + match.captured(2)
-                       + R"HTML(" name="crossref">)HTML";
-    }
+    if (auto const match = rx.match(part); match.hasMatch())
+        parts[i] =
+            ((match.captured(1) == QStringLiteral("href"))
+             ? QStringLiteral(R"HTML(<a %1="%2||%3=%4" name="crossref">)HTML")
+             : QStringLiteral(R"HTML(<a %3="%4||%1=%2" name="crossref">)HTML"))
+            .arg(match.captured(1),
+                 match.captured(2),
+                 match.captured(3),
+                 match.captured(4));
 }
 
 // Typical input: <span lemma="H07225">God</span>
@@ -98,23 +99,25 @@ int rewriteLemmaOrMorphAsLink(QStringList & parts, int i, QString const & part)
     {
         static QRegularExpression const rx(R"regex(lemma="([^"]*)")regex");
         if (auto const match = rx.match(part); match.hasMatch())
-            value = "lemma=" + match.captured(1);
+            value = QStringLiteral("lemma=") + match.captured(1);
     }{
         static QRegularExpression const rx(R"regex(morph="([^"]*)")regex");
         if (auto const match = rx.match(part); match.hasMatch()) {
             if (value.isEmpty()) {
-                value = "morph=";
+                value = QStringLiteral("morph=") + match.captured(1);
             } else {
-                value += "||morph=";
+                value = QStringLiteral("%1||morph=%2")
+                        .arg(value, match.captured(1));
             }
-            value += match.captured(1);
         }
     }
 
     auto const & refText = parts.at(i + 1);
-    parts[i] = "<a id=\"lemmamorph\" href=\"sword://lemmamorph/"
-               + value + "/" + refText + "\">";
-    parts[i+2] = "</a>";
+    parts[i] =
+            QStringLiteral(
+                R"HTM(<a id="lemmamorph" href="sword://lemmamorph/%1/%2">)HTM")
+            .arg(value, refText);
+    parts[i + 2] = QStringLiteral("</a>");
     return 3;
 }
 
@@ -130,28 +133,29 @@ QString BtTextFilter::processText(const QString &text) {
     QString localText = text;
     { // Fix !P tag which is not rich text:
         int index = 0;
-        while ((index = localText.indexOf("<!P>")) >= 0)
+        while ((index = localText.indexOf(QStringLiteral("<!P>"))) >= 0)
             localText.remove(index,4);
     }
     auto parts = splitText(localText);
     fixDoubleBR(parts);
 
     for (int i = 0; i < parts.count();) {
-        auto const & part = parts.at(i);
-        auto const partIsTag = part.startsWith('<');
-
-        if (partIsTag && part.contains("class=\"footnote\"")) {
-            i += rewriteFootnoteAsLink(parts, i, part);
-        } else if (partIsTag && (part.contains("href=\""))) {
-            rewriteHref(parts, i, part);
-            ++i;
-        } else if (partIsTag
-                   && (part.contains("lemma=\"") || part.contains("morph=\"")))
-        {
-            i += rewriteLemmaOrMorphAsLink(parts, i, part);
+        if (auto const & part = parts.at(i); part.startsWith('<')) { // is tag
+            if (part.contains(QStringLiteral(R"HTML(class="footnote")HTML"))) {
+                i += rewriteFootnoteAsLink(parts, i, part);
+            } else if (part.contains(QStringLiteral(R"HTML(href=")HTML"))) {
+                rewriteHref(parts, i, part);
+                ++i;
+            } else if (part.contains(QStringLiteral(R"HTML(lemma=")HTML"))
+                       || part.contains(QStringLiteral(R"HTML(morph=")HTML")))
+            {
+                i += rewriteLemmaOrMorphAsLink(parts, i, part);
+            } else {
+                ++i;
+            }
         } else {
-            i++;
+            ++i;
         }
     }
-    return parts.join("");
+    return parts.join(QString());
 }
