@@ -39,7 +39,9 @@ struct SortModel final: public QSortFilterProxyModel {
               QObject * parent = nullptr)
         : QSortFilterProxyModel(parent)
         , m_moduleType(moduleType)
-        , m_showHidden(btConfig().value<bool>("GUI/bookshelfShowHidden", false))
+        , m_showHidden(btConfig().value<bool>(
+                           QStringLiteral("GUI/bookshelfShowHidden"),
+                           false))
         , m_sourceModel(new BtBookshelfTreeModel(this))
     {
         m_sourceModel->setSourceModel(CSwordBackend::instance()->model());
