@@ -221,11 +221,8 @@ BtModelViewReadDisplay::text(TextPart const part) {
         FilterOptions filterOptions;
         CSwordBackend::instance()->setFilterOptions(filterOptions);
 
-        text = QString(key->strippedText()).append("\n(")
-                .append(key->key())
-                .append(", ")
-                .append(key->module()->name())
-                .append(")");
+        text = QStringLiteral("%1\n(%2, %3)")
+               .arg(key->strippedText(), key->key(), key->module()->name());
         break;
     }
 
@@ -257,11 +254,8 @@ BtModelViewReadDisplay::text(TextPart const part) {
             FilterOptions filterOptions;
             CSwordBackend::instance()->setFilterOptions(filterOptions);
 
-            return QString(key->strippedText()).append("\n(")
-                    .append(key->key())
-                    .append(", ")
-                    .append(key->module()->name())
-                    .append(")");
+            return QStringLiteral("%1\n(%2, %3)")
+                   .arg(key->strippedText(), key->key(), key->module()->name());
         }
         return {};
     }
