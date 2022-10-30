@@ -21,6 +21,7 @@
 #include <QHBoxLayout>
 #include <QMenu>
 #include <QString>
+#include <QTextToSpeech>
 #include <QTimer>
 #include <QToolBar>
 #include "../../backend/keys/cswordkey.h"
@@ -200,6 +201,24 @@ void BtModelViewReadDisplay::print(TextPart const type,
     default:
         break;
     }
+}
+
+void BtModelViewReadDisplay::speakSelectedText() {
+    if (!m_textToSpeech)
+        m_textToSpeech.reset(new QTextToSpeech);
+
+    // use language from module for TTS
+    const int selectedColumnIndex = m_parentWindow->getSelectedColumn();
+    assert(m_parentWindow->modules().size() > selectedColumnIndex);
+    const CSwordModuleInfo* module = m_parentWindow->modules().at(selectedColumnIndex);
+    assert(module);
+
+    std::shared_ptr<const Language> lang = module->language();
+    const QLocale locale = QLocale(lang->abbrev());
+    m_textToSpeech->setLocale(locale);
+
+    const QString currentText = qmlInterface()->getSelectedText();
+    m_textToSpeech->say(currentText);
 }
 
 void BtModelViewReadDisplay::reloadModules() {

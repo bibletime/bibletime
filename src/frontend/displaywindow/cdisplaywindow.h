@@ -298,6 +298,7 @@ protected: // fields:
             QAction * reference;
             QAction * entry;
         } print;
+        QAction * speakSelectedText;
     } m_actions;
 
 private:

@@ -179,6 +179,8 @@ void CBibleReadWindow::initActions() {
     m_actions.print.chapter =
             &initAddAction("printChapter", this, &CBibleReadWindow::printAll);
 
+    m_actions.speakSelectedText = &ac->action("speakSelectedText");
+
     ac->readShortcuts("Bible shortcuts");
 }
 
@@ -223,6 +225,8 @@ void CBibleReadWindow::setupPopupMenu() {
     m_actions.printMenu->addAction(m_actions.print.reference);
     m_actions.printMenu->addAction(m_actions.print.chapter);
     popup()->addMenu(m_actions.printMenu);
+
+    popup()->addAction(m_actions.speakSelectedText);
 }
 
 /** Reimplemented. */
@@ -241,6 +245,8 @@ void CBibleReadWindow::updatePopupMenu() {
     m_actions.print.reference->setEnabled(hasActiveAnchor);
 
     m_actions.copy.selectedText->setEnabled(hasSelectedText());
+
+    m_actions.speakSelectedText->setEnabled(hasSelectedText());
 }
 
 /** Moves to the next book. */
