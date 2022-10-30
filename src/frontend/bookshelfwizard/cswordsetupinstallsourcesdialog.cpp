@@ -61,7 +61,7 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
     captionLayout->addWidget( label );
 
     m_captionEdit = new QLineEdit( this );
-    m_captionEdit->setText("CrossWire Bible Society");
+    m_captionEdit->setText(QStringLiteral("CrossWire Bible Society"));
     captionLayout->addWidget( m_captionEdit );
 
     mainLayout->addSpacing( 10 );
@@ -91,11 +91,11 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
 
     m_serverEdit = new QLineEdit( this );
     layout->addWidget( m_serverEdit, 1, 1 );
-    m_serverEdit->setText("ftp.crosswire.org");
+    m_serverEdit->setText(QStringLiteral("ftp.crosswire.org"));
 
     m_pathEdit = new QLineEdit( this );
     layout->addWidget( m_pathEdit, 1, 2 );
-    m_pathEdit->setText("/pub/sword/raw");
+    m_pathEdit->setText(QStringLiteral("/pub/sword/raw"));
 
     mainLayout->addSpacing( 10 );
 
@@ -218,22 +218,23 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
 sword::InstallSource CSwordSetupInstallSourcesDialog::getSource() {
     sword::InstallSource newSource(""); //empty, invalid Source
     if (this->isRemote(m_protocolCombo->currentText())) {
-        if (m_protocolCombo->currentText() == PROTO_FTP) {
+        auto const protocol = m_protocolCombo->currentText();
+        if (protocol == PROTO_FTP) {
             newSource.type = "FTP";
-            }
-            else if (m_protocolCombo->currentText() == PROTO_SFTP) {
-                newSource.type = "SFTP";
-            }
-            else if (m_protocolCombo->currentText() == PROTO_HTTP) {
-                newSource.type = "HTTP";
-            }
-            else if (m_protocolCombo->currentText() == PROTO_HTTPS) {
-                newSource.type = "HTTPS";
-            }
-            newSource.source = m_serverEdit->text().toUtf8();
+        } else if (protocol == PROTO_SFTP) {
+            newSource.type = "SFTP";
+        } else if (protocol == PROTO_HTTP) {
+            newSource.type = "HTTP";
+        } else if (protocol == PROTO_HTTPS) {
+            newSource.type = "HTTPS";
+        }
+        auto server = m_serverEdit->text();
+        while (server.endsWith('/'))
+            server.chop(1);
+        newSource.source = server.toUtf8();
         //a message to the user would be nice, but we're in message freeze right now (1.5.1)
-        if (m_serverEdit->text().right(1) == "/") { //remove a trailing slash
-            newSource.source  = m_serverEdit->text().mid(0, m_serverEdit->text().length() - 1).toUtf8();
+        if (server.right(1) == '/') { //remove a trailing slash
+            newSource.source  = server.mid(0, server.length() - 1).toUtf8();
         }
     }
     else {
