@@ -48,6 +48,9 @@
 // Sword includes:
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wextra-semi"
+#ifdef Q_OS_MAC
+    #include "localemgr.h"
+#endif
 #include <swlog.h>
 #include <swmgr.h>
 #pragma GCC diagnostic pop
