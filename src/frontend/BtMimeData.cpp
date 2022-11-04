@@ -17,4 +17,4 @@
 
 BTMimeData::BTMimeData(ItemList bookmarks)
     : m_bookmarkList(std::move(bookmarks))
-{ setData("BibleTime/Bookmark", {}); }
+{ setData(QStringLiteral("BibleTime/Bookmark"), {}); }
