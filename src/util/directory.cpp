@@ -36,7 +36,6 @@ std::optional<QDir> cachedPrefix;
 std::optional<QDir> cachedLicenseDir;
 std::optional<QDir> cachedPicsDir;
 std::optional<QDir> cachedLocaleDir;
-std::optional<QDir> cachedDocDir;
 std::optional<QDir> cachedDisplayTemplatesDir;
 std::optional<QDir> cachedUserDisplayTemplatesDir;
 std::optional<QDir> cachedUserBaseDir;
@@ -121,14 +120,6 @@ bool initDirectoryCache() {
 
     QString localeName(QLocale().name());
     QString langCode(localeName.section('_', 0, 0));
-
-
-    cachedDocDir.emplace(wDir);
-    if (!cachedDocDir->cd(BT_RUNTIME_DOCDIR)) {
-        qWarning() << "Cannot find documentation directory relative to"
-                   << wDir.absolutePath();
-        return false;
-    }
 
     cachedDisplayTemplatesDir.emplace(wDir); //display templates dir
     if (!cachedDisplayTemplatesDir->cd("share/bibletime/display-templates/")) {
@@ -265,9 +256,9 @@ const QDir &getLocaleDir() {
 namespace {
 
 QString getDocFile(QString docName) {
-    auto dir(*cachedDocDir);
+    static QDir const cachedDocDir(cachedPrefix->filePath(BT_RUNTIME_DOCDIR));
     QString r;
-    if (dir.cd(docName)) {
+    if (auto dir = cachedDocDir; dir.cd(docName)) {
         QStringList tryLanguages;
         tryLanguages.append(QLocale().name());
         {
