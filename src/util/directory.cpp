@@ -32,7 +32,7 @@ namespace directory {
 
 namespace {
 
-std::optional<QDir> cachedIconDir;
+std::optional<QDir> cachedPrefix;
 std::optional<QDir> cachedLicenseDir;
 std::optional<QDir> cachedPicsDir;
 std::optional<QDir> cachedLocaleDir;
@@ -72,6 +72,7 @@ bool initDirectoryCache() {
         qWarning() << "Unable to use prefix one level up from " << wDir.path();
         return false;
     }
+    cachedPrefix.emplace(wDir);
 
 #ifdef Q_OS_WIN
     cachedApplicationSwordDir.emplace(wDir); // application sword dir for Windows only
@@ -99,12 +100,6 @@ bool initDirectoryCache() {
 
     // We unset the SWORD_PATH so libsword finds paths correctly:
     ::qunsetenv("SWORD_PATH");
-
-    cachedIconDir.emplace(wDir); // Icon dir
-    if (!cachedIconDir->cd("share/bibletime/icons")) {
-        qWarning() << "Cannot find icon directory relative to" << wDir.absolutePath();
-        return false;
-    }
 
     cachedLicenseDir.emplace(wDir);
     if (!cachedLicenseDir->cd("share/bibletime/license")) {
@@ -249,8 +244,10 @@ const QDir &getSwordLocalesDir() {
 }
 #endif
 
-const QDir &getIconDir() {
-    return *cachedIconDir;
+QDir const & getIconDir() {
+    static const QDir cachedIconDir(
+                cachedPrefix->filePath("share/bibletime/icons"));
+    return cachedIconDir;
 }
 
 const QDir &getLicenseDir() {
