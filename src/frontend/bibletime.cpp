@@ -65,6 +65,17 @@ auto randInt(T min, T max)
     return std::uniform_int_distribution<std::decay_t<T>>(min, max)(rng);
 }
 
+QString const splashes[] = {
+    QStringLiteral("startuplogo.png"),
+    QStringLiteral("startuplogo_christmas.png"),
+    QStringLiteral("startuplogo_easter.jpg"),
+};
+
+auto const splashHtml =
+        QStringLiteral(
+            "<div style='background:transparent;color:white;font-weight:bold'>"
+            "%1</div>");
+
 } // anonymous namespace
 
 BibleTime *BibleTime::m_instance = nullptr;
@@ -77,49 +88,43 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     BT_ASSERT(!m_instance);
     m_instance = this;
 
-    QSplashScreen *splash = nullptr;
-    QString splashHtml;
-    static auto const splashTextAlignment =
+    QSplashScreen * splash = nullptr;
+    constexpr static auto const splashTextAlignment =
             Qt::AlignHCenter | Qt::AlignTop;
 
-    if (btConfig().value<bool>("GUI/showSplashScreen", true)) {
-        splashHtml = "<div style='background:transparent;color:white;font-weight:bold'>%1"
-                     "</div>";
-
-        static const char splash1[] = "startuplogo.png";
-        static const char splash2[] = "startuplogo_christmas.png";
-        static const char splash3[] = "startuplogo_easter.jpg";
-        static const char * const splashes[] = {
-            splash1, splash2, splash3
-        };
+    if (btConfig().value<bool>(QStringLiteral("GUI/showSplashScreen"), true)) {
         auto const splashNumber =
-                randInt<std::size_t>(0u, std::extent_v<decltype(splashes)> - 1u);
-        QString splashImage = DU::getPicsDir().canonicalPath().append("/")
-                                              .append(splashes[splashNumber]);
+                randInt<std::size_t>(0u,
+                                     std::extent_v<decltype(splashes)> - 1u);
         QPixmap pm;
-        if (!pm.load(splashImage)) {
+        if (pm.load(DU::getPicsDir().filePath(splashes[splashNumber]))) {
+            splash = new QSplashScreen(pm);
+            splash->setAttribute(Qt::WA_DeleteOnClose);
+            splash->finish(this);
+            splash->showMessage(
+                        splashHtml.arg(tr("Initializing the SWORD engine...")),
+                        splashTextAlignment);
+            splash->show();
+            qApp->processEvents();
+        } else {
             qWarning("Can't load startuplogo! Check your installation.");
         }
-        splash = new QSplashScreen(pm);
-        splash->setAttribute(Qt::WA_DeleteOnClose);
-        splash->finish(this);
-        splash->showMessage(splashHtml.arg(tr("Initializing the SWORD engine...")),
-                            splashTextAlignment);
-        splash->show();
-        qApp->processEvents();
     }
     initBackends();
 
-    if (splash != nullptr) {
-        splash->showMessage(splashHtml.arg(tr("Creating BibleTime's user interface...")),
-                            splashTextAlignment);
+    if (splash) {
+        splash->showMessage(
+                    splashHtml.arg(
+                        tr("Creating BibleTime's user interface...")),
+                    splashTextAlignment);
         qApp->processEvents();
     }
     initView();
 
-    if (splash != nullptr) {
-        splash->showMessage(splashHtml.arg(tr("Initializing menu- and toolbars...")),
-                            splashTextAlignment);
+    if (splash) {
+        splash->showMessage(
+                    splashHtml.arg(tr("Initializing menu- and toolbars...")),
+                    splashTextAlignment);
         qApp->processEvents();
     }
     initActions();
@@ -127,7 +132,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     initToolbars();
     initConnections();
 
-    setWindowTitle("BibleTime " BT_VERSION);
+    setWindowTitle(QStringLiteral("BibleTime " BT_VERSION));
     setWindowIcon(CResMgr::mainWindow::icon());
     retranslateUi();
 }
@@ -251,21 +256,21 @@ void BibleTime::refreshDisplayWindows() const {
 }
 
 void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) {
-    if (btConfig().value<bool>("state/crashedTwoTimes", false)) {
+    if (btConfig().value<bool>(QStringLiteral("state/crashedTwoTimes"), false))
         return;
-    }
 
     // Restore workspace if not not ignoring session data:
     if (!ignoreSession)
         reloadProfile();
 
-    if (btConfig().value<bool>("state/crashedLastTime", false)) {
+    if (btConfig().value<bool>(QStringLiteral("state/crashedLastTime"), false))
         return;
-    }
 
     if (!bibleKey.isNull()) {
-        CSwordModuleInfo* bible = btConfig().getDefaultSwordModuleByType("standardBible");
-        if (bibleKey == "random") {
+        auto * const bible =
+                btConfig().getDefaultSwordModuleByType(
+                    QStringLiteral("standardBible"));
+        if (bibleKey == QStringLiteral("random")) {
             CSwordVerseKey vk(nullptr);
             auto const newIndex = randInt<decltype(vk.index())>(0, 31100);
             vk.positionToTop();
@@ -282,11 +287,10 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
         m_mdi->myTileVertical();
     }
 
-    if (btConfig().value<bool>("state/crashedLastTime", false)) {
-        btConfig().setValue("state/crashedTwoTimes", true);
-    }
-    else {
-        btConfig().setValue("state/crashedLastTime", true);
+    if (btConfig().value<bool>(QStringLiteral("state/crashedLastTime"), false)){
+        btConfig().setValue(QStringLiteral("state/crashedTwoTimes"), true);
+    } else {
+        btConfig().setValue(QStringLiteral("state/crashedLastTime"), true);
     }
     btConfig().sync();
 
