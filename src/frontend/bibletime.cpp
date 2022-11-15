@@ -304,8 +304,7 @@ bool BibleTime::event(QEvent* event) {
         // allow to continue to update other parts of Qt widgets
     }
     if (event->type() == QEvent::KeyPress) {
-        QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
-        if (keyEvent->modifiers() > 0)
+        if (static_cast<QKeyEvent *>(event)->modifiers() > 0)
             return false;
         if (autoScrollAnyKey())
             return true;
