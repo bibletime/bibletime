@@ -168,34 +168,36 @@ CDisplayWindow * createReadInstance(QList<CSwordModuleInfo *> const modules,
 
 } // anonymous namespace
 
-/** Creates a new presenter in the MDI area according to the type of the module. */
-CDisplayWindow* BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key) {
-    qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
-    // qDebug() << "BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key)";
-    CDisplayWindow * const displayWindow = createReadInstance(modules, m_mdi);
-    if ( displayWindow ) {
+/** \brief Creates a new presenter in the MDI area according to the type of the
+            module. */
+CDisplayWindow* BibleTime::createReadDisplayWindow(
+        QList<CSwordModuleInfo *> modules,
+        QString const & key)
+{
+    qApp->setOverrideCursor(QCursor(Qt::WaitCursor));
+    auto * const displayWindow = createReadInstance(modules, m_mdi);
+    if (displayWindow) {
         displayWindow->init();
         m_mdi->addSubWindow(displayWindow);
         displayWindow->show();
-        //   if (!key.isEmpty())
         displayWindow->lookupKey(key);
     }
-    // We have to process pending events here, otherwise displayWindow is not fully painted
+    /* We have to process pending events here, otherwise displayWindow is not
+       fully painted. */
     qApp->processEvents();
-    // Now all events, including mouse clicks for the displayWindow have been handled
-    // and we can let the user click the same module again
-    //m_bookshelfPage->unfreezeModules(modules);
     qApp->restoreOverrideCursor();
     return displayWindow;
 }
 
 
-/** Creates a new presenter in the MDI area according to the type of the module. */
-CDisplayWindow* BibleTime::createReadDisplayWindow(CSwordModuleInfo* module, const QString& key) {
-    return createReadDisplayWindow(QList<CSwordModuleInfo*>() << module, key);
-}
+/** \brief  Creates a new presenter in the MDI area according to the type of the
+            module. */
+CDisplayWindow * BibleTime::createReadDisplayWindow(
+        CSwordModuleInfo * const module,
+        QString const & key)
+{ return createReadDisplayWindow(QList<CSwordModuleInfo*>() << module, key); }
 
-bool BibleTime::moduleUnlock(CSwordModuleInfo * module, QWidget * parent) {
+bool BibleTime::moduleUnlock(CSwordModuleInfo * module, QWidget * const parent){
     BT_ASSERT(module);
 
     /// \todo Write a proper unlocking dialog with integrated error messages.
@@ -255,7 +257,9 @@ void BibleTime::refreshDisplayWindows() const {
             window->reload(CSwordBackend::OtherChange);
 }
 
-void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) {
+void BibleTime::processCommandline(bool const ignoreSession,
+                                   QString const & bibleKey)
+{
     if (btConfig().value<bool>(QStringLiteral("state/crashedTwoTimes"), false))
         return;
 
@@ -302,8 +306,7 @@ bool BibleTime::event(QEvent* event) {
     if (event->type() == QEvent::PaletteChange) {
         Q_EMIT colorThemeChanged();
         // allow to continue to update other parts of Qt widgets
-    }
-    if (event->type() == QEvent::KeyPress) {
+    } else if (event->type() == QEvent::KeyPress) {
         if (static_cast<QKeyEvent *>(event)->modifiers() > 0)
             return false;
         if (autoScrollAnyKey())
@@ -313,27 +316,23 @@ bool BibleTime::event(QEvent* event) {
 }
 
 const CSwordModuleInfo* BibleTime::getCurrentModule() {
-    QMdiSubWindow* activeSubWindow = m_mdi->activeSubWindow();
-    if (!activeSubWindow)
-        return nullptr;
-    CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(activeSubWindow->widget());
-    if (!w)
-        return nullptr;
-    return w->modules().first();
+    if (auto * const activeSubWindow = m_mdi->activeSubWindow())
+        if (auto * const displayWindow =
+                dynamic_cast<CDisplayWindow *>(activeSubWindow->widget()))
+            return displayWindow->modules().first();
+    return nullptr;
 }
 
 BtModelViewReadDisplay * BibleTime::getCurrentDisplay() {
-    QMdiSubWindow* activeSubWindow = m_mdi->activeSubWindow();
-    if (!activeSubWindow)
-        return nullptr;
-    CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(activeSubWindow->widget());
-    if (!w)
-        return nullptr;
-    return w->displayWidget();
+    if (auto * const activeSubWindow = m_mdi->activeSubWindow())
+        if (auto * const displayWindow =
+                dynamic_cast<CDisplayWindow *>(activeSubWindow->widget()))
+            return displayWindow->displayWidget();
+    return nullptr;
 }
 
 void BibleTime::setDisplayFocus() {
-    if (auto * display = getCurrentDisplay())
+    if (auto * const display = getCurrentDisplay())
         display->setDisplayFocus();
 }
 
@@ -345,8 +344,7 @@ void BibleTime::openSearchDialog(BtConstModuleList modules,
     m_searchDialog->reset(std::move(modules), searchText);
 }
 
-void BibleTime::openFindWidget()
-{
+void BibleTime::openFindWidget() {
     m_findWidget->setVisible(true);
     m_findWidget->showAndSelect();
 }
