@@ -66,16 +66,11 @@ static const char SWORD_DIR[] = ".sword";
 } // anonymous namespace
 
 bool initDirectoryCache() {
-    QDir wDir(":/share/bibletime"); // check if resources would be read from qrc
-    if(wDir.exists())
-        wDir.setPath(":/");
-    else {
-        wDir.setPath(QCoreApplication::applicationDirPath());
-        wDir.makeAbsolute();
-        if (!wDir.cdUp()) { // Installation prefix
-            qWarning() << "Cannot cd up from directory " << QCoreApplication::applicationDirPath();
-            return false;
-        }
+    QDir wDir(QCoreApplication::applicationDirPath());
+    wDir.makeAbsolute();
+    if (!wDir.cdUp()) { // Installation prefix
+        qWarning() << "Unable to use prefix one level up from " << wDir.path();
+        return false;
     }
 
 #ifdef Q_OS_WIN
