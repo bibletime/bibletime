@@ -25,7 +25,7 @@ public: // types:
 
     public: // methods:
 
-        RegularIcon(char const * const name);
+        RegularIcon(QString const & name);
 
     };
 
