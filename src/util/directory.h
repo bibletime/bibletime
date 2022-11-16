@@ -63,7 +63,7 @@ const QDir &getSwordLocalesDir();
 const QDir &getIconDir();
 
 /** Return the path to the license. */
-const QDir &getLicenseDir();
+QString const & getLicensePath();
 
 /** Return the path to the pictures. */
 const QDir &getPicsDir();

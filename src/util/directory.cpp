@@ -33,7 +33,6 @@ namespace directory {
 namespace {
 
 std::optional<QDir> cachedPrefix;
-std::optional<QDir> cachedLicenseDir;
 std::optional<QDir> cachedPicsDir;
 std::optional<QDir> cachedLocaleDir;
 std::optional<QDir> cachedDisplayTemplatesDir;
@@ -106,13 +105,6 @@ bool initDirectoryCache() {
 
     // We unset the SWORD_PATH so libsword finds paths correctly:
     ::qunsetenv("SWORD_PATH");
-
-    cachedLicenseDir.emplace(wDir);
-    if (!cachedLicenseDir->cd("share/bibletime/license")) {
-        qWarning() << "Cannot find license directory relative to"
-                   << wDir.absolutePath();
-        return false;
-    }
 
     cachedPicsDir.emplace(wDir);
     if (!cachedPicsDir->cd("share/bibletime/pics")) {
@@ -262,8 +254,10 @@ QDir const & getIconDir() {
     return cachedIconDir;
 }
 
-const QDir &getLicenseDir() {
-    return *cachedLicenseDir;
+QString const & getLicensePath() {
+    static auto const cachedLicensePath(
+                cachedPrefix->filePath("share/bibletime/license/LICENSE"));
+    return cachedLicensePath;
 }
 
 const QDir &getPicsDir() {

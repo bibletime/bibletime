@@ -82,7 +82,7 @@ public: // Methods:
             m_licenseBrowser->setFont(std::move(licenseFont));
         }
 
-        QFile licFile(util::directory::getLicenseDir().path() + "/LICENSE");
+        QFile licFile(util::directory::getLicensePath());
         if (licFile.open(QFile::ReadOnly)) {
             m_licenseBrowser->setPlainText(QTextStream(&licFile).readAll());
             licFile.close();
