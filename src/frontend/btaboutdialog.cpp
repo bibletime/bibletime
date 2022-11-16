@@ -24,6 +24,7 @@
 #include <QIODevice>
 #include <QLabel>
 #include <QPalette>
+#include <QPlainTextEdit>
 #include <QTabWidget>
 #include <QTextBrowser>
 #include <QTextStream>
@@ -31,6 +32,7 @@
 #include <QUrl>
 #include <QVBoxLayout>
 #include <QWidget>
+#include <utility>
 #include "../util/btconnect.h"
 #include "../util/bticons.h"
 #include "../util/directory.h"
@@ -61,6 +63,44 @@
     (c) += ", ";\
     (c) += (r2);\
     (c) += ")</li>"
+
+class BtAboutDialog::LicenseTab final : public QWidget {
+
+public: // Methods:
+
+    LicenseTab(QWidget * parent)
+        : QWidget(parent)
+        , m_label(new QLabel(this))
+        , m_licenseBrowser(new QPlainTextEdit(this))
+    {
+        m_label->setWordWrap(true);
+
+        m_licenseBrowser->setReadOnly(true);
+        { // Set monospace font:
+            QFont licenseFont(QStringLiteral("BibleTime nonexistant font"));
+            licenseFont.setStyleHint(QFont::Monospace);
+            m_licenseBrowser->setFont(std::move(licenseFont));
+        }
+
+        QFile licFile(util::directory::getLicenseDir().path() + "/LICENSE");
+        if (licFile.open(QFile::ReadOnly)) {
+            m_licenseBrowser->setPlainText(QTextStream(&licFile).readAll());
+            licFile.close();
+        }
+
+        auto * const mainLayout = new QVBoxLayout(this);
+        mainLayout->addWidget(m_label);
+        mainLayout->addWidget(m_licenseBrowser);
+    }
+
+    void setLabelText(QString const & text) { m_label->setText(text); }
+
+private: // Fields
+
+    QLabel * const m_label;
+    QPlainTextEdit * const m_licenseBrowser;
+
+}; // LicenseTab
 
 BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
         : QDialog(parent, wflags)
@@ -101,11 +141,13 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
                    });
         return tab;
     };
+
     m_bibletimeTab = addTab();
     m_contributorsTab = addTab();
     m_swordTab = addTab();
     m_qtTab = addTab();
-    m_licenceTab = addTab();
+    m_licenseTab = new LicenseTab(this);
+    m_tabWidget->addTab(m_licenseTab, "");
 
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
     mainLayout->addWidget(m_buttonBox);
@@ -287,22 +329,13 @@ void BtAboutDialog::retranslateQtTab() {
 void BtAboutDialog::retranslateLicenceTab() {
     m_tabWidget->setTabText(4, tr("&License"));
 
-    QFile licFile(util::directory::getLicenseDir().path() + "/license.html");
-    if (licFile.open(QFile::ReadOnly)) {
-
-        QString text("<p>");
-        text += tr("BibleTime is released under the GPL license. You can download and use "
-                   "the program for personal, private, public or "
-                   "commercial purposes without restrictions, but can give away or "
-                   "distribute the program only if you also distribute the corresponding source "
-                   "code.");
-        text += "</p><p>";
-        text += tr("The complete legally binding license is below.");
-        text += "</p><hr/>";
-
-        QString content(QTextStream(&licFile).readAll().replace("<!-- TR TEXT -->", text));
-        content.replace("<!-- HEADER -->", MAKE_STYLE(m_licenceTab), Qt::CaseInsensitive);
-        m_licenceTab->setHtml(content);
-        licFile.close();
-    }
+    m_licenseTab->setLabelText(
+                QStringLiteral("<p>%1</p><p>%2</p>")
+                .arg(tr("BibleTime is released under the GPL license. You "
+                        "can download and use the program for personal, "
+                        "private, public or commercial purposes without "
+                        "restrictions, but can give away or distribute the "
+                        "program only if you also distribute the "
+                        "corresponding source code."),
+                     tr("The complete legally binding license is below.")));
 }

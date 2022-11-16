@@ -28,6 +28,7 @@ class QWidget;
 
 class BtAboutDialog: public QDialog {
         Q_OBJECT
+        class LicenseTab;
     public:
         BtAboutDialog(QWidget *parent = nullptr, Qt::WindowFlags wflags = Qt::Dialog);
 
@@ -49,7 +50,7 @@ class BtAboutDialog: public QDialog {
         QTextBrowser *m_contributorsTab;
         QTextBrowser *m_swordTab;
         QTextBrowser *m_qtTab;
-        QTextBrowser *m_licenceTab;
+        LicenseTab * m_licenseTab;
         QDialogButtonBox *m_buttonBox;
         QLabel *m_iconLabel;
         QLabel *m_versionLabel;
