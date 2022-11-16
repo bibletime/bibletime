@@ -44,7 +44,8 @@ std::optional<QDir> cachedUserHomeSwordDir;
 std::optional<QDir> cachedUserCacheDir;
 std::optional<QDir> cachedUserIndexDir;
 #ifdef Q_OS_WIN
-std::optional<QDir> cachedApplicationSwordDir; // Only Windows installs the sword directory which contains locales.d
+// Only Windows installs the sword directory which contains locales.d:
+std::optional<QDir> cachedApplicationSwordDir;
 std::optional<QDir> cachedSharedSwordDir;
 #endif
 
@@ -74,15 +75,19 @@ bool initDirectoryCache() {
     cachedPrefix.emplace(wDir);
 
 #ifdef Q_OS_WIN
-    cachedApplicationSwordDir.emplace(wDir); // application sword dir for Windows only
+    // application sword dir for Windows only:
+    cachedApplicationSwordDir.emplace(wDir);
     if (!cachedApplicationSwordDir->cd("share/sword")) {
-        qWarning() << "Cannot find sword directory relative to" << QCoreApplication::applicationDirPath();
+        qWarning() << "Cannot find sword directory relative to"
+                   << QCoreApplication::applicationDirPath();
         return false;
     }
     // Sword dir for Windows only:
     cachedSharedSwordDir.emplace(qEnvironmentVariable("ProgramData"));
     if (!cachedSharedSwordDir->cd(SWORD_DIR)) {
-        if (!cachedSharedSwordDir->mkdir(SWORD_DIR) || !cachedSharedSwordDir->cd(SWORD_DIR)) {
+        if (!cachedSharedSwordDir->mkdir(SWORD_DIR)
+            || !cachedSharedSwordDir->cd(SWORD_DIR))
+        {
             qWarning() << "Cannot find " << programDataDir << " \\Sword";
             return false;
         }
@@ -90,9 +95,11 @@ bool initDirectoryCache() {
 #endif
 
 #ifdef Q_OS_MACOS
-    cachedSwordLocalesDir.emplace(wDir); // application sword dir for Windows only
+    // application sword dir for Windows only:
+    cachedSwordLocalesDir.emplace(wDir);
     if (!cachedSwordLocalesDir->cd("share/sword/locales.d")) {
-        qWarning() << "Cannot find sword locales directory relative to" << QCoreApplication::applicationDirPath();
+        qWarning() << "Cannot find sword locales directory relative to"
+                   << QCoreApplication::applicationDirPath();
         return false;
     }
 #endif
@@ -102,25 +109,29 @@ bool initDirectoryCache() {
 
     cachedLicenseDir.emplace(wDir);
     if (!cachedLicenseDir->cd("share/bibletime/license")) {
-        qWarning() << "Cannot find license directory relative to" << wDir.absolutePath();
+        qWarning() << "Cannot find license directory relative to"
+                   << wDir.absolutePath();
         return false;
     }
 
     cachedPicsDir.emplace(wDir);
     if (!cachedPicsDir->cd("share/bibletime/pics")) {
-        qWarning() << "Cannot find pics directory relative to" << wDir.absolutePath();
+        qWarning() << "Cannot find pics directory relative to"
+                   << wDir.absolutePath();
         return false;
     }
 
     cachedLocaleDir.emplace(wDir);
     if (!cachedLocaleDir->cd("share/bibletime/locale")) {
-        qWarning() << "Cannot find locale directory relative to" << wDir.absolutePath();
+        qWarning() << "Cannot find locale directory relative to"
+                   << wDir.absolutePath();
         return false;
     }
 
     cachedDisplayTemplatesDir.emplace(wDir); //display templates dir
     if (!cachedDisplayTemplatesDir->cd("share/bibletime/display-templates/")) {
-        qWarning() << "Cannot find display template directory relative to" << wDir.absolutePath();
+        qWarning() << "Cannot find display template directory relative to"
+                   << wDir.absolutePath();
         return false;
     }
 
@@ -136,8 +147,11 @@ bool initDirectoryCache() {
 
     cachedUserBaseDir.emplace(*cachedUserHomeDir);
     if (!cachedUserBaseDir->cd(BIBLETIME)) {
-        if (!cachedUserBaseDir->mkpath(BIBLETIME) || !cachedUserBaseDir->cd(BIBLETIME)) {
-            qWarning() << "Could not create user settings directory relative to" << cachedUserHomeDir->absolutePath();
+        if (!cachedUserBaseDir->mkpath(BIBLETIME)
+            || !cachedUserBaseDir->cd(BIBLETIME))
+        {
+            qWarning() << "Could not create user settings directory relative to"
+                       << cachedUserHomeDir->absolutePath();
             return false;
         }
     }
@@ -145,8 +159,11 @@ bool initDirectoryCache() {
     cachedUserHomeSwordDir.emplace(*cachedUserHomeDir);
 #if !defined(Q_OS_WIN) || defined(Q_OS_WIN32)
     if (!cachedUserHomeSwordDir->cd(SWORD_DIR)) {
-        if (!cachedUserHomeSwordDir->mkpath(SWORD_DIR) || !cachedUserHomeSwordDir->cd(SWORD_DIR)) {
-            qWarning() << "Could not create user home " << SWORD_DIR << " directory.";
+        if (!cachedUserHomeSwordDir->mkpath(SWORD_DIR)
+            || !cachedUserHomeSwordDir->cd(SWORD_DIR))
+        {
+            qWarning() << "Could not create user home " << SWORD_DIR
+                       << " directory.";
             return false;
         }
     }
@@ -158,7 +175,8 @@ bool initDirectoryCache() {
             if (!userHomeSwordModsDir.mkdir("mods.d")
                 || !userHomeSwordModsDir.cd("mods.d"))
             {
-                qWarning() << "Could not create user home " << SWORD_DIR << " mods.d directory.";
+                qWarning() << "Could not create user home " << SWORD_DIR
+                           << " mods.d directory.";
                 return false;
             }
         }
@@ -166,7 +184,9 @@ bool initDirectoryCache() {
 
     cachedUserCacheDir.emplace(*cachedUserBaseDir);
     if (!cachedUserCacheDir->cd("cache")) {
-        if (!cachedUserCacheDir->mkdir("cache") || !cachedUserCacheDir->cd("cache")) {
+        if (!cachedUserCacheDir->mkdir("cache")
+            || !cachedUserCacheDir->cd("cache"))
+        {
             qWarning() << "Could not create user cache directory.";
             return false;
         }
@@ -174,7 +194,9 @@ bool initDirectoryCache() {
 
     cachedUserIndexDir.emplace(*cachedUserBaseDir);
     if (!cachedUserIndexDir->cd("indices")) {
-        if (!cachedUserIndexDir->mkdir("indices") || !cachedUserIndexDir->cd("indices")) {
+        if (!cachedUserIndexDir->mkdir("indices")
+            || !cachedUserIndexDir->cd("indices"))
+        {
             qWarning() << "Could not create user indices directory.";
             return false;
         }
@@ -182,7 +204,9 @@ bool initDirectoryCache() {
 
     cachedUserDisplayTemplatesDir.emplace(*cachedUserBaseDir);
     if (!cachedUserDisplayTemplatesDir->cd("display-templates")) {
-        if (!cachedUserDisplayTemplatesDir->mkdir("display-templates") || !cachedUserDisplayTemplatesDir->cd("display-templates")) {
+        if (!cachedUserDisplayTemplatesDir->mkdir("display-templates")
+            || !cachedUserDisplayTemplatesDir->cd("display-templates"))
+        {
             qWarning() << "Could not create user display templates directory.";
             return false;
         }
@@ -191,8 +215,8 @@ bool initDirectoryCache() {
     return true;
 } // bool initDirectoryCache();
 
-/** Returns the size of the directory including the size of all it's files and it's subdirs.
- */
+/** \returns the size of the directory including the size of all it's files and
+             it's subdirs. */
 ::qint64 getDirSizeRecursive(QString const & dir) {
     //Check for validity of argument
     QDir d(dir);
