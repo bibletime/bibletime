@@ -50,7 +50,7 @@ class BtAboutDialog: public QDialog {
         QTextBrowser *m_contributorsTab;
         QTextBrowser *m_swordTab;
         QTextBrowser *m_qtTab;
-        LicenseTab * m_licenseTab;
+        LicenseTab * m_licenseTab = nullptr;
         QDialogButtonBox *m_buttonBox;
         QLabel *m_iconLabel;
         QLabel *m_versionLabel;

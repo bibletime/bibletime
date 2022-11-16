@@ -14,6 +14,7 @@
 
 #include <QApplication>
 #include <QColor>
+#include <QDebug>
 #include <QDesktopServices>
 #include <QDialogButtonBox>
 #include <QDir>
@@ -73,7 +74,10 @@ public: // Methods:
         , m_label(new QLabel(this))
         , m_licenseBrowser(new QPlainTextEdit(this))
     {
+        auto * const mainLayout = new QVBoxLayout(this);
+
         m_label->setWordWrap(true);
+        mainLayout->addWidget(m_label);
 
         m_licenseBrowser->setReadOnly(true);
         { // Set monospace font:
@@ -81,19 +85,13 @@ public: // Methods:
             licenseFont.setStyleHint(QFont::Monospace);
             m_licenseBrowser->setFont(std::move(licenseFont));
         }
-
-        QFile licFile(util::directory::getLicensePath());
-        if (licFile.open(QFile::ReadOnly)) {
-            m_licenseBrowser->setPlainText(QTextStream(&licFile).readAll());
-            licFile.close();
-        }
-
-        auto * const mainLayout = new QVBoxLayout(this);
-        mainLayout->addWidget(m_label);
         mainLayout->addWidget(m_licenseBrowser);
     }
 
     void setLabelText(QString const & text) { m_label->setText(text); }
+
+    void setLicense(QString const & license)
+    { m_licenseBrowser->setPlainText(license); }
 
 private: // Fields
 
@@ -146,8 +144,19 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
     m_contributorsTab = addTab();
     m_swordTab = addTab();
     m_qtTab = addTab();
-    m_licenseTab = new LicenseTab(this);
-    m_tabWidget->addTab(m_licenseTab, "");
+
+    {
+        auto const & licensePath = util::directory::getLicensePath();
+        QFile licenseFile(licensePath);
+        if (licenseFile.open(QFile::ReadOnly)) {
+            m_licenseTab = new LicenseTab(this);
+            m_licenseTab->setLicense(QTextStream(&licenseFile).readAll());
+            m_tabWidget->addTab(m_licenseTab, "");
+            licenseFile.close();
+        } else {
+            qWarning() << "Failed to read license from" << licensePath;
+        }
+    }
 
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
     mainLayout->addWidget(m_buttonBox);
@@ -327,7 +336,10 @@ void BtAboutDialog::retranslateQtTab() {
 }
 
 void BtAboutDialog::retranslateLicenceTab() {
-    m_tabWidget->setTabText(4, tr("&License"));
+    if (!m_licenseTab)
+        return;
+
+    m_tabWidget->setTabText(m_tabWidget->indexOf(m_licenseTab), tr("&License"));
 
     m_licenseTab->setLabelText(
                 QStringLiteral("<p>%1</p><p>%2</p>")
