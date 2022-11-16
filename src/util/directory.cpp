@@ -118,9 +118,6 @@ bool initDirectoryCache() {
         return false;
     }
 
-    QString localeName(QLocale().name());
-    QString langCode(localeName.section('_', 0, 0));
-
     cachedDisplayTemplatesDir.emplace(wDir); //display templates dir
     if (!cachedDisplayTemplatesDir->cd("share/bibletime/display-templates/")) {
         qWarning() << "Cannot find display template directory relative to" << wDir.absolutePath();
