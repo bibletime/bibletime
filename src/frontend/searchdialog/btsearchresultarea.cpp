@@ -34,8 +34,11 @@
 
 
 namespace {
-const QString MainSplitterSizesKey = "GUI/SearchDialog/SearchResultsArea/mainSplitterSizes";
-const QString ResultSplitterSizesKey = "GUI/SearchDialog/SearchResultsArea/resultSplitterSizes";
+auto const MainSplitterSizesKey =
+        QStringLiteral("GUI/SearchDialog/SearchResultsArea/mainSplitterSizes");
+auto const ResultSplitterSizesKey =
+        QStringLiteral(
+            "GUI/SearchDialog/SearchResultsArea/resultSplitterSizes");
 } // anonymous namespace
 
 namespace Search {
@@ -134,11 +137,12 @@ void BtSearchResultArea::setSearchResult(QString searchedText,
 void BtSearchResultArea::reset() {
     m_moduleListBox->clear();
     m_resultListBox->clear();
-    m_previewDisplay->setText("<html><head/><body></body></html>");
+    clearPreview();
 }
 
 void BtSearchResultArea::clearPreview() {
-    m_previewDisplay->setText("<html><head/><body></body></html>");
+    m_previewDisplay->setText(
+                QStringLiteral("<html><head/><body></body></html>"));
 }
 
 void BtSearchResultArea::updatePreview(const QString& key) {
@@ -219,8 +223,8 @@ void BtSearchResultArea::updatePreview(const QString& key) {
 
         QString text2 =
                 CSwordModuleSearch::highlightSearchedText(text, m_searchedText);
-        text2.replace("#CHAPTERTITLE#", "");
-        text2.replace("#TEXT_ALIGN#", "left");
+        text2.replace(QStringLiteral("#CHAPTERTITLE#"), QString());
+        text2.replace(QStringLiteral("#TEXT_ALIGN#"), QStringLiteral("left"));
         text2 = ColorManager::replaceColors(text2);
         m_previewDisplay->setText(text2);
         m_previewDisplay->scrollToAnchor( CDisplayRendering::keyToHTMLAnchor(key) );
@@ -330,25 +334,27 @@ QString StrongsResultList::getStrongsNumberText(const QString &verseContent,
     const Qt::CaseSensitivity cs = Qt::CaseInsensitive;
 
     if (startIndex == 0) {
-        index = verseContent.indexOf("<body");
+        index = verseContent.indexOf(QStringLiteral("<body"));
     }
     else {
         index = startIndex;
     }
 
     // find all the "lemma=" inside the the content
-    while ((index = verseContent.indexOf("lemma=", index, cs)) != -1) {
+    while ((index = verseContent.indexOf(QStringLiteral("lemma="), index, cs))
+           != -1)
+    {
         // get the strongs number after the lemma and compare it with the
         // strongs number we are looking for
-        idx1 = verseContent.indexOf("\"", index) + 1;
-        idx2 = verseContent.indexOf("\"", idx1 + 1);
+        idx1 = verseContent.indexOf('"', index) + 1;
+        idx2 = verseContent.indexOf('"', idx1 + 1);
         sNumber = verseContent.mid(idx1, idx2 - idx1);
         if (sNumber == lemmaText) {
             // strongs number is found now we need to get the text of this node
-            // search right until the ">" is found.  Get the text from here to
-            // the next "<".
-            index = verseContent.indexOf(">", index, cs) + 1;
-            idx2  = verseContent.indexOf("<", index, cs);
+            // search right until the '>' is found.  Get the text from here to
+            // the next '<'.
+            index = verseContent.indexOf('>', index, cs) + 1;
+            idx2  = verseContent.indexOf('<', index, cs);
             strongsText = verseContent.mid(index, idx2 - index);
             index = idx2;
             startIndex = index;
