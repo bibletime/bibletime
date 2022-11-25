@@ -59,6 +59,7 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
     STANDARD_WORKS_TAB_ADD_ROW(standardGreekStrongsLexicon);
     STANDARD_WORKS_TAB_ADD_ROW(standardHebrewMorphLexicon);
     STANDARD_WORKS_TAB_ADD_ROW(standardGreekMorphLexicon);
+#undef STANDARD_WORKS_TAB_ADD_ROW
 
     mainLayout->addLayout(formLayout);
     mainLayout->addStretch();
@@ -137,6 +138,7 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
         STANDARD_WORKS_COMBO_ADD(standardGreekStrongsLexicon);
         STANDARD_WORKS_COMBO_ADD(standardHebrewMorphLexicon);
         STANDARD_WORKS_COMBO_ADD(standardGreekMorphLexicon);
+#undef STANDARD_WORKS_COMBO_ADD
 
     QString module = QString();
     int item = 0;
@@ -162,7 +164,6 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
         CSwordBackend::instance()->findModuleByDescription( \
             m_ ## name ## Combo->currentText()) \
     )
-
 void BtStandardWorksTab::save() {
     STANDARD_WORKS_SET_DEFAULT(standardBible);
     STANDARD_WORKS_SET_DEFAULT(standardCommentary);
@@ -173,6 +174,7 @@ void BtStandardWorksTab::save() {
     STANDARD_WORKS_SET_DEFAULT(standardHebrewMorphLexicon);
     STANDARD_WORKS_SET_DEFAULT(standardGreekMorphLexicon);
 }
+#undef STANDARD_WORKS_SET_DEFAULT
 
 void BtStandardWorksTab::retranslateUi() {
     util::tool::initExplanationLabel(

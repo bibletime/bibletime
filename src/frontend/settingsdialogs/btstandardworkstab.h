@@ -52,4 +52,5 @@ class BtStandardWorksTab: public QWidget {
         STANDARD_WORKS_TAB_FIELD(standardGreekStrongsLexicon);
         STANDARD_WORKS_TAB_FIELD(standardHebrewMorphLexicon);
         STANDARD_WORKS_TAB_FIELD(standardGreekMorphLexicon);
+#undef STANDARD_WORKS_TAB_FIELD
 };
