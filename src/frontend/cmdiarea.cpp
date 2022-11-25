@@ -84,7 +84,7 @@ void CMDIArea::fixSystemMenu(QMdiSubWindow* subWindow) {
     // Change Qt QMdiSubWindow Close action to have no shortcuts
     // This makes our closeWindow actions with Ctrl-W work correctly
     for (auto * const action : subWindow->systemMenu()->actions()) {
-        if (action->text().contains("Close")) {
+        if (action->text().contains(QStringLiteral("Close"))) {
             action->setShortcuts(QList<QKeySequence>());
             break;
         }
