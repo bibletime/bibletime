@@ -200,7 +200,7 @@ void BtBookshelfWidget::findExpanded(
     QString path = index.data(Qt::DisplayRole).toString();
     if (m_treeView->isExpanded(index)) {
         if (! prefix.isEmpty())
-            path = prefix + QString("/") + path;
+            path = QStringLiteral("%1/%2").arg(prefix, path);
         expandedPaths->append(path);
     }
     int rows = m_postFilterModel->rowCount(index);
@@ -229,10 +229,12 @@ void BtBookshelfWidget::restoreExpanded(const QModelIndex& index, const QStringL
 }
 
 void BtBookshelfWidget::loadBookshelfState() {
-    QStringList paths = btConfig().value<QStringList>("GUI/MainWindow/Docks/Bookshelf/expandPaths");
+    auto const paths =
+            btConfig().value<QStringList>(
+                QStringLiteral("GUI/MainWindow/Docks/Bookshelf/expandPaths"));
     auto rootIndex = m_treeView->rootIndex();
-    for (QString path: paths) {
-        QStringList nodeList = path.split("/");
+    for (auto const & path : paths) {
+        QStringList nodeList = path.split('/');
         restoreExpanded(rootIndex, nodeList);
     }
 }
@@ -242,6 +244,8 @@ void BtBookshelfWidget::saveBookshelfState() {
     QString prefix;
     auto rootIndex = m_treeView->rootIndex();
     findExpanded(rootIndex, prefix, &paths);
-    btConfig().setValue("GUI/MainWindow/Docks/Bookshelf/expandPaths", paths);
+    btConfig().setValue(
+                QStringLiteral("GUI/MainWindow/Docks/Bookshelf/expandPaths"),
+                paths);
 }
 
