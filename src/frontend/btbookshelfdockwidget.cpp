@@ -38,7 +38,8 @@
 
 
 namespace {
-const QString groupingOrderKey("GUI/MainWindow/Docks/Bookshelf/grouping");
+auto const groupingOrderKey =
+        QStringLiteral("GUI/MainWindow/Docks/Bookshelf/grouping");
 }
 
 BtBookshelfDockWidget *BtBookshelfDockWidget::m_instance = nullptr;
