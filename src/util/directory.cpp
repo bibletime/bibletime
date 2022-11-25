@@ -53,14 +53,15 @@ std::optional<QDir> cachedSwordLocalesDir;
 #endif
 
 #if defined Q_OS_WIN
-static const char BIBLETIME[] = "Bibletime";
-static const char SWORD_DIR[] = "Sword";
+QString const BIBLETIME = QStringLiteral("Bibletime");
+QString const SWORD_DIR = QStringLiteral("Sword");
 #elif defined(Q_OS_MAC)
-static const char BIBLETIME[] = "Library/Application Support/BibleTime";
-static const char SWORD_DIR[] = "Library/Application Support/Sword";
+QString const BIBLETIME =
+        QStringLiteral("Library/Application Support/BibleTime");
+QString const SWORD_DIR = QStringLiteral("Library/Application Support/Sword");
 #else
-static const char BIBLETIME[] = ".bibletime";
-static const char SWORD_DIR[] = ".sword";
+QString const BIBLETIME = QStringLiteral(".bibletime");
+QString const SWORD_DIR = QStringLiteral(".sword");
 #endif
 } // anonymous namespace
 
@@ -76,7 +77,7 @@ bool initDirectoryCache() {
 #ifdef Q_OS_WIN
     // application sword dir for Windows only:
     cachedApplicationSwordDir.emplace(wDir);
-    if (!cachedApplicationSwordDir->cd("share/sword")) {
+    if (!cachedApplicationSwordDir->cd(QStringLiteral("share/sword"))) {
         qWarning() << "Cannot find sword directory relative to"
                    << QCoreApplication::applicationDirPath();
         return false;
@@ -96,7 +97,7 @@ bool initDirectoryCache() {
 #ifdef Q_OS_MACOS
     // application sword dir for Windows only:
     cachedSwordLocalesDir.emplace(wDir);
-    if (!cachedSwordLocalesDir->cd("share/sword/locales.d")) {
+    if (!cachedSwordLocalesDir->cd(QStringLiteral("share/sword/locales.d"))) {
         qWarning() << "Cannot find sword locales directory relative to"
                    << QCoreApplication::applicationDirPath();
         return false;
@@ -107,28 +108,30 @@ bool initDirectoryCache() {
     ::qunsetenv("SWORD_PATH");
 
     cachedPicsDir.emplace(wDir);
-    if (!cachedPicsDir->cd("share/bibletime/pics")) {
+    if (!cachedPicsDir->cd(QStringLiteral("share/bibletime/pics"))) {
         qWarning() << "Cannot find pics directory relative to"
                    << wDir.absolutePath();
         return false;
     }
 
     cachedLocaleDir.emplace(wDir);
-    if (!cachedLocaleDir->cd("share/bibletime/locale")) {
+    if (!cachedLocaleDir->cd(QStringLiteral("share/bibletime/locale"))) {
         qWarning() << "Cannot find locale directory relative to"
                    << wDir.absolutePath();
         return false;
     }
 
     cachedDisplayTemplatesDir.emplace(wDir); //display templates dir
-    if (!cachedDisplayTemplatesDir->cd("share/bibletime/display-templates/")) {
+    if (!cachedDisplayTemplatesDir->cd(
+            QStringLiteral("share/bibletime/display-templates/")))
+    {
         qWarning() << "Cannot find display template directory relative to"
                    << wDir.absolutePath();
         return false;
     }
 
 #ifdef Q_OS_WINRT
-    cachedUserHomeDir.emplace("");
+    cachedUserHomeDir.emplace();
 #elif defined (Q_OS_WIN) && !defined(Q_OS_WIN32)
     cachedUserHomeDir.emplace(QCoreApplication::applicationDirPath());
 #elif defined Q_OS_WIN32
@@ -163,9 +166,10 @@ bool initDirectoryCache() {
 
     { /// \todo Check and comment whether this is needed:
         auto userHomeSwordModsDir = *cachedUserHomeSwordDir;
-        if (!userHomeSwordModsDir.cd("mods.d")) {
-            if (!userHomeSwordModsDir.mkdir("mods.d")
-                || !userHomeSwordModsDir.cd("mods.d"))
+        static auto const modsDir = QStringLiteral("mods.d");
+        if (!userHomeSwordModsDir.cd(modsDir)) {
+            if (!userHomeSwordModsDir.mkdir(modsDir)
+                || !userHomeSwordModsDir.cd(modsDir))
             {
                 qWarning() << "Could not create user home " << SWORD_DIR
                            << " mods.d directory.";
@@ -175,32 +179,43 @@ bool initDirectoryCache() {
     }
 
     cachedUserCacheDir.emplace(*cachedUserBaseDir);
-    if (!cachedUserCacheDir->cd("cache")) {
-        if (!cachedUserCacheDir->mkdir("cache")
-            || !cachedUserCacheDir->cd("cache"))
-        {
-            qWarning() << "Could not create user cache directory.";
-            return false;
+    {
+        static auto const cacheDir = QStringLiteral("cache");
+        if (!cachedUserCacheDir->cd(cacheDir)) {
+            if (!cachedUserCacheDir->mkdir(cacheDir)
+                || !cachedUserCacheDir->cd(cacheDir))
+            {
+                qWarning() << "Could not create user cache directory.";
+                return false;
+            }
         }
     }
 
     cachedUserIndexDir.emplace(*cachedUserBaseDir);
-    if (!cachedUserIndexDir->cd("indices")) {
-        if (!cachedUserIndexDir->mkdir("indices")
-            || !cachedUserIndexDir->cd("indices"))
-        {
-            qWarning() << "Could not create user indices directory.";
-            return false;
+    {
+        static auto const indicesDir = QStringLiteral("indices");
+        if (!cachedUserIndexDir->cd(indicesDir)) {
+            if (!cachedUserIndexDir->mkdir(indicesDir)
+                || !cachedUserIndexDir->cd(indicesDir))
+            {
+                qWarning() << "Could not create user indices directory.";
+                return false;
+            }
         }
     }
 
     cachedUserDisplayTemplatesDir.emplace(*cachedUserBaseDir);
-    if (!cachedUserDisplayTemplatesDir->cd("display-templates")) {
-        if (!cachedUserDisplayTemplatesDir->mkdir("display-templates")
-            || !cachedUserDisplayTemplatesDir->cd("display-templates"))
-        {
-            qWarning() << "Could not create user display templates directory.";
-            return false;
+    {
+        static auto const displayTemplatesDir =
+                QStringLiteral("display-templates");
+        if (!cachedUserDisplayTemplatesDir->cd(displayTemplatesDir)) {
+            if (!cachedUserDisplayTemplatesDir->mkdir(displayTemplatesDir)
+                || !cachedUserDisplayTemplatesDir->cd(displayTemplatesDir))
+            {
+                qWarning() << "Could not create user display templates "
+                              "directory.";
+                return false;
+            }
         }
     }
 
@@ -228,8 +243,8 @@ bool initDirectoryCache() {
     d.setFilter(QDir::Dirs);
     for (auto const & dirInfo : d.entryInfoList())
         if (dirInfo.isDir()
-            && dirInfo.fileName() != "."
-            && dirInfo.fileName() != "..")
+            && dirInfo.fileName() != QStringLiteral(".")
+            && dirInfo.fileName() != QStringLiteral(".."))
             size += getDirSizeRecursive(dirInfo.absoluteFilePath());
     return size;
 }
@@ -250,13 +265,15 @@ const QDir &getSwordLocalesDir() {
 
 QDir const & getIconDir() {
     static const QDir cachedIconDir(
-                cachedPrefix->filePath("share/bibletime/icons"));
+                cachedPrefix->filePath(
+                    QStringLiteral("share/bibletime/icons")));
     return cachedIconDir;
 }
 
 QString const & getLicensePath() {
     static auto const cachedLicensePath(
-                cachedPrefix->filePath("share/bibletime/license/LICENSE"));
+                cachedPrefix->filePath(
+                    QStringLiteral("share/bibletime/license/LICENSE")));
     return cachedLicensePath;
 }
 
@@ -281,7 +298,7 @@ QString getDocFile(QString docName) {
             if (localeName.contains('_'))
                 tryLanguages.append(localeName.section('_', 0, 0));
         }
-        tryLanguages.append("en");
+        tryLanguages.append(QStringLiteral("en"));
         auto const tryDoc =
                 [&dir,&tryLanguages](QString const & type,
                                      QString const & filename) -> QString
@@ -298,18 +315,18 @@ QString getDocFile(QString docName) {
                     }
                     return {};
                 };
-        r = tryDoc("html", "index.html");
+        r = tryDoc(QStringLiteral("html"), QStringLiteral("index.html"));
         if (r.isEmpty())
-            r = tryDoc("pdf", docName + ".pdf");
+            r = tryDoc(QStringLiteral("pdf"), docName + QStringLiteral(".pdf"));
     }
     return r;
 }
 
 } // anonymous namespace
 
-QString getHandbook() { return getDocFile("handbook"); }
+QString getHandbook() { return getDocFile(QStringLiteral("handbook")); }
 
-QString getHowto() { return getDocFile("howto"); }
+QString getHowto() { return getDocFile(QStringLiteral("howto")); }
 
 const QDir &getDisplayTemplatesDir() {
     return *cachedDisplayTemplatesDir;
