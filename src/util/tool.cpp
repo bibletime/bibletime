@@ -55,13 +55,13 @@ bool savePlainFile(const QString & filename,
             return true;
 
         QMessageBox::critical(nullptr, QObject::tr("Error"),
-                              QString::fromLatin1("<qt>%1<br/><b>%2</b></qt>")
+                              QStringLiteral("<qt>%1<br/><b>%2</b></qt>")
                                   .arg(QObject::tr("Error while writing to file."))
                                   .arg(QObject::tr("Please check that enough disk space is available.")));
     }
     else {
         QMessageBox::critical(nullptr, QObject::tr("Error"),
-                              QString::fromLatin1("<qt>%1<br/><b>%2</b></qt>")
+                              QStringLiteral("<qt>%1<br/><b>%2</b></qt>")
                                   .arg(QObject::tr("The file couldn't be opened for saving."))
                                   .arg(QObject::tr("Please check permissions etc.")));
     }
@@ -132,19 +132,16 @@ void initExplanationLabel(QLabel * const label,
                           const QString & text)
 {
     QString labelText;
-    if (!heading.isEmpty()) {
-        labelText += "<b>";
-        labelText += heading;
-        labelText += "</b>";
-    }
-    if (!heading.isEmpty() && !text.isEmpty()) {
-        labelText += "<span style=\"white-space:pre\">  -  </span>";
-    }
-    if (!text.isEmpty()) {
-        labelText += "<small>";
-        labelText += text;
-        labelText += "</small>";
-    }
+    if (!heading.isEmpty())
+        labelText += QStringLiteral("<b>%1</b>").arg(heading);
+
+    if (!heading.isEmpty() && !text.isEmpty())
+        labelText +=
+                QStringLiteral("<span style=\"white-space:pre\">  -  </span>");
+
+    if (!text.isEmpty())
+        labelText += QStringLiteral("<small>%1</small>").arg(text);
+
     label->setText(labelText);
     label->setWordWrap(true);
     label->setMargin(1);
@@ -152,10 +149,10 @@ void initExplanationLabel(QLabel * const label,
 }
 
 bool inHTMLTag(const int pos, const QString & text) {
-    int i1 = text.lastIndexOf("<", pos);
-    int i2 = text.lastIndexOf(">", pos);
-    int i3 = text.indexOf(">", pos);
-    int i4 = text.indexOf("<", pos);
+    int i1 = text.lastIndexOf('<', pos);
+    int i2 = text.lastIndexOf('>', pos);
+    int i3 = text.indexOf('>', pos);
+    int i4 = text.indexOf('<', pos);
 
 
     // if ((i1>0) && (i2==-1))  //we're in th first html tag
@@ -172,48 +169,36 @@ bool inHTMLTag(const int pos, const QString & text) {
 QString remoteModuleToolTip(const CSwordModuleInfo & module,
                             const QString & localVer)
 {
-    QString text = "<p style='white-space:pre'><b>";
-    text += module.name();
-    text += "</b> ";
+    auto text =
+            QStringLiteral("<p style='white-space:pre'><b>%1</b> ")
+            .arg(module.name());
 
-    if (module.category() == CSwordModuleInfo::Cult) {
-        text += "<small><b>";
-        text += QObject::tr("Take care, this work contains cult / questionable "
-                            "material!");
-        text += "</b></small><br/>";
-    }
+    if (module.category() == CSwordModuleInfo::Cult)
+        text += QStringLiteral("<small><b>%1</b></small><br/>")
+                .arg(QObject::tr("Take care, this work contains cult / "
+                                 "questionable material!"));
 
-    text += "<small>(";
-    text += module.config(CSwordModuleInfo::Description);
-    text += ")</small><hr/>";
+    text += QStringLiteral("<small>(%1)</small><hr/>")
+            .arg(module.config(CSwordModuleInfo::Description));
 
-    if (module.isEncrypted()) {
-        text += QObject::tr("Encrypted - needs unlock key");
-        text += "<br/>";
-    }
+    if (module.isEncrypted())
+        text += QStringLiteral("%1<br/>")
+                .arg(QObject::tr("Encrypted - needs unlock key"));
 
-    if (!localVer.isEmpty()) {
-        text += "<b>";
-        text += QObject::tr("Updated version available!");
-        text += "</b><br/>";
-    }
+    if (!localVer.isEmpty())
+        text += QStringLiteral("<b>%1</b><br/>")
+                .arg(QObject::tr("Updated version available!"));
 
-    if (module.hasVersion()) {
-        text += QObject::tr("Version");
-        text += ": ";
-        text += module.config(CSwordModuleInfo::ModuleVersion);
-    }
+    if (module.hasVersion())
+        text += QObject::tr("Version: %1")
+                .arg(module.config(CSwordModuleInfo::ModuleVersion));
 
     // if installed already
-    if (!localVer.isEmpty()) {
-        text += "  ";
-        text += QObject::tr("Installed version");
-        text += ": ";
-        text += localVer;
-    }
-    text += "<br/><small>(";
-    text += QObject::tr("Double click for more information");
-    text += ")</small></p>";
+    if (!localVer.isEmpty())
+        text += ' ' + QObject::tr("Installed version: %1").arg(localVer);
+
+    text += QStringLiteral("<br/><small>(%1)</small></p>")
+            .arg(QObject::tr("Double click for more information"));
 
     return text;
 }
