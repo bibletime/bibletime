@@ -54,46 +54,47 @@ void myMessageOutput(QtMsgType type,
                      QString const & message)
 {
     QByteArray msg = message.toLatin1();
+    #define MY_OUTPUT_LITERAL(literal) \
+        debugStream->write(literal, sizeof(literal) - 1u)
     switch (type) {
     case QtDebugMsg:
         if (btApp->debugMode()) { // Only show messages if they are enabled!
-            debugStream->write("(BibleTime " BT_VERSION ") Debug: ");
+            MY_OUTPUT_LITERAL("(BibleTime " BT_VERSION ") Debug: ");
             debugStream->write(msg);
-            debugStream->write("\n");
+            debugStream->putChar('\n');
             debugStream->flush();
         }
         break;
     case QtInfoMsg:
-        debugStream->write("(BibleTime " BT_VERSION ") INFO: ");
+        MY_OUTPUT_LITERAL("(BibleTime " BT_VERSION ") INFO: ");
         debugStream->write(msg);
-        debugStream->write("\n");
+        debugStream->putChar('\n');
         debugStream->flush();
         break;
     case QtWarningMsg:
-        debugStream->write("(BibleTime " BT_VERSION ") WARNING: ");
+        MY_OUTPUT_LITERAL("(BibleTime " BT_VERSION ") WARNING: ");
         debugStream->write(msg);
-        debugStream->write("\n");
+        debugStream->putChar('\n');
         debugStream->flush();
         break;
     case QtCriticalMsg:
-        debugStream->write("(BibleTime " BT_VERSION ") CRITICAL: ");
+        MY_OUTPUT_LITERAL("(BibleTime " BT_VERSION ") CRITICAL: ");
         debugStream->write(msg);
-        debugStream->write("\nPlease report this bug at "
-                           "https://github.com/bibletime/bibletime/issues"
-                           "\n");
+        MY_OUTPUT_LITERAL("\nPlease report this bug at "
+                          "https://github.com/bibletime/bibletime/issues\n");
         debugStream->flush();
         break;
     case QtFatalMsg:
-        debugStream->write("(BibleTime " BT_VERSION ") FATAL: ");
+        MY_OUTPUT_LITERAL("(BibleTime " BT_VERSION ") FATAL: ");
         debugStream->write(msg);
-        debugStream->write("\nPlease report this bug at "
-                           "https://github.com/bibletime/bibletime/issues"
-                           "\n");
+        MY_OUTPUT_LITERAL("\nPlease report this bug at "
+                          "https://github.com/bibletime/bibletime/issues\n");
 
         // Dump core on purpose (see qInstallMsgHandler documentation):
         debugStream->close();
         std::abort();
     }
+    #undef MY_OUTPUT_LITERAL
 }
 
 } // anonymous namespace
@@ -101,10 +102,10 @@ void myMessageOutput(QtMsgType type,
 BibleTimeApp::BibleTimeApp(int &argc, char **argv)
     : QApplication(argc, argv)
     , m_init(false)
-    , m_debugMode(qgetenv("BIBLETIME_DEBUG") == QByteArray("1"))
+    , m_debugMode(qgetenv("BIBLETIME_DEBUG") == QByteArrayLiteral("1"))
     , m_icons(nullptr)
 {
-    setApplicationName("bibletime");
+    setApplicationName(QStringLiteral("bibletime"));
     setApplicationVersion(BT_VERSION);
 
     // Support for retina displays
@@ -112,7 +113,7 @@ BibleTimeApp::BibleTimeApp(int &argc, char **argv)
 
     #ifdef Q_OS_WIN
     // On Windows, add a path for Qt plugins to be loaded from:
-    addLibraryPath(applicationDirPath() + "/plugins");
+    addLibraryPath(applicationDirPath() + QStringLiteral("/plugins"));
 
     // Must set HOME var on Windows:
     // getenv and qgetenv don't work right on Windows with unicode characters
@@ -126,13 +127,15 @@ BibleTimeApp::BibleTimeApp(int &argc, char **argv)
     // Use the default Qt message handler if --debug is not specified
     // This works with Visual Studio debugger Output Window
     if (m_debugMode) {
-        debugStream.reset(
-                    new QFile(QDir::homePath().append("/BibleTime Debug.txt")));
+        debugStream =
+                std::make_unique<QFile>(
+                    QDir::home().filePath(
+                        QStringLiteral("/BibleTime Debug.txt")));
         debugStream->open(QIODevice::WriteOnly | QIODevice::Text);
         qInstallMessageHandler(myMessageOutput);
     }
     #else
-    debugStream.reset(new QFile);
+    debugStream = std::make_unique<QFile>();
     debugStream->open(stderr, QIODevice::WriteOnly | QIODevice::Text);
     qInstallMessageHandler(myMessageOutput);
     #endif
@@ -144,8 +147,8 @@ BibleTimeApp::~BibleTimeApp() {
         return;
 
     //we can set this safely now because we close now (hopyfully without crash)
-    btConfig().setValue("state/crashedLastTime", false);
-    btConfig().setValue("state/crashedTwoTimes", false);
+    btConfig().setValue(QStringLiteral("state/crashedLastTime"), false);
+    btConfig().setValue(QStringLiteral("state/crashedTwoTimes"), false);
 
     delete CDisplayTemplateMgr::instance();
     CSwordBackend::destroyInstance();
@@ -202,7 +205,8 @@ void BibleTimeApp::initLightDarkPalette() {
         dark = 2
     };
 
-    int lightDarkMode = btConfig().value<int>("GUI/lightDarkMode", 0);
+    auto const lightDarkMode =
+            btConfig().value<int>(QStringLiteral("GUI/lightDarkMode"), 0);
     if (lightDarkMode == LightDarkMode::systemDefault)
         return;
     QPalette p;
