@@ -60,18 +60,6 @@ bool savePlainFile(const QString & filename,
 QIcon const & getIconForModule(const CSwordModuleInfo * module);
 
 /**
-  Creates a new explanation label.
-
-  \param[in] parent the parent widget.
-  \param[in] heading the heading of the label.
-  \param[in] text the text of the label.
-  \returns a new QLabel initialized by initExplanationLabel().
-*/
-QLabel * explanationLabel(QWidget * parent,
-                          const QString & heading,
-                          const QString & text);
-
-/**
   \brief Initializes a QLabel to explain difficult things of dialogs.
 
   The label should be used to explain difficult things of the GUI, e.g. in the
@@ -89,13 +77,6 @@ void initExplanationLabel(QLabel * label,
   \returns whether the character at position "pos" of text is inside an HTML tag.
 */
 bool inHTMLTag(int pos, const QString & text);
-
-/**
-  \param[in] module The module required for the tooltip
-  \returns the remote module's tooltip text.
-*/
-QString remoteModuleToolTip(const CSwordModuleInfo & module,
-                            const QString & localVer);
 
 /**
   \brief Calculates a maximum rendered text width for a widget and a string with

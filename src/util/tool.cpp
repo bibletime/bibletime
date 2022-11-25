@@ -118,15 +118,6 @@ QIcon const & getIconForModule(const CSwordModuleInfo * const module) {
     }
 }
 
-QLabel * explanationLabel(QWidget * const parent,
-                          const QString & heading,
-                          const QString & text)
-{
-    QLabel * const label = new QLabel(parent);
-    initExplanationLabel(label, heading, text);
-    return label;
-}
-
 void initExplanationLabel(QLabel * const label,
                           const QString & heading,
                           const QString & text)
@@ -165,44 +156,6 @@ bool inHTMLTag(const int pos, const QString & text) {
 
     return (i1 > i2) && (i3 < i4);
 }
-
-QString remoteModuleToolTip(const CSwordModuleInfo & module,
-                            const QString & localVer)
-{
-    auto text =
-            QStringLiteral("<p style='white-space:pre'><b>%1</b> ")
-            .arg(module.name());
-
-    if (module.category() == CSwordModuleInfo::Cult)
-        text += QStringLiteral("<small><b>%1</b></small><br/>")
-                .arg(QObject::tr("Take care, this work contains cult / "
-                                 "questionable material!"));
-
-    text += QStringLiteral("<small>(%1)</small><hr/>")
-            .arg(module.config(CSwordModuleInfo::Description));
-
-    if (module.isEncrypted())
-        text += QStringLiteral("%1<br/>")
-                .arg(QObject::tr("Encrypted - needs unlock key"));
-
-    if (!localVer.isEmpty())
-        text += QStringLiteral("<b>%1</b><br/>")
-                .arg(QObject::tr("Updated version available!"));
-
-    if (module.hasVersion())
-        text += QObject::tr("Version: %1")
-                .arg(module.config(CSwordModuleInfo::ModuleVersion));
-
-    // if installed already
-    if (!localVer.isEmpty())
-        text += ' ' + QObject::tr("Installed version: %1").arg(localVer);
-
-    text += QStringLiteral("<br/><small>(%1)</small></p>")
-            .arg(QObject::tr("Double click for more information"));
-
-    return text;
-}
-
 
 int mWidth(const QWidget * const widget, const int mCount) {
     const QString mString(mCount, 'M');
