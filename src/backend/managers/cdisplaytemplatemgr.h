@@ -86,11 +86,6 @@ class CDisplayTemplateMgr {
                              const Settings & settings) const;
 
         /**
-          \returns the name of the default template.
-        */
-        static char const * defaultTemplateName() { return "Blue.css"; }
-
-        /**
           \returns the name of the active template.
         */
         static QString activeTemplateName();

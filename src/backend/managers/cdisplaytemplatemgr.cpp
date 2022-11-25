@@ -42,6 +42,8 @@ inline QString readFileToString(const QString & filename) {
     return f.open(QIODevice::ReadOnly) ? QTextStream(&f).readAll() : QString();
 }
 
+auto const defaultTemplateName = QStringLiteral("Blue.css");
+
 } // anonymous namespace
 
 CDisplayTemplateMgr * CDisplayTemplateMgr::m_instance = nullptr;
@@ -85,9 +87,9 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) :
         }
     }
 
-    if (!m_cssMap.contains(defaultTemplateName())) {
+    if (!m_cssMap.contains(defaultTemplateName)) {
         errorMessage = QObject::tr("Default template \"%1\" not found!")
-                       .arg(defaultTemplateName());
+                       .arg(defaultTemplateName);
         return;
     }
 
@@ -264,7 +266,7 @@ QString CDisplayTemplateMgr::activeTemplateName() {
                                       QString());
     return (tn.isEmpty()
             || !instance()->m_availableTemplateNamesCache.contains(tn))
-           ? defaultTemplateName()
+           ? defaultTemplateName
            : tn;
 }
 
