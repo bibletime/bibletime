@@ -22,102 +22,102 @@ namespace mainMenu { // Main menu
 namespace view { // Main menu->View
 namespace showMainIndex {
 const QKeySequence accel(Qt::Key_F9);
-const char* actionName    = "viewMainIndex_action";
+QString const actionName = QStringLiteral("viewMainIndex_action");
 }
 namespace showInfoDisplay {
 const QKeySequence accel(Qt::Key_F8);
-const char* actionName    = "viewInfoDisplay_action";
+QString const actionName = QStringLiteral("viewInfoDisplay_action");
 }
 } // namespace view {
 
 namespace mainIndex {
 namespace search {
 const QKeySequence accel(Qt::CTRL + Qt::Key_O);
-const char* actionName    = "mainindex_search_action";
+QString const actionName = QStringLiteral("mainindex_search_action");
 }
 namespace searchdefaultbible {
 const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_F);
-const char* actionName    = "mainindex_searchdefaultbible_action";
+QString const actionName = QStringLiteral("mainindex_searchdefaultbible_action");
 }
 } // namespace mainIndex {
 
 namespace window { //mainMenu::window
 namespace loadProfile {
-const char* actionName    = "windowLoadProfile_action";
+QString const actionName = QStringLiteral("windowLoadProfile_action");
 }
 namespace saveProfile {
-const char* actionName    = "windowSaveProfile_action";
+QString const actionName = QStringLiteral("windowSaveProfile_action");
 }
 namespace saveToNewProfile {
 const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_S);
-const char* actionName    = "windowSaveToNewProfile_action";
+QString const actionName = QStringLiteral("windowSaveToNewProfile_action");
 }
 namespace deleteProfile {
-const char* actionName    = "windowDeleteProfile_action";
+QString const actionName = QStringLiteral("windowDeleteProfile_action");
 }
 namespace showFullscreen {
 const QKeySequence accel(Qt::Key_F5);
-const char* actionName    = "windowFullscreen_action";
+QString const actionName = QStringLiteral("windowFullscreen_action");
 }
 namespace arrangementMode {
 const QKeySequence accel;
-const char* actionName    = "windowArrangementMode_action";
+QString const actionName = QStringLiteral("windowArrangementMode_action");
 
 namespace manual {
 const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_M);
-const char* actionName    = "windowArrangementManual_action";
+QString const actionName = QStringLiteral("windowArrangementManual_action");
 }
 namespace autoTileHorizontal {
 const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_H);
-const char* actionName    = "windowAutoTileHorizontal_action";
+QString const actionName = QStringLiteral("windowAutoTileHorizontal_action");
 }
 namespace autoTileVertical {
 const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_G);
-const char* actionName    = "windowAutoTileVertical_action";
+QString const actionName = QStringLiteral("windowAutoTileVertical_action");
 }
 namespace autoTile {
 const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_I);
-const char* actionName    = "windowAutoTile_action";
+QString const actionName = QStringLiteral("windowAutoTile_action");
 }
 namespace autoTabbed {
 const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_T);
-const char* actionName    = "windowAutoTabbed_action";
+QString const actionName = QStringLiteral("windowAutoTabbed_action");
 }
 namespace autoCascade {
 const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_J);
-const char* actionName    = "windowAutoCascade_action";
+QString const actionName = QStringLiteral("windowAutoCascade_action");
 }
 }
 namespace tileHorizontal {
 const QKeySequence accel(Qt::CTRL + Qt::Key_H);
-const char* actionName    = "windowTileHorizontal_action";
+QString const actionName = QStringLiteral("windowTileHorizontal_action");
 }
 namespace tileVertical {
 const QKeySequence accel(Qt::CTRL + Qt::Key_G);
-const char* actionName    = "windowTileVertical_action";
+QString const actionName = QStringLiteral("windowTileVertical_action");
 }
 namespace tile {
 const QKeySequence accel(Qt::CTRL + Qt::Key_I);
-const char* actionName    = "windowTile_action";
+QString const actionName = QStringLiteral("windowTile_action");
 }
 namespace cascade {
 const QKeySequence accel(Qt::CTRL + Qt::Key_J);
-const char* actionName    = "windowCascade_action";
+QString const actionName = QStringLiteral("windowCascade_action");
 }
 namespace close {
 const QKeySequence accel(Qt::CTRL + Qt::Key_W);
-const char* actionName    = "windowClose_action";
+QString const actionName = QStringLiteral("windowClose_action");
 }
 namespace closeAll {
 const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_W);
-const char* actionName    = "windowCloseAll_action";
+QString const actionName = QStringLiteral("windowCloseAll_action");
 }
 }//mainMenu::window
 
 namespace settings { //Main menu->Settings
 namespace swordSetupDialog {
 const QKeySequence accel(Qt::Key_F4);
-const char* actionName    = "options_sword_setup";
+QString const actionName = QStringLiteral("options_sword_setup");
 }
 
 }//mainMenu::settings
@@ -125,15 +125,15 @@ const char* actionName    = "options_sword_setup";
 namespace help { //Main menu->Help
 namespace handbook {
 const QKeySequence accel(Qt::Key_F1);
-const char* actionName    = "helpHandbook_action";
+QString const actionName = QStringLiteral("helpHandbook_action");
 }
 namespace bibleStudyHowTo {
 const QKeySequence accel(Qt::Key_F2);
-const char* actionName    = "helpHowTo_action";
+QString const actionName = QStringLiteral("helpHowTo_action");
 }
 namespace tipOfTheDay {
 const QKeySequence accel(Qt::Key_F3);
-const char* actionName    = "tipOfTheDay_action";
+QString const actionName = QStringLiteral("tipOfTheDay_action");
 }
 }//mainMenu::help
 }  //end of mainMenu
@@ -142,20 +142,20 @@ namespace displaywindows {
 namespace general {
 namespace search {
 const QKeySequence accel(Qt::CTRL + Qt::Key_N);
-const char* actionName    = "window_search_action";
+QString const actionName = QStringLiteral("window_search_action");
 }
 
 namespace backInHistory {
 const QKeySequence accel(Qt::ALT + Qt::Key_Left);
-const char* actionName    = "window_history_back_action";
+QString const actionName = QStringLiteral("window_history_back_action");
 }
 namespace forwardInHistory {
 const QKeySequence accel(Qt::ALT + Qt::Key_Right);
-const char* actionName    = "window_history_forward_action";
+QString const actionName = QStringLiteral("window_history_forward_action");
 }
 namespace findStrongs {
 const QKeySequence accel;
-const char* actionName    = "window_find_strongs_action";
+QString const actionName = QStringLiteral("window_find_strongs_action");
 }
 
 }
@@ -183,7 +183,7 @@ const QKeySequence accel(Qt::CTRL + Qt::SHIFT + Qt::Key_V);
 namespace commentaryWindow {
 namespace syncWindow {
 const QKeySequence accel(Qt::SHIFT + Qt::Key_S);
-const char* actionName = "commentary_syncWindow";
+QString const actionName = QStringLiteral("commentary_syncWindow");
 }
 }
 namespace lexiconWindow {
@@ -198,50 +198,50 @@ const QKeySequence accel(Qt::CTRL + Qt::SHIFT + Qt::Key_V);
 namespace writeWindow {
 namespace saveText {
 const QKeySequence accel;
-const char* actionName  = "writeWindow_saveText";
+QString const actionName = QStringLiteral("writeWindow_saveText");
 }
 namespace restoreText {
 const QKeySequence accel;
-const char* actionName  = "writeWindow_restoreText";
+QString const actionName = QStringLiteral("writeWindow_restoreText");
 }
 namespace deleteEntry {
 const QKeySequence accel;
-const char* actionName  = "writeWindow_deleteEntry";
+QString const actionName = QStringLiteral("writeWindow_deleteEntry");
 }
 
 //formatting buttons
 namespace boldText {
 const QKeySequence accel;
-const char* actionName  = "writeWindow_boldText";
+QString const actionName = QStringLiteral("writeWindow_boldText");
 }
 namespace italicText {
 const QKeySequence accel;
-const char* actionName  = "writeWindow_italicText";
+QString const actionName = QStringLiteral("writeWindow_italicText");
 }
 namespace underlinedText {
 const QKeySequence accel;
-const char* actionName  = "writeWindow_underlineText";
+QString const actionName = QStringLiteral("writeWindow_underlineText");
 }
 
 namespace alignLeft {
 const QKeySequence accel;
-const char* actionName  = "writeWindow_alignLeft";
+QString const actionName = QStringLiteral("writeWindow_alignLeft");
 }
 namespace alignCenter {
 const QKeySequence accel;
-const char* actionName  = "writeWindow_alignCenter";
+QString const actionName = QStringLiteral("writeWindow_alignCenter");
 }
 namespace alignRight {
 const QKeySequence accel;
-const char* actionName  = "writeWindow_alignRight";
+QString const actionName = QStringLiteral("writeWindow_alignRight");
 }
 namespace fontFamily {
 const QKeySequence accel;
-const char* actionName = "writeWindow_fontFamily";
+QString const actionName = QStringLiteral("writeWindow_fontFamily");
 }
 namespace fontSize {
 const QKeySequence accel;
-const char* actionName = "writeWindow_fontSize";
+QString const actionName = QStringLiteral("writeWindow_fontSize");
 }
 }
 }//displayWindows
@@ -249,7 +249,7 @@ const char* actionName = "writeWindow_fontSize";
 namespace mainIndex { // Bookshelf view
 namespace search {
 const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_M);
-const char* actionName    = "GMsearch_action";
+QString const actionName = QStringLiteral("GMsearch_action");
 }
 }//mainIndex
 
