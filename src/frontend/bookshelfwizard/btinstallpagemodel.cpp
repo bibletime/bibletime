@@ -39,10 +39,11 @@ QVariant BtInstallPageModel::data(QModelIndex const & i, int role) const {
                         if (CSwordModuleInfo * imodule =
                                 CSwordBackend::instance()->findModuleByName(
                                         m->name()))
-                            return imodule->config(
-                                        CSwordModuleInfo::ModuleVersion)
-                                   + " => "
-                                   + m->config(CSwordModuleInfo::ModuleVersion);
+                            return QStringLiteral("%1 => %2")
+                                    .arg(imodule->config(
+                                             CSwordModuleInfo::ModuleVersion),
+                                         m->config(
+                                             CSwordModuleInfo::ModuleVersion));
                         return m->config(CSwordModuleInfo::ModuleVersion);
                     }
                     break;
