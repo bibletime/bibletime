@@ -12,6 +12,7 @@
 
 #include "cp1252.h"
 
+#include <QByteArray>
 #include <QTextCodec>
 #include "btassert.h"
 
@@ -19,7 +20,8 @@
 namespace util {
 
 QTextCodec const & cp1252() {
-    static auto const * const codec = QTextCodec::codecForName("Windows-1252");
+    static auto const * const codec =
+            QTextCodec::codecForName(QByteArrayLiteral("Windows-1252"));
     BT_ASSERT(codec);
     return *codec;
 }
