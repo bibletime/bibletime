@@ -46,20 +46,20 @@ bool addSource(sword::InstallSource& source) {
         }
     static_assert(std::is_same_v<decltype(source.type), SWBuf>);
     if (source.type == "FTP") {
-            config["Sources"].insert( std::make_pair(SWBuf("FTPSource"), source.getConfEnt()) );
+            config["Sources"].emplace("FTPSource", source.getConfEnt());
         }
         else if (source.type == "SFTP") {
-            config["Sources"].insert( std::make_pair(SWBuf("SFTPSource"), source.getConfEnt()) );
+            config["Sources"].emplace("SFTPSource", source.getConfEnt());
         }
         else if (source.type == "HTTP") {
-            config["Sources"].insert( std::make_pair(SWBuf("HTTPSource"), source.getConfEnt()) );
+            config["Sources"].emplace("HTTPSource", source.getConfEnt());
         }
         else if (source.type == "HTTPS") {
-            config["Sources"].insert( std::make_pair(SWBuf("HTTPSSource"), source.getConfEnt()) );
+            config["Sources"].emplace("HTTPSSource", source.getConfEnt());
         }
     }
     else if (source.type == "DIR") {
-        config["Sources"].insert( std::make_pair(SWBuf("DIRSource"), source.getConfEnt()) );
+        config["Sources"].emplace("DIRSource", source.getConfEnt());
     }
     config.save();
     return true;
