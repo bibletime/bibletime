@@ -31,24 +31,28 @@ CLexiconReadWindow::CLexiconReadWindow(
 void CLexiconReadWindow::insertKeyboardActions(BtActionCollection * a) {
     auto * actn = new QAction(tr("Next entry"), a);
     actn->setShortcut(CResMgr::displaywindows::lexiconWindow::nextEntry::accel);
-    a->addAction("nextEntry", actn);
+    a->addAction(QStringLiteral("nextEntry"), actn);
 
     actn = new QAction(tr("Previous entry"), a);
     actn->setShortcut(CResMgr::displaywindows::lexiconWindow::previousEntry::accel);
-    a->addAction("previousEntry", actn);
+    a->addAction(QStringLiteral("previousEntry"), actn);
 }
 
 void CLexiconReadWindow::initActions() {
     CDisplayWindow::initActions();
     insertKeyboardActions(actionCollection());
-    initAddAction("nextEntry", this, &CLexiconReadWindow::nextEntry);
-    initAddAction("previousEntry", this, &CLexiconReadWindow::previousEntry);
-    m_actionCollection->readShortcuts("Lexicon shortcuts");
+    initAddAction(QStringLiteral("nextEntry"),
+                  this,
+                  &CLexiconReadWindow::nextEntry);
+    initAddAction(QStringLiteral("previousEntry"),
+                  this,
+                  &CLexiconReadWindow::previousEntry);
+    m_actionCollection->readShortcuts(QStringLiteral("Lexicon shortcuts"));
 }
 
 void CLexiconReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
     CDisplayWindow::reload(reason);
-    actionCollection()->readShortcuts("Lexicon shortcuts");
+    actionCollection()->readShortcuts(QStringLiteral("Lexicon shortcuts"));
 }
 
 void CLexiconReadWindow::nextEntry()
