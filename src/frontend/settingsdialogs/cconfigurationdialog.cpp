@@ -21,7 +21,7 @@
 
 
 namespace {
-QString const GeometryKey = "GUI/SettingsDialog/geometry";
+auto const GeometryKey = QStringLiteral("GUI/SettingsDialog/geometry");
 } // anonymous namespace
 
 CConfigurationDialog::CConfigurationDialog(QWidget * const parent,
