@@ -34,9 +34,9 @@
 
 
 namespace {
-QString const GeometryKey = "GUI/BookshelfWizard/geometry";
-QString const SourcesKey = "GUI/BookshelfWizard/sources";
-QString const LanguagesKey = "GUI/BookshelfWizard/languages";
+auto const GeometryKey = QStringLiteral("GUI/BookshelfWizard/geometry");
+auto const SourcesKey = QStringLiteral("GUI/BookshelfWizard/sources");
+auto const LanguagesKey = QStringLiteral("GUI/BookshelfWizard/languages");
 bool autoSourcesUpdate = true;
 } // anonymous namespace
 
