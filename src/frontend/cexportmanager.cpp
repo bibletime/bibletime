@@ -60,7 +60,7 @@ CExportManager::CExportManager(bool const showProgress,
         ? [&progressLabel]{
             auto dialog =
                     std::make_unique<QProgressDialog>(nullptr, Qt::Dialog);
-            dialog->setWindowTitle("BibleTime");
+            dialog->setWindowTitle(QStringLiteral("BibleTime"));
             dialog->setLabelText(progressLabel);
             return dialog;
         }()
@@ -89,9 +89,12 @@ bool CExportManager::saveKey(CSwordKey const * const key,
             text = render->renderKeyRange(vk->lowerBound(),
                                           vk->upperBound(),
                                           modules);
-            QString chapterTitle  = vk->bookName() + " " + QString::number(vk->chapter());
-            text.replace("#CHAPTERTITLE#", chapterTitle);
-            text.replace("#TEXT_ALIGN#", "right");
+            text.replace(QStringLiteral("#CHAPTERTITLE#"),
+                         QStringLiteral("%1 %2")
+                         .arg(vk->bookName())
+                         .arg(QString::number(vk->chapter())));
+            text.replace(QStringLiteral("#TEXT_ALIGN#"),
+                         QStringLiteral("right"));
         } else { // no range supported
             text = render->renderSingleKey(key->key(), modules);
         }
@@ -395,11 +398,11 @@ const QString CExportManager::getSaveFileName(const Format format) {
             filter = QObject::tr("Text files") + " (*.txt);;";
             break;
     }
-    filter += QObject::tr("All files") + " (*)";
+    filter += QObject::tr("All files") + QStringLiteral(" (*)");
 
     return QFileDialog::getSaveFileName(nullptr,
                                         QObject::tr("Save file"),
-                                        "",
+                                        QString(),
                                         filter,
                                         nullptr);
 }
