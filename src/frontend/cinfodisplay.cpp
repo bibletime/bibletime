@@ -99,8 +99,8 @@ void CInfoDisplay::updateColors() {
 
 void CInfoDisplay::setInfo(const QString & renderedData, const QString & lang) {
     QString text = Rendering::formatInfo(renderedData, lang);
-    text.replace("#CHAPTERTITLE#", "");
-    text.replace("#TEXT_ALIGN#", "left");
+    text.replace(QStringLiteral("#CHAPTERTITLE#"), QString());
+    text.replace(QStringLiteral("#TEXT_ALIGN#"), QStringLiteral("left"));
     text = ColorManager::replaceColors(text);
     m_textBrowser->setText(text);
 }
@@ -115,7 +115,7 @@ void CInfoDisplay::setInfo(const Rendering::ListInfoData & list) {
         return;
 
     if (list.isEmpty()) {
-        m_textBrowser->setText("");
+        m_textBrowser->setText(QString());
         return;
     }
 
