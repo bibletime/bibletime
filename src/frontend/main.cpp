@@ -82,32 +82,33 @@ int parseCommandLine(bool & showDebugMessages,
     QStringList args = BibleTimeApp::arguments();
     for (int i = 1; i < args.size(); i++) {
         const QString &arg = args.at(i);
-        if (arg == "--help"
-                || arg == "-h"
-                || arg == "/?"
-                || arg == "/h")
+        if (arg == QStringLiteral("--help")
+                || arg == QStringLiteral("-h")
+                || arg == QStringLiteral("/?")
+                || arg == QStringLiteral("/h"))
         {
             printHelp(args.at(0));
             return -1;
-        } else if (arg == "--version"
-                   || arg == "-V"
-                   || arg == "/V")
+        } else if (arg == QStringLiteral("--version")
+                   || arg == QStringLiteral("-V")
+                   || arg == QStringLiteral("/V"))
         {
             std::cout << "BibleTime " BT_VERSION << std::endl;
             return -1;
-        } else if (arg == "--debug") {
+        } else if (arg == QStringLiteral("--debug")) {
             showDebugMessages = true;
-        } else if (arg == "--ignore-session") {
+        } else if (arg == QStringLiteral("--ignore-session")) {
             ignoreSession = true;
-        } else if (arg == "--open-default-bible") {
+        } else if (arg == QStringLiteral("--open-default-bible")) {
             i++;
             if (i < args.size()) {
                 openBibleKey = args.at(i);
             } else {
-                std::cerr << qPrintable(QObject::tr(
-                                            "Error: %1 expects an argument.")
-                                        .arg("--open-default-bible")) << ' '
-                          << qPrintable(QObject::tr("See --help for details."))
+                std::cerr
+                        << qPrintable(
+                               QObject::tr("Error: %1 expects an argument. See "
+                                           "--help for details.")
+                               .arg(QStringLiteral("--open-default-bible")))
                           << std::endl;
                 return 1;
             }
@@ -204,7 +205,7 @@ int main(int argc, char* argv[]) {
     QLocale const defaultLocale;
     QTranslator qtTranslator;
     if (qtTranslator.load(defaultLocale,
-                          "qt_",
+                          QStringLiteral("qt_"),
                           QString(),
                           QLibraryInfo::location(
                               QLibraryInfo::TranslationsPath)))
@@ -213,7 +214,7 @@ int main(int argc, char* argv[]) {
     QTranslator bibleTimeTranslator;
     if (bibleTimeTranslator.load(
                 defaultLocale,
-                "bibletime_ui_",
+                QStringLiteral("bibletime_ui_"),
                 QString(),
                 DU::getLocaleDir().canonicalPath()))
         app.installTranslator(&bibleTimeTranslator);
@@ -230,8 +231,11 @@ int main(int argc, char* argv[]) {
     mainWindow->setAttribute(Qt::WA_DeleteOnClose);
 
     // a new BibleTime version was installed (maybe a completely new installation)
-    if (btConfig().value<QString>("bibletimeVersion", BT_VERSION) != BT_VERSION) {
-        btConfig().setValue("bibletimeVersion", QString(BT_VERSION));
+    if (btConfig().value<QString>(QStringLiteral("bibletimeVersion"),
+                                  BT_VERSION) != BT_VERSION)
+    {
+        btConfig().setValue(QStringLiteral("bibletimeVersion"),
+                            QString(BT_VERSION));
         mainWindow->saveConfigSettings();
     }
 
@@ -246,7 +250,8 @@ int main(int argc, char* argv[]) {
     // The following must be done after the bibletime window is visible:
     mainWindow->processCommandline(ignoreSession, openBibleKey);
 
-    if (!showWelcome && btConfig().value<bool>("GUI/showTipAtStartup", true))
+    if (!showWelcome
+        && btConfig().value<bool>(QStringLiteral("GUI/showTipAtStartup"), true))
         mainWindow->slotOpenTipDialog();
 
     return app.exec();
