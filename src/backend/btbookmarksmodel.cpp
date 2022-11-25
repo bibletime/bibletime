@@ -374,7 +374,7 @@ public: // methods:
         if (file.open(QIODevice::ReadOnly)) {
             QTextStream t;
             t.setAutoDetectUnicode(false);
-            t.setCodec(QTextCodec::codecForName("UTF-8"));
+            t.setCodec(QTextCodec::codecForName(QByteArrayLiteral("UTF-8")));
             t.setDevice(&file);
             xml = t.readAll();
             file.close();
@@ -761,9 +761,10 @@ bool BtBookmarksModel::save(QString fileName, const QModelIndex & rootItem) {
     if (fileName.isEmpty())
         fileName = BtBookmarksModelPrivate::defaultBookmarksFile();
 
-    util::tool::savePlainFile(fileName,
-                              serializedTree,
-                              QTextCodec::codecForName("UTF-8"));
+    util::tool::savePlainFile(
+                fileName,
+                serializedTree,
+                QTextCodec::codecForName(QByteArrayLiteral("UTF-8")));
 
     if(d->m_saveTimer.isActive())
         d->m_saveTimer.stop();
