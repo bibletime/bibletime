@@ -48,8 +48,9 @@
 namespace {
 
 QString fileDialogFilter() {
-    return QObject::tr("BibleTime bookmark files") + " (*.btb);;"
-           + QObject::tr("All files") + " (*)";
+    return QStringLiteral("%1 (*.btb);;%2 (*)")
+            .arg(QObject::tr("BibleTime bookmark files"),
+                 QObject::tr("All files"));
 }
 
 } // anonymous namespace
@@ -61,7 +62,8 @@ CBookmarkIndex::CBookmarkIndex(QWidget * const parent)
 {
     setMouseTracking(true);
     m_magTimer.setSingleShot(true);
-    m_magTimer.setInterval(btConfig().value<int>("GUI/magDelay", 400));
+    m_magTimer.setInterval(
+                btConfig().value<int>(QStringLiteral("GUI/magDelay"), 400));
     setContextMenuPolicy(Qt::CustomContextMenu);
     setHeaderHidden(true);
 
@@ -133,7 +135,7 @@ CBookmarkIndex::CBookmarkIndex(QWidget * const parent)
                       BT_ASSERT(m_bookmarksModel->isBookmark(index));
                       auto * const module = m_bookmarksModel->module(index);
                       BtEditBookmarkDialog d(
-                              QString::fromLatin1("%1 (%2)")
+                              QStringLiteral("%1 (%2)")
                                   .arg(m_bookmarksModel->key(index))
                                   .arg(module
                                        ? module->name()
@@ -174,7 +176,7 @@ CBookmarkIndex::CBookmarkIndex(QWidget * const parent)
                               QFileDialog::getOpenFileName(
                                       nullptr,
                                       QObject::tr("Import bookmarks"),
-                                      "",
+                                      QString(),
                                       fileDialogFilter());
                       if (!fileName.isEmpty())
                           m_bookmarksModel->load(fileName, currentIndex());
@@ -187,7 +189,7 @@ CBookmarkIndex::CBookmarkIndex(QWidget * const parent)
                               QFileDialog::getSaveFileName(
                                   nullptr,
                                   QObject::tr("Export Bookmarks"),
-                                  "",
+                                  QString(),
                                   fileDialogFilter());
                       if (!fileName.isEmpty())
                           m_bookmarksModel->save(fileName, currentIndex());
@@ -307,8 +309,10 @@ CBookmarkIndex::CBookmarkIndex(QWidget * const parent)
                        {
                            Q_EMIT magInfoProvided(
                                Rendering::CrossReference,
-                               module->name() + ":"
-                               + m_bookmarksModel->key(itemUnderPointer));
+                               QStringLiteral("%1:%2")
+                                       .arg(module->name(),
+                                            m_bookmarksModel->key(
+                                                itemUnderPointer)));
                        } else {
                            Q_EMIT magInfoProvided(
                                        Rendering::Text,
@@ -357,7 +361,7 @@ QMimeData * CBookmarkIndex::dragObject() {
 }
 
 void CBookmarkIndex::dragEnterEvent(QDragEnterEvent * event) {
-    if (event->mimeData()->hasFormat("BibleTime/Bookmark")) {
+    if (event->mimeData()->hasFormat(QStringLiteral("BibleTime/Bookmark"))) {
         event->acceptProposedAction();
         setState(DraggingState);
     } else {
