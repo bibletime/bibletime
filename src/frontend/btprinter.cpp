@@ -81,14 +81,14 @@ QString BtPrinter::renderEntry(KeyTreeItem const & i, CSwordKey * key) const {
             static_cast<BtPrinter::KeyTreeItem const *>(&i);
 
     if (printItem->hasAlternativeContent()) {
-        QString ret =
-                QString::fromLatin1("<div class=\"entry\"><div class=\""
-                                    "rangeheading\">%1</div>").arg(
-                                            printItem->getAlternativeContent());
+        auto ret =
+                QStringLiteral(
+                    "<div class=\"entry\"><div class=\"rangeheading\">%1</div>")
+                .arg(printItem->getAlternativeContent());
         if (!i.childList().empty())
             for (auto const & item : i.childList())
                 ret.append(CDisplayRendering::renderEntry(item));
-        ret.append("</div>");
+        ret.append(QStringLiteral("</div>"));
         return ret;
     }
     return CDisplayRendering::renderEntry(i);
@@ -101,7 +101,7 @@ QString BtPrinter::finishText(QString const & text, KeyTree const & tree) const
 
     CDisplayTemplateMgr::Settings settings;
     //settings.modules = modules;
-    settings.pageCSS_ID = "printer";
+    settings.pageCSS_ID = QStringLiteral("printer");
     if (modules.count() == 1)
         settings.langAbbrev = modules.first()->language()->abbrev();
 
