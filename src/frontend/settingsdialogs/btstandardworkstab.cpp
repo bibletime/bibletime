@@ -35,7 +35,8 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
     mainLayout->setSpacing(2);
 
     m_explanationLabel = new QLabel(this);
-    m_explanationLabel->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Preferred);
+    m_explanationLabel->setSizePolicy(QSizePolicy::MinimumExpanding,
+                                      QSizePolicy::Preferred);
     m_explanationLabel->setMaximumHeight(50);
     m_explanationLabel->setMinimumWidth(300);
     mainLayout->addWidget(m_explanationLabel);
@@ -77,12 +78,17 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
                 break;
             case CSwordModuleInfo::Lexicon: {
                 bool inserted = false;
-                auto lexModule = qobject_cast<CSwordLexiconModuleInfo const *>(m);
-                if (m->has(CSwordModuleInfo::HebrewDef) && lexModule->hasStrongsKeys()) {
+                auto const lexModule =
+                        qobject_cast<CSwordLexiconModuleInfo const *>(m);
+                if (m->has(CSwordModuleInfo::HebrewDef)
+                    && lexModule->hasStrongsKeys())
+                {
                     m_standardHebrewStrongsLexiconCombo->addItem(modDescript);
                     inserted = true;
                 }
-                if (m->has(CSwordModuleInfo::GreekDef) && lexModule->hasStrongsKeys()) {
+                if (m->has(CSwordModuleInfo::GreekDef)
+                    && lexModule->hasStrongsKeys())
+                {
                     m_standardGreekStrongsLexiconCombo->addItem(modDescript);
                     inserted = true;
                 }
@@ -99,7 +105,8 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
                     inserted = true;
                 }
 
-                if (!inserted) {    //daily dvotionals, striong lexicons etc. are not very useful for word lookups
+                if (!inserted) { // daily devotionals, strong lexicons etc. are
+                                 // not very useful for word lookups
                     m_standardLexiconCombo->addItem(modDescript);
                 }
                 break;
@@ -109,7 +116,8 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
         } //switch
     } //for
 
-    //using two lists and one loop is better than six loops with almost the same code :)
+    // using two lists and one loop is better than six loops with almost the
+    // same code :)
     QList<QComboBox*> comboList;
     QStringList moduleList;
 
@@ -151,7 +159,8 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
 #define STANDARD_WORKS_SET_DEFAULT(name) \
     btConfig().setDefaultSwordModuleByType(\
         #name, \
-        CSwordBackend::instance()->findModuleByDescription(m_ ## name ## Combo->currentText()) \
+        CSwordBackend::instance()->findModuleByDescription( \
+            m_ ## name ## Combo->currentText()) \
     )
 
 void BtStandardWorksTab::save() {
@@ -168,38 +177,64 @@ void BtStandardWorksTab::save() {
 void BtStandardWorksTab::retranslateUi() {
     util::tool::initExplanationLabel(
         m_explanationLabel, QString(),
-        tr("Standard works are used when no particular work is specified, for example "
-           "when a hyperlink into a Bible or lexicon was clicked."));
+        tr("Standard works are used when no particular work is specified, for "
+           "example when a hyperlink into a Bible or lexicon was clicked."));
 
     m_standardBibleLabel->setText(tr("Bible:"));
     m_standardBibleCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    m_standardBibleCombo->setToolTip(tr("The standard Bible is used when a hyperlink into a Bible is clicked"));
+    m_standardBibleCombo->setToolTip(
+                tr("The standard Bible is used when a hyperlink into a Bible "
+                   "is clicked"));
 
     m_standardCommentaryLabel->setText(tr("Commentary:"));
     m_standardCommentaryCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    m_standardCommentaryCombo->setToolTip(tr("The standard commentary is used when a hyperlink into a commentary is clicked"));
+    m_standardCommentaryCombo->setToolTip(
+                tr("The standard commentary is used when a hyperlink into a "
+                   "commentary is clicked"));
 
     m_standardLexiconLabel->setText(tr("Lexicon:"));
     m_standardLexiconCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    m_standardLexiconCombo->setToolTip(tr("The standard lexicon is used when a hyperlink into a lexicon is clicked"));
+    m_standardLexiconCombo->setToolTip(
+                tr("The standard lexicon is used when a hyperlink into a "
+                   "lexicon is clicked"));
 
     m_standardDailyDevotionalLabel->setText(tr("Daily devotional:"));
-    m_standardDailyDevotionalCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    m_standardDailyDevotionalCombo->setToolTip(tr("The standard devotional will be used to display a short start up devotional"));
+    m_standardDailyDevotionalCombo->setSizeAdjustPolicy(
+                QComboBox::AdjustToContents);
+    m_standardDailyDevotionalCombo->setToolTip(
+                tr("The standard devotional will be used to display a short "
+                   "start up devotional"));
 
-    m_standardHebrewStrongsLexiconLabel->setText(tr("Hebrew Strong's lexicon:"));
-    m_standardHebrewStrongsLexiconCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    m_standardHebrewStrongsLexiconCombo->setToolTip(tr("The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked"));
+    m_standardHebrewStrongsLexiconLabel->setText(
+                tr("Hebrew Strong's lexicon:"));
+    m_standardHebrewStrongsLexiconCombo->setSizeAdjustPolicy(
+                QComboBox::AdjustToContents);
+    m_standardHebrewStrongsLexiconCombo->setToolTip(
+                tr("The standard Hebrew lexicon is used when a hyperlink into "
+                   "a Hebrew lexicon is clicked"));
 
     m_standardGreekStrongsLexiconLabel->setText(tr("Greek Strong's lexicon:"));
-    m_standardGreekStrongsLexiconCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    m_standardGreekStrongsLexiconCombo->setToolTip(tr("The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked"));
+    m_standardGreekStrongsLexiconCombo->setSizeAdjustPolicy(
+                QComboBox::AdjustToContents);
+    m_standardGreekStrongsLexiconCombo->setToolTip(
+                tr("The standard Greek lexicon is used when a hyperlink into a "
+                   "Greek lexicon is clicked"));
 
-    m_standardHebrewMorphLexiconLabel->setText(tr("Hebrew morphological lexicon:"));
-    m_standardHebrewMorphLexiconCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    m_standardHebrewMorphLexiconCombo->setToolTip(tr("The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked"));
+    m_standardHebrewMorphLexiconLabel->setText(
+                tr("Hebrew morphological lexicon:"));
+    m_standardHebrewMorphLexiconCombo->setSizeAdjustPolicy(
+                QComboBox::AdjustToContents);
+    m_standardHebrewMorphLexiconCombo->setToolTip(
+                tr("The standard morphological lexicon for Hebrew texts is "
+                   "used when a hyperlink of a morphological tag in a Hebrew "
+                   "text is clicked"));
 
-    m_standardGreekMorphLexiconLabel->setText(tr("Greek morphological lexicon:"));
-    m_standardGreekMorphLexiconCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    m_standardGreekMorphLexiconCombo->setToolTip(tr("The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked"));
+    m_standardGreekMorphLexiconLabel->setText(
+                tr("Greek morphological lexicon:"));
+    m_standardGreekMorphLexiconCombo->setSizeAdjustPolicy(
+                QComboBox::AdjustToContents);
+    m_standardGreekMorphLexiconCombo->setToolTip(
+                tr("The standard morphological lexicon for Greek texts is used "
+                   "when a hyperlink of a morphological tag in a Greek text is "
+                   "clicked"));
 }
