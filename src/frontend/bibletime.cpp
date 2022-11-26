@@ -146,28 +146,6 @@ BibleTime::~BibleTime() {
     saveProfile();
 }
 
-namespace {
-
-CDisplayWindow * createReadInstance(QList<CSwordModuleInfo *> const modules,
-                                    CMDIArea * const parent)
-{
-    switch (modules.first()->type()) {
-        case CSwordModuleInfo::Bible:
-            return new CBibleReadWindow(modules, parent);
-        case CSwordModuleInfo::Commentary:
-            return new CCommentaryReadWindow(modules, parent);
-        case CSwordModuleInfo::Lexicon:
-            return new CLexiconReadWindow(modules, parent);
-        case CSwordModuleInfo::GenericBook:
-            return new CBookReadWindow(modules, parent);
-        default:
-            qFatal("unknown module type");
-            std::terminate();
-    }
-}
-
-} // anonymous namespace
-
 /** \brief Creates a new presenter in the MDI area according to the type of the
             module. */
 CDisplayWindow* BibleTime::createReadDisplayWindow(
@@ -175,13 +153,30 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(
         QString const & key)
 {
     qApp->setOverrideCursor(QCursor(Qt::WaitCursor));
-    auto * const displayWindow = createReadInstance(modules, m_mdi);
-    if (displayWindow) {
-        displayWindow->init();
-        m_mdi->addSubWindow(displayWindow);
-        displayWindow->show();
-        displayWindow->lookupKey(key);
+
+    CDisplayWindow * displayWindow;
+    switch (modules.first()->type()) {
+        case CSwordModuleInfo::Bible:
+            displayWindow = new CBibleReadWindow(modules, m_mdi);
+            break;
+        case CSwordModuleInfo::Commentary:
+            displayWindow = new CCommentaryReadWindow(modules, m_mdi);
+            break;
+        case CSwordModuleInfo::Lexicon:
+            displayWindow = new CLexiconReadWindow(modules, m_mdi);
+            break;
+        case CSwordModuleInfo::GenericBook:
+            displayWindow = new CBookReadWindow(modules, m_mdi);
+            break;
+        default:
+            qFatal("unknown module type");
+            std::terminate();
     }
+    displayWindow->init();
+    m_mdi->addSubWindow(displayWindow);
+    displayWindow->show();
+    displayWindow->lookupKey(key);
+
     /* We have to process pending events here, otherwise displayWindow is not
        fully painted. */
     qApp->processEvents();
