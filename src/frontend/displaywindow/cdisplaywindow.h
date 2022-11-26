@@ -211,13 +211,10 @@ protected:
     void setKeyChooser( CKeyChooser* ck );
 
     /** Returns the module chooser bar. */
-    BtModuleChooserBar * moduleChooserBar() const { return m_moduleChooserBar; }
+    BtModuleChooserBar * moduleChooserBar();
 
     /** Lookup the given key.*/
     virtual void lookupSwordKey(CSwordKey *);
-
-    /** Sets the module chooser bar.*/
-    void setModuleChooserBar( BtModuleChooserBar* bar );
 
     QToolBar * headerBar() const { return m_headerBar; }
 
@@ -307,7 +304,7 @@ private:
     CKeyChooser* m_keyChooser;
     CSwordKey* m_swordKey;
     bool m_isInitialized = false; ///< Whether init() has been called
-    BtModuleChooserBar* m_moduleChooserBar;
+    BtModuleChooserBar* m_moduleChooserBar = nullptr;
     QToolBar* m_mainToolBar = nullptr;
     QToolBar* m_buttonsToolBar = nullptr;
     QToolBar* m_headerBar;

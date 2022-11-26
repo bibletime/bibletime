@@ -468,10 +468,10 @@ void CDisplayWindow::initView() {
                                               m_swordKey,
                                               mainToolBar()));
 
-    // Create the Works toolbar
-    setModuleChooserBar( new BtModuleChooserBar(this));
-    moduleChooserBar()->setModules(getModuleList(), modules().first()->type(), this);
-    addToolBar(moduleChooserBar());
+    // Add the Works toolbar
+    auto * const worksToolBar = moduleChooserBar();
+    worksToolBar->setModules(getModuleList(), modules().first()->type(), this);
+    addToolBar(worksToolBar);
 
     // Add the Tools toolbar
     addToolBar(buttonsToolBar());
@@ -740,23 +740,18 @@ void CDisplayWindow::lookupSwordKey(CSwordKey * newKey) {
     setWindowTitle(windowCaption());
 }
 
-/** Sets the module chooser bar. */
-void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
-    if (m_moduleChooserBar) {
-        m_moduleChooserBar->deleteLater();
-    }
-
-    //if a new bar should be set!
-    if (bar) {
-        m_moduleChooserBar = bar;
-        bar->setWindowTitle(tr("Work chooser buttons"));
-        bar->setLayoutDirection(Qt::LeftToRight);
-        bar->setVisible(
+BtModuleChooserBar * CDisplayWindow::moduleChooserBar() {
+    if (!m_moduleChooserBar) {
+        m_moduleChooserBar = new BtModuleChooserBar(this);
+        m_moduleChooserBar->setWindowTitle(tr("Work chooser buttons"));
+        m_moduleChooserBar->setLayoutDirection(Qt::LeftToRight);
+        m_moduleChooserBar->setVisible(
                     btConfig().session().value<bool>(
                         QStringLiteral(
                             "GUI/showTextWindowModuleSelectorButtons"),
                         true));
     }
+    return m_moduleChooserBar;
 }
 
 /** Initialize the window. Call this method from the outside, because calling this in the constructor is not possible! */
