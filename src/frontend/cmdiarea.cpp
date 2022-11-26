@@ -48,6 +48,8 @@ CMDIArea::CMDIArea(BibleTime * parent)
         , m_activeWindow(nullptr)
         , m_bibleTime(parent)
 {
+    setFocusPolicy(Qt::ClickFocus);
+
     // Set document-style tabs (for Mac):
     setDocumentMode(true);
 

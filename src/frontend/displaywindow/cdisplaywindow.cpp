@@ -761,9 +761,7 @@ bool CDisplayWindow::init() {
     auto const & conf = btConfig();
 
     setWindowTitle(windowCaption());
-    //setup focus stuff.
     setFocusPolicy(Qt::ClickFocus);
-    parentWidget()->setFocusPolicy(Qt::ClickFocus);
     initActions();
     initToolbars();
     if (!conf.session().value<bool>(
