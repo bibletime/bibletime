@@ -216,8 +216,6 @@ protected:
     /** Lookup the given key.*/
     virtual void lookupSwordKey(CSwordKey *);
 
-    QToolBar * headerBar() const { return m_headerBar; }
-
     /** Initializes the signal / slot connections of this display window.*/
     virtual void initConnections();
 

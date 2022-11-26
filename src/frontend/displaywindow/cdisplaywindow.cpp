@@ -86,8 +86,8 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
     BT_CONNECT(mainwindow, &BibleTime::toggledTextWindowHeader,
                this, // Needed
                [this](bool const show){
-                   if (auto * const b = headerBar())
-                       b->setVisible(show);
+                   if (m_headerBar)
+                       m_headerBar->setVisible(show);
                });
     BT_CONNECT(mainwindow, &BibleTime::toggledTextWindowNavigator,
                this, // Needed
@@ -487,7 +487,7 @@ void CDisplayWindow::initView() {
                     QStringLiteral("GUI/showTextWindowHeaders"),
                     true));
 
-    addToolBar(headerBar());
+    addToolBar(m_headerBar);
 }
 
 void CDisplayWindow::initToolbars() {
@@ -508,7 +508,7 @@ void CDisplayWindow::initToolbars() {
 
     // Text Header toolbar
     BtTextWindowHeader *h = new BtTextWindowHeader(modules().first()->type(), getModuleList(), this);
-    headerBar()->addWidget(h);
+    m_headerBar->addWidget(h);
 }
 
 void CDisplayWindow::setupPopupMenu() {
