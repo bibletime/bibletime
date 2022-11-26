@@ -225,13 +225,7 @@ protected:
     /** Initialize the toolbars.*/
     virtual void initToolbars();
 
-    virtual void setupPopupMenu();
-
-    /** Update the status of the popup menu entries. */
-    virtual void updatePopupMenu();
-
-    /** Returns the installed RMB popup menu.*/
-    QMenu* popup();
+    virtual QMenu * newDisplayWidgetPopupMenu();
 
     /** Called to add actions to mainWindow toolbars */
     virtual void setupMainWindowToolBars();
@@ -306,7 +300,6 @@ private:
     QToolBar* m_mainToolBar = nullptr;
     QToolBar* m_buttonsToolBar = nullptr;
     QToolBar* m_headerBar;
-    QMenu* m_popupMenu;
     BtModelViewReadDisplay * m_displayWidget = nullptr;
     BTHistory* m_history;
 };

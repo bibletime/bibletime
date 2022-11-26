@@ -62,7 +62,6 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
       m_mainToolBar(nullptr),
       m_buttonsToolBar(nullptr),
       m_headerBar(nullptr),
-      m_popupMenu(nullptr),
       m_displayWidget(nullptr),
       m_history(nullptr) {
 
@@ -511,51 +510,52 @@ void CDisplayWindow::initToolbars() {
     m_headerBar->addWidget(h);
 }
 
-void CDisplayWindow::setupPopupMenu() {
-    auto & popupMenu = *popup();
-    popupMenu.setTitle(tr("Lexicon window"));
-    popupMenu.setIcon(util::tool::getIconForModule(modules().first()));
-    popupMenu.addAction(m_actions.findText);
-    popupMenu.addAction(m_actions.findStrongs);
-    popupMenu.addSeparator();
+QMenu * CDisplayWindow::newDisplayWidgetPopupMenu() {
+    auto * const popupMenu = new QMenu(this);
+    BT_CONNECT(popupMenu, &QMenu::aboutToShow,
+                [this] {
+                    // enable the action depending on the supported module features
+                    m_actions.findStrongs->setEnabled(
+                                !m_displayWidget->getCurrentNodeInfo().isNull());
 
-    m_actions.copyMenu = new QMenu(tr("Copy..."), &popupMenu);
+                    bool const hasActiveAnchor = m_displayWidget->hasActiveAnchor();
+                    m_actions.copy.reference->setEnabled(hasActiveAnchor);
+
+                    m_actions.print.reference->setEnabled(hasActiveAnchor);
+
+                    m_actions.copy.selectedText->setEnabled(hasSelectedText());
+                });
+    popupMenu->setTitle(tr("Lexicon window"));
+    popupMenu->setIcon(util::tool::getIconForModule(modules().first()));
+    popupMenu->addAction(m_actions.findText);
+    popupMenu->addAction(m_actions.findStrongs);
+    popupMenu->addSeparator();
+
+    m_actions.copyMenu = new QMenu(tr("Copy..."), popupMenu);
     m_actions.copyMenu->addAction(m_actions.copy.selectedText);
     m_actions.copyMenu->addAction(m_actions.copy.byReferences);
     m_actions.copyMenu->addSeparator();
     m_actions.copyMenu->addAction(m_actions.copy.reference);
     m_actions.copyMenu->addAction(m_actions.copy.entry);
-    popupMenu.addMenu(m_actions.copyMenu);
+    popupMenu->addMenu(m_actions.copyMenu);
 
     m_actions.saveMenu = new QMenu(
                 tr("Save..."),
-                &popupMenu
+                popupMenu
                 );
     m_actions.saveMenu->addAction(m_actions.save.entryAsPlain);
     m_actions.saveMenu->addAction(m_actions.save.entryAsHTML);
 
-    popupMenu.addMenu(m_actions.saveMenu);
+    popupMenu->addMenu(m_actions.saveMenu);
 
     m_actions.printMenu = new QMenu(
                 tr("Print..."),
-                &popupMenu
+                popupMenu
                 );
     m_actions.printMenu->addAction(m_actions.print.reference);
     m_actions.printMenu->addAction(m_actions.print.entry);
-    popupMenu.addMenu(m_actions.printMenu);
-}
-
-void CDisplayWindow::updatePopupMenu() {
-    //enable the action depending on the supported module features
-    m_actions.findStrongs->setEnabled(
-                !m_displayWidget->getCurrentNodeInfo().isNull());
-
-    bool const hasActiveAnchor = m_displayWidget->hasActiveAnchor();
-    m_actions.copy.reference->setEnabled(hasActiveAnchor);
-
-    m_actions.print.reference->setEnabled(hasActiveAnchor);
-
-    m_actions.copy.selectedText->setEnabled(hasSelectedText());
+    popupMenu->addMenu(m_actions.printMenu);
+    return popupMenu;
 }
 
 void CDisplayWindow::setupMainWindowToolBars() {
@@ -772,9 +772,8 @@ bool CDisplayWindow::init() {
     clearMainWindowToolBars();
     initConnections();
 
-    setupPopupMenu();
     if (m_displayWidget)
-        m_displayWidget->installPopup(m_popupMenu);
+        m_displayWidget->installPopup(newDisplayWidgetPopupMenu());
 
     m_filterOptions = conf.getFilterOptions();
     m_displayOptions = conf.getDisplayOptions();
@@ -879,17 +878,6 @@ void CDisplayWindow::lookupKey( const QString& keyName ) {
         BT_ASSERT(mainWindow);
         mainWindow->createReadDisplayWindow(m, keyName);
     }
-}
-
-///** Returns the installed popup menu. */
-QMenu* CDisplayWindow::popup() {
-    // qWarning("CDisplayWindow::popup()");
-    if (!m_popupMenu) {
-        m_popupMenu = new QMenu(this);
-        BT_CONNECT(m_popupMenu, &QMenu::aboutToShow,
-                   [this]{ updatePopupMenu(); });
-    }
-    return m_popupMenu;
 }
 
 /** Sets the display widget used by this display window. */

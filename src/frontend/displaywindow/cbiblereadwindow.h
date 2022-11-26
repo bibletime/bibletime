@@ -49,8 +49,7 @@ protected: // methods:
 
     void initActions() override;
     void initView() override;
-    void setupPopupMenu() override;
-    void updatePopupMenu() override;
+    QMenu * newDisplayWidgetPopupMenu() override;
     bool eventFilter( QObject* o, QEvent* e) override;
 
     struct {

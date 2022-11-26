@@ -204,19 +204,38 @@ void CBibleReadWindow::initView() {
     parentWidget()->installEventFilter(this);
 }
 
-/** Reimplementation. */
-void CBibleReadWindow::setupPopupMenu() {
-    auto & popupMenu = *popup();
-    popupMenu.setTitle(tr("Bible window"));
-    popupMenu.setIcon(util::tool::getIconForModule(modules().first()) );
-    popupMenu.addAction(m_actions.findText);
+QMenu * CBibleReadWindow::newDisplayWidgetPopupMenu() {
+    auto * const popupMenu = new QMenu(this);
+    BT_CONNECT(popupMenu, &QMenu::aboutToShow,
+               [this] {
+                    auto const & display = *displayWidget();
+                    m_actions.findStrongs->setEnabled(
+                                !display.getCurrentNodeInfo().isNull());
+
+                    bool const hasActiveAnchor = display.hasActiveAnchor();
+                    m_actions.copy.referenceOnly->setEnabled(hasActiveAnchor);
+                    m_actions.copy.referenceTextOnly->setEnabled(
+                                hasActiveAnchor);
+                    m_actions.copy.referenceAndText->setEnabled(
+                                hasActiveAnchor);
+
+                    m_actions.save.referenceAndText->setEnabled(
+                                hasActiveAnchor);
+
+                    m_actions.print.reference->setEnabled(hasActiveAnchor);
+
+                    m_actions.copy.selectedText->setEnabled(hasSelectedText());
+                });
+    popupMenu->setTitle(tr("Bible window"));
+    popupMenu->setIcon(util::tool::getIconForModule(modules().first()) );
+    popupMenu->addAction(m_actions.findText);
     QKeySequence ks = m_actions.findText->shortcut();
     QString keys = ks.toString();
-    popupMenu.addAction(m_actions.findStrongs);
+    popupMenu->addAction(m_actions.findStrongs);
 
-    popupMenu.addSeparator();
+    popupMenu->addSeparator();
 
-    m_actions.copyMenu = new QMenu(tr("Copy"), &popupMenu);
+    m_actions.copyMenu = new QMenu(tr("Copy"), popupMenu);
 
     m_actions.copyMenu->addSeparator();
 
@@ -228,36 +247,19 @@ void CBibleReadWindow::setupPopupMenu() {
     m_actions.copyMenu->addAction(m_actions.copy.chapter);
 
 
-    popupMenu.addMenu(m_actions.copyMenu);
+    popupMenu->addMenu(m_actions.copyMenu);
 
-    m_actions.saveMenu = new QMenu(tr("Save..."), &popupMenu);
+    m_actions.saveMenu = new QMenu(tr("Save..."), popupMenu);
     m_actions.saveMenu->addAction(m_actions.save.referenceAndText);
     m_actions.saveMenu->addAction(m_actions.save.chapterAsPlain);
     m_actions.saveMenu->addAction(m_actions.save.chapterAsHTML);
-    popupMenu.addMenu(m_actions.saveMenu);
+    popupMenu->addMenu(m_actions.saveMenu);
 
-    m_actions.printMenu = new QMenu(tr("Print..."), &popupMenu);
+    m_actions.printMenu = new QMenu(tr("Print..."), popupMenu);
     m_actions.printMenu->addAction(m_actions.print.reference);
     m_actions.printMenu->addAction(m_actions.print.chapter);
-    popupMenu.addMenu(m_actions.printMenu);
-}
-
-/** Reimplemented. */
-void CBibleReadWindow::updatePopupMenu() {
-
-    auto const & display = *displayWidget();
-    m_actions.findStrongs->setEnabled(!display.getCurrentNodeInfo().isNull());
-
-    bool const hasActiveAnchor = display.hasActiveAnchor();
-    m_actions.copy.referenceOnly->setEnabled(hasActiveAnchor);
-    m_actions.copy.referenceTextOnly->setEnabled(hasActiveAnchor);
-    m_actions.copy.referenceAndText->setEnabled(hasActiveAnchor);
-
-    m_actions.save.referenceAndText->setEnabled(hasActiveAnchor);
-
-    m_actions.print.reference->setEnabled(hasActiveAnchor);
-
-    m_actions.copy.selectedText->setEnabled(hasSelectedText());
+    popupMenu->addMenu(m_actions.printMenu);
+    return popupMenu;
 }
 
 /** Moves to the next book. */
