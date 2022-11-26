@@ -137,17 +137,12 @@ CSwordKey * CBookKeyChooser::key() {
 void CBookKeyChooser::setModules(const BtConstModuleList & modules,
                                  bool refresh)
 {
-    using CSBMI = CSwordBookModuleInfo;
     m_modules.clear();
 
     //   for (modules.first(); modules.current(); modules.next()) {
-    for (auto const * const m : modules) {
-        if (m->type() == CSwordModuleInfo::GenericBook ) {
-            const CSBMI * const book = dynamic_cast<const CSBMI *>(m);
-            if (book != nullptr)
-                m_modules.append(book);
-        }
-    }
+    for (auto const * const m : modules)
+        if (m->type() == CSwordModuleInfo::GenericBook)
+            m_modules.append(static_cast<CSwordBookModuleInfo const *>(m));
 
     //refresh the number of combos
     if (refresh && m_modules.count() && m_key) {
