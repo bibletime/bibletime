@@ -172,7 +172,6 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(
             qFatal("unknown module type");
             std::terminate();
     }
-    displayWindow->init();
     m_mdi->addSubWindow(displayWindow);
     displayWindow->show();
     displayWindow->lookupKey(key);

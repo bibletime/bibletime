@@ -36,7 +36,8 @@ public: // methods:
                     CMDIArea * parent)
         : CDisplayWindow(modules, parent)
         , m_treeAction(nullptr)
-        , m_treeChooser(nullptr) {}
+        , m_treeChooser(nullptr)
+    { init(); }
 
     CSwordModuleInfo::ModuleType moduleType() const override
     { return CSwordModuleInfo::GenericBook; }

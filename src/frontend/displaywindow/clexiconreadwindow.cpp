@@ -26,7 +26,7 @@ CLexiconReadWindow::CLexiconReadWindow(
         QList<CSwordModuleInfo *> const & modules,
         CMDIArea * parent)
     : CDisplayWindow(modules, parent)
-{}
+{ init(); }
 
 void CLexiconReadWindow::insertKeyboardActions(BtActionCollection * a) {
     auto * actn = new QAction(tr("Next entry"), a);

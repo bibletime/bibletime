@@ -91,12 +91,6 @@ public:
         return m_swordKey;
     }
 
-    /**
-        * Initialize the window. Call this method from the outside,
-        * because calling this in the constructor is not possible!
-        */
-    bool init();
-
     /** Returns the main navigation toolbar. */
     QToolBar * mainToolBar();
 
@@ -192,6 +186,12 @@ protected:
 
     CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
     ~CDisplayWindow() override;
+
+    /**
+        * Initialize the window. Call this method from the outside,
+        * because calling this in the constructor is not possible!
+        */
+    bool init();
 
     void setDisplayOptions(DisplayOptions const & v) { m_displayOptions = v; }
 
