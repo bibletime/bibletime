@@ -390,8 +390,7 @@ void BibleTime::clearMdiToolBars() {
 CKeyChooser* BibleTime::keyChooser() const {
     BT_ASSERT(m_navToolBar);
 
-    CKeyChooser* keyChooser = m_navToolBar->findChild<CKeyChooser*>();
-    return keyChooser;
+    return m_navToolBar->findChild<CKeyChooser *>();
 }
 
 void BibleTime::createMenuAndToolBar()
