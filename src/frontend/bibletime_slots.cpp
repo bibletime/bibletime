@@ -507,7 +507,6 @@ void BibleTime::loadProfile(const QString & profileKey) {
 }
 
 void BibleTime::reloadProfile() {
-    using MAM = CMDIArea::MDIArrangementMode;
     using message::setQActionCheckedNoTrigger;
 
     // Disable updates while doing big changes:
@@ -555,7 +554,7 @@ void BibleTime::reloadProfile() {
                                     true));
 
     m_mdi->setMDIArrangementMode(
-                static_cast<MAM>(
+                static_cast<CMDIArea::MDIArrangementMode>(
                     mwConf.value<int>(QStringLiteral("MDIArrangementMode"),
                                       CMDIArea::ArrangementModeTile)));
 
