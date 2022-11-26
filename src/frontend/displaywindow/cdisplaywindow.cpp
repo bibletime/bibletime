@@ -73,12 +73,6 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
     BT_CONNECT(CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
                this,                      &CDisplayWindow::reload);
     BibleTime* mainwindow = btMainWindow();
-    BT_CONNECT(mainwindow, &BibleTime::toggledTextWindowHeader,
-               this, // Needed
-               [this](bool const show){
-                   if (m_headerBar)
-                       m_headerBar->setVisible(show);
-               });
     BT_CONNECT(mainwindow, &BibleTime::toggledTextWindowNavigator,
                this, // Needed
                [this](bool const show) {
@@ -472,6 +466,8 @@ void CDisplayWindow::initView() {
                 btConfig().session().value<bool>(
                     QStringLiteral("GUI/showTextWindowHeaders"),
                     true));
+    BT_CONNECT(btMainWindow(), &BibleTime::toggledTextWindowHeader,
+               m_headerBar, &QToolBar::setVisible);
 
     addToolBar(m_headerBar);
 }
