@@ -29,7 +29,7 @@ CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,
                                    BTHistory * historyPtr,
                                    CSwordKey * key,
                                    QWidget * parent)
-    : CKeyChooser(modules, historyPtr, parent)
+    : CKeyChooser(historyPtr, parent)
     , m_key(dynamic_cast<CSwordVerseKey *>(key))
 {
     using CSBMI = CSwordBibleModuleInfo;

@@ -26,9 +26,7 @@
 #include "versekeychooser/cbiblekeychooser.h"
 
 
-CKeyChooser::CKeyChooser(const BtConstModuleList &,
-                         BTHistory * historyPtr,
-                         QWidget * parent)
+CKeyChooser::CKeyChooser(BTHistory * historyPtr, QWidget * parent)
     : QWidget(parent)
     , m_history(historyPtr)
 {

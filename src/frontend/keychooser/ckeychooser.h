@@ -91,9 +91,7 @@ Q_SIGNALS:
 
 protected: // methods:
 
-    CKeyChooser(const BtConstModuleList & info,
-                BTHistory * history,
-                QWidget * parent = nullptr);
+    CKeyChooser(BTHistory * history, QWidget * parent = nullptr);
 
     virtual void handleHistoryMoved(QString const & newKey) = 0;
 

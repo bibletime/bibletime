@@ -35,7 +35,7 @@ CBookTreeChooser::CBookTreeChooser(const BtConstModuleList & modules,
                                    BTHistory * historyPtr,
                                    CSwordKey * key,
                                    QWidget * parent)
-    : CKeyChooser(modules, historyPtr, parent)
+    : CKeyChooser(historyPtr, parent)
     , m_key(dynamic_cast<CSwordTreeKey *>(key))
 {
 
