@@ -284,7 +284,7 @@ protected: // fields:
     } m_actions;
 
 private:
-    BtActionCollection * m_actionCollection = nullptr;
+    BtActionCollection * const m_actionCollection;
     CMDIArea * const m_mdi;
 
     //we may only cache the module names bacause after a backend reload the pointers are invalid!

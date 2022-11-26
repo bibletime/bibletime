@@ -54,6 +54,7 @@ inline QWidget * getProfileWindow(QWidget * w) {
 
 CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
     : QMainWindow(parent)
+    , m_actionCollection(new BtActionCollection(this))
     , m_mdi(parent)
 {
     setMinimumSize(100, 100);
@@ -63,8 +64,6 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
     // as pairs. They must be deleted in a specific order.
     // QMdiSubWindow handles this procedure.
     //setAttribute(Qt::WA_DeleteOnClose);
-
-    m_actionCollection = new BtActionCollection(this);
 
     for (auto const * const mod : modules)
         m_modules.append(mod->name());
@@ -463,7 +462,7 @@ void CDisplayWindow::initToolbars() {
 
     //Tools toolbar
     buttonsToolBar()->addAction(
-                &actionCollection()->action(
+                &m_actionCollection->action(
                     CResMgr::displaywindows::general::search::actionName));
 
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
@@ -545,7 +544,7 @@ void CDisplayWindow::setupMainWindowToolBars() {
 
     // Tools toolbar
     btMainWindow()->toolsToolBar()->addAction(
-                &actionCollection()->action(
+                &m_actionCollection->action(
                     CResMgr::displaywindows::general::search::actionName));
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
     setDisplaySettingsButton(button);
@@ -599,7 +598,7 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 
     m_displayWidget->settingsChanged();
 
-    actionCollection()->readShortcuts(QStringLiteral("Lexicon shortcuts"));
+    m_actionCollection->readShortcuts(QStringLiteral("Lexicon shortcuts"));
 }
 
 void CDisplayWindow::slotAddModule(int index, QString module) {
