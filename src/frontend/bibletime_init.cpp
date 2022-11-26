@@ -17,7 +17,6 @@
 #include <QMdiSubWindow>
 #include <QMenu>
 #include <QMenuBar>
-#include <QMetaObject>
 #include <QPointer>
 #include <QSplitter>
 #include <QToolBar>
@@ -29,7 +28,9 @@
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "../util/cresmgr.h"
+#if defined(Q_OS_WIN) || defined(Q_OS_MAC)
 #include "../util/directory.h"
+#endif
 #include "bibletimeapp.h"
 #include "btbookshelfdockwidget.h"
 #include "btopenworkaction.h"
