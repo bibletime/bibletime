@@ -513,36 +513,37 @@ void CDisplayWindow::initToolbars() {
 }
 
 void CDisplayWindow::setupPopupMenu() {
-    popup()->setTitle(tr("Lexicon window"));
-    popup()->setIcon(util::tool::getIconForModule(modules().first()));
-    popup()->addAction(m_actions.findText);
-    popup()->addAction(m_actions.findStrongs);
-    popup()->addSeparator();
+    auto & popupMenu = *popup();
+    popupMenu.setTitle(tr("Lexicon window"));
+    popupMenu.setIcon(util::tool::getIconForModule(modules().first()));
+    popupMenu.addAction(m_actions.findText);
+    popupMenu.addAction(m_actions.findStrongs);
+    popupMenu.addSeparator();
 
-    m_actions.copyMenu = new QMenu(tr("Copy..."), popup());
+    m_actions.copyMenu = new QMenu(tr("Copy..."), &popupMenu);
     m_actions.copyMenu->addAction(m_actions.copy.selectedText);
     m_actions.copyMenu->addAction(m_actions.copy.byReferences);
     m_actions.copyMenu->addSeparator();
     m_actions.copyMenu->addAction(m_actions.copy.reference);
     m_actions.copyMenu->addAction(m_actions.copy.entry);
-    popup()->addMenu(m_actions.copyMenu);
+    popupMenu.addMenu(m_actions.copyMenu);
 
     m_actions.saveMenu = new QMenu(
                 tr("Save..."),
-                popup()
+                &popupMenu
                 );
     m_actions.saveMenu->addAction(m_actions.save.entryAsPlain);
     m_actions.saveMenu->addAction(m_actions.save.entryAsHTML);
 
-    popup()->addMenu(m_actions.saveMenu);
+    popupMenu.addMenu(m_actions.saveMenu);
 
     m_actions.printMenu = new QMenu(
                 tr("Print..."),
-                popup()
+                &popupMenu
                 );
     m_actions.printMenu->addAction(m_actions.print.reference);
     m_actions.printMenu->addAction(m_actions.print.entry);
-    popup()->addMenu(m_actions.printMenu);
+    popupMenu.addMenu(m_actions.printMenu);
 }
 
 void CDisplayWindow::updatePopupMenu() {
