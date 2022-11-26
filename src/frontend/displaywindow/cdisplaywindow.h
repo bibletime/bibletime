@@ -97,14 +97,11 @@ public:
         */
     bool init();
 
-    /** Sets and inits the properties of the tool buttons toolbar.*/
-    void setButtonsToolBar( QToolBar* bar );
-
     /** Returns the main navigation toolbar. */
     QToolBar * mainToolBar();
 
     /** Returns the tool buttons toolbar. */
-    QToolBar * buttonsToolBar() const { return m_buttonsToolBar; }
+    QToolBar * buttonsToolBar();
 
     /** Sets the display settings button.*/
     void setDisplaySettingsButton( BtDisplaySettingsButton* button );
@@ -312,7 +309,7 @@ private:
     bool m_isInitialized = false; ///< Whether init() has been called
     BtModuleChooserBar* m_moduleChooserBar;
     QToolBar* m_mainToolBar = nullptr;
-    QToolBar* m_buttonsToolBar;
+    QToolBar* m_buttonsToolBar = nullptr;
     QToolBar* m_headerBar;
     QMenu* m_popupMenu;
     BtModelViewReadDisplay * m_displayWidget = nullptr;

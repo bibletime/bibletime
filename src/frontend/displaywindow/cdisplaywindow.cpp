@@ -473,8 +473,7 @@ void CDisplayWindow::initView() {
     moduleChooserBar()->setModules(getModuleList(), modules().first()->type(), this);
     addToolBar(moduleChooserBar());
 
-    // Create the Tools toolbar
-    setButtonsToolBar( new QToolBar(this) );
+    // Add the Tools toolbar
     addToolBar(buttonsToolBar());
 
     // Create the Text Header toolbar
@@ -810,14 +809,16 @@ QToolBar * CDisplayWindow::mainToolBar() {
     return m_mainToolBar;
 }
 
-/** Setup the Tools toolbar. */
-void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
-    prepareToolBar(bar,
-                   tr("Tool"),
-                   btConfig().session().value<bool>(
-                       QStringLiteral("GUI/showTextWindowToolButtons"),
-                       true));
-    m_buttonsToolBar = bar;
+QToolBar * CDisplayWindow::buttonsToolBar() {
+    if (!m_buttonsToolBar) {
+        m_buttonsToolBar = new QToolBar(this);
+        prepareToolBar(m_buttonsToolBar,
+                       tr("Tool"),
+                       btConfig().session().value<bool>(
+                           QStringLiteral("GUI/showTextWindowToolButtons"),
+                           true));
+    }
+    return m_buttonsToolBar;
 }
 
 /** Sets the display settings button. */

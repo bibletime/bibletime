@@ -106,11 +106,11 @@ void CBookReadWindow::initView() {
     moduleChooserBar()->setModules(getModuleList(), modules().first()->type(), this);
     addToolBar(moduleChooserBar());
 
-    // Create the Tools toolbar
-    setButtonsToolBar( new QToolBar(this) );
-    buttonsToolBar()->setAllowedAreas(Qt::TopToolBarArea);
-    buttonsToolBar()->setFloatable(false);
-    addToolBar(buttonsToolBar());
+    // Add the Tools toolbar
+    auto * const toolsToolBar = buttonsToolBar();
+    toolsToolBar->setAllowedAreas(Qt::TopToolBarArea);
+    toolsToolBar->setFloatable(false);
+    addToolBar(toolsToolBar);
 
     setCentralWidget( splitter );
     setWindowIcon(util::tool::getIconForModule(modules().first()));
