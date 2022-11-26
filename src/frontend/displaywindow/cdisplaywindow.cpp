@@ -771,7 +771,10 @@ bool CDisplayWindow::init() {
     btMainWindow()->clearMdiToolBars();
     clearMainWindowToolBars();
     initConnections();
+
     setupPopupMenu();
+    if (m_displayWidget)
+        m_displayWidget->installPopup(m_popupMenu);
 
     m_filterOptions = conf.getFilterOptions();
     m_displayOptions = conf.getDisplayOptions();
@@ -885,8 +888,6 @@ QMenu* CDisplayWindow::popup() {
         m_popupMenu = new QMenu(this);
         BT_CONNECT(m_popupMenu, &QMenu::aboutToShow,
                    [this]{ updatePopupMenu(); });
-        if (m_displayWidget)
-            m_displayWidget->installPopup(m_popupMenu);
     }
     return m_popupMenu;
 }
