@@ -758,6 +758,7 @@ BtModuleChooserBar * CDisplayWindow::moduleChooserBar() {
 /** Initialize the window. Call this method from the outside, because calling this in the constructor is not possible! */
 bool CDisplayWindow::init() {
     initView();
+    BT_ASSERT(m_displayWidget);
 
     auto const & conf = btConfig();
 
@@ -772,8 +773,7 @@ bool CDisplayWindow::init() {
     clearMainWindowToolBars();
     initConnections();
 
-    if (m_displayWidget)
-        m_displayWidget->installPopup(newDisplayWidgetPopupMenu());
+    m_displayWidget->installPopup(newDisplayWidgetPopupMenu());
 
     m_filterOptions = conf.getFilterOptions();
     m_displayOptions = conf.getDisplayOptions();
