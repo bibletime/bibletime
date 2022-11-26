@@ -12,7 +12,6 @@
 
 #include "bibletime.h"
 
-#include <QApplication>
 #include <QDebug>
 #include <QDockWidget>
 #include <QMdiSubWindow>
@@ -21,8 +20,6 @@
 #include <QMetaObject>
 #include <QPointer>
 #include <QSplitter>
-#include <QTextEdit>
-#include <QTimerEvent>
 #include <QToolBar>
 #include <QToolButton>
 #include <QVBoxLayout>
@@ -55,68 +52,6 @@
 #include <swmgr.h>
 #pragma GCC diagnostic pop
 
-
-namespace {
-
-class DebugWindow : public QTextEdit {
-
-public: // methods:
-
-    DebugWindow()
-        : QTextEdit(nullptr)
-        , m_updateTimerId(startTimer(100))
-    {
-        setWindowFlags(Qt::Dialog);
-        setAttribute(Qt::WA_DeleteOnClose);
-        setReadOnly(true);
-        retranslateUi();
-        show();
-    }
-
-    void retranslateUi()
-    { setWindowTitle(tr("What's this widget?")); }
-
-    void timerEvent(QTimerEvent * const event) override {
-        if (event->timerId() == m_updateTimerId) {
-            if (QObject const * w = QApplication::widgetAt(QCursor::pos())) {
-                QString objectHierarchy;
-                do {
-                    QMetaObject const * m = w->metaObject();
-                    QString classHierarchy;
-                    do {
-                        if (!classHierarchy.isEmpty())
-                            classHierarchy += QStringLiteral(": ");
-                        classHierarchy += m->className();
-                        m = m->superClass();
-                    } while (m);
-                    if (!objectHierarchy.isEmpty()) {
-                        objectHierarchy
-                                .append(QStringLiteral("<br/>"))
-                                .append(tr("<b>child of:</b> %1").arg(
-                                            classHierarchy));
-                    } else {
-                        objectHierarchy.append(
-                                    tr("<b>This widget is:</b> %1").arg(
-                                        classHierarchy));
-                    }
-                    w = w->parent();
-                } while (w);
-                setHtml(objectHierarchy);
-            } else {
-                setText(tr("No widget"));
-            }
-        } else {
-            QTextEdit::timerEvent(event);
-        }
-    }
-
-private: // fields:
-
-    int const m_updateTimerId;
-
-}; // class DebugWindow
-
-} // anonymous namespace
 
 using namespace InfoDisplay;
 
@@ -984,16 +919,4 @@ void BibleTime::initBackends() {
     // - delete all indices of modules where hasIndex() returns false
     backend->deleteOrphanedIndices();
 
-}
-
-void BibleTime::slotShowDebugWindow(bool show) {
-    if (show) {
-        BT_ASSERT(!m_debugWindow);
-        m_debugWindow = new DebugWindow();
-        BT_CONNECT(m_debugWindow, &QObject::destroyed, m_debugWidgetAction,
-                   [action=m_debugWidgetAction] { action->setChecked(false); },
-                   Qt::DirectConnection);
-    } else {
-        delete m_debugWindow;
-    }
 }
