@@ -67,6 +67,7 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
       m_history(nullptr) {
 
     setMinimumSize( 100, 100 );
+    setFocusPolicy(Qt::ClickFocus);
 
     // Cannot delete on close. QMdiSubWindow and this window work
     // as pairs. They must be deleted in a specific order.
@@ -761,7 +762,6 @@ bool CDisplayWindow::init() {
     auto const & conf = btConfig();
 
     setWindowTitle(windowCaption());
-    setFocusPolicy(Qt::ClickFocus);
     initActions();
     initToolbars();
     if (!conf.session().value<bool>(
