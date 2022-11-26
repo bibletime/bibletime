@@ -73,12 +73,6 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
     BT_CONNECT(CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
                this,                      &CDisplayWindow::reload);
     BibleTime* mainwindow = btMainWindow();
-    BT_CONNECT(mainwindow, &BibleTime::toggledTextWindowToolButtons,
-               this, // Needed
-               [this](bool const show) {
-                   if (auto * const b = buttonsToolBar())
-                       b->setVisible(show);
-               });
     BT_CONNECT(mainwindow, &BibleTime::toggledTextWindowModuleChooser,
                this, // Needed
                [this](bool const show) {
@@ -775,6 +769,8 @@ QToolBar * CDisplayWindow::buttonsToolBar() {
                        btConfig().session().value<bool>(
                            QStringLiteral("GUI/showTextWindowToolButtons"),
                            true));
+        BT_CONNECT(btMainWindow(), &BibleTime::toggledTextWindowToolButtons,
+                   m_buttonsToolBar, &QToolBar::setVisible);
     }
     return m_buttonsToolBar;
 }
