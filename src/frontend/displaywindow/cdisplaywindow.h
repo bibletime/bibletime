@@ -284,8 +284,8 @@ protected: // fields:
     } m_actions;
 
 private:
-    BtActionCollection* m_actionCollection;
-    CMDIArea* m_mdi;
+    BtActionCollection * m_actionCollection = nullptr;
+    CMDIArea * const m_mdi;
 
     //we may only cache the module names bacause after a backend reload the pointers are invalid!
     QStringList m_modules;
@@ -293,13 +293,13 @@ private:
     FilterOptions m_filterOptions;
     DisplayOptions m_displayOptions;
 
-    CKeyChooser* m_keyChooser;
-    CSwordKey* m_swordKey;
+    CKeyChooser * m_keyChooser = nullptr;
+    CSwordKey * m_swordKey = nullptr;
     bool m_isInitialized = false; ///< Whether init() has been called
     BtModuleChooserBar* m_moduleChooserBar = nullptr;
-    QToolBar* m_mainToolBar = nullptr;
-    QToolBar* m_buttonsToolBar = nullptr;
-    QToolBar* m_headerBar;
+    QToolBar * m_mainToolBar = nullptr;
+    QToolBar * m_buttonsToolBar = nullptr;
+    QToolBar * m_headerBar = nullptr;
     BtModelViewReadDisplay * m_displayWidget = nullptr;
-    BTHistory* m_history;
+    BTHistory * m_history = nullptr;
 };

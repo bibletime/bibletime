@@ -53,19 +53,10 @@ inline QWidget * getProfileWindow(QWidget * w) {
 
 
 CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
-    : QMainWindow(parent),
-      m_actionCollection(nullptr),
-      m_mdi(parent),
-      m_keyChooser(nullptr),
-      m_swordKey(nullptr),
-      m_moduleChooserBar(nullptr),
-      m_mainToolBar(nullptr),
-      m_buttonsToolBar(nullptr),
-      m_headerBar(nullptr),
-      m_displayWidget(nullptr),
-      m_history(nullptr) {
-
-    setMinimumSize( 100, 100 );
+    : QMainWindow(parent)
+    , m_mdi(parent)
+{
+    setMinimumSize(100, 100);
     setFocusPolicy(Qt::ClickFocus);
 
     // Cannot delete on close. QMdiSubWindow and this window work
