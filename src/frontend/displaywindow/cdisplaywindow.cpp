@@ -459,8 +459,7 @@ void CDisplayWindow::initView() {
     readDisplay->setModules(getModuleList());
     setWindowIcon(util::tool::getIconForModule(modules().first()));
 
-    // Create the Navigation toolbar
-    setMainToolBar( new QToolBar(this) );
+    // Add the Navigation toolbar
     addToolBar(mainToolBar());
 
     // Create keychooser
@@ -799,14 +798,16 @@ static void prepareToolBar(QToolBar* bar, const QString& title, bool visible) {
     bar->setVisible(visible);
 }
 
-/** Setup the Navigation toolbar. */
-void CDisplayWindow::setMainToolBar( QToolBar* bar ) {
-    prepareToolBar(bar,
-                   tr("Navigation"),
-                   btConfig().session().value<bool>(
-                       QStringLiteral("GUI/showTextWindowNavigator"),
-                       true));
-    m_mainToolBar = bar;
+QToolBar * CDisplayWindow::mainToolBar() {
+    if (!m_mainToolBar) {
+        m_mainToolBar = new QToolBar(this);
+        prepareToolBar(m_mainToolBar,
+                       tr("Navigation"),
+                       btConfig().session().value<bool>(
+                           QStringLiteral("GUI/showTextWindowNavigator"),
+                           true));
+    }
+    return m_mainToolBar;
 }
 
 /** Setup the Tools toolbar. */

@@ -94,11 +94,11 @@ void CBookReadWindow::initView() {
     if (auto * const disp = displayWidget())
         disp->setModules(getModuleList());
 
-    // Create Navigation toolbar
-    setMainToolBar( new QToolBar(this) );
-    mainToolBar()->setAllowedAreas(Qt::TopToolBarArea);
-    mainToolBar()->setFloatable(false);
-    addToolBar(mainToolBar());
+    // Add the Navigation toolbar
+    auto * const navigationToolBar = mainToolBar();
+    navigationToolBar->setAllowedAreas(Qt::TopToolBarArea);
+    navigationToolBar->setFloatable(false);
+    addToolBar(navigationToolBar);
     setKeyChooser( CKeyChooser::createInstance(modules(), history(), key(), mainToolBar()) );
 
     // Create the Works toolbar

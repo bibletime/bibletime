@@ -97,14 +97,11 @@ public:
         */
     bool init();
 
-    /** Sets and inits the properties of the main navigation toolbar.*/
-    void setMainToolBar( QToolBar* bar );
-
     /** Sets and inits the properties of the tool buttons toolbar.*/
     void setButtonsToolBar( QToolBar* bar );
 
     /** Returns the main navigation toolbar. */
-    QToolBar * mainToolBar() const { return m_mainToolBar; }
+    QToolBar * mainToolBar();
 
     /** Returns the tool buttons toolbar. */
     QToolBar * buttonsToolBar() const { return m_buttonsToolBar; }
@@ -314,7 +311,7 @@ private:
     CSwordKey* m_swordKey;
     bool m_isInitialized = false; ///< Whether init() has been called
     BtModuleChooserBar* m_moduleChooserBar;
-    QToolBar* m_mainToolBar;
+    QToolBar* m_mainToolBar = nullptr;
     QToolBar* m_buttonsToolBar;
     QToolBar* m_headerBar;
     QMenu* m_popupMenu;
