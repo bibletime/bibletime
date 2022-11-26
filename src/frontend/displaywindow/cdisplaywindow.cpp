@@ -299,15 +299,11 @@ void CDisplayWindow::initActions() {
                     }
                 });
     initAddAction(QStringLiteral("pageDown"),
-                  [this]{
-                      if (m_displayWidget)
-                          m_displayWidget->pageDown();
-                  });
+                  m_displayWidget,
+                  &BtModelViewReadDisplay::pageDown);
     initAddAction(QStringLiteral("pageUp"),
-                  [this]{
-                      if (m_displayWidget)
-                          m_displayWidget->pageUp();
-                  });
+                  m_displayWidget,
+                  &BtModelViewReadDisplay::pageUp);
 
     initAddAction(QStringLiteral("copySelectedText"),
                   m_displayWidget,
@@ -587,38 +583,23 @@ void CDisplayWindow::setupMainWindowToolBars() {
     btMainWindow()->toolsToolBar()->addWidget(button);
 }
 
-bool CDisplayWindow::hasSelectedText() {
-    if (m_displayWidget)
-        return m_displayWidget->qmlInterface()->hasSelectedText();
-    return false;
-}
+bool CDisplayWindow::hasSelectedText()
+{ return m_displayWidget->qmlInterface()->hasSelectedText(); }
 
 void CDisplayWindow::copyDisplayedText()
 { CExportManager().copyKey(m_swordKey, CExportManager::Text, true); }
 
-int CDisplayWindow::getSelectedColumn() const {
-    if (m_displayWidget)
-        return m_displayWidget->quickWidget()->getSelectedColumn();
-    return 0;
-}
+int CDisplayWindow::getSelectedColumn() const
+{ return m_displayWidget->quickWidget()->getSelectedColumn(); }
 
-int CDisplayWindow::getFirstSelectedIndex() const {
-    if (m_displayWidget)
-        return m_displayWidget->quickWidget()->getFirstSelectedIndex();
-    return 0;
-}
+int CDisplayWindow::getFirstSelectedIndex() const
+{ return m_displayWidget->quickWidget()->getFirstSelectedIndex(); }
 
-int CDisplayWindow::getLastSelectedIndex() const {
-    if (m_displayWidget)
-        return m_displayWidget->quickWidget()->getLastSelectedIndex();
-    return 0;
-}
+int CDisplayWindow::getLastSelectedIndex() const
+{ return m_displayWidget->quickWidget()->getLastSelectedIndex(); }
 
-CSwordKey* CDisplayWindow::getMouseClickedKey() const {
-    if (m_displayWidget)
-        return m_displayWidget->quickWidget()->getMouseClickedKey();
-    return nullptr;
-}
+CSwordKey* CDisplayWindow::getMouseClickedKey() const
+{ return m_displayWidget->quickWidget()->getMouseClickedKey(); }
 
 /** Refresh the settings of this window. */
 void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
@@ -647,8 +628,7 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
         Q_EMIT sigModuleListSet(m_modules);
     }
 
-    if (m_displayWidget)
-        m_displayWidget->settingsChanged();
+    m_displayWidget->settingsChanged();
 
     actionCollection()->readShortcuts(QStringLiteral("Lexicon shortcuts"));
 }
@@ -888,10 +868,7 @@ void CDisplayWindow::setDisplayWidget(BtModelViewReadDisplay * newDisplay) {
     m_displayWidget = newDisplay;
 
     BT_CONNECT(btMainWindow(), &BibleTime::colorThemeChanged,
-               [this]{
-                   if (m_displayWidget)
-                       m_displayWidget->qmlInterface()->changeColorTheme();
-               });
+               [newDisplay]{ newDisplay->qmlInterface()->changeColorTheme(); });
 }
 
 void CDisplayWindow::printAll()
