@@ -15,7 +15,6 @@
 #include <QAction>
 #include <QApplication>
 #include <QClipboard>
-#include <QDebug>
 #include <QDesktopServices>
 #include <QInputDialog>
 #include <QList>
@@ -46,11 +45,9 @@
 
 /** Opens the optionsdialog of BibleTime. */
 void BibleTime::slotSettingsOptions() {
-    qDebug() << "BibleTime::slotSettingsOptions";
     CConfigurationDialog *dlg = new CConfigurationDialog(this);
     BT_CONNECT(dlg,  &BtConfigDialog::signalSettingsChanged,
                [this]{
-                   qDebug() << "BibleTime::slotSettingsChanged";
                    CSwordBackend::instance()->setBooknameLanguage(
                                btConfig().booknameLanguage());
 
@@ -65,7 +62,6 @@ void BibleTime::slotSettingsOptions() {
                    refreshDisplayWindows();
                    refreshProfileMenus();
                    m_infoDisplay->updateColors();
-                   qDebug() << "BibleTime::slotSettingsChanged";
                });
 
     dlg->show();
