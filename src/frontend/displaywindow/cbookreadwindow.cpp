@@ -96,8 +96,6 @@ void CBookReadWindow::initView() {
 
     // Add the Navigation toolbar
     auto * const navigationToolBar = mainToolBar();
-    navigationToolBar->setAllowedAreas(Qt::TopToolBarArea);
-    navigationToolBar->setFloatable(false);
     addToolBar(navigationToolBar);
     setKeyChooser( CKeyChooser::createInstance(modules(), history(), key(), mainToolBar()) );
 
@@ -107,10 +105,7 @@ void CBookReadWindow::initView() {
     addToolBar(worksToolbar);
 
     // Add the Tools toolbar
-    auto * const toolsToolBar = buttonsToolBar();
-    toolsToolBar->setAllowedAreas(Qt::TopToolBarArea);
-    toolsToolBar->setFloatable(false);
-    addToolBar(toolsToolBar);
+    addToolBar(buttonsToolBar());
 
     setCentralWidget( splitter );
     setWindowIcon(util::tool::getIconForModule(modules().first()));
