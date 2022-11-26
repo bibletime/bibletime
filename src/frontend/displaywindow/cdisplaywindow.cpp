@@ -72,13 +72,7 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
     // Connect this to the backend module list changes
     BT_CONNECT(CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
                this,                      &CDisplayWindow::reload);
-    BibleTime* mainwindow = btMainWindow();
-    BT_CONNECT(mainwindow, &BibleTime::toggledTextWindowModuleChooser,
-               this, // Needed
-               [this](bool const show) {
-                   if (auto * const b = moduleChooserBar())
-                       b->setVisible(show);
-               });
+
     m_swordKey = modules.first()->createKey();
 }
 
@@ -706,6 +700,9 @@ BtModuleChooserBar * CDisplayWindow::moduleChooserBar() {
                         QStringLiteral(
                             "GUI/showTextWindowModuleSelectorButtons"),
                         true));
+
+        BT_CONNECT(btMainWindow(), &BibleTime::toggledTextWindowModuleChooser,
+                   m_moduleChooserBar, &BtModuleChooserBar::setVisible);
     }
     return m_moduleChooserBar;
 }
