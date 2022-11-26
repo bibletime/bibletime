@@ -206,16 +206,17 @@ void CBibleReadWindow::initView() {
 
 /** Reimplementation. */
 void CBibleReadWindow::setupPopupMenu() {
-    popup()->setTitle(tr("Bible window"));
-    popup()->setIcon(util::tool::getIconForModule(modules().first()) );
-    popup()->addAction(m_actions.findText);
+    auto & popupMenu = *popup();
+    popupMenu.setTitle(tr("Bible window"));
+    popupMenu.setIcon(util::tool::getIconForModule(modules().first()) );
+    popupMenu.addAction(m_actions.findText);
     QKeySequence ks = m_actions.findText->shortcut();
     QString keys = ks.toString();
-    popup()->addAction(m_actions.findStrongs);
+    popupMenu.addAction(m_actions.findStrongs);
 
-    popup()->addSeparator();
+    popupMenu.addSeparator();
 
-    m_actions.copyMenu = new QMenu(tr("Copy"), popup());
+    m_actions.copyMenu = new QMenu(tr("Copy"), &popupMenu);
 
     m_actions.copyMenu->addSeparator();
 
@@ -227,18 +228,18 @@ void CBibleReadWindow::setupPopupMenu() {
     m_actions.copyMenu->addAction(m_actions.copy.chapter);
 
 
-    popup()->addMenu(m_actions.copyMenu);
+    popupMenu.addMenu(m_actions.copyMenu);
 
-    m_actions.saveMenu = new QMenu(tr("Save..."), popup());
+    m_actions.saveMenu = new QMenu(tr("Save..."), &popupMenu);
     m_actions.saveMenu->addAction(m_actions.save.referenceAndText);
     m_actions.saveMenu->addAction(m_actions.save.chapterAsPlain);
     m_actions.saveMenu->addAction(m_actions.save.chapterAsHTML);
-    popup()->addMenu(m_actions.saveMenu);
+    popupMenu.addMenu(m_actions.saveMenu);
 
-    m_actions.printMenu = new QMenu(tr("Print..."), popup());
+    m_actions.printMenu = new QMenu(tr("Print..."), &popupMenu);
     m_actions.printMenu->addAction(m_actions.print.reference);
     m_actions.printMenu->addAction(m_actions.print.chapter);
-    popup()->addMenu(m_actions.printMenu);
+    popupMenu.addMenu(m_actions.printMenu);
 }
 
 /** Reimplemented. */
