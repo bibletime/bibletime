@@ -25,31 +25,14 @@ class BtActionCollection: public QObject {
 
     Q_OBJECT
 
-private: // types:
-
-    class Item: public QObject {
-
-    public: // methods:
-
-        Item(QAction * const action, QObject * const parent)
-            : QObject{parent}
-            , m_defaultKeys{action->shortcut()}
-            , m_action{action}
-        {}
-
-    public: // fields:
-
-        QKeySequence const m_defaultKeys;
-        QAction * const m_action;
-
-    };
-    using ActionMap = QMap<QString, Item *>;
-
 public: // methods:
 
     BtActionCollection(QObject * const parent = nullptr)
             : QObject{parent}
     {}
+
+    QMap<QString, QAction *> const & actions() const noexcept
+    { return m_actions; }
 
     void addAction(QString const & name, QAction * const action);
 
@@ -62,12 +45,6 @@ public: // methods:
         QAction & a = action(name);
         BT_ASSERT(dynamic_cast<T *>(&a));
         return static_cast<T &>(a);
-    }
-
-    template <typename F>
-    void foreachQAction(F && f) const {
-        for (Item const * const item : m_actions)
-            f(*(item->m_action), item->m_defaultKeys);
     }
 
     /*!
@@ -91,14 +68,10 @@ public: // methods:
      */
     void writeShortcuts(QString const & group) const;
 
-    QKeySequence getDefaultShortcut(QAction * const action) const;
-
-private: // methods:
-
-    Item * findActionItem(QString const & name) const;
+    static QKeySequence getDefaultShortcut(QAction & action);
 
 private: // fields:
 
-    ActionMap m_actions;
+    QMap<QString, QAction *> m_actions;
 
 };

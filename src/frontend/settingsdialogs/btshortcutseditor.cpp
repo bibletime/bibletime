@@ -187,54 +187,54 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
     }
     vBox->addWidget(m_shortcutChooser);
 
-    collection->foreachQAction([this](QAction & action,
-                                      QKeySequence const & defaultKeys)
+    for (auto * const action : collection->actions()) {
+        int const count = m_table->rowCount();
+        m_table->insertRow(count);
+
         {
-            int const count = m_table->rowCount();
-            m_table->insertRow(count);
-
-            {
-                auto * const item =
-                        new BtShortcutsEditorItem(&action, defaultKeys);
-                try {
-                    /// \todo Remove this & hack and use Qt properties instead:
-                    m_table->setItem(count, 0, item);
-                } catch (...) {
-                    delete item;
-                    throw;
-                }
+            auto * const item =
+                    new BtShortcutsEditorItem(
+                        action,
+                        BtActionCollection::getDefaultShortcut(*action));
+            try {
+                /// \todo Remove this & hack and use Qt properties instead:
+                m_table->setItem(count, 0, item);
+            } catch (...) {
+                delete item;
+                throw;
             }
+        }
 
-            QList<QKeySequence> keys = action.shortcuts();
+        QList<QKeySequence> keys = action->shortcuts();
 
-            {
-                QTableWidgetItem * const item = new QTableWidgetItem;
-                try {
-                    item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-                    item->setToolTip(tr("Select to change key"));
-                    if (keys.count() > 0)
-                        item->setText(keys[0].toString());
-                    m_table->setItem(count, 1, item);
-                } catch (...) {
-                    delete item;
-                    throw;
-                }
+        {
+            QTableWidgetItem * const item = new QTableWidgetItem;
+            try {
+                item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+                item->setToolTip(tr("Select to change key"));
+                if (keys.count() > 0)
+                    item->setText(keys[0].toString());
+                m_table->setItem(count, 1, item);
+            } catch (...) {
+                delete item;
+                throw;
             }
+        }
 
-            {
-                QTableWidgetItem * const item = new QTableWidgetItem;
-                try {
-                    item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-                    item->setToolTip(tr("Select to change key"));
-                    if (keys.count() > 1)
-                        item->setText(keys[1].toString());
-                    m_table->setItem(count, 2, item);
-                } catch (...) {
-                    delete item;
-                    throw;
-                }
+        {
+            QTableWidgetItem * const item = new QTableWidgetItem;
+            try {
+                item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+                item->setToolTip(tr("Select to change key"));
+                if (keys.count() > 1)
+                    item->setText(keys[1].toString());
+                m_table->setItem(count, 2, item);
+            } catch (...) {
+                delete item;
+                throw;
             }
-        });
+        }
+    }
     m_table->sortItems(0);
     m_table->selectRow(0);
     slotSelectionChanged();
