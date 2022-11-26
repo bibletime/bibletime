@@ -44,7 +44,6 @@ CBookKeyChooser::CBookKeyChooser(const BtConstModuleList & modules,
     : CKeyChooser(modules, historyPtr, parent)
     , m_layout(nullptr)
 {
-    setModules(modules, false);
     m_key = dynamic_cast<CSwordTreeKey * >(key);
     setModules(modules, true);
     setKey(key);
