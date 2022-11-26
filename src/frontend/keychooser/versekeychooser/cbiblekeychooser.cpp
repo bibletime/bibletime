@@ -36,11 +36,7 @@ CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,
 
     w_ref = nullptr;
     setModules(modules, false);
-    if (!m_modules.count()) {
-        qWarning() << "CBibleKeyChooser: module is not a Bible or commentary!";
-        m_key = nullptr;
-        return;
-    }
+    BT_ASSERT(!m_modules.empty());
     QHBoxLayout* layout = new QHBoxLayout(this);
     layout->setSpacing(0);
     layout->setContentsMargins(0, 0, 0, 0);
