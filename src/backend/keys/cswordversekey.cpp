@@ -17,7 +17,6 @@
 #include <string_view>
 #include "../../util/btassert.h"
 #include "../drivers/cswordbiblemoduleinfo.h"
-#include "../drivers/cswordcommentarymoduleinfo.h"
 
 // Sword includes:
 #pragma GCC diagnostic push
