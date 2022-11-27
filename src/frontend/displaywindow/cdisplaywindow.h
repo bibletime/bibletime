@@ -17,6 +17,7 @@
 #include <QAction>
 #include <QStringList>
 #include "../../backend/btglobal.h"
+#include "../../backend/drivers/btmodulelist.h"
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
@@ -55,11 +56,14 @@ public:
     /** Returns the correct window caption.*/
     QString windowCaption();
 
-    /** Returns the used modules as a pointer list.*/
-    BtConstModuleList modules() const;
+    CSwordModuleInfo const * firstModule() const noexcept
+    { return m_modules.first(); }
 
-    /** Returns the used modules as a string list. */
-    QStringList const & moduleNames() const { return m_modules; }
+    BtConstModuleList constModules() const
+    { return BtConstModuleList(m_modules.begin(), m_modules.end()); }
+
+    /** \returns the used modules as a string list. */
+    QStringList moduleNames() const;
 
     /**
        \brief Stores the settings of this window to configuration.
@@ -184,7 +188,7 @@ protected:
 
     friend class CBibleReadWindow;
 
-    CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
+    CDisplayWindow(BtModuleList const & modules, CMDIArea * const parent);
     ~CDisplayWindow() override;
 
     /**
@@ -288,7 +292,7 @@ private:
     CMDIArea * const m_mdi;
 
     //we may only cache the module names bacause after a backend reload the pointers are invalid!
-    QStringList m_modules;
+    BtModuleList m_modules;
 
     FilterOptions m_filterOptions;
     DisplayOptions m_displayOptions;

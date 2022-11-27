@@ -86,7 +86,9 @@ void CBookReadWindow::initConnections() {
 /** Init the view */
 void CBookReadWindow::initView() {
     QSplitter* splitter = new QSplitter(this);
-    m_treeChooser = new CBookTreeChooser(modules(), history(), key(), splitter);
+
+    auto const constMods = constModules();
+    m_treeChooser = new CBookTreeChooser(constMods, history(), key(), splitter);
 
     auto const moduleNames_ = moduleNames();
     auto * const dw = new BtModelViewReadDisplay(this, splitter);
@@ -98,11 +100,11 @@ void CBookReadWindow::initView() {
     // Add the Navigation toolbar
     auto * const navigationToolBar = mainToolBar();
     addToolBar(navigationToolBar);
-    setKeyChooser(CKeyChooser::createInstance(modules(), history(), key(), navigationToolBar));
+    setKeyChooser(CKeyChooser::createInstance(constMods, history(), key(), navigationToolBar));
 
     // Add the Works toolbar
     auto * const worksToolbar = moduleChooserBar();
-    worksToolbar->setModules(moduleNames_, modules().first()->type(), this);
+    worksToolbar->setModules(moduleNames_, constMods.first()->type(), this);
     addToolBar(worksToolbar);
 
     // Add the Tools toolbar
@@ -132,10 +134,12 @@ void CBookReadWindow::initToolbars() {
 }
 
 void CBookReadWindow::setupMainWindowToolBars() {
+    auto const constMods = constModules();
+
     // Navigation toolbar
     btMainWindow()->navToolBar()->addAction(m_actions.backInHistory); //1st button
     btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
-    CKeyChooser* keyChooser = CKeyChooser::createInstance(modules(), history(), key(), btMainWindow()->navToolBar() );
+    CKeyChooser* keyChooser = CKeyChooser::createInstance(constMods, history(), key(), btMainWindow()->navToolBar() );
     btMainWindow()->navToolBar()->addWidget(keyChooser);
     BT_CONNECT(keyChooser, &CKeyChooser::keyChanged,
                this,       &CBookReadWindow::lookupSwordKey);
@@ -143,7 +147,7 @@ void CBookReadWindow::setupMainWindowToolBars() {
                keyChooser, &CKeyChooser::updateKey);
 
     // Works toolbar
-    btMainWindow()->worksToolBar()->setModules(moduleNames(), modules().first()->type(), this);
+    btMainWindow()->worksToolBar()->setModules(moduleNames(), constMods.first()->type(), this);
 
     // Tools toolbar
     btMainWindow()->toolsToolBar()->addAction(m_treeAction);  // Tree
@@ -169,5 +173,5 @@ void CBookReadWindow::treeToggled() {
 /** Reimplementation to take care of the tree chooser. */
 void CBookReadWindow::modulesChanged() {
     CDisplayWindow::modulesChanged();
-    m_treeChooser->setModules(modules());
+    m_treeChooser->setModules(constModules());
 }

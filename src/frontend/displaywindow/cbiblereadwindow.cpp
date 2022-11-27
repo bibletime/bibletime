@@ -227,7 +227,7 @@ QMenu * CBibleReadWindow::newDisplayWidgetPopupMenu() {
                     m_actions.copy.selectedText->setEnabled(hasSelectedText());
                 });
     popupMenu->setTitle(tr("Bible window"));
-    popupMenu->setIcon(util::tool::getIconForModule(modules().first()) );
+    popupMenu->setIcon(util::tool::getIconForModule(firstModule()));
     popupMenu->addAction(m_actions.findText);
     QKeySequence ks = m_actions.findText->shortcut();
     QString keys = ks.toString();
@@ -320,7 +320,8 @@ void CBibleReadWindow::copyDisplayedText() {
     CSwordVerseKey vk(*verseKey());
     vk.setLowerBound(dummy);
 
-    const CSwordBibleModuleInfo* bible = dynamic_cast<const CSwordBibleModuleInfo*>(modules().first());
+    auto const bible =
+            dynamic_cast<CSwordBibleModuleInfo const *>(firstModule());
     dummy.setVerse(bible->verseCount(dummy.bookName(), dummy.chapter()));
     vk.setUpperBound(dummy);
 
@@ -351,12 +352,16 @@ void CBibleReadWindow::saveChapter(CExportManager::Format const format) {
     dummy.setVerse(1);
     vk.setLowerBound(dummy);
 
-    const CSwordBibleModuleInfo* bible = dynamic_cast<const CSwordBibleModuleInfo*>(modules().first());
+    auto const constMods = constModules();
+
+    auto const bible =
+            dynamic_cast<CSwordBibleModuleInfo const *>(constMods.first());
+    /// \bug Check if bible is nullptr!
     dummy.setVerse(bible->verseCount(dummy.book(), dummy.chapter()));
     vk.setUpperBound(dummy);
 
     CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
-    mgr.saveKey(&vk, format, true, modules());
+    mgr.saveKey(&vk, format, true, constMods);
 }
 
 void CBibleReadWindow::reload(CSwordBackend::SetupChangedReason reason) {

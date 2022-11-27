@@ -55,7 +55,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     gridLayout->addWidget(label1, 0,0);
 
     auto * const historyPtr = parent->history();
-    auto const modules = parent->modules();
+    auto const modules = parent->constModules();
     {
         auto const type = modules.at(0)->type();
         m_copyThreshold = (type == CSwordModuleInfo::Bible

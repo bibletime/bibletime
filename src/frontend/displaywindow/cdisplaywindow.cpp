@@ -52,10 +52,12 @@ inline QWidget * getProfileWindow(QWidget * w) {
 }
 
 
-CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
+CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
+                               CMDIArea * const parent)
     : QMainWindow(parent)
     , m_actionCollection(new BtActionCollection(this))
     , m_mdi(parent)
+    , m_modules(modules)
 {
     setMinimumSize(100, 100);
     setFocusPolicy(Qt::ClickFocus);
@@ -64,9 +66,6 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
     // as pairs. They must be deleted in a specific order.
     // QMdiSubWindow handles this procedure.
     //setAttribute(Qt::WA_DeleteOnClose);
-
-    for (auto const * const mod : modules)
-        m_modules.append(mod->name());
 
     // Connect this to the backend module list changes
     BT_CONNECT(CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
@@ -113,12 +112,16 @@ QString CDisplayWindow::windowCaption() {
         return {};
     return QStringLiteral("%1 (%2)")
             .arg(m_swordKey->key(),
-                 m_modules.join(QStringLiteral(" | ")));
+                 moduleNames().join(QStringLiteral(" | ")));
 }
 
-/** Returns the used modules as a pointer list */
-BtConstModuleList CDisplayWindow::modules() const
-{ return CSwordBackend::instance()->getConstPointerList(m_modules); }
+QStringList CDisplayWindow::moduleNames() const {
+    QStringList moduleNames;
+    moduleNames.reserve(m_modules.size());
+    for (auto const module : m_modules)
+        moduleNames.append(module->name());
+    return moduleNames;
+}
 
 /** Store the settings of this window in the given CProfileWindow object. */
 void CDisplayWindow::storeProfileSettings(BtConfigCore & conf) const {
@@ -140,14 +143,14 @@ void CDisplayWindow::storeProfileSettings(BtConfigCore & conf) const {
 
     bool hasFocus = (w == dynamic_cast<CDisplayWindow *>(mdi()->activeSubWindow()));
     conf.setValue(QStringLiteral("hasFocus"), hasFocus);
-    // conf.setSessionValue("type", static_cast<int>(modules().first()->type()));
+    // conf.setSessionValue("type", static_cast<int>(m_modules.first()->type()));
 
     // Save current key:
     if (auto const * const k = m_swordKey)
         conf.setValue(QStringLiteral("key"), k->normalizedKey());
 
     // Save list of modules:
-    conf.setValue(QStringLiteral("modules"), m_modules);
+    conf.setValue(QStringLiteral("modules"), moduleNames());
 
     // Default for "not a write window":
     conf.setValue(QStringLiteral("writeWindowType"), int(0));
@@ -251,7 +254,8 @@ void CDisplayWindow::initActions() {
 
     namespace DWG = CResMgr::displaywindows::general;
     initAction(DWG::search::actionName,
-               [this]{ BibleTime::instance()->openSearchDialog(modules()); });
+               [this]
+               { BibleTime::instance()->openSearchDialog(constModules()); });
     initAddAction(
                 QStringLiteral("openLocation"),
                 [this]{
@@ -312,7 +316,7 @@ void CDisplayWindow::initActions() {
                         searchText.append(
                                     QStringLiteral("strong:%1 ")
                                     .arg(strongNumber));
-                    BibleTime::instance()->openSearchDialog(modules(),
+                    BibleTime::instance()->openSearchDialog(constModules(),
                                                             searchText);
                 });
 
@@ -342,7 +346,7 @@ void CDisplayWindow::initActions() {
                     mgr.saveKey(m_swordKey,
                                 CExportManager::Text,
                                 true,
-                                modules());
+                                constModules());
                 });
 
     m_actions.save.entryAsHTML =
@@ -356,7 +360,7 @@ void CDisplayWindow::initActions() {
                     mgr.saveKey(m_swordKey,
                                 CExportManager::HTML,
                                 true,
-                                modules());
+                                constModules());
                 });
 
     m_actions.print.reference =
@@ -418,20 +422,21 @@ void CDisplayWindow::initView() {
     auto readDisplay = new BtModelViewReadDisplay(this, this);
     setDisplayWidget(readDisplay);
     setCentralWidget(m_displayWidget->view());
-    readDisplay->setModules(m_modules);
+    readDisplay->setModules(moduleNames());
 
     // Add the Navigation toolbar
     addToolBar(mainToolBar());
 
     // Create keychooser
-    setKeyChooser(CKeyChooser::createInstance(modules(),
+    auto const constMods = constModules();
+    setKeyChooser(CKeyChooser::createInstance(constMods,
                                               history(),
                                               m_swordKey,
                                               mainToolBar()));
 
     // Add the Works toolbar
     auto * const worksToolBar = moduleChooserBar();
-    worksToolBar->setModules(m_modules, modules().first()->type(), this);
+    worksToolBar->setModules(moduleNames(), constMods.first()->type(), this);
     addToolBar(worksToolBar);
 
     // Add the Tools toolbar
@@ -469,7 +474,7 @@ void CDisplayWindow::initToolbars() {
     buttonsToolBar()->addWidget(button);
 
     // Text Header toolbar
-    BtTextWindowHeader *h = new BtTextWindowHeader(modules().first()->type(), m_modules, this);
+    BtTextWindowHeader *h = new BtTextWindowHeader(m_modules.first()->type(), moduleNames(), this);
     m_headerBar->addWidget(h);
 }
 
@@ -489,7 +494,7 @@ QMenu * CDisplayWindow::newDisplayWidgetPopupMenu() {
                     m_actions.copy.selectedText->setEnabled(hasSelectedText());
                 });
     popupMenu->setTitle(tr("Lexicon window"));
-    popupMenu->setIcon(util::tool::getIconForModule(modules().first()));
+    popupMenu->setIcon(util::tool::getIconForModule(m_modules.first()));
     popupMenu->addAction(m_actions.findText);
     popupMenu->addAction(m_actions.findStrongs);
     popupMenu->addSeparator();
@@ -524,8 +529,9 @@ QMenu * CDisplayWindow::newDisplayWidgetPopupMenu() {
 void CDisplayWindow::setupMainWindowToolBars() {
     // Navigation toolbar
     QString keyReference = m_swordKey->key();
+    auto const constMods = constModules();
     auto * const keyChooser =
-            CKeyChooser::createInstance(modules(),
+            CKeyChooser::createInstance(constMods,
                                         history(),
                                         m_swordKey,
                                         btMainWindow()->navToolBar());
@@ -539,7 +545,7 @@ void CDisplayWindow::setupMainWindowToolBars() {
     btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
 
     // Works toolbar
-    btMainWindow()->worksToolBar()->setModules(m_modules, modules().first()->type(), this);
+    btMainWindow()->worksToolBar()->setModules(moduleNames(), constMods.first()->type(), this);
 
     // Tools toolbar
     btMainWindow()->toolsToolBar()->addAction(
@@ -572,9 +578,9 @@ CSwordKey* CDisplayWindow::getMouseClickedKey() const
 void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
     { // First make sure all used Sword modules are still present:
         CSwordBackend & backend = *(CSwordBackend::instance());
-        QMutableStringListIterator it(m_modules);
+        QMutableListIterator<CSwordModuleInfo *> it(m_modules);
         while (it.hasNext())
-            if (!backend.findModuleByName(it.next()))
+            if (!backend.moduleList().contains(it.next()))
                 it.remove();
     }
 
@@ -584,7 +590,7 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
         m_displayWidget->reloadModules();
 
         if (auto * const kc = m_keyChooser)
-            kc->setModules(modules(), false);
+            kc->setModules(constModules(), false);
 
         lookup();
 
@@ -592,7 +598,7 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
                     QStringLiteral("Displaywindow shortcuts"));
         m_actionCollection->readShortcuts(
                     QStringLiteral("Readwindow shortcuts"));
-        Q_EMIT sigModuleListSet(m_modules);
+        Q_EMIT sigModuleListSet(moduleNames());
     }
 
     m_displayWidget->settingsChanged();
@@ -602,8 +608,8 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 
 void CDisplayWindow::slotAddModule(int index, CSwordModuleInfo * module) {
     BT_ASSERT(index <= m_modules.size());
-    m_modules.insert(index, module->name());
-    m_displayWidget->setModules(m_modules);
+    m_modules.insert(index, module);
+    m_displayWidget->setModules(moduleNames());
     lookup();
     modulesChanged();
     Q_EMIT sigModuleListChanged();
@@ -611,8 +617,8 @@ void CDisplayWindow::slotAddModule(int index, CSwordModuleInfo * module) {
 
 void CDisplayWindow::slotReplaceModule(int index, CSwordModuleInfo * newModule){
     BT_ASSERT(index < m_modules.size());
-    m_modules.replace(index, newModule->name());
-    m_displayWidget->setModules(m_modules);
+    m_modules.replace(index, newModule);
+    m_displayWidget->setModules(moduleNames());
     lookup();
     modulesChanged();
     Q_EMIT sigModuleListChanged();
@@ -621,7 +627,7 @@ void CDisplayWindow::slotReplaceModule(int index, CSwordModuleInfo * newModule){
 void CDisplayWindow::slotRemoveModule(int index) {
     BT_ASSERT(index < m_modules.size());
     m_modules.removeAt(index);
-    m_displayWidget->setModules(m_modules);
+    m_displayWidget->setModules(moduleNames());
     lookup();
     modulesChanged();
     Q_EMIT sigModuleListChanged();
@@ -661,20 +667,21 @@ void CDisplayWindow::modulesChanged() {
     //if (moduleChooserBar()) { //necessary for write windows
     //setModules( m_moduleChooserBar->getModuleList() );
     //}
-    if (modules().isEmpty()) {
+    if (m_modules.isEmpty()) {
         close();
     }
     else {
-        Q_EMIT sigModulesChanged(modules());
-        m_swordKey->setModule(modules().first());
-        m_keyChooser->setModules(modules());
+        auto const constMods = constModules();
+        Q_EMIT sigModulesChanged(constMods);
+        m_swordKey->setModule(constMods.first());
+        m_keyChooser->setModules(constMods);
     }
 }
 
 void CDisplayWindow::lookupSwordKey(CSwordKey * newKey) {
     BT_ASSERT(newKey);
 
-    if (!m_isInitialized || !newKey || modules().empty() || !modules().first())
+    if (!m_isInitialized || !newKey || m_modules.empty() || !m_modules.first())
         return;
 
     if (m_swordKey != newKey)
@@ -710,7 +717,7 @@ bool CDisplayWindow::init() {
     initView();
     BT_ASSERT(m_displayWidget);
 
-    setWindowIcon(util::tool::getIconForModule(modules().first()));
+    setWindowIcon(util::tool::getIconForModule(m_modules.first()));
     setWindowTitle(windowCaption());
     initActions();
     initToolbars();
@@ -730,7 +737,7 @@ bool CDisplayWindow::init() {
     m_displayOptions = conf.getDisplayOptions();
     Q_EMIT sigDisplayOptionsChanged(m_displayOptions);
     Q_EMIT sigFilterOptionsChanged(m_filterOptions);
-    Q_EMIT sigModulesChanged(modules());
+    Q_EMIT sigModulesChanged(constModules());
 
     m_isInitialized = true;
     return true;
@@ -782,7 +789,7 @@ void CDisplayWindow::setDisplaySettingsButton(BtDisplaySettingsButton *button) {
 
     button->setDisplayOptionsNoRepopulate(displayOptions());
     button->setFilterOptionsNoRepopulate(filterOptions());
-    button->setModules(modules());
+    button->setModules(constModules());
 
     BT_CONNECT(button, &BtDisplaySettingsButton::sigFilterOptionsChanged,
                this, // Needed
@@ -807,7 +814,7 @@ void CDisplayWindow::lookup() { lookupSwordKey(m_swordKey); }
 void CDisplayWindow::lookupKey( const QString& keyName ) {
     /* This function is called for example after a bookmark was dropped on this window
     */
-    BT_ASSERT(modules().first());
+    BT_ASSERT(m_modules.first());
 
     if (!m_isInitialized) {
         return;
@@ -815,13 +822,13 @@ void CDisplayWindow::lookupKey( const QString& keyName ) {
 
     CSwordModuleInfo *m =
             CSwordBackend::instance()->findModuleByName(
-                modules().first()->name());
+                m_modules.first()->name());
     if (!m) {
         return; /// \todo check if this is correct behavior
     }
 
     /// \todo check for containsRef compat
-    if (m && modules().contains(m)) {
+    if (m && m_modules.contains(m)) {
         m_swordKey->setKey(keyName);
         m_keyChooser->setKey(m_swordKey); //the key chooser does send an update signal
         Q_EMIT sigKeyChanged(m_swordKey);

@@ -313,7 +313,7 @@ const CSwordModuleInfo* BibleTime::getCurrentModule() {
     if (auto * const activeSubWindow = m_mdi->activeSubWindow())
         if (auto * const displayWindow =
                 dynamic_cast<CDisplayWindow *>(activeSubWindow->widget()))
-            return displayWindow->modules().first();
+            return displayWindow->firstModule();
     return nullptr;
 }
 

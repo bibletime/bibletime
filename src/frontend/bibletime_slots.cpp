@@ -386,7 +386,7 @@ void BibleTime::slotSearchModules() {
     for (auto const * const subWindow : m_mdi->subWindowList()) {
         const CDisplayWindow * const w = dynamic_cast<CDisplayWindow*>(subWindow->widget());
         if (w != nullptr) {
-            modules << w->modules();
+            modules << w->constModules();
         }
     }
     openSearchDialog(std::move(modules));
