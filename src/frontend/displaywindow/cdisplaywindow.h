@@ -237,7 +237,6 @@ protected:
     /** Called to add actions to mainWindow toolbars */
     virtual void setupMainWindowToolBars();
 
-    void setToolBarsHidden();
     void clearMainWindowToolBars();
 
 protected Q_SLOTS:

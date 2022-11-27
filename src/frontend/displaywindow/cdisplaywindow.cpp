@@ -89,15 +89,6 @@ BibleTime* CDisplayWindow::btMainWindow() {
     return dynamic_cast<BibleTime*>(m_mdi->parent()->parent());
 }
 
-void CDisplayWindow::setToolBarsHidden() {
-    // Hide current window toolbars
-    if (m_mainToolBar)
-        m_mainToolBar->setHidden(true);
-    if (m_buttonsToolBar)
-        m_buttonsToolBar->setHidden(true);
-    if (m_moduleChooserBar)
-        m_moduleChooserBar->setHidden(true);
-}
 void CDisplayWindow::clearMainWindowToolBars() {
     // Clear main window toolbars, except for works toolbar
     btMainWindow()->navToolBar()->clear();
@@ -760,7 +751,14 @@ bool CDisplayWindow::init() {
     if (!conf.session().value<bool>(
             QStringLiteral("GUI/showToolbarsInEachWindow"),
             true))
-        setToolBarsHidden();
+    {
+        if (m_mainToolBar)
+            m_mainToolBar->setHidden(true);
+        if (m_buttonsToolBar)
+            m_buttonsToolBar->setHidden(true);
+        if (m_moduleChooserBar)
+            m_moduleChooserBar->setHidden(true);
+    }
     btMainWindow()->clearMdiToolBars();
     clearMainWindowToolBars();
     initConnections();
