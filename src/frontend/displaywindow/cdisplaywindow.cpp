@@ -72,6 +72,7 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
                this,                      &CDisplayWindow::reload);
 
     m_swordKey = modules.first()->createKey();
+    updateWindowTitle();
 }
 
 CDisplayWindow::~CDisplayWindow() {
@@ -106,13 +107,14 @@ void CDisplayWindow::windowActivated() {
     setupMainWindowToolBars();
 }
 
-/** Returns the right window caption. */
-QString CDisplayWindow::windowCaption() {
-    if (m_modules.isEmpty())
-        return {};
-    return QStringLiteral("%1 (%2)")
-            .arg(m_swordKey->key(),
-                 moduleNames().join(QStringLiteral(" | ")));
+void CDisplayWindow::updateWindowTitle() {
+    if (m_modules.isEmpty()) {
+        setWindowTitle(tr("<NO WORKS>"));
+    } else {
+        setWindowTitle(QStringLiteral("%1 (%2)")
+                       .arg(m_swordKey->key(),
+                            moduleNames().join(QStringLiteral(" | "))));
+    }
 }
 
 QStringList CDisplayWindow::moduleNames() const {
@@ -701,7 +703,7 @@ void CDisplayWindow::lookupSwordKey(CSwordKey * newKey) {
     m_displayWidget->scrollToKey(newKey);
     BibleTime::instance()->autoScrollStop();
 
-    setWindowTitle(windowCaption());
+    updateWindowTitle();
 }
 
 void CDisplayWindow::addModuleChooserBar() {
@@ -728,7 +730,6 @@ bool CDisplayWindow::init() {
     BT_ASSERT(m_displayWidget);
 
     setWindowIcon(util::tool::getIconForModule(m_modules.first()));
-    setWindowTitle(windowCaption());
     initActions();
     initToolbars();
 

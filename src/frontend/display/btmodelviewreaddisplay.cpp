@@ -63,8 +63,7 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
                    auto * const key = m_parentWindow->key();
                    key->setKey(reference);
                    m_parentWindow->keyChooser()->updateKey(key);
-                   m_parentWindow->setWindowTitle(
-                               m_parentWindow->windowCaption());
+                   m_parentWindow->updateWindowTitle();
                });
     BT_CONNECT(m_widget->qmlInterface(), &BtQmlInterface::dragOccuring,
                [this](const QString& moduleName, const QString& keyName) {

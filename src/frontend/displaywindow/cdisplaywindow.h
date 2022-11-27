@@ -53,8 +53,7 @@ public:
     /** Returns pointer to the mdi area object.*/
     CMDIArea * mdi() const { return m_mdi; }
 
-    /** Returns the correct window caption.*/
-    QString windowCaption();
+    void updateWindowTitle();
 
     CSwordModuleInfo const * firstModule() const noexcept
     { return m_modules.first(); }
