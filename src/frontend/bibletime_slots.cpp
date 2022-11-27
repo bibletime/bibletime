@@ -29,7 +29,6 @@
 #include <QToolBar>
 #include <QUrl>
 #include "../backend/config/btconfig.h"
-#include "../backend/keys/cswordversekey.h"
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "../util/directory.h"
@@ -42,7 +41,6 @@
 #include "displaywindow/btmodulechooserbar.h"
 #include "displaywindow/cdisplaywindow.h"
 #include "messagedialog.h"
-#include "searchdialog/csearchdialog.h"
 #include "settingsdialogs/cconfigurationdialog.h"
 #include "tips/bttipdialog.h"
 
