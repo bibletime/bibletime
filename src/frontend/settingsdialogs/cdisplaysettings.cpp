@@ -28,7 +28,6 @@
 #include <QFormLayout>
 #include <utility>
 #include "../../backend/config/btconfig.h"
-#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../backend/language.h"
 #include "../../backend/managers/btlocalemgr.h"
 #include "../../backend/managers/colormanager.h"
