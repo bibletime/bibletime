@@ -13,7 +13,6 @@
 #include "crossrefrendering.h"
 
 #include <QtGlobal>
-#include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../keys/cswordversekey.h"
 #include "../managers/referencemanager.h"
