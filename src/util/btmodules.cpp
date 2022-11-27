@@ -30,11 +30,16 @@ inline bool equalModuleCategories(QString const & n1, QString const & n2) {
 
 int leftLikeParallelModules(QStringList const & modules) {
     // Count the number of leftmost modules that are of the same category
-    int leftLikeModules = 0;
-    for (int i = 0; i < modules.count(); i++) {
-        if (!equalModuleCategories(modules.at(0), modules.at(i)))
-            break;
-        leftLikeModules++;
+    auto const numModules = modules.size();
+    if (numModules <= 0)
+        return 0;
+    int leftLikeModules = 1;
+    if (numModules > 1) {
+        auto it = modules.begin();
+        auto const & firstModuleName = *it;
+        while (equalModuleCategories(firstModuleName, *++it))
+            if (++leftLikeModules == numModules)
+                break;
     }
     return leftLikeModules;
 }
