@@ -60,6 +60,10 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
     , m_swordKey((static_cast<void>(BT_ASSERT(!modules.empty())),
                   m_modules.first()->createKey()))
 {
+    m_moduleNames.reserve(m_modules.size());
+    for (auto const module : m_modules)
+        m_moduleNames.append(module->name());
+
     BT_ASSERT(m_swordKey);
     setMinimumSize(100, 100);
     setFocusPolicy(Qt::ClickFocus);
@@ -112,16 +116,8 @@ void CDisplayWindow::updateWindowTitle() {
     } else {
         setWindowTitle(QStringLiteral("%1 (%2)")
                        .arg(m_swordKey->key(),
-                            moduleNames().join(QStringLiteral(" | "))));
+                            m_moduleNames.join(QStringLiteral(" | "))));
     }
-}
-
-QStringList CDisplayWindow::moduleNames() const {
-    QStringList moduleNames;
-    moduleNames.reserve(m_modules.size());
-    for (auto const module : m_modules)
-        moduleNames.append(module->name());
-    return moduleNames;
 }
 
 /** Store the settings of this window in the given CProfileWindow object. */
@@ -150,7 +146,7 @@ void CDisplayWindow::storeProfileSettings(BtConfigCore & conf) const {
     conf.setValue(QStringLiteral("key"), m_swordKey->normalizedKey());
 
     // Save list of modules:
-    conf.setValue(QStringLiteral("modules"), moduleNames());
+    conf.setValue(QStringLiteral("modules"), m_moduleNames);
 
     // Default for "not a write window":
     conf.setValue(QStringLiteral("writeWindowType"), int(0));
@@ -426,7 +422,7 @@ void CDisplayWindow::initView() {
     auto readDisplay = new BtModelViewReadDisplay(this, this);
     setDisplayWidget(readDisplay);
     setCentralWidget(m_displayWidget->view());
-    readDisplay->setModules(moduleNames());
+    readDisplay->setModules(m_moduleNames);
 
     // Add the Navigation toolbar
     addToolBar(mainToolBar());
@@ -593,13 +589,23 @@ CSwordKey* CDisplayWindow::getMouseClickedKey() const
 
 /** Refresh the settings of this window. */
 void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
-    { // First make sure all used Sword modules are still present:
-        CSwordBackend & backend = *(CSwordBackend::instance());
-        QMutableListIterator<CSwordModuleInfo *> it(m_modules);
-        while (it.hasNext())
-            if (!backend.moduleList().contains(it.next()))
-                it.remove();
+    // Since all the CSwordModuleInfo pointers are invalidated, we need to
+    // rebuild m_modules based on m_moduleNames, and remove all missing modules:
+    BT_ASSERT(!m_moduleNames.empty()); // This should otherwise be close()-d
+    m_modules.clear();
+    {
+        auto const & backend = *CSwordBackend::instance();
+        auto it = m_moduleNames.begin();
+        do {
+            if (auto * const module = backend.findModuleByName(*it)) {
+                m_modules.append(module);
+                ++it;
+            } else {
+                it = m_moduleNames.erase(it);
+            }
+        } while (it != m_moduleNames.end());
     }
+    BT_ASSERT(m_moduleNames.size() == m_modules.size());
 
     if (m_modules.isEmpty()) {
         close();
@@ -626,9 +632,10 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 void CDisplayWindow::slotAddModule(int index, CSwordModuleInfo * module) {
     BT_ASSERT(index <= m_modules.size());
     m_modules.insert(index, module);
+    m_moduleNames.insert(index, module->name());
     if (index == 0)
         setWindowIcon(module->moduleIcon());
-    m_displayWidget->setModules(moduleNames());
+    m_displayWidget->setModules(m_moduleNames);
     lookup();
     modulesChanged();
     Q_EMIT sigModuleListChanged(m_modules);
@@ -637,9 +644,10 @@ void CDisplayWindow::slotAddModule(int index, CSwordModuleInfo * module) {
 void CDisplayWindow::slotReplaceModule(int index, CSwordModuleInfo * newModule){
     BT_ASSERT(index < m_modules.size());
     m_modules.replace(index, newModule);
+    m_moduleNames.replace(index, newModule->name());
     if (index == 0)
         setWindowIcon(newModule->moduleIcon());
-    m_displayWidget->setModules(moduleNames());
+    m_displayWidget->setModules(m_moduleNames);
     lookup();
     modulesChanged();
     Q_EMIT sigModuleListChanged(m_modules);
@@ -649,11 +657,12 @@ void CDisplayWindow::slotRemoveModule(int index) {
     BT_ASSERT(index >= 0);
     BT_ASSERT(index < m_modules.size());
     m_modules.removeAt(index);
+    m_moduleNames.removeAt(index);
     if (m_modules.empty())
         close();
     if (index == 0)
         setWindowIcon(m_modules.first()->moduleIcon());
-    m_displayWidget->setModules(moduleNames());
+    m_displayWidget->setModules(m_moduleNames);
     lookup();
     modulesChanged();
     Q_EMIT sigModuleListChanged(m_modules);

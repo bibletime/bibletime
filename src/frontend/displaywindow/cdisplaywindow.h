@@ -66,7 +66,8 @@ public:
     { return BtConstModuleList(m_modules.begin(), m_modules.end()); }
 
     /** \returns the used modules as a string list. */
-    QStringList moduleNames() const;
+    QStringList const & moduleNames() const noexcept
+    { return m_moduleNames; }
 
     /**
        \brief Stores the settings of this window to configuration.
@@ -292,6 +293,10 @@ private:
     CMDIArea * const m_mdi;
 
     BtModuleList m_modules;
+
+    // Cache names of modules in case the backend invalidates the pointers in
+    // m_modules. This must be kept in sync with m_modules.
+    QStringList m_moduleNames;
 
     FilterOptions m_filterOptions;
     DisplayOptions m_displayOptions;
