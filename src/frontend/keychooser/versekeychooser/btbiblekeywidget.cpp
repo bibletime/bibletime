@@ -28,7 +28,6 @@
 #include "../../../backend/keys/cswordversekey.h"
 #include "../../../util/btconnect.h"
 #include "../../../util/cresmgr.h"
-#include "../../bibletimeapp.h"
 #include "../cscrollerwidgetset.h"
 #include "btdropdownchooserbutton.h"
 
