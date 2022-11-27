@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include <QStringList>
+#include "../backend/drivers/btmodulelist.h"
 
 
-int leftLikeParallelModules(QStringList const & modules);
+int leftLikeParallelModules(BtModuleList const & modules);

@@ -18,6 +18,7 @@
 #include <QStringList>
 #include <Qt>
 #include <QWidget>
+#include <utility>
 #include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../util/btconnect.h"
 #include "../../util/btmodules.h"
@@ -26,8 +27,8 @@
 
 
 BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
-                                       QStringList modules,
-                                       CDisplayWindow *window)
+                                       BtModuleList modules,
+                                       CDisplayWindow * window)
         : QWidget(window),
         BtWindowModuleChooser(modtype, window)
 {
@@ -35,11 +36,11 @@ BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
     layout->setContentsMargins(0, 0, 0, 0);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     setLayoutDirection(Qt::LeftToRight);
-    setModules(modules);
+    setModules(std::move(modules));
 }
 
-void BtTextWindowHeader::slotBackendModulesChanged() {
-    m_modules = m_window->moduleNames();
+void BtTextWindowHeader::slotBackendModulesChanged(BtModuleList newModules) {
+    m_modules = std::move(newModules);
 
     adjustWidgetCount();
 
@@ -51,8 +52,8 @@ void BtTextWindowHeader::slotBackendModulesChanged() {
                                          leftLikeModules);
 }
 
-void BtTextWindowHeader::slotWindowModulesChanged() {
-    m_modules = m_window->moduleNames();
+void BtTextWindowHeader::slotWindowModulesChanged(BtModuleList newModules) {
+    m_modules = std::move(newModules);
     adjustWidgetCount();
     updateWidgets();
 }
@@ -103,12 +104,12 @@ BtTextWindowHeaderWidget* BtTextWindowHeader::addWidget() {
     return w;
 }
 
-void BtTextWindowHeader::setModules( QStringList useModules ) {
-    m_modules = useModules;
+void BtTextWindowHeader::setModules(BtModuleList useModules) {
+    m_modules = std::move(useModules);
     adjustWidgetCount(true);
 
     //if (!useModules.count()) return;
-    for (int i = 0; i < useModules.count(); i++) {
+    for (int i = 0; i < m_modules.count(); i++) {
         addWidget();
     }
     updateWidgets();

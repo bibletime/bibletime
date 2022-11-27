@@ -132,7 +132,7 @@ void BtModuleChooserMenu::preBuildMenu(QActionGroup * actionGroup) {
         QAction * noneAction = new QAction(this);
         noneAction->setCheckable(true);
         noneAction->setText(tr("NONE"));
-        noneAction->setChecked(m_selectedModule.isEmpty());
+        noneAction->setChecked(!m_selectedModule);
         noneAction->setDisabled(
                     m_newModulesToUse.size() <= 1
                     || (m_buttonIndex <= 0 && m_leftLikeModules <= 1));
@@ -153,20 +153,19 @@ QAction * BtModuleChooserMenu::newAction(QMenu * parentMenu,
     auto const & sortedModel = *static_cast<SortModel *>(m_sortedModel);
 
     auto const sourceItemIndex = sortedModel.mapToSource(itemIndex);
-    auto const * const module =
+    auto * const module =
             sortedModel.m_sourceModel->module(sourceItemIndex);
     BT_ASSERT(module);
     action->setCheckable(true);
-    auto const & moduleName = module->name();
-    action->setChecked(moduleName == m_selectedModule);
+    action->setChecked(module == m_selectedModule);
 
     if (m_flags & DisableSelectedModule) {
-        action->setDisabled(moduleName == m_selectedModule
-                            || m_newModulesToUse.contains(moduleName)
+        action->setDisabled(module == m_selectedModule
+                            || m_newModulesToUse.contains(module)
                             || module->isLocked());
     } else {
-        action->setDisabled((moduleName != m_selectedModule
-                             && m_newModulesToUse.contains(moduleName))
+        action->setDisabled((module != m_selectedModule
+                             && m_newModulesToUse.contains(module))
                             || module->isLocked());
     }
 
@@ -180,8 +179,8 @@ QAction * BtModuleChooserMenu::newAction(QMenu * parentMenu,
     return action;
 }
 
-void BtModuleChooserMenu::update(QStringList newModulesToUse,
-                                 QString newSelectedModule,
+void BtModuleChooserMenu::update(BtModuleList newModulesToUse,
+                                 CSwordModuleInfo * newSelectedModule,
                                  int newButtonIndexIndex,
                                  int newLeftLikeModules)
 {
@@ -192,7 +191,9 @@ void BtModuleChooserMenu::update(QStringList newModulesToUse,
     rebuildMenu();
 }
 
-void BtModuleChooserMenu::setSelectedModule(QString newSelectedModule) noexcept{
-    m_selectedModule = std::move(newSelectedModule);
+void BtModuleChooserMenu::setSelectedModule(
+        CSwordModuleInfo * const newSelectedModule) noexcept
+{
+    m_selectedModule = newSelectedModule;
     rebuildMenu();
 }

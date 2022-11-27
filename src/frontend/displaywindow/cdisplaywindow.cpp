@@ -436,7 +436,7 @@ void CDisplayWindow::initView() {
 
     // Add the Works toolbar
     auto * const worksToolBar = moduleChooserBar();
-    worksToolBar->setModules(moduleNames(), constMods.first()->type(), this);
+    worksToolBar->setModules(m_modules, constMods.first()->type(), this);
     addToolBar(worksToolBar);
 
     // Add the Tools toolbar
@@ -476,7 +476,7 @@ void CDisplayWindow::initToolbars() {
     // Text Header toolbar
     auto * const h =
             new BtTextWindowHeader(m_modules.first()->type(),
-                                   moduleNames(),
+                                   m_modules,
                                    this);
     BT_CONNECT(this, &CDisplayWindow::sigModuleListSet,
                h, &BtTextWindowHeader::slotBackendModulesChanged);
@@ -558,7 +558,7 @@ void CDisplayWindow::setupMainWindowToolBars() {
     btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
 
     // Works toolbar
-    btMainWindow()->worksToolBar()->setModules(moduleNames(), constMods.first()->type(), this);
+    btMainWindow()->worksToolBar()->setModules(m_modules, constMods.first()->type(), this);
 
     // Tools toolbar
     btMainWindow()->toolsToolBar()->addAction(
@@ -611,7 +611,7 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
                     QStringLiteral("Displaywindow shortcuts"));
         m_actionCollection->readShortcuts(
                     QStringLiteral("Readwindow shortcuts"));
-        Q_EMIT sigModuleListSet(moduleNames());
+        Q_EMIT sigModuleListSet(m_modules);
     }
 
     m_displayWidget->settingsChanged();
@@ -625,7 +625,7 @@ void CDisplayWindow::slotAddModule(int index, CSwordModuleInfo * module) {
     m_displayWidget->setModules(moduleNames());
     lookup();
     modulesChanged();
-    Q_EMIT sigModuleListChanged();
+    Q_EMIT sigModuleListChanged(m_modules);
 }
 
 void CDisplayWindow::slotReplaceModule(int index, CSwordModuleInfo * newModule){
@@ -634,7 +634,7 @@ void CDisplayWindow::slotReplaceModule(int index, CSwordModuleInfo * newModule){
     m_displayWidget->setModules(moduleNames());
     lookup();
     modulesChanged();
-    Q_EMIT sigModuleListChanged();
+    Q_EMIT sigModuleListChanged(m_modules);
 }
 
 void CDisplayWindow::slotRemoveModule(int index) {
@@ -643,7 +643,7 @@ void CDisplayWindow::slotRemoveModule(int index) {
     m_displayWidget->setModules(moduleNames());
     lookup();
     modulesChanged();
-    Q_EMIT sigModuleListChanged();
+    Q_EMIT sigModuleListChanged(m_modules);
 }
 
 void CDisplayWindow::setBibleReference(const QString& reference) {

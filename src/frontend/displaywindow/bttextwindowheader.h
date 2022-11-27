@@ -27,19 +27,21 @@ class BtTextWindowHeaderWidget;
 class BtTextWindowHeader: public QWidget, public BtWindowModuleChooser {
         Q_OBJECT
     public:
-        BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype, QStringList modules, CDisplayWindow *window);
+        BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
+                           BtModuleList modules,
+                           CDisplayWindow * window);
 
     public Q_SLOTS:
         /**
           The backend module list was updated, module list and widgets must be updated from
           scratch.
         */
-        void slotBackendModulesChanged() override;
+        void slotBackendModulesChanged(BtModuleList newModules) override;
 
         /**
           The window module list was updated, module list and widgets must be updated.
         */
-        void slotWindowModulesChanged() override;
+        void slotWindowModulesChanged(BtModuleList newModules) override;
 
     Q_SIGNALS:
 
@@ -63,7 +65,7 @@ class BtTextWindowHeader: public QWidget, public BtWindowModuleChooser {
         /** Adds an empty widget to the header.*/
         BtTextWindowHeaderWidget* addWidget();
         /** Sets the initial modules.*/
-        void setModules( QStringList useModules );
+        void setModules(BtModuleList useModules);
 
     private:
         QList<BtTextWindowHeaderWidget*> m_widgetList;

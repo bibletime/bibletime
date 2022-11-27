@@ -40,44 +40,42 @@ BtModuleChooserButton::BtModuleChooserButton(CSwordModuleInfo::ModuleType mtype,
 QIcon const & BtModuleChooserButton::icon() {
     switch (m_popup->moduleType()) {
         case CSwordModuleInfo::Bible:
-            return m_popup->selectedModule().isEmpty()
-                    ? CResMgr::modules::bible::icon_add()
-                    : CResMgr::modules::bible::icon_unlocked();
+            return m_popup->selectedModule()
+                    ? CResMgr::modules::bible::icon_unlocked()
+                    : CResMgr::modules::bible::icon_add();
         case CSwordModuleInfo::Commentary:
-            return m_popup->selectedModule().isEmpty()
-                   ? CResMgr::modules::commentary::icon_add()
-                   : CResMgr::modules::commentary::icon_unlocked();
+            return m_popup->selectedModule()
+                   ? CResMgr::modules::commentary::icon_unlocked()
+                   : CResMgr::modules::commentary::icon_add();
         case CSwordModuleInfo::Lexicon:
-            return m_popup->selectedModule().isEmpty()
-                   ? CResMgr::modules::lexicon::icon_add()
-                   : CResMgr::modules::lexicon::icon_unlocked();
+            return m_popup->selectedModule()
+                   ? CResMgr::modules::lexicon::icon_unlocked()
+                   : CResMgr::modules::lexicon::icon_add();
         case CSwordModuleInfo::GenericBook:
-            return m_popup->selectedModule().isEmpty()
-                   ? CResMgr::modules::book::icon_add()
-                   : CResMgr::modules::book::icon_unlocked();
+            return m_popup->selectedModule()
+                   ? CResMgr::modules::book::icon_unlocked()
+                   : CResMgr::modules::book::icon_add();
         default: //return as default the bible icon
             return CResMgr::modules::bible::icon_unlocked();
     }
 }
 
-void BtModuleChooserButton::updateMenu(QStringList newModulesToUse,
-                                       QString newSelectedModule,
+void BtModuleChooserButton::updateMenu(BtModuleList newModulesToUse,
+                                       CSwordModuleInfo * newSelectedModule,
                                        int newButtonIndex,
                                        int newLeftLikeModules)
 {
-    if (newSelectedModule.isEmpty()) {
-        setToolTip(tr("Select an additional work"));
+    if (newSelectedModule) {
+        setToolTip(tr("Select a work [%1]").arg(newSelectedModule->name()));
     } else {
-        setToolTip(QString(tr("Select a work [%1]")).arg(newSelectedModule));
+        setToolTip(tr("Select an additional work"));
     }
-    m_popup->update(newModulesToUse,
+    m_popup->update(std::move(newModulesToUse),
                     newSelectedModule,
                     newButtonIndex,
                     newLeftLikeModules);
-    if (auto const * const module =
-        CSwordBackend::instance()->findModuleByName(newSelectedModule))
-    {
-        setIcon(module->moduleIcon());
+    if (newSelectedModule) {
+        setIcon(newSelectedModule->moduleIcon());
     } else {
         setIcon(icon());
     }
@@ -87,23 +85,19 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse,
 void BtModuleChooserButton::moduleChosen(
         CSwordModuleInfo * const newModule)
 {
-    // If no module was previously selected:
-    auto const & selectedModule = m_popup->selectedModule();
-    if (selectedModule.isEmpty()) {
+    if (m_popup->selectedModule()) { // If module was previously selected:
         if (newModule) {
-            m_popup->setSelectedModule(newModule->name());
-            setIcon(newModule->moduleIcon());
-            Q_EMIT sigModuleAdd(m_popup->buttonIndex(), newModule);
-        }
-    } else {
-        if (newModule) {
-            m_popup->setSelectedModule(newModule->name());
+            m_popup->setSelectedModule(newModule);
             setIcon(newModule->moduleIcon());
             Q_EMIT sigModuleReplace(m_popup->buttonIndex(), newModule);
         } else {
-            m_popup->setSelectedModule(QString());
+            m_popup->setSelectedModule(nullptr);
             setIcon(icon());
             Q_EMIT sigModuleRemove(m_popup->buttonIndex());
         }
+    } else if (newModule) {
+        m_popup->setSelectedModule(newModule);
+        setIcon(newModule->moduleIcon());
+        Q_EMIT sigModuleAdd(m_popup->buttonIndex(), newModule);
     }
 }

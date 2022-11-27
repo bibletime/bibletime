@@ -59,6 +59,8 @@ public:
     CSwordModuleInfo const * firstModule() const noexcept
     { return m_modules.first(); }
 
+    BtModuleList const & modules() const { return m_modules; }
+
     BtConstModuleList constModules() const
     { return BtConstModuleList(m_modules.begin(), m_modules.end()); }
 
@@ -148,13 +150,13 @@ public:
 
 Q_SIGNALS:
     /** The module list was set because backend was reloaded.*/
-    void sigModuleListSet(QStringList modules);
+    void sigModuleListSet(BtModuleList newList);
     /** A module was added to this window.*/
     void sigModuleAdded(int index, QString module);
     void sigModuleReplaced(int index, QString newModule);
     void sigModuleRemoved(int index);
     /** The module list of window changed but backend list didn't.*/
-    void sigModuleListChanged();
+    void sigModuleListChanged(BtModuleList newList);
 
     /**
           Signal emitted when display options are changed.

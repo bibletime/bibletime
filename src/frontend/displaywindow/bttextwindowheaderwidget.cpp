@@ -104,16 +104,14 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(
     layout->addWidget(separator);
 }
 
-void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse,
-                                            QString thisModule,
+void BtTextWindowHeaderWidget::updateWidget(BtModuleList newModulesToUse,
+                                            CSwordModuleInfo * module,
                                             int newIndex,
                                             int leftLikeModules)
 {
-    m_label->setText(thisModule);
-    if (auto const * const module =
-                CSwordBackend::instance()->findModuleByName(thisModule))
-        m_iconLabel->setPixmap(module->moduleIcon().pixmap(
-                                   m_label->fontMetrics().height()));
+    m_label->setText(module->name());
+    m_iconLabel->setPixmap(
+                module->moduleIcon().pixmap(m_label->fontMetrics().height()));
     m_id = newIndex;
 
     bool disableRemove = false;
@@ -123,8 +121,8 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse,
     m_removeAction->setDisabled(disableRemove);
 
     m_replaceMenu->update(newModulesToUse,
-                          thisModule,
+                          module,
                           newIndex,
                           leftLikeModules);
-    m_addMenu->update(newModulesToUse, thisModule, newIndex, leftLikeModules);
+    m_addMenu->update(newModulesToUse, module, newIndex, leftLikeModules);
 }

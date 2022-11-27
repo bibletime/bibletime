@@ -13,7 +13,8 @@
 #pragma once
 
 #include "../../backend/drivers/cswordmoduleinfo.h"
-#include <QStringList>
+#include "../../backend/drivers/btmodulelist.h"
+
 
 class CDisplayWindow;
 
@@ -46,14 +47,14 @@ class BtWindowModuleChooser {
         * This expects that the window module list has already been updated, so
         * the corresponding slot should be connected to the window, not to the backend.
         */
-        virtual void slotBackendModulesChanged() = 0;
+        virtual void slotBackendModulesChanged(BtModuleList newModules) = 0;
         /** Modules have been added, replaced or removed in the window without backend changing.*/
-        virtual void slotWindowModulesChanged() = 0;
+        virtual void slotWindowModulesChanged(BtModuleList newModules) = 0;
 
 
     protected:
         CDisplayWindow* m_window;
         CSwordModuleInfo::ModuleType m_moduleType;
         /** The cache of the window module list. Kept for convenience.*/
-        QStringList m_modules;
+        BtModuleList m_modules;
 };

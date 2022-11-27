@@ -12,23 +12,11 @@
 
 #include "btmodules.h"
 
-#include <QString>
 #include "../backend/drivers/cswordmoduleinfo.h"
-#include "../backend/managers/cswordbackend.h"
+#include "../backend/drivers/btmodulelist.h"
 
 
-namespace {
-inline bool equalModuleCategories(QString const & n1, QString const & n2) {
-    if (CSwordModuleInfo const * const m1 =
-                CSwordBackend::instance()->findModuleByName(n1))
-        if (CSwordModuleInfo const * const m2 =
-                    CSwordBackend::instance()->findModuleByName(n2))
-            return m1->category() == m2->category();
-    return false;
-}
-} // anonymous namespace
-
-int leftLikeParallelModules(QStringList const & modules) {
+int leftLikeParallelModules(BtModuleList const & modules) {
     // Count the number of leftmost modules that are of the same category
     auto const numModules = modules.size();
     if (numModules <= 0)
@@ -36,8 +24,8 @@ int leftLikeParallelModules(QStringList const & modules) {
     int leftLikeModules = 1;
     if (numModules > 1) {
         auto it = modules.begin();
-        auto const & firstModuleName = *it;
-        while (equalModuleCategories(firstModuleName, *++it))
+        auto const category = (*it)->category();
+        while ((*++it)->category() == category)
             if (++leftLikeModules == numModules)
                 break;
     }

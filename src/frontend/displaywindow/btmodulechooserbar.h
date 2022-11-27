@@ -32,7 +32,7 @@ class BtModuleChooserBar: public QToolBar, public BtWindowModuleChooser {
         BtModuleChooserBar(QWidget* parent);
 
         /** Initialize with module list.*/
-        void setModules(QStringList useModules,
+        void setModules(BtModuleList useModules,
                         CSwordModuleInfo::ModuleType type,
                         CDisplayWindow * window);
 
@@ -42,12 +42,12 @@ class BtModuleChooserBar: public QToolBar, public BtWindowModuleChooser {
         * The signal comes from the window, not from the backend. The new list can
         * be shorter but not longer than the old list.
         */
-        void slotBackendModulesChanged() override;
+        void slotBackendModulesChanged(BtModuleList newModules) override;
 
         /**
         * The window module list was changed, i.e. 1 module added, removed or replaced.
         */
-        void slotWindowModulesChanged() override;
+        void slotWindowModulesChanged(BtModuleList newModules) override;
 
     private:
         /** Adds an empty button to the toolbar.*/

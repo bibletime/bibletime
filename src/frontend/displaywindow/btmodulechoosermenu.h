@@ -17,8 +17,8 @@
 #include <QFlags>
 #include <QObject>
 #include <QString>
-#include <QStringList>
 #include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../backend/drivers/btmodulelist.h"
 
 
 class QAction;
@@ -47,16 +47,18 @@ public: // methods:
                         Flags flags,
                         QWidget * parent = nullptr);
 
-    void update(QStringList newModulesToUse,
-                QString newSelectedModule,
+    void update(BtModuleList newModulesToUse,
+                CSwordModuleInfo * newSelectedModule,
                 int newButtonIndexIndex,
                 int newLeftLikeModules);
 
     CSwordModuleInfo::ModuleType moduleType() const noexcept
     { return m_moduleType; }
 
-    QString const & selectedModule() const noexcept { return m_selectedModule; }
-    void setSelectedModule(QString newSelectedModule) noexcept;
+    CSwordModuleInfo * selectedModule() const noexcept
+    { return m_selectedModule; }
+
+    void setSelectedModule(CSwordModuleInfo * const newSelectedModule) noexcept;
 
     int buttonIndex() const noexcept { return m_buttonIndex; }
 
@@ -76,8 +78,8 @@ public: // fields:
     CSwordModuleInfo::ModuleType const m_moduleType;
     void * const m_sortedModel;
     Flags const m_flags;
-    QStringList m_newModulesToUse;
-    QString m_selectedModule;
+    BtModuleList m_newModulesToUse;
+    CSwordModuleInfo * m_selectedModule = nullptr;
     int m_buttonIndex;
     int m_leftLikeModules;
 

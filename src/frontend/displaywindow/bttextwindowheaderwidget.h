@@ -18,6 +18,7 @@
 #include <QString>
 #include <QStringList>
 #include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../backend/drivers/btmodulelist.h"
 
 
 class BtModuleChooserMenu;
@@ -49,7 +50,10 @@ class BtTextWindowHeaderWidget : public QWidget {
         * the existing menu items but doesn't add or remove them if the menu exists.
         * If the menu doesn't exist, creates it first and then updates it.
         */
-        void updateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules);
+        void updateWidget(BtModuleList newModulesToUse,
+                          CSwordModuleInfo * module,
+                          int newIndex,
+                          int leftLikeModules);
 
     Q_SIGNALS:
         /** User selected a module from menu to replace an existing module.*/

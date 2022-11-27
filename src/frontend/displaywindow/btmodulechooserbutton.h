@@ -41,8 +41,8 @@ class BtModuleChooserButton: public QToolButton {
         BtModuleChooserButton(CSwordModuleInfo::ModuleType mtype,
                               QWidget * parent = nullptr);
 
-        void updateMenu(QStringList newModulesToUse,
-                        QString thisModule,
+        void updateMenu(BtModuleList newModulesToUse,
+                        CSwordModuleInfo * thisModule,
                         int newIndex,
                         int leftLikeModules);
 

@@ -15,6 +15,7 @@
 #include <QAction>
 #include <QList>
 #include <Qt>
+#include <utility>
 #include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../util/btconnect.h"
 #include "../../util/btmodules.h"
@@ -31,8 +32,8 @@ BtModuleChooserBar::BtModuleChooserBar(QWidget *parent)
     setFloatable(false);
 }
 
-void BtModuleChooserBar::slotBackendModulesChanged() {
-    m_modules = m_window->moduleNames();
+void BtModuleChooserBar::slotBackendModulesChanged(BtModuleList newModules) {
+    m_modules = std::move(newModules);
     adjustButtonCount();
 
     // Recreate all menus from scratch:
@@ -40,7 +41,7 @@ void BtModuleChooserBar::slotBackendModulesChanged() {
     for (int i = 0; i < m_buttonList.count(); i++)
         m_buttonList.at(i)->updateMenu(m_modules,
                                        (i >= m_modules.count())
-                                       ? QString()
+                                       ? nullptr
                                        : m_modules.at(i),
                                        i,
                                        leftLikeModules);
@@ -71,8 +72,8 @@ void BtModuleChooserBar::adjustButtonCount(bool adjustToZero) {
     }
 }
 
-void BtModuleChooserBar::slotWindowModulesChanged() {
-    m_modules = m_window->moduleNames();
+void BtModuleChooserBar::slotWindowModulesChanged(BtModuleList newModules) {
+    m_modules = std::move(newModules);
     adjustButtonCount();
     updateButtonMenus();
 }
@@ -104,11 +105,11 @@ BtModuleChooserButton* BtModuleChooserBar::addButton() {
 
 
 /** Sets the modules which are chosen in this module chooser bar. */
-void BtModuleChooserBar::setModules(QStringList useModules,
+void BtModuleChooserBar::setModules(BtModuleList useModules,
                                     CSwordModuleInfo::ModuleType type,
                                     CDisplayWindow * window)
 {
-    m_modules = useModules;
+    m_modules = std::move(useModules);
     m_window = window;
     m_moduleType = type;
 
@@ -117,7 +118,7 @@ void BtModuleChooserBar::setModules(QStringList useModules,
     adjustButtonCount(true);
 
     //if (!useModules.count()) return;
-    for (int i = 0; i < useModules.count(); i++) {
+    for (int i = 0; i < m_modules.size(); i++) {
         addButton();
     }
     if (!(m_moduleType == CSwordModuleInfo::GenericBook)) {
@@ -136,7 +137,7 @@ void BtModuleChooserBar::updateButtonMenus() {
     for (int i = 0; i < m_buttonList.count(); i++)
         m_buttonList.at(i)->updateMenu(m_modules,
                                        (i >= m_modules.count())
-                                       ? QString()
+                                       ? nullptr
                                        : m_modules.at(i),
                                        i,
                                        leftLikeModules);
