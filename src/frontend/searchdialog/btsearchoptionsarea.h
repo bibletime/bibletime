@@ -16,7 +16,6 @@
 
 #include "../../backend/cswordmodulesearch.h"
 #include "../../backend/drivers/btmodulelist.h"
-#include "../../backend/keys/cswordversekey.h"
 #include "chistorycombobox.h"
 
 
