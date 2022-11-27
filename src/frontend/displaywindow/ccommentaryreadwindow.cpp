@@ -18,14 +18,10 @@
 #include <QToolBar>
 #include "../../backend/config/btconfigcore.h"
 #include "../../backend/keys/cswordversekey.h"
-#include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
 #include "../bibletime.h"
-#include "../bibletimeapp.h"
-#include "../display/btmodelviewreaddisplay.h"
 #include "../keychooser/ckeychooser.h"
 #include "btactioncollection.h"
-#include "btmodulechooserbar.h"
 
 
 void CCommentaryReadWindow::insertKeyboardActions(BtActionCollection* const a) {
