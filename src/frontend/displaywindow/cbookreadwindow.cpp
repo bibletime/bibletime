@@ -22,7 +22,6 @@
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
-#include "../../util/tool.h"
 #include "../bibletime.h"
 #include "../display/btmodelviewreaddisplay.h"
 #include "../keychooser/cbooktreechooser.h"
