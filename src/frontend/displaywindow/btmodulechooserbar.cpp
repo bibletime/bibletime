@@ -32,7 +32,7 @@ BtModuleChooserBar::BtModuleChooserBar(QWidget *parent)
 }
 
 void BtModuleChooserBar::slotBackendModulesChanged() {
-    m_modules = m_window->getModuleList();
+    m_modules = m_window->moduleNames();
     adjustButtonCount();
 
     // Recreate all menus from scratch:
@@ -72,7 +72,7 @@ void BtModuleChooserBar::adjustButtonCount(bool adjustToZero) {
 }
 
 void BtModuleChooserBar::slotWindowModulesChanged() {
-    m_modules = m_window->getModuleList();
+    m_modules = m_window->moduleNames();
     adjustButtonCount();
     updateButtonMenus();
 }

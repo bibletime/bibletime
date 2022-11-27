@@ -59,7 +59,7 @@ public:
     BtConstModuleList modules() const;
 
     /** Returns the used modules as a string list. */
-    QStringList const & getModuleList() const { return m_modules; }
+    QStringList const & moduleNames() const { return m_modules; }
 
     /**
        \brief Stores the settings of this window to configuration.

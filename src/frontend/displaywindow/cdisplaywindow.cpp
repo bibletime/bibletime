@@ -418,7 +418,7 @@ void CDisplayWindow::initView() {
     auto readDisplay = new BtModelViewReadDisplay(this, this);
     setDisplayWidget(readDisplay);
     setCentralWidget(m_displayWidget->view());
-    readDisplay->setModules(getModuleList());
+    readDisplay->setModules(m_modules);
 
     // Add the Navigation toolbar
     addToolBar(mainToolBar());
@@ -431,7 +431,7 @@ void CDisplayWindow::initView() {
 
     // Add the Works toolbar
     auto * const worksToolBar = moduleChooserBar();
-    worksToolBar->setModules(getModuleList(), modules().first()->type(), this);
+    worksToolBar->setModules(m_modules, modules().first()->type(), this);
     addToolBar(worksToolBar);
 
     // Add the Tools toolbar
@@ -469,7 +469,7 @@ void CDisplayWindow::initToolbars() {
     buttonsToolBar()->addWidget(button);
 
     // Text Header toolbar
-    BtTextWindowHeader *h = new BtTextWindowHeader(modules().first()->type(), getModuleList(), this);
+    BtTextWindowHeader *h = new BtTextWindowHeader(modules().first()->type(), m_modules, this);
     m_headerBar->addWidget(h);
 }
 
@@ -539,7 +539,7 @@ void CDisplayWindow::setupMainWindowToolBars() {
     btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
 
     // Works toolbar
-    btMainWindow()->worksToolBar()->setModules(getModuleList(), modules().first()->type(), this);
+    btMainWindow()->worksToolBar()->setModules(m_modules, modules().first()->type(), this);
 
     // Tools toolbar
     btMainWindow()->toolsToolBar()->addAction(

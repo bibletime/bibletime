@@ -43,7 +43,7 @@ BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
 }
 
 void BtTextWindowHeader::slotBackendModulesChanged() {
-    m_modules = m_window->getModuleList();
+    m_modules = m_window->moduleNames();
 
     adjustWidgetCount();
 
@@ -56,7 +56,7 @@ void BtTextWindowHeader::slotBackendModulesChanged() {
 }
 
 void BtTextWindowHeader::slotWindowModulesChanged() {
-    m_modules = m_window->getModuleList();
+    m_modules = m_window->moduleNames();
     adjustWidgetCount();
     updateWidgets();
 }

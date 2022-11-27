@@ -88,9 +88,9 @@ void CBookReadWindow::initView() {
     QSplitter* splitter = new QSplitter(this);
     m_treeChooser = new CBookTreeChooser(modules(), history(), key(), splitter);
 
-    auto const moduleNames = getModuleList();
+    auto const moduleNames_ = moduleNames();
     auto * const dw = new BtModelViewReadDisplay(this, splitter);
-    dw->setModules(moduleNames);
+    dw->setModules(moduleNames_);
     setDisplayWidget(dw);
     m_treeChooser->hide();
     splitter->setStretchFactor(1,3);
@@ -102,7 +102,7 @@ void CBookReadWindow::initView() {
 
     // Add the Works toolbar
     auto * const worksToolbar = moduleChooserBar();
-    worksToolbar->setModules(moduleNames, modules().first()->type(), this);
+    worksToolbar->setModules(moduleNames_, modules().first()->type(), this);
     addToolBar(worksToolbar);
 
     // Add the Tools toolbar
@@ -143,7 +143,7 @@ void CBookReadWindow::setupMainWindowToolBars() {
                keyChooser, &CKeyChooser::updateKey);
 
     // Works toolbar
-    btMainWindow()->worksToolBar()->setModules(getModuleList(), modules().first()->type(), this);
+    btMainWindow()->worksToolBar()->setModules(moduleNames(), modules().first()->type(), this);
 
     // Tools toolbar
     btMainWindow()->toolsToolBar()->addAction(m_treeAction);  // Tree
