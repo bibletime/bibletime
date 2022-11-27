@@ -17,16 +17,13 @@
 #include <QQmlEngine>
 #include <QTextCodec>
 #include <QTranslator>
-#include "../backend/bookshelfmodel/btbookshelfmodel.h"
 #include "../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../backend/config/btconfig.h"
 #include "../backend/managers/cswordbackend.h"
-#include "../backend/managers/colormanager.h"
 #include "../util/directory.h"
 #include "bibletime.h"
 #include "bibletimeapp.h"
 #include "display/modelview/btqmlinterface.h"
-#include "searchdialog/btsearchoptionsarea.h"
 #include "welcome/btwelcomedialog.h"
 
 /// \todo Reimplement signal handler which handles consecutive crashes.
