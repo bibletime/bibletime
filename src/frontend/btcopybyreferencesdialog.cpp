@@ -24,7 +24,6 @@
 #include "../backend/keys/cswordkey.h"
 #include "../backend/models/btmoduletextmodel.h"
 #include "../backend/drivers/cswordmoduleinfo.h"
-#include "../frontend/display/btmodelviewreaddisplay.h"
 #include "../frontend/displaywindow/cdisplaywindow.h"
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
