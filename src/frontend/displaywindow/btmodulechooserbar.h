@@ -61,8 +61,8 @@ class BtModuleChooserBar: public QToolBar, public BtWindowModuleChooser {
         void adjustButtonCount(bool adjustToZero = false);
 
     private:
-        int m_idCounter;
-        CDisplayWindow * m_window;
+        int m_idCounter = 0;
+        CDisplayWindow * m_window = nullptr;
         CSwordModuleInfo::ModuleType m_moduleType;
         QList<BtModuleChooserButton*> m_buttonList;
 };
