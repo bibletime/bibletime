@@ -62,4 +62,4 @@ void CLexiconReadWindow::previousEntry()
 { keyChooser()->setKey(ldKey()->PreviousEntry()); }
 
 CSwordLDKey * CLexiconReadWindow::ldKey()
-{ return dynamic_cast<CSwordLDKey*>(m_swordKey); }
+{ return dynamic_cast<CSwordLDKey*>(m_swordKey.get()); }

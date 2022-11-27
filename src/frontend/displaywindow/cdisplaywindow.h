@@ -14,6 +14,7 @@
 
 #include <QMainWindow>
 
+#include <memory>
 #include <QAction>
 #include <QStringList>
 #include "../../backend/btglobal.h"
@@ -93,7 +94,7 @@ public:
     /** Returns the key of this display window. */
     CSwordKey * key() const {
         BT_ASSERT(m_swordKey);
-        return m_swordKey;
+        return m_swordKey.get();
     }
 
     /** Returns the main navigation toolbar. */
@@ -299,7 +300,7 @@ private:
     DisplayOptions m_displayOptions;
 
     CKeyChooser * m_keyChooser = nullptr;
-    CSwordKey * m_swordKey = nullptr;
+    std::unique_ptr<CSwordKey> const m_swordKey;
     bool m_isInitialized = false; ///< Whether init() has been called
     BtModuleChooserBar* m_moduleChooserBar = nullptr;
     QToolBar * m_mainToolBar = nullptr;
