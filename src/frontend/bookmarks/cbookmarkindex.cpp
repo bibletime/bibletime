@@ -29,20 +29,16 @@
 #include "../../backend/config/btconfig.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../backend/btbookmarksmodel.h"
-#include "../../backend/managers/referencemanager.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/bticons.h"
 #include "../../util/cresmgr.h"
 #include "../../util/tool.h"
-#include "../../util/directory.h"
-#include "../bibletimeapp.h"
 #include "../bookmarks/bteditbookmarkdialog.h"
 #include "../bookmarks/cbookmarkindex.h"
 #include "../btprinter.h"
 #include "../BtMimeData.h"
 #include "../messagedialog.h"
-#include "../searchdialog/csearchdialog.h"
 
 
 namespace {
