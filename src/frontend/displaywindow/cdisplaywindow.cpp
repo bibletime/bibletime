@@ -711,11 +711,12 @@ bool CDisplayWindow::init() {
     initView();
     BT_ASSERT(m_displayWidget);
 
-    auto const & conf = btConfig();
 
     setWindowTitle(windowCaption());
     initActions();
     initToolbars();
+
+    auto const & conf = btConfig();
     if (!conf.session().value<bool>(
             QStringLiteral("GUI/showToolbarsInEachWindow"),
             true))
