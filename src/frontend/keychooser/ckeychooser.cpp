@@ -13,9 +13,6 @@
 #include "ckeychooser.h"
 
 #include <QAction>
-#include "../../backend/drivers/cswordbiblemoduleinfo.h"
-#include "../../backend/drivers/cswordcommentarymoduleinfo.h"
-#include "../../backend/drivers/cswordlexiconmoduleinfo.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../backend/keys/cswordkey.h"
 #include "../../util/btassert.h"
