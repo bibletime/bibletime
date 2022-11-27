@@ -108,7 +108,6 @@ void CBookReadWindow::initView() {
     addToolBar(buttonsToolBar());
 
     setCentralWidget( splitter );
-    setWindowIcon(util::tool::getIconForModule(modules().first()));
 }
 
 void CBookReadWindow::initToolbars() {

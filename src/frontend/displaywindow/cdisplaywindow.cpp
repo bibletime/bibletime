@@ -419,7 +419,6 @@ void CDisplayWindow::initView() {
     setDisplayWidget(readDisplay);
     setCentralWidget(m_displayWidget->view());
     readDisplay->setModules(getModuleList());
-    setWindowIcon(util::tool::getIconForModule(modules().first()));
 
     // Add the Navigation toolbar
     addToolBar(mainToolBar());
@@ -711,6 +710,7 @@ bool CDisplayWindow::init() {
     initView();
     BT_ASSERT(m_displayWidget);
 
+    setWindowIcon(util::tool::getIconForModule(modules().first()));
     setWindowTitle(windowCaption());
     initActions();
     initToolbars();
