@@ -16,7 +16,6 @@
 
 #include <QAction>
 #include "../cexportmanager.h"
-#include "../../util/btconnect.h"
 #include "btactioncollection.h"
 
 
