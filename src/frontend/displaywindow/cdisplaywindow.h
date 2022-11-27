@@ -59,7 +59,7 @@ public:
     CSwordModuleInfo const * firstModule() const noexcept
     { return m_modules.first(); }
 
-    BtModuleList const & modules() const { return m_modules; }
+    BtModuleList const & modules() const noexcept { return m_modules; }
 
     BtConstModuleList constModules() const
     { return BtConstModuleList(m_modules.begin(), m_modules.end()); }
