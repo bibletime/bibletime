@@ -21,7 +21,6 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QRadioButton>
-#include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../../backend/config/btconfig.h"
 #include "../../backend/drivers/btconstmoduleset.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
@@ -29,7 +28,6 @@
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
 #include "../../util/tool.h"
-#include "../bibletimeapp.h"
 #include "btsearchmodulechooserdialog.h"
 #include "btsearchsyntaxhelpdialog.h"
 #include "crangechooserdialog.h"
