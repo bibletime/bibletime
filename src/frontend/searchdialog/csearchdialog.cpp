@@ -25,12 +25,9 @@
 #include <utility>
 #include "../../backend/config/btconfig.h"
 #include "../../backend/cswordmodulesearch.h"
-#include "../../backend/keys/cswordkey.h"
-#include "../../backend/keys/cswordversekey.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
-#include "../bibletimeapp.h"
 #include "../btmoduleindexdialog.h"
 #include "../messagedialog.h"
 #include "btindexdialog.h"
