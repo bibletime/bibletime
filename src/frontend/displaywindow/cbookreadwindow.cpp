@@ -87,12 +87,13 @@ void CBookReadWindow::initConnections() {
 void CBookReadWindow::initView() {
     QSplitter* splitter = new QSplitter(this);
     m_treeChooser = new CBookTreeChooser(modules(), history(), key(), splitter);
-    setDisplayWidget(new BtModelViewReadDisplay(this, splitter));
+
+    auto const moduleNames = getModuleList();
+    auto * const dw = new BtModelViewReadDisplay(this, splitter);
+    dw->setModules(moduleNames);
+    setDisplayWidget(dw);
     m_treeChooser->hide();
     splitter->setStretchFactor(1,3);
-
-    if (auto * const disp = displayWidget())
-        disp->setModules(getModuleList());
 
     // Add the Navigation toolbar
     auto * const navigationToolBar = mainToolBar();
@@ -101,7 +102,7 @@ void CBookReadWindow::initView() {
 
     // Add the Works toolbar
     auto * const worksToolbar = moduleChooserBar();
-    worksToolbar->setModules(getModuleList(), modules().first()->type(), this);
+    worksToolbar->setModules(moduleNames, modules().first()->type(), this);
     addToolBar(worksToolbar);
 
     // Add the Tools toolbar
