@@ -49,7 +49,7 @@ inline QWidget * getProfileWindow(QWidget * w) {
     return nullptr;
 }
 
-}
+} // anonymous namespace
 
 
 CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
@@ -71,7 +71,9 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
     BT_CONNECT(CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
                this,                      &CDisplayWindow::reload);
 
-    m_swordKey = modules.first()->createKey();
+    auto const * const firstModule = m_modules.first();
+    m_swordKey = firstModule->createKey();
+    setWindowIcon(firstModule->moduleIcon());
     updateWindowTitle();
 }
 
@@ -505,7 +507,7 @@ QMenu * CDisplayWindow::newDisplayWidgetPopupMenu() {
                     m_actions.copy.selectedText->setEnabled(hasSelectedText());
                 });
     popupMenu->setTitle(tr("Lexicon window"));
-    popupMenu->setIcon(util::tool::getIconForModule(m_modules.first()));
+    popupMenu->setIcon(m_modules.first()->moduleIcon());
     popupMenu->addAction(m_actions.findText);
     popupMenu->addAction(m_actions.findStrongs);
     popupMenu->addSeparator();
@@ -620,6 +622,8 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 void CDisplayWindow::slotAddModule(int index, CSwordModuleInfo * module) {
     BT_ASSERT(index <= m_modules.size());
     m_modules.insert(index, module);
+    if (index == 0)
+        setWindowIcon(module->moduleIcon());
     m_displayWidget->setModules(moduleNames());
     lookup();
     modulesChanged();
@@ -629,6 +633,8 @@ void CDisplayWindow::slotAddModule(int index, CSwordModuleInfo * module) {
 void CDisplayWindow::slotReplaceModule(int index, CSwordModuleInfo * newModule){
     BT_ASSERT(index < m_modules.size());
     m_modules.replace(index, newModule);
+    if (index == 0)
+        setWindowIcon(newModule->moduleIcon());
     m_displayWidget->setModules(moduleNames());
     lookup();
     modulesChanged();
@@ -636,8 +642,13 @@ void CDisplayWindow::slotReplaceModule(int index, CSwordModuleInfo * newModule){
 }
 
 void CDisplayWindow::slotRemoveModule(int index) {
+    BT_ASSERT(index >= 0);
     BT_ASSERT(index < m_modules.size());
     m_modules.removeAt(index);
+    if (m_modules.empty())
+        close();
+    if (index == 0)
+        setWindowIcon(m_modules.first()->moduleIcon());
     m_displayWidget->setModules(moduleNames());
     lookup();
     modulesChanged();
@@ -728,8 +739,6 @@ void CDisplayWindow::addModuleChooserBar() {
 bool CDisplayWindow::init() {
     initView();
     BT_ASSERT(m_displayWidget);
-
-    setWindowIcon(util::tool::getIconForModule(m_modules.first()));
     initActions();
     initToolbars();
 

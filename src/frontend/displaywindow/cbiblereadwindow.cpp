@@ -227,7 +227,7 @@ QMenu * CBibleReadWindow::newDisplayWidgetPopupMenu() {
                     m_actions.copy.selectedText->setEnabled(hasSelectedText());
                 });
     popupMenu->setTitle(tr("Bible window"));
-    popupMenu->setIcon(util::tool::getIconForModule(firstModule()));
+    popupMenu->setIcon(firstModule()->moduleIcon());
     popupMenu->addAction(m_actions.findText);
     QKeySequence ks = m_actions.findText->shortcut();
     QString keys = ks.toString();
