@@ -711,7 +711,6 @@ bool CDisplayWindow::init() {
     initView();
     BT_ASSERT(m_displayWidget);
 
-
     setWindowTitle(windowCaption());
     initActions();
     initToolbars();
