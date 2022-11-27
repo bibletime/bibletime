@@ -28,8 +28,6 @@
 #include "../display/btmodelviewreaddisplay.h"
 #include "../keychooser/ckeychooser.h"
 #include "btactioncollection.h"
-#include "btdisplaysettingsbutton.h"
-#include "ccommentaryreadwindow.h"
 
 
 void CBibleReadWindow::applyProfileSettings(BtConfigCore const & conf) {
