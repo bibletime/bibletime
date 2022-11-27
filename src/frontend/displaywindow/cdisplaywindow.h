@@ -19,7 +19,7 @@
 #include <QStringList>
 #include "../../backend/btglobal.h"
 #include "../../backend/drivers/btmodulelist.h"
-#include "../../backend/managers/cswordbackend.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "btactioncollection.h"

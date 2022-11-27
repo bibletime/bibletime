@@ -29,6 +29,7 @@
 #include <QToolBar>
 #include <QUrl>
 #include "../backend/config/btconfig.h"
+#include "../backend/managers/cswordbackend.h"
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "../util/directory.h"

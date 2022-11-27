@@ -25,6 +25,7 @@
 #include <QToolBar>
 #include "../../backend/keys/cswordkey.h"
 #include "../../backend/drivers/cswordbiblemoduleinfo.h"
+#include "../../backend/managers/cswordbackend.h"
 #include "../../backend/managers/referencemanager.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"

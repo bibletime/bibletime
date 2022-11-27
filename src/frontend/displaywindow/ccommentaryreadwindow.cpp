@@ -18,6 +18,7 @@
 #include <QToolBar>
 #include "../../backend/config/btconfigcore.h"
 #include "../../backend/keys/cswordversekey.h"
+#include "../../backend/managers/cswordbackend.h"
 #include "../../util/cresmgr.h"
 #include "../bibletime.h"
 #include "../keychooser/ckeychooser.h"

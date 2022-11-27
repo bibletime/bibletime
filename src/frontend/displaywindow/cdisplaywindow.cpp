@@ -22,6 +22,7 @@
 #include <QWidget>
 #include "../../backend/config/btconfig.h"
 #include "../../backend/keys/cswordkey.h"
+#include "../../backend/managers/cswordbackend.h"
 #include "../../util/cresmgr.h"
 #include "../bibletime.h"
 #include "../cexportmanager.h"
