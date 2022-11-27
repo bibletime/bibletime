@@ -22,7 +22,6 @@
 #include "../keys/cswordversekey.h"
 #include "../managers/cdisplaytemplatemgr.h"
 #include "../managers/cswordbackend.h"
-#include "../managers/referencemanager.h"
 
 // Sword includes:
 #include <swkey.h>
