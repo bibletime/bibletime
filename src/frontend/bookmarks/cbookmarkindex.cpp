@@ -26,9 +26,10 @@
 #include <QScopeGuard>
 #include <QTimer>
 #include <QToolTip>
+#include "../../backend/btbookmarksmodel.h"
 #include "../../backend/config/btconfig.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
-#include "../../backend/btbookmarksmodel.h"
+#include "../../backend/managers/cswordbackend.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/bticons.h"

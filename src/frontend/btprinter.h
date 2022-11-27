@@ -15,8 +15,6 @@
 #include <QObject>
 #include "../backend/rendering/cdisplayrendering.h"
 
-#include "../backend/managers/cswordbackend.h"
-
 
 /** \brief Manages the print item queue and printing. */
 class BtPrinter final: public QObject, public Rendering::CDisplayRendering {
