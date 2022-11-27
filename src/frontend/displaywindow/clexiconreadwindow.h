@@ -16,7 +16,6 @@
 
 #include <QList>
 #include <QObject>
-#include "../../backend/managers/cswordbackend.h"
 
 
 class BtActionCollection;
