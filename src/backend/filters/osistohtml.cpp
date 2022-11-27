@@ -14,10 +14,8 @@
 
 #include <QString>
 #include <string_view>
-#include "../../util/btassert.h"
 #include "../config/btconfig.h"
 #include "../drivers/cswordmoduleinfo.h"
-#include "../language.h"
 #include "../managers/cswordbackend.h"
 #include "../managers/referencemanager.h"
 
