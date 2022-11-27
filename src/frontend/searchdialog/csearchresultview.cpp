@@ -20,10 +20,9 @@
 #include <QWidget>
 #include "../../backend/config/btconfig.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
-#include "../../backend/keys/cswordversekey.h"
+#include "../../backend/keys/cswordkey.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
-#include "../bibletimeapp.h"
 #include "../BtMimeData.h"
 #include "../cexportmanager.h"
 
