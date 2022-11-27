@@ -41,14 +41,6 @@ class BtTextWindowHeader: public QWidget, public BtWindowModuleChooser {
         */
         void slotWindowModulesChanged() override;
 
-    Q_SIGNALS:
-        /** User selected a module from menu to replace another module*/
-        void sigModuleReplace ( int index, QString newModule );
-        /** User selected a module from menu to add */
-        void sigModuleAdd ( int index, QString module );
-        /** User selected a module from menu to be removed */
-        void sigModuleRemove ( int index );
-
     private:
         /** Called when backend has changed and menus must be created from scratch.*/
         void initMenus();
