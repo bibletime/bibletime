@@ -19,9 +19,7 @@
 #include "../../../backend/keys/cswordversekey.h"
 #include "../../../util/btassert.h"
 #include "../../../util/btconnect.h"
-#include "../../../util/cresmgr.h"
 #include "../bthistory.h"
-#include "../cscrollbutton.h"
 #include "btbiblekeywidget.h"
 
 
