@@ -21,7 +21,6 @@
 #include "../cswordmodulesearch.h"
 #include "../keys/cswordtreekey.h"
 #include "../keys/cswordversekey.h"
-#include "../keys/cswordldkey.h"
 #include "../managers/colormanager.h"
 #include "../managers/cswordbackend.h"
 #include "../rendering/ctextrendering.h"
