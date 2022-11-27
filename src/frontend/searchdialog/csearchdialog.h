@@ -15,7 +15,6 @@
 #include <QDialog>
 
 #include <QString>
-#include "../../backend/managers/cswordbackend.h"
 #include "btsearchoptionsarea.h"
 
 namespace Search {

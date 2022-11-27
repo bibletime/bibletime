@@ -25,6 +25,7 @@
 #include <utility>
 #include "../../backend/config/btconfig.h"
 #include "../../backend/cswordmodulesearch.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
