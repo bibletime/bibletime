@@ -456,9 +456,9 @@ void CDisplayWindow::initView() {
 void CDisplayWindow::initToolbars() {
     //Navigation toolbar
     BT_ASSERT(m_actions.backInHistory);
-    mainToolBar()->addWidget(m_keyChooser);
     mainToolBar()->addAction(m_actions.backInHistory); //1st button
     mainToolBar()->addAction(m_actions.forwardInHistory); //2nd button
+    mainToolBar()->addWidget(m_keyChooser);
 
     //Tools toolbar
     buttonsToolBar()->addAction(
@@ -545,13 +545,13 @@ void CDisplayWindow::setupMainWindowToolBars() {
                                         m_swordKey,
                                         btMainWindow()->navToolBar());
     keyChooser->key()->setKey(keyReference);
+    btMainWindow()->navToolBar()->addAction(m_actions.backInHistory); //1st button
+    btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
     btMainWindow()->navToolBar()->addWidget(keyChooser);
     BT_CONNECT(keyChooser, &CKeyChooser::keyChanged,
                this,       &CDisplayWindow::lookupSwordKey);
     BT_CONNECT(this,       &CDisplayWindow::sigKeyChanged,
                keyChooser, &CKeyChooser::updateKey);
-    btMainWindow()->navToolBar()->addAction(m_actions.backInHistory); //1st button
-    btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
 
     // Works toolbar
     btMainWindow()->worksToolBar()->setModules(m_modules, constMods.first()->type(), this);
