@@ -41,6 +41,14 @@ class BtTextWindowHeader: public QWidget, public BtWindowModuleChooser {
         */
         void slotWindowModulesChanged() override;
 
+    Q_SIGNALS:
+
+        void moduleAdded(int index, CSwordModuleInfo * module);
+
+        void moduleReplaced(int index, CSwordModuleInfo * newModule);
+
+        void moduleRemoved(int index);
+
     private:
         /** Called when backend has changed and menus must be created from scratch.*/
         void initMenus();

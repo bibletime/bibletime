@@ -474,7 +474,20 @@ void CDisplayWindow::initToolbars() {
     buttonsToolBar()->addWidget(button);
 
     // Text Header toolbar
-    BtTextWindowHeader *h = new BtTextWindowHeader(m_modules.first()->type(), moduleNames(), this);
+    auto * const h =
+            new BtTextWindowHeader(m_modules.first()->type(),
+                                   moduleNames(),
+                                   this);
+    BT_CONNECT(this, &CDisplayWindow::sigModuleListSet,
+               h, &BtTextWindowHeader::slotBackendModulesChanged);
+    BT_CONNECT(this, &CDisplayWindow::sigModuleListChanged,
+               h, &BtTextWindowHeader::slotWindowModulesChanged);
+    BT_CONNECT(h, &BtTextWindowHeader::moduleAdded,
+               this, &CDisplayWindow::slotAddModule);
+    BT_CONNECT(h, &BtTextWindowHeader::moduleReplaced,
+               this, &CDisplayWindow::slotReplaceModule);
+    BT_CONNECT(h, &BtTextWindowHeader::moduleRemoved,
+               this, &CDisplayWindow::slotRemoveModule);
     m_headerBar->addWidget(h);
 }
 

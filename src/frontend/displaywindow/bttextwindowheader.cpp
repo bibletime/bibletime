@@ -36,10 +36,6 @@ BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     setLayoutDirection(Qt::LeftToRight);
     setModules(modules);
-    BT_CONNECT(window, &CDisplayWindow::sigModuleListSet,
-               this /* Needed */, [this] { slotBackendModulesChanged(); });
-    BT_CONNECT(window, &CDisplayWindow::sigModuleListChanged,
-               this, &BtTextWindowHeader::slotWindowModulesChanged);
 }
 
 void BtTextWindowHeader::slotBackendModulesChanged() {
@@ -97,14 +93,12 @@ BtTextWindowHeaderWidget* BtTextWindowHeader::addWidget() {
     layout()->addWidget(w);
     m_widgetList.append(w);
 
-    // the button sends signals directly to the window which then signals back when the module
-    // list has changed
     BT_CONNECT(w, &BtTextWindowHeaderWidget::sigModuleAdd,
-               m_window, &CDisplayWindow::slotAddModule);
+               this, &BtTextWindowHeader::moduleAdded);
     BT_CONNECT(w, &BtTextWindowHeaderWidget::sigModuleReplace,
-               m_window, &CDisplayWindow::slotReplaceModule);
+               this, &BtTextWindowHeader::moduleReplaced);
     BT_CONNECT(w, &BtTextWindowHeaderWidget::sigModuleRemove,
-               m_window, &CDisplayWindow::slotRemoveModule);
+               this, &BtTextWindowHeader::moduleRemoved);
 
     return w;
 }
