@@ -13,7 +13,6 @@
 #include "btdropdownchooserbutton.h"
 
 #include <QWheelEvent>
-#include "../../../util/btconnect.h"
 #include "btversekeymenu.h"
 #include "btbiblekeywidget.h"
 
