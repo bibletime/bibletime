@@ -23,6 +23,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../backend/managers/colormanager.h"
 #include "../../backend/keys/cswordversekey.h"
 #include "../../backend/rendering/cdisplayrendering.h"
@@ -31,6 +32,14 @@
 #include "../../util/tool.h"
 #include "cmoduleresultview.h"
 #include "csearchresultview.h"
+
+// Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wextra-semi"
+#pragma GCC diagnostic ignored "-Wsuggest-override"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#include <swmodule.h>
+#pragma GCC diagnostic pop
 
 
 namespace {

@@ -16,7 +16,6 @@
 #include <QSplitter>
 #include <QStringList>
 #include <QWidget>
-#include "../../backend/managers/cswordbackend.h"
 #include "../../backend/cswordmodulesearch.h"
 #include "analysis/csearchanalysisdialog.h"
 #include "../bttextbrowser.h"
