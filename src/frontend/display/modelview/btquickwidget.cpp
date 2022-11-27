@@ -24,10 +24,7 @@
 #include "../../../backend/drivers/cswordmoduleinfo.h"
 #include "../../../backend/managers/cswordbackend.h"
 #include "../../../util/btassert.h"
-#include "../../../util/directory.h"
 #include "../../BtMimeData.h"
-#include "../../display/btmodelviewreaddisplay.h"
-#include "../../displaywindow/cdisplaywindow.h"
 #include "btqmlinterface.h"
 
 
