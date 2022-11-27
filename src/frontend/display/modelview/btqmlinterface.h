@@ -19,7 +19,6 @@
 #include <QObject>
 #include <QMap>
 #include <QString>
-#include "../../../backend/rendering/ctextrendering.h"
 #include "bttextfilter.h"
 
 
