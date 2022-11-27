@@ -434,10 +434,7 @@ void CDisplayWindow::initView() {
                                               m_swordKey,
                                               mainToolBar()));
 
-    // Add the Works toolbar
-    auto * const worksToolBar = moduleChooserBar();
-    worksToolBar->setModules(m_modules, constMods.first()->type(), this);
-    addToolBar(worksToolBar);
+    addModuleChooserBar();
 
     // Add the Tools toolbar
     addToolBar(buttonsToolBar());
@@ -708,21 +705,22 @@ void CDisplayWindow::lookupSwordKey(CSwordKey * newKey) {
     setWindowTitle(windowCaption());
 }
 
-BtModuleChooserBar * CDisplayWindow::moduleChooserBar() {
-    if (!m_moduleChooserBar) {
-        m_moduleChooserBar = new BtModuleChooserBar(this);
-        m_moduleChooserBar->setWindowTitle(tr("Work chooser buttons"));
-        m_moduleChooserBar->setLayoutDirection(Qt::LeftToRight);
-        m_moduleChooserBar->setVisible(
-                    btConfig().session().value<bool>(
-                        QStringLiteral(
-                            "GUI/showTextWindowModuleSelectorButtons"),
-                        true));
+void CDisplayWindow::addModuleChooserBar() {
+    BT_ASSERT(!m_moduleChooserBar);
+    m_moduleChooserBar = new BtModuleChooserBar(this);
+    m_moduleChooserBar->setWindowTitle(tr("Work chooser buttons"));
+    m_moduleChooserBar->setLayoutDirection(Qt::LeftToRight);
+    m_moduleChooserBar->setVisible(
+                btConfig().session().value<bool>(
+                    QStringLiteral(
+                        "GUI/showTextWindowModuleSelectorButtons"),
+                    true));
+    m_moduleChooserBar->setModules(m_modules, m_modules.first()->type(), this);
 
-        BT_CONNECT(btMainWindow(), &BibleTime::toggledTextWindowModuleChooser,
-                   m_moduleChooserBar, &BtModuleChooserBar::setVisible);
-    }
-    return m_moduleChooserBar;
+    BT_CONNECT(btMainWindow(), &BibleTime::toggledTextWindowModuleChooser,
+               m_moduleChooserBar, &BtModuleChooserBar::setVisible);
+
+    addToolBar(m_moduleChooserBar);
 }
 
 /** Initialize the window. Call this method from the outside, because calling this in the constructor is not possible! */

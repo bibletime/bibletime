@@ -100,10 +100,7 @@ void CBookReadWindow::initView() {
     addToolBar(navigationToolBar);
     setKeyChooser(CKeyChooser::createInstance(constMods, history(), key(), navigationToolBar));
 
-    // Add the Works toolbar
-    auto * const worksToolbar = moduleChooserBar();
-    worksToolbar->setModules(modules(), constMods.first()->type(), this);
-    addToolBar(worksToolbar);
+    addModuleChooserBar();
 
     // Add the Tools toolbar
     addToolBar(buttonsToolBar());

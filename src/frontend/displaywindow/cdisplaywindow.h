@@ -216,8 +216,8 @@ protected:
     /** Sets the keychooser widget for this display window.*/
     void setKeyChooser( CKeyChooser* ck );
 
-    /** Returns the module chooser bar. */
-    BtModuleChooserBar * moduleChooserBar();
+    /** Creates and adds the module chooser bar to the toolbar. */
+    void addModuleChooserBar();
 
     /** Lookup the given key.*/
     virtual void lookupSwordKey(CSwordKey *);
