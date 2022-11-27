@@ -13,7 +13,6 @@
 #include "btmodulechooserbutton.h"
 
 #include "../../backend/drivers/cswordmoduleinfo.h"
-#include "../../backend/managers/cswordbackend.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
 #include "btmodulechoosermenu.h"
