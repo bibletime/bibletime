@@ -15,7 +15,6 @@
 #include <QPrintDialog>
 #include <QPrinter>
 #include <QTextEdit>
-#include "../backend/config/btconfig.h"
 #include "../backend/keys/cswordversekey.h"
 #include "../backend/managers/cdisplaytemplatemgr.h"
 #include "../util/btassert.h"
