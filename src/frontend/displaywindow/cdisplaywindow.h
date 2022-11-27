@@ -185,7 +185,7 @@ public Q_SLOTS:
     void lookupKey(QString const & key);
 
     /** Refresh the settings of this window.*/
-    virtual void reload(CSwordBackend::SetupChangedReason reason);
+    virtual void reload();
 
 protected:
 

@@ -120,8 +120,8 @@ void CCommentaryReadWindow::setupMainWindowToolBars() {
 }
 
 /** Reimplementation to handle the keychooser refresh. */
-void CCommentaryReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
-    CDisplayWindow::reload(reason);
+void CCommentaryReadWindow::reload() {
+    CDisplayWindow::reload();
 
     //refresh the book lists
     verseKey()->setLocale( CSwordBackend::instance()->booknameLanguage().toLatin1() );

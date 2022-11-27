@@ -362,8 +362,8 @@ void CBibleReadWindow::saveChapter(CExportManager::Format const format) {
     mgr.saveKey(&vk, format, true, constMods);
 }
 
-void CBibleReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
-    CDisplayWindow::reload(reason);
+void CBibleReadWindow::reload() {
+    CDisplayWindow::reload();
 
     if (m_modules.isEmpty()) {
         close();

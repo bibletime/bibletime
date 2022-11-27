@@ -214,7 +214,7 @@ bool BibleTime::moduleUnlock(CSwordModuleInfo * module, QWidget * const parent){
         {
             auto const moduleName(module->name());
             auto & backend = *CSwordBackend::instance();
-            backend.reloadModules(CSwordBackend::OtherChange);
+            backend.reloadModules();
             module = backend.findModuleByName(moduleName);
             BT_ASSERT(module);
         }
@@ -248,7 +248,7 @@ void BibleTime::refreshDisplayWindows() const {
     for (auto const * const subWindow : m_mdi->subWindowList())
         if (CDisplayWindow * const window =
                 dynamic_cast<CDisplayWindow*>(subWindow->widget()))
-            window->reload(CSwordBackend::OtherChange);
+            window->reload();
 }
 
 void BibleTime::processCommandline(bool const ignoreSession,

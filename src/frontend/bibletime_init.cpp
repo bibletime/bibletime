@@ -913,7 +913,7 @@ void BibleTime::initBackends() {
 
     backend->setBooknameLanguage(btConfig().booknameLanguage());
 
-    CSwordBackend::instance()->initModules(CSwordBackend::OtherChange);
+    CSwordBackend::instance()->initModules();
 
     // This function will
     // - delete all orphaned indexes (no module present) if autoDeleteOrphanedIndices is true

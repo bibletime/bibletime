@@ -60,18 +60,6 @@ class CSwordBackend: public QObject {
 public: // types:
 
     /**
-      \brief The reason for the sigSwordSetupChanged signal, i.e. why the module
-             list has changed.
-    */
-    enum SetupChangedReason {
-        AddedModules = 1,
-        RemovedModules = 2,
-        HidedModules = 4,
-        PathChanged = 8,
-        OtherChange = 16
-    };
-
-    /**
       \brief The error codes which may be returned by the \ref Load() call.
       \note These values exist to cast from the char return of SWMgr::Load().
     */
@@ -135,7 +123,7 @@ public: // methods:
       \brief Initializes the Sword modules.
       \returns whether the initializiation was successful.
     */
-    CSwordBackend::LoadError initModules(const SetupChangedReason reason);
+    CSwordBackend::LoadError initModules();
 
     /**
       \brief Deinitializes and frees the modules.
@@ -191,9 +179,8 @@ public: // methods:
 
     /**
       \brief Reloads all Sword modules.
-      \param[in] reason The reason for the reload.
     */
-    void reloadModules(const SetupChangedReason reason);
+    void reloadModules();
 
     /**
       \brief Uninstalls the given modules.
@@ -235,7 +222,7 @@ public: // methods:
 
 Q_SIGNALS:
 
-    void sigSwordSetupChanged(CSwordBackend::SetupChangedReason reason);
+    void sigSwordSetupChanged();
 
 protected: // methods:
 

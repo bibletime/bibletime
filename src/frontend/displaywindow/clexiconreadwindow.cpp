@@ -50,8 +50,8 @@ void CLexiconReadWindow::initActions() {
     m_actionCollection->readShortcuts(QStringLiteral("Lexicon shortcuts"));
 }
 
-void CLexiconReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
-    CDisplayWindow::reload(reason);
+void CLexiconReadWindow::reload() {
+    CDisplayWindow::reload();
     actionCollection()->readShortcuts(QStringLiteral("Lexicon shortcuts"));
 }
 

@@ -588,7 +588,7 @@ CSwordKey* CDisplayWindow::getMouseClickedKey() const
 { return m_displayWidget->quickWidget()->getMouseClickedKey(); }
 
 /** Refresh the settings of this window. */
-void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
+void CDisplayWindow::reload() {
     // Since all the CSwordModuleInfo pointers are invalidated, we need to
     // rebuild m_modules based on m_moduleNames, and remove all missing modules:
     BT_ASSERT(!m_moduleNames.empty()); // This should otherwise be close()-d

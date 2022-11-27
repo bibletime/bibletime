@@ -193,7 +193,7 @@ void BtBookshelfInstallFinalPage::slotThreadFinished() {
     }
     m_msgLabel2->setText("");
 
-    CSwordBackend::instance()->reloadModules(CSwordBackend::AddedModules);
+    CSwordBackend::instance()->reloadModules();
 
     m_installCompleted = true;
     Q_EMIT QWizardPage::completeChanged();

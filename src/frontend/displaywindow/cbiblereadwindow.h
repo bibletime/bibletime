@@ -94,7 +94,7 @@ public Q_SLOTS:
     void nextVerse();
     void previousVerse();
 
-    void reload(CSwordBackend::SetupChangedReason reason) override;
+    void reload() override;
 
 protected Q_SLOTS:
 

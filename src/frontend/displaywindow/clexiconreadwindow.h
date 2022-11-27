@@ -36,7 +36,7 @@ public: // methods:
 
 public Q_SLOTS:
 
-    void reload(CSwordBackend::SetupChangedReason reason) override;
+    void reload() override;
 
 protected: // methods:
 

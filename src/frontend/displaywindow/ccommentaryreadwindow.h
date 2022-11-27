@@ -49,7 +49,7 @@ class CCommentaryReadWindow : public CDisplayWindow  {
         void previousChapter();
         void nextVerse();
         void previousVerse();
-        void reload(CSwordBackend::SetupChangedReason) override;
+        void reload() override;
 
     protected:
         void initActions() override;

@@ -189,7 +189,7 @@ std::unique_ptr<CSwordBackend> backend(sword::InstallSource const & is) {
                                              ? is.localShadow.c_str()
                                              : is.directory.c_str(),
                                              false));
-    ret->initModules(CSwordBackend::OtherChange);
+    ret->initModules();
     return ret;
 }
 

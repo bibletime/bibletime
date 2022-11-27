@@ -126,7 +126,7 @@ void CSwordBackend::uninstallModules(BtConstModuleSet const & toBeDeleted) {
     if (toBeDeleted.empty())
         return;
     m_dataModel->removeModules(toBeDeleted);
-    Q_EMIT sigSwordSetupChanged(RemovedModules);
+    Q_EMIT sigSwordSetupChanged();
 
     BtInstallMgr installMgr;
     QMap<QString, sword::SWMgr *> mgrDict; // Maps config paths to SWMgr objects
@@ -181,7 +181,7 @@ BtConstModuleList CSwordBackend::getConstPointerList(const QStringList & names) 
     return list;
 }
 
-CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason reason) {
+CSwordBackend::LoadError CSwordBackend::initModules() {
     // qWarning("globalSwordConfigPath is %s", globalConfPath);
 
     shutdownModules(); // Remove previous modules
@@ -237,7 +237,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
         }
     }
 
-    Q_EMIT sigSwordSetupChanged(reason);
+    Q_EMIT sigSwordSetupChanged();
     return ret;
 }
 
@@ -355,10 +355,10 @@ void CSwordBackend::setBooknameLanguage(QString const & language) {
     }
 }
 
-void CSwordBackend::reloadModules(const SetupChangedReason reason) {
+void CSwordBackend::reloadModules() {
     shutdownModules();
     m_manager.reloadConfig();
-    initModules(reason);
+    initModules();
 }
 
 void CSwordBackend::Private::reloadConfig() {
