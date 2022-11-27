@@ -26,17 +26,11 @@
 #include <QStringList>
 #include <QStandardItemModel>
 #include <QStandardItem>
-#include "../../../backend/drivers/btmodulelist.h"
-#include "../../../backend/drivers/cswordmoduleinfo.h"
-#include "../../../backend/models/btmoduletextmodel.h"
 #include "../../../util/btconnect.h"
-#include "../../../util/directory.h"
-#include "../../BtMimeData.h"
 #include "../../display/btmodelviewreaddisplay.h"
 #include "../../display/btmodelviewreaddisplay.h"
 #include "../../display/modelview/btqmlinterface.h"
 #include "btquickwidget.h"
-#include "bttextfilter.h"
 
 
 BtQmlScrollView::BtQmlScrollView(QWidget * parent,
