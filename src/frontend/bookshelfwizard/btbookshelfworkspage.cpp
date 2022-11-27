@@ -47,7 +47,6 @@
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
-#include "../../util/directory.h"
 #include "../btbookshelfgroupingmenu.h"
 #include "../btbookshelfview.h"
 #include "btbookshelfwizard.h"
