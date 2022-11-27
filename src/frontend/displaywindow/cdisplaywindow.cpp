@@ -142,9 +142,9 @@ void CDisplayWindow::storeProfileSettings(BtConfigCore & conf) const {
                         w->windowFlags() & Qt::WindowStaysOnBottomHint);
     conf.setValue(QStringLiteral("maximized"), w->isMaximized());
 
-    bool hasFocus = (w == dynamic_cast<CDisplayWindow *>(mdi()->activeSubWindow()));
+    bool const hasFocus =
+            (w == dynamic_cast<CDisplayWindow *>(mdi()->activeSubWindow()));
     conf.setValue(QStringLiteral("hasFocus"), hasFocus);
-    // conf.setSessionValue("type", static_cast<int>(m_modules.first()->type()));
 
     // Save current key:
     conf.setValue(QStringLiteral("key"), m_swordKey->normalizedKey());
@@ -216,15 +216,18 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
                 a
                 );
     action->setShortcut(CResMgr::displaywindows::general::backInHistory::accel);
-    a->addAction(CResMgr::displaywindows::general::backInHistory::actionName, action);
+    a->addAction(CResMgr::displaywindows::general::backInHistory::actionName,
+                 action);
 
     action = new BtToolBarPopupAction(
                 CResMgr::displaywindows::general::forwardInHistory::icon(),
                 tr("Forward in history"),
                 a
                 );
-    action->setShortcut(CResMgr::displaywindows::general::forwardInHistory::accel);
-    a->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, action);
+    action->setShortcut(
+                CResMgr::displaywindows::general::forwardInHistory::accel);
+    a->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName,
+                 action);
 
     actn = new QAction(tr("Copy reference only"), a);
     a->addAction(QStringLiteral("copyReferenceOnly"), actn);
@@ -244,9 +247,10 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     actn = new QAction(tr("Entry with text"), a);
     a->addAction(QStringLiteral("printEntryWithText"), actn);
 
-    actn = new QAction( /* QIcon(CResMgr::displaywindows::general::findStrongs::icon), */ tr("Strong's Search"), a);
+    actn = new QAction(tr("Strong's Search"), a);
     actn->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
-    a->addAction(CResMgr::displaywindows::general::findStrongs::actionName, actn);
+    a->addAction(CResMgr::displaywindows::general::findStrongs::actionName,
+                 actn);
 }
 
 void CDisplayWindow::initActions() {
@@ -465,7 +469,7 @@ void CDisplayWindow::initToolbars() {
                 &m_actionCollection->action(
                     CResMgr::displaywindows::general::search::actionName));
 
-    BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
+    auto * const button = new BtDisplaySettingsButton(buttonsToolBar());
     setDisplaySettingsButton(button);
     buttonsToolBar()->addWidget(button);
 
@@ -491,11 +495,13 @@ QMenu * CDisplayWindow::newDisplayWidgetPopupMenu() {
     auto * const popupMenu = new QMenu(this);
     BT_CONNECT(popupMenu, &QMenu::aboutToShow,
                 [this] {
-                    // enable the action depending on the supported module features
+                    // enable the action depending on the supported module
+                    // features
                     m_actions.findStrongs->setEnabled(
-                                !m_displayWidget->getCurrentNodeInfo().isNull());
+                            !m_displayWidget->getCurrentNodeInfo().isNull());
 
-                    bool const hasActiveAnchor = m_displayWidget->hasActiveAnchor();
+                    bool const hasActiveAnchor =
+                            m_displayWidget->hasActiveAnchor();
                     m_actions.copy.reference->setEnabled(hasActiveAnchor);
 
                     m_actions.print.reference->setEnabled(hasActiveAnchor);
@@ -545,8 +551,8 @@ void CDisplayWindow::setupMainWindowToolBars() {
                                         m_swordKey.get(),
                                         btMainWindow()->navToolBar());
     keyChooser->key()->setKey(keyReference);
-    btMainWindow()->navToolBar()->addAction(m_actions.backInHistory); //1st button
-    btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
+    btMainWindow()->navToolBar()->addAction(m_actions.backInHistory);
+    btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory);
     btMainWindow()->navToolBar()->addWidget(keyChooser);
     BT_CONNECT(keyChooser, &CKeyChooser::keyChanged,
                this,       &CDisplayWindow::lookupSwordKey);
@@ -554,13 +560,15 @@ void CDisplayWindow::setupMainWindowToolBars() {
                keyChooser, &CKeyChooser::updateKey);
 
     // Works toolbar
-    btMainWindow()->worksToolBar()->setModules(m_modules, constMods.first()->type(), this);
+    btMainWindow()->worksToolBar()->setModules(m_modules,
+                                               constMods.first()->type(),
+                                               this);
 
     // Tools toolbar
     btMainWindow()->toolsToolBar()->addAction(
                 &m_actionCollection->action(
                     CResMgr::displaywindows::general::search::actionName));
-    BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
+    auto * const button = new BtDisplaySettingsButton(buttonsToolBar());
     setDisplaySettingsButton(button);
     btMainWindow()->toolsToolBar()->addWidget(button);
 }
@@ -666,7 +674,8 @@ void CDisplayWindow::setBibleReference(const QString& reference) {
         return;
     }
     message::showInformation(this, tr("Choose Standard Bible"),
-                             tr("Please choose a Bible in the Settings > Configure dialog."));
+                             tr("Please choose a Bible in the Settings > "
+                                "Configure dialog."));
 }
 
 /** Sets the keychooser widget for this display window. */
@@ -731,7 +740,8 @@ void CDisplayWindow::addModuleChooserBar() {
     addToolBar(m_moduleChooserBar);
 }
 
-/** Initialize the window. Call this method from the outside, because calling this in the constructor is not possible! */
+/** Initialize the window. Call this method from the outside, because calling
+     this in the constructor is not possible! */
 bool CDisplayWindow::init() {
     initView();
     BT_ASSERT(m_displayWidget);
@@ -828,8 +838,8 @@ void CDisplayWindow::setDisplaySettingsButton(BtDisplaySettingsButton *button) {
 void CDisplayWindow::lookup() { lookupSwordKey(m_swordKey.get()); }
 
 void CDisplayWindow::lookupKey( const QString& keyName ) {
-    /* This function is called for example after a bookmark was dropped on this window
-    */
+    /* This function is called for example after a bookmark was dropped on this
+       window. */
     BT_ASSERT(m_modules.first());
 
     if (!m_isInitialized) {
@@ -846,13 +856,14 @@ void CDisplayWindow::lookupKey( const QString& keyName ) {
     /// \todo check for containsRef compat
     if (m && m_modules.contains(m)) {
         m_swordKey->setKey(keyName);
-        m_keyChooser->setKey(m_swordKey.get()); //the key chooser does send an update signal
+        // the key chooser does send an update signal
+        m_keyChooser->setKey(m_swordKey.get());
         Q_EMIT sigKeyChanged(m_swordKey.get());
     }
-    else {     //given module not displayed in this window
-        //if the module is displayed in another display window we assume a wrong drop
-        //create a new window for the given module
-        BibleTime *mainWindow = btMainWindow();
+    else { // given module not displayed in this window
+        // If the module is displayed in another display window we assume a
+        // wrong drop. Create a new window for the given module:
+        BibleTime * mainWindow = btMainWindow();
         BT_ASSERT(mainWindow);
         mainWindow->createReadDisplayWindow(m, keyName);
     }

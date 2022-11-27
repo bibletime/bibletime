@@ -48,7 +48,8 @@ public:
 
     virtual CSwordModuleInfo::ModuleType moduleType() const;
 
-    /** Insert the keyboard accelerators of this window into the given actioncollection.*/
+    /** Insert the keyboard accelerators of this window into the given
+        actioncollection.*/
     static void insertKeyboardActions( BtActionCollection* const a );
 
     /** Returns pointer to the mdi area object.*/
@@ -106,7 +107,8 @@ public:
     /** Sets the display settings button.*/
     void setDisplaySettingsButton( BtDisplaySettingsButton* button );
 
-    /** Returns the display widget used by this implementation of CDisplayWindow. */
+    /** Returns the display widget used by this implementation of
+        CDisplayWindow. */
     BtModelViewReadDisplay * displayWidget() const {
         BT_ASSERT(m_displayWidget);
         return m_displayWidget;
@@ -115,10 +117,8 @@ public:
     /** Sets the display widget used by this display window.*/
     void setDisplayWidget(BtModelViewReadDisplay * newDisplay);
 
-    /**
-        * Returns whether syncs to the active window are allowed at this time for this display window
-        * @return boolean value whether sync is allowed
-        */
+    /** \returns whether syncs to the active window are allowed for this display
+                 window. */
     virtual bool syncAllowed() const { return false; }
 
     /**
@@ -243,10 +243,8 @@ protected Q_SLOTS:
 
     virtual void modulesChanged();
 
-    /**
-          Lookup the current key. Used to refresh the display. This also needs to be called
-          after programmatically changing filter/display options.
-        */
+    /** Lookup the current key. Used to refresh the display. This also needs to
+        be called after programmatically changing filter/display options. */
     void lookup();
 
     void printAll();
@@ -293,7 +291,6 @@ private:
     BtActionCollection * const m_actionCollection;
     CMDIArea * const m_mdi;
 
-    //we may only cache the module names bacause after a backend reload the pointers are invalid!
     BtModuleList m_modules;
 
     FilterOptions m_filterOptions;
