@@ -22,7 +22,6 @@
 #include <Qt>
 #include <QToolButton>
 #include "../../backend/drivers/cswordmoduleinfo.h"
-#include "../../backend/managers/cswordbackend.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
