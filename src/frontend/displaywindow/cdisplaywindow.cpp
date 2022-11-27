@@ -428,8 +428,7 @@ void CDisplayWindow::initView() {
     addToolBar(mainToolBar());
 
     // Create keychooser
-    auto const constMods = constModules();
-    setKeyChooser(CKeyChooser::createInstance(constMods,
+    setKeyChooser(CKeyChooser::createInstance(constModules(),
                                               history(),
                                               m_swordKey,
                                               mainToolBar()));
