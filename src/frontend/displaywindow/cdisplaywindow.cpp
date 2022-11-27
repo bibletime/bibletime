@@ -24,7 +24,6 @@
 #include "../../backend/keys/cswordkey.h"
 #include "../../backend/rendering/cdisplayrendering.h"
 #include "../../util/cresmgr.h"
-#include "../../util/tool.h"
 #include "../bibletime.h"
 #include "../cexportmanager.h"
 #include "../cmdiarea.h"
