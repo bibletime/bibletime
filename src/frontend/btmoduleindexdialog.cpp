@@ -15,7 +15,7 @@
 #include <array>
 #include <QApplication>
 #include <utility>
-#include "../backend/managers/cswordbackend.h"
+#include "../backend/drivers/cswordmoduleinfo.h"
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "../util/btdebugonly.h"
