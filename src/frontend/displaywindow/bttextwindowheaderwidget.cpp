@@ -77,7 +77,7 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(
         BT_CONNECT(m_replaceMenu, &BtModuleChooserMenu::sigModuleChosen,
                    [this](CSwordModuleInfo * const module) {
                         BT_ASSERT(module);
-                        Q_EMIT sigModuleReplace(m_id, module->name());
+                        Q_EMIT sigModuleReplace(m_id, module);
                     });
         popup->addMenu(m_replaceMenu);
 
@@ -91,7 +91,7 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(
         BT_CONNECT(m_addMenu, &BtModuleChooserMenu::sigModuleChosen,
                    [this](CSwordModuleInfo * const module) {
                         BT_ASSERT(module);
-                        Q_EMIT sigModuleAdd(m_id + 1, module->name());
+                        Q_EMIT sigModuleAdd(m_id + 1, module);
                     });
         popup->addMenu(m_addMenu);
     m_button->setMenu(popup);

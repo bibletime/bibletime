@@ -85,7 +85,7 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse,
 
 /** Is called after a module was selected in the popup */
 void BtModuleChooserButton::moduleChosen(
-        CSwordModuleInfo const * const newModule)
+        CSwordModuleInfo * const newModule)
 {
     // If no module was previously selected:
     auto const & selectedModule = m_popup->selectedModule();
@@ -93,13 +93,13 @@ void BtModuleChooserButton::moduleChosen(
         if (newModule) {
             m_popup->setSelectedModule(newModule->name());
             setIcon(newModule->moduleIcon());
-            Q_EMIT sigModuleAdd(m_popup->buttonIndex(), newModule->name());
+            Q_EMIT sigModuleAdd(m_popup->buttonIndex(), newModule);
         }
     } else {
         if (newModule) {
             m_popup->setSelectedModule(newModule->name());
             setIcon(newModule->moduleIcon());
-            Q_EMIT sigModuleReplace(m_popup->buttonIndex(), newModule->name());
+            Q_EMIT sigModuleReplace(m_popup->buttonIndex(), newModule);
         } else {
             m_popup->setSelectedModule(QString());
             setIcon(icon());

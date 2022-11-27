@@ -49,10 +49,10 @@ class BtModuleChooserButton: public QToolButton {
     Q_SIGNALS:
 
         /** User selected a module from menu to replace another module. */
-        void sigModuleReplace ( int index, QString newModule );
+        void sigModuleReplace(int index, CSwordModuleInfo * newModule);
 
         /** User selected a module from menu to add. */
-        void sigModuleAdd ( int index, QString module );
+        void sigModuleAdd(int index, CSwordModuleInfo * module);
 
         /** User selected a module from menu to be removed. */
         void sigModuleRemove ( int index );
@@ -60,7 +60,7 @@ class BtModuleChooserButton: public QToolButton {
     private Q_SLOTS:
 
         /** Handle the action signal from the menu. */
-        void moduleChosen(CSwordModuleInfo const * const module);
+        void moduleChosen(CSwordModuleInfo * const module);
 
     private:
 

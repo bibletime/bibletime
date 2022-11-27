@@ -170,8 +170,8 @@ Q_SIGNALS:
 
 public Q_SLOTS:
     /** Receives a signal telling that a module should be added.*/
-    void slotAddModule(int index, QString module);
-    void slotReplaceModule(int index, QString newModule);
+    void slotAddModule(int index, CSwordModuleInfo * module);
+    void slotReplaceModule(int index, CSwordModuleInfo * newModule);
     void slotRemoveModule(int index);
 
     /** Lookup the key in the chosen modules.*/

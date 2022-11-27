@@ -600,18 +600,18 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
     m_actionCollection->readShortcuts(QStringLiteral("Lexicon shortcuts"));
 }
 
-void CDisplayWindow::slotAddModule(int index, QString module) {
+void CDisplayWindow::slotAddModule(int index, CSwordModuleInfo * module) {
     BT_ASSERT(index <= m_modules.size());
-    m_modules.insert(index, module);
+    m_modules.insert(index, module->name());
     m_displayWidget->setModules(m_modules);
     lookup();
     modulesChanged();
     Q_EMIT sigModuleListChanged();
 }
 
-void CDisplayWindow::slotReplaceModule(int index, QString newModule) {
+void CDisplayWindow::slotReplaceModule(int index, CSwordModuleInfo * newModule){
     BT_ASSERT(index < m_modules.size());
-    m_modules.replace(index, newModule);
+    m_modules.replace(index, newModule->name());
     m_displayWidget->setModules(m_modules);
     lookup();
     modulesChanged();
