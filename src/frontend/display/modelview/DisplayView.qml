@@ -135,13 +135,13 @@ Rectangle {
             return;
 
         indexFirst = listView.indexAt(mouseUL.x, mouseUL.y + listView.contentY);
-        itemFirst = listView.itemAt(mouseUL.x, mouseUL.y + listView.contentY);
+        itemFirst = listView.itemAtIndex(indexFirst);
         var delegateXFirst = listView.contentX + mouseUL.x - firstDelegateItem.x;
         var delegateYFirst = listView.contentY + mouseUL.y - firstDelegateItem.y;
         textPosFirst = firstDelegateItem.positionAt(delegateXFirst, delegateYFirst, selectedTextColumn);
 
         indexLast = listView.indexAt(mouseLR.x, mouseLR.y + listView.contentY);
-        itemLast = listView.itemAt(mouseLR.x, mouseLR.y + listView.contentY);
+        itemLast = listView.itemAtIndex(indexLast);
         var delegateXLast = listView.contentX + mouseLR.x - lastDelegateItem.x;
         var delegateYLast = listView.contentY + mouseLR.y - lastDelegateItem.y;
         textPosLast = lastDelegateItem.positionAt(delegateXLast, delegateYLast, selectedTextColumn);
