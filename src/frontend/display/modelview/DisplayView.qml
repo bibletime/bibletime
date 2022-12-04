@@ -21,8 +21,6 @@ Rectangle {
 
     // Mouse movement properties
     property int dragDistance: 8
-    property int mouseMovedX: 0
-    property int mouseMovedY: 0
     property int mousePressedX: 0
     property int mousePressedY: 0
     property point mouseLR
@@ -67,8 +65,6 @@ Rectangle {
     function leftMouseMove(x, y) {
         draggingInProgress = false;
         selectionInProgress = false;
-        mouseMovedX = x;
-        mouseMovedY = y;
         // Do nothing unless mouse moved some distance from pressed location
         if ((Math.abs(mousePressedX - x) < dragDistance) && (Math.abs(mousePressedY - y) < dragDistance)) {
             return;
@@ -83,7 +79,7 @@ Rectangle {
         } else {
             // Do text selection
             column = Math.floor(mousePressedX / (listView.width / listView.columns));
-            sortMousePoints();
+            sortMousePoints(x, y);
             getSelectedTextPositions();
             selectByItem();
             selectionInProgress = true;
@@ -115,7 +111,7 @@ Rectangle {
         return true;
     }
 
-    function sortMousePoints() {
+    function sortMousePoints(mouseMovedX, mouseMovedY) {
         if (mousePressedX < mouseMovedX) {
             if (mousePressedY < mouseMovedY) {
                 mouseUL = Qt.point(mousePressedX, mousePressedY);
