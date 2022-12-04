@@ -129,22 +129,22 @@ Rectangle {
     }
 
     function getSelectedTextPositions(mouseUL, mouseLR) {
-        var firstDelegateItem = listView.itemAt(mouseUL.x, mouseUL.y + listView.contentY);
-        var lastDelegateItem = listView.itemAt(mouseLR.x, mouseLR.y + listView.contentY);
-        if (firstDelegateItem === null || lastDelegateItem === null)
+        const firstDelegateItemIndex = listView.indexAt(mouseUL.x, mouseUL.y + listView.contentY);
+        const lastDelegateItemIndex = listView.indexAt(mouseLR.x, mouseLR.y + listView.contentY);
+        if ((lastDelegateItemIndex < 0) || (lastDelegateItemIndex < 0))
             return;
 
-        indexFirst = listView.indexAt(mouseUL.x, mouseUL.y + listView.contentY);
+        indexFirst = firstDelegateItemIndex;
         itemFirst = listView.itemAtIndex(indexFirst);
-        var delegateXFirst = listView.contentX + mouseUL.x - firstDelegateItem.x;
-        var delegateYFirst = listView.contentY + mouseUL.y - firstDelegateItem.y;
-        textPosFirst = firstDelegateItem.positionAt(delegateXFirst, delegateYFirst, selectedTextColumn);
+        const delegateXFirst = listView.contentX + mouseUL.x - itemFirst.x;
+        const delegateYFirst = listView.contentY + mouseUL.y - itemFirst.y;
+        textPosFirst = itemFirst.positionAt(delegateXFirst, delegateYFirst, selectedTextColumn);
 
-        indexLast = listView.indexAt(mouseLR.x, mouseLR.y + listView.contentY);
+        indexLast = lastDelegateItemIndex;
         itemLast = listView.itemAtIndex(indexLast);
-        var delegateXLast = listView.contentX + mouseLR.x - lastDelegateItem.x;
-        var delegateYLast = listView.contentY + mouseLR.y - lastDelegateItem.y;
-        textPosLast = lastDelegateItem.positionAt(delegateXLast, delegateYLast, selectedTextColumn);
+        const delegateXLast = listView.contentX + mouseLR.x - itemLast.x;
+        const delegateYLast = listView.contentY + mouseLR.y - itemLast.y;
+        textPosLast = itemLast.positionAt(delegateXLast, delegateYLast, selectedTextColumn);
     }
 
     function selectDelegateItem(index, dItem) {
