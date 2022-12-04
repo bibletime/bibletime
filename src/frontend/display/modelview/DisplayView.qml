@@ -29,7 +29,7 @@ Rectangle {
     property string pressedLink: ""
 
     // Text selection properties
-    property int column: 0          // Column containing selected text
+    property int selectedTextColumn: 0
     property int indexFirst: -1     // Index of first delegate item with selected text
     property int indexLast: -1      // Index of last delegate item with selected text
     property Item itemFirst: null   // First delegate item with selected text
@@ -78,7 +78,7 @@ Rectangle {
             }
         } else {
             // Do text selection
-            column = Math.floor(mousePressedX / (listView.width / listView.columns));
+            selectedTextColumn = Math.floor(mousePressedX / (listView.width / listView.columns));
             sortMousePoints(x, y);
             getSelectedTextPositions();
             selectByItem();
@@ -141,30 +141,30 @@ Rectangle {
         itemFirst = listView.itemAt(mouseUL.x, mouseUL.y + listView.contentY);
         var delegateXFirst = listView.contentX + mouseUL.x - firstDelegateItem.x;
         var delegateYFirst = listView.contentY + mouseUL.y - firstDelegateItem.y;
-        textPosFirst = firstDelegateItem.positionAt(delegateXFirst, delegateYFirst, column);
+        textPosFirst = firstDelegateItem.positionAt(delegateXFirst, delegateYFirst, selectedTextColumn);
 
         indexLast = listView.indexAt(mouseLR.x, mouseLR.y + listView.contentY);
         itemLast = listView.itemAt(mouseLR.x, mouseLR.y + listView.contentY);
         var delegateXLast = listView.contentX + mouseLR.x - lastDelegateItem.x;
         var delegateYLast = listView.contentY + mouseLR.y - lastDelegateItem.y;
-        textPosLast = lastDelegateItem.positionAt(delegateXLast, delegateYLast, column);
+        textPosLast = lastDelegateItem.positionAt(delegateXLast, delegateYLast, selectedTextColumn);
     }
 
     function selectDelegateItem(index, dItem) {
         if (dItem === null || dItem === 0)
             return;
         if (dItem === itemFirst && dItem === itemLast)
-            dItem.selectSingle(column, textPosFirst, textPosLast);
+            dItem.selectSingle(selectedTextColumn, textPosFirst, textPosLast);
         else if (dItem === itemFirst)
-            dItem.selectFirst(column, textPosFirst);
+            dItem.selectFirst(selectedTextColumn, textPosFirst);
         else if (dItem === itemLast)
-            dItem.selectLast(column, textPosLast);
+            dItem.selectLast(selectedTextColumn, textPosLast);
         else if (dItem !== itemFirst && dItem !== itemLast)
-            dItem.selectAll(column);
+            dItem.selectAll(selectedTextColumn);
         else
             return;
 
-        var columnSelectedText = dItem.getSelectedText(column);
+        var columnSelectedText = dItem.getSelectedText(selectedTextColumn);
         btQmlInterface.saveSelectedText(index, columnSelectedText)
     }
 
@@ -191,14 +191,14 @@ Rectangle {
             return;
         var delegateItem = itemFirst;
         while (true) {
-            delegateItem.deselect(column);
+            delegateItem.deselect(selectedTextColumn);
             if (delegateItem == itemLast)
                 break;
             delegateItem = nextItem(delegateItem);
         }
         itemFirst = null;
         itemLast = null
-        column = 0;
+        selectedTextColumn = 0;
         btQmlInterface.clearSelectedText();
     }
 

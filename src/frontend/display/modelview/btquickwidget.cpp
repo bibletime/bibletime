@@ -108,7 +108,7 @@ void BtQuickWidget::saveContextMenuIndex(int x, int y) {
 void BtQuickWidget::updateReferenceText() { callQml("updateReferenceText"); }
 
 int BtQuickWidget::getSelectedColumn() const
-{ return rootObject()->property("column").toInt(); }
+{ return rootObject()->property("selectedTextColumn").toInt(); }
 
 int BtQuickWidget::getFirstSelectedIndex() const
 { return rootObject()->property("indexFirst").toInt(); }

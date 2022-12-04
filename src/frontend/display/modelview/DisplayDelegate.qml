@@ -80,12 +80,12 @@ Item {
     }
 
     function selectAll() {
-        var item = getColumnItem(column);
+        var item = getColumnItem(selectedTextColumn);
         item.selectAll();
     }
 
     function deselect() {
-        var item = getColumnItem(column);
+        var item = getColumnItem(selectedTextColumn);
         item.deselect();
     }
 
