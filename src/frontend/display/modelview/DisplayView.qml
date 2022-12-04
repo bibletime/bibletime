@@ -22,8 +22,6 @@ Rectangle {
     // Mouse movement properties
     property int mousePressedX: 0
     property int mousePressedY: 0
-    property point mouseLR
-    property point mouseUL
     property bool draggingInProgress: false
     property bool selectionInProgress: false
     property string pressedLink: ""
@@ -79,8 +77,7 @@ Rectangle {
         } else {
             // Do text selection
             selectedTextColumn = Math.floor(mousePressedX / (listView.width / listView.columns));
-            sortMousePoints(x, y);
-            getSelectedTextPositions();
+            getSelectedTextPositions(...sortMousePoints(x, y));
             selectByItem();
             selectionInProgress = true;
         }
@@ -114,24 +111,24 @@ Rectangle {
     function sortMousePoints(mouseMovedX, mouseMovedY) {
         if (mousePressedX < mouseMovedX) {
             if (mousePressedY < mouseMovedY) {
-                mouseUL = Qt.point(mousePressedX, mousePressedY);
-                mouseLR = Qt.point(mouseMovedX, mouseMovedY);
+                return [Qt.point(mousePressedX, mousePressedY),
+                        Qt.point(mouseMovedX, mouseMovedY)];
             } else {
-                mouseUL = Qt.point(mousePressedX, mouseMovedY);
-                mouseLR = Qt.point(mouseMovedX, mousePressedY);
+                return [Qt.point(mousePressedX, mouseMovedY),
+                        Qt.point(mouseMovedX, mousePressedY)];
             }
         } else {
             if (mousePressedY < mouseMovedY) {
-                mouseUL = Qt.point(mouseMovedX, mousePressedY);
-                mouseLR = Qt.point(mousePressedX, mouseMovedY);
+                return [Qt.point(mouseMovedX, mousePressedY),
+                        Qt.point(mousePressedX, mouseMovedY)];
             } else {
-                mouseUL = Qt.point(mouseMovedX, mouseMovedY);
-                mouseLR = Qt.point(mousePressedX, mousePressedY);
+                return [Qt.point(mouseMovedX, mouseMovedY),
+                        Qt.point(mousePressedX, mousePressedY)];
             }
         }
     }
 
-    function getSelectedTextPositions() {
+    function getSelectedTextPositions(mouseUL, mouseLR) {
         var firstDelegateItem = listView.itemAt(mouseUL.x, mouseUL.y + listView.contentY);
         var lastDelegateItem = listView.itemAt(mouseLR.x, mouseLR.y + listView.contentY);
         if (firstDelegateItem === null || lastDelegateItem === null)
