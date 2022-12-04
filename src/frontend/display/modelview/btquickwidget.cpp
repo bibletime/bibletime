@@ -108,13 +108,13 @@ void BtQuickWidget::saveContextMenuIndex(int x, int y) {
 void BtQuickWidget::updateReferenceText() { callQml("updateReferenceText"); }
 
 int BtQuickWidget::getSelectedColumn() const
-{ return getFromQml("getSelectedColumn").toInt(); }
+{ return rootObject()->property("column").toInt(); }
 
 int BtQuickWidget::getFirstSelectedIndex() const
-{ return getFromQml("getFirstSelectedIndex").toInt(); }
+{ return rootObject()->property("indexFirst").toInt(); }
 
 int BtQuickWidget::getLastSelectedIndex() const
-{ return getFromQml("getLastSelectedIndex").toInt(); }
+{ return rootObject()->property("indexLast").toInt(); }
 
 CSwordKey* BtQuickWidget::getMouseClickedKey() {
     return m_scrollView->getQmlInterface()->getMouseClickedKey();
@@ -174,13 +174,4 @@ void BtQuickWidget::mouseReleaseEvent(QMouseEvent *event) {
 void BtQuickWidget::wheelEvent(QWheelEvent * event) {
     BibleTime::instance()->autoScrollStop();
     QQuickWidget::wheelEvent(event);
-}
-
-QVariant BtQuickWidget::getFromQml(char const * method) const {
-    QVariant r;
-    QMetaObject::invokeMethod(rootObject(),
-                              method,
-                              Qt::DirectConnection,
-                              Q_RETURN_ARG(QVariant, r));
-    return r;
 }

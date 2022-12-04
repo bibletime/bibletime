@@ -61,8 +61,6 @@ private: // methods:
                                  Q_ARG(QVariant, args)...);
    }
 
-   QVariant getFromQml(char const * method) const;
-
 private:
 
     BtQmlScrollView* m_scrollView;
