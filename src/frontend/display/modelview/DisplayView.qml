@@ -97,9 +97,8 @@ Rectangle {
         deselectByItem();
         if (openPersonalCommentary(mousePressedX, mousePressedY))
             return;
-        if (! isBibleReference(pressedLink))
-            return;
-        btQmlInterface.setBibleKey(pressedLink);
+        if (isBibleReference(pressedLink))
+            btQmlInterface.setBibleKey(pressedLink);
     }
 
     function isBibleReference(url) {
