@@ -45,18 +45,6 @@ Rectangle {
         contextMenuIndex = listView.indexAt(x,y+listView.contentY);
     }
 
-    function getSelectedColumn() {
-        return column;
-    }
-
-    function getFirstSelectedIndex() {
-        return indexFirst;
-    }
-
-    function getLastSelectedIndex() {
-        return indexLast;
-    }
-
     function leftMousePress(x, y) {
         // Save cursor position for later use
         mousePressedX = x;
