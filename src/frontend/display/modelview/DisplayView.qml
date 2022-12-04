@@ -20,7 +20,6 @@ Rectangle {
     property alias contextMenuColumn: btQmlInterface.contextMenuColumn
 
     // Mouse movement properties
-    property int dragDistance: 8
     property int mousePressedX: 0
     property int mousePressedY: 0
     property point mouseLR
@@ -66,6 +65,7 @@ Rectangle {
         draggingInProgress = false;
         selectionInProgress = false;
         // Do nothing unless mouse moved some distance from pressed location
+        const dragDistance = 8;
         if ((Math.abs(mousePressedX - x) < dragDistance) && (Math.abs(mousePressedY - y) < dragDistance)) {
             return;
         }
