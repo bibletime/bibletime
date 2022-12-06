@@ -79,13 +79,13 @@ Item {
         item.select(0, posLast1);
     }
 
-    function selectAll() {
-        var item = getColumnItem(selectedTextColumn);
+    function selectAll(column) {
+        var item = getColumnItem(column);
         item.selectAll();
     }
 
-    function deselect() {
-        var item = getColumnItem(selectedTextColumn);
+    function deselect(column) {
+        var item = getColumnItem(column);
         item.deselect();
     }
 
