@@ -20,6 +20,7 @@ Rectangle {
     property alias contextMenuColumn: btQmlInterface.contextMenuColumn
 
     // Mouse movement properties
+    property bool mousePressedAndMoving: false
     property int mousePressedX: 0
     property int mousePressedY: 0
     property bool draggingInProgress: false
@@ -63,9 +64,12 @@ Rectangle {
         draggingInProgress = false;
         selectionInProgress = false;
         // Do nothing unless mouse moved some distance from pressed location
-        const dragDistance = 8;
-        if ((Math.abs(mousePressedX - x) < dragDistance) && (Math.abs(mousePressedY - y) < dragDistance)) {
-            return;
+        if (!mousePressedAndMoving) {
+            const dragDistance = 8;
+            if ((Math.abs(mousePressedX - x) < dragDistance)
+                && (Math.abs(mousePressedY - y) < dragDistance))
+                return;
+            mousePressedAndMoving = true;
         }
         if (isBibleReference(pressedLink)) {
             // Start drag operation for cross reference link
@@ -84,6 +88,7 @@ Rectangle {
     }
 
     function leftMouseRelease(x, y) {
+        mousePressedAndMoving = false;
         processMouseRelease(x, y);
         draggingInProgress = false;
         selectionInProgress = false;
