@@ -303,9 +303,6 @@ Rectangle {
 
         delegate: DisplayDelegate {
             id: dd
-//            Component.onCompleted: {
-//                selectDelegateItem(index, dd);
-//            }
         }
     }
 }
