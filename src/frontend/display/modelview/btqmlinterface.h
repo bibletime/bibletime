@@ -68,6 +68,7 @@ public:
     Q_INVOKABLE void openEditor(int row, int column);
     void referenceChosen();
     void setMagReferenceByUrl(const QString& url);
+    Q_INVOKABLE QString rawText(int row, int column);
     Q_INVOKABLE void setRawText(int row, int column, const QString& text);
     Q_INVOKABLE void clearSelectedText();
     Q_INVOKABLE bool hasSelectedText();

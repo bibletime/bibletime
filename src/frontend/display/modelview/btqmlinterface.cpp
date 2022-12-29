@@ -230,6 +230,11 @@ QString BtQmlInterface::getReferenceFromUrl(const QString& url) {
     return {};
 }
 
+QString BtQmlInterface::rawText(int const row, int const column) {
+    return m_moduleTextModel->data(m_moduleTextModel->index(row, 0),
+                                   ModuleEntry::Text0Role + column).toString();
+}
+
 void BtQmlInterface::setRawText(int row, int column, const QString& text) {
     QModelIndex index = m_moduleTextModel->index(row, 0);
     int role = ModuleEntry::Text0Role + column;
