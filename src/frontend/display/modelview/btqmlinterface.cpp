@@ -296,20 +296,18 @@ void BtQmlInterface::getFontsFromSettings() {
     decltype(m_fonts) newFonts;
     newFonts.reserve(m_moduleNames.size());
     for (auto const & moduleName : m_moduleNames) {
-        QFont font;
         if (auto const * const m =
                     CSwordBackend::instance()->findModuleByName(moduleName))
         {
             if (auto const lang = m->language()) {
                 BtConfig::FontSettingsPair fontPair = btConfig().getFontForLanguage(*lang);
                 if (fontPair.first) {
-                    font = fontPair.second;
-                } else {
-                    font = btConfig().getDefaultFont();
+                    newFonts.append(fontPair.second);
+                    continue;
                 }
             }
         }
-        newFonts.append(font);
+        newFonts.append(btConfig().getDefaultFont());
     }
     m_fonts = std::move(newFonts);
     Q_EMIT fontChanged();
