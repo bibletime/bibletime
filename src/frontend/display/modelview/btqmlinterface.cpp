@@ -293,7 +293,8 @@ void BtQmlInterface::pageUp() {
 }
 
 void BtQmlInterface::getFontsFromSettings() {
-    m_fonts.clear();
+    decltype(m_fonts) newFonts;
+    newFonts.reserve(m_moduleNames.size());
     for (auto const & moduleName : m_moduleNames) {
         QFont font;
         if (auto const * const m =
@@ -308,8 +309,9 @@ void BtQmlInterface::getFontsFromSettings() {
                 }
             }
         }
-        m_fonts.append(font);
+        newFonts.append(font);
     }
+    m_fonts = std::move(newFonts);
     Q_EMIT fontChanged();
 }
 
