@@ -121,13 +121,9 @@ void BtQmlScrollView::settingsChanged() {
     m_qmlInterface->settingsChanged();
 }
 
-void BtQmlScrollView::pageDown() {
-    m_qmlInterface->pageDown();
-}
+void BtQmlScrollView::pageDown() { m_quickWidget->pageDown(); }
 
-void BtQmlScrollView::pageUp() {
-    m_qmlInterface->pageUp();
-}
+void BtQmlScrollView::pageUp() { m_quickWidget->pageUp(); }
 
 void BtQmlScrollView::findTextHighlight(const QString& text, bool caseSensitive) {
     m_qmlInterface->setHighlightWords(text, caseSensitive);

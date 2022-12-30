@@ -34,6 +34,8 @@ public:
     void saveContextMenuIndex(int x, int y);
     void scroll(int pixels);
     void updateReferenceText();
+    void pageDown();
+    void pageUp();
 
     CSwordKey* getMouseClickedKey();
 

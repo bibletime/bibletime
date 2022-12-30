@@ -278,6 +278,16 @@ Rectangle {
         return t.length === 0;
     }
 
+    function pageDown() {
+        listView.scroll(listView.height * 0.8);
+        updateReferenceText();
+    }
+
+    function pageUp() {
+        listView.scroll(listView.height * -0.8);
+        updateReferenceText();
+    }
+
     width: 10
     height: 10
     color: btQmlInterface.backgroundColor
@@ -285,14 +295,6 @@ Rectangle {
     BtQmlInterface {
         id: btQmlInterface
 
-        onPageDownChanged: {
-            listView.scroll(listView.height * 0.8);
-            updateReferenceText();
-        }
-        onPageUpChanged: {
-            listView.scroll(listView.height * -0.8);
-            updateReferenceText();
-        }
         onPositionItemOnScreen: {
             listView.positionViewAtIndex(index, ListView.Contain);
             updateReferenceText();

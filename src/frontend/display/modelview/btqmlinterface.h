@@ -136,8 +136,6 @@ public:
     bool isBibleOrCommentary();
     BtModuleTextModel * textModel();
     BtModuleTextModel const * textModel() const;
-    void pageDown();
-    void pageUp();
     void referenceChoosen();
     void scrollToSwordKey(CSwordKey * key);
     void setContextMenuIndex(int index);
@@ -158,8 +156,6 @@ Q_SIGNALS:
     void foregroundColorChanged();
     void highlightWordsChanged();
     void numModulesChanged();
-    void pageDownChanged();
-    void pageUpChanged();
     void pixelsPerMMChanged();
     void positionItemOnScreen(int index);
     void setBibleReference(const QString& reference);

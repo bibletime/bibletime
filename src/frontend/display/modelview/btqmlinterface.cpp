@@ -284,14 +284,6 @@ void BtQmlInterface::settingsChanged() {
     Q_EMIT textChanged();
 }
 
-void BtQmlInterface::pageDown() {
-    Q_EMIT pageDownChanged();
-}
-
-void BtQmlInterface::pageUp() {
-    Q_EMIT pageUpChanged();
-}
-
 void BtQmlInterface::getFontsFromSettings() {
     decltype(m_fonts) newFonts;
     newFonts.reserve(m_moduleNames.size());

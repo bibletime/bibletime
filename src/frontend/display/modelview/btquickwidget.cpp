@@ -107,6 +107,10 @@ void BtQuickWidget::saveContextMenuIndex(int x, int y) {
 
 void BtQuickWidget::updateReferenceText() { callQml("updateReferenceText"); }
 
+void BtQuickWidget::pageDown() { callQml("pageDown"); }
+
+void BtQuickWidget::pageUp() { callQml("pageUp"); }
+
 CSwordKey* BtQuickWidget::getMouseClickedKey() {
     return m_scrollView->getQmlInterface()->getMouseClickedKey();
 }
