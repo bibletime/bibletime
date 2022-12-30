@@ -14,7 +14,7 @@ import BibleTime 1.0
 import QtQuick 2.10
 
 Rectangle {
-    id: display
+    id: displayView
 
     property alias contextMenuIndex: btQmlInterface.contextMenuIndex
     property alias contextMenuColumn: btQmlInterface.contextMenuColumn
