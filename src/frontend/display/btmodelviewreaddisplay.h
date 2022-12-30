@@ -140,7 +140,7 @@ public: // methods:
 
     void highlightText(const QString& text, bool caseSensitive);
 
-    void findText(const QString& text, bool caseSensitive, bool backward);
+    void findText(bool const backward);
 
     void openFindTextDialog();
     QString getCurrentNodeInfo() const { return m_nodeInfo; }

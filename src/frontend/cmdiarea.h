@@ -131,9 +131,9 @@ class CMDIArea: public QMdiArea {
         */
         void myTileHorizontal();
 
-        void findNextTextInActiveWindow(const QString& text, bool caseSensitive);
+        void findNextTextInActiveWindow();
 
-        void findPreviousTextInActiveWindow(const QString& text, bool caseSensitive);
+        void findPreviousTextInActiveWindow();
 
         void highlightTextInActiveWindow(const QString& text, bool caseSensitive);
 
@@ -146,9 +146,7 @@ class CMDIArea: public QMdiArea {
 
     protected: // methods:
 
-        void findTextInActiveWindow(QString const & text,
-                                    bool caseSensitive,
-                                    bool backward);
+        void findTextInActiveWindow(bool const backward);
 
         /**
           Reimplementation of QWidget::resizeEvent() to handle our automatic

@@ -99,7 +99,7 @@ public:
     ~BtQmlInterface() override;
 
     int countHighlightsInItem(int index);
-    void findText(const QString& text, bool caseSensitive, bool backward);
+    void findText(bool backward);
     void getNextMatchingItem(int index);
     void getPreviousMatchingItem(int index);
 

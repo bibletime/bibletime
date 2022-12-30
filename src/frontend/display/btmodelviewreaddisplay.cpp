@@ -324,10 +324,8 @@ void BtModelViewReadDisplay::highlightText(const QString& text, bool caseSensiti
     m_widget->qmlInterface()->setHighlightWords(text, caseSensitive);
 }
 
-void BtModelViewReadDisplay::findText(const QString& text,
-                                      bool caseSensitive, bool backward) {
-    m_widget->qmlInterface()->findText(text, caseSensitive, backward);
-}
+void BtModelViewReadDisplay::findText(bool const backward)
+{ m_widget->qmlInterface()->findText(backward); }
 
 // Save the Lemma (Strongs number) attribute
 void BtModelViewReadDisplay::setLemma(const QString& lemma) {

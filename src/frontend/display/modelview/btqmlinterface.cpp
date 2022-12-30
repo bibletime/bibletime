@@ -506,8 +506,7 @@ void BtQmlInterface::timerEvent(QTimerEvent * const event) {
     }
 }
 
-void BtQmlInterface::findText(const QString& /*text*/,
-                              bool /*caseSensitive*/, bool backward) {
+void BtQmlInterface::findText(bool const backward) {
     QApplication::setOverrideCursor(Qt::WaitCursor);
     if (!m_findState)
         m_findState = FindState{getCurrentModelIndex(), 0};

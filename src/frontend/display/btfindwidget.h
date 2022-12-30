@@ -42,8 +42,8 @@ private: // methods:
 
 Q_SIGNALS:
 
-    void findPrevious(QString const & text, bool caseSensitive);
-    void findNext(QString const & text, bool caseSensitive);
+    void findPrevious();
+    void findNext();
     void highlightText(QString const & text, bool caseSensitive);
 
 private: // fields:

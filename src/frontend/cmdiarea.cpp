@@ -355,24 +355,17 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() const {
     return ret;
 }
 
-void CMDIArea::findNextTextInActiveWindow(QString const & text, bool cs)
-{ findTextInActiveWindow(text, cs, false); }
+void CMDIArea::findNextTextInActiveWindow() { findTextInActiveWindow(false); }
 
-void CMDIArea::findPreviousTextInActiveWindow(QString const & text, bool cs)
-{ findTextInActiveWindow(text, cs, true); }
+void CMDIArea::findPreviousTextInActiveWindow() { findTextInActiveWindow(true);}
 
 void CMDIArea::highlightTextInActiveWindow(const QString& text, bool caseSensitive) {
     CDisplayWindow* const displayWindow = getDisplayWindow(activeSubWindow());
     displayWindow->displayWidget()->highlightText(text, caseSensitive);
 }
 
-void CMDIArea::findTextInActiveWindow(QString const & text,
-                                      bool caseSensitive,
-                                      bool backward)
-{
-    CDisplayWindow* const displayWindow = getDisplayWindow(activeSubWindow());
-    displayWindow->displayWidget()->findText(text, caseSensitive, backward);
-}
+void CMDIArea::findTextInActiveWindow(bool const backward)
+{ getDisplayWindow(activeSubWindow())->displayWidget()->findText(backward); }
 
 void CMDIArea::resizeEvent(QResizeEvent* e) {
     /*

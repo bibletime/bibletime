@@ -62,9 +62,11 @@ BtFindWidget::BtFindWidget(QWidget * parent)
     // Next and Previous buttons:
     m_previousButton = newButton(
                            CResMgr::findWidget::icon_previous(),
-                           [this] { findPrevious(text(), caseSensitive()); });
+                           this,
+                           &BtFindWidget::findPrevious);
     m_nextButton = newButton(CResMgr::findWidget::icon_next(),
-                             [this] { findNext(text(), caseSensitive()); });
+                             this,
+                             &BtFindWidget::findNext);
 
     // Case checkbox:
     m_caseCheckBox = new QCheckBox(this);
