@@ -371,10 +371,6 @@ void BtQmlInterface::dragHandler(int index) {
     Q_EMIT dragOccuring(moduleName, keyName);
 }
 
-CSwordKey* BtQmlInterface::getKey() const {
-    return m_swordKey;
-}
-
 CSwordKey* BtQmlInterface::getMouseClickedKey() const {
     return m_moduleTextModel->indexToKey(m_contextMenuIndex, m_contextMenuColumn);
 }
