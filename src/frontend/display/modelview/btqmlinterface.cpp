@@ -50,9 +50,13 @@ BtQmlInterface::~BtQmlInterface() {
 }
 
 bool BtQmlInterface::isBibleOrCommentary() {
-    auto const moduleType = module()->type();
-    return moduleType == CSwordModuleInfo::Bible
-            || moduleType == CSwordModuleInfo::Commentary;
+    if (!m_swordKey)
+        return false;
+    switch (m_swordKey->module()->type()) {
+    case CSwordModuleInfo::Bible: [[fallthrough]];
+    case CSwordModuleInfo::Commentary: return true;
+    default: return false;
+    }
 }
 
 void BtQmlInterface::setFilterOptions(FilterOptions filterOptions) {
