@@ -100,7 +100,7 @@ int BtQmlInterface::getCurrentModelIndex() const {
         return m_moduleTextModel->verseKeyToIndex(
                     *static_cast<CSwordVerseKey *>(m_swordKey));
     } else if (moduleType == CSwordModuleInfo::GenericBook) {
-        const CSwordBookModuleInfo *m = qobject_cast<const CSwordBookModuleInfo*>(module());
+        auto const m = static_cast<CSwordBookModuleInfo const *>(module());
         CSwordTreeKey key(m->tree(), m);
         QString keyName = m_swordKey->key();
         key.setKey(keyName);
