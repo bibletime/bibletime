@@ -89,7 +89,6 @@ QString BtFindWidget::text() const { return m_textEditor->text(); }
 
 void BtFindWidget::showAndSelect() {
     setVisible(true);
-    show();
     m_textEditor->selectAll();
     m_textEditor->setFocus(Qt::ShortcutFocusReason);
 }

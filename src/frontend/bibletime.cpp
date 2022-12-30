@@ -331,7 +331,4 @@ void BibleTime::openSearchDialog(BtConstModuleList modules,
     m_searchDialog->reset(std::move(modules), searchText);
 }
 
-void BibleTime::openFindWidget() {
-    m_findWidget->setVisible(true);
-    m_findWidget->showAndSelect();
-}
+void BibleTime::openFindWidget() { m_findWidget->showAndSelect(); }

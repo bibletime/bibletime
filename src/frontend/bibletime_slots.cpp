@@ -461,7 +461,7 @@ void BibleTime::saveProfile() {
                   static_cast<int>(m_mdi->getMDIArrangementMode()));
 
     conf.setValue(QStringLiteral("FindIsVisible"),
-                  m_findWidget->isVisibleTo(this));
+                  m_findWidget->isVisible());
 
     QStringList windowsList;
     for (auto const * const w : m_mdi->subWindowList(QMdiArea::StackingOrder)) {
