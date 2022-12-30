@@ -53,7 +53,6 @@ class BtQmlInterface : public QObject {
     Q_PROPERTY(QFont        font8                   READ getFont8   NOTIFY fontChanged)
     Q_PROPERTY(QFont        font9                   READ getFont9   NOTIFY fontChanged)
     Q_PROPERTY(QColor       foregroundColor         READ getForegroundColor NOTIFY foregroundColorChanged)
-    Q_PROPERTY(QString      highlightWords          READ getHighlightWords NOTIFY highlightWordsChanged)
     Q_PROPERTY(int          numModules              READ getNumModules NOTIFY numModulesChanged)
     Q_PROPERTY(double       pixelsPerMM             READ getPixelsPerMM NOTIFY pixelsPerMMChanged)
     Q_PROPERTY(QVariant     textModel               READ getTextModel NOTIFY textModelChanged)
@@ -65,6 +64,20 @@ public: /* Types: */
         int startIndex;
         int endIndex;
         QString selectedText;
+    };
+
+private: /* Types: */
+
+    struct ThrottledHighlightWords {
+        QString words;
+        bool caseSensitive;
+
+        friend bool operator==(ThrottledHighlightWords const & lhs,
+                               ThrottledHighlightWords const & rhs) noexcept
+        {
+            return (lhs.words == rhs.words)
+                    && (lhs.caseSensitive == rhs.caseSensitive);
+        }
     };
 
 public:
@@ -115,7 +128,6 @@ public:
     QFont getFont7() const;
     QFont getFont8() const;
     QFont getFont9() const;
-    QString getHighlightWords() const;
     CSwordKey* getMouseClickedKey() const;
     QString getLemmaFromLink(const QString& url);
     int getNumModules() const;
@@ -154,7 +166,6 @@ Q_SIGNALS:
     void currentModelIndexChanged();
     void fontChanged();
     void foregroundColorChanged();
-    void highlightWordsChanged();
     void numModulesChanged();
     void pixelsPerMMChanged();
     void positionItemOnScreen(int index);
@@ -167,9 +178,6 @@ Q_SIGNALS:
 protected: // Methods:
 
     void timerEvent(QTimerEvent * event) final override;
-
-private Q_SLOTS:
-    void slotSetHighlightWords();
 
 private:
     QFont font(int column) const;
@@ -185,8 +193,9 @@ private: // Fields:
 
     QList<QFont> m_fonts;
     int m_backgroundHighlightColorIndex = -1;
-    bool m_caseSensitive = false;
-    QString m_highlightWords;
+    int m_highlightWordsTimerId = 0;
+    std::optional<ThrottledHighlightWords> m_lastAppliedHighlightWords;
+    std::optional<ThrottledHighlightWords> m_throttledHighlightWords;
     QStringList m_moduleNames;
     BtTextFilter m_textFilter;
     QString m_timeoutUrl;

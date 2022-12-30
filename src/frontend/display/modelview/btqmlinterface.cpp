@@ -463,33 +463,44 @@ void BtQmlInterface::copyVerseRange(QString const & ref1,
                 : render->renderSingleKey(vk.key(), {&module}));
 }
 
-QString BtQmlInterface::getHighlightWords() const {
-    return m_highlightWords;
-}
-
 void BtQmlInterface::setHighlightWords(const QString& words, bool caseSensitive) {
-    m_highlightWords = words;
-    m_caseSensitive = caseSensitive;
-    QTimer::singleShot(900, this, &BtQmlInterface::slotSetHighlightWords);
-}
-
-void BtQmlInterface::slotSetHighlightWords() {
-    QApplication::setOverrideCursor(Qt::WaitCursor);
-    m_moduleTextModel->setHighlightWords(m_highlightWords, m_caseSensitive);
-    m_findState.reset();
-    m_moduleTextModel->setFindState(m_findState);
-    Q_EMIT highlightWordsChanged();
-    QApplication::restoreOverrideCursor();
+    m_throttledHighlightWords.emplace(
+                ThrottledHighlightWords{words, caseSensitive});
+    if (!m_highlightWordsTimerId)
+        m_highlightWordsTimerId = startTimer(900);
 }
 
 void BtQmlInterface::timerEvent(QTimerEvent * const event) {
-    BT_ASSERT(event->timerId());
-    if (event->timerId() == m_linkTimerId) {
+    auto const timerId = event->timerId();
+    BT_ASSERT(timerId);
+    if (timerId == m_linkTimerId) {
         event->accept();
         cancelMagTimer();
         auto infoList(Rendering::detectInfo(getReferenceFromUrl(m_timeoutUrl)));
         if (!infoList.isEmpty())
             BibleTime::instance()->infoDisplay()->setInfo(std::move(infoList));
+    } else if (timerId == m_highlightWordsTimerId) {
+        event->accept();
+        if (m_throttledHighlightWords.has_value()) {
+            if (m_throttledHighlightWords == m_lastAppliedHighlightWords) {
+                // Value was changed and changed back. Reset and wait once more:
+                m_throttledHighlightWords.reset();
+            } else {
+                QApplication::setOverrideCursor(Qt::WaitCursor);
+                m_moduleTextModel->setHighlightWords(
+                            m_throttledHighlightWords->words,
+                            m_throttledHighlightWords->caseSensitive);
+                m_findState.reset();
+                m_moduleTextModel->setFindState(m_findState);
+                m_lastAppliedHighlightWords =
+                        std::move(m_throttledHighlightWords);
+                m_throttledHighlightWords.reset(); // contains moved-from value
+                QApplication::restoreOverrideCursor();
+            }
+        } else {
+            killTimer(m_highlightWordsTimerId);
+            m_highlightWordsTimerId = 0;
+        }
     } else {
         QObject::timerEvent(event);
     }
@@ -507,7 +518,6 @@ void BtQmlInterface::findText(const QString& /*text*/,
         getNextMatchingItem(m_findState->index);
 
     m_moduleTextModel->setFindState(m_findState);
-    Q_EMIT highlightWordsChanged();
     Q_EMIT positionItemOnScreen(m_findState->index);
     QApplication::restoreOverrideCursor();
 }
