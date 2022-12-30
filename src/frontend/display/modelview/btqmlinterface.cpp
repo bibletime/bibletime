@@ -123,9 +123,9 @@ int BtQmlInterface::getNumModules() const {
 }
 
 double BtQmlInterface::getPixelsPerMM() const {
-    QScreen* screen = QGuiApplication::screens().at(0);
-    double millimeterPerInch = 25.4;
-    return screen->physicalDotsPerInchX() / millimeterPerInch;
+    constexpr static double const millimetersPerInch = 25.4;
+    return QGuiApplication::screens().first()->physicalDotsPerInchX()
+            / millimetersPerInch;
 }
 
 void BtQmlInterface::setSelection(int const column,
