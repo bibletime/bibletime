@@ -56,12 +56,6 @@ Item {
         return columnText.positionAt(x - xColumnTextItem,y - yColumnTextItem);
     }
 
-    function textIsHtml(dtext) {
-        if (dtext.includes("<!DOCTYPE") || dtext.includes("<span"))
-            return Text.RichText;
-        return Text.PlainText;
-    }
-
     function isBlank(text) {
         var t = text;
         t.trim();
@@ -103,7 +97,7 @@ Item {
         font: columnView.font
         readOnly: true
         text: {
-            var isHtml = columnView.textIsHtml(displayText);
+            var isHtml = displayView.textIsHtml(displayText);
             textFormat = isHtml;
             return displayText;
         }

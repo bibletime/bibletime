@@ -36,6 +36,12 @@ Rectangle {
     property int textPosFirst: -1   // Position of first selected character
     property int textPosLast: -1    // Position of last selected character
 
+    function textIsHtml(dtext) {
+        if (dtext.includes("<!DOCTYPE") || dtext.includes("<span"))
+            return Text.RichText;
+        return Text.PlainText;
+    }
+
     function saveContextMenuIndex(x, y) {
         contextMenuColumn = Math.floor(x / (listView.width / listView.columns));
         contextMenuIndex = listView.indexAt(x,y+listView.contentY);
