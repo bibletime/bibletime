@@ -30,6 +30,7 @@
 #include "../../../backend/rendering/cplaintextexportrendering.h"
 #include "../../../backend/rendering/ctextrendering.h"
 #include "../../../backend/rendering/btinforendering.h"
+#include "../../../util/btassert.h"
 #include "../../bibletime.h"
 #include "../../cinfodisplay.h"
 #include "../../edittextwizard/btedittextwizard.h"
@@ -492,6 +493,7 @@ void BtQmlInterface::slotSetHighlightWords() {
 }
 
 void BtQmlInterface::timerEvent(QTimerEvent * const event) {
+    BT_ASSERT(event->timerId());
     if (m_linkTimerId && event->timerId() == *m_linkTimerId) {
         event->accept();
         cancelMagTimer();
