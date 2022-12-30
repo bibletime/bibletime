@@ -294,10 +294,11 @@ void BtQmlInterface::pageUp() {
 
 void BtQmlInterface::getFontsFromSettings() {
     m_fonts.clear();
-    for(auto const & moduleName : m_moduleNames) {
+    for (auto const & moduleName : m_moduleNames) {
         QFont font;
-        CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName(moduleName);
-        if (m != nullptr) {
+        if (auto const * const m =
+                    CSwordBackend::instance()->findModuleByName(moduleName))
+        {
             if (auto const lang = m->language()) {
                 BtConfig::FontSettingsPair fontPair = btConfig().getFontForLanguage(*lang);
                 if (fontPair.first) {
