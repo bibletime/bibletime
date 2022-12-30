@@ -17,7 +17,6 @@
 #include <QFont>
 #include <QList>
 #include <QObject>
-#include <QMap>
 #include <QString>
 #include "bttextfilter.h"
 
@@ -59,6 +58,15 @@ class BtQmlInterface : public QObject {
     Q_PROPERTY(double       pixelsPerMM             READ getPixelsPerMM NOTIFY pixelsPerMMChanged)
     Q_PROPERTY(QVariant     textModel               READ getTextModel NOTIFY textModelChanged)
 
+public: /* Types: */
+
+    struct Selection {
+        int column;
+        int startIndex;
+        int endIndex;
+        QString selectedText;
+    };
+
 public:
     void cancelMagTimer();
     Q_INVOKABLE void changeReference(int i);
@@ -70,9 +78,6 @@ public:
     void setMagReferenceByUrl(const QString& url);
     Q_INVOKABLE QString rawText(int row, int column);
     Q_INVOKABLE void setRawText(int row, int column, const QString& text);
-    Q_INVOKABLE void clearSelectedText();
-    Q_INVOKABLE bool hasSelectedText();
-    Q_INVOKABLE void saveSelectedText(int index, const QString& text);
     Q_INVOKABLE void setBibleKey(const QString& link);
     Q_INVOKABLE int indexToVerse(int index);
     Q_INVOKABLE void setHoveredLink(QString const & link);
@@ -116,7 +121,18 @@ public:
     QString getLemmaFromLink(const QString& url);
     int getNumModules() const;
     double getPixelsPerMM() const;
-    QString getSelectedText();
+
+    Q_INVOKABLE void setSelection(int column,
+                                  int startIndex,
+                                  int endIndex,
+                                  QString const & selectedText);
+    Q_INVOKABLE void clearSelection() noexcept;
+    bool hasSelectedText() const noexcept;
+    QString getSelectedText() const;
+
+    std::optional<Selection> const & selection() const noexcept
+    { return m_selection; }
+
     QVariant getTextModel();
     bool isBibleOrCommentary();
     BtModuleTextModel * textModel();
@@ -185,5 +201,5 @@ private: // Fields:
     int m_contextMenuColumn;
     QString m_activeLink;
     std::optional<FindState> m_findState;
-    QMap<int, QString> m_selectedText;
+    std::optional<Selection> m_selection;
 };

@@ -35,9 +35,6 @@ public:
     void scroll(int pixels);
     void updateReferenceText();
 
-    int getSelectedColumn() const;
-    int getFirstSelectedIndex() const;
-    int getLastSelectedIndex() const;
     CSwordKey* getMouseClickedKey();
 
 protected:

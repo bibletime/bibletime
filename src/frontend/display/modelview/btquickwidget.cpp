@@ -107,15 +107,6 @@ void BtQuickWidget::saveContextMenuIndex(int x, int y) {
 
 void BtQuickWidget::updateReferenceText() { callQml("updateReferenceText"); }
 
-int BtQuickWidget::getSelectedColumn() const
-{ return rootObject()->property("selectedTextColumn").toInt(); }
-
-int BtQuickWidget::getFirstSelectedIndex() const
-{ return rootObject()->property("indexFirst").toInt(); }
-
-int BtQuickWidget::getLastSelectedIndex() const
-{ return rootObject()->property("indexLast").toInt(); }
-
 CSwordKey* BtQuickWidget::getMouseClickedKey() {
     return m_scrollView->getQmlInterface()->getMouseClickedKey();
 }

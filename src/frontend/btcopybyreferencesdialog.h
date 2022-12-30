@@ -12,7 +12,9 @@
 
 #pragma once
 
+#include <optional>
 #include <QDialog>
+#include "display/modelview/btqmlinterface.h"
 
 
 class BtModuleTextModel;
@@ -40,8 +42,10 @@ public: // types:
 
 public: // methods:
 
-    BtCopyByReferencesDialog(BtModuleTextModel const * model,
-                             CDisplayWindow * parent);
+    BtCopyByReferencesDialog(
+            BtModuleTextModel const * model,
+            std::optional<BtQmlInterface::Selection> const & selection,
+            CDisplayWindow * parent);
 
     Result const & result() const noexcept { return m_result; }
 

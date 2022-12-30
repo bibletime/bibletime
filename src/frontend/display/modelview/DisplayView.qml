@@ -23,18 +23,16 @@ Rectangle {
     property bool mousePressedAndMoving: false
     property int mousePressedX: 0
     property int mousePressedY: 0
+    property int mousePressedColumnIndex: -1
+    property int mousePressedItemIndex: -1
+    property int mousePressedTextPosition: -1
     property bool draggingInProgress: false
     property bool selectionInProgress: false
     property string pressedLink: ""
 
     // Text selection properties
-    property int selectedTextColumn: 0
-    property int indexFirst: -1     // Index of first delegate item with selected text
-    property int indexLast: -1      // Index of last delegate item with selected text
-    property Item itemFirst: null   // First delegate item with selected text
-    property Item itemLast: null    // Last delegate item with selected text
-    property int textPosFirst: -1   // Position of first selected character
-    property int textPosLast: -1    // Position of last selected character
+    property var selectionStart: null
+    property var selectionEnd: null
 
     function textIsHtml(dtext) {
         if (dtext.includes("<!DOCTYPE") || dtext.includes("<span"))
@@ -47,28 +45,42 @@ Rectangle {
         contextMenuIndex = listView.indexAt(x,y+listView.contentY);
     }
 
+    function deselectCurrentSelection() {
+        if (selectionStart === null || selectionEnd === null)
+            return;
+        let [start, end] = [selectionStart.itemIndex, selectionEnd.itemIndex];
+        if (end < start)
+            [start, end] = [end, start];
+        do {
+            const item = listView.itemAtIndex(start);
+            if (item !== null) {
+                /// \todo support multi-column selections:
+                item.deselect(selectionStart.columnIndex);
+            }
+        } while (++start <= end);
+    }
+
     function leftMousePress(x, y) {
-        // Save cursor position for later use
         mousePressedX = x;
         mousePressedY = y;
-
-        if (btQmlInterface.hasSelectedText()) {
-            deselectByItem();
-            return;
+        mousePressedColumnIndex =
+                Math.floor(x / (listView.width / listView.columns));
+        const cx = x + listView.contentX;
+        const cy = y + listView.contentY;
+        mousePressedItemIndex = listView.indexAt(cx, cy);
+        if (mousePressedItemIndex < 0) {
+            mousePressedTextPosition = -1;
+        } else {
+            const pressedItem = listView.itemAtIndex(mousePressedItemIndex);
+            const rx = cx - pressedItem.x;
+            const ry = cy - pressedItem.y;
+            mousePressedTextPosition =
+                    pressedItem.positionAt(rx, ry, mousePressedColumnIndex);
+            pressedLink = pressedItem.linkAt(rx, ry);
         }
-
-        var delegateItem = listView.itemAt( x, y + listView.contentY);
-        if (delegateItem === null)
-            return;
-        // Transform to delegate relative point
-        var delegateX = x - delegateItem.x + listView.contentX;
-        var delegateY = y - delegateItem.y + listView.contentY;
-        pressedLink = delegateItem.linkAt(delegateX, delegateY);
     }
 
     function leftMouseMove(x, y) {
-        draggingInProgress = false;
-        selectionInProgress = false;
         // Do nothing unless mouse moved some distance from pressed location
         if (!mousePressedAndMoving) {
             const dragDistance = 8;
@@ -77,35 +89,163 @@ Rectangle {
                 return;
             mousePressedAndMoving = true;
         }
-        if (isBibleReference(pressedLink)) {
-            // Start drag operation for cross reference link
-            if (!draggingInProgress) {
-                draggingInProgress = true;
-                var index = listView.indexAt( mousePressedX, mousePressedY + listView.contentY);
-                btQmlInterface.dragHandler(index, pressedLink);
-            }
-        } else {
-            // Do text selection
-            selectedTextColumn = Math.floor(mousePressedX / (listView.width / listView.columns));
-            getSelectedTextPositions(...sortMousePoints(x, y));
-            selectByItem();
+
+        /// \todo Handle cases of previous selections before left mouse press?
+
+        // Handle dragging of cross references:
+        if (draggingInProgress)
+            return; // Prevent starting of selection and/or new drags:
+        if (!selectionInProgress && isBibleReference(pressedLink)) {
+            deselectCurrentSelection();
+            selectionStart = null;
+            selectionEnd = null;
+            btQmlInterface.clearSelection();
+
+            draggingInProgress = true;
+            btQmlInterface.dragHandler(mousePressedItemIndex, pressedLink);
+            return; // Prevent starting of selection
+        }
+
+        if (!selectionInProgress) {
+            if (mousePressedTextPosition < 0) // Does not start selection
+                return;
+            deselectCurrentSelection(); /// \todo This can be optimized
+            btQmlInterface.clearSelection();
             selectionInProgress = true;
+            selectionStart = {
+                columnIndex: mousePressedColumnIndex,
+                itemIndex: mousePressedItemIndex,
+                textPosition: mousePressedTextPosition,
+            };
+        } else {
+            deselectCurrentSelection(); /// \todo This can be optimized
+        }
+
+        const cx = x + listView.contentX;
+        const cy = y + listView.contentY;
+        const endItemIndex = listView.indexAt(cx, cy);
+        if (endItemIndex < 0)
+            return; // Don't change current selection
+
+        const currentItem = listView.itemAtIndex(endItemIndex);
+        const rx = cx - currentItem.x;
+        const ry = cy - currentItem.y;
+        const endColumnIndex = selectionStart.columnIndex; /// \todo multi-col
+        selectionEnd = {
+            columnIndex: endColumnIndex,
+            itemIndex: endItemIndex,
+            textPosition: currentItem.positionAt(rx, ry, endColumnIndex),
+        };
+
+        // Apply selection
+        let [start, end] = [selectionStart, selectionEnd];
+        if (end.itemIndex < start.itemIndex) {
+            [start, end] = [end, start];
+        } else if (end.itemIndex == start.itemIndex) { // Single-row selection
+            if (end.textPosition < start.textPosition)
+                [start, end] = [end, start];
+            currentItem.selectSingle(start.columnIndex,
+                                     start.textPosition,
+                                     end.textPosition);
+            return;
+        }
+        {
+            const startItem = listView.itemAtIndex(start.itemIndex);
+            if (startItem !== null)
+                startItem.selectFirst(start.columnIndex, start.textPosition);
+        }
+        for (let i = start.itemIndex + 1; i < end.itemIndex; ++i) {
+            const item = listView.itemAtIndex(i);
+            if (item !== null)
+                item.selectAll(start.columnIndex);
+        }
+        {
+            const endItem = listView.itemAtIndex(end.itemIndex);
+            if (endItem !== null)
+                endItem.selectLast(end.columnIndex, end.textPosition);
+        }
+    }
+
+    // Since the itemAtIndex() function of the ListView will return null for
+    // items which are not in view or cached, we can't use it to calculate the
+    // whole of the selected text. Hence we just recreate the respective
+    // TextView QML widgets here to retrieve the selected texts.
+    function selectedFromTextEdit(row, column, selectCallback) {
+        const rawText = btQmlInterface.rawText(row, column);
+        const item = Qt.createQmlObject(
+                'import QtQuick 2.10; TextEdit { visible: false }',
+                displayView); // parent
+        try {
+            item.textFormat = textIsHtml(rawText);
+            item.text = rawText;
+            selectCallback(item);
+            return item.selectedText;
+        } finally {
+            item.destroy();
         }
     }
 
     function leftMouseRelease(x, y) {
         mousePressedAndMoving = false;
-        processMouseRelease(x, y);
-        draggingInProgress = false;
-        selectionInProgress = false;
-    }
+        if (draggingInProgress) {
+            draggingInProgress = false;
+            return;
+        }
 
-    function processMouseRelease(x, y) {
-        if (draggingInProgress)
+        if (selectionInProgress) { // Complete selection:
+            selectionInProgress = false;
+
+            let [start, end] = [selectionStart, selectionEnd];
+            if (end.itemIndex < start.itemIndex) {
+                [start, end] = [end, start];
+            } else if (end.itemIndex == start.itemIndex) { // Single row
+                if (end.textPosition < start.textPosition) {
+                    [start, end] = [end, start];
+                } else if (end.textPosition == start.textPosition) {
+                    btQmlInterface.clearSelection();
+                    return;
+                }
+                btQmlInterface.setSelection(
+                        start.columnIndex,
+                        start.itemIndex,
+                        start.itemIndex,
+                        selectedFromTextEdit(
+                            start.itemIndex,
+                            start.columnIndex,
+                            (item) => item.select(start.textPosition,
+                                                  end.textPosition)));
+                return;
+            }
+
+            // Reconstruct selected text from multiple item indexes:
+            const selectedTexts = [
+                selectedFromTextEdit(
+                        start.itemIndex,
+                        start.columnIndex,
+                        (item) => item.select(start.textPosition, item.length)),
+            ];
+            for (let i = start.itemIndex + 1; i < end.itemIndex; ++i)
+                selectedTexts.push(
+                        selectedFromTextEdit(
+                            i, start.columnIndex, (item) => item.selectAll()));
+            selectedTexts.push(
+                    selectedFromTextEdit(
+                        end.itemIndex,
+                        start.columnIndex,
+                        (item) => item.select(0, end.textPosition)));
+            btQmlInterface.setSelection(
+                    start.columnIndex,
+                    start.itemIndex,
+                    end.itemIndex,
+                    selectedTexts.join("\n"));
             return;
-        if (selectionInProgress)
-            return;
-        deselectByItem();
+        }
+
+        deselectCurrentSelection();
+        selectionStart = null;
+        selectionEnd = null;
+        btQmlInterface.clearSelection();
+
         if (openPersonalCommentary(mousePressedX, mousePressedY))
             return;
         if (isBibleReference(pressedLink))
@@ -116,97 +256,6 @@ Rectangle {
         if (url === "" || url.includes("lemmamorph") || url.includes("footnote"))
             return false;
         return true;
-    }
-
-    function sortMousePoints(mouseMovedX, mouseMovedY) {
-        if (mousePressedX < mouseMovedX) {
-            if (mousePressedY < mouseMovedY) {
-                return [Qt.point(mousePressedX, mousePressedY),
-                        Qt.point(mouseMovedX, mouseMovedY)];
-            } else {
-                return [Qt.point(mousePressedX, mouseMovedY),
-                        Qt.point(mouseMovedX, mousePressedY)];
-            }
-        } else {
-            if (mousePressedY < mouseMovedY) {
-                return [Qt.point(mouseMovedX, mousePressedY),
-                        Qt.point(mousePressedX, mouseMovedY)];
-            } else {
-                return [Qt.point(mouseMovedX, mouseMovedY),
-                        Qt.point(mousePressedX, mousePressedY)];
-            }
-        }
-    }
-
-    function getSelectedTextPositions(mouseUL, mouseLR) {
-        const firstDelegateItemIndex = listView.indexAt(mouseUL.x, mouseUL.y + listView.contentY);
-        const lastDelegateItemIndex = listView.indexAt(mouseLR.x, mouseLR.y + listView.contentY);
-        if ((lastDelegateItemIndex < 0) || (lastDelegateItemIndex < 0))
-            return;
-
-        indexFirst = firstDelegateItemIndex;
-        itemFirst = listView.itemAtIndex(indexFirst);
-        const delegateXFirst = listView.contentX + mouseUL.x - itemFirst.x;
-        const delegateYFirst = listView.contentY + mouseUL.y - itemFirst.y;
-        textPosFirst = itemFirst.positionAt(delegateXFirst, delegateYFirst, selectedTextColumn);
-
-        indexLast = lastDelegateItemIndex;
-        itemLast = listView.itemAtIndex(indexLast);
-        const delegateXLast = listView.contentX + mouseLR.x - itemLast.x;
-        const delegateYLast = listView.contentY + mouseLR.y - itemLast.y;
-        textPosLast = itemLast.positionAt(delegateXLast, delegateYLast, selectedTextColumn);
-    }
-
-    function selectDelegateItem(index, dItem) {
-        if (dItem === null || dItem === 0)
-            return;
-        if (dItem === itemFirst && dItem === itemLast)
-            dItem.selectSingle(selectedTextColumn, textPosFirst, textPosLast);
-        else if (dItem === itemFirst)
-            dItem.selectFirst(selectedTextColumn, textPosFirst);
-        else if (dItem === itemLast)
-            dItem.selectLast(selectedTextColumn, textPosLast);
-        else if (dItem !== itemFirst && dItem !== itemLast)
-            dItem.selectAll(selectedTextColumn);
-        else
-            return;
-
-        var columnSelectedText = dItem.getSelectedText(selectedTextColumn);
-        btQmlInterface.saveSelectedText(index, columnSelectedText)
-    }
-
-    function nextItem(currentItem) {
-        var nextY = currentItem.y+currentItem.height+listView.spacing;
-        var nextI = listView.itemAt(currentItem.x, nextY);
-        return nextI;
-    }
-
-    function selectByItem() {
-        var delegateItem = itemFirst;
-        var loopIndex = 0;
-        while (true) {
-            selectDelegateItem(loopIndex, delegateItem);
-            if (delegateItem == itemLast)
-                break;
-            delegateItem = nextItem(delegateItem);
-            loopIndex++;
-        }
-    }
-
-    function deselectByItem() {
-        if (itemFirst == null)
-            return;
-        var delegateItem = itemFirst;
-        while (true) {
-            delegateItem.deselect(selectedTextColumn);
-            if (delegateItem == itemLast)
-                break;
-            delegateItem = nextItem(delegateItem);
-        }
-        itemFirst = null;
-        itemLast = null
-        selectedTextColumn = 0;
-        btQmlInterface.clearSelectedText();
     }
 
     function openPersonalCommentary(x, y) {
@@ -308,7 +357,40 @@ Rectangle {
         }
 
         delegate: DisplayDelegate {
-            id: dd
+            // Due to the delegates being destroyed and re-created when the
+            // ListView is scrolled or flicked, we need to re-apply the
+            // any selection to the newly recreated delegates.
+            Component.onCompleted: {
+                if (selectionStart === null || selectionEnd === null)
+                    return;
+                /// \todo support multi-column selections:
+                if (selectionStart.columnIndex >= listView.columns)
+                    return;
+                const columnItem = getColumnItem(selectionStart.columnIndex);
+                let [start, end] = [selectionStart, selectionEnd];
+                if (end.itemIndex < start.itemIndex) {
+                    [start, end] = [end, start];
+                } else if (end.itemIndex == start.itemIndex) {
+                    if (end.textPosition < start.textPosition) {
+                        [start, end] = [end, start];
+                    } else if (end.textPosition == start.textPosition) {
+                        return;
+                    }
+                    if (index == start.itemIndex)
+                        columnItem.select(start.textPosition, end.textPosition);
+                    return;
+                }
+
+                if ((index < start.itemIndex) || (index > end.itemIndex))
+                    return;
+                if (index == start.itemIndex) {
+                    columnItem.select(start.textPosition, columnItem.length);
+                } else if (index == end.itemIndex) {
+                    columnItem.select(0, end.textPosition);
+                } else {
+                    columnItem.selectAll();
+                }
+            }
         }
     }
 }

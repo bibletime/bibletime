@@ -128,6 +128,26 @@ double BtQmlInterface::getPixelsPerMM() const {
     return screen->physicalDotsPerInchX() / millimeterPerInch;
 }
 
+void BtQmlInterface::setSelection(int const column,
+                                  int const startIndex,
+                                  int const endIndex,
+                                  QString const & selectedText)
+{
+    BT_ASSERT(column >= 0);
+    BT_ASSERT(startIndex >= 0);
+    BT_ASSERT(endIndex >= 0);
+    BT_ASSERT(!selectedText.isEmpty());
+    m_selection.emplace(Selection{column, startIndex, endIndex, selectedText});
+}
+
+void BtQmlInterface::clearSelection() noexcept { m_selection.reset(); }
+
+bool BtQmlInterface::hasSelectedText() const noexcept
+{ return m_selection.has_value(); }
+
+QString BtQmlInterface::getSelectedText() const
+{ return m_selection->selectedText; }
+
 QString BtQmlInterface::getRawText(int row, int column) {
     BT_ASSERT(column >= 0 && column <= m_moduleNames.count());
     CSwordVerseKey key = m_moduleTextModel->indexToVerseKey(row);
@@ -383,14 +403,6 @@ QFont BtQmlInterface::getFont7() const { return font(7); }
 QFont BtQmlInterface::getFont8() const { return font(8); }
 QFont BtQmlInterface::getFont9() const { return font(9); }
 
-QString BtQmlInterface::getSelectedText() {
-
-    QString text;
-    for (auto const & value : m_selectedText)
-        text.append(value).append('\n');
-    return text;
-}
-
 QVariant BtQmlInterface::getTextModel() {
     QVariant var;
     var.setValue(m_moduleTextModel);
@@ -588,16 +600,4 @@ void BtQmlInterface::getPreviousMatchingItem(int startIndex) {
         --index;
     }
     return;
-}
-
-bool BtQmlInterface::hasSelectedText() {
-    return ! m_selectedText.isEmpty();
-}
-
-void BtQmlInterface::clearSelectedText() {
-    m_selectedText.clear();
-}
-
-void BtQmlInterface::saveSelectedText(int index, const QString& text) {
-    m_selectedText.insert(index, text);
 }

@@ -108,7 +108,9 @@ void BtModelViewReadDisplay::copySelectedText()
 
 void BtModelViewReadDisplay::copyByReferences() {
     auto const & qml = *qmlInterface();
-    BtCopyByReferencesDialog dlg(qml.textModel(), m_parentWindow);
+    BtCopyByReferencesDialog dlg(qml.textModel(),
+                                 qmlInterface()->selection(),
+                                 m_parentWindow);
     if (dlg.exec() != QDialog::Accepted)
         return;
 

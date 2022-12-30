@@ -138,12 +138,6 @@ public:
     /** Updates the status of the popup menu entries. */
     virtual void copyDisplayedText();
 
-    int getSelectedColumn() const;
-
-    int getFirstSelectedIndex() const;
-
-    int getLastSelectedIndex() const;
-
     CSwordKey* getMouseClickedKey() const;
 
     /* set new reference in this module, or open standard bible */

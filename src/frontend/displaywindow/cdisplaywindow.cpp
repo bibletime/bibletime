@@ -566,15 +566,6 @@ bool CDisplayWindow::hasSelectedText()
 void CDisplayWindow::copyDisplayedText()
 { CExportManager().copyKey(m_swordKey.get(), CExportManager::Text, true); }
 
-int CDisplayWindow::getSelectedColumn() const
-{ return m_displayWidget->quickWidget()->getSelectedColumn(); }
-
-int CDisplayWindow::getFirstSelectedIndex() const
-{ return m_displayWidget->quickWidget()->getFirstSelectedIndex(); }
-
-int CDisplayWindow::getLastSelectedIndex() const
-{ return m_displayWidget->quickWidget()->getLastSelectedIndex(); }
-
 CSwordKey* CDisplayWindow::getMouseClickedKey() const
 { return m_displayWidget->quickWidget()->getMouseClickedKey(); }
 

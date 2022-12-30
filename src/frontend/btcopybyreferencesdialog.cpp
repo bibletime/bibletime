@@ -33,6 +33,7 @@
 
 BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         BtModuleTextModel const * model,
+        std::optional<BtQmlInterface::Selection> const & selection,
         CDisplayWindow * parent)
     : QDialog(parent)
     , m_key(parent->key())
@@ -98,17 +99,14 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
                                            const_cast<void *>(
                                                static_cast<void const *>(m))));
 
-        auto column = parent->getSelectedColumn();
-        if (column < 0)
-            column = 0;
-        BT_ASSERT(column < modules.size());
-
-        auto const first = parent->getFirstSelectedIndex();
-        auto const last = parent->getLastSelectedIndex();
-        if (first >= 0 && last >= 0) {
-            m_keyChooser1->setKey(m_moduleTextModel->indexToKey(first, 0));
-            m_keyChooser2->setKey(m_moduleTextModel->indexToKey(last, 0));
-            m_moduleNameCombo->setCurrentIndex(column);
+        if (selection.has_value()) {
+            BT_ASSERT(selection->column < modules.size());
+            m_keyChooser1->setKey(
+                        m_moduleTextModel->indexToKey(selection->startIndex,
+                                                      0));
+            m_keyChooser2->setKey(
+                        m_moduleTextModel->indexToKey(selection->endIndex, 0));
+            m_moduleNameCombo->setCurrentIndex(selection->column);
         } // else default to top of view.
     }
 

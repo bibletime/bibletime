@@ -17,7 +17,6 @@ Item {
     id: columnView
 
     property alias length: columnText.length
-    property alias selectedText: columnText.selectedText
     property color textColor: btQmlInterface.foregroundColor
     property color textBackgroundColor: btQmlInterface.backgroundColor
     property color textBackgroundHighlightColor: btQmlInterface.backgroundHighlightColor

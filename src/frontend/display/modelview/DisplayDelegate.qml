@@ -19,7 +19,6 @@ Item {
     property int textWidth: (listView.width / listView.columns)
     property int vertSpace: 1 * btQmlInterface.pixelsPerMM
     property bool updating: false
-    property string selectedText
     required property int index
     required property string text0
     required property string text1
@@ -87,11 +86,6 @@ Item {
     function deselect(column) {
         var item = getColumnItem(column);
         item.deselect();
-    }
-
-    function getSelectedText(column) {
-        var item = getColumnItem(column);
-        return item.selectedText;
     }
 
     function getDelegateHeight() {
