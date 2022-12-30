@@ -294,8 +294,7 @@ void BtQmlInterface::pageUp() {
 
 void BtQmlInterface::getFontsFromSettings() {
     m_fonts.clear();
-    for(int i=0; i<m_moduleNames.count(); ++i) {
-        QString moduleName = m_moduleNames.at(i);
+    for(auto const & moduleName : m_moduleNames) {
         QFont font;
         CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName(moduleName);
         if (m != nullptr) {
