@@ -82,7 +82,7 @@ public:
     Q_INVOKABLE int indexToVerse(int index);
     Q_INVOKABLE void setHoveredLink(QString const & link);
 
-    BtQmlInterface(QObject *parent = nullptr);
+    BtQmlInterface(QObject * parent = nullptr);
     ~BtQmlInterface() override;
 
     int countHighlightsInItem(int index);
@@ -178,14 +178,14 @@ private:
 
 private: // Fields:
 
-    bool m_firstHref;
+    bool m_firstHref = false;
     int m_linkTimerId = 0;
     BtModuleTextModel* m_moduleTextModel;
-    CSwordKey* m_swordKey;
+    CSwordKey * m_swordKey = nullptr;
 
     QList<QFont> m_fonts;
-    int m_backgroundHighlightColorIndex;
-    bool m_caseSensitive;
+    int m_backgroundHighlightColorIndex = -1;
+    bool m_caseSensitive = false;
     QString m_highlightWords;
     QStringList m_moduleNames;
     BtTextFilter m_textFilter;

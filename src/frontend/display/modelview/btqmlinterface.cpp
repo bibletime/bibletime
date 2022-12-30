@@ -36,19 +36,12 @@
 #include "../../edittextwizard/btedittextwizard.h"
 
 
-BtQmlInterface::BtQmlInterface(QObject* parent)
-    : QObject(parent),
-      m_firstHref(false),
-      m_moduleTextModel(new BtModuleTextModel(this)),
-      m_swordKey(nullptr),
-      m_backgroundHighlightColorIndex(-1),
-      m_caseSensitive(false) {
+BtQmlInterface::BtQmlInterface(QObject * parent)
+    : QObject(parent)
+    , m_moduleTextModel(new BtModuleTextModel(this))
+{ m_moduleTextModel->setTextFilter(&m_textFilter); }
 
-    m_moduleTextModel->setTextFilter(&m_textFilter);
-}
-
-BtQmlInterface::~BtQmlInterface() {
-}
+BtQmlInterface::~BtQmlInterface() = default;
 
 bool BtQmlInterface::isBibleOrCommentary() {
     if (!m_swordKey)
