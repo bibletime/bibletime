@@ -145,7 +145,6 @@ public:
     void setContextMenuColumn(int index);
     void setFilterOptions(FilterOptions filterOptions);
     void setHighlightWords(const QString& words, bool caseSensitivy);
-    void setKey(CSwordKey* key);
     void setModules(const QStringList &modules);
     void settingsChanged();
 

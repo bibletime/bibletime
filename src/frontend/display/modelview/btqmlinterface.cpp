@@ -314,12 +314,6 @@ void BtQmlInterface::getFontsFromSettings() {
     }
 }
 
-/** Sets the new sword key. */
-void BtQmlInterface::setKey( CSwordKey* key ) {
-    BT_ASSERT(key);
-    m_swordKey = key;
-}
-
 void BtQmlInterface::setBibleKey(const QString& link) {
     QRegExp rx(QStringLiteral("sword://Bible/(.*)/(.*)\\|\\|(.*)=(.*)"));
     rx.setMinimal(false);
