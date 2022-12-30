@@ -93,14 +93,15 @@ QColor BtQmlInterface::getForegroundColor() const
 int BtQmlInterface::getCurrentModelIndex() const {
     if (m_swordKey == nullptr)
         return 0;
-    auto const moduleType = module()->type();
+    auto const * const keyModule = m_swordKey->module();
+    auto const moduleType = keyModule->type();
     if (moduleType == CSwordModuleInfo::Bible
         || moduleType == CSwordModuleInfo::Commentary)
     {
         return m_moduleTextModel->verseKeyToIndex(
                     *static_cast<CSwordVerseKey *>(m_swordKey));
     } else if (moduleType == CSwordModuleInfo::GenericBook) {
-        auto const m = static_cast<CSwordBookModuleInfo const *>(module());
+        auto const m = static_cast<CSwordBookModuleInfo const *>(keyModule);
         CSwordTreeKey key(m->tree(), m);
         QString keyName = m_swordKey->key();
         key.setKey(keyName);
@@ -110,7 +111,7 @@ int BtQmlInterface::getCurrentModelIndex() const {
             return static_cast<int>(key.offset() / 4u); /// \todo Check range!
     } else if (moduleType == CSwordModuleInfo::Lexicon) {
         return static_cast<CSwordLexiconModuleInfo const *>(
-                    m_swordKey->module())->entries().indexOf(m_swordKey->key());
+                    keyModule)->entries().indexOf(m_swordKey->key());
     }
     return 0;
 }
