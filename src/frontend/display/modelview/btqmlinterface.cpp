@@ -107,8 +107,7 @@ int BtQmlInterface::getCurrentModelIndex() const {
     } else if (moduleType == CSwordModuleInfo::GenericBook) {
         auto const m = static_cast<CSwordBookModuleInfo const *>(keyModule);
         CSwordTreeKey key(m->tree(), m);
-        QString keyName = m_swordKey->key();
-        key.setKey(keyName);
+        key.setKey(m_swordKey->key());
         CSwordTreeKey p(key);
         p.positionToRoot();
         if(p != key)
