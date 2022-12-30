@@ -308,8 +308,8 @@ void BtQmlInterface::getFontsFromSettings() {
             }
         }
         m_fonts.append(font);
-        Q_EMIT fontChanged();
     }
+    Q_EMIT fontChanged();
 }
 
 void BtQmlInterface::setBibleKey(const QString& link) {
