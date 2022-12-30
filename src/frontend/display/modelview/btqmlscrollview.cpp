@@ -109,12 +109,6 @@ void BtQmlScrollView::setModules(const QStringList &modules) {
     m_qmlInterface->setModules(modules);
 }
 
-/** Sets the new sword key. */
-void BtQmlScrollView::setKey( CSwordKey* key ) {
-    BT_ASSERT(key);
-    m_qmlInterface->setKey(key);
-}
-
 void BtQmlScrollView::scrollToSwordKey(CSwordKey * key) {
     m_qmlInterface->scrollToSwordKey(key);
 }

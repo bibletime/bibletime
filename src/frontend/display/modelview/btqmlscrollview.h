@@ -42,7 +42,6 @@ public:
     void findTextHighlight(const QString& text, bool caseSensitive);
 
     BtQmlInterface* getQmlInterface() const;
-    void setKey( CSwordKey* key );
     void setModules(const QStringList &modules);
     void settingsChanged();
     void pageDown();
