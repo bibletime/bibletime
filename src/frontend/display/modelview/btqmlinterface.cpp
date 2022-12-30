@@ -97,9 +97,8 @@ int BtQmlInterface::getCurrentModelIndex() const {
     if (moduleType == CSwordModuleInfo::Bible
         || moduleType == CSwordModuleInfo::Commentary)
     {
-        CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_swordKey);
-        int index = m_moduleTextModel->verseKeyToIndex(*verseKey);
-        return index;
+        return m_moduleTextModel->verseKeyToIndex(
+                    *static_cast<CSwordVerseKey *>(m_swordKey));
     } else if (moduleType == CSwordModuleInfo::GenericBook) {
         const CSwordBookModuleInfo *m = qobject_cast<const CSwordBookModuleInfo*>(module());
         CSwordTreeKey key(m->tree(), m);
