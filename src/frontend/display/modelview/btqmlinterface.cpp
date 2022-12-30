@@ -109,10 +109,8 @@ int BtQmlInterface::getCurrentModelIndex() const {
         if(p != key)
             return static_cast<int>(key.offset() / 4u); /// \todo Check range!
     } else if (moduleType == CSwordModuleInfo::Lexicon) {
-        const CSwordLexiconModuleInfo *li =
-                qobject_cast<const CSwordLexiconModuleInfo*>(m_swordKey->module());
-        int index = li->entries().indexOf(m_swordKey->key());
-        return index;
+        return static_cast<CSwordLexiconModuleInfo const *>(
+                    m_swordKey->module())->entries().indexOf(m_swordKey->key());
     }
     return 0;
 }
