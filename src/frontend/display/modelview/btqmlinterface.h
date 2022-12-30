@@ -179,7 +179,7 @@ private:
 private: // Fields:
 
     bool m_firstHref;
-    std::optional<int> m_linkTimerId;
+    int m_linkTimerId = 0;
     BtModuleTextModel* m_moduleTextModel;
     CSwordKey* m_swordKey;
 

@@ -264,10 +264,8 @@ void BtQmlInterface::setRawText(int row, int column, const QString& text) {
 }
 
 void BtQmlInterface::cancelMagTimer() {
-    if (m_linkTimerId) {
-        killTimer(*m_linkTimerId);
-        m_linkTimerId.reset();
-    }
+    killTimer(m_linkTimerId);
+    m_linkTimerId = 0;
 }
 
 void BtQmlInterface::setMagReferenceByUrl(const QString& url) {
@@ -275,8 +273,7 @@ void BtQmlInterface::setMagReferenceByUrl(const QString& url) {
         return;
     m_timeoutUrl = url;
     cancelMagTimer();
-    if (auto const timerId = startTimer(400))
-        m_linkTimerId.emplace(timerId);
+    m_linkTimerId = startTimer(400);
 }
 
 void BtQmlInterface::settingsChanged() {
@@ -494,7 +491,7 @@ void BtQmlInterface::slotSetHighlightWords() {
 
 void BtQmlInterface::timerEvent(QTimerEvent * const event) {
     BT_ASSERT(event->timerId());
-    if (m_linkTimerId && event->timerId() == *m_linkTimerId) {
+    if (event->timerId() == m_linkTimerId) {
         event->accept();
         cancelMagTimer();
         auto infoList(Rendering::detectInfo(getReferenceFromUrl(m_timeoutUrl)));
