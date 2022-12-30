@@ -181,7 +181,6 @@ private:
     QFont font(int column) const;
     void getFontsFromSettings();
     QString getReferenceFromUrl(const QString& url);
-    const CSwordModuleInfo* module() const;
 
 private: // Fields:
 
