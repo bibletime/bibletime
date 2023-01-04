@@ -22,19 +22,6 @@
 #include "cswordbackend.h"
 
 
-namespace {
-
-inline bool
-removeCaseInsensitivePrefix(QStringRef & ref, QString const & prefix) {
-    if (ref.startsWith(prefix, Qt::CaseInsensitive)) {
-        ref = ref.mid(prefix.size() - 1);
-        return true;
-    }
-    return false;
-}
-
-} // anonymous namespace
-
 /** Returns a hyperlink used to be imbedded in the display windows. At the moment the format is sword://module/key */
 QString ReferenceManager::encodeHyperlink(CSwordModuleInfo const & module,
                                           QString const & key)
@@ -100,6 +87,14 @@ ReferenceManager::decodeHyperlink(QString const & hyperlink) {
             };
 
     DecodedHyperlink ret;
+    static auto const removeCaseInsensitivePrefix =
+            [](QStringRef & ref, QString const & prefix) {
+                if (ref.startsWith(prefix, Qt::CaseInsensitive)) {
+                    ref = ref.mid(prefix.size() - 1);
+                    return true;
+                }
+                return false;
+            };
     int slashPos; // position of the last parsed slash
     if (removeCaseInsensitivePrefix(ref, QStringLiteral("sword://"))) { //Bible, Commentary or Lexicon
         if (removeCaseInsensitivePrefix(ref, QStringLiteral("bible/"))) {
