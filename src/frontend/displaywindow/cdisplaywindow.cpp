@@ -273,8 +273,8 @@ void CDisplayWindow::initActions() {
                   m_displayWidget,
                   &BtModelViewReadDisplay::copyByReferences);
     initAddAction(QStringLiteral("findText"),
-                  m_displayWidget,
-                  &BtModelViewReadDisplay::openFindTextDialog);
+                  btMainWindow(),
+                  &BibleTime::openFindWidget);
     initAddAction(DWG::backInHistory::actionName,
                   m_keyChooser->history(),
                   &BTHistory::back);
