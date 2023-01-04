@@ -151,13 +151,6 @@ public: // methods:
     void setBooknameLanguage(QString const & langName);
 
     /**
-      \brief Searches for a module with the given description.
-      \param[in] description The description of the desired module.
-      \returns a pointer to the desired module or NULL if not found.
-    */
-    CSwordModuleInfo * findModuleByDescription(const QString & description) const;
-
-    /**
       \brief Searches for a module with the given name.
       \param[in] name The name of the desired module.
       \returns a pointer to the desired module or NULL if not found.

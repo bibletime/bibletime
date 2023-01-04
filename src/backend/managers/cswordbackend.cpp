@@ -312,13 +312,6 @@ void CSwordBackend::setFilterOptions(const FilterOptions & options) {
     setOption(CSwordModuleInfo::scriptureReferences, options.scriptureReferences);
 }
 
-CSwordModuleInfo * CSwordBackend::findModuleByDescription(const QString & description) const {
-    for (auto * const mod : m_dataModel->moduleList())
-        if (mod->config(CSwordModuleInfo::Description) == description)
-            return mod;
-    return nullptr;
-}
-
 CSwordModuleInfo * CSwordBackend::findModuleByName(const QString & name) const {
     for (auto * const mod : m_dataModel->moduleList())
         if (mod->name().compare(name, Qt::CaseInsensitive) == 0)
