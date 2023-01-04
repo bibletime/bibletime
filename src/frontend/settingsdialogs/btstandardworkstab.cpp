@@ -44,117 +44,78 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
     QFormLayout *formLayout = new QFormLayout;
     formLayout->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
 
-#define STANDARD_WORKS_TAB_ADD_ROW(name) \
+    static constexpr auto const toLexModule =
+            [](CSwordModuleInfo const * module)
+            { return static_cast<CSwordLexiconModuleInfo const *>(module); };
+#define STANDARD_WORKS_TAB_ADD_ROW(fname,...) \
     if (true) { \
-        m_ ## name ## Label = new QLabel(this); \
-        m_ ## name ## Combo = new QComboBox(this); \
-        m_ ## name ## Combo->setSizeAdjustPolicy(QComboBox::AdjustToContents); \
-        formLayout->addRow(m_ ## name ## Label, m_ ## name ## Combo); \
+        m_ ## fname ## Label = new QLabel(this); \
+        m_ ## fname ## Combo = new QComboBox(this); \
+        formLayout->addRow(m_ ## fname ## Label, m_ ## fname ## Combo); \
+        auto const * const defaultModule = \
+            btConfig().getDefaultSwordModuleByType(#fname); \
+        for (auto const * const m : CSwordBackend::instance()->moduleList()) { \
+            if (m->type() == CSwordModuleInfo::__VA_ARGS__) { \
+                QString itemText; \
+                if (auto description = \
+                            m->config(CSwordModuleInfo::Description); \
+                    !description.isEmpty()) \
+                { \
+                    itemText = \
+                            tr("%1: %2", \
+                               "module name: module description").arg( \
+                                    m->name(), \
+                                    std::move(description)); \
+                } else { \
+                    itemText = m->name(); \
+                } \
+                auto itemData = \
+                        QVariant::fromValue( \
+                            const_cast<void *>(static_cast<void const *>(m))); \
+                m_ ## fname ## Combo->addItem(std::move(itemText), \
+                                              std::move(itemData)); \
+                if (m == defaultModule) \
+                    m_ ## fname ## Combo->setCurrentIndex( \
+                            m_ ## fname ## Combo->count() - 1); \
+            } \
+        } \
     } else (void) 0
 
-    STANDARD_WORKS_TAB_ADD_ROW(standardBible);
-    STANDARD_WORKS_TAB_ADD_ROW(standardCommentary);
-    STANDARD_WORKS_TAB_ADD_ROW(standardLexicon);
-    STANDARD_WORKS_TAB_ADD_ROW(standardDailyDevotional);
-    STANDARD_WORKS_TAB_ADD_ROW(standardHebrewStrongsLexicon);
-    STANDARD_WORKS_TAB_ADD_ROW(standardGreekStrongsLexicon);
-    STANDARD_WORKS_TAB_ADD_ROW(standardHebrewMorphLexicon);
-    STANDARD_WORKS_TAB_ADD_ROW(standardGreekMorphLexicon);
+    STANDARD_WORKS_TAB_ADD_ROW(standardBible, Bible);
+    STANDARD_WORKS_TAB_ADD_ROW(standardCommentary, Commentary);
+    STANDARD_WORKS_TAB_ADD_ROW(
+                standardLexicon,
+                Lexicon
+                && !(m->category() == CSwordModuleInfo::DailyDevotional)
+                && !(m->has(CSwordModuleInfo::HebrewDef)
+                     && toLexModule(m)->hasStrongsKeys())
+                && !(m->has(CSwordModuleInfo::GreekDef)
+                     && toLexModule(m)->hasStrongsKeys())
+                && !m->has(CSwordModuleInfo::HebrewParse)
+                && !m->has(CSwordModuleInfo::GreekParse));
+    STANDARD_WORKS_TAB_ADD_ROW(
+                standardDailyDevotional,
+                Lexicon && m->category() == CSwordModuleInfo::DailyDevotional);
+    STANDARD_WORKS_TAB_ADD_ROW(
+                standardHebrewStrongsLexicon,
+                Lexicon
+                && m->has(CSwordModuleInfo::HebrewDef)
+                && toLexModule(m)->hasStrongsKeys());
+    STANDARD_WORKS_TAB_ADD_ROW(
+                standardGreekStrongsLexicon,
+                Lexicon
+                && m->has(CSwordModuleInfo::GreekDef)
+                && toLexModule(m)->hasStrongsKeys());
+    STANDARD_WORKS_TAB_ADD_ROW(
+                standardHebrewMorphLexicon,
+                Lexicon && m->has(CSwordModuleInfo::HebrewParse));
+    STANDARD_WORKS_TAB_ADD_ROW(
+                standardGreekMorphLexicon,
+                Lexicon && m->has(CSwordModuleInfo::GreekParse));
 #undef STANDARD_WORKS_TAB_ADD_ROW
 
     mainLayout->addLayout(formLayout);
     mainLayout->addStretch();
-
-    //fill the comboboxes with the right modules
-
-    QString modDescript;
-    for (auto const * const m : CSwordBackend::instance()->moduleList()) {
-        modDescript = m->config(CSwordModuleInfo::Description);
-
-        switch (m->type()) {
-            case CSwordModuleInfo::Bible:
-                m_standardBibleCombo->addItem(modDescript);
-                break;
-            case CSwordModuleInfo::Commentary:
-                m_standardCommentaryCombo->addItem(modDescript);
-                break;
-            case CSwordModuleInfo::Lexicon: {
-                bool inserted = false;
-                auto const lexModule =
-                        qobject_cast<CSwordLexiconModuleInfo const *>(m);
-                if (m->has(CSwordModuleInfo::HebrewDef)
-                    && lexModule->hasStrongsKeys())
-                {
-                    m_standardHebrewStrongsLexiconCombo->addItem(modDescript);
-                    inserted = true;
-                }
-                if (m->has(CSwordModuleInfo::GreekDef)
-                    && lexModule->hasStrongsKeys())
-                {
-                    m_standardGreekStrongsLexiconCombo->addItem(modDescript);
-                    inserted = true;
-                }
-                if (m->has(CSwordModuleInfo::HebrewParse)) {
-                    m_standardHebrewMorphLexiconCombo->addItem(modDescript);
-                    inserted = true;
-                }
-                if (m->has(CSwordModuleInfo::GreekParse)) {
-                    m_standardGreekMorphLexiconCombo->addItem(modDescript);
-                    inserted = true;
-                }
-                if (m->category() == CSwordModuleInfo::DailyDevotional) {
-                    m_standardDailyDevotionalCombo->addItem(modDescript);
-                    inserted = true;
-                }
-
-                if (!inserted) { // daily devotionals, strong lexicons etc. are
-                                 // not very useful for word lookups
-                    m_standardLexiconCombo->addItem(modDescript);
-                }
-                break;
-            }
-            default://unknown type
-                break;
-        } //switch
-    } //for
-
-    // using two lists and one loop is better than six loops with almost the
-    // same code :)
-    QList<QComboBox*> comboList;
-    QStringList moduleList;
-
-    // fill combobox and modulelist
-    const CSwordModuleInfo* m;
-
-#define STANDARD_WORKS_COMBO_ADD(name) \
-    comboList.append(m_ ## name ## Combo); \
-    m = btConfig().getDefaultSwordModuleByType(#name); \
-    moduleList << (m ? m->config(CSwordModuleInfo::Description) : QString())
-
-        STANDARD_WORKS_COMBO_ADD(standardBible);
-        STANDARD_WORKS_COMBO_ADD(standardCommentary);
-        STANDARD_WORKS_COMBO_ADD(standardLexicon);
-        STANDARD_WORKS_COMBO_ADD(standardDailyDevotional);
-        STANDARD_WORKS_COMBO_ADD(standardHebrewStrongsLexicon);
-        STANDARD_WORKS_COMBO_ADD(standardGreekStrongsLexicon);
-        STANDARD_WORKS_COMBO_ADD(standardHebrewMorphLexicon);
-        STANDARD_WORKS_COMBO_ADD(standardGreekMorphLexicon);
-#undef STANDARD_WORKS_COMBO_ADD
-
-    QString module = QString();
-    int item = 0;
-    int count = 0;
-    for (auto * const combo : comboList) {
-        module = moduleList[comboList.indexOf(combo)];
-        count = combo->count();
-
-        for (item = 0; item < count; item++) {
-            if (combo->itemText(item) == module ) {
-                combo->setCurrentIndex(item);
-                break;
-            }
-        }
-    }
 
     retranslateUi();
 }
@@ -162,9 +123,8 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
 #define STANDARD_WORKS_SET_DEFAULT(name) \
     btConfig().setDefaultSwordModuleByType(\
         #name, \
-        CSwordBackend::instance()->findModuleByDescription( \
-            m_ ## name ## Combo->currentText()) \
-    )
+        static_cast<CSwordModuleInfo const *>( \
+                m_ ## name ## Combo->currentData().value<void *>()))
 void BtStandardWorksTab::save() {
     STANDARD_WORKS_SET_DEFAULT(standardBible);
     STANDARD_WORKS_SET_DEFAULT(standardCommentary);
