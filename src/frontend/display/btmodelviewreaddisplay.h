@@ -142,7 +142,6 @@ public: // methods:
 
     void findText(bool const backward);
 
-    void openFindTextDialog();
     QString getCurrentNodeInfo() const { return m_nodeInfo; }
 
     void pageDown();

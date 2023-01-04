@@ -331,7 +331,3 @@ void BtModelViewReadDisplay::findText(bool const backward)
 void BtModelViewReadDisplay::setLemma(const QString& lemma) {
     m_nodeInfo = lemma;
 }
-
-// Open the Find text dialog
-void BtModelViewReadDisplay::openFindTextDialog()
-{ m_parentWindow->btMainWindow()->openFindWidget(); }
