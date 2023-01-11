@@ -13,7 +13,6 @@
 #include "language.h"
 
 #include <QByteArray>
-#include <QCharRef>
 #include <QHash>
 #include <QList>
 #include <QLocale>

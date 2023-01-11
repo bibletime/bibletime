@@ -16,7 +16,6 @@
 #include <cstring>
 #include <QByteArray>
 #include <QChar>
-#include <QCharRef>
 #include <QList>
 #include <QRegExp>
 #include <QString>
