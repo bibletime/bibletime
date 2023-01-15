@@ -1088,7 +1088,7 @@ QString CSwordModuleInfo::getFormattedConfigEntry(const QString & name) const {
     const QStringList localeNames(QLocale(CSwordBackend::instance()->booknameLanguage()).uiLanguages());
     for (int i = localeNames.size() - 1; i >= -1; --i) {
         sword::SWBuf RTF_Buffer;
-        if (i >= 0) {
+        if (i < 0) {
             RTF_Buffer =
                     m_swordModule.getConfigEntry(name.toUtf8().constData());
         } else {
