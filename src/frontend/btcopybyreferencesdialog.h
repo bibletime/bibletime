@@ -52,7 +52,6 @@ public: // methods:
 private: // fields:
 
     int m_copyThreshold;
-    CSwordKey * m_key;
     CKeyChooser * m_keyChooser1;
     CKeyChooser * m_keyChooser2;
     QComboBox * m_moduleNameCombo;

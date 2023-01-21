@@ -36,7 +36,6 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         std::optional<BtQmlInterface::Selection> const & selection,
         CDisplayWindow * parent)
     : QDialog(parent)
-    , m_key(parent->key())
     , m_moduleTextModel(model)
 {
     setWindowTitle(tr("Copy by References"));
@@ -64,8 +63,10 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
                           : 100;
     }
 
+    auto const parentKey = parent->key();
+
     m_keyChooser1 =
-            CKeyChooser::createInstance(modules, historyPtr, m_key->copy(), this);
+            CKeyChooser::createInstance(modules, historyPtr, parentKey->copy(), this);
     gridLayout->addWidget(m_keyChooser1,0,1);
 
     auto * const hLayout = new QHBoxLayout;
@@ -75,7 +76,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     gridLayout->addWidget(label2, 1,0);
 
     m_keyChooser2 =
-            CKeyChooser::createInstance(modules, historyPtr, m_key->copy(), this);
+            CKeyChooser::createInstance(modules, historyPtr, parentKey->copy(), this);
     gridLayout->addWidget(m_keyChooser2,1,1);
 
     m_moduleNameCombo = new QComboBox();
@@ -110,12 +111,12 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         } // else default to top of view.
     }
 
-    auto const handleKeyChanged = [this]{
+    auto const handleKeyChanged = [this, parentKey]{
         // Calculate result:
         m_result.reference1 = m_keyChooser1->key()->key();
         m_result.reference2 = m_keyChooser2->key()->key();
         {
-            std::unique_ptr<CSwordKey> key(m_key->copy());
+            std::unique_ptr<CSwordKey> key(parentKey->copy());
             key->setKey(m_result.reference1);
             m_result.index1 = m_moduleTextModel->keyToIndex(*key);
             key->setKey(m_result.reference2);
