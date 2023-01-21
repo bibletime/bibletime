@@ -111,9 +111,9 @@ public:
     int getBackgroundHighlightColorIndex() const;
     void changeColorTheme();
     void copyRange(int index1, int index2) const;
-    void copyVerseRange(QString const & ref1,
-                        QString const & ref2,
-                        CSwordModuleInfo const & module) const;
+    static void copyVerseRange(QString const & ref1,
+                               QString const & ref2,
+                               CSwordModuleInfo const & module);
     QString getBibleUrlFromLink(const QString& url);
     int getContextMenuIndex() const;
     int getContextMenuColumn() const;

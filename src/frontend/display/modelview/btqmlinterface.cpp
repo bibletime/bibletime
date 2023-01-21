@@ -417,7 +417,7 @@ void BtQmlInterface::copyRange(int index1, int index2) const {
 
 void BtQmlInterface::copyVerseRange(QString const & ref1,
                                     QString const & ref2,
-                                    CSwordModuleInfo const & module) const
+                                    CSwordModuleInfo const & module)
 {
     CSwordVerseKey dummy(&module);
     CSwordVerseKey vk(&module);
