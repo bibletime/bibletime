@@ -55,7 +55,6 @@ private: // fields:
     CKeyChooser * m_keyChooser1;
     CKeyChooser * m_keyChooser2;
     QComboBox * m_moduleNameCombo;
-    BtModuleTextModel const * m_moduleTextModel;
     QLabel * m_sizeTooLargeLabel;
     QPushButton * m_okButton;
 

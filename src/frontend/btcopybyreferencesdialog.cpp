@@ -36,7 +36,6 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         std::optional<BtQmlInterface::Selection> const & selection,
         CDisplayWindow * parent)
     : QDialog(parent)
-    , m_moduleTextModel(model)
 {
     setWindowTitle(tr("Copy by References"));
     setMinimumWidth(400);
@@ -102,25 +101,22 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
 
         if (selection.has_value()) {
             BT_ASSERT(selection->column < modules.size());
-            m_keyChooser1->setKey(
-                        m_moduleTextModel->indexToKey(selection->startIndex,
-                                                      0));
-            m_keyChooser2->setKey(
-                        m_moduleTextModel->indexToKey(selection->endIndex, 0));
+            m_keyChooser1->setKey(model->indexToKey(selection->startIndex, 0));
+            m_keyChooser2->setKey(model->indexToKey(selection->endIndex, 0));
             m_moduleNameCombo->setCurrentIndex(selection->column);
         } // else default to top of view.
     }
 
-    auto const handleKeyChanged = [this, parentKey]{
+    auto const handleKeyChanged = [this, parentKey, model]{
         // Calculate result:
         m_result.reference1 = m_keyChooser1->key()->key();
         m_result.reference2 = m_keyChooser2->key()->key();
         {
             std::unique_ptr<CSwordKey> key(parentKey->copy());
             key->setKey(m_result.reference1);
-            m_result.index1 = m_moduleTextModel->keyToIndex(*key);
+            m_result.index1 = model->keyToIndex(*key);
             key->setKey(m_result.reference2);
-            m_result.index2 = m_moduleTextModel->keyToIndex(*key);
+            m_result.index2 = model->keyToIndex(*key);
         }
         if (m_result.index1 > m_result.index2) {
             m_result.reference1.swap(m_result.reference2);
