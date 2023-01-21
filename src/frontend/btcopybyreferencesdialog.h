@@ -56,7 +56,6 @@ private: // fields:
     CKeyChooser * m_lastKeyChooser;
     QComboBox * m_workCombo;
     QLabel * m_sizeTooLargeLabel;
-    QPushButton * m_okButton;
 
     Result m_result;
 

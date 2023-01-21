@@ -90,7 +90,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
                                  | QDialogButtonBox::Cancel);
     message::prepareDialogBox(buttons);
     hLayout->addWidget(buttons);
-    m_okButton = buttons->button(QDialogButtonBox::Ok);
+    auto * const okButton = buttons->button(QDialogButtonBox::Ok);
 
     { // Load selection keys:
         for (auto const * const m : modules)
@@ -108,7 +108,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         } // else default to top of view.
     }
 
-    auto const handleKeyChanged = [this, parentKey, model]{
+    auto const handleKeyChanged = [this, parentKey, model, okButton]{
         // Calculate result:
         m_result.reference1 = m_firstKeyChooser->key()->key();
         m_result.reference2 = m_lastKeyChooser->key()->key();
@@ -127,7 +127,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         bool const tooLarge =
                 m_result.index2 - m_result.index1 > m_copyThreshold;
         m_sizeTooLargeLabel->setVisible(tooLarge);
-        m_okButton->setEnabled(!tooLarge);
+        okButton->setEnabled(!tooLarge);
     };
 
     BT_CONNECT(m_firstKeyChooser, &CKeyChooser::keyChanged, handleKeyChanged);
