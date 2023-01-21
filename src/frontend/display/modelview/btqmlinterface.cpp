@@ -420,41 +420,31 @@ void BtQmlInterface::copyVerseRange(CSwordVerseKey const & key1,
 {
     BT_ASSERT(key1.module());
     BT_ASSERT(key1.module() == key2.module());
-    CSwordVerseKey vk(key1.module());
-    vk.setLowerBound(key1);
-    vk.setUpperBound(key2);
 
-    auto const render =
-            [](){
-                DisplayOptions displayOptions;
-                displayOptions.lineBreaks = true;
-                displayOptions.verseNumbers = true;
-
-                FilterOptions filterOptions;
-                filterOptions.footnotes = 0;
-                filterOptions.greekAccents = 1;
-                filterOptions.headings = 1;
-                filterOptions.hebrewCantillation = 1;
-                filterOptions.hebrewPoints = 1;
-                filterOptions.lemmas = 0;
-                filterOptions.morphSegmentation = 1;
-                filterOptions.morphTags = 0;
-                filterOptions.redLetterWords = 1;
-                filterOptions.scriptureReferences = 0;
-                filterOptions.strongNumbers = 0;
-                filterOptions.textualVariants = 0;
-
-                return std::make_unique<Rendering::CPlainTextExportRendering>(
-                            true,
-                            displayOptions,
-                            filterOptions);
-            }();
+    Rendering::CPlainTextExportRendering render(true);
+    {
+        DisplayOptions displayOptions;
+        displayOptions.lineBreaks = true;
+        displayOptions.verseNumbers = true;
+        render.setDisplayOptions(displayOptions);
+    }{
+        FilterOptions filterOptions;
+        filterOptions.footnotes = 0;
+        filterOptions.greekAccents = 1;
+        filterOptions.headings = 1;
+        filterOptions.hebrewCantillation = 1;
+        filterOptions.hebrewPoints = 1;
+        filterOptions.lemmas = 0;
+        filterOptions.morphSegmentation = 1;
+        filterOptions.morphTags = 0;
+        filterOptions.redLetterWords = 1;
+        filterOptions.scriptureReferences = 0;
+        filterOptions.strongNumbers = 0;
+        filterOptions.textualVariants = 0;
+        render.setFilterOptions(filterOptions);
+    }
     QGuiApplication::clipboard()->setText(
-                vk.isBoundSet()
-                ? render->renderKeyRange(vk.lowerBound(),
-                                         vk.upperBound(),
-                                         {vk.module()})
-                : render->renderSingleKey(vk.key(), {vk.module()}));
+                render.renderKeyRange(key1, key2, {key1.module()}));
 }
 
 void BtQmlInterface::setHighlightWords(const QString& words, bool caseSensitive) {
