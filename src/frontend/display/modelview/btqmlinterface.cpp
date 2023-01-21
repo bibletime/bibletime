@@ -415,16 +415,13 @@ void BtQmlInterface::copyRange(int index1, int index2) const {
     clipboard->setText(text);
 }
 
-void BtQmlInterface::copyVerseRange(QString const & ref1,
-                                    QString const & ref2,
+void BtQmlInterface::copyVerseRange(CSwordVerseKey const & key1,
+                                    CSwordVerseKey const & key2,
                                     CSwordModuleInfo const & module)
 {
-    CSwordVerseKey dummy(&module);
     CSwordVerseKey vk(&module);
-    dummy.setKey(ref1);
-    vk.setLowerBound(dummy);
-    dummy.setKey(ref2);
-    vk.setUpperBound(dummy);
+    vk.setLowerBound(key1);
+    vk.setUpperBound(key2);
 
     // Copy key:
     if (!vk.module())

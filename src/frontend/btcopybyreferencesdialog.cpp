@@ -110,17 +110,12 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
 
     auto const handleKeyChanged = [this, parentKey, model, okButton]{
         // Calculate result:
-        m_result.reference1 = m_firstKeyChooser->key()->key();
-        m_result.reference2 = m_lastKeyChooser->key()->key();
-        {
-            std::unique_ptr<CSwordKey> key(parentKey->copy());
-            key->setKey(m_result.reference1);
-            m_result.index1 = model->keyToIndex(*key);
-            key->setKey(m_result.reference2);
-            m_result.index2 = model->keyToIndex(*key);
-        }
+        m_result.key1 = m_firstKeyChooser->key();
+        m_result.key2 = m_lastKeyChooser->key();
+        m_result.index1 = model->keyToIndex(*m_result.key1);
+        m_result.index2 = model->keyToIndex(*m_result.key2);
         if (m_result.index1 > m_result.index2) {
-            m_result.reference1.swap(m_result.reference2);
+            std::swap(m_result.key1, m_result.key2);
             std::swap(m_result.index1, m_result.index2);
         }
 

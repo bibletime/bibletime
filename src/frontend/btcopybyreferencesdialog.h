@@ -34,8 +34,8 @@ public: // types:
 
     struct Result {
         CSwordModuleInfo const * module;
-        QString reference1;
-        QString reference2;
+        CSwordKey const * key1;
+        CSwordKey const * key2;
         int index1;
         int index2;
     };
