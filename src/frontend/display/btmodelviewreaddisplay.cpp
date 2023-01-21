@@ -121,8 +121,7 @@ void BtModelViewReadDisplay::copyByReferences() {
         || module.type() == CSwordModuleInfo::Commentary)
     {
         qml.copyVerseRange(static_cast<CSwordVerseKey const &>(*result.key1),
-                           static_cast<CSwordVerseKey const &>(*result.key2),
-                           module);
+                           static_cast<CSwordVerseKey const &>(*result.key2));
     } else {
         qml.copyRange(result.index1, result.index2);
     }

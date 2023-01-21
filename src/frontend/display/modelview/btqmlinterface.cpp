@@ -416,16 +416,13 @@ void BtQmlInterface::copyRange(int index1, int index2) const {
 }
 
 void BtQmlInterface::copyVerseRange(CSwordVerseKey const & key1,
-                                    CSwordVerseKey const & key2,
-                                    CSwordModuleInfo const & module)
+                                    CSwordVerseKey const & key2)
 {
-    CSwordVerseKey vk(&module);
+    BT_ASSERT(key1.module());
+    BT_ASSERT(key1.module() == key2.module());
+    CSwordVerseKey vk(key1.module());
     vk.setLowerBound(key1);
     vk.setUpperBound(key2);
-
-    // Copy key:
-    if (!vk.module())
-        return;
 
     auto const render =
             [](){
@@ -456,8 +453,8 @@ void BtQmlInterface::copyVerseRange(CSwordVerseKey const & key1,
                 vk.isBoundSet()
                 ? render->renderKeyRange(vk.lowerBound(),
                                          vk.upperBound(),
-                                         {&module})
-                : render->renderSingleKey(vk.key(), {&module}));
+                                         {vk.module()})
+                : render->renderSingleKey(vk.key(), {vk.module()}));
 }
 
 void BtQmlInterface::setHighlightWords(const QString& words, bool caseSensitive) {

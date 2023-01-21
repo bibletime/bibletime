@@ -112,8 +112,7 @@ public:
     void changeColorTheme();
     void copyRange(int index1, int index2) const;
     static void copyVerseRange(CSwordVerseKey const & key1,
-                               CSwordVerseKey const & key2,
-                               CSwordModuleInfo const & module);
+                               CSwordVerseKey const & key2);
     QString getBibleUrlFromLink(const QString& url);
     int getContextMenuIndex() const;
     int getContextMenuColumn() const;
