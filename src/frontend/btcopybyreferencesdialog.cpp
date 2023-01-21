@@ -49,8 +49,11 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     gridLayout->setContentsMargins(11,11,11,16);
     vLayout->addLayout(gridLayout);
 
+    m_workCombo = new QComboBox(this);
+    gridLayout->addWidget(m_workCombo, 0, 1);
+
     auto * const label1 = new QLabel(tr("First"));
-    gridLayout->addWidget(label1, 0,0);
+    gridLayout->addWidget(label1, 1, 0);
 
     auto * const historyPtr = parent->history();
     auto const modules = parent->constModules();
@@ -66,20 +69,17 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
 
     m_firstKeyChooser =
             CKeyChooser::createInstance(modules, historyPtr, parentKey->copy(), this);
-    gridLayout->addWidget(m_firstKeyChooser,0,1);
+    gridLayout->addWidget(m_firstKeyChooser, 1, 1);
 
     auto * const hLayout = new QHBoxLayout;
     vLayout->addLayout(hLayout);
 
     auto * const label2 = new QLabel(tr("Last"));
-    gridLayout->addWidget(label2, 1,0);
+    gridLayout->addWidget(label2, 2, 0);
 
     m_lastKeyChooser =
             CKeyChooser::createInstance(modules, historyPtr, parentKey->copy(), this);
-    gridLayout->addWidget(m_lastKeyChooser,1,1);
-
-    m_workCombo = new QComboBox(this);
-    gridLayout->addWidget(m_workCombo, 2,1);
+    gridLayout->addWidget(m_lastKeyChooser, 2, 1);
 
     m_sizeTooLargeLabel = new QLabel(tr("Copy size is too large."));
     m_sizeTooLargeLabel->setVisible(false);
