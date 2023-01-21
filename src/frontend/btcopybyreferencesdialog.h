@@ -52,9 +52,9 @@ public: // methods:
 private: // fields:
 
     int m_copyThreshold;
-    CKeyChooser * m_keyChooser1;
-    CKeyChooser * m_keyChooser2;
-    QComboBox * m_moduleNameCombo;
+    CKeyChooser * m_firstKeyChooser;
+    CKeyChooser * m_lastKeyChooser;
+    QComboBox * m_workCombo;
     QLabel * m_sizeTooLargeLabel;
     QPushButton * m_okButton;
 

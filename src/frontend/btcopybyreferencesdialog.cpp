@@ -64,9 +64,9 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
 
     auto const parentKey = parent->key();
 
-    m_keyChooser1 =
+    m_firstKeyChooser =
             CKeyChooser::createInstance(modules, historyPtr, parentKey->copy(), this);
-    gridLayout->addWidget(m_keyChooser1,0,1);
+    gridLayout->addWidget(m_firstKeyChooser,0,1);
 
     auto * const hLayout = new QHBoxLayout;
     vLayout->addLayout(hLayout);
@@ -74,12 +74,12 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     auto * const label2 = new QLabel(tr("Last"));
     gridLayout->addWidget(label2, 1,0);
 
-    m_keyChooser2 =
+    m_lastKeyChooser =
             CKeyChooser::createInstance(modules, historyPtr, parentKey->copy(), this);
-    gridLayout->addWidget(m_keyChooser2,1,1);
+    gridLayout->addWidget(m_lastKeyChooser,1,1);
 
-    m_moduleNameCombo = new QComboBox();
-    gridLayout->addWidget(m_moduleNameCombo, 2,1);
+    m_workCombo = new QComboBox(this);
+    gridLayout->addWidget(m_workCombo, 2,1);
 
     m_sizeTooLargeLabel = new QLabel(tr("Copy size is too large."));
     m_sizeTooLargeLabel->setVisible(false);
@@ -94,23 +94,24 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
 
     { // Load selection keys:
         for (auto const * const m : modules)
-            m_moduleNameCombo->addItem(m->name(),
-                                       QVariant::fromValue(
-                                           const_cast<void *>(
-                                               static_cast<void const *>(m))));
+            m_workCombo->addItem(m->name(),
+                                 QVariant::fromValue(
+                                     const_cast<void *>(
+                                         static_cast<void const *>(m))));
 
         if (selection.has_value()) {
             BT_ASSERT(selection->column < modules.size());
-            m_keyChooser1->setKey(model->indexToKey(selection->startIndex, 0));
-            m_keyChooser2->setKey(model->indexToKey(selection->endIndex, 0));
-            m_moduleNameCombo->setCurrentIndex(selection->column);
+            m_firstKeyChooser->setKey(
+                        model->indexToKey(selection->startIndex, 0));
+            m_lastKeyChooser->setKey(model->indexToKey(selection->endIndex, 0));
+            m_workCombo->setCurrentIndex(selection->column);
         } // else default to top of view.
     }
 
     auto const handleKeyChanged = [this, parentKey, model]{
         // Calculate result:
-        m_result.reference1 = m_keyChooser1->key()->key();
-        m_result.reference2 = m_keyChooser2->key()->key();
+        m_result.reference1 = m_firstKeyChooser->key()->key();
+        m_result.reference2 = m_lastKeyChooser->key()->key();
         {
             std::unique_ptr<CSwordKey> key(parentKey->copy());
             key->setKey(m_result.reference1);
@@ -129,12 +130,12 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         m_okButton->setEnabled(!tooLarge);
     };
 
-    BT_CONNECT(m_keyChooser1, &CKeyChooser::keyChanged, handleKeyChanged);
-    BT_CONNECT(m_keyChooser2, &CKeyChooser::keyChanged, handleKeyChanged);
+    BT_CONNECT(m_firstKeyChooser, &CKeyChooser::keyChanged, handleKeyChanged);
+    BT_CONNECT(m_lastKeyChooser, &CKeyChooser::keyChanged, handleKeyChanged);
 
     BT_CONNECT(buttons, &QDialogButtonBox::accepted,
                [this] {
-                   auto const userData = m_moduleNameCombo->currentData();
+                   auto const userData = m_workCombo->currentData();
                    m_result.module =
                            static_cast<CSwordModuleInfo const *>(
                                userData.value<void *>());
