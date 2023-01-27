@@ -31,7 +31,6 @@
 #include "../../util/btconnect.h"
 #include "../../util/tool.h"
 #include "../btcopybyreferencesdialog.h"
-#include "../bibletime.h"
 #include "../BtMimeData.h"
 #include "../cexportmanager.h"
 #include "../displaywindow/cdisplaywindow.h"
@@ -40,8 +39,6 @@
 #include "modelview/btqmlinterface.h"
 #include "modelview/btquickwidget.h"
 
-
-using namespace InfoDisplay;
 
 BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
                                                QWidget * parentWidget)
