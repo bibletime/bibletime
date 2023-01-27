@@ -20,12 +20,11 @@
 
 class CSwordKey;
 class QAction;
-class QWidget;
 
 class BTHistory: public QObject {
         Q_OBJECT
     public:
-        BTHistory(QWidget* parent);
+        BTHistory(QObject * parent);
 
         /**
         * Return a list of Actions behind the current point, the first of the history list will be the
@@ -71,6 +70,6 @@ class BTHistory: public QObject {
         bool class_invariant();
 
         QList<QAction*> m_historyList;
-        int m_index; //pointer to the current item; -1==empty, 0==first etc.
-        bool m_inHistoryFunction; //to prevent recursive behaviour
+        int m_index = -1; //pointer to the current item; -1==empty, 0==first etc.
+        bool m_inHistoryFunction = false; //to prevent recursive behaviour
 };

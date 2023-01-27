@@ -14,7 +14,6 @@
 
 #include <QAction>
 #include <QVariant>
-#include <QWidget>
 #include "../../backend/keys/cswordkey.h"
 #include "../../util/btassert.h"
 
@@ -23,13 +22,9 @@ namespace {
 char const ActionText[] = "BtHistory key";
 }
 
-BTHistory::BTHistory(QWidget* parent)
-        : m_historyList(),
-        m_index(-1),
-        m_inHistoryFunction(false) {
-    setParent(parent);
-    BT_ASSERT(class_invariant());
-}
+BTHistory::BTHistory(QObject * const parent)
+    : QObject(parent)
+{ BT_ASSERT(class_invariant()); }
 
 void BTHistory::add(CSwordKey* newKey) {
     BT_ASSERT(newKey);
