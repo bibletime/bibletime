@@ -87,9 +87,6 @@ public:
     /** Returns the filter options used by this window. */
     FilterOptions const & filterOptions() const { return m_filterOptions; }
 
-    /** Returns history for this window */
-    BTHistory* history();
-
     /** Returns the keychooser widget of this display window. */
     CKeyChooser * keyChooser() const { return m_keyChooser; }
 
@@ -187,6 +184,9 @@ protected:
 
     CDisplayWindow(BtModuleList const & modules, CMDIArea * const parent);
     ~CDisplayWindow() override;
+
+    /** Returns history for this window */
+    BTHistory * history();
 
     /**
         * Initialize the window. Call this method from the outside,
