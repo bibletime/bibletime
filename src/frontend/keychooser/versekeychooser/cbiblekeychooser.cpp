@@ -85,7 +85,7 @@ void CBibleKeyChooser::setModules(const BtConstModuleList &modules,
 
     // First time this is called we havnt set up m_widget.
     if (m_widget)
-        m_widget->setModule(dynamic_cast<CSBMI const *>(m_modules.first()));
+        m_widget->setModule(m_modules.first());
     if (refresh) refreshContent();
 }
 
