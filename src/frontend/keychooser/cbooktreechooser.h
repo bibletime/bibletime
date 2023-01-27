@@ -43,7 +43,6 @@ public: // methods:
 
     CSwordKey * key() final override { return m_key; }
     void setKey(CSwordKey * key) final override;
-    void setKey(CSwordKey *, const bool emitSinal);
 
 public Q_SLOTS:
 

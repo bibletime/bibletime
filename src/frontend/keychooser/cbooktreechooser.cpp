@@ -63,13 +63,7 @@ CBookTreeChooser::CBookTreeChooser(const BtConstModuleList & modules,
 }
 
 /** Sets a new key to this keychooser. Inherited from ckeychooser. */
-void CBookTreeChooser::setKey(CSwordKey* key) {
-    setKey(key, false);
-}
-
-/** Sets a new key to this keychooser. Inherited from ckeychooser. */
-void CBookTreeChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
-
+void CBookTreeChooser::setKey(CSwordKey * newKey) {
     if (m_key != newKey ) {
         m_key = dynamic_cast<CSwordTreeKey*>(newKey);
     }
@@ -89,10 +83,6 @@ void CBookTreeChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
 
     m_treeView->setCurrentItem( matching_item );
     m_treeView->scrollToItem(matching_item);
-
-    if (emitSignal) {
-        Q_EMIT keyChanged(m_key);
-    }
 }
 
 void CBookTreeChooser::setModules(const BtConstModuleList &modules,
@@ -150,7 +140,7 @@ void CBookTreeChooser::itemActivated( QTreeWidgetItem* item ) {
 
 /** Inherited from ckeychooser */
 void CBookTreeChooser::updateKey( CSwordKey* key ) {
-    setKey(key, false);
+    setKey(key);
 }
 
 /** Reimplementation to handle tree creation on show. */
@@ -174,7 +164,7 @@ void CBookTreeChooser::setupTree() {
     addKeyChildren(m_key, m_treeView->invisibleRootItem());
 
     m_key->setOffset( offset );
-    setKey(m_key, false); //the module may have changed
+    setKey(m_key); // the module may have changed
 }
 
 /** Populates tree widget with items. */
