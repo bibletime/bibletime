@@ -28,15 +28,13 @@
 #include "../../backend/keys/cswordkey.h"
 #include "../../backend/keys/cswordldkey.h"
 #include "../../util/btconnect.h"
-#include "bthistory.h"
 #include "ckeychooserwidget.h"
 
 
 CLexiconKeyChooser::CLexiconKeyChooser(const BtConstModuleList & modules,
-                                       BTHistory * historyPtr,
                                        CSwordKey * key,
                                        QWidget * parent)
-    : CKeyChooser(historyPtr, parent)
+    : CKeyChooser(parent)
     , m_key(dynamic_cast<CSwordLDKey *>(key))
 {
     setModules(modules, false);
@@ -81,7 +79,6 @@ CLexiconKeyChooser::CLexiconKeyChooser(const BtConstModuleList & modules,
 
     setModules(modules, true);
     setKey(key);
-    BT_CONNECT(this, &CKeyChooser::keyChanged, history(), &BTHistory::add);
 }
 
 CSwordKey* CLexiconKeyChooser::key() {
@@ -169,9 +166,4 @@ void CLexiconKeyChooser::setModules(const BtConstModuleList &modules,
     if (refresh) {
         refreshContent();
     }
-}
-
-void CLexiconKeyChooser::handleHistoryMoved(QString const & newKey) {
-    m_key->setKey(newKey);
-    setKey(m_key);
 }

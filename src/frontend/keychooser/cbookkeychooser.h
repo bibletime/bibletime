@@ -20,7 +20,6 @@
 #include "../../backend/drivers/btmodulelist.h"
 
 
-class BTHistory;
 class CKeyChooserWidget;
 class CSwordBookModuleInfo;
 class CSwordKey;
@@ -35,7 +34,6 @@ class CBookKeyChooser final : public CKeyChooser {
 public:
 
     CBookKeyChooser(BtConstModuleList const & modules,
-                    BTHistory * history,
                     CSwordKey * key = nullptr,
                     QWidget * parent = nullptr);
 
@@ -68,7 +66,6 @@ protected: // methods:
 private: // methods:
 
     void adjustFont();
-    void handleHistoryMoved(QString const & newKey) final override;
 
 private Q_SLOTS:
 

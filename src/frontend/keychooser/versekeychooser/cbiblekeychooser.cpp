@@ -19,15 +19,13 @@
 #include "../../../backend/keys/cswordversekey.h"
 #include "../../../util/btassert.h"
 #include "../../../util/btconnect.h"
-#include "../bthistory.h"
 #include "btbiblekeywidget.h"
 
 
 CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,
-                                   BTHistory * historyPtr,
                                    CSwordKey * key,
                                    QWidget * parent)
-    : CKeyChooser(historyPtr, parent)
+    : CKeyChooser(parent)
     , m_key(dynamic_cast<CSwordVerseKey *>(key))
 {
     using CSBMI = CSwordBibleModuleInfo;
@@ -61,8 +59,6 @@ CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,
                });
 
     setKey(m_key); //set the key without changing it, setKey(key()) would change it
-
-    BT_CONNECT(this, &CBibleKeyChooser::keyChanged, history(), &BTHistory::add);
 }
 
 CSwordKey* CBibleKeyChooser::key() {
@@ -102,9 +98,4 @@ void CBibleKeyChooser::refreshContent() {
 
 void CBibleKeyChooser::updateKey(CSwordKey* /*key*/) {
     w_ref->updateText();
-}
-
-void CBibleKeyChooser::handleHistoryMoved(QString const & newKey) {
-    m_key->setKey(newKey);
-    setKey(m_key);
 }

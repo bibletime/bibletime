@@ -21,7 +21,6 @@
 #include "../../backend/keys/cswordtreekey.h"
 
 
-class BTHistory;
 class CSwordBookModuleInfo;
 class CSwordKey;
 class QTreeWidget;
@@ -35,7 +34,6 @@ class CBookTreeChooser final : public CKeyChooser {
 public: // methods:
 
     CBookTreeChooser(BtConstModuleList const & modules,
-                     BTHistory * history,
                      CSwordKey * key = nullptr,
                      QWidget * parent = nullptr);
 
@@ -58,7 +56,6 @@ private: // methods:
     void setupTree();
     void addKeyChildren(CSwordTreeKey * key, QTreeWidgetItem * item);
     void adjustFont();
-    void handleHistoryMoved(QString const & newKey) final override;
 
 private Q_SLOTS:
 

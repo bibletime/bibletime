@@ -20,7 +20,6 @@
 #include "../../backend/drivers/btmodulelist.h"
 
 
-class BTHistory;
 class CKeyChooserWidget;
 class CSwordKey;
 class CSwordLDKey;
@@ -35,7 +34,6 @@ class CLexiconKeyChooser final : public CKeyChooser {
 public: // methods:
 
     CLexiconKeyChooser(BtConstModuleList const & modules,
-                       BTHistory * history,
                        CSwordKey * key = nullptr,
                        QWidget * parent = nullptr);
 
@@ -53,10 +51,6 @@ public: // methods:
 public Q_SLOTS:
 
     void updateKey(CSwordKey* key) final override;
-
-private: // methods:
-
-    void handleHistoryMoved(QString const & newKey) final override;
 
 private: // fields:
 

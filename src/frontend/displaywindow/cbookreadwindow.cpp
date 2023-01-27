@@ -24,6 +24,7 @@
 #include "../../util/cresmgr.h"
 #include "../bibletime.h"
 #include "../display/btmodelviewreaddisplay.h"
+#include "../keychooser/bthistory.h"
 #include "../keychooser/cbooktreechooser.h"
 #include "../keychooser/ckeychooser.h"
 #include "btactioncollection.h"
@@ -87,7 +88,12 @@ void CBookReadWindow::initView() {
     QSplitter* splitter = new QSplitter(this);
 
     auto const constMods = constModules();
-    m_treeChooser = new CBookTreeChooser(constMods, history(), key(), splitter);
+    auto * const h = history();
+    m_treeChooser = new CBookTreeChooser(constMods, key(), splitter);
+    BT_CONNECT(m_treeChooser, &CKeyChooser::keyChanged,
+               h, &BTHistory::add);
+    BT_CONNECT(h, &BTHistory::historyMoved,
+               m_treeChooser, &CKeyChooser::handleHistoryMoved);
 
     auto * const dw = new BtModelViewReadDisplay(this, splitter);
     dw->setModules(moduleNames());
@@ -98,7 +104,10 @@ void CBookReadWindow::initView() {
     // Add the Navigation toolbar
     auto * const navigationToolBar = mainToolBar();
     addToolBar(navigationToolBar);
-    setKeyChooser(CKeyChooser::createInstance(constMods, history(), key(), navigationToolBar));
+    setKeyChooser(
+                CKeyChooser::createInstance(constMods,
+                                            key(),
+                                            navigationToolBar));
 
     addModuleChooserBar();
 
@@ -134,7 +143,15 @@ void CBookReadWindow::setupMainWindowToolBars() {
     // Navigation toolbar
     btMainWindow()->navToolBar()->addAction(m_actions.backInHistory); //1st button
     btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
-    CKeyChooser* keyChooser = CKeyChooser::createInstance(constMods, history(), key(), btMainWindow()->navToolBar() );
+    CKeyChooser * const keyChooser =
+            CKeyChooser::createInstance(constMods,
+                                        key(),
+                                        btMainWindow()->navToolBar());
+    auto * const h = history();
+    BT_CONNECT(keyChooser, &CKeyChooser::keyChanged,
+               h, &BTHistory::add);
+    BT_CONNECT(h, &BTHistory::historyMoved,
+               keyChooser, &CKeyChooser::handleHistoryMoved);
     btMainWindow()->navToolBar()->addWidget(keyChooser);
     BT_CONNECT(keyChooser, &CKeyChooser::keyChanged,
                this,       &CBookReadWindow::lookupSwordKey);

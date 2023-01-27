@@ -420,7 +420,6 @@ void CDisplayWindow::initView() {
 
     // Create keychooser
     setKeyChooser(CKeyChooser::createInstance(constModules(),
-                                              history(),
                                               m_swordKey.get(),
                                               mainToolBar()));
 
@@ -534,9 +533,13 @@ void CDisplayWindow::setupMainWindowToolBars() {
     auto const constMods = constModules();
     auto * const keyChooser =
             CKeyChooser::createInstance(constMods,
-                                        history(),
                                         m_swordKey.get(),
                                         btMainWindow()->navToolBar());
+    auto * const h = history();
+    BT_CONNECT(keyChooser, &CKeyChooser::keyChanged,
+               h, &BTHistory::add);
+    BT_CONNECT(h, &BTHistory::historyMoved,
+               keyChooser, &CKeyChooser::handleHistoryMoved);
     keyChooser->key()->setKey(keyReference);
     btMainWindow()->navToolBar()->addAction(m_actions.backInHistory);
     btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory);
@@ -672,6 +675,11 @@ void CDisplayWindow::setBibleReference(const QString& reference) {
 /** Sets the keychooser widget for this display window. */
 void CDisplayWindow::setKeyChooser( CKeyChooser* ck ) {
     m_keyChooser = ck;
+    auto * const h = history();
+    BT_CONNECT(ck, &CKeyChooser::keyChanged,
+               h, &BTHistory::add);
+    BT_CONNECT(h, &BTHistory::historyMoved,
+               ck, &CKeyChooser::handleHistoryMoved);
 }
 
 BTHistory* CDisplayWindow::history() {

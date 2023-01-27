@@ -31,7 +31,6 @@ class CBibleKeyChooser final : public CKeyChooser {
 public: // methods:
 
     CBibleKeyChooser(BtConstModuleList const & modules,
-                     BTHistory * history,
                      CSwordKey * key = nullptr,
                      QWidget * parent = nullptr);
 
@@ -47,10 +46,6 @@ public: // methods:
 public Q_SLOTS:
 
     void updateKey(CSwordKey * key) final override;
-
-private: // methods:
-
-    void handleHistoryMoved(QString const & newKey) final override;
 
 private: // fields:
 

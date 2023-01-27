@@ -31,17 +31,15 @@
 #include "../../backend/keys/cswordtreekey.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
-#include "bthistory.h"
 #include "ckeychooserwidget.h"
 
 
 #define ID_PROPERTY_NAME "CBookKeyChooser_ID"
 
 CBookKeyChooser::CBookKeyChooser(const BtConstModuleList & modules,
-                                 BTHistory * historyPtr,
                                  CSwordKey * key,
                                  QWidget * parent)
-    : CKeyChooser(historyPtr, parent)
+    : CKeyChooser(parent)
     , m_layout(nullptr)
 {
     m_key = dynamic_cast<CSwordTreeKey * >(key);
@@ -49,7 +47,6 @@ CBookKeyChooser::CBookKeyChooser(const BtConstModuleList & modules,
     setKey(key);
 
     adjustFont();
-    BT_CONNECT(this, &CBookKeyChooser::keyChanged, history(), &BTHistory::add);
 }
 
 void CBookKeyChooser::setKey(CSwordKey * newKey) {
@@ -265,9 +262,4 @@ void CBookKeyChooser::keyChooserChanged(int newIndex) {
 /** Updates the keychoosers for the given key but emit no signal. */
 void CBookKeyChooser::updateKey(CSwordKey * key) {
     setKey(key, false);
-}
-
-void CBookKeyChooser::handleHistoryMoved(QString const & newKey) {
-    m_key->setKey(newKey);
-    setKey(m_key);
 }

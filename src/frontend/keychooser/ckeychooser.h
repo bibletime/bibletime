@@ -17,7 +17,6 @@
 #include "../../backend/drivers/btmodulelist.h"
 
 
-class BTHistory;
 class CSwordKey;
 class QAction;
 
@@ -34,11 +33,6 @@ class CKeyChooser: public QWidget {
 public: // methods:
 
     /**
-      \returns the history object of this keychooser.
-    */
-    BTHistory * history() const { return m_history; }
-
-    /**
     * Creates a proper Instance, either
     * @ref CLexiconKeyChooser or
     * @ref CBibleKeyChooser
@@ -47,7 +41,6 @@ public: // methods:
     * @param parent the parent of the widget to create
     */
     static CKeyChooser * createInstance(const BtConstModuleList & modules,
-                                        BTHistory * history,
                                         CSwordKey * key,
                                         QWidget * parent);
 
@@ -81,6 +74,7 @@ public Q_SLOTS:
     */
     virtual void updateKey(CSwordKey * key) = 0;
 
+    void handleHistoryMoved(QString const & newKey);
 
 Q_SIGNALS:
 
@@ -91,12 +85,6 @@ Q_SIGNALS:
 
 protected: // methods:
 
-    CKeyChooser(BTHistory * history, QWidget * parent = nullptr);
-
-    virtual void handleHistoryMoved(QString const & newKey) = 0;
-
-private: // fields:
-
-    BTHistory * const m_history;
+    CKeyChooser(QWidget * parent = nullptr);
 
 };

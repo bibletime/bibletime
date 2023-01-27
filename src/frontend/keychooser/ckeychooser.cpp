@@ -16,23 +16,14 @@
 #include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../backend/keys/cswordkey.h"
 #include "../../util/btassert.h"
-#include "../../util/btconnect.h"
-#include "bthistory.h"
 #include "cbookkeychooser.h"
 #include "clexiconkeychooser.h"
 #include "versekeychooser/cbiblekeychooser.h"
 
 
-CKeyChooser::CKeyChooser(BTHistory * historyPtr, QWidget * parent)
-    : QWidget(parent)
-    , m_history(historyPtr)
-{
-    BT_CONNECT(historyPtr, &BTHistory::historyMoved,
-               [this](QString const & newKey){ handleHistoryMoved(newKey); });
-}
+CKeyChooser::CKeyChooser(QWidget * parent) : QWidget(parent) {}
 
 CKeyChooser * CKeyChooser::createInstance(const BtConstModuleList & modules,
-                                          BTHistory * historyPtr,
                                           CSwordKey * key,
                                           QWidget * parent)
 {
@@ -48,16 +39,22 @@ CKeyChooser * CKeyChooser::createInstance(const BtConstModuleList & modules,
             /* Fall thru - Bibles and commentaries use the same key chooser */
 
         case CSwordModuleInfo::Bible:
-            return new CBibleKeyChooser(modules, historyPtr, key, parent);
+            return new CBibleKeyChooser(modules, key, parent);
 
         case CSwordModuleInfo::Lexicon:
-            return new CLexiconKeyChooser(modules, historyPtr, key, parent);
+            return new CLexiconKeyChooser(modules, key, parent);
 
         case CSwordModuleInfo::GenericBook:
-            return new CBookKeyChooser(modules, historyPtr, key, parent);
+            return new CBookKeyChooser(modules, key, parent);
 
         default:
             abort();
 
     }
+}
+
+void CKeyChooser::handleHistoryMoved(QString const & newKey) {
+    auto * const k = key();
+    k->setKey(newKey);
+    setKey(k);
 }

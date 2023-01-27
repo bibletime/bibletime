@@ -55,7 +55,6 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     auto * const label1 = new QLabel(tr("First"));
     gridLayout->addWidget(label1, 1, 0);
 
-    auto * const historyPtr = parent->history();
     auto const modules = parent->constModules();
     {
         auto const type = modules.at(0)->type();
@@ -68,7 +67,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     auto const parentKey = parent->key();
 
     m_firstKeyChooser =
-            CKeyChooser::createInstance(modules, historyPtr, parentKey->copy(), this);
+            CKeyChooser::createInstance(modules, parentKey->copy(), this);
     gridLayout->addWidget(m_firstKeyChooser, 1, 1);
 
     auto * const hLayout = new QHBoxLayout;
@@ -78,7 +77,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     gridLayout->addWidget(label2, 2, 0);
 
     m_lastKeyChooser =
-            CKeyChooser::createInstance(modules, historyPtr, parentKey->copy(), this);
+            CKeyChooser::createInstance(modules, parentKey->copy(), this);
     gridLayout->addWidget(m_lastKeyChooser, 2, 1);
 
     m_sizeTooLargeLabel = new QLabel(tr("Copy size is too large."));

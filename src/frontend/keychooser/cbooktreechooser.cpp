@@ -28,14 +28,12 @@
 #include "../../backend/keys/cswordkey.h"
 #include "../../backend/keys/cswordtreekey.h"
 #include "../../util/btconnect.h"
-#include "bthistory.h"
 
 
 CBookTreeChooser::CBookTreeChooser(const BtConstModuleList & modules,
-                                   BTHistory * historyPtr,
                                    CSwordKey * key,
                                    QWidget * parent)
-    : CKeyChooser(historyPtr, parent)
+    : CKeyChooser(parent)
     , m_key(dynamic_cast<CSwordTreeKey *>(key))
 {
 
@@ -62,7 +60,6 @@ CBookTreeChooser::CBookTreeChooser(const BtConstModuleList & modules,
 
     setKey(key);
     adjustFont();
-    BT_CONNECT(this, &CBookTreeChooser::keyChanged, history(), &BTHistory::add);
 }
 
 /** Sets a new key to this keychooser. Inherited from ckeychooser. */
@@ -195,9 +192,4 @@ void CBookTreeChooser::addKeyChildren(CSwordTreeKey* key, QTreeWidgetItem* item)
         }
         while (key->positionToNextSibling());
     }
-}
-
-void CBookTreeChooser::handleHistoryMoved(QString const & newKey) {
-    m_key->setKey(newKey);
-    setKey(m_key);
 }
