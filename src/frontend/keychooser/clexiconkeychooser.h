@@ -57,6 +57,5 @@ private: // fields:
     CKeyChooserWidget * m_widget;
     CSwordLDKey * m_key;
     QList<CSwordLexiconModuleInfo const *> m_modules;
-    QHBoxLayout * m_layout;
 
 }; /* class CLexiconKeyChooser */

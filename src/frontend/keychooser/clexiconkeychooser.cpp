@@ -40,11 +40,11 @@ CLexiconKeyChooser::CLexiconKeyChooser(const BtConstModuleList & modules,
     setModules(modules, false);
 
     //we use a layout because the key chooser should be resized to full size
-    m_layout = new QHBoxLayout(this);
-    m_layout->setSpacing(0);
-    m_layout->setContentsMargins(0, 0, 0, 0);
-    m_layout->setDirection(QBoxLayout::LeftToRight);
-    m_layout->setSizeConstraint(QLayout::SetNoConstraint);
+    auto * const l = new QHBoxLayout(this);
+    l->setSpacing(0);
+    l->setContentsMargins(0, 0, 0, 0);
+    l->setDirection(QBoxLayout::LeftToRight);
+    l->setSizeConstraint(QLayout::SetNoConstraint);
 
     m_widget = new CKeyChooserWidget(0, this);
     setFocusProxy(m_widget);
@@ -60,7 +60,7 @@ CLexiconKeyChooser::CLexiconKeyChooser(const BtConstModuleList & modules,
         tr("Previous entry")
     );
 
-    m_layout->addWidget(m_widget, 0, Qt::AlignLeft);
+    l->addWidget(m_widget, 0, Qt::AlignLeft);
 
     auto const activatedSlot =
             [this](int index) {
