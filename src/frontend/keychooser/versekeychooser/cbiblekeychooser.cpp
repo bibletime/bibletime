@@ -28,9 +28,6 @@ CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,
     : CKeyChooser(parent)
     , m_key(dynamic_cast<CSwordVerseKey *>(key))
 {
-    using CSBMI = CSwordBibleModuleInfo;
-
-    w_ref = nullptr;
     setModules(modules, false);
     BT_ASSERT(!m_modules.empty());
     QHBoxLayout* layout = new QHBoxLayout(this);
@@ -38,12 +35,11 @@ CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,
     layout->setContentsMargins(0, 0, 0, 0);
     layout->setDirection( QBoxLayout::LeftToRight );
 
-    w_ref = new BtBibleKeyWidget(dynamic_cast<const CSBMI*>(m_modules.first()),
-                                 m_key, this);
-    setFocusProxy(w_ref);
-    layout->addWidget(w_ref);
+    m_widget = new BtBibleKeyWidget(m_modules.first(), m_key, this);
+    setFocusProxy(m_widget);
+    layout->addWidget(m_widget);
 
-    BT_CONNECT(w_ref, &BtBibleKeyWidget::changed,
+    BT_CONNECT(m_widget, &BtBibleKeyWidget::changed,
                [this](CSwordVerseKey * key) {
                    BT_ASSERT(m_key);
                    BT_ASSERT(key);
@@ -70,7 +66,7 @@ void CBibleKeyChooser::setKey(CSwordKey* key) {
     if (dynamic_cast<CSwordVerseKey*>(key) == nullptr) return;
 
     m_key = dynamic_cast<CSwordVerseKey*>(key);
-    w_ref->setKey(m_key);
+    m_widget->setKey(m_key);
     Q_EMIT keyChanged(m_key);
 }
 
@@ -87,8 +83,9 @@ void CBibleKeyChooser::setModules(const BtConstModuleList &modules,
             if (CSBMI const * const bible = dynamic_cast<CSBMI const *>(mod))
                 m_modules.append(bible);
 
-    // First time this is called we havnt set up w_ref.
-    if (w_ref) w_ref->setModule(dynamic_cast<const CSwordBibleModuleInfo*>(m_modules.first()));
+    // First time this is called we havnt set up m_widget.
+    if (m_widget)
+        m_widget->setModule(dynamic_cast<CSBMI const *>(m_modules.first()));
     if (refresh) refreshContent();
 }
 
@@ -97,5 +94,5 @@ void CBibleKeyChooser::refreshContent() {
 }
 
 void CBibleKeyChooser::updateKey(CSwordKey* /*key*/) {
-    w_ref->updateText();
+    m_widget->updateText();
 }

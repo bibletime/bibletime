@@ -49,7 +49,7 @@ public Q_SLOTS:
 
 private: // fields:
 
-    BtBibleKeyWidget * w_ref;
+    BtBibleKeyWidget * m_widget = nullptr;
     QList<CSwordBibleModuleInfo const *> m_modules;
     CSwordVerseKey * m_key;
 
