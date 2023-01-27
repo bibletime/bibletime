@@ -53,7 +53,10 @@ BtBibleKeyWidget::BtBibleKeyWidget(
         CSwordBibleModuleInfo const * mod,
         CSwordVerseKey * key,
         QWidget * parent)
-   : QWidget(parent), m_key(key), m_dropDownHoverTimer(this)
+   : QWidget(parent)
+   , m_key(key)
+   , m_dropDownHoverTimer(this)
+   , m_module(mod)
 {
     auto const slotStep =
             [this](int offset, CSwordVerseKey::JumpType const jumpType) {
@@ -82,7 +85,6 @@ BtBibleKeyWidget::BtBibleKeyWidget(
             { slotStep(offset, CSwordVerseKey::UseVerse); };
 
     updatelock = false;
-    m_module = mod;
 
     setFocusPolicy(Qt::WheelFocus);
 
