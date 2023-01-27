@@ -18,7 +18,6 @@
 #include "../../../backend/drivers/cswordbiblemoduleinfo.h"
 
 
-class CLexiconKeyChooser;
 class CSwordVerseKey;
 class QLineEdit;
 class QMenu;
