@@ -59,6 +59,7 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
     , m_modules(modules)
     , m_swordKey((static_cast<void>(BT_ASSERT(!modules.empty())),
                   m_modules.first()->createKey()))
+    , m_history(new BTHistory(this))
 {
     m_moduleNames.reserve(m_modules.size());
     for (auto const module : m_modules)
@@ -276,10 +277,10 @@ void CDisplayWindow::initActions() {
                   btMainWindow(),
                   &BibleTime::openFindWidget);
     initAddAction(DWG::backInHistory::actionName,
-                  history(),
+                  m_history,
                   &BTHistory::back);
     initAddAction(DWG::forwardInHistory::actionName,
-                  history(),
+                  m_history,
                   &BTHistory::fw);
 
     auto * const ac = m_actionCollection;
@@ -374,7 +375,7 @@ void CDisplayWindow::initConnections() {
 
     BT_CONNECT(m_keyChooser, &CKeyChooser::keyChanged,
                this,         &CDisplayWindow::lookupSwordKey);
-    BT_CONNECT(history(), &BTHistory::historyChanged,
+    BT_CONNECT(m_history, &BTHistory::historyChanged,
                [this](bool const backEnabled, bool const fwEnabled) {
                    BT_ASSERT(m_actions.backInHistory);
                    BT_ASSERT(m_keyChooser);
@@ -390,22 +391,22 @@ void CDisplayWindow::initConnections() {
                    QMenu * menu = m_actions.backInHistory->popupMenu();
                    menu->clear();
                    for (auto * const actionPtr
-                        : history()->getBackList())
+                        : m_history->getBackList())
                        menu->addAction(actionPtr);
                });
     BT_CONNECT(m_actions.backInHistory->popupMenu(), &QMenu::triggered,
-               history(), &BTHistory::move);
+               m_history, &BTHistory::move);
     BT_CONNECT(m_actions.forwardInHistory->popupMenu(), &QMenu::aboutToShow,
                this, // Needed
                [this]{
                    QMenu* menu = m_actions.forwardInHistory->popupMenu();
                    menu->clear();
                    for (auto * const actionPtr
-                        : history()->getFwList())
+                        : m_history->getFwList())
                        menu->addAction(actionPtr);
                });
     BT_CONNECT(m_actions.forwardInHistory->popupMenu(), &QMenu::triggered,
-               history(), &BTHistory::move);
+               m_history, &BTHistory::move);
 }
 
 void CDisplayWindow::initView() {
@@ -535,10 +536,9 @@ void CDisplayWindow::setupMainWindowToolBars() {
             CKeyChooser::createInstance(constMods,
                                         m_swordKey.get(),
                                         btMainWindow()->navToolBar());
-    auto * const h = history();
     BT_CONNECT(keyChooser, &CKeyChooser::keyChanged,
-               h, &BTHistory::add);
-    BT_CONNECT(h, &BTHistory::historyMoved,
+               m_history, &BTHistory::add);
+    BT_CONNECT(m_history, &BTHistory::historyMoved,
                keyChooser, &CKeyChooser::handleHistoryMoved);
     keyChooser->key()->setKey(keyReference);
     btMainWindow()->navToolBar()->addAction(m_actions.backInHistory);
@@ -675,17 +675,10 @@ void CDisplayWindow::setBibleReference(const QString& reference) {
 /** Sets the keychooser widget for this display window. */
 void CDisplayWindow::setKeyChooser( CKeyChooser* ck ) {
     m_keyChooser = ck;
-    auto * const h = history();
     BT_CONNECT(ck, &CKeyChooser::keyChanged,
-               h, &BTHistory::add);
-    BT_CONNECT(h, &BTHistory::historyMoved,
+               m_history, &BTHistory::add);
+    BT_CONNECT(m_history, &BTHistory::historyMoved,
                ck, &CKeyChooser::handleHistoryMoved);
-}
-
-BTHistory* CDisplayWindow::history() {
-    if (m_history == nullptr)
-        m_history = new BTHistory(this);
-    return m_history;
 }
 
 void CDisplayWindow::modulesChanged() {

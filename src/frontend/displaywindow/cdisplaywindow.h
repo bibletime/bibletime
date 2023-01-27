@@ -186,7 +186,7 @@ protected:
     ~CDisplayWindow() override;
 
     /** Returns history for this window */
-    BTHistory * history();
+    BTHistory * history() const noexcept { return m_history; }
 
     /**
         * Initialize the window. Call this method from the outside,
@@ -302,5 +302,5 @@ private:
     QToolBar * m_buttonsToolBar = nullptr;
     QToolBar * m_headerBar = nullptr;
     BtModelViewReadDisplay * m_displayWidget = nullptr;
-    BTHistory * m_history = nullptr;
+    BTHistory * const m_history;
 };
