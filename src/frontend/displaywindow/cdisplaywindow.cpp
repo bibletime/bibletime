@@ -276,10 +276,10 @@ void CDisplayWindow::initActions() {
                   btMainWindow(),
                   &BibleTime::openFindWidget);
     initAddAction(DWG::backInHistory::actionName,
-                  m_keyChooser->history(),
+                  history(),
                   &BTHistory::back);
     initAddAction(DWG::forwardInHistory::actionName,
-                  m_keyChooser->history(),
+                  history(),
                   &BTHistory::fw);
 
     auto * const ac = m_actionCollection;
@@ -390,22 +390,22 @@ void CDisplayWindow::initConnections() {
                    QMenu * menu = m_actions.backInHistory->popupMenu();
                    menu->clear();
                    for (auto * const actionPtr
-                        : m_keyChooser->history()->getBackList())
+                        : history()->getBackList())
                        menu->addAction(actionPtr);
                });
     BT_CONNECT(m_actions.backInHistory->popupMenu(), &QMenu::triggered,
-               m_keyChooser->history(), &BTHistory::move);
+               history(), &BTHistory::move);
     BT_CONNECT(m_actions.forwardInHistory->popupMenu(), &QMenu::aboutToShow,
                this, // Needed
                [this]{
                    QMenu* menu = m_actions.forwardInHistory->popupMenu();
                    menu->clear();
                    for (auto * const actionPtr
-                        : m_keyChooser->history()->getFwList())
+                        : history()->getFwList())
                        menu->addAction(actionPtr);
                });
     BT_CONNECT(m_actions.forwardInHistory->popupMenu(), &QMenu::triggered,
-               m_keyChooser->history(), &BTHistory::move);
+               history(), &BTHistory::move);
 }
 
 void CDisplayWindow::initView() {
