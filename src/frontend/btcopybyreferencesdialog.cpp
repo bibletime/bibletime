@@ -49,13 +49,19 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     gridLayout->setContentsMargins(11,11,11,16);
     vLayout->addLayout(gridLayout);
 
+    auto const modules = parent->constModules();
+
     m_workCombo = new QComboBox(this);
+    for (auto const * const m : modules)
+        m_workCombo->addItem(m->name(),
+                             QVariant::fromValue(
+                                 const_cast<void *>(
+                                     static_cast<void const *>(m))));
     gridLayout->addWidget(m_workCombo, 0, 1);
 
     auto * const label1 = new QLabel(tr("First"));
     gridLayout->addWidget(label1, 1, 0);
 
-    auto const modules = parent->constModules();
     {
         auto const type = modules.at(0)->type();
         m_copyThreshold = (type == CSwordModuleInfo::Bible
@@ -90,12 +96,6 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     message::prepareDialogBox(buttons);
     hLayout->addWidget(buttons);
     auto * const okButton = buttons->button(QDialogButtonBox::Ok);
-
-    for (auto const * const m : modules)
-        m_workCombo->addItem(m->name(),
-                             QVariant::fromValue(
-                                 const_cast<void *>(
-                                     static_cast<void const *>(m))));
 
     if (selection.has_value()) {
         BT_ASSERT(selection->column < modules.size());
