@@ -107,7 +107,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         } // else default to top of view.
     }
 
-    auto const handleKeyChanged = [this, parentKey, model, okButton]{
+    auto const handleKeyChanged = [this, model, okButton]{
         // Calculate result:
         m_result.key1 = m_firstKeyChooser->key();
         m_result.key2 = m_lastKeyChooser->key();
