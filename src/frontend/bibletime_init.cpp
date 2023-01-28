@@ -857,34 +857,29 @@ void BibleTime::initConnections() {
                this,            &BibleTime::slotBookshelfWizard);
 }
 
-void BibleTime::initSwordConfigFile() {
-// On Windows the sword.conf must be created before the initialization of sword
-// It will contain the LocalePath which is used for sword locales
-// It also contains a DataPath to the %ProgramData%\Sword directory
-// If this is not done here, the sword locales.d won't be found
-
-#if defined(Q_OS_WIN) || defined(Q_OS_MAC)
-    QFile file(util::directory::getUserHomeSwordDir().filePath(
-                   QStringLiteral("sword.conf")));
-    if (file.exists() || !file.open(QIODevice::WriteOnly | QIODevice::Text))
-        return;
-    QTextStream out(&file);
-    out << "\n";
-    out << "[Install]\n";
-#if defined(Q_OS_WIN)
-    out << "DataPath="   << QDir::toNativeSeparators(util::directory::getSharedSwordDir().absolutePath()) << "\n";
-    out << "LocalePath=" << QDir::toNativeSeparators(util::directory::getApplicationSwordDir().absolutePath()) << "\n";
-#elif defined(Q_OS_MAC)
-    out << "DataPath="   << QDir::toNativeSeparators(util::directory::getUserHomeSwordDir().absolutePath()) << "\n";
-#endif
-    out << "\n";
-#endif
-
-}
-
 /** Initializes the backend */
 void BibleTime::initBackends() {
-    initSwordConfigFile();
+    // On Windows the sword.conf must be created before the initialization of sword
+    // It will contain the LocalePath which is used for sword locales
+    // It also contains a DataPath to the %ProgramData%\Sword directory
+    // If this is not done here, the sword locales.d won't be found
+
+    #if defined(Q_OS_WIN) || defined(Q_OS_MAC)
+        QFile file(util::directory::getUserHomeSwordDir().filePath(
+                       QStringLiteral("sword.conf")));
+        if (file.exists() || !file.open(QIODevice::WriteOnly | QIODevice::Text))
+            return;
+        QTextStream out(&file);
+        out << "\n";
+        out << "[Install]\n";
+    #if defined(Q_OS_WIN)
+        out << "DataPath="   << QDir::toNativeSeparators(util::directory::getSharedSwordDir().absolutePath()) << "\n";
+        out << "LocalePath=" << QDir::toNativeSeparators(util::directory::getApplicationSwordDir().absolutePath()) << "\n";
+    #elif defined(Q_OS_MAC)
+        out << "DataPath="   << QDir::toNativeSeparators(util::directory::getUserHomeSwordDir().absolutePath()) << "\n";
+    #endif
+        out << "\n";
+    #endif
 
     if (!sword::SWMgr::isICU)
         sword::StringMgr::setSystemStringMgr(new BtStringMgr());

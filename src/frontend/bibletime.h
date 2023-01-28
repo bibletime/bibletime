@@ -237,9 +237,6 @@ private: // methods:
     /** Creates MDI and and BtFindWidget. */
     void createCentralWidget();
 
-    /** Initializes the sword.conf in the $HOME\Sword directory, if needed. */
-    void initSwordConfigFile();
-
     /** Initializes the view of this widget. */
     void initView();
 
