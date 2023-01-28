@@ -339,20 +339,21 @@ QString CSwordBackend::booknameLanguage() const
 void CSwordBackend::setBooknameLanguage(QString const & language) {
     BtLocaleMgr::setDefaultLocaleName(language);
 
-    // Refresh the locale of all Bible and commentary modules!
-    // Use what sword returns, language may be different.
-    const QByteArray newLocaleName(BtLocaleMgr::defaultLocaleName().toUtf8());
+    /* Use locale name returned by SWORD instead of using the given argument
+       directly, as the language may be different. */
+    auto const newLocaleName = BtLocaleMgr::defaultLocaleName().toUtf8();
 
-    for (auto const * const mod : m_dataModel->moduleList()) {
-        if (mod->type() == CSwordModuleInfo::Bible
-            || mod->type() == CSwordModuleInfo::Commentary)
-        {
-            // Create a new key, it will get the default bookname language:
-            using VK = sword::VerseKey;
-            VK & vk = *static_cast<VK *>(mod->swordModule().getKey());
-            vk.setLocale(newLocaleName.constData());
-        }
-    }
+    /* Refresh the locale of all Bible and commentary modules. Whereas the
+       locale is only used by modules with verse keys (i.e. sword::VerseKey) and
+       ignored on all other modules, we could just set the locale on those
+       modules (bibles and commentaries) only. However, since the keys are used
+       for all uncountable abominations, it feels safer to set the locale on all
+       modules, lest an incorrect locale gets copied from a non-VerseKey module
+       to modules with verse keys. This has the slight overhead of copying the
+       locale name for each such module, but this is hopefully negligible due to
+       this method not being called very often. */
+    for (auto const * const mod : m_dataModel->moduleList())
+        mod->swordModule().getKey()->setLocale(newLocaleName.constData());
 }
 
 void CSwordBackend::reloadModules() {
