@@ -30,29 +30,29 @@ class BibleTimeApp : public QApplication {
 
     Q_OBJECT
 
-    public: // methods:
+public: // methods:
 
-        BibleTimeApp(int &argc, char **argv);
-        ~BibleTimeApp() override;
+    BibleTimeApp(int &argc, char **argv);
+    ~BibleTimeApp() override;
 
-        void startInit() { m_init = true; }
+    void startInit() { m_init = true; }
 
-        bool initBtConfig();
-        void initLightDarkPalette();
-        bool initDisplayTemplateManager();
-        void initIcons();
-        void initBackends();
+    bool initBtConfig();
+    void initLightDarkPalette();
+    bool initDisplayTemplateManager();
+    void initIcons();
+    void initBackends();
 
-        bool debugMode() const noexcept { return m_debugMode; }
-        void setDebugMode(bool const debugMode) noexcept
-        { m_debugMode = debugMode; }
+    bool debugMode() const noexcept { return m_debugMode; }
+    void setDebugMode(bool const debugMode) noexcept
+    { m_debugMode = debugMode; }
 
-    private: // fields:
+private: // fields:
 
-        bool m_init;
-        bool m_debugMode;
-        BtIcons * m_icons;
-        std::optional<CSwordBackend> m_backend;
+    bool m_init;
+    bool m_debugMode;
+    BtIcons * m_icons;
+    std::optional<CSwordBackend> m_backend;
 
 };
 
