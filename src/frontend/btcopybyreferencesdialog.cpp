@@ -91,21 +91,19 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     hLayout->addWidget(buttons);
     auto * const okButton = buttons->button(QDialogButtonBox::Ok);
 
-    { // Load selection keys:
-        for (auto const * const m : modules)
-            m_workCombo->addItem(m->name(),
-                                 QVariant::fromValue(
-                                     const_cast<void *>(
-                                         static_cast<void const *>(m))));
+    for (auto const * const m : modules)
+        m_workCombo->addItem(m->name(),
+                             QVariant::fromValue(
+                                 const_cast<void *>(
+                                     static_cast<void const *>(m))));
 
-        if (selection.has_value()) {
-            BT_ASSERT(selection->column < modules.size());
-            m_firstKeyChooser->setKey(
-                        model->indexToKey(selection->startIndex, 0));
-            m_lastKeyChooser->setKey(model->indexToKey(selection->endIndex, 0));
-            m_workCombo->setCurrentIndex(selection->column);
-        } // else default to top of view.
-    }
+    if (selection.has_value()) {
+        BT_ASSERT(selection->column < modules.size());
+        m_firstKeyChooser->setKey(
+                    model->indexToKey(selection->startIndex, 0));
+        m_lastKeyChooser->setKey(model->indexToKey(selection->endIndex, 0));
+        m_workCombo->setCurrentIndex(selection->column);
+    } // else default to top of view.
 
     auto const handleKeyChanged = [this, model, okButton]{
         // Calculate result:
