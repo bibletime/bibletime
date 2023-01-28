@@ -23,13 +23,9 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 #include "../backend/config/btconfig.h"
-#include "../backend/managers/cswordbackend.h"
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "../util/cresmgr.h"
-#if defined(Q_OS_WIN) || defined(Q_OS_MAC)
-#include "../util/directory.h"
-#endif
 #include "bibletimeapp.h"
 #include "btbookshelfdockwidget.h"
 #include "btopenworkaction.h"
@@ -40,17 +36,9 @@
 #include "displaywindow/btmodulechooserbar.h"
 #include "keychooser/ckeychooser.h"
 #include "bookmarks/cbookmarkindex.h"
-#include "settingsdialogs/cdisplaysettings.h"
 
 // Sword includes:
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wextra-semi"
-#ifdef Q_OS_MAC
-    #include "localemgr.h"
-#endif
-#include <swlog.h>
 #include <swmgr.h>
-#pragma GCC diagnostic pop
 
 
 using namespace InfoDisplay;
@@ -854,60 +842,4 @@ void BibleTime::initConnections() {
                this,            &BibleTime::moduleAbout);
     BT_CONNECT(m_bookshelfDock, &BtBookshelfDockWidget::installWorksClicked,
                this,            &BibleTime::slotBookshelfWizard);
-}
-
-/** Initializes the backend */
-void BibleTime::initBackends() {
-    // On Windows the sword.conf must be created before the initialization of sword
-    // It will contain the LocalePath which is used for sword locales
-    // It also contains a DataPath to the %ProgramData%\Sword directory
-    // If this is not done here, the sword locales.d won't be found
-
-    #if defined(Q_OS_WIN) || defined(Q_OS_MAC)
-        QFile file(util::directory::getUserHomeSwordDir().filePath(
-                       QStringLiteral("sword.conf")));
-        if (file.exists() || !file.open(QIODevice::WriteOnly | QIODevice::Text))
-            return;
-        QTextStream out(&file);
-        out << "\n";
-        out << "[Install]\n";
-    #if defined(Q_OS_WIN)
-        out << "DataPath="   << QDir::toNativeSeparators(util::directory::getSharedSwordDir().absolutePath()) << "\n";
-        out << "LocalePath=" << QDir::toNativeSeparators(util::directory::getApplicationSwordDir().absolutePath()) << "\n";
-    #elif defined(Q_OS_MAC)
-        out << "DataPath="   << QDir::toNativeSeparators(util::directory::getUserHomeSwordDir().absolutePath()) << "\n";
-    #endif
-        out << "\n";
-    #endif
-
-    sword::SWLog::getSystemLog()->setLogLevel(btApp->debugMode()
-                                              ? sword::SWLog::LOG_DEBUG
-                                              : sword::SWLog::LOG_ERROR);
-
-#ifdef Q_OS_MAC
-    // set a LocaleMgr with a fixed path to the locales.d of the DMG image on MacOS
-    qDebug() << "Using sword locales dir: " << util::directory::getSwordLocalesDir().absolutePath().toUtf8();
-    sword::LocaleMgr::setSystemLocaleMgr(new sword::LocaleMgr(util::directory::getSwordLocalesDir().absolutePath().toUtf8()));
-#endif
-
-    /*
-      Set book names language if not set. This is a hack. We do this call here,
-      because we need to keep the setting displayed in BtLanguageSettingsPage in
-      sync with the language of the book names displayed, so that both would
-      always use the same setting.
-    */
-    CDisplaySettingsPage::resetLanguage(); /// \todo refactor this hack
-
-
-    CSwordBackend *backend = CSwordBackend::createInstance();
-
-    backend->setBooknameLanguage(btConfig().booknameLanguage());
-
-    CSwordBackend::instance()->initModules();
-
-    // This function will
-    // - delete all orphaned indexes (no module present) if autoDeleteOrphanedIndices is true
-    // - delete all indices of modules where hasIndex() returns false
-    backend->deleteOrphanedIndices();
-
 }

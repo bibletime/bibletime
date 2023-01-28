@@ -77,6 +77,12 @@ private: // types:
 public: // methods:
 
     /**
+      \brief Creates the regular CSwordBackend instance.
+      \warning Should only be called once.
+    */
+    CSwordBackend();
+
+    /**
       \note Used by BtInstallBackend only.
       \note Using augmentHome=false can mess up the system because it is true
             elsewhere.
@@ -88,17 +94,8 @@ public: // methods:
 
     ~CSwordBackend() override;
 
-    /** \returns the CSwordBackend singleton instance (created if needed). */
-    static CSwordBackend * createInstance();
-
     /** \returns the singleton instance, creating it if one does not exist. */
-    static CSwordBackend * instance() { return m_instance; }
-
-    /** \brief Destroys the singleton instance, if one exists. */
-    static void destroyInstance() {
-        delete m_instance;
-        m_instance = nullptr;
-    }
+    static CSwordBackend * instance() noexcept { return m_instance; }
 
     /**
       \warning You have to call initModules() first.
@@ -212,14 +209,6 @@ public: // methods:
 Q_SIGNALS:
 
     void sigSwordSetupChanged();
-
-protected: // methods:
-
-    /**
-      Creates the SWModule objects using SWMgr's methods, it adds the
-      necessary filters for the module format.
-    */
-    CSwordBackend();
 
 private: // fields:
 

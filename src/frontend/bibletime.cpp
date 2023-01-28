@@ -33,6 +33,7 @@
 #include "../util/btassert.h"
 #include "../util/cresmgr.h"
 #include "../util/directory.h"
+#include "bibletimeapp.h"
 #include "btaboutmoduledialog.h"
 #include "btbookshelfdockwidget.h"
 #include "btmessageinputdialog.h"
@@ -73,7 +74,7 @@ auto const splashHtml =
 
 BibleTime *BibleTime::m_instance = nullptr;
 
-BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
+BibleTime::BibleTime(BibleTimeApp & app, QWidget *parent, Qt::WindowFlags flags)
     : QMainWindow(parent, flags)
 {
     namespace DU = util::directory;
@@ -103,7 +104,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
             qWarning("Can't load startuplogo! Check your installation.");
         }
     }
-    initBackends();
+    app.initBackends();
 
     if (splash) {
         splash->showMessage(

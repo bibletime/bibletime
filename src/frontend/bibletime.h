@@ -23,6 +23,7 @@
 
 namespace InfoDisplay { class CInfoDisplay; }
 namespace Search { class CSearchDialog; }
+class BibleTimeApp;
 class BtActionClass;
 class BtActionCollection;
 class BtBookshelfDockWidget;
@@ -133,7 +134,8 @@ class BibleTime final : public QMainWindow {
 
 public:
 
-    BibleTime(QWidget * parent = nullptr,
+    BibleTime(BibleTimeApp & app,
+              QWidget * parent = nullptr,
               Qt::WindowFlags flags = Qt::WindowFlags());
 
     ~BibleTime() override;
@@ -245,9 +247,6 @@ private: // methods:
 
     /** Initializes the SIGNAL / SLOT connections. */
     void initConnections();
-
-    /** Initializes the backend. */
-    void initBackends();
 
     /** Initializes the action objects of the GUI. */
     void initActions();

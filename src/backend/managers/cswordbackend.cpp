@@ -69,6 +69,13 @@ CSwordBackend::CSwordBackend()
                clearCache);
     BT_CONNECT(m_dataModel.get(), &BtBookshelfModel::rowsAboutToBeRemoved,
                clearCache);
+
+    setBooknameLanguage(btConfig().booknameLanguage());
+    initModules();
+    deleteOrphanedIndices();
+
+    BT_ASSERT(!m_instance);
+    m_instance = this;
 }
 
 CSwordBackend::CSwordBackend(const QString & path, const bool augmentHome)
@@ -80,12 +87,6 @@ CSwordBackend::CSwordBackend(const QString & path, const bool augmentHome)
 
 CSwordBackend::~CSwordBackend() {
     shutdownModules();
-}
-
-CSwordBackend * CSwordBackend::createInstance() {
-    BT_ASSERT(!m_instance);
-    m_instance = new CSwordBackend();
-    return m_instance;
 }
 
 CSwordModuleInfo * CSwordBackend::findFirstAvailableModule(CSwordModuleInfo::ModuleType type) {

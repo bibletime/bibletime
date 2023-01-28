@@ -232,7 +232,7 @@ int main(int argc, char* argv[]) {
 
     app.initIcons();
 
-    BibleTime *mainWindow = new BibleTime();
+    auto * const mainWindow = new BibleTime(app);
     mainWindow->setAttribute(Qt::WA_DeleteOnClose);
 
     // a new BibleTime version was installed (maybe a completely new installation)

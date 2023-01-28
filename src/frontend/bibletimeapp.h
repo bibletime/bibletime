@@ -14,6 +14,8 @@
 
 #include <QApplication>
 
+#include "../backend/managers/cswordbackend.h"
+#include <optional>
 #include <QObject>
 #include <QString>
 
@@ -39,6 +41,7 @@ class BibleTimeApp : public QApplication {
         void initLightDarkPalette();
         bool initDisplayTemplateManager();
         void initIcons();
+        void initBackends();
 
         bool debugMode() const noexcept { return m_debugMode; }
         void setDebugMode(bool const debugMode) noexcept
@@ -49,6 +52,7 @@ class BibleTimeApp : public QApplication {
         bool m_init;
         bool m_debugMode;
         BtIcons * m_icons;
+        std::optional<CSwordBackend> m_backend;
 
 };
 
