@@ -22,6 +22,7 @@
 #include <QVBoxLayout>
 #include "../util/btconnect.h"
 #include "../util/cresmgr.h"
+#include "messagedialog.h"
 
 
 BtMessageInputDialog::BtMessageInputDialog(QString const & title,
@@ -80,6 +81,7 @@ BtMessageInputDialog::BtMessageInputDialog(QString const & title,
     QDialogButtonBox * buttonBox = new QDialogButtonBox(this);
     buttonBox->setOrientation(Qt::Horizontal);
     buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+    message::prepareDialogBox(buttonBox);
     verticalLayout->addWidget(buttonBox);
 
     BT_CONNECT(buttonBox, &QDialogButtonBox::accepted,
