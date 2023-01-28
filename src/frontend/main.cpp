@@ -162,6 +162,8 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
+    registerMetaTypes();
+
     BibleTimeApp app(argc, argv); //for QApplication
 
     // Parse command line arguments:
@@ -175,8 +177,6 @@ int main(int argc, char* argv[]) {
             return r < 0 ? EXIT_SUCCESS : EXIT_FAILURE;
         app.setDebugMode(showDebugMessages);
     }
-
-    registerMetaTypes();
 
     if (!DU::initDirectoryCache()) {
         qFatal("Error initializing directory cache!");
