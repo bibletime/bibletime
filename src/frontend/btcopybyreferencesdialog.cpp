@@ -97,6 +97,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     hLayout->addWidget(buttons);
     auto * const okButton = buttons->button(QDialogButtonBox::Ok);
 
+    // Apply selection, if present:
     if (selection.has_value()) {
         BT_ASSERT(selection->column < modules.size());
         m_firstKeyChooser->setKey(
@@ -111,7 +112,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         m_result.key2 = m_lastKeyChooser->key();
         m_result.index1 = model->keyToIndex(*m_result.key1);
         m_result.index2 = model->keyToIndex(*m_result.key2);
-        if (m_result.index1 > m_result.index2) {
+        if (m_result.index1 > m_result.index2) { // ensure order:
             std::swap(m_result.key1, m_result.key2);
             std::swap(m_result.index1, m_result.index2);
         }
