@@ -68,7 +68,7 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
                                BTMimeData::ItemList{{moduleName, keyName, {}}});
                    //add real Bible text from module/key
                    if (auto * const module =
-                        CSwordBackend::instance()->findModuleByName(moduleName))
+                        CSwordBackend::instance().findModuleByName(moduleName))
                    {
                        drag.setPixmap(
                                module->moduleIcon().pixmap(
@@ -216,7 +216,7 @@ BtModelViewReadDisplay::text(TextPart const part) {
                   module->type() == CSwordModuleInfo::Commentary ||
                   module->type() == CSwordModuleInfo::GenericBook);
         FilterOptions filterOptions;
-        CSwordBackend::instance()->setFilterOptions(filterOptions);
+        CSwordBackend::instance().setFilterOptions(filterOptions);
 
         text = QStringLiteral("%1\n(%2, %3)")
                .arg(key->strippedText(), key->key(), key->module()->name());
@@ -249,7 +249,7 @@ BtModelViewReadDisplay::text(TextPart const part) {
             key->setKey(decodedLink->key);
 
             FilterOptions filterOptions;
-            CSwordBackend::instance()->setFilterOptions(filterOptions);
+            CSwordBackend::instance().setFilterOptions(filterOptions);
 
             return QStringLiteral("%1\n(%2, %3)")
                    .arg(key->strippedText(), key->key(), key->module()->name());

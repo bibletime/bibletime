@@ -113,7 +113,7 @@ void BibleTime::slotSettingsOptions() {
     CConfigurationDialog *dlg = new CConfigurationDialog(this);
     BT_CONNECT(dlg,  &BtConfigDialog::signalSettingsChanged,
                [this]{
-                   CSwordBackend::instance()->setBooknameLanguage(
+                   CSwordBackend::instance().setBooknameLanguage(
                                btConfig().booknameLanguage());
 
                    /** \todo update the bookmarks after Bible bookname language
@@ -579,8 +579,9 @@ void BibleTime::reloadProfile() {
         for (auto const & moduleName
              : windowConf.value<QStringList>(QStringLiteral("modules")))
         {
-            CSwordModuleInfo * const m = CSwordBackend::instance()->findModuleByName(moduleName);
-            if (m) {
+            if (auto * const m =
+                        CSwordBackend::instance().findModuleByName(moduleName))
+            {
                 wls.okModules.append(m);
             } else {
                 wls.failedModules.append(moduleName);

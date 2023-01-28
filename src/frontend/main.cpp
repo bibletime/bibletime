@@ -244,7 +244,7 @@ int main(int argc, char* argv[]) {
         mainWindow->saveConfigSettings();
     }
 
-    auto const showWelcome = CSwordBackend::instance()->moduleList().empty();
+    auto const showWelcome = CSwordBackend::instance().moduleList().empty();
     if (showWelcome && BtWelcomeDialog().exec() == QDialog::Accepted)
         mainWindow->slotBookshelfWizard();
 

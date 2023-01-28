@@ -147,7 +147,8 @@ QString BtQmlInterface::getRawText(int row, int column) {
     BT_ASSERT(column >= 0 && column <= m_moduleNames.count());
     CSwordVerseKey key = m_moduleTextModel->indexToVerseKey(row);
     QString moduleName = m_moduleNames.at(column);
-    CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
+    auto * const module =
+            CSwordBackend::instance().findModuleByName(moduleName);
     CSwordVerseKey mKey(module);
     mKey.setKey(key.key());
     auto rawText = mKey.rawText();
@@ -280,7 +281,7 @@ void BtQmlInterface::getFontsFromSettings() {
     newFonts.reserve(m_moduleNames.size());
     for (auto const & moduleName : m_moduleNames) {
         if (auto const * const m =
-                    CSwordBackend::instance()->findModuleByName(moduleName))
+                    CSwordBackend::instance().findModuleByName(moduleName))
         {
             if (auto const lang = m->language()) {
                 BtConfig::FontSettingsPair fontPair = btConfig().getFontForLanguage(*lang);
@@ -391,7 +392,9 @@ bool BtQmlInterface::moduleIsWritable(int column) {
     if (column >= m_moduleNames.count())
         return false;
     QString moduleName = m_moduleNames.at(column);
-    CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
+    auto * const module =
+            CSwordBackend::instance().findModuleByName(moduleName);
+    BT_ASSERT(module);
     return module->isWritable();
 }
 

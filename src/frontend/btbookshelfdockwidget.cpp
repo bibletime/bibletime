@@ -57,7 +57,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     m_treeModel = new BtBookshelfTreeModel(btConfig(), groupingOrderKey, this);
 
     // Get backend model:
-    auto bookshelfModelPtr(CSwordBackend::instance()->model());
+    auto bookshelfModelPtr(CSwordBackend::instance().model());
 
     // Setup bookshelf widgets:
     m_bookshelfWidget = new BtBookshelfWidget(this);
@@ -114,7 +114,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
                        if (BibleTime::moduleUnlock(module)) {
                            // Re-initialize module pointer:
                            auto const & backend = CSwordBackend::instance();
-                           module = backend->findModuleByName(moduleName);
+                           module = backend.findModuleByName(moduleName);
                            BT_ASSERT(module);
                            Q_EMIT moduleOpenTriggered(module);
                        }
@@ -135,7 +135,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     auto modulesChangedSlot =
             [this]{
                 auto const & moduleList =
-                        CSwordBackend::instance()->moduleList();
+                        CSwordBackend::instance().moduleList();
                 m_stackedWidget->setCurrentWidget(moduleList.empty()
                                                   ? m_welcomeWidget
                                                   : m_bookshelfWidget);

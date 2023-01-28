@@ -100,7 +100,7 @@ void BtBookshelfTaskPage::retranslateUi() {
 }
 
 bool BtBookshelfTaskPage::timeToUpdate() const {
-    if (CSwordBackend::instance()->moduleList().empty())
+    if (CSwordBackend::instance().moduleList().empty())
         return true;
 
     return BtBookshelfWizard::autoUpdateSources();

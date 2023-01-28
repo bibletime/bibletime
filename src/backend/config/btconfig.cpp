@@ -476,7 +476,7 @@ QString BtConfig::booknameLanguage() {
 
 sword::ListKey BtConfig::parseVerseListWithModules(const QString& data, const QStringList& scopeModules) {
     for (auto const & moduleName : scopeModules) {
-        auto module = CSwordBackend::instance()->findModuleByName(moduleName);
+        auto module = CSwordBackend::instance().findModuleByName(moduleName);
         if (module == nullptr)
             continue;
         sword::VerseKey vk = module->swordModule().getKey();
@@ -497,7 +497,7 @@ CSwordModuleInfo *BtConfig::getDefaultSwordModuleByType(const QString & moduleTy
     if (moduleName.isEmpty())
         return nullptr;
 
-    return CSwordBackend::instance()->findModuleByName(moduleName);
+    return CSwordBackend::instance().findModuleByName(moduleName);
 }
 
 void BtConfig::setDefaultSwordModuleByType(const QString &moduleType,

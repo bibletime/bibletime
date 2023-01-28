@@ -94,7 +94,7 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
     }
 
     if (auto * const m =
-                CSwordBackend::instance()->findModuleByName(module->getName()))
+                CSwordBackend::instance().findModuleByName(module->getName()))
     {
         // only parse if the module has strongs or lemmas:
         if (!m->has(CSwordModuleInfo::lemmas)

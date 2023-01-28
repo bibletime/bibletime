@@ -183,7 +183,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
     }
     {
         auto const availableLanguages =
-                CSwordBackend::instance()->availableLanguages();
+                CSwordBackend::instance().availableLanguages();
         BT_ASSERT(availableLanguages);
         for (auto const & lang : *availableLanguages) {
             if (lang->abbrev().isEmpty())

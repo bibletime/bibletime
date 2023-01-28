@@ -57,7 +57,7 @@ void BtBookshelfRemoveFinalPage::initializePage() {
     retranslateUi();
 
     // Remove works:
-    CSwordBackend::instance()->uninstallModules(btWizard().selectedWorks());
+    CSwordBackend::instance().uninstallModules(btWizard().selectedWorks());
 }
 
 bool BtBookshelfRemoveFinalPage::isComplete() const { return true; }

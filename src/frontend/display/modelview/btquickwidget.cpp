@@ -62,7 +62,7 @@ void BtQuickWidget::dragEnterEvent(QDragEnterEvent * const e) {
     {
         auto const & item = btmimedata->bookmarks().first();
         auto * const m =
-                CSwordBackend::instance()->findModuleByName(item.module());
+                CSwordBackend::instance().findModuleByName(item.module());
         BT_ASSERT(m);
 
         // Is bible reference bookmark compatible with the module type?

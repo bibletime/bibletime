@@ -44,7 +44,7 @@ Results search(QString const & searchText,
         scope.clear();
 
     /// \todo What is the purpose of the following statement?
-    CSwordBackend::instance()->setFilterOptions(btConfig().getFilterOptions());
+    CSwordBackend::instance().setFilterOptions(btConfig().getFilterOptions());
 
     // Search module-by-module:
     Results r;

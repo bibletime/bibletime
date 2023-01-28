@@ -90,7 +90,7 @@ BtOpenWorkAction::BtOpenWorkAction(BtConfigCore groupingConfigGroup,
 {
     m_menu = new BtOpenWorkActionMenu(std::move(groupingConfigGroup),
                                       std::move(groupingConfigKey));
-    m_menu->setSourceModel(CSwordBackend::instance()->model());
+    m_menu->setSourceModel(CSwordBackend::instance().model());
 
     setMenu(m_menu);
     setIcon(CResMgr::mainWindow::icon_openAction());

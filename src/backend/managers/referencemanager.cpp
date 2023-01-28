@@ -119,7 +119,7 @@ ReferenceManager::decodeHyperlink(QString const & hyperlink) {
         if (slashPos == 0) {
             ret.module = preferredModule(ret.type);
         } else { // We have a module given
-            ret.module = CSwordBackend::instance()->findModuleByName(
+            ret.module = CSwordBackend::instance().findModuleByName(
                              ref.left(slashPos).toString());
             if (!ret.module)
                 ret.module = preferredModule(ret.type);
@@ -163,7 +163,7 @@ QString ReferenceManager::parseVerseReference(
         QString const & ref,
         ReferenceManager::ParseOptions const & options)
 {
-    auto & backend = *CSwordBackend::instance();
+    auto & backend = CSwordBackend::instance();
     auto const * const mod =
             backend.findModuleByName(options.refDestinationModule);
     if (!mod) // Parsing of non-verse based references is not supported:

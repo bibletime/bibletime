@@ -71,19 +71,19 @@ inline bool filter(WizardTaskType const taskType,
                    CSwordModuleInfo const * const mInfo)
 {
     if (taskType == WizardTaskType::installWorks) {
-        return !CSwordBackend::instance()->findModuleByName(mInfo->name())
+        return !CSwordBackend::instance().findModuleByName(mInfo->name())
                && languages.contains(mInfo->language()->translatedName());
     } else if (taskType == WizardTaskType::updateWorks) {
         using CSMI = CSwordModuleInfo;
         using CSV = sword::SWVersion const;
         CSMI const * const installedModule =
-                CSwordBackend::instance()->findModuleByName(mInfo->name());
+                CSwordBackend::instance().findModuleByName(mInfo->name());
         return installedModule
                && (CSV(installedModule->config(CSMI::ModuleVersion).toLatin1())
                    < CSV(mInfo->config(CSMI::ModuleVersion).toLatin1()));
     } else {
         BT_ASSERT(taskType == WizardTaskType::removeWorks);
-        return CSwordBackend::instance()->findModuleByName(mInfo->name());
+        return CSwordBackend::instance().findModuleByName(mInfo->name());
     }
 }
 
@@ -168,7 +168,7 @@ BtBookshelfWorksPage::BtBookshelfWorksPage(WizardTaskType iType,
     /// \todo is this useless if m_taskType == WizardTaskType::removeWorks?
     m_bookshelfModel = BtBookshelfModel::newInstance();
     if (m_taskType == WizardTaskType::removeWorks) {
-        m_installPageModel->setSourceModel(CSwordBackend::instance()->model());
+        m_installPageModel->setSourceModel(CSwordBackend::instance().model());
     } else {
         m_installPageModel->setSourceModel(m_bookshelfModel);
     }
@@ -184,7 +184,7 @@ BtBookshelfWorksPage::BtBookshelfWorksPage(WizardTaskType iType,
         BT_CONNECT(m_pathCombo, qOverload<int>(&QComboBox::currentIndexChanged),
                    this, &BtBookshelfWorksPage::slotPathChanged);
         BT_CONNECT(
-                CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
+                &CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
                 this, &BtBookshelfWorksPage::slotInitPathCombo);
     }
     BT_CONNECT(m_installPageModel, &BtBookshelfTreeModel::moduleChecked,
@@ -346,7 +346,7 @@ static bool installPathIsUsable(QString const & path) {
 void BtBookshelfWorksPage::slotInitPathCombo() {
     m_pathCombo->clear();
     bool haveUsableTargets = false;
-    for (auto const & target : CSwordBackend::instance()->swordDirList()) {
+    for (auto const & target : CSwordBackend::instance().swordDirList()) {
         if (installPathIsUsable(target)) {
             m_pathCombo->addItem(QDir::toNativeSeparators(target));
             haveUsableTargets = true;

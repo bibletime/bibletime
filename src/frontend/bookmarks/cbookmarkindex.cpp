@@ -490,8 +490,8 @@ void CBookmarkIndex::dropEvent(QDropEvent * event) {
             QString moduleName(bookmark.module());
             QString keyText(bookmark.key());
             QString description(bookmark.description());
-            auto * minfo =
-                    CSwordBackend::instance()->findModuleByName(
+            auto * const minfo =
+                    CSwordBackend::instance().findModuleByName(
                         std::move(moduleName));
             BT_ASSERT(minfo);
 

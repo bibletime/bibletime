@@ -54,7 +54,7 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
         formLayout->addRow(m_ ## fname ## Label, m_ ## fname ## Combo); \
         auto const * const defaultModule = \
             btConfig().getDefaultSwordModuleByType(#fname); \
-        for (auto const * const m : CSwordBackend::instance()->moduleList()) { \
+        for (auto const * const m : CSwordBackend::instance().moduleList()) { \
             if (m->type() == CSwordModuleInfo::__VA_ARGS__) { \
                 QString itemText; \
                 if (auto description = \

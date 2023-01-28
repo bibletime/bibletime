@@ -94,8 +94,11 @@ public: // methods:
 
     ~CSwordBackend() override;
 
-    /** \returns the singleton instance, creating it if one does not exist. */
-    static CSwordBackend * instance() noexcept { return m_instance; }
+    /** \returns the singleton instance. */
+    static CSwordBackend & instance() noexcept {
+        BT_ASSERT(m_instance);
+        return *m_instance;
+    }
 
     /**
       \warning You have to call initModules() first.

@@ -154,7 +154,7 @@ void CRangeChooserDialog::initConnections() {
                    auto const & backend = CSwordBackend::instance();
                    for (auto const & moduleName : m_scopeModules) {
                        auto * const module =
-                               backend->findModuleByName(moduleName);
+                               backend.findModuleByName(moduleName);
                        if (!module)
                            continue;
                        auto const verses(

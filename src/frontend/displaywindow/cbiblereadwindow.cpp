@@ -370,7 +370,8 @@ void CBibleReadWindow::reload() {
     }
 
     //refresh the book lists
-    verseKey()->setLocale( CSwordBackend::instance()->booknameLanguage().toLatin1() );
+    verseKey()->setLocale(
+                CSwordBackend::instance().booknameLanguage().toLatin1());
     keyChooser()->refreshContent();
 
     actionCollection()->readShortcuts(QStringLiteral("Bible shortcuts"));

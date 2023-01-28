@@ -163,7 +163,7 @@ BtConstModuleList CTextRendering::collectModules(KeyTree const & tree) {
 
 QString CTextRendering::renderKeyTree(KeyTree const & tree) const {
     //CSwordBackend::instance()()->setDisplayOptions( m_displayOptions );
-    CSwordBackend::instance()->setFilterOptions(m_filterOptions);
+    CSwordBackend::instance().setFilterOptions(m_filterOptions);
 
     const BtConstModuleList modules = collectModules(tree);
     QString t;

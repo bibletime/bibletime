@@ -47,7 +47,7 @@ void renderReference(char const * const osisRef,
            modulename is given, so we'll use that one. */
 
         auto const * mod =
-                CSwordBackend::instance()->findSwordModuleByPointer(&myModule);
+                CSwordBackend::instance().findSwordModuleByPointer(&myModule);
         //BT_ASSERT(mod); checked later
         if (!mod || (mod->type() != CSwordModuleInfo::Bible
                      && mod->type() != CSwordModuleInfo::Commentary))
@@ -55,7 +55,7 @@ void renderReference(char const * const osisRef,
             mod = btConfig().getDefaultSwordModuleByType(
                       QStringLiteral("standardBible"));
             if (!mod)
-                mod = CSwordBackend::instance()->findFirstAvailableModule(
+                mod = CSwordBackend::instance().findFirstAvailableModule(
                           CSwordModuleInfo::Bible);
         }
 
@@ -73,7 +73,7 @@ void renderReference(char const * const osisRef,
             hrefRef = ref.mid(pos + 1);
 
             if (auto const * const moduleByName =
-                    CSwordBackend::instance()->findModuleByName(newModuleName))
+                    CSwordBackend::instance().findModuleByName(newModuleName))
                 mod = moduleByName;
         } else {
             hrefRef = ref;

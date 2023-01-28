@@ -217,7 +217,7 @@ void BtSearchOptionsArea::initConnections() {
                         : m_modulesCombo->itemText(index).split(
                             QStringLiteral(", ")))
                        moduleList.append(
-                            CSwordBackend::instance()->findModuleByName(name));
+                            CSwordBackend::instance().findModuleByName(name));
                    // Set the list and the combobox list and text:
                    setModules(moduleList);
                });

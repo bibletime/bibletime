@@ -1085,7 +1085,9 @@ QString CSwordModuleInfo::getSimpleConfigEntry(const QString & name) const {
 
 /// \note See http://www.crosswire.org/wiki/DevTools:conf_Files#Localization
 QString CSwordModuleInfo::getFormattedConfigEntry(const QString & name) const {
-    const QStringList localeNames(QLocale(CSwordBackend::instance()->booknameLanguage()).uiLanguages());
+    auto const localeNames(
+                QLocale(CSwordBackend::instance().booknameLanguage())
+                    .uiLanguages());
     for (int i = localeNames.size() - 1; i >= -1; --i) {
         sword::SWBuf RTF_Buffer;
         if (i < 0) {

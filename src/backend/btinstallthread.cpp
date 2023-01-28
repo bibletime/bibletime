@@ -116,7 +116,8 @@ void BtInstallThread::slotDownloadStarted() {
 
 bool BtInstallThread::removeModule() {
     CSwordModuleInfo * const installedModule = m_modules.at(m_currentModuleIndex);
-    CSwordModuleInfo * m = CSwordBackend::instance()->findModuleByName(installedModule->name());
+    CSwordModuleInfo const * m =
+            CSwordBackend::instance().findModuleByName(installedModule->name());
     std::unique_ptr<CSwordBackend const> backend;
     if (!m) {
         backend = BtInstallBackend::backend(
@@ -139,7 +140,7 @@ bool BtInstallThread::removeModule() {
     if (prefixPath.contains(dataPath)) {
         prefixPath.remove(prefixPath.indexOf(dataPath), dataPath.length());
     } else {
-        prefixPath = CSwordBackend::instance()->prefixPath();
+        prefixPath = CSwordBackend::instance().prefixPath();
     }
 
     sword::SWMgr mgr(prefixPath.toLatin1());

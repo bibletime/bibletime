@@ -128,7 +128,7 @@ void TeiToHtml::renderReference(const char *osisRef, sword::SWBuf &buf,
             && ref.at(pos + 1).isLetter())
         {
             hrefRef = ref.mid(pos + 1);
-            mod = CSwordBackend::instance()->findModuleByName(ref.left(pos));
+            mod = CSwordBackend::instance().findModuleByName(ref.left(pos));
             if (!mod)
                 mod = btConfig().getDefaultSwordModuleByType(
                           QStringLiteral("standardBible"));
@@ -138,7 +138,7 @@ void TeiToHtml::renderReference(const char *osisRef, sword::SWBuf &buf,
                       QStringLiteral("standardBible"));
         }
         if (!mod)
-            mod = CSwordBackend::instance()->findFirstAvailableModule(
+            mod = CSwordBackend::instance().findFirstAvailableModule(
                       CSwordModuleInfo::Bible);
 
         if (mod) {
@@ -172,7 +172,7 @@ void TeiToHtml::renderTargetReference(const char *osisRef, sword::SWBuf &buf,
         // modulename is given, so we'll use that one
 
         CSwordModuleInfo * mod;
-        auto const & backend = *CSwordBackend::instance();
+        auto const & backend = CSwordBackend::instance();
 
         //if the target like "GerLut:key" contains a module, use that
         if (auto const pos = ref.indexOf(':'); pos >= 0) {

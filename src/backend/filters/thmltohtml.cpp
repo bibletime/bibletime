@@ -64,7 +64,7 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
     sword::ThMLHTML::processText(buf, key, module);
 
     if (auto * const m =
-                CSwordBackend::instance()->findModuleByName(module->getName()))
+                CSwordBackend::instance().findModuleByName(module->getName()))
     {
         // only parse if the module has strongs or lemmas:
         if (!m->has(CSwordModuleInfo::lemmas)
@@ -338,7 +338,7 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                     auto * mod = btConfig().getDefaultSwordModuleByType(
                                      QStringLiteral("standardBible"));
                     if (! mod)
-                        mod = CSwordBackend::instance()->findFirstAvailableModule(CSwordModuleInfo::Bible);
+                        mod = CSwordBackend::instance().findFirstAvailableModule(CSwordModuleInfo::Bible);
 
                     if (mod) {
                         BT_ASSERT(tag.getAttribute("passage"));

@@ -75,8 +75,8 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
     //setAttribute(Qt::WA_DeleteOnClose);
 
     // Connect this to the backend module list changes
-    BT_CONNECT(CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
-               this,                      &CDisplayWindow::reload);
+    BT_CONNECT(&CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
+               this,                       &CDisplayWindow::reload);
 
     setWindowIcon(m_modules.first()->moduleIcon());
     updateWindowTitle();
@@ -579,7 +579,7 @@ void CDisplayWindow::reload() {
     BT_ASSERT(!m_moduleNames.empty()); // This should otherwise be close()-d
     m_modules.clear();
     {
-        auto const & backend = *CSwordBackend::instance();
+        auto const & backend = CSwordBackend::instance();
         auto it = m_moduleNames.begin();
         do {
             if (auto * const module = backend.findModuleByName(*it)) {
@@ -845,8 +845,8 @@ void CDisplayWindow::lookupKey( const QString& keyName ) {
         return;
     }
 
-    CSwordModuleInfo *m =
-            CSwordBackend::instance()->findModuleByName(
+    auto * const m =
+            CSwordBackend::instance().findModuleByName(
                 m_modules.first()->name());
     if (!m) {
         return; /// \todo check if this is correct behavior

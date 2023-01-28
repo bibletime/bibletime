@@ -66,7 +66,7 @@ void BtTextBrowser::mouseMoveEvent(QMouseEvent * event) {
 
                 //add real Bible text from module/key
                 if (auto const * const module =
-                            CSwordBackend::instance()->findModuleByName(
+                            CSwordBackend::instance().findModuleByName(
                                 decodedLink->module->name()))
                 {
                     std::unique_ptr<CSwordKey> key(module->createKey());

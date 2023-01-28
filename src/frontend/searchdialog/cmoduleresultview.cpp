@@ -219,7 +219,8 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
         Q_EMIT moduleChanged();
         return;
     }
-    if (CSwordModuleInfo *m = CSwordBackend::instance()->findModuleByName(i->text(0))) {
+    if (auto * const m = CSwordBackend::instance().findModuleByName(i->text(0)))
+    {
         Q_EMIT moduleChanged();
         Q_EMIT moduleSelected(m, m_results.value(m));
         return;
@@ -253,7 +254,7 @@ CSwordModuleInfo* CModuleResultView::activeModule() {
     while (item->parent())
         item = item->parent();
 
-    return CSwordBackend::instance()->findModuleByName(item->text(0));
+    return CSwordBackend::instance().findModuleByName(item->text(0));
 }
 
 /** Reimplementation from QWidget. */

@@ -46,7 +46,7 @@ BtSearchModuleChooserDialog::BtSearchModuleChooserDialog(QWidget *parent,
     bookshelfWidget()->showHideAction()->setVisible(false);
     bookshelfWidget()->showHideButton()->hide();
     bookshelfWidget()->setTreeModel(treeModel);
-    bookshelfWidget()->setSourceModel(CSwordBackend::instance()->model());
+    bookshelfWidget()->setSourceModel(CSwordBackend::instance().model());
 
     retranslateUi();
 }

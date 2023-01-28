@@ -37,7 +37,7 @@ QVariant BtInstallPageModel::data(QModelIndex const & i, int role) const {
                             module(index(i.row(), 0, i.parent())))
                     {
                         if (CSwordModuleInfo * imodule =
-                                CSwordBackend::instance()->findModuleByName(
+                                CSwordBackend::instance().findModuleByName(
                                         m->name()))
                             return QStringLiteral("%1 => %2")
                                     .arg(imodule->config(

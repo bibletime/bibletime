@@ -65,13 +65,11 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
 {}
 
 void BtModuleTextModel::reloadModules() {
-
     m_moduleInfoList.clear();
-    for (int i = 0; i < m_modules.count(); ++i) {
-        QString moduleName = m_modules.at(i);
-        CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
-        m_moduleInfoList.append(module);
-    }
+    for (auto const & moduleName : m_modules)
+        m_moduleInfoList.append(
+                    CSwordBackend::instance().findModuleByName(
+                        moduleName));
 
     beginResetModel();
     const CSwordModuleInfo* firstModule = m_moduleInfoList.at(0);

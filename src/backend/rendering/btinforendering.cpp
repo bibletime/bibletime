@@ -98,9 +98,10 @@ QString decodeCrossReference(QString const & data,
         pos += re.matchedLength() - 1;
 
     if (pos > 0) {
-        const QString moduleName = data.left(pos);
+        auto moduleName = data.left(pos);
         // qWarning("found module %s", moduleName.latin1());
-        module = CSwordBackend::instance()->findModuleByName(moduleName);
+        module = CSwordBackend::instance().findModuleByName(
+                     std::move(moduleName));
     }
 
     if (!module)
@@ -167,7 +168,7 @@ QString decodeFootnote(QString const & data) {
 
     FilterOptions filterOpts;
     filterOpts.footnotes   = true;
-    CSwordBackend::instance()->setFilterOptions(filterOpts);
+    CSwordBackend::instance().setFilterOptions(filterOpts);
 
     const QString modulename = list.first();
     const QString swordFootnote = list.last();
@@ -177,8 +178,8 @@ QString decodeFootnote(QString const & data) {
     list.pop_front();
     const QString keyname = list.join('/');
 
-    CSwordModuleInfo * const module =
-            CSwordBackend::instance()->findModuleByName(modulename);
+    auto * const module =
+            CSwordBackend::instance().findModuleByName(modulename);
     if (!module)
         return QString();
 
@@ -206,7 +207,7 @@ QString decodeFootnote(QString const & data) {
 }
 
 CSwordModuleInfo * getFirstAvailableStrongsModule(bool wantHebrew) {
-    for (auto * const m : CSwordBackend::instance()->moduleList()) {
+    for (auto * const m : CSwordBackend::instance().moduleList()) {
         if (m->type() == CSwordLexiconModuleInfo::Lexicon) {
             auto lexModule = qobject_cast<CSwordLexiconModuleInfo *>(m);
             if (wantHebrew
@@ -272,7 +273,7 @@ QString decodeMorph(QString const & data) {
         if (valStart > -1) {
             valueClass = morph.mid(0, valStart);
             // qDebug() << "valueClass: " << valueClass;
-            module = CSwordBackend::instance()->findModuleByName(valueClass);
+            module = CSwordBackend::instance().findModuleByName(valueClass);
         }
         value = morph.mid(valStart + 1); /* works for prepended module and
                                             without (-1 +1 == 0). */
@@ -353,7 +354,7 @@ QString decodeSwordReference(QString const & data) {
     rx.setMinimal(false);
     if (rx.indexIn(data) >= 0) {
         if (auto * const module =
-                    CSwordBackend::instance()->findModuleByName(rx.cap(2)))
+                    CSwordBackend::instance().findModuleByName(rx.cap(2)))
         {
             std::unique_ptr<CSwordKey> key(module->createKey());
             auto reference = rx.cap(3);

@@ -82,7 +82,7 @@ BtIndexDialog::BtIndexDialog(QWidget * parent, Qt::WindowFlags f)
                this,           &BtIndexDialog::deleteIndices);
     BT_CONNECT(m_closeButton, &QPushButton::clicked,
                this,          &BtIndexDialog::close);
-    BT_CONNECT(CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
+    BT_CONNECT(&CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
                this,  &BtIndexDialog::slotSwordSetupChanged);
     BT_CONNECT(m_autoDeleteOrphanedIndicesBox, &QCheckBox::stateChanged,
                this, &BtIndexDialog::autoDeleteOrphanedIndicesChanged);
@@ -109,7 +109,7 @@ void BtIndexDialog::populateModuleList() {
                                    | Qt::ItemIsTristate);
     m_modsWithoutIndices->setExpanded(true);
 
-    auto const & modules = CSwordBackend::instance()->moduleList();
+    auto const & modules = CSwordBackend::instance().moduleList();
     for (auto const & modulePtr : modules) {
         if (modulePtr->hasIndex()) {
             auto item = new QTreeWidgetItem(m_modsWithIndices);
@@ -160,7 +160,7 @@ void BtIndexDialog::autoDeleteOrphanedIndicesChanged(int newState) {
 void BtIndexDialog::createIndices() {
     QList<CSwordModuleInfo *> moduleList;
 
-    auto & backend = *CSwordBackend::instance();
+    auto & backend = CSwordBackend::instance();
     for (int i = 0; i < m_modsWithoutIndices->childCount(); ++i) {
         if (m_modsWithoutIndices->child(i)->checkState(0) == Qt::Checked) {
             if (auto * module = backend.findModuleByName(
@@ -179,7 +179,7 @@ void BtIndexDialog::createIndices() {
 void BtIndexDialog::deleteIndices() {
     bool indicesDeleted = false;
 
-    auto & backend = *CSwordBackend::instance();
+    auto & backend = CSwordBackend::instance();
     for (int i = 0; i < m_modsWithIndices->childCount(); ++i) {
         if (m_modsWithIndices->child(i)->checkState(0) == Qt::Checked) {
             if (auto * module = backend.findModuleByName(

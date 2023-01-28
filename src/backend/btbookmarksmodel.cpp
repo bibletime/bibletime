@@ -553,9 +553,8 @@ BookmarkItem::BookmarkItem(const BookmarkItem & other)
     setText(toHeader(key(), module() ? module()->name() : QObject::tr("unknown")));
 }
 
-CSwordModuleInfo *BookmarkItem::module() const {
-    return CSwordBackend::instance()->findModuleByName(m_moduleName);
-}
+CSwordModuleInfo * BookmarkItem::module() const
+{ return CSwordBackend::instance().findModuleByName(m_moduleName); }
 
 QString BookmarkItem::key() const {
     const QString englishKeyName = englishKey();
@@ -569,7 +568,7 @@ QString BookmarkItem::key() const {
         sword::VerseKey vk(englishKeyName.toUtf8().constData(), englishKeyName.toUtf8().constData(),
             static_cast<sword::VerseKey *>(module()->swordModule().getKey())->getVersificationSystem());
         CSwordVerseKey k(&vk, module());
-        k.setLocale(CSwordBackend::instance()->booknameLanguage().toLatin1() );
+        k.setLocale(CSwordBackend::instance().booknameLanguage().toLatin1());
         returnKeyName = k.key();
     }
 
@@ -584,7 +583,7 @@ QString BookmarkItem::toolTip() const {
     FilterOptions filterOptions = btConfig().getFilterOptions();
     filterOptions.footnotes = false;
     filterOptions.scriptureReferences = false;
-    CSwordBackend::instance()->setFilterOptions(filterOptions);
+    CSwordBackend::instance().setFilterOptions(filterOptions);
 
     std::unique_ptr<CSwordKey> k(m->createKey());
     BT_ASSERT(k);

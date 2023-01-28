@@ -44,7 +44,7 @@ struct SortModel final: public QSortFilterProxyModel {
                            false))
         , m_sourceModel(new BtBookshelfTreeModel(this))
     {
-        m_sourceModel->setSourceModel(CSwordBackend::instance()->model());
+        m_sourceModel->setSourceModel(CSwordBackend::instance().model());
         setSourceModel(m_sourceModel);
     }
 

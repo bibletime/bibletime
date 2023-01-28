@@ -207,7 +207,7 @@ bool BibleTime::moduleUnlock(CSwordModuleInfo * module, QWidget * const parent){
            modules. */
         {
             auto const moduleName(module->name());
-            auto & backend = *CSwordBackend::instance();
+            auto & backend = CSwordBackend::instance();
             backend.reloadModules();
             module = backend.findModuleByName(moduleName);
             BT_ASSERT(module);
