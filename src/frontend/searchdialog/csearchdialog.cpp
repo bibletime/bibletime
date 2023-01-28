@@ -13,7 +13,6 @@
 #include "csearchdialog.h"
 
 #include <QDebug>
-#include <QDialogButtonBox>
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
