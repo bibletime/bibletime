@@ -26,6 +26,9 @@
 #include "display/modelview/btqmlinterface.h"
 #include "welcome/btwelcomedialog.h"
 
+// Sword includes:
+#include <swmgr.h>
+
 /// \todo Reimplement signal handler which handles consecutive crashes.
 
 namespace {
@@ -153,6 +156,11 @@ void registerMetaTypes() {
 
 int main(int argc, char* argv[]) {
     namespace DU = util::directory;
+
+    if (!sword::SWMgr::isICU) {
+        qFatal("SWORD library is required to be built against ICU!");
+        return EXIT_FAILURE;
+    }
 
     BibleTimeApp app(argc, argv); //for QApplication
 
