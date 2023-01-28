@@ -248,8 +248,6 @@ int main(int argc, char* argv[]) {
     if (showWelcome && BtWelcomeDialog().exec() == QDialog::Accepted)
         mainWindow->slotBookshelfWizard();
 
-    // restore the workspace and process command line options
-    //app.setMainWidget(bibletime_ptr); //no longer used in qt4 (QApplication)
     mainWindow->show();
 
     // The following must be done after the bibletime window is visible:
