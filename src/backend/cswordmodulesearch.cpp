@@ -39,10 +39,6 @@ Results search(QString const & searchText,
                           modules.end(),
                           [](auto const * const m) { return m->hasIndex(); }));
 
-    // Reset scope if empty, otherwise we would crash:
-    if (*scope.getRangeText() == '\0')
-        scope.clear();
-
     /// \todo What is the purpose of the following statement?
     CSwordBackend::instance().setFilterOptions(btConfig().getFilterOptions());
 

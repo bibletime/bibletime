@@ -666,18 +666,18 @@ CSwordModuleInfo::searchIndexed(QString const & searchedText,
                          static_cast<const wchar_t *>(doc->get(static_cast<const TCHAR *>(_T("key")))),
                          BT_MAX_LUCENE_FIELD_LENGTH);
 
-
         swKey->setText(utfBuffer);
 
         // Limit results based on scope:
         if (useScope) {
             for (int j = 0; j < scope.getCount(); j++) {
-                BT_ASSERT(dynamic_cast<const sword::VerseKey *>(scope.getElement(j)));
-                const sword::VerseKey * const vkey = static_cast<const sword::VerseKey *>(scope.getElement(j));
-                if (vkey->getLowerBound().compare(*swKey) <= 0
-                    && vkey->getUpperBound().compare(*swKey) >= 0)
+                if (auto const * const vkey =
+                            dynamic_cast<sword::VerseKey const *>(
+                                scope.getElement(j)))
                 {
-                    results.emplace_back(swKey->clone());
+                    if (vkey->getLowerBound().compare(*swKey) <= 0
+                        && vkey->getUpperBound().compare(*swKey) >= 0)
+                        results.emplace_back(swKey->clone());
                 }
             }
         } else { // No scope, give me all buffers
