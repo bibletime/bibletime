@@ -82,6 +82,12 @@ CSwordBackend::~CSwordBackend() {
     shutdownModules();
 }
 
+CSwordBackend * CSwordBackend::createInstance() {
+    BT_ASSERT(!m_instance);
+    m_instance = new CSwordBackend();
+    return m_instance;
+}
+
 CSwordModuleInfo * CSwordBackend::findFirstAvailableModule(CSwordModuleInfo::ModuleType type) {
 
     for (CSwordModuleInfo * const m : moduleList())

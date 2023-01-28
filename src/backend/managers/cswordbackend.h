@@ -89,11 +89,7 @@ public: // methods:
     ~CSwordBackend() override;
 
     /** \returns the CSwordBackend singleton instance (created if needed). */
-    static CSwordBackend * createInstance() {
-        BT_ASSERT(!m_instance);
-        m_instance = new CSwordBackend();
-        return m_instance;
-    }
+    static CSwordBackend * createInstance();
 
     /** \returns the singleton instance, creating it if one does not exist. */
     static CSwordBackend * instance() { return m_instance; }
