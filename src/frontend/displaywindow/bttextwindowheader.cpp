@@ -29,14 +29,19 @@
 BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
                                        BtModuleList modules,
                                        CDisplayWindow * window)
-        : QWidget(window),
-        BtWindowModuleChooser(modtype, window)
+    : QWidget(window)
+    , BtWindowModuleChooser(modtype, window)
 {
+    m_modules = std::move(modules); /// \todo refactor setting protected field
+
     QHBoxLayout* layout = new QHBoxLayout ( this );
     layout->setContentsMargins(0, 0, 0, 0);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     setLayoutDirection(Qt::LeftToRight);
-    setModules(std::move(modules));
+
+    for (int i = 0; i < m_modules.count(); i++)
+        addWidget();
+    updateWidgets();
 }
 
 void BtTextWindowHeader::slotBackendModulesChanged(BtModuleList newModules) {
@@ -89,23 +94,6 @@ BtTextWindowHeaderWidget* BtTextWindowHeader::addWidget() {
                this, &BtTextWindowHeader::moduleRemoved);
 
     return w;
-}
-
-void BtTextWindowHeader::setModules(BtModuleList useModules) {
-    m_modules = std::move(useModules);
-
-    // Remove all existing widget:
-    for (auto * const widget : m_widgetList) {
-        widget->setParent(nullptr);
-        widget->deleteLater();
-    }
-    m_widgetList.clear();
-
-    //if (!useModules.count()) return;
-    for (int i = 0; i < m_modules.count(); i++) {
-        addWidget();
-    }
-    updateWidgets();
 }
 
 void BtTextWindowHeader::updateWidgets() {

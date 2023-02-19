@@ -64,8 +64,6 @@ class BtTextWindowHeader: public QWidget, public BtWindowModuleChooser {
         void adjustWidgetCount();
         /** Adds an empty widget to the header.*/
         BtTextWindowHeaderWidget* addWidget();
-        /** Sets the initial modules.*/
-        void setModules(BtModuleList useModules);
 
     private:
         QList<BtTextWindowHeaderWidget*> m_widgetList;
