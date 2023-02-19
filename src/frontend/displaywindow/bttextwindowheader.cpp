@@ -41,15 +41,8 @@ BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
 
 void BtTextWindowHeader::slotBackendModulesChanged(BtModuleList newModules) {
     m_modules = std::move(newModules);
-
     adjustWidgetCount();
-
-    int const leftLikeModules = leftLikeParallelModules(m_modules);
-    for (int i = 0; i < m_widgetList.count(); i++)
-        m_widgetList.at(i)->updateWidget(m_modules,
-                                         m_modules.at(i),
-                                         i,
-                                         leftLikeModules);
+    updateWidgets();
 }
 
 void BtTextWindowHeader::slotWindowModulesChanged(BtModuleList newModules) {
