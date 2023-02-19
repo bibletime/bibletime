@@ -62,15 +62,13 @@ void BtTextWindowHeader::adjustWidgetCount() {
         widgetCountDifference = (1 - m_widgetList.count()) * -1;
     }
     //if there are more buttons than modules, delete buttons
-    if (widgetCountDifference > 0) {
-        while (widgetCountDifference) {
-            // it should be safe to delete the button later
-            BtTextWindowHeaderWidget* w = m_widgetList.takeFirst();
-            w->setParent(nullptr);
-            w->deleteLater();
-            widgetCountDifference--;
-        }
+    for (; widgetCountDifference > 0; --widgetCountDifference) {
+        // it should be safe to delete the button later
+        BtTextWindowHeaderWidget* w = m_widgetList.takeFirst();
+        w->setParent(nullptr);
+        w->deleteLater();
     }
+
     // if there are more modules than buttons, add buttons
     if (widgetCountDifference < 0) {
         while (widgetCountDifference) {
