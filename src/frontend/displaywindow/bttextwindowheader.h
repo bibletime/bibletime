@@ -61,7 +61,7 @@ class BtTextWindowHeader: public QWidget, public BtWindowModuleChooser {
         * The module count is the limit unless adjustToZero is true
         * when limit is 0 and list is emptied.
         */
-        void adjustWidgetCount(bool adjustToZero = false);
+        void adjustWidgetCount();
         /** Adds an empty widget to the header.*/
         BtTextWindowHeaderWidget* addWidget();
         /** Sets the initial modules.*/

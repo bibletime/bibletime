@@ -58,15 +58,9 @@ void BtTextWindowHeader::slotWindowModulesChanged(BtModuleList newModules) {
     updateWidgets();
 }
 
-void BtTextWindowHeader::adjustWidgetCount(bool adjustToZero) {
-    int widgetCountDifference = 0;
-    if (adjustToZero) {
-        widgetCountDifference = m_widgetList.count();
-    }
-    else {
-        widgetCountDifference = m_widgetList.count() - (m_modules.count());
-    }
-    if (m_moduleType == CSwordModuleInfo::GenericBook && !adjustToZero) {
+void BtTextWindowHeader::adjustWidgetCount() {
+    int widgetCountDifference = m_widgetList.count() - (m_modules.count());
+    if (m_moduleType == CSwordModuleInfo::GenericBook) {
         widgetCountDifference = (1 - m_widgetList.count()) * -1;
     }
     //if there are more buttons than modules, delete buttons
@@ -106,7 +100,13 @@ BtTextWindowHeaderWidget* BtTextWindowHeader::addWidget() {
 
 void BtTextWindowHeader::setModules(BtModuleList useModules) {
     m_modules = std::move(useModules);
-    adjustWidgetCount(true);
+
+    // Remove all existing widget:
+    for (auto * const widget : m_widgetList) {
+        widget->setParent(nullptr);
+        widget->deleteLater();
+    }
+    m_widgetList.clear();
 
     //if (!useModules.count()) return;
     for (int i = 0; i < m_modules.count(); i++) {
