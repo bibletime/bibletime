@@ -65,6 +65,6 @@ private: /* Fields: */
 
     QList<BtTextWindowHeaderWidget *> m_widgetList;
     BtModuleList m_modules; /**< The cache of the window module list. */
-    CSwordModuleInfo::ModuleType m_moduleType;
+    CSwordModuleInfo::ModuleType const m_moduleType;
 
 };
