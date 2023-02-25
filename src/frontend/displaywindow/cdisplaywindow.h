@@ -141,8 +141,6 @@ public:
     void setBibleReference(const QString& reference);
 
 Q_SIGNALS:
-    /** The module list was set because backend was reloaded.*/
-    void sigModuleListSet(BtModuleList newList);
     /** A module was added to this window.*/
     void sigModuleAdded(int index, QString module);
     void sigModuleReplaced(int index, QString newModule);

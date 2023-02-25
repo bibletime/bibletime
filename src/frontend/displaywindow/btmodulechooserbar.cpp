@@ -99,8 +99,6 @@ void BtModuleChooserBar::setModules(BtModuleList useModules,
     }
     updateButtonMenus();
 
-    BT_CONNECT(m_window, &CDisplayWindow::sigModuleListSet,
-               this, qOverload<BtModuleList>(&BtModuleChooserBar::setModules));
     BT_CONNECT(m_window, &CDisplayWindow::sigModuleListChanged,
                this, qOverload<BtModuleList>(&BtModuleChooserBar::setModules));
 }

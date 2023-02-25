@@ -465,8 +465,6 @@ void CDisplayWindow::initToolbars() {
             new BtTextWindowHeader(m_modules.first()->type(),
                                    m_modules,
                                    this);
-    BT_CONNECT(this, &CDisplayWindow::sigModuleListSet,
-               h, &BtTextWindowHeader::setModules);
     BT_CONNECT(this, &CDisplayWindow::sigModuleListChanged,
                h, &BtTextWindowHeader::setModules);
     BT_CONNECT(h, &BtTextWindowHeader::moduleAdded,
@@ -606,7 +604,7 @@ void CDisplayWindow::reload() {
                     QStringLiteral("Displaywindow shortcuts"));
         m_actionCollection->readShortcuts(
                     QStringLiteral("Readwindow shortcuts"));
-        Q_EMIT sigModuleListSet(m_modules);
+        Q_EMIT sigModuleListChanged(m_modules);
     }
 
     m_displayWidget->settingsChanged();
