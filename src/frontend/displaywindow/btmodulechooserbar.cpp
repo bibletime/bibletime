@@ -36,18 +36,16 @@ void BtModuleChooserBar::setModules(BtModuleList newModules) {
 }
 
 void BtModuleChooserBar::adjustButtonCount() {
-    int buttonCountDifference = m_buttonList.count() - (m_modules.count() + 1);
-    //if there are more buttons than modules, delete buttons
-    if (buttonCountDifference > 0) {
-        for (int j = 0; j < buttonCountDifference; j++) {
+    if (m_buttonList.size() > m_modules.size()) {
+        auto toRemove = m_buttonList.size() - m_modules.size();
+        do {
             delete m_buttonList.takeFirst();
-        }
-    }
-    // if there are more modules than buttons, add buttons
-    if (buttonCountDifference < 0) {
-        for (int i = (buttonCountDifference * (-1)); i > 0; i--) {
+        } while (--toRemove);
+    } else if (m_modules.size() > m_buttonList.size()) {
+        auto toAdd = m_modules.size() - m_buttonList.size();
+        do {
             addButton();
-        }
+        } while (--toAdd);
     }
 }
 
