@@ -41,8 +41,11 @@ private Q_SLOTS:
 
 private: /* Methods: */
 
-    /** Adds an empty button to the toolbar.*/
-    BtModuleChooserButton * addButton();
+    /**
+       \brief Adds an empty button to the toolbar.
+       \param[in] window The display window to connect the button with.
+    */
+    BtModuleChooserButton * addButton(CDisplayWindow * const window);
 
     /** Updates every button's menu without recreating it.*/
     void updateButtonMenus(BtModuleList const & modules);
@@ -50,12 +53,13 @@ private: /* Methods: */
     /**
        \brief Ensures exactly numButtons buttons..
        \param[in] numButtons The exact number of buttons required.
+       \param[in] window The display window to connect the buttons with.
     */
-    void adjustButtonCount(int const numButtons);
+    void adjustButtonCount(int const numButtons,
+                           CDisplayWindow * const window);
 
 private: /* Fields: */
 
-    CDisplayWindow * m_window = nullptr;
     CSwordModuleInfo::ModuleType m_moduleType = CSwordModuleInfo::Unknown;
     QList<BtModuleChooserButton *> m_buttonList;
 

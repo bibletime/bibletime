@@ -30,11 +30,14 @@ BtModuleChooserBar::BtModuleChooserBar(QWidget * parent)
 
 void BtModuleChooserBar::setModules(BtModuleList modules) {
     if (m_moduleType != CSwordModuleInfo::GenericBook)
-        adjustButtonCount(modules.size() + 1);
+        adjustButtonCount(modules.size() + 1,
+                          static_cast<CDisplayWindow *>(sender()));
     updateButtonMenus(modules);
 }
 
-void BtModuleChooserBar::adjustButtonCount(int const numButtons) {
+void BtModuleChooserBar::adjustButtonCount(int const numButtons,
+                                           CDisplayWindow * const window)
+{
     if (m_buttonList.size() > numButtons) {
         auto toRemove = m_buttonList.size() - numButtons;
         do {
@@ -43,12 +46,13 @@ void BtModuleChooserBar::adjustButtonCount(int const numButtons) {
     } else if (numButtons > m_buttonList.size()) {
         auto toAdd = numButtons - m_buttonList.size();
         do {
-            addButton();
+            addButton(window);
         } while (--toAdd);
     }
 }
 
-BtModuleChooserButton * BtModuleChooserBar::addButton() {
+BtModuleChooserButton *
+BtModuleChooserBar::addButton(CDisplayWindow * const window) {
     BtModuleChooserButton* b = new BtModuleChooserButton(m_moduleType, this);
     QAction* a = addWidget(b);
     m_buttonList.append(b);
@@ -59,14 +63,14 @@ BtModuleChooserButton * BtModuleChooserBar::addButton() {
        when triggered via QAction::triggered(), a mouse release event on the
        widget with that QAction may follow, but the widget might already have
        been deleted. */
-    BT_CONNECT(b,        &BtModuleChooserButton::sigModuleAdd,
-               m_window, &CDisplayWindow::slotAddModule,
+    BT_CONNECT(b,      &BtModuleChooserButton::sigModuleAdd,
+               window, &CDisplayWindow::slotAddModule,
                Qt::QueuedConnection);
-    BT_CONNECT(b,        &BtModuleChooserButton::sigModuleReplace,
-               m_window, &CDisplayWindow::slotReplaceModule,
+    BT_CONNECT(b,      &BtModuleChooserButton::sigModuleReplace,
+               window, &CDisplayWindow::slotReplaceModule,
                Qt::QueuedConnection);
-    BT_CONNECT(b,        &BtModuleChooserButton::sigModuleRemove,
-               m_window, &CDisplayWindow::slotRemoveModule,
+    BT_CONNECT(b,      &BtModuleChooserButton::sigModuleRemove,
+               window, &CDisplayWindow::slotRemoveModule,
                Qt::QueuedConnection);
 
     a->setVisible(true);
@@ -77,9 +81,8 @@ BtModuleChooserButton * BtModuleChooserBar::addButton() {
 /** Sets the modules which are chosen in this module chooser bar. */
 void BtModuleChooserBar::setModules(BtModuleList modules,
                                     CSwordModuleInfo::ModuleType type,
-                                    CDisplayWindow * window)
+                                    CDisplayWindow * const window)
 {
-    m_window = window;
     m_moduleType = type;
 
     clear();
@@ -88,16 +91,16 @@ void BtModuleChooserBar::setModules(BtModuleList modules,
 
     //if (!useModules.count()) return;
     for (int i = 0; i < modules.size(); i++) {
-        addButton();
+        addButton(window);
     }
     if (!(m_moduleType == CSwordModuleInfo::GenericBook)) {
-        addButton(); // for ADD button
+        addButton(window); // for ADD button
     } else {
         BT_ASSERT(modules.size() == 1);
     }
     updateButtonMenus(modules);
 
-    BT_CONNECT(m_window, &CDisplayWindow::sigModuleListChanged,
+    BT_CONNECT(window, &CDisplayWindow::sigModuleListChanged,
                this, qOverload<BtModuleList>(&BtModuleChooserBar::setModules));
 }
 
