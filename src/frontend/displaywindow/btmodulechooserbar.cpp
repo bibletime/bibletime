@@ -30,15 +30,13 @@ BtModuleChooserBar::BtModuleChooserBar(QWidget * parent)
 
 void BtModuleChooserBar::setModules(BtModuleList newModules) {
     m_modules = std::move(newModules);
-    adjustButtonCount();
+    if (m_moduleType != CSwordModuleInfo::GenericBook)
+        adjustButtonCount();
     updateButtonMenus();
 }
 
 void BtModuleChooserBar::adjustButtonCount() {
     int buttonCountDifference = m_buttonList.count() - (m_modules.count() + 1);
-    if (m_moduleType == CSwordModuleInfo::GenericBook) {
-        buttonCountDifference = (m_modules.count() - m_buttonList.count()) * -1;
-    }
     //if there are more buttons than modules, delete buttons
     if (buttonCountDifference > 0) {
         for (int j = 0; j < buttonCountDifference; j++) {
