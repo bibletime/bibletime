@@ -25,46 +25,49 @@ class CDisplayWindow;
 class BtTextWindowHeaderWidget;
 
 class BtTextWindowHeader: public QWidget, public BtWindowModuleChooser {
-        Q_OBJECT
-    public:
-        BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
-                           BtModuleList modules,
-                           CDisplayWindow * window);
 
-    public Q_SLOTS:
-        /**
-          The backend module list was updated, module list and widgets must be updated from
-          scratch.
-        */
-        void slotBackendModulesChanged(BtModuleList newModules) override;
+    Q_OBJECT
 
-        /**
-          The window module list was updated, module list and widgets must be updated.
-        */
-        void slotWindowModulesChanged(BtModuleList newModules) override;
+public: /* Methods: */
 
-    Q_SIGNALS:
+    BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
+                       BtModuleList modules,
+                       CDisplayWindow * window);
 
-        void moduleAdded(int index, CSwordModuleInfo * module);
+public Q_SLOTS:
 
-        void moduleReplaced(int index, CSwordModuleInfo * newModule);
+    /** The backend module list was updated, module list and widgets must be
+        updated from scratch. */
+    void slotBackendModulesChanged(BtModuleList newModules) override;
 
-        void moduleRemoved(int index);
+    /** The window module list was updated, module list and widgets must be
+        updated. */
+    void slotWindowModulesChanged(BtModuleList newModules) override;
 
-    private:
-        /** Called when backend has changed and menus must be created from scratch.*/
-        void initMenus();
-        /** Updates all widgets without recreating them. */
-        void updateWidgets();
-        /**
-        * Removes or adds widgets so that the count matches the limit.
-        * The module count is the limit unless adjustToZero is true
-        * when limit is 0 and list is emptied.
-        */
-        void adjustWidgetCount();
-        /** Adds an empty widget to the header.*/
-        BtTextWindowHeaderWidget* addWidget();
+Q_SIGNALS:
 
-    private:
-        QList<BtTextWindowHeaderWidget*> m_widgetList;
+    void moduleAdded(int index, CSwordModuleInfo * module);
+    void moduleReplaced(int index, CSwordModuleInfo * newModule);
+    void moduleRemoved(int index);
+
+private: /* Methods: */
+
+    /** Called when backend has changed and menus must be created from scratch.*/
+    void initMenus();
+
+    /** Updates all widgets without recreating them. */
+    void updateWidgets();
+
+    /** Removes or adds widgets so that the count matches the limit. The module
+        count is the limit unless adjustToZero is true when limit is 0 and list
+        is emptied. */
+    void adjustWidgetCount();
+
+    /** Adds an empty widget to the header. */
+    BtTextWindowHeaderWidget * addWidget();
+
+private: /* Fields: */
+
+    QList<BtTextWindowHeaderWidget *> m_widgetList;
+
 };
