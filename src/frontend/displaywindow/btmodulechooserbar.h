@@ -27,32 +27,38 @@ class QWidget;
 class BtModuleChooserButton;
 
 class BtModuleChooserBar final: public QToolBar {
-        Q_OBJECT
-    public:
-        BtModuleChooserBar(QWidget* parent);
 
-        /** Initialize with module list.*/
-        void setModules(BtModuleList useModules,
-                        CSwordModuleInfo::ModuleType type,
-                        CDisplayWindow * window);
+    Q_OBJECT
 
-    private Q_SLOTS:
+public:
 
-        void setModules(BtModuleList newModules);
+    BtModuleChooserBar(QWidget * parent);
 
-    private:
-        /** Adds an empty button to the toolbar.*/
-        BtModuleChooserButton* addButton();
-        /** Updates every button's menu without recreating it.*/
-        void updateButtonMenus();
+    /** Initialize with module list.*/
+    void setModules(BtModuleList useModules,
+                    CSwordModuleInfo::ModuleType type,
+                    CDisplayWindow * window);
 
-        void adjustButtonCount();
+private Q_SLOTS:
 
-    private:
+    void setModules(BtModuleList newModules);
 
-        BtModuleList m_modules; /**< The cache of the window module list. */
-        int m_idCounter = 0;
-        CDisplayWindow * m_window = nullptr;
-        CSwordModuleInfo::ModuleType m_moduleType = CSwordModuleInfo::Unknown;
-        QList<BtModuleChooserButton*> m_buttonList;
+private: /* Methods: */
+
+    /** Adds an empty button to the toolbar.*/
+    BtModuleChooserButton * addButton();
+
+    /** Updates every button's menu without recreating it.*/
+    void updateButtonMenus();
+
+    void adjustButtonCount();
+
+private: /* Fields: */
+
+    BtModuleList m_modules; /**< The cache of the window module list. */
+    int m_idCounter = 0;
+    CDisplayWindow * m_window = nullptr;
+    CSwordModuleInfo::ModuleType m_moduleType = CSwordModuleInfo::Unknown;
+    QList<BtModuleChooserButton *> m_buttonList;
+
 };

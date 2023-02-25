@@ -23,7 +23,7 @@
 #include "btmodulechooserbutton.h"
 
 
-BtModuleChooserBar::BtModuleChooserBar(QWidget *parent)
+BtModuleChooserBar::BtModuleChooserBar(QWidget * parent)
     : QToolBar(parent)
 {
     setAllowedAreas(Qt::TopToolBarArea);
@@ -55,7 +55,7 @@ void BtModuleChooserBar::adjustButtonCount() {
     }
 }
 
-BtModuleChooserButton* BtModuleChooserBar::addButton() {
+BtModuleChooserButton * BtModuleChooserBar::addButton() {
     BtModuleChooserButton* b = new BtModuleChooserButton(m_moduleType, this);
     QAction* a = addWidget(b);
     m_buttonList.append(b);
