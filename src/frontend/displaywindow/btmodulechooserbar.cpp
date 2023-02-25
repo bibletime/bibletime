@@ -79,9 +79,8 @@ BtModuleChooserBar::addButton(CDisplayWindow * const window) {
 
 
 /** Sets the modules which are chosen in this module chooser bar. */
-void BtModuleChooserBar::setModules(BtModuleList modules,
-                                    CDisplayWindow * const window)
-{
+void BtModuleChooserBar::associateWithWindow(CDisplayWindow * const window) {
+    auto const & modules = window->modules();
     m_moduleType = modules.first()->type();
 
     clear();

@@ -31,7 +31,7 @@ public:
     BtModuleChooserBar(QWidget * parent);
 
     /** Initialize with module list.*/
-    void setModules(BtModuleList useModules, CDisplayWindow * window);
+    void associateWithWindow(CDisplayWindow * window);
 
 private Q_SLOTS:
 
