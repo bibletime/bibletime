@@ -21,13 +21,12 @@
 #include "../../util/btconnect.h"
 #include "../../util/btmodules.h"
 #include "bttextwindowheaderwidget.h"
-#include "cdisplaywindow.h"
 
 
 BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
                                        BtModuleList modules,
-                                       CDisplayWindow * const window)
-    : QWidget(window)
+                                       QWidget * const parent)
+    : QWidget(parent)
     , m_modules(std::move(modules))
     , m_moduleType(modtype)
 {

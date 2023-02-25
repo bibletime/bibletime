@@ -19,7 +19,6 @@
 #include "../../backend/drivers/btmodulelist.h"
 
 
-class CDisplayWindow;
 class BtTextWindowHeaderWidget;
 
 class BtTextWindowHeader final: public QWidget {
@@ -30,7 +29,7 @@ public: /* Methods: */
 
     BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
                        BtModuleList modules,
-                       CDisplayWindow * window);
+                       QWidget * window = nullptr);
 
 public Q_SLOTS:
 
