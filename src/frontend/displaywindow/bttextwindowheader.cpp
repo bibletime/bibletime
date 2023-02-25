@@ -20,6 +20,7 @@
 #include <QWidget>
 #include <utility>
 #include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/btmodules.h"
 #include "bttextwindowheaderwidget.h"
@@ -33,6 +34,8 @@ BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
     , m_modules(std::move(modules))
     , m_moduleType(modtype)
 {
+    BT_ASSERT(modtype != CSwordModuleInfo::GenericBook);
+
     auto * const layout = new QHBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
@@ -50,9 +53,7 @@ void BtTextWindowHeader::setModules(BtModuleList newModules) {
 }
 
 void BtTextWindowHeader::adjustWidgetCount() {
-    int widgetCountDifference = m_widgetList.count() - (m_modules.count());
-    if (m_moduleType == CSwordModuleInfo::GenericBook)
-        widgetCountDifference = (1 - m_widgetList.count()) * -1;
+    int widgetCountDifference = m_widgetList.count() - m_modules.count();
 
     // if there are more buttons than modules, delete buttons:
     for (; widgetCountDifference > 0; --widgetCountDifference) {
