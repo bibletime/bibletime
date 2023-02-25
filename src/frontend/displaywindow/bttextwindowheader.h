@@ -15,9 +15,6 @@
 #include <QWidget>
 
 #include <QList>
-#include <QObject>
-#include <QString>
-#include <QStringList>
 #include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../backend/drivers/btmodulelist.h"
 

@@ -15,11 +15,8 @@
 #include <QHBoxLayout>
 #include <QLayout>
 #include <QSizePolicy>
-#include <QStringList>
 #include <Qt>
-#include <QWidget>
 #include <utility>
-#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/btmodules.h"
