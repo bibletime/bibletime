@@ -50,19 +50,20 @@ void BtTextWindowHeader::setModules(BtModuleList newModules) {
 }
 
 void BtTextWindowHeader::adjustWidgetCount() {
-    int widgetCountDifference = m_widgetList.count() - m_modules.count();
-
-    // if there are more buttons than modules, delete buttons:
-    for (; widgetCountDifference > 0; --widgetCountDifference) {
-        // it should be safe to delete the button later
-        auto * const w = m_widgetList.takeFirst();
-        w->setParent(nullptr);
-        w->deleteLater();
+    if (m_widgetList.size() > m_modules.size()) {
+        auto toRemove = m_widgetList.size() - m_modules.size();
+        do {
+            // it should be safe to delete the button later
+            auto * const w = m_widgetList.takeFirst();
+            w->setParent(nullptr);
+            w->deleteLater();
+        } while (--toRemove);
+    } else if (m_modules.size() > m_widgetList.size()) {
+        auto toAdd = m_modules.size() - m_widgetList.size();
+        do {
+            addWidget();
+        } while (--toAdd);
     }
-
-    // if there are more modules than buttons, add buttons:
-    for (; widgetCountDifference < 0; ++widgetCountDifference)
-        addWidget();
 }
 
 BtTextWindowHeaderWidget * BtTextWindowHeader::addWidget() {
