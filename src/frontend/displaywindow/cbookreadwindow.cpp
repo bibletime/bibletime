@@ -159,7 +159,7 @@ void CBookReadWindow::setupMainWindowToolBars() {
                keyChooser, &CKeyChooser::updateKey);
 
     // Works toolbar
-    btMainWindow()->worksToolBar()->setModules(modules(), constMods.first()->type(), this);
+    btMainWindow()->worksToolBar()->setModules(modules(), this);
 
     // Tools toolbar
     btMainWindow()->toolsToolBar()->addAction(m_treeAction);  // Tree

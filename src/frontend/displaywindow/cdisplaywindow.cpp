@@ -548,9 +548,7 @@ void CDisplayWindow::setupMainWindowToolBars() {
                keyChooser, &CKeyChooser::updateKey);
 
     // Works toolbar
-    btMainWindow()->worksToolBar()->setModules(m_modules,
-                                               constMods.first()->type(),
-                                               this);
+    btMainWindow()->worksToolBar()->setModules(m_modules, this);
 
     // Tools toolbar
     btMainWindow()->toolsToolBar()->addAction(
@@ -722,7 +720,7 @@ void CDisplayWindow::addModuleChooserBar() {
                     QStringLiteral(
                         "GUI/showTextWindowModuleSelectorButtons"),
                     true));
-    m_moduleChooserBar->setModules(m_modules, m_modules.first()->type(), this);
+    m_moduleChooserBar->setModules(m_modules, this);
 
     BT_CONNECT(btMainWindow(), &BibleTime::toggledTextWindowModuleChooser,
                m_moduleChooserBar, &BtModuleChooserBar::setVisible);

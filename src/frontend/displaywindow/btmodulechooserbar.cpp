@@ -80,10 +80,9 @@ BtModuleChooserBar::addButton(CDisplayWindow * const window) {
 
 /** Sets the modules which are chosen in this module chooser bar. */
 void BtModuleChooserBar::setModules(BtModuleList modules,
-                                    CSwordModuleInfo::ModuleType type,
                                     CDisplayWindow * const window)
 {
-    m_moduleType = type;
+    m_moduleType = modules.first()->type();
 
     clear();
     qDeleteAll(m_buttonList);
