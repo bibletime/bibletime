@@ -466,9 +466,9 @@ void CDisplayWindow::initToolbars() {
                                    m_modules,
                                    this);
     BT_CONNECT(this, &CDisplayWindow::sigModuleListSet,
-               h, &BtTextWindowHeader::slotBackendModulesChanged);
+               h, &BtTextWindowHeader::setModules);
     BT_CONNECT(this, &CDisplayWindow::sigModuleListChanged,
-               h, &BtTextWindowHeader::slotWindowModulesChanged);
+               h, &BtTextWindowHeader::setModules);
     BT_CONNECT(h, &BtTextWindowHeader::moduleAdded,
                this, &CDisplayWindow::slotAddModule);
     BT_CONNECT(h, &BtTextWindowHeader::moduleReplaced,

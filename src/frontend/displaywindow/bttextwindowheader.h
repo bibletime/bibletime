@@ -37,13 +37,7 @@ public: /* Methods: */
 
 public Q_SLOTS:
 
-    /** The backend module list was updated, module list and widgets must be
-        updated from scratch. */
-    void slotBackendModulesChanged(BtModuleList newModules);
-
-    /** The window module list was updated, module list and widgets must be
-        updated. */
-    void slotWindowModulesChanged(BtModuleList newModules);
+    void setModules(BtModuleList newModules);
 
 Q_SIGNALS:
 
