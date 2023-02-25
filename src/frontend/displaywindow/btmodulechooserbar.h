@@ -45,13 +45,16 @@ private: /* Methods: */
     BtModuleChooserButton * addButton();
 
     /** Updates every button's menu without recreating it.*/
-    void updateButtonMenus();
+    void updateButtonMenus(BtModuleList const & modules);
 
-    void adjustButtonCount();
+    /**
+       \brief Ensures exactly numButtons buttons..
+       \param[in] numButtons The exact number of buttons required.
+    */
+    void adjustButtonCount(int const numButtons);
 
 private: /* Fields: */
 
-    BtModuleList m_modules; /**< The cache of the window module list. */
     CDisplayWindow * m_window = nullptr;
     CSwordModuleInfo::ModuleType m_moduleType = CSwordModuleInfo::Unknown;
     QList<BtModuleChooserButton *> m_buttonList;

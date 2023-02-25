@@ -28,21 +28,20 @@ BtModuleChooserBar::BtModuleChooserBar(QWidget * parent)
     setFloatable(false);
 }
 
-void BtModuleChooserBar::setModules(BtModuleList newModules) {
-    m_modules = std::move(newModules);
+void BtModuleChooserBar::setModules(BtModuleList modules) {
     if (m_moduleType != CSwordModuleInfo::GenericBook)
-        adjustButtonCount();
-    updateButtonMenus();
+        adjustButtonCount(modules.size());
+    updateButtonMenus(modules);
 }
 
-void BtModuleChooserBar::adjustButtonCount() {
-    if (m_buttonList.size() > m_modules.size()) {
-        auto toRemove = m_buttonList.size() - m_modules.size();
+void BtModuleChooserBar::adjustButtonCount(int const numButtons) {
+    if (m_buttonList.size() > numButtons) {
+        auto toRemove = m_buttonList.size() - numButtons;
         do {
             delete m_buttonList.takeFirst();
         } while (--toRemove);
-    } else if (m_modules.size() > m_buttonList.size()) {
-        auto toAdd = m_modules.size() - m_buttonList.size();
+    } else if (numButtons > m_buttonList.size()) {
+        auto toAdd = numButtons - m_buttonList.size();
         do {
             addButton();
         } while (--toAdd);
@@ -76,11 +75,10 @@ BtModuleChooserButton * BtModuleChooserBar::addButton() {
 
 
 /** Sets the modules which are chosen in this module chooser bar. */
-void BtModuleChooserBar::setModules(BtModuleList useModules,
+void BtModuleChooserBar::setModules(BtModuleList modules,
                                     CSwordModuleInfo::ModuleType type,
                                     CDisplayWindow * window)
 {
-    m_modules = std::move(useModules);
     m_window = window;
     m_moduleType = type;
 
@@ -89,27 +87,27 @@ void BtModuleChooserBar::setModules(BtModuleList useModules,
     m_buttonList.clear();
 
     //if (!useModules.count()) return;
-    for (int i = 0; i < m_modules.size(); i++) {
+    for (int i = 0; i < modules.size(); i++) {
         addButton();
     }
     if (!(m_moduleType == CSwordModuleInfo::GenericBook)) {
         addButton(); // for ADD button
     } else {
-        BT_ASSERT(m_modules.size() == 1);
+        BT_ASSERT(modules.size() == 1);
     }
-    updateButtonMenus();
+    updateButtonMenus(modules);
 
     BT_CONNECT(m_window, &CDisplayWindow::sigModuleListChanged,
                this, qOverload<BtModuleList>(&BtModuleChooserBar::setModules));
 }
 
-void BtModuleChooserBar::updateButtonMenus() {
-    int const leftLikeModules = leftLikeParallelModules(m_modules);
+void BtModuleChooserBar::updateButtonMenus(BtModuleList const & modules) {
+    int const leftLikeModules = leftLikeParallelModules(modules);
     for (int i = 0; i < m_buttonList.count(); i++)
-        m_buttonList.at(i)->updateMenu(m_modules,
-                                       (i >= m_modules.count())
+        m_buttonList.at(i)->updateMenu(modules,
+                                       (i >= modules.size())
                                        ? nullptr
-                                       : m_modules.at(i),
+                                       : modules.at(i),
                                        i,
                                        leftLikeModules);
 }
