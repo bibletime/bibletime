@@ -60,7 +60,7 @@ private: /* Methods: */
 
 private: /* Fields: */
 
-    CSwordModuleInfo::ModuleType m_moduleType = CSwordModuleInfo::Unknown;
     QList<BtModuleChooserButton *> m_buttonList;
+    CSwordModuleInfo::ModuleType m_moduleType = CSwordModuleInfo::Unknown;
 
 };
