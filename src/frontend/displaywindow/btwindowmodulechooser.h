@@ -38,9 +38,9 @@ class CDisplayWindow;
 */
 class BtWindowModuleChooser {
     public:
-        BtWindowModuleChooser(CSwordModuleInfo::ModuleType moduleType,
-                              CDisplayWindow *parentWindow)
-                : m_window(parentWindow), m_moduleType (moduleType) {}
+        BtWindowModuleChooser(CSwordModuleInfo::ModuleType const moduleType)
+            : m_moduleType(moduleType)
+        {}
 
         /**
         * The backend module list was updated, module list and widgets must be updated.
@@ -53,7 +53,7 @@ class BtWindowModuleChooser {
 
 
     protected:
-        CDisplayWindow* m_window;
+
         CSwordModuleInfo::ModuleType m_moduleType;
         /** The cache of the window module list. Kept for convenience.*/
         BtModuleList m_modules;

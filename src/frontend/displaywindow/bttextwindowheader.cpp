@@ -30,7 +30,7 @@ BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
                                        BtModuleList modules,
                                        CDisplayWindow * const window)
     : QWidget(window)
-    , BtWindowModuleChooser(modtype, window)
+    , BtWindowModuleChooser(modtype)
 {
     m_modules = std::move(modules); /// \todo refactor setting protected field
 
