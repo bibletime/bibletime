@@ -30,19 +30,10 @@ BtModuleChooserBar::BtModuleChooserBar(QWidget *parent)
     setFloatable(false);
 }
 
-void BtModuleChooserBar::slotBackendModulesChanged(BtModuleList newModules) {
+void BtModuleChooserBar::setModules(BtModuleList newModules) {
     m_modules = std::move(newModules);
     adjustButtonCount();
-
-    // Recreate all menus from scratch:
-    int const leftLikeModules = leftLikeParallelModules(m_modules);
-    for (int i = 0; i < m_buttonList.count(); i++)
-        m_buttonList.at(i)->updateMenu(m_modules,
-                                       (i >= m_modules.count())
-                                       ? nullptr
-                                       : m_modules.at(i),
-                                       i,
-                                       leftLikeModules);
+    updateButtonMenus();
 }
 
 void BtModuleChooserBar::adjustButtonCount(bool adjustToZero) {
@@ -68,12 +59,6 @@ void BtModuleChooserBar::adjustButtonCount(bool adjustToZero) {
             addButton();
         }
     }
-}
-
-void BtModuleChooserBar::slotWindowModulesChanged(BtModuleList newModules) {
-    m_modules = std::move(newModules);
-    adjustButtonCount();
-    updateButtonMenus();
 }
 
 BtModuleChooserButton* BtModuleChooserBar::addButton() {
@@ -125,9 +110,9 @@ void BtModuleChooserBar::setModules(BtModuleList useModules,
     updateButtonMenus();
 
     BT_CONNECT(m_window, &CDisplayWindow::sigModuleListSet,
-               this,     &BtModuleChooserBar::slotBackendModulesChanged);
+               this, qOverload<BtModuleList>(&BtModuleChooserBar::setModules));
     BT_CONNECT(m_window, &CDisplayWindow::sigModuleListChanged,
-               this,     &BtModuleChooserBar::slotWindowModulesChanged);
+               this, qOverload<BtModuleList>(&BtModuleChooserBar::setModules));
 }
 
 void BtModuleChooserBar::updateButtonMenus() {

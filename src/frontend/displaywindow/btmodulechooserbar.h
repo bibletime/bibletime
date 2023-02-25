@@ -36,18 +36,9 @@ class BtModuleChooserBar final: public QToolBar {
                         CSwordModuleInfo::ModuleType type,
                         CDisplayWindow * window);
 
-    public Q_SLOTS:
-        /**
-        * The backend module list was updated, module list and widgets must be updated.
-        * The signal comes from the window, not from the backend. The new list can
-        * be shorter but not longer than the old list.
-        */
-        void slotBackendModulesChanged(BtModuleList newModules);
+    private Q_SLOTS:
 
-        /**
-        * The window module list was changed, i.e. 1 module added, removed or replaced.
-        */
-        void slotWindowModulesChanged(BtModuleList newModules);
+        void setModules(BtModuleList newModules);
 
     private:
         /** Adds an empty button to the toolbar.*/
