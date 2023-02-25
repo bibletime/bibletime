@@ -15,15 +15,11 @@
 #include <QToolBar>
 
 #include <QList>
-#include <QObject>
-#include <QString>
-#include <QStringList>
 #include "../../backend/drivers/btmodulelist.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
 
 
 class CDisplayWindow;
-class QWidget;
 class BtModuleChooserButton;
 
 class BtModuleChooserBar final: public QToolBar {

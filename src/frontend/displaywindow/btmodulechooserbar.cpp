@@ -13,10 +13,8 @@
 #include "btmodulechooserbar.h"
 
 #include <QAction>
-#include <QList>
 #include <Qt>
 #include <utility>
-#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../util/btconnect.h"
 #include "../../util/btmodules.h"
 #include "../displaywindow/cdisplaywindow.h"
