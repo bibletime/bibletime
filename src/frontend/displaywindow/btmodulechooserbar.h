@@ -45,11 +45,8 @@ class BtModuleChooserBar final: public QToolBar {
         BtModuleChooserButton* addButton();
         /** Updates every button's menu without recreating it.*/
         void updateButtonMenus();
-        /**
-        * Removes or adds buttons so that the count matches the limit.
-        * If given limit is -1 the module count is the limit.
-        */
-        void adjustButtonCount(bool adjustToZero = false);
+
+        void adjustButtonCount();
 
     private:
 

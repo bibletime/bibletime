@@ -36,15 +36,9 @@ void BtModuleChooserBar::setModules(BtModuleList newModules) {
     updateButtonMenus();
 }
 
-void BtModuleChooserBar::adjustButtonCount(bool adjustToZero) {
-    int buttonCountDifference = 0;
-    if (adjustToZero) {
-        buttonCountDifference = m_buttonList.count();
-    }
-    else {
-        buttonCountDifference = m_buttonList.count() - (m_modules.count() + 1);
-    }
-    if (m_moduleType == CSwordModuleInfo::GenericBook && !adjustToZero) {
+void BtModuleChooserBar::adjustButtonCount() {
+    int buttonCountDifference = m_buttonList.count() - (m_modules.count() + 1);
+    if (m_moduleType == CSwordModuleInfo::GenericBook) {
         buttonCountDifference = (1 - m_buttonList.count()) * -1;
     }
     //if there are more buttons than modules, delete buttons
@@ -97,8 +91,8 @@ void BtModuleChooserBar::setModules(BtModuleList useModules,
     m_moduleType = type;
 
     clear();
-
-    adjustButtonCount(true);
+    qDeleteAll(m_buttonList);
+    m_buttonList.clear();
 
     //if (!useModules.count()) return;
     for (int i = 0; i < m_modules.size(); i++) {
