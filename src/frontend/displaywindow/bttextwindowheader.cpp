@@ -27,7 +27,6 @@ BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
                                        BtModuleList modules,
                                        QWidget * const parent)
     : QWidget(parent)
-    , m_modules(std::move(modules))
     , m_moduleType(modtype)
 {
     BT_ASSERT(modtype != CSwordModuleInfo::GenericBook);
@@ -37,28 +36,27 @@ BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     setLayoutDirection(Qt::LeftToRight);
 
-    for (int i = 0; i < m_modules.count(); i++)
+    for (int i = 0; i < modules.count(); i++)
         addWidget();
-    updateWidgets();
+    updateWidgets(modules);
 }
 
-void BtTextWindowHeader::setModules(BtModuleList newModules) {
-    m_modules = std::move(newModules);
-    adjustWidgetCount();
-    updateWidgets();
+void BtTextWindowHeader::setModules(BtModuleList modules) {
+    adjustWidgetCount(modules.size());
+    updateWidgets(modules);
 }
 
-void BtTextWindowHeader::adjustWidgetCount() {
-    if (m_widgetList.size() > m_modules.size()) {
-        auto toRemove = m_widgetList.size() - m_modules.size();
+void BtTextWindowHeader::adjustWidgetCount(int const numWidgets) {
+    if (m_widgetList.size() > numWidgets) {
+        auto toRemove = m_widgetList.size() - numWidgets;
         do {
             // it should be safe to delete the button later
             auto * const w = m_widgetList.takeFirst();
             w->setParent(nullptr);
             w->deleteLater();
         } while (--toRemove);
-    } else if (m_modules.size() > m_widgetList.size()) {
-        auto toAdd = m_modules.size() - m_widgetList.size();
+    } else if (numWidgets > m_widgetList.size()) {
+        auto toAdd = numWidgets - m_widgetList.size();
         do {
             addWidget();
         } while (--toAdd);
@@ -78,11 +76,11 @@ BtTextWindowHeaderWidget * BtTextWindowHeader::addWidget() {
     return w;
 }
 
-void BtTextWindowHeader::updateWidgets() {
-    int const leftLikeModules = leftLikeParallelModules(m_modules);
+void BtTextWindowHeader::updateWidgets(BtModuleList const & modules) {
+    int const leftLikeModules = leftLikeParallelModules(modules);
     for (int i = 0; i < m_widgetList.count(); i++)
-        m_widgetList.at(i)->updateWidget(m_modules,
-                                         m_modules.at(i),
+        m_widgetList.at(i)->updateWidget(modules,
+                                         modules.at(i),
                                          i,
                                          leftLikeModules);
 }

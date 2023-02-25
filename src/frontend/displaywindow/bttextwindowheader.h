@@ -47,12 +47,13 @@ private: /* Methods: */
     void initMenus();
 
     /** Updates all widgets without recreating them. */
-    void updateWidgets();
+    void updateWidgets(BtModuleList const & modules);
 
-    /** Removes or adds widgets so that the count matches the limit. The module
-        count is the limit unless adjustToZero is true when limit is 0 and list
-        is emptied. */
-    void adjustWidgetCount();
+    /**
+       \brief Ensures exactly numModules widgets.
+       \param[in] numWidgets The exact number of widgets required.
+    */
+    void adjustWidgetCount(int const numWidgets);
 
     /** Adds an empty widget to the header. */
     BtTextWindowHeaderWidget * addWidget();
@@ -60,7 +61,6 @@ private: /* Methods: */
 private: /* Fields: */
 
     QList<BtTextWindowHeaderWidget *> m_widgetList;
-    BtModuleList m_modules; /**< The cache of the window module list. */
     CSwordModuleInfo::ModuleType const m_moduleType;
 
 };
