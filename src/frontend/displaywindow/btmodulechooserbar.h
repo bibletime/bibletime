@@ -56,7 +56,6 @@ private: /* Methods: */
 private: /* Fields: */
 
     BtModuleList m_modules; /**< The cache of the window module list. */
-    int m_idCounter = 0;
     CDisplayWindow * m_window = nullptr;
     CSwordModuleInfo::ModuleType m_moduleType = CSwordModuleInfo::Unknown;
     QList<BtModuleChooserButton *> m_buttonList;
