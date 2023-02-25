@@ -12,19 +12,20 @@
 
 #pragma once
 
-#include "btwindowmodulechooser.h"
+#include <QWidget>
+
 #include <QList>
 #include <QObject>
 #include <QString>
 #include <QStringList>
-#include <QWidget>
 #include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../backend/drivers/btmodulelist.h"
 
 
 class CDisplayWindow;
 class BtTextWindowHeaderWidget;
 
-class BtTextWindowHeader final: public QWidget, public BtWindowModuleChooser {
+class BtTextWindowHeader final: public QWidget {
 
     Q_OBJECT
 
@@ -38,11 +39,11 @@ public Q_SLOTS:
 
     /** The backend module list was updated, module list and widgets must be
         updated from scratch. */
-    void slotBackendModulesChanged(BtModuleList newModules) final override;
+    void slotBackendModulesChanged(BtModuleList newModules);
 
     /** The window module list was updated, module list and widgets must be
         updated. */
-    void slotWindowModulesChanged(BtModuleList newModules) final override;
+    void slotWindowModulesChanged(BtModuleList newModules);
 
 Q_SIGNALS:
 
@@ -69,5 +70,7 @@ private: /* Methods: */
 private: /* Fields: */
 
     QList<BtTextWindowHeaderWidget *> m_widgetList;
+    BtModuleList m_modules; /**< The cache of the window module list. */
+    CSwordModuleInfo::ModuleType m_moduleType;
 
 };

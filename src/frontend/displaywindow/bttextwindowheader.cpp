@@ -30,10 +30,9 @@ BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
                                        BtModuleList modules,
                                        CDisplayWindow * const window)
     : QWidget(window)
-    , BtWindowModuleChooser(modtype)
+    , m_modules(std::move(modules))
+    , m_moduleType(modtype)
 {
-    m_modules = std::move(modules); /// \todo refactor setting protected field
-
     auto * const layout = new QHBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);

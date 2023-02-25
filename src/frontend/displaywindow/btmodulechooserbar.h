@@ -13,12 +13,12 @@
 #pragma once
 
 #include <QToolBar>
-#include "btwindowmodulechooser.h"
 
 #include <QList>
 #include <QObject>
 #include <QString>
 #include <QStringList>
+#include "../../backend/drivers/btmodulelist.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
 
 
@@ -26,7 +26,7 @@ class CDisplayWindow;
 class QWidget;
 class BtModuleChooserButton;
 
-class BtModuleChooserBar final: public QToolBar, public BtWindowModuleChooser {
+class BtModuleChooserBar final: public QToolBar {
         Q_OBJECT
     public:
         BtModuleChooserBar(QWidget* parent);
@@ -42,12 +42,12 @@ class BtModuleChooserBar final: public QToolBar, public BtWindowModuleChooser {
         * The signal comes from the window, not from the backend. The new list can
         * be shorter but not longer than the old list.
         */
-        void slotBackendModulesChanged(BtModuleList newModules) final override;
+        void slotBackendModulesChanged(BtModuleList newModules);
 
         /**
         * The window module list was changed, i.e. 1 module added, removed or replaced.
         */
-        void slotWindowModulesChanged(BtModuleList newModules) final override;
+        void slotWindowModulesChanged(BtModuleList newModules);
 
     private:
         /** Adds an empty button to the toolbar.*/
@@ -61,8 +61,10 @@ class BtModuleChooserBar final: public QToolBar, public BtWindowModuleChooser {
         void adjustButtonCount(bool adjustToZero = false);
 
     private:
+
+        BtModuleList m_modules; /**< The cache of the window module list. */
         int m_idCounter = 0;
         CDisplayWindow * m_window = nullptr;
-        CSwordModuleInfo::ModuleType m_moduleType;
+        CSwordModuleInfo::ModuleType m_moduleType = CSwordModuleInfo::Unknown;
         QList<BtModuleChooserButton*> m_buttonList;
 };
