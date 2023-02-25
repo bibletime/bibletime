@@ -30,7 +30,7 @@ BtModuleChooserBar::BtModuleChooserBar(QWidget * parent)
 
 void BtModuleChooserBar::setModules(BtModuleList modules) {
     if (m_moduleType != CSwordModuleInfo::GenericBook)
-        adjustButtonCount(modules.size());
+        adjustButtonCount(modules.size() + 1);
     updateButtonMenus(modules);
 }
 
