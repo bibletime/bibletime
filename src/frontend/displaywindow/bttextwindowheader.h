@@ -24,7 +24,7 @@
 class CDisplayWindow;
 class BtTextWindowHeaderWidget;
 
-class BtTextWindowHeader: public QWidget, public BtWindowModuleChooser {
+class BtTextWindowHeader final: public QWidget, public BtWindowModuleChooser {
 
     Q_OBJECT
 
@@ -38,11 +38,11 @@ public Q_SLOTS:
 
     /** The backend module list was updated, module list and widgets must be
         updated from scratch. */
-    void slotBackendModulesChanged(BtModuleList newModules) override;
+    void slotBackendModulesChanged(BtModuleList newModules) final override;
 
     /** The window module list was updated, module list and widgets must be
         updated. */
-    void slotWindowModulesChanged(BtModuleList newModules) override;
+    void slotWindowModulesChanged(BtModuleList newModules) final override;
 
 Q_SIGNALS:
 
