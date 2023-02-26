@@ -273,10 +273,8 @@ void BtModelViewReadDisplay::setDisplayOptions(const DisplayOptions &displayOpti
 
 void BtModelViewReadDisplay::contextMenu(QContextMenuEvent* event) {
     auto const & activeLink = m_widget->qmlInterface()->activeLink();
-    QString reference = m_widget->qmlInterface()->getBibleUrlFromLink(activeLink);
-    m_activeAnchor = reference;
-    QString lemma = m_widget->qmlInterface()->getLemmaFromLink(activeLink);
-    setLemma(lemma);
+    m_activeAnchor = m_widget->qmlInterface()->getBibleUrlFromLink(activeLink);
+    setLemma(m_widget->qmlInterface()->getLemmaFromLink(activeLink));
 
     if (m_popup)
         m_popup->exec(event->globalPos());
