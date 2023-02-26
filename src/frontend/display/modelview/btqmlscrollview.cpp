@@ -97,19 +97,3 @@ void BtQmlScrollView::slotSliderReleased() {
     m_scrollBar->setValue(0);
     m_quickWidget->updateReferenceText();
 }
-
-void BtQmlScrollView::scrollToSwordKey(CSwordKey * key) {
-    m_qmlInterface->scrollToSwordKey(key);
-}
-
-void BtQmlScrollView::settingsChanged() {
-    m_qmlInterface->settingsChanged();
-}
-
-void BtQmlScrollView::pageDown() { m_quickWidget->pageDown(); }
-
-void BtQmlScrollView::pageUp() { m_quickWidget->pageUp(); }
-
-void BtQmlScrollView::setFilterOptions(FilterOptions filterOptions) {
-    m_qmlInterface->setFilterOptions(filterOptions);
-}

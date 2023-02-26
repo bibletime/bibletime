@@ -289,7 +289,7 @@ void BtModelViewReadDisplay::setModules(const QStringList &modules) {
 }
 
 void BtModelViewReadDisplay::scrollToKey(CSwordKey * key) {
-    m_widget->scrollToSwordKey(key);
+    m_widget->qmlInterface()->scrollToSwordKey(key);
 }
 
 void BtModelViewReadDisplay::scroll(int value) {
@@ -297,11 +297,11 @@ void BtModelViewReadDisplay::scroll(int value) {
 }
 
 void BtModelViewReadDisplay::setFilterOptions(FilterOptions filterOptions) {
-    m_widget->setFilterOptions(filterOptions);
+    m_widget->qmlInterface()->setFilterOptions(filterOptions);
 }
 
 void BtModelViewReadDisplay::settingsChanged() {
-    m_widget->settingsChanged();
+    m_widget->qmlInterface()->settingsChanged();
 }
 
 void BtModelViewReadDisplay::updateReferenceText() {
@@ -309,11 +309,11 @@ void BtModelViewReadDisplay::updateReferenceText() {
 }
 
 void BtModelViewReadDisplay::pageDown() {
-    m_widget->pageDown();
+    m_widget->quickWidget()->pageDown();
 }
 
 void BtModelViewReadDisplay::pageUp() {
-    m_widget->pageUp();
+    m_widget->quickWidget()->pageUp();
 }
 
 void BtModelViewReadDisplay::highlightText(const QString& text, bool caseSensitive) {

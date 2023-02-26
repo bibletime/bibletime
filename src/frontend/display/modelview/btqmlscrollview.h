@@ -38,12 +38,6 @@ public:
     BtQmlScrollView(QWidget * parent, BtModelViewReadDisplay * readDisplay);
     ~BtQmlScrollView() override;
 
-    void settingsChanged();
-    void pageDown();
-    void pageUp();
-    void scrollToSwordKey(CSwordKey * key);
-    void setFilterOptions(FilterOptions filterOptions);
-
     BtQuickWidget* quickWidget() {
         return m_quickWidget;
     }
