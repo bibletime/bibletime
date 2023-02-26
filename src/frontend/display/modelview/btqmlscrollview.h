@@ -38,9 +38,6 @@ public:
     BtQmlScrollView(QWidget * parent, BtModelViewReadDisplay * readDisplay);
     ~BtQmlScrollView() override;
 
-    /** hightlight text */
-    void findTextHighlight(const QString& text, bool caseSensitive);
-
     void settingsChanged();
     void pageDown();
     void pageUp();
