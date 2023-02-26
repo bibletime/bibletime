@@ -45,7 +45,6 @@ public:
     void settingsChanged();
     void pageDown();
     void pageUp();
-    void referenceChoosen();
     void scrollToSwordKey(CSwordKey * key);
     void setFilterOptions(FilterOptions filterOptions);
 

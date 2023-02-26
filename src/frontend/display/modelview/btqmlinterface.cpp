@@ -326,10 +326,6 @@ void BtQmlInterface::setModules(const QStringList &modules) {
     Q_EMIT numModulesChanged();
 }
 
-void BtQmlInterface::referenceChosen() {
-    Q_EMIT currentModelIndexChanged();
-}
-
 void BtQmlInterface::changeReference(int i) {
     QString reference = m_moduleTextModel->indexToKeyName(i);
     Q_EMIT updateReference(reference);

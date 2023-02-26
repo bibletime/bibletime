@@ -106,10 +106,6 @@ void BtQmlScrollView::scrollToSwordKey(CSwordKey * key) {
     m_qmlInterface->scrollToSwordKey(key);
 }
 
-void BtQmlScrollView::referenceChoosen() {
-    m_qmlInterface->referenceChosen();
-}
-
 void BtQmlScrollView::settingsChanged() {
     m_qmlInterface->settingsChanged();
 }

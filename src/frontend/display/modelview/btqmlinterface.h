@@ -87,7 +87,6 @@ public:
     QString getRawText(int row, int column);
     Q_INVOKABLE bool moduleIsWritable(int column);
     Q_INVOKABLE void openEditor(int row, int column);
-    void referenceChosen();
     void setMagReferenceByUrl(const QString& url);
     Q_INVOKABLE QString rawText(int row, int column);
     Q_INVOKABLE void setRawText(int row, int column, const QString& text);
@@ -147,7 +146,6 @@ public:
     bool isBibleOrCommentary();
     BtModuleTextModel * textModel();
     BtModuleTextModel const * textModel() const;
-    void referenceChoosen();
     void scrollToSwordKey(CSwordKey * key);
     void setContextMenuIndex(int index);
     void setContextMenuColumn(int index);
