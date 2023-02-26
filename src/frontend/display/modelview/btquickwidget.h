@@ -21,15 +21,17 @@
 #include <QTimer>
 #include <QWidget>
 #include <QQuickWidget>
-#include "btqmlscrollview.h"
 
+
+class CSwordKey;
+class BtModelViewReadDisplay;
 class BtQmlInterface;
 
 class BtQuickWidget : public QQuickWidget {
     Q_OBJECT
 
 public:
-    BtQuickWidget(BtQmlScrollView* widget);
+    BtQuickWidget(BtModelViewReadDisplay * readDisplay);
 
     void saveContextMenuIndex(int x, int y);
     void scroll(int pixels);
@@ -62,7 +64,7 @@ private: // methods:
 
 private:
 
-    BtQmlScrollView* m_scrollView;
+    BtModelViewReadDisplay * m_readDisplay;
 
     QTimer m_scrollTimer;
 

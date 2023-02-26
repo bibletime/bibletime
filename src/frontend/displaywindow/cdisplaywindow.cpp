@@ -413,7 +413,7 @@ void CDisplayWindow::initView() {
     // Create display widget for this window
     auto readDisplay = new BtModelViewReadDisplay(this, this);
     setDisplayWidget(readDisplay);
-    setCentralWidget(m_displayWidget->view());
+    setCentralWidget(m_displayWidget);
     readDisplay->setModules(m_moduleNames);
 
     // Add the Navigation toolbar

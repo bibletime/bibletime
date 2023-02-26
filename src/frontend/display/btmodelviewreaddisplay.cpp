@@ -20,6 +20,8 @@
 #include <QGuiApplication>
 #include <QHBoxLayout>
 #include <QMenu>
+#include <QQuickItem>
+#include <QScrollBar>
 #include <QString>
 #include <QTimer>
 #include <QToolBar>
@@ -30,12 +32,12 @@
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/tool.h"
+#include "../bibletime.h"
 #include "../btcopybyreferencesdialog.h"
 #include "../BtMimeData.h"
 #include "../cexportmanager.h"
 #include "../displaywindow/cdisplaywindow.h"
 #include "../keychooser/ckeychooser.h"
-#include "modelview/btqmlscrollview.h"
 #include "modelview/btqmlinterface.h"
 #include "modelview/btquickwidget.h"
 
@@ -45,19 +47,41 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(
         QWidget * const parentWidget)
     : QWidget(parentWidget)
     , m_parentWindow(displayWindow)
+    , m_quickWidget(new BtQuickWidget(this))
+    , m_qmlInterface(m_quickWidget->rootObject()->findChild<BtQmlInterface *>())
+    , m_scrollBar(new QScrollBar(this))
 {
     auto * const layout = new QHBoxLayout(this);
+    layout->setContentsMargins(0, 0, 0, 0);
 
-    m_widget = new BtQmlScrollView(this, this);
-    m_widget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    BT_CONNECT(m_widget->qmlInterface(), &BtQmlInterface::updateReference,
+    m_quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
+    m_quickWidget->show();
+    BT_CONNECT(m_quickWidget, &BtQuickWidget::referenceDropped,
+               [this](QString const & reference) { /// \todo Fix me
+                   auto key(m_parentWindow->key());
+                   key->setKey(reference);
+                   m_parentWindow->lookupKey(reference);
+               });
+    layout->addWidget(m_quickWidget);
+
+    m_scrollBar->setRange(-100,100);
+    m_scrollBar->setValue(0);
+    BT_CONNECT(m_scrollBar, &QScrollBar::sliderMoved,
+               this, &BtModelViewReadDisplay::slotSliderMoved);
+    BT_CONNECT(m_scrollBar, &QScrollBar::sliderPressed,
+               this, &BtModelViewReadDisplay::slotSliderPressed);
+    BT_CONNECT(m_scrollBar, &QScrollBar::sliderReleased,
+               this, &BtModelViewReadDisplay::slotSliderReleased);
+    layout->addWidget(m_scrollBar);
+
+    BT_CONNECT(m_qmlInterface, &BtQmlInterface::updateReference,
                [this](QString const & reference) {
                    auto * const key = m_parentWindow->key();
                    key->setKey(reference);
                    m_parentWindow->keyChooser()->updateKey(key);
                    m_parentWindow->updateWindowTitle();
                });
-    BT_CONNECT(m_widget->qmlInterface(), &BtQmlInterface::dragOccuring,
+    BT_CONNECT(m_qmlInterface, &BtQmlInterface::dragOccuring,
                [this](const QString& moduleName, const QString& keyName) {
                    auto & drag = *new QDrag(this);
                    auto mimedata =
@@ -78,15 +102,8 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(
                    drag.setMimeData(mimedata.release());
                    drag.exec(Qt::CopyAction, Qt::CopyAction);
                });
-    BT_CONNECT(m_widget, &BtQmlScrollView::referenceDropped,
-               [this](QString const & reference) { /// \todo Fix me
-                   auto key(m_parentWindow->key());
-                   key->setKey(reference);
-                   m_parentWindow->lookupKey(reference);
-               });
-    BT_CONNECT(m_widget->qmlInterface(), &BtQmlInterface::setBibleReference,
+    BT_CONNECT(m_qmlInterface, &BtQmlInterface::setBibleReference,
                this, &BtModelViewReadDisplay::setBibleReference);
-    layout->addWidget(m_widget);
 
     setLayout(layout);
 }
@@ -97,8 +114,37 @@ void BtModelViewReadDisplay::setBibleReference(const QString& reference) {
     m_parentWindow->setBibleReference(reference);
 }
 
+void BtModelViewReadDisplay::slotSliderMoved(int value) {
+    int speed = 25 * (1 + std::abs(value/30));
+    int relative = value - m_scrollBarPosition;
+    m_quickWidget->scroll(relative * speed);
+    m_scrollBarPosition = value;
+    BibleTime::instance()->autoScrollStop();
+}
+
+void BtModelViewReadDisplay::slotSliderPressed()  {
+    m_scrollBarPosition = m_scrollBar->value();
+}
+
+void BtModelViewReadDisplay::slotSliderReleased() {
+    m_scrollBar->setValue(0);
+    m_quickWidget->updateReferenceText();
+}
+
 void BtModelViewReadDisplay::copyAsPlainText(TextPart const part)
 { QGuiApplication::clipboard()->setText(text(part)); }
+
+void BtModelViewReadDisplay::contextMenuEvent(QContextMenuEvent * event) {
+    // Save ListView index for later use:
+    m_quickWidget->saveContextMenuIndex(event->x(), event->y());
+
+    auto const & activeLink = m_qmlInterface->activeLink();
+    m_activeAnchor = m_qmlInterface->getBibleUrlFromLink(activeLink);
+    setLemma(m_qmlInterface->getLemmaFromLink(activeLink));
+
+    if (m_popup)
+        m_popup->exec(event->globalPos());
+}
 
 void BtModelViewReadDisplay::copySelectedText()
 { QGuiApplication::clipboard()->setText(qmlInterface()->getSelectedText()); }
@@ -263,65 +309,44 @@ BtModelViewReadDisplay::text(TextPart const part) {
 
 }
 
-void BtModelViewReadDisplay::setDisplayFocus() {
-    m_widget->quickWidget()->setFocus();
-}
+void BtModelViewReadDisplay::setDisplayFocus() { m_quickWidget->setFocus(); }
 
 void BtModelViewReadDisplay::setDisplayOptions(const DisplayOptions &displayOptions) {
-    m_widget->qmlInterface()->textModel()->setDisplayOptions(displayOptions);
-}
-
-void BtModelViewReadDisplay::contextMenu(QContextMenuEvent* event) {
-    auto const & activeLink = m_widget->qmlInterface()->activeLink();
-    m_activeAnchor = m_widget->qmlInterface()->getBibleUrlFromLink(activeLink);
-    setLemma(m_widget->qmlInterface()->getLemmaFromLink(activeLink));
-
-    if (m_popup)
-        m_popup->exec(event->globalPos());
-}
-
-BtQmlInterface * BtModelViewReadDisplay::qmlInterface() const {
-    return m_widget->qmlInterface();
+    m_qmlInterface->textModel()->setDisplayOptions(displayOptions);
 }
 
 void BtModelViewReadDisplay::setModules(const QStringList &modules) {
-    m_widget->qmlInterface()->setModules(modules);
+    m_qmlInterface->setModules(modules);
 }
 
 void BtModelViewReadDisplay::scrollToKey(CSwordKey * key) {
-    m_widget->qmlInterface()->scrollToSwordKey(key);
+    m_qmlInterface->scrollToSwordKey(key);
 }
 
-void BtModelViewReadDisplay::scroll(int value) {
-    m_widget->quickWidget()->scroll(value);
-}
+void BtModelViewReadDisplay::scroll(int value) { m_quickWidget->scroll(value); }
 
 void BtModelViewReadDisplay::setFilterOptions(FilterOptions filterOptions) {
-    m_widget->qmlInterface()->setFilterOptions(filterOptions);
+    m_qmlInterface->setFilterOptions(filterOptions);
 }
 
 void BtModelViewReadDisplay::settingsChanged() {
-    m_widget->qmlInterface()->settingsChanged();
+    m_qmlInterface->settingsChanged();
 }
 
 void BtModelViewReadDisplay::updateReferenceText() {
-    m_widget->quickWidget()->updateReferenceText();
+    m_quickWidget->updateReferenceText();
 }
 
-void BtModelViewReadDisplay::pageDown() {
-    m_widget->quickWidget()->pageDown();
-}
+void BtModelViewReadDisplay::pageDown() { m_quickWidget->pageDown(); }
 
-void BtModelViewReadDisplay::pageUp() {
-    m_widget->quickWidget()->pageUp();
-}
+void BtModelViewReadDisplay::pageUp() { m_quickWidget->pageUp(); }
 
 void BtModelViewReadDisplay::highlightText(const QString& text, bool caseSensitive) {
-    m_widget->qmlInterface()->setHighlightWords(text, caseSensitive);
+    m_qmlInterface->setHighlightWords(text, caseSensitive);
 }
 
 void BtModelViewReadDisplay::findText(bool const backward)
-{ m_widget->qmlInterface()->findText(backward); }
+{ m_qmlInterface->findText(backward); }
 
 // Save the Lemma (Strongs number) attribute
 void BtModelViewReadDisplay::setLemma(const QString& lemma) {

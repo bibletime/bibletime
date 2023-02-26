@@ -14,15 +14,15 @@
 
 #include <QWidget>
 
-#include <QString>
 #include "../../backend/btglobal.h"
-#include "modelview/btqmlscrollview.h"
 
 
-class BtQmlScrollView;
 class BtQmlInterface;
+class BtQuickWidget;
 class CDisplayWindow;
+class CSwordKey;
 class QMenu;
+class QScrollBar;
 
 /**
   * @page modelviewmain Details about the model/view read display
@@ -131,13 +131,6 @@ public: // methods:
 
     void setDisplayOptions(const DisplayOptions &displayOptions);
 
-    /** \returns the view of this display widget. */
-    QWidget * view() { return m_widget; }
-
-    // --------------------
-
-    void contextMenu(QContextMenuEvent * event);
-
     void highlightText(const QString& text, bool caseSensitive);
 
     void findText(bool const backward);
@@ -162,9 +155,9 @@ public: // methods:
 
     void updateReferenceText();
 
-    BtQuickWidget * quickWidget() { return m_widget->quickWidget(); }
+    BtQuickWidget * quickWidget() const noexcept { return m_quickWidget; }
 
-    BtQmlInterface * qmlInterface() const;
+    BtQmlInterface * qmlInterface() const noexcept { return m_qmlInterface; }
 
     /** \returns whether the display has an active anchor. */
     bool hasActiveAnchor() const { return !m_activeAnchor.isEmpty(); }
@@ -172,10 +165,14 @@ public: // methods:
 private Q_SLOTS:
 
     void setBibleReference (const QString& reference);
+    void slotSliderMoved(int value);
+    void slotSliderPressed();
+    void slotSliderReleased();
 
 private: /* Methods: */
 
     void copyAsPlainText(TextPart const part);
+    void contextMenuEvent(QContextMenuEvent * event) final override;
 
 private: // fields:
 
@@ -185,6 +182,9 @@ private: // fields:
 
     QString m_nodeInfo;
 
-    BtQmlScrollView* m_widget;
+    BtQuickWidget * const m_quickWidget;
+    BtQmlInterface * const m_qmlInterface;
+    QScrollBar * const m_scrollBar;
+    int m_scrollBarPosition = 0;
 
 };

@@ -25,13 +25,14 @@
 #include "../../../backend/managers/cswordbackend.h"
 #include "../../../util/btassert.h"
 #include "../../BtMimeData.h"
+#include "../btmodelviewreaddisplay.h"
 #include "btqmlinterface.h"
 
 
-BtQuickWidget::BtQuickWidget(BtQmlScrollView* parent)
-    : QQuickWidget(parent),
-      m_scrollView(parent) {
-
+BtQuickWidget::BtQuickWidget(BtModelViewReadDisplay * readDisplay)
+    : QQuickWidget(readDisplay)
+    , m_readDisplay(readDisplay)
+{
     setAcceptDrops(true);
 
     engine()->addImportPath(QStringLiteral("qrc:/qml"));
@@ -69,7 +70,7 @@ void BtQuickWidget::dragEnterEvent(QDragEnterEvent * const e) {
         CSwordModuleInfo::ModuleType bookmarkType = m->type();
         if ((bookmarkType == CSwordModuleInfo::Bible
              || bookmarkType == CSwordModuleInfo::Commentary)
-            && m_scrollView->qmlInterface()->isBibleOrCommentary())
+            && m_readDisplay->qmlInterface()->isBibleOrCommentary())
         {
             e->acceptProposedAction();
         } else {
@@ -112,7 +113,7 @@ void BtQuickWidget::pageDown() { callQml("pageDown"); }
 void BtQuickWidget::pageUp() { callQml("pageUp"); }
 
 CSwordKey* BtQuickWidget::getMouseClickedKey() {
-    return m_scrollView->qmlInterface()->getMouseClickedKey();
+    return m_readDisplay->qmlInterface()->getMouseClickedKey();
 }
 
 void BtQuickWidget::scroll(int const pixels) { callQml("scroll", pixels); }
@@ -121,7 +122,7 @@ void BtQuickWidget::scroll(int const pixels) { callQml("scroll", pixels); }
 // QMdiSubwindow does not pass leaveEvent on down.
 bool BtQuickWidget::event(QEvent* e) {
     if (e->type() == QEvent::Leave)
-        m_scrollView->qmlInterface()->cancelMagTimer();
+        m_readDisplay->qmlInterface()->cancelMagTimer();
     return QQuickWidget::event(e);
 }
 
