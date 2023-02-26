@@ -132,8 +132,3 @@ void BtQmlScrollView::findTextHighlight(const QString& text, bool caseSensitive)
 void BtQmlScrollView::setFilterOptions(FilterOptions filterOptions) {
     m_qmlInterface->setFilterOptions(filterOptions);
 }
-
-void BtQmlScrollView::resizeEvent(QResizeEvent *event) {
-    QWidget::resizeEvent(event);
-}
-

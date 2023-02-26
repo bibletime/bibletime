@@ -59,7 +59,6 @@ public:
     }
 
 protected:
-    virtual void	resizeEvent(QResizeEvent *event) override;
     void contextMenuEvent(QContextMenuEvent* event) override;
 
 private Q_SLOTS:
