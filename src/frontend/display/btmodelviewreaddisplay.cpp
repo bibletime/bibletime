@@ -91,11 +91,11 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(
     setLayout(layout);
 }
 
+BtModelViewReadDisplay::~BtModelViewReadDisplay() = default;
+
 void BtModelViewReadDisplay::setBibleReference(const QString& reference) {
     m_parentWindow->setBibleReference(reference);
 }
-
-BtModelViewReadDisplay::~BtModelViewReadDisplay() = default;
 
 void BtModelViewReadDisplay::copyAsPlainText(TextPart const part)
 { QGuiApplication::clipboard()->setText(text(part)); }
