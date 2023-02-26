@@ -63,5 +63,5 @@ private:    void initScrollBar();
     BtQmlInterface* m_qmlInterface;
     BtQuickWidget* m_quickWidget;
     QScrollBar* m_scrollBar;
-    int m_scrollBarPosition;
+    int m_scrollBarPosition = 0;
 };

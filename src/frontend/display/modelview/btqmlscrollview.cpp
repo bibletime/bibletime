@@ -39,8 +39,8 @@ BtQmlScrollView::BtQmlScrollView(QWidget * parent,
       m_readDisplay(readDisplay),
       m_qmlInterface(nullptr),
       m_quickWidget(new BtQuickWidget(this)),
-      m_scrollBar(new QScrollBar),
-      m_scrollBarPosition(0) {
+      m_scrollBar(new QScrollBar)
+{
     auto layout = new QHBoxLayout;
     layout->setContentsMargins(0,0,0,0);
     layout->addWidget(m_quickWidget);
