@@ -57,8 +57,7 @@ BtQmlScrollView::BtQmlScrollView(QWidget * parent,
                this, &BtQmlScrollView::referenceDropped);
 }
 
-BtQmlScrollView::~BtQmlScrollView() {
-}
+BtQmlScrollView::~BtQmlScrollView() = default;
 
 // Create the right mouse context menus
 void BtQmlScrollView::contextMenuEvent(QContextMenuEvent* event) {
