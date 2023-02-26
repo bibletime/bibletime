@@ -51,8 +51,7 @@ BtQmlScrollView::BtQmlScrollView(QWidget * parent,
     m_quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
     m_quickWidget->show();
 
-    QQuickItem* root = m_quickWidget->rootObject();
-    m_qmlInterface = root->findChild<BtQmlInterface*>();
+    m_qmlInterface = m_quickWidget->rootObject()->findChild<BtQmlInterface*>();
 
     BT_CONNECT(m_quickWidget, &BtQuickWidget::referenceDropped,
                this, &BtQmlScrollView::referenceDropped);
