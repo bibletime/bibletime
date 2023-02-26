@@ -69,7 +69,7 @@ void BtQuickWidget::dragEnterEvent(QDragEnterEvent * const e) {
         CSwordModuleInfo::ModuleType bookmarkType = m->type();
         if ((bookmarkType == CSwordModuleInfo::Bible
              || bookmarkType == CSwordModuleInfo::Commentary)
-            && m_scrollView->getQmlInterface()->isBibleOrCommentary())
+            && m_scrollView->qmlInterface()->isBibleOrCommentary())
         {
             e->acceptProposedAction();
         } else {
@@ -112,7 +112,7 @@ void BtQuickWidget::pageDown() { callQml("pageDown"); }
 void BtQuickWidget::pageUp() { callQml("pageUp"); }
 
 CSwordKey* BtQuickWidget::getMouseClickedKey() {
-    return m_scrollView->getQmlInterface()->getMouseClickedKey();
+    return m_scrollView->qmlInterface()->getMouseClickedKey();
 }
 
 void BtQuickWidget::scroll(int const pixels) { callQml("scroll", pixels); }
@@ -121,7 +121,7 @@ void BtQuickWidget::scroll(int const pixels) { callQml("scroll", pixels); }
 // QMdiSubwindow does not pass leaveEvent on down.
 bool BtQuickWidget::event(QEvent* e) {
     if (e->type() == QEvent::Leave)
-        m_scrollView->getQmlInterface()->cancelMagTimer();
+        m_scrollView->qmlInterface()->cancelMagTimer();
     return QQuickWidget::event(e);
 }
 

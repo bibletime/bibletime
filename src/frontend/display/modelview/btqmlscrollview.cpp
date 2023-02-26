@@ -98,11 +98,6 @@ void BtQmlScrollView::slotSliderReleased() {
     m_quickWidget->updateReferenceText();
 }
 
-
-BtQmlInterface* BtQmlScrollView::getQmlInterface() const {
-    return m_qmlInterface;
-}
-
 void BtQmlScrollView::setModules(const QStringList &modules) {
     m_qmlInterface->setModules(modules);
 }
