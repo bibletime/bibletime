@@ -180,7 +180,7 @@ private: /* Methods: */
 private: // fields:
 
     CDisplayWindow* m_parentWindow;
-    QMenu* m_popup;
+    QMenu * m_popup = nullptr;
     QString m_activeAnchor; //< Holds the current anchor
 
     QString m_nodeInfo;

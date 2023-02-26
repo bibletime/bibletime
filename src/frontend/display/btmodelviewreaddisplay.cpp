@@ -40,19 +40,16 @@
 #include "modelview/btquickwidget.h"
 
 
-BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
-                                               QWidget * parentWidget)
+BtModelViewReadDisplay::BtModelViewReadDisplay(
+        CDisplayWindow * const displayWindow,
+        QWidget * const parentWidget)
     : QWidget(parentWidget)
     , m_parentWindow(displayWindow)
-    , m_popup(nullptr)
-    , m_widget(nullptr)
 {
-    QHBoxLayout* layout = new QHBoxLayout(this);
-    setLayout(layout);
-    m_widget = new BtQmlScrollView(this, this);
-    layout->addWidget(m_widget);
-    m_widget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    auto * const layout = new QHBoxLayout(this);
 
+    m_widget = new BtQmlScrollView(this, this);
+    m_widget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     BT_CONNECT(m_widget->qmlInterface(), &BtQmlInterface::updateReference,
                [this](QString const & reference) {
                    auto * const key = m_parentWindow->key();
@@ -89,6 +86,9 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
                });
     BT_CONNECT(m_widget->qmlInterface(), &BtQmlInterface::setBibleReference,
                this, &BtModelViewReadDisplay::setBibleReference);
+    layout->addWidget(m_widget);
+
+    setLayout(layout);
 }
 
 void BtModelViewReadDisplay::setBibleReference(const QString& reference) {
