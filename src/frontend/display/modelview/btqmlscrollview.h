@@ -41,7 +41,6 @@ public:
     /** hightlight text */
     void findTextHighlight(const QString& text, bool caseSensitive);
 
-    void setModules(const QStringList &modules);
     void settingsChanged();
     void pageDown();
     void pageUp();

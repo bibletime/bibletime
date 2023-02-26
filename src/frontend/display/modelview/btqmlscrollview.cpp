@@ -98,10 +98,6 @@ void BtQmlScrollView::slotSliderReleased() {
     m_quickWidget->updateReferenceText();
 }
 
-void BtQmlScrollView::setModules(const QStringList &modules) {
-    m_qmlInterface->setModules(modules);
-}
-
 void BtQmlScrollView::scrollToSwordKey(CSwordKey * key) {
     m_qmlInterface->scrollToSwordKey(key);
 }
