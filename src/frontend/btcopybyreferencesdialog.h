@@ -56,6 +56,7 @@ private: // Methods:
 private: // fields:
 
     int m_copyThreshold;
+    QLabel * const m_workLabel;
     QComboBox * m_workCombo;
     QLabel * const m_firstKeyLabel;
     CKeyChooser * m_firstKeyChooser;

@@ -36,6 +36,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         std::optional<BtQmlInterface::Selection> const & selection,
         CDisplayWindow * parent)
     : QDialog(parent)
+    , m_workLabel(new QLabel(this))
     , m_firstKeyLabel(new QLabel(this))
     , m_lastKeyLabel(new QLabel(this))
     , m_sizeTooLargeLabel(new QLabel(this))
@@ -53,6 +54,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
 
     auto const modules = parent->constModules();
 
+    gridLayout->addWidget(m_workLabel, 0, 0);
     m_workCombo = new QComboBox(this);
     for (auto const * const m : modules)
         m_workCombo->addItem(m->name(),
@@ -142,6 +144,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
 
 void BtCopyByReferencesDialog::retranslateUi() {
     setWindowTitle(tr("Copy by References"));
+    m_workLabel->setText(tr("Work:"));
     m_firstKeyLabel->setText(tr("First"));
     m_lastKeyLabel->setText(tr("Last"));
     m_sizeTooLargeLabel->setText(tr("Copy size is too large!"));
