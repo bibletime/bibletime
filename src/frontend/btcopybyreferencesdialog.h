@@ -58,7 +58,7 @@ private: // Methods:
 private: // fields:
 
     QLabel * const m_workLabel;
-    QComboBox * m_workCombo;
+    QComboBox * const m_workCombo;
     QLabel * const m_firstKeyLabel;
     CKeyChooser * m_firstKeyChooser;
     QLabel * const m_lastKeyLabel;

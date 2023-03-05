@@ -37,6 +37,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         CDisplayWindow * parent)
     : QDialog(parent)
     , m_workLabel(new QLabel(this))
+    , m_workCombo(new QComboBox(this))
     , m_firstKeyLabel(new QLabel(this))
     , m_lastKeyLabel(new QLabel(this))
     , m_sizeTooLargeLabel(new QLabel(this))
@@ -56,7 +57,6 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
 
     auto const modules = parent->constModules();
 
-    m_workCombo = new QComboBox(this);
     for (auto const * const m : modules)
         m_workCombo->addItem(m->name(),
                              QVariant::fromValue(
