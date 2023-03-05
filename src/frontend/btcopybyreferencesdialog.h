@@ -23,6 +23,7 @@ class CKeyChooser;
 class CSwordKey;
 class CSwordModuleInfo;
 class QComboBox;
+class QDialogButtonBox;
 class QLabel;
 class QPushButton;
 
@@ -52,6 +53,7 @@ public: // methods:
 private: // Methods:
 
     void retranslateUi();
+    void resetThreshold();
 
 private: // fields:
 
@@ -62,6 +64,7 @@ private: // fields:
     QLabel * const m_lastKeyLabel;
     CKeyChooser * m_lastKeyChooser;
     QLabel * const m_sizeTooLargeLabel;
+    QDialogButtonBox * const m_buttonBox;
 
     Result m_result;
 

@@ -40,6 +40,8 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     , m_firstKeyLabel(new QLabel(this))
     , m_lastKeyLabel(new QLabel(this))
     , m_sizeTooLargeLabel(new QLabel(this))
+    , m_buttonBox(new QDialogButtonBox(QDialogButtonBox::Ok
+                                       | QDialogButtonBox::Cancel, this))
 {
     setMinimumWidth(400);
 
@@ -61,6 +63,8 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
                                  const_cast<void *>(
                                      static_cast<void const *>(m))));
     m_workLabel->setBuddy(m_workCombo);
+    BT_CONNECT(m_workCombo, qOverload<int>(&QComboBox::currentIndexChanged),
+               this, &BtCopyByReferencesDialog::resetThreshold);
     formLayout->addRow(m_workLabel, m_workCombo);
 
     auto const parentKey = parent->key();
@@ -81,12 +85,8 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     m_sizeTooLargeLabel->setVisible(false);
     hLayout->addWidget(m_sizeTooLargeLabel);
 
-    auto const buttons =
-            new QDialogButtonBox(QDialogButtonBox::Ok
-                                 | QDialogButtonBox::Cancel);
-    message::prepareDialogBox(buttons);
-    hLayout->addWidget(buttons);
-    auto * const okButton = buttons->button(QDialogButtonBox::Ok);
+    message::prepareDialogBox(m_buttonBox);
+    hLayout->addWidget(m_buttonBox);
 
     // Apply selection, if present:
     if (selection.has_value()) {
@@ -97,7 +97,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         m_workCombo->setCurrentIndex(selection->column);
     } // else default to top of view.
 
-    auto const handleKeyChanged = [this, model, okButton]{
+    auto const handleKeyChanged = [this, model]{
         // Calculate result:
         m_result.key1 = m_firstKeyChooser->key();
         m_result.key2 = m_lastKeyChooser->key();
@@ -107,24 +107,13 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
             std::swap(m_result.key1, m_result.key2);
             std::swap(m_result.index1, m_result.index2);
         }
-
-        auto const type =
-                static_cast<CSwordModuleInfo const *>(
-                    m_workCombo->currentData().value<void *>())->type();
-        auto const copyThreshold = (type == CSwordModuleInfo::Bible
-                                    || type == CSwordModuleInfo::Commentary)
-                                   ? 2700
-                                   : 100;
-        bool const tooLarge =
-                m_result.index2 - m_result.index1 > copyThreshold;
-        m_sizeTooLargeLabel->setVisible(tooLarge);
-        okButton->setEnabled(!tooLarge);
+        resetThreshold();
     };
 
     BT_CONNECT(m_firstKeyChooser, &CKeyChooser::keyChanged, handleKeyChanged);
     BT_CONNECT(m_lastKeyChooser, &CKeyChooser::keyChanged, handleKeyChanged);
 
-    BT_CONNECT(buttons, &QDialogButtonBox::accepted,
+    BT_CONNECT(m_buttonBox, &QDialogButtonBox::accepted,
                [this] {
                    auto const userData = m_workCombo->currentData();
                    m_result.module =
@@ -132,7 +121,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
                                userData.value<void *>());
                    accept();
                });
-    BT_CONNECT(buttons, &QDialogButtonBox::rejected,
+    BT_CONNECT(m_buttonBox, &QDialogButtonBox::rejected,
                this, &BtCopyByReferencesDialog::reject);
 
     retranslateUi();
@@ -145,4 +134,18 @@ void BtCopyByReferencesDialog::retranslateUi() {
     m_firstKeyLabel->setText(tr("&First:"));
     m_lastKeyLabel->setText(tr("&Last:"));
     m_sizeTooLargeLabel->setText(tr("Copy size is too large!"));
+}
+
+void BtCopyByReferencesDialog::resetThreshold() {
+    auto const type =
+            static_cast<CSwordModuleInfo const *>(
+                m_workCombo->currentData().value<void *>())->type();
+    auto const copyThreshold = (type == CSwordModuleInfo::Bible
+                                || type == CSwordModuleInfo::Commentary)
+                               ? 2700
+                               : 100;
+    bool const tooLarge =
+            m_result.index2 - m_result.index1 > copyThreshold;
+    m_sizeTooLargeLabel->setVisible(tooLarge);
+    m_buttonBox->button(QDialogButtonBox::Ok)->setEnabled(!tooLarge);
 }
