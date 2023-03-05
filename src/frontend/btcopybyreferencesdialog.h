@@ -55,14 +55,13 @@ private: // Methods:
 
 private: // fields:
 
-    int m_copyThreshold;
     QLabel * const m_workLabel;
     QComboBox * m_workCombo;
     QLabel * const m_firstKeyLabel;
     CKeyChooser * m_firstKeyChooser;
     QLabel * const m_lastKeyLabel;
     CKeyChooser * m_lastKeyChooser;
-    QLabel * m_sizeTooLargeLabel;
+    QLabel * const m_sizeTooLargeLabel;
 
     Result m_result;
 

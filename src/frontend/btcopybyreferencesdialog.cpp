@@ -63,14 +63,6 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     m_workLabel->setBuddy(m_workCombo);
     formLayout->addRow(m_workLabel, m_workCombo);
 
-    {
-        auto const type = modules.at(0)->type();
-        m_copyThreshold = (type == CSwordModuleInfo::Bible
-                           || type == CSwordModuleInfo::Commentary)
-                          ? 2700
-                          : 100;
-    }
-
     auto const parentKey = parent->key();
 
     m_firstKeyChooser =
@@ -116,8 +108,15 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
             std::swap(m_result.index1, m_result.index2);
         }
 
+        auto const type =
+                static_cast<CSwordModuleInfo const *>(
+                    m_workCombo->currentData().value<void *>())->type();
+        auto const copyThreshold = (type == CSwordModuleInfo::Bible
+                                    || type == CSwordModuleInfo::Commentary)
+                                   ? 2700
+                                   : 100;
         bool const tooLarge =
-                m_result.index2 - m_result.index1 > m_copyThreshold;
+                m_result.index2 - m_result.index1 > copyThreshold;
         m_sizeTooLargeLabel->setVisible(tooLarge);
         okButton->setEnabled(!tooLarge);
     };
