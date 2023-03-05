@@ -14,7 +14,7 @@
 
 #include <QComboBox>
 #include <QDialogButtonBox>
-#include <QGridLayout>
+#include <QFormLayout>
 #include <QKeyEvent>
 #include <QLabel>
 #include <QPushButton>
@@ -46,24 +46,22 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     auto * const vLayout = new QVBoxLayout(this);
     setLayout(vLayout);
 
-    auto * const gridLayout = new QGridLayout();
-    gridLayout->setHorizontalSpacing(15);
-    gridLayout->setVerticalSpacing(15);
-    gridLayout->setContentsMargins(11,11,11,16);
-    vLayout->addLayout(gridLayout);
+    auto * const formLayout = new QFormLayout();
+    formLayout->setHorizontalSpacing(15);
+    formLayout->setVerticalSpacing(15);
+    formLayout->setContentsMargins(11, 11, 11, 16);
+    vLayout->addLayout(formLayout);
 
     auto const modules = parent->constModules();
 
-    gridLayout->addWidget(m_workLabel, 0, 0);
     m_workCombo = new QComboBox(this);
     for (auto const * const m : modules)
         m_workCombo->addItem(m->name(),
                              QVariant::fromValue(
                                  const_cast<void *>(
                                      static_cast<void const *>(m))));
-    gridLayout->addWidget(m_workCombo, 0, 1);
-
-    gridLayout->addWidget(m_firstKeyLabel, 1, 0);
+    m_workLabel->setBuddy(m_workCombo);
+    formLayout->addRow(m_workLabel, m_workCombo);
 
     {
         auto const type = modules.at(0)->type();
@@ -77,16 +75,16 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
 
     m_firstKeyChooser =
             CKeyChooser::createInstance(modules, parentKey->copy(), this);
-    gridLayout->addWidget(m_firstKeyChooser, 1, 1);
+    m_firstKeyLabel->setBuddy(m_firstKeyChooser);
+    formLayout->addRow(m_firstKeyLabel, m_firstKeyChooser);
 
     auto * const hLayout = new QHBoxLayout;
     vLayout->addLayout(hLayout);
 
-    gridLayout->addWidget(m_lastKeyLabel, 2, 0);
-
     m_lastKeyChooser =
             CKeyChooser::createInstance(modules, parentKey->copy(), this);
-    gridLayout->addWidget(m_lastKeyChooser, 2, 1);
+    m_lastKeyLabel->setBuddy(m_lastKeyChooser);
+    formLayout->addRow(m_lastKeyLabel, m_lastKeyChooser);
 
     m_sizeTooLargeLabel->setVisible(false);
     hLayout->addWidget(m_sizeTooLargeLabel);
@@ -144,8 +142,8 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
 
 void BtCopyByReferencesDialog::retranslateUi() {
     setWindowTitle(tr("Copy by References"));
-    m_workLabel->setText(tr("Work:"));
-    m_firstKeyLabel->setText(tr("First"));
-    m_lastKeyLabel->setText(tr("Last"));
+    m_workLabel->setText(tr("&Work:"));
+    m_firstKeyLabel->setText(tr("&First:"));
+    m_lastKeyLabel->setText(tr("&Last:"));
     m_sizeTooLargeLabel->setText(tr("Copy size is too large!"));
 }
