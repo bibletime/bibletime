@@ -47,7 +47,6 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     setMinimumWidth(400);
 
     auto * const vLayout = new QVBoxLayout(this);
-    setLayout(vLayout);
 
     auto * const formLayout = new QFormLayout();
     formLayout->setHorizontalSpacing(15);
