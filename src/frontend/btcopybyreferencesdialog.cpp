@@ -36,8 +36,10 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         std::optional<BtQmlInterface::Selection> const & selection,
         CDisplayWindow * parent)
     : QDialog(parent)
+    , m_firstKeyLabel(new QLabel(this))
+    , m_lastKeyLabel(new QLabel(this))
+    , m_sizeTooLargeLabel(new QLabel(this))
 {
-    setWindowTitle(tr("Copy by References"));
     setMinimumWidth(400);
 
     auto * const vLayout = new QVBoxLayout(this);
@@ -59,8 +61,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
                                      static_cast<void const *>(m))));
     gridLayout->addWidget(m_workCombo, 0, 1);
 
-    auto * const label1 = new QLabel(tr("First"));
-    gridLayout->addWidget(label1, 1, 0);
+    gridLayout->addWidget(m_firstKeyLabel, 1, 0);
 
     {
         auto const type = modules.at(0)->type();
@@ -79,14 +80,12 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     auto * const hLayout = new QHBoxLayout;
     vLayout->addLayout(hLayout);
 
-    auto * const label2 = new QLabel(tr("Last"));
-    gridLayout->addWidget(label2, 2, 0);
+    gridLayout->addWidget(m_lastKeyLabel, 2, 0);
 
     m_lastKeyChooser =
             CKeyChooser::createInstance(modules, parentKey->copy(), this);
     gridLayout->addWidget(m_lastKeyChooser, 2, 1);
 
-    m_sizeTooLargeLabel = new QLabel(tr("Copy size is too large."));
     m_sizeTooLargeLabel->setVisible(false);
     hLayout->addWidget(m_sizeTooLargeLabel);
 
@@ -137,5 +136,13 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     BT_CONNECT(buttons, &QDialogButtonBox::rejected,
                this, &BtCopyByReferencesDialog::reject);
 
+    retranslateUi();
     handleKeyChanged();
+}
+
+void BtCopyByReferencesDialog::retranslateUi() {
+    setWindowTitle(tr("Copy by References"));
+    m_firstKeyLabel->setText(tr("First"));
+    m_lastKeyLabel->setText(tr("Last"));
+    m_sizeTooLargeLabel->setText(tr("Copy size is too large!"));
 }

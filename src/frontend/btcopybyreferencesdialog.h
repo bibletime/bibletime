@@ -49,12 +49,18 @@ public: // methods:
 
     Result const & result() const noexcept { return m_result; }
 
+private: // Methods:
+
+    void retranslateUi();
+
 private: // fields:
 
     int m_copyThreshold;
-    CKeyChooser * m_firstKeyChooser;
-    CKeyChooser * m_lastKeyChooser;
     QComboBox * m_workCombo;
+    QLabel * const m_firstKeyLabel;
+    CKeyChooser * m_firstKeyChooser;
+    QLabel * const m_lastKeyLabel;
+    CKeyChooser * m_lastKeyChooser;
     QLabel * m_sizeTooLargeLabel;
 
     Result m_result;
