@@ -25,7 +25,6 @@ class CSwordModuleInfo;
 class QComboBox;
 class QDialogButtonBox;
 class QLabel;
-class QPushButton;
 
 class BtCopyByReferencesDialog : public QDialog {
 
