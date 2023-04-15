@@ -2,21 +2,31 @@
 # Find packages:
 #
 FIND_PACKAGE(CLucene REQUIRED)
-SET(REQUIRED_QT_VERSION 5.15)
-FIND_PACKAGE(Qt5Core ${REQUIRED_QT_VERSION} REQUIRED)
-FIND_PACKAGE(Qt5LinguistTools ${REQUIRED_QT_VERSION})
-FIND_PACKAGE(Qt5Gui ${REQUIRED_QT_VERSION} REQUIRED)
-FIND_PACKAGE(Qt5Widgets ${REQUIRED_QT_VERSION} REQUIRED)
-FIND_PACKAGE(Qt5Xml ${REQUIRED_QT_VERSION} REQUIRED)
-FIND_PACKAGE(Qt5Test ${REQUIRED_QT_VERSION} REQUIRED)
-FIND_PACKAGE(Qt5Svg ${REQUIRED_QT_VERSION} REQUIRED)
-FIND_PACKAGE(Qt5PrintSupport ${REQUIRED_QT_VERSION} REQUIRED)
-FIND_PACKAGE(Qt5Qml ${REQUIRED_QT_VERSION} REQUIRED)
-FIND_PACKAGE(Qt5Quick ${REQUIRED_QT_VERSION} REQUIRED)
-FIND_PACKAGE(Qt5QuickCompiler REQUIRED)
-FIND_PACKAGE(Qt5QuickWidgets ${REQUIRED_QT_VERSION} REQUIRED)
-FIND_PACKAGE(Sword 1.8.1 REQUIRED)
 
+IF (USE_QT6)
+    FIND_PACKAGE(QT NAMES Qt6 VERSION 6.4 COMPONENTS Core)
+ELSE()
+    FIND_PACKAGE(QT NAMES Qt5 VERSION 5.15 REQUIRED COMPONENTS Core)
+ENDIF()
+MESSAGE(STATUS "Found Qt ${QT_VERSION}")
+FIND_PACKAGE(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS 
+    Core
+    Gui
+    LinguistTools
+    Widgets
+    Xml
+    Test
+    Svg
+    PrintSupport
+    Qml
+    Quick
+    QuickWidgets
+)
+IF (NOT USE_QT6)
+    FIND_PACKAGE(Qt5 REQUIRED COMPONENTS QuickCompiler) 
+ENDIF()
+    
+FIND_PACKAGE(Sword 1.8.1 REQUIRED)
 
 ######################################################
 # Build options, definitions, linker flags etc for all targets:
@@ -137,8 +147,8 @@ TARGET_INCLUDE_DIRECTORIES(bibletime_backend
 )
 TARGET_LINK_LIBRARIES(bibletime_backend
     PUBLIC
-        Qt5::Widgets
-        Qt5::Xml
+        Qt::Widgets
+        Qt::Xml
         -L${CLucene_LIBRARY_DIR} ${CLucene_LIBRARY}
         ${Sword_LDFLAGS}
         ${BibleTime_LDFLAGS}
@@ -148,9 +158,11 @@ TARGET_LINK_LIBRARIES(bibletime_backend
 ######################################################
 # The bibletime application:
 #
+if (NOT USE_QT6)
+    qtquick_compiler_add_resources(bibletime_RESOURCES
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview/modelviewqml.qrc")
+ENDIF()
 
-qtquick_compiler_add_resources(bibletime_RESOURCES
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview/modelviewqml.qrc")
 FILE(GLOB_RECURSE bibletime_SOURCES CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.h"
@@ -165,16 +177,25 @@ ELSE()
     ADD_EXECUTABLE("bibletime" ${bibletime_SOURCES})
 ENDIF()
 PREPARE_CXX_TARGET(bibletime)
+
+if (USE_QT6)
+    QT_ADD_QML_MODULE("bibletime" URI BtDisplay VERSION 1.0 QML_FILES
+        src/frontend/display/modelview/ColumnItem.qml
+        src/frontend/display/modelview/DisplayDelegate.qml
+        src/frontend/display/modelview/DisplayView.qml
+    )
+ENDIF()
+
 TARGET_LINK_LIBRARIES("bibletime"
     PRIVATE
         bibletime_backend
-        Qt5::Network
-        Qt5::PrintSupport
-        Qt5::Quick
-        Qt5::QuickWidgets
-        Qt5::Svg
-        Qt5::Widgets
-        Qt5::Xml
+        Qt::Network
+        Qt::PrintSupport
+        Qt::Quick
+        Qt::QuickWidgets
+        Qt::Svg
+        Qt::Widgets
+        Qt::Xml
 )
 
 
