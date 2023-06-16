@@ -10,12 +10,14 @@ ELSE()
         PATHS
             /usr/bin/
             /usr/lib/qt5/bin/
+            /usr/lib64/qt5/bin/
             /usr/lib/x86_64-linux-gnu/qt5/bin/
     )
     FIND_PROGRAM(QT_LRELEASE_EXECUTABLE lrelease
         PATHS
             /usr/bin/
             /usr/lib/qt5/bin/
+            /usr/lib64/qt5/bin/
             /usr/lib/x86_64-linux-gnu/qt5/bin/
     )
 ENDIF()
