@@ -273,7 +273,7 @@ a[name="crossref"] {
 
 #infodisplay .footnoteinfo h3, #infodisplay .strongsinfo h3, #infodisplay .morphinfo h3, #infodisplay .translationinfo h3, #infodisplay .crossrefinfo h3, #infodisplay .moduleinfo h3 {
     padding: 2px 0 0 0;
-    color: black;
+    color: darkGray;
     font-weight: bold;
     border-bottom: 1px solid black;
     margin: 0 0 3px 0;
