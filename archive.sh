@@ -3,10 +3,15 @@ set -euo pipefail
 
 FULLNAME="bibletime-${1:-custom}"
 
+if ! true "${FULLNAME@K}"; then
+  echo '@K variable transformation not supported!' 1>&2
+  exit 1
+fi
+
 # Use a temporary directory:
 TMPDIR=$(mktemp -d)
 # shellcheck disable=SC2064
-trap "rm -rf '${TMPDIR}'" EXIT
+trap "rm -rf ${TMPDIR@K}" EXIT
 
 make_tarball() {
     COMPRESSOR="$1"
