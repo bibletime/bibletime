@@ -22,7 +22,6 @@
 #include <QRect>
 #include <QSize>
 #include <QStyle>
-#include <QTabBar>
 #include <QTimer>
 #include <QWidget>
 #include <QWindowStateChangeEvent>
