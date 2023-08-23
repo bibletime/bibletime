@@ -50,8 +50,8 @@ CMDIArea::CMDIArea(BibleTime * parent)
 {
     setFocusPolicy(Qt::ClickFocus);
 
-    // Set document-style tabs (for Mac):
-    setDocumentMode(true);
+    setDocumentMode(true); // Document-style tabs for Mac
+    setTabsClosable(true);
 
     /*
       Activate windows based on the history of activation, e.g. when one has window A
@@ -144,18 +144,11 @@ void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMod
             break;
         case ArrangementModeTabbed:
             setViewMode(QMdiArea::TabbedView);
-            for (auto win : subWindowList())
-                win->showMaximized();
             break;
         default:
             setViewMode(QMdiArea::SubWindowView);
             triggerWindowUpdate();
             break;
-    }
-    for (auto * const tab : findChildren<QTabBar *>()) {
-        QObject* parent = tab->parent();
-        if (parent == this)
-            tab->setTabsClosable(true);
     }
 }
 
