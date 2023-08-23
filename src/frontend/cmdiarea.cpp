@@ -52,6 +52,7 @@ CMDIArea::CMDIArea(BibleTime * parent)
 
     setDocumentMode(true); // Document-style tabs for Mac
     setTabsClosable(true);
+    setTabsMovable(true);
 
     /*
       Activate windows based on the history of activation, e.g. when one has window A
