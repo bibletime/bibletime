@@ -16,9 +16,6 @@ import QtQuick 2.10
 Rectangle {
     id: displayView
 
-    property alias contextMenuIndex: btQmlInterface.contextMenuIndex
-    property alias contextMenuColumn: btQmlInterface.contextMenuColumn
-
     // Mouse movement properties
     property bool mousePressedAndMoving: false
     property int mousePressedX: 0
@@ -38,11 +35,6 @@ Rectangle {
         if (dtext.includes("<!DOCTYPE") || dtext.includes("<span"))
             return Text.RichText;
         return Text.PlainText;
-    }
-
-    function saveContextMenuIndex(x, y) {
-        contextMenuColumn = Math.floor(x / (listView.width / listView.columns));
-        contextMenuIndex = listView.indexAt(x,y+listView.contentY);
     }
 
     function deselectCurrentSelection() {

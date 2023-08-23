@@ -33,7 +33,6 @@ class BtQuickWidget : public QQuickWidget {
 public:
     BtQuickWidget(BtModelViewReadDisplay * readDisplay);
 
-    void saveContextMenuIndex(int x, int y);
     void scroll(int pixels);
     void updateReferenceText();
     void pageDown();

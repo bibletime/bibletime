@@ -135,9 +135,6 @@ void BtModelViewReadDisplay::copyAsPlainText(TextPart const part)
 { QGuiApplication::clipboard()->setText(text(part)); }
 
 void BtModelViewReadDisplay::contextMenuEvent(QContextMenuEvent * event) {
-    // Save ListView index for later use:
-    m_quickWidget->saveContextMenuIndex(event->x(), event->y());
-
     auto const & activeLink = m_qmlInterface->activeLink();
     m_activeAnchor = m_qmlInterface->getBibleUrlFromLink(activeLink);
     setLemma(m_qmlInterface->getLemmaFromLink(activeLink));

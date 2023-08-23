@@ -100,12 +100,6 @@ void BtQuickWidget::dragMoveEvent( QDragMoveEvent* e ) {
     e->ignore();
 }
 
-void BtQuickWidget::saveContextMenuIndex(int x, int y) {
-    callQml("saveContextMenuIndex",
-            x - geometry().x(), // Translate to BtQuickWidget
-            y - geometry().y());
-}
-
 void BtQuickWidget::updateReferenceText() { callQml("updateReferenceText"); }
 
 void BtQuickWidget::pageDown() { callQml("pageDown"); }
