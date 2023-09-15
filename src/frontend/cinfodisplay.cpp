@@ -16,7 +16,6 @@
 #include <QAction>
 #include <QLabel>
 #include <QLayout>
-#include <QRegExp>
 #include <QSize>
 #include <QVBoxLayout>
 #include <QtAlgorithms>
