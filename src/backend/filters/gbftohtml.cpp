@@ -18,6 +18,8 @@
 #include <QChar>
 #include <QList>
 #include <QRegExp>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
 #include <QString>
 #include <QStringList>
 #include <utility>
@@ -204,14 +206,24 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
 
                 if ((!isMorph && hasLemmaAttr) || (isMorph && hasMorphAttr)) { //we append another attribute value, e.g. 3000 gets 3000|5000
                     //search the existing attribute start
-                    QRegExp attrRegExp(isMorph
-                                       ? QStringLiteral("morph=\".+(?=\")")
-                                       : QStringLiteral("lemma=\".+(?=\")"));
-                    attrRegExp.setMinimal(true);
-                    const int foundPos = e.indexOf(attrRegExp, tagAttributeStart);
+                    auto const & attrRegExp =
+                        [isMorph]{
+                            if (isMorph) {
+                                static QRegularExpression const re(
+                                    QStringLiteral("morph=\".+?(?=\")"));
+                                return re;
+                            } else {
+                                static QRegularExpression const re(
+                                    QStringLiteral("lemma=\".+?(?=\")"));
+                                return re;
+                            }
+                        }();
+                    QRegularExpressionMatch match;
+                    const int foundPos =
+                        e.indexOf(attrRegExp, tagAttributeStart, &match);
 
                     if (foundPos != -1) {
-                        e.insert(foundPos + attrRegExp.matchedLength(),
+                        e.insert(foundPos + match.capturedLength(),
                                  QStringLiteral("|") + value);
                         pos += value.length() + 1;
 

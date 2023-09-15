@@ -14,6 +14,7 @@
 
 #include <QRegExp>
 #include <QRegularExpression>
+#include <QRegularExpressionMatch>
 #include <QString>
 #include <QTextCodec>
 #include <QUrl>
@@ -176,14 +177,23 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
 
                 if ((!isMorph && hasLemmaAttr) || (isMorph && hasMorphAttr)) { //we append another attribute value, e.g. 3000 gets 3000|5000
                     //search the existing attribute start
-                    QRegExp attrRegExp(isMorph
-                                       ? QStringLiteral("morph=\".+(?=\")")
-                                       : QStringLiteral("lemma=\".+(?=\")"));
-                    attrRegExp.setMinimal(true);
-                    const int foundAttrPos = e.indexOf(attrRegExp, pos);
+                    auto const & attrRegExp =
+                        [isMorph]{
+                            if (isMorph) {
+                                static QRegularExpression const re(
+                                    QStringLiteral("morph=\".+?(?=\")"));
+                                return re;
+                            } else {
+                                static QRegularExpression const re(
+                                    QStringLiteral("lemma=\".+?(?=\")"));
+                                return re;
+                            }
+                        }();
+                    QRegularExpressionMatch match;
+                    const int foundAttrPos = e.indexOf(attrRegExp, pos, &match);
 
                     if (foundAttrPos != -1) {
-                        e.insert(foundAttrPos + attrRegExp.matchedLength(),
+                        e.insert(foundAttrPos + match.capturedLength(),
                                  QStringLiteral("|%1").arg(value));
                         pos += value.length() + 1;
 
