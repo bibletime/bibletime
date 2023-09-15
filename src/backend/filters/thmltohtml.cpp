@@ -13,6 +13,7 @@
 #include "thmltohtml.h"
 
 #include <QRegExp>
+#include <QRegularExpression>
 #include <QString>
 #include <QTextCodec>
 #include <QUrl>
@@ -191,7 +192,8 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
                     }
                 }
                 else { //attribute was not yet inserted
-                    QRegExp const re(QStringLiteral("morph=|lemma="));
+                    static QRegularExpression const re(
+                        QStringLiteral("morph=|lemma="));
                     const int attrPos = e.indexOf(re, 0);
 
                     if (attrPos >= 0) {
