@@ -18,7 +18,7 @@
 #include <QPushButton>
 #include <QSizePolicy>
 #include <QString>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QVBoxLayout>
 #include <QWidget>
 #include <utility>
@@ -108,7 +108,7 @@ void CSearchDialog::startSearch() {
     // first check the search string for errors
     {
         QString TestString(originalSearchText);
-        QRegExp ReservedWords(
+        QRegularExpression ReservedWords(
                     QStringLiteral("heading:|footnote:|morph:|strong:"));
         if (TestString.replace(ReservedWords, QString()).simplified().isEmpty()) {
             return;
