@@ -13,7 +13,7 @@
 #include "btconfigcore.h"
 
 #ifndef NDEBUG
-#include <QRegExp>
+#include <QRegularExpression>
 #endif
 #include <QSettings>
 #include <QScopeGuard>
@@ -36,8 +36,9 @@ BtConfigCore::BtConfigCore(std::shared_ptr<QSettings> state,
     , m_groupPrefix(std::move(groupPrefix))
 {
     BT_DEBUG_ONLY(
-            static QRegExp const groupRegExp(QStringLiteral("^([^/]+/)*$"));)
-    BT_ASSERT(groupRegExp.exactMatch(m_groupPrefix));
+            static QRegularExpression const groupRegExp(
+                    QStringLiteral("^([^/]+/)*$"));)
+    BT_ASSERT(groupRegExp.match(m_groupPrefix).hasMatch());
 }
 
 BtConfigCore::~BtConfigCore() = default;
