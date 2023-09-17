@@ -23,7 +23,6 @@
 #include <QList>
 #include <QPushButton>
 #include <QRadioButton>
-#include <QRegExp>
 #include <QSizePolicy>
 #include <QSpacerItem>
 #include <Qt>
@@ -39,6 +38,21 @@
 
 namespace {
 
+inline QString removeMnemonics(QString input) {
+    auto i = input.indexOf(QLatin1Char('&'));
+    if (i < 0)
+        return input;
+
+    auto out = input.mid(0, i);
+    decltype(i) nextFragmentStart;
+    do {
+        nextFragmentStart = i + 1;
+        i = input.indexOf(QLatin1Char('&'), nextFragmentStart + 1);
+        out.append(input.mid(nextFragmentStart, i - nextFragmentStart));
+    } while (i >= 0);
+    return out;
+}
+
 /** Widget for the first column of the BtShortcutsEditor holding extra
     information about the action. */
 class BtShortcutsEditorItem : public QTableWidgetItem {
@@ -50,9 +64,7 @@ public: // methods:
         : m_action(action)
         , m_defaultKeys(std::move(defaultKeys))
     {
-        setText(action->text().replace(
-                    QRegExp(QStringLiteral("&(.)")),
-                    QStringLiteral("\\1")));
+        setText(removeMnemonics(action->text()));
         setIcon(action->icon());
         setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
