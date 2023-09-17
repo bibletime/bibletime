@@ -108,7 +108,7 @@ void CSearchDialog::startSearch() {
     // first check the search string for errors
     {
         QString TestString(originalSearchText);
-        QRegularExpression ReservedWords(
+        static QRegularExpression const ReservedWords(
                     QStringLiteral("heading:|footnote:|morph:|strong:"));
         if (TestString.replace(ReservedWords, QString()).simplified().isEmpty()) {
             return;
