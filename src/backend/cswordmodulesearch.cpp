@@ -258,7 +258,7 @@ QString highlightSearchedText(QString const & content,
         }
         else if (word.contains('?')) {
             --length;
-            word.replace('?', QStringLiteral("\\S?")); //match within a word
+            word.replace('?', QStringLiteral("\\S")); //match within a word
             findExp = QRegExp(word);
             findExp.setMinimal(true);
         }
