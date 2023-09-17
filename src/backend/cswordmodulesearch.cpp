@@ -17,6 +17,7 @@
 #include <QDataStream>
 #include <QList>
 #include <QRegExp>
+#include <QRegularExpression>
 #include <QStringList>
 #include <QtCore>
 #include "../util/btassert.h"
@@ -173,9 +174,8 @@ QString highlightSearchedText(QString const & content,
     // search the searched text for "strong:" until it is not found anymore
     // split the search string - some possibilities are "\\s|\\|", "\\s|\\+", or "\\s|\\|\\+"
     // \todo find all possible seperators
-    for (auto const & newSearchText
-         : searchedText.split(QRegExp(QStringLiteral("\\s"))))
-    {
+    static QRegularExpression const spaceRegexp(QStringLiteral("\\s"));
+    for (auto const & newSearchText : searchedText.split(spaceRegexp)) {
         // strong search text index for finding "strong:"
         int sstIndex = newSearchText.indexOf(QStringLiteral("strong:"));
         if (sstIndex == -1)
