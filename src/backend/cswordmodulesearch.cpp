@@ -242,7 +242,6 @@ QString highlightSearchedText(QString const & content,
     // since I could not figure out the lucene query parser, I
     // made a simple parser.
     //===========================================================
-    int matchLen = 0;
     for (QStringList words(queryParser(searchedText));
          !words.empty();
          words.pop_front())
@@ -265,7 +264,7 @@ QString highlightSearchedText(QString const & content,
         findExp.setCaseSensitivity(cs);
         //while ( (index = ret.find(findExp, index)) != -1 ) { //while we found the word
         while ( (index = findExp.indexIn(ret, index)) != -1 ) { //while we found the word
-            matchLen = findExp.matchedLength();
+            auto const matchLen = findExp.matchedLength();
             if (!util::tool::inHTMLTag(index, ret)) {
                 length = matchLen;
                 ret = ret.insert( index + length, rep2 );
