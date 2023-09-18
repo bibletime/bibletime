@@ -160,7 +160,7 @@ QString highlightSearchedText(QString const & content,
     static Qt::CaseSensitivity const cs = Qt::CaseInsensitive;
 
     //   int index = 0;
-    int index = ret.indexOf(QStringLiteral("<body"));
+    auto const bodyIndex = ret.indexOf(QStringLiteral("<body"));
 
     // Work around Qt5 QML bug
     // QTBUG-36837 "background-color" css style in QML TextEdit does not work on most tags
@@ -186,7 +186,7 @@ QString highlightSearchedText(QString const & content,
         sstIndex = sstIndex + 7;
 
         // set the start index to the start of <body>
-        int strongIndex = index;
+        int strongIndex = bodyIndex;
 
         // get the strongs number -> the text following "strong:" to the end of the string.
         // find all the "lemma=" inside the the content
@@ -260,7 +260,7 @@ QString highlightSearchedText(QString const & content,
         findExp.setMinimal(true);
 
         //       index = 0; //for every word start at the beginning
-        index = ret.indexOf(QStringLiteral("<body"));
+        auto index = bodyIndex;
         findExp.setCaseSensitivity(cs);
         //while ( (index = ret.find(findExp, index)) != -1 ) { //while we found the word
         while ( (index = findExp.indexIn(ret, index)) != -1 ) { //while we found the word
