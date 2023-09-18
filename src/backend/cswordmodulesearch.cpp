@@ -155,12 +155,37 @@ QStringList queryParser(QString const & queryString) {
 QString highlightSearchedText(QString const & content,
                               QString const & searchedText)
 {
-    QString ret = content;
-
     static Qt::CaseSensitivity const cs = Qt::CaseInsensitive;
 
-    //   int index = 0;
-    auto const bodyIndex = ret.indexOf(QStringLiteral("<body"));
+    auto const bodyIndex =
+        [&content]{
+            static QRegularExpression const tagRe(QStringLiteral("<body\b"));
+            auto i = content.indexOf(tagRe);
+            if (i < 0)
+                return i;
+
+            // Skip to after start tag end:
+            static QRegularExpression const re(QStringLiteral("[\"'>]"));
+            for (i += 5;;) {
+                i = content.indexOf(re, i);
+                if (i < 0)
+                    return i;
+
+                auto const match = content.at(i);
+                if (match == QLatin1Char('>'))
+                    return i + 1;
+
+                // Skip to end of quoted attribute value:
+                i = content.indexOf(match, ++i);
+                if (i < 0)
+                    return i;
+                ++i;
+            }
+        }();
+    if (bodyIndex < 0)
+        return content;
+
+    QString ret = content;
 
     // Work around Qt5 QML bug
     // QTBUG-36837 "background-color" css style in QML TextEdit does not work on most tags
