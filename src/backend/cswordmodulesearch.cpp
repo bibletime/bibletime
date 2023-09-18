@@ -18,6 +18,7 @@
 #include <QList>
 #include <QRegExp>
 #include <QRegularExpression>
+#include <QRegularExpressionMatch>
 #include <QStringList>
 #include <QtCore>
 #include "../util/btassert.h"
@@ -157,49 +158,46 @@ QString highlightSearchedText(QString const & content,
 {
     static Qt::CaseSensitivity const cs = Qt::CaseInsensitive;
 
-    auto const bodyIndex =
-        [&content]{
-            static QRegularExpression const tagRe(QStringLiteral("<body\b"));
-            auto i = content.indexOf(tagRe);
-            if (i < 0)
-                return i;
-
-            // Skip to after start tag end:
-            static QRegularExpression const re(QStringLiteral("[\"'>]"));
-            for (i += 5;;) {
-                i = content.indexOf(re, i);
+    static auto const skipIndexToTagEnd =
+        [](auto const & str, auto i) {
+            static QRegularExpression const re(
+                    QStringLiteral(R"PCRE(["'>])PCRE"));
+            for (;;) {
+                i = str.indexOf(re, i);
                 if (i < 0)
                     return i;
 
-                auto const match = content.at(i);
+                auto const match = str.at(i);
                 if (match == QLatin1Char('>'))
                     return i + 1;
 
                 // Skip to end of quoted attribute value:
-                i = content.indexOf(match, ++i);
+                i = str.indexOf(match, ++i);
                 if (i < 0)
                     return i;
                 ++i;
             }
+        };
+
+    auto const bodyIndex =
+        [&content]{
+            static QRegularExpression const tagRe(
+                    QStringLiteral(R"PCRE(<body(>|\\s))PCRE"));
+            auto const i = content.indexOf(tagRe);
+            return (i < 0) ? 0 : skipIndexToTagEnd(content, i + 5);
         }();
     if (bodyIndex < 0)
         return content;
 
     QString ret = content;
 
-    // Work around Qt5 QML bug
-    // QTBUG-36837 "background-color" css style in QML TextEdit does not work on most tags
-    auto const rep1 = QStringLiteral("<span class=\"highlightwords\">");
-    auto const rep3 = QStringLiteral("class=\"highlightwords\" ");
-    auto const rep2 = QStringLiteral("</span>");
-    const unsigned int repLength = rep1.length() + rep1.length();
-    const unsigned int rep3Length = rep3.length();
 
     // find the strongs search lemma and highlight it
     // search the searched text for "strong:" until it is not found anymore
     // split the search string - some possibilities are "\\s|\\|", "\\s|\\+", or "\\s|\\|\\+"
     // \todo find all possible seperators
-    static QRegularExpression const spaceRegexp(QStringLiteral("\\s"));
+    static QRegularExpression const spaceRegexp(
+            QStringLiteral(R"PCRE(\s)PCRE"));
     for (auto const & newSearchText : searchedText.split(spaceRegexp)) {
         // strong search text index for finding "strong:"
         int sstIndex = newSearchText.indexOf(QStringLiteral("strong:"));
@@ -230,10 +228,12 @@ QString highlightSearchedText(QString const & content,
             if (ret.mid(idx1, idx2 - idx1).contains(newSearchText.mid(sstIndex,
                                                                       -1)))
             {
+                static auto const rep3 =
+                    QStringLiteral(R"HTML(class="highlightwords" )HTML");
                 // strongs number is found now we need to highlight it
                 // I believe the easiest way is to insert rep3 just before "lemma="
                 ret = ret.insert(strongIndex, rep3); /// \bug ?
-                strongIndex += rep3Length;
+                strongIndex += rep3.length();
             }
             strongIndex += 6; // 6 is the length of "lemma="
         }
@@ -243,63 +243,84 @@ QString highlightSearchedText(QString const & content,
     // other search options
     //---------------------------------------------------------------------
 
-    // try to figure out how to use the lucene query parser
+    QRegularExpression highlightRegex;
+    { // Construct highLightRegex:
+        QString wordsRegexString;
+        for (auto const & word : queryParser(searchedText)) {
+            QString wordRegexString;
+            auto const wordSize = word.size();
+            wordRegexString.reserve(wordSize + 3);
 
-    //using namespace lucene::queryParser;
-    //using namespace lucene::search;
-    //using namespace lucene::analysis;
-    //using namespace lucene::util;
-
-    //wchar_t *buf;
-    //char buf8[1000];
-    //standard::WhitespaceAnalyzer analyzer;
-    //lucene_utf8towcs(m_wcharBuffer, searchedText.utf8(), MAX_CONV_SIZE);
-    //QSharedPointer<Query> q( QueryParser::parse(m_wcharBuffer, _T("content"), &analyzer) );
-    //StringReader reader(m_wcharBuffer);
-    //TokenStream* tokenStream = analyzer.tokenStream( _T("field"), &reader);
-    //Token token;
-    //while(tokenStream->next(&token) != 0) {
-    //    lucene_wcstoutf8(buf8, token.termText(), 1000);
-    //    printf("%s\n", buf8);
-    //}
-
-    //===========================================================
-    // since I could not figure out the lucene query parser, I
-    // made a simple parser.
-    //===========================================================
-    for (QStringList words(queryParser(searchedText));
-         !words.empty();
-         words.pop_front())
-    {
-        QString & word = words.first();
-        auto length = word.length();
-        if (word.contains('*')) {
-            --length;
-            word.replace('*', QStringLiteral("\\S*")); //match within a word
-        }
-        else if (word.contains('?')) {
-            --length;
-            word.replace('?', QStringLiteral("\\S")); //match within a word
-        }
-        QRegExp findExp(QStringLiteral("\\b%1\\b").arg(word));
-        findExp.setMinimal(true);
-
-        //       index = 0; //for every word start at the beginning
-        auto index = bodyIndex;
-        findExp.setCaseSensitivity(cs);
-        //while ( (index = ret.find(findExp, index)) != -1 ) { //while we found the word
-        while ( (index = findExp.indexIn(ret, index)) != -1 ) { //while we found the word
-            auto const matchLen = findExp.matchedLength();
-            if (!util::tool::inHTMLTag(index, ret)) {
-                length = matchLen;
-                ret = ret.insert( index + length, rep2 );
-                ret = ret.insert( index, rep1 );
-                index += repLength;
+            static QRegularExpression const wildCardRegex(
+                QStringLiteral(R"PCRE([*?])PCRE"));
+            auto fragmentEnd = word.indexOf(wildCardRegex);
+            decltype(fragmentEnd) fragmentStart = 0;
+            while (fragmentEnd >= 0) {
+                if (auto const fragmentSize = fragmentEnd - fragmentStart)
+                    wordRegexString.append(
+                        QRegularExpression::escape(
+                            word.mid(fragmentStart, fragmentSize)));
+                wordRegexString.append(word.at(fragmentEnd) == QLatin1Char('*')
+                                       ? R"PCRE(\S*?)PCRE"
+                                       : R"PCRE(\S)PCRE");
+                fragmentStart = fragmentEnd + 1;
+                fragmentEnd = word.indexOf(wildCardRegex, fragmentStart);
             }
-            index += length;
+            wordRegexString.append(
+                QRegularExpression::escape(word.mid(fragmentStart)));
+
+            if (!wordsRegexString.isEmpty())
+                wordsRegexString.append(QLatin1Char('|'));
+            wordsRegexString.append(wordRegexString);
         }
+        highlightRegex =
+            QRegularExpression(
+                QLatin1String(R"PCRE(\b(%1)\b)PCRE").arg(wordsRegexString),
+                QRegularExpression::CaseInsensitiveOption);
     }
-    return ret;
+
+    QStringList r(ret.left(bodyIndex));
+
+    // Iterate over HTML text fragments:
+    auto fragmentStart = bodyIndex;
+    auto fragmentEnd = ret.indexOf(QLatin1Char('<'), fragmentStart);
+    decltype(ret.size()) fragmentSize =
+        (fragmentEnd < 0 ? ret.size() : fragmentEnd) - fragmentStart;
+    for (QRegularExpressionMatch match;;) {
+        if (fragmentSize > 0) {
+            #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+            auto const fragment = ret.mid(fragmentStart, fragmentSize);
+            #else
+            QStringView const fragment(ret.constData() + fragmentStart,
+                                       fragmentSize);
+            #endif
+            decltype(fragmentStart) searchStart = 0;
+            for (;;) {
+                auto i = fragment.indexOf(highlightRegex, searchStart, &match);
+                if (i < 0) {
+                    r << fragment.mid(searchStart);
+                    break;
+                }
+
+                if (auto const noMatchSize = i - searchStart)
+                    r << fragment.mid(searchStart, noMatchSize);
+                r << QStringLiteral(R"HTML(<span class="highlightwords">)HTML")
+                  << match.captured()
+                  << QStringLiteral(R"HTML(</span>)HTML");
+                searchStart = i + match.capturedLength();
+            }
+        }
+
+        if (fragmentEnd < 0)
+            break;
+        fragmentStart = skipIndexToTagEnd(ret, fragmentEnd + 1);
+        r << ret.mid(fragmentEnd, fragmentStart - fragmentEnd);
+        fragmentEnd = ret.indexOf(QLatin1Char('<'), fragmentStart);
+        fragmentSize =
+            (fragmentEnd < -1) ? ret.size() : (fragmentEnd - fragmentStart);
+    }
+
+    return r.join(QString());
 }
 
 QString prepareSearchText(QString const & orig, SearchType const searchType) {
