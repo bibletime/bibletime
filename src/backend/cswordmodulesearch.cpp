@@ -248,23 +248,17 @@ QString highlightSearchedText(QString const & content,
          words.pop_front())
     {
         QString & word = words.first();
-        QRegExp findExp;
         auto length = word.length();
         if (word.contains('*')) {
             --length;
             word.replace('*', QStringLiteral("\\S*")); //match within a word
-            findExp = QRegExp(word);
-            findExp.setMinimal(true);
         }
         else if (word.contains('?')) {
             --length;
             word.replace('?', QStringLiteral("\\S")); //match within a word
-            findExp = QRegExp(word);
-            findExp.setMinimal(true);
         }
-        else {
-            findExp = QRegExp(QStringLiteral("\\b%1\\b").arg(word));
-        }
+        QRegExp findExp(QStringLiteral("\\b%1\\b").arg(word));
+        findExp.setMinimal(true);
 
         //       index = 0; //for every word start at the beginning
         index = ret.indexOf(QStringLiteral("<body"));
