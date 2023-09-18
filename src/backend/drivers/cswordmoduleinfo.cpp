@@ -463,8 +463,8 @@ void CSwordModuleInfo::buildIndex() {
         // because key is a pointer to the modules key
         m_swordModule.setSkipConsecutiveLinks(true);
 
-        std::unique_ptr<wchar_t[]> sPwcharBuffer(
-                new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
+        auto const sPwcharBuffer =
+            std::make_unique<wchar_t[]>(BT_MAX_LUCENE_FIELD_LENGTH + 1);
         wchar_t * const wcharBuffer = sPwcharBuffer.get();
         BT_ASSERT(wcharBuffer);
 
@@ -638,10 +638,10 @@ CSwordModuleSearch::ModuleResultList
 CSwordModuleInfo::searchIndexed(QString const & searchedText,
                                 sword::ListKey const & scope) const
 {
-    std::unique_ptr<char[]> sPutfBuffer(
-            new char[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
-    std::unique_ptr<wchar_t[]> sPwcharBuffer(
-            new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
+    auto const sPutfBuffer =
+        std::make_unique<char[]>(BT_MAX_LUCENE_FIELD_LENGTH  + 1);
+    auto const sPwcharBuffer =
+        std::make_unique<wchar_t[]>(BT_MAX_LUCENE_FIELD_LENGTH  + 1);
     char * const utfBuffer = sPutfBuffer.get();
     BT_ASSERT(utfBuffer);
     wchar_t * const wcharBuffer = sPwcharBuffer.get();
