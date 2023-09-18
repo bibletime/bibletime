@@ -16,7 +16,6 @@
 #include <QChar>
 #include <QDataStream>
 #include <QList>
-#include <QRegExp>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #include <QStringList>
@@ -151,6 +150,8 @@ QStringList queryParser(QString const & queryString) {
     return(tokenList);
 }
 
+static QRegularExpression const spaceRegexp(QStringLiteral(R"PCRE(\s+)PCRE"));
+
 } // anonymous namespace
 
 QString highlightSearchedText(QString const & content,
@@ -196,8 +197,6 @@ QString highlightSearchedText(QString const & content,
     // search the searched text for "strong:" until it is not found anymore
     // split the search string - some possibilities are "\\s|\\|", "\\s|\\+", or "\\s|\\|\\+"
     // \todo find all possible seperators
-    static QRegularExpression const spaceRegexp(
-            QStringLiteral(R"PCRE(\s+)PCRE"));
     for (auto const & newSearchText
          : searchedText.split(spaceRegexp, Qt::SkipEmptyParts))
     {
@@ -328,18 +327,14 @@ QString highlightSearchedText(QString const & content,
 QString prepareSearchText(QString const & orig, SearchType const searchType) {
     if (searchType == FullType)
         return orig;
-    static const QRegExp syntaxCharacters(QStringLiteral("[+\\-()!\"~]"));
-    static const QRegExp andWords(QStringLiteral("\\band\\b"),
-                                  Qt::CaseInsensitive);
-    static const QRegExp orWords(QStringLiteral("\\bor\\b"),
-                                 Qt::CaseInsensitive);
-    QString text(orig.simplified());
-    text.remove(syntaxCharacters);
-    text.replace(andWords, QStringLiteral("\"and\""));
-    text.replace(orWords, QStringLiteral("\"or\""));
-    if (searchType == AndType)
-        text.replace(' ', QStringLiteral(" AND "));
-    return text;
+    auto words = orig.split(spaceRegexp, Qt::SkipEmptyParts);
+    static QRegularExpression const escapeRe(
+        QLatin1String(R"PCRE(([\\+\-\!\(\)\:\^\]\[\"\{\}\~\*\?\|\&]))PCRE"));
+    for (auto & word : words)
+        word = QStringLiteral(R"("%1")").arg(word.replace(escapeRe, "\\\\1"));
+    return words.join(searchType == OrType
+                      ? QStringLiteral(" OR ")
+                      : QStringLiteral(" AND "));
 }
 
 } // namespace CSwordModuleSearch
