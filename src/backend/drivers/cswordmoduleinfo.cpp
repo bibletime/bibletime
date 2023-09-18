@@ -15,6 +15,7 @@
 #include <memory>
 #include <cassert>
 #include <CLucene.h>
+#include <optional>
 #include <QByteArray>
 #include <QCoreApplication>
 #include <QDebug>
@@ -405,8 +406,11 @@ void CSwordModuleInfo::buildIndex() {
                 lucene::index::IndexReader::unlock(index.toLatin1().constData());
 
         // Always create a new index:
-        using IW = lucene::index::IndexWriter;
-        std::unique_ptr<IW> writer(new IW(index.toLatin1().constData(), &analyzer, true));
+        auto writer =
+            std::make_optional<lucene::index::IndexWriter>(
+                index.toLatin1().constData(),
+                &analyzer,
+                true);
         writer->setMaxFieldLength(BT_MAX_LUCENE_FIELD_LENGTH);
         writer->setUseCompoundFile(true); // Merge segments into a single file
 
