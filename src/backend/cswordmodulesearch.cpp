@@ -197,8 +197,10 @@ QString highlightSearchedText(QString const & content,
     // split the search string - some possibilities are "\\s|\\|", "\\s|\\+", or "\\s|\\|\\+"
     // \todo find all possible seperators
     static QRegularExpression const spaceRegexp(
-            QStringLiteral(R"PCRE(\s)PCRE"));
-    for (auto const & newSearchText : searchedText.split(spaceRegexp)) {
+            QStringLiteral(R"PCRE(\s+)PCRE"));
+    for (auto const & newSearchText
+         : searchedText.split(spaceRegexp, Qt::SkipEmptyParts))
+    {
         // strong search text index for finding "strong:"
         int sstIndex = newSearchText.indexOf(QStringLiteral("strong:"));
         if (sstIndex == -1)
