@@ -104,6 +104,14 @@ inline CSwordModuleInfo::Category retrieveCategory(
 
 static const TCHAR * stop_words[] = { nullptr };
 
+class Analyzer : public lucene::analysis::standard::StandardAnalyzer {
+
+public: // Methods:
+
+    Analyzer() : lucene::analysis::standard::StandardAnalyzer(stop_words) {}
+
+};
+
 } // anonymous namespace
 
 char const *
@@ -384,7 +392,7 @@ void CSwordModuleInfo::buildIndex() {
         m_backend.setOption(CSwordModuleInfo::redLetterWords, false);
 
         // Do not use any stop words:
-        lucene::analysis::standard::StandardAnalyzer an(stop_words);
+        Analyzer analyzer;
         const QString index(getModuleStandardIndexLocation());
 
         QDir dir(QStringLiteral("/"));
@@ -398,7 +406,7 @@ void CSwordModuleInfo::buildIndex() {
 
         // Always create a new index:
         using IW = lucene::index::IndexWriter;
-        std::unique_ptr<IW> writer(new IW(index.toLatin1().constData(), &an, true));
+        std::unique_ptr<IW> writer(new IW(index.toLatin1().constData(), &analyzer, true));
         writer->setMaxFieldLength(BT_MAX_LUCENE_FIELD_LENGTH);
         writer->setUseCompoundFile(true); // Merge segments into a single file
 
@@ -640,7 +648,7 @@ CSwordModuleInfo::searchIndexed(QString const & searchedText,
     m_swordModule.setKey(createKey()->asSwordKey());
 
     // do not use any stop words
-    lucene::analysis::standard::StandardAnalyzer analyzer(stop_words);
+    Analyzer analyzer;
     lucene::search::IndexSearcher searcher(getModuleStandardIndexLocation().toLatin1().constData());
     lucene_utf8towcs(wcharBuffer, searchedText.toUtf8().constData(), BT_MAX_LUCENE_FIELD_LENGTH);
     std::unique_ptr<lucene::search::Query> q(lucene::queryParser::QueryParser::parse(static_cast<const TCHAR *>(wcharBuffer),
