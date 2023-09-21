@@ -83,7 +83,6 @@ public:
     BtQmlInterface(QObject * parent = nullptr);
     ~BtQmlInterface() override;
 
-    int countHighlightsInItem(int index);
     void findText(bool backward);
 
     QString const & activeLink() const noexcept { return m_activeLink; }

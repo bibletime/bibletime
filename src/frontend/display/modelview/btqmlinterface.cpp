@@ -473,6 +473,13 @@ void BtQmlInterface::findText(bool const backward) {
     if (!m_findState)
         m_findState = FindState{getCurrentModelIndex(), 0};
 
+    auto const countHighlightsInItem =
+        [this](int const index) {
+            return m_moduleTextModel->data(m_moduleTextModel->index(index),
+                                           ModuleEntry::Text1Role)
+                        .toString().count(QStringLiteral("\"highlightwords"));
+        };
+
     auto const num = countHighlightsInItem(m_findState->index);
     if (backward) { // get previous matching item:
         if (num > 0 && m_findState->subIndex == 0) {
@@ -513,11 +520,4 @@ void BtQmlInterface::findText(bool const backward) {
     m_moduleTextModel->setFindState(m_findState);
     Q_EMIT positionItemOnScreen(m_findState->index);
     QApplication::restoreOverrideCursor();
-}
-
-int BtQmlInterface::countHighlightsInItem(int index) {
-    QModelIndex mIndex = m_moduleTextModel->index(index);
-    QString text = m_moduleTextModel->data(mIndex, ModuleEntry::Text1Role).toString();
-    int num = text.count(QStringLiteral("\"highlightwords"));
-    return num;
 }
