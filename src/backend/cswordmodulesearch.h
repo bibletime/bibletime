@@ -63,7 +63,8 @@ Results search(QString const & searchText,
 * This function highlights the searched text in the content using the search type given by search flags
 */
 QString highlightSearchedText(QString const & content,
-                              QString const & searchedText);
+                              QString const & searchedText,
+                              bool plainSearchedText = false);
 
 /**
   Prepares the search string given by user for a specific search type

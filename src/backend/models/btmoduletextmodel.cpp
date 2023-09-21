@@ -119,7 +119,9 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
     }
 
     if ( ! m_highlightWords.isEmpty()) {
-        QString t = CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
+        auto t = CSwordModuleSearch::highlightSearchedText(text,
+                                                           m_highlightWords,
+                                                           true);
         if (m_findState && index.row() == m_findState->index) {
             // t = highlightFindPreviousNextField(t); now inlined:
             int from = 0;
