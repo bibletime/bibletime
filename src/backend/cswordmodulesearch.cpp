@@ -190,8 +190,7 @@ QString highlightSearchedText(QString const & content,
     if (bodyIndex < 0)
         return content;
 
-    QString ret = content;
-
+    auto ret = content.mid(bodyIndex);
 
     // find the strongs search lemma and highlight it
     // search the searched text for "strong:" until it is not found anymore
@@ -210,7 +209,7 @@ QString highlightSearchedText(QString const & content,
         sstIndex = sstIndex + 7;
 
         // set the start index to the start of <body>
-        int strongIndex = bodyIndex;
+        int strongIndex = 0;
 
         // get the strongs number -> the text following "strong:" to the end of the string.
         // find all the "lemma=" inside the the content
@@ -280,10 +279,10 @@ QString highlightSearchedText(QString const & content,
                 QRegularExpression::CaseInsensitiveOption);
     }
 
-    QStringList r(ret.left(bodyIndex));
+    QStringList r(content.left(bodyIndex));
 
     // Iterate over HTML text fragments:
-    auto fragmentStart = bodyIndex;
+    auto fragmentStart = 0;
     auto fragmentEnd = ret.indexOf(QLatin1Char('<'), fragmentStart);
     decltype(ret.size()) fragmentSize =
         (fragmentEnd < 0 ? ret.size() : fragmentEnd) - fragmentStart;
