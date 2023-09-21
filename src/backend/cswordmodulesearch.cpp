@@ -261,8 +261,8 @@ QString highlightSearchedText(QString const & content,
                         QRegularExpression::escape(
                             word.mid(fragmentStart, fragmentSize)));
                 wordRegexString.append(word.at(fragmentEnd) == QLatin1Char('*')
-                                       ? R"PCRE(\S*?)PCRE"
-                                       : R"PCRE(\S)PCRE");
+                                       ? QStringLiteral(R"PCRE(\S*?)PCRE")
+                                       : QStringLiteral(R"PCRE(\S)PCRE"));
                 fragmentStart = fragmentEnd + 1;
                 fragmentEnd = word.indexOf(wildCardRegex, fragmentStart);
             }
@@ -275,7 +275,7 @@ QString highlightSearchedText(QString const & content,
         }
         highlightRegex =
             QRegularExpression(
-                QLatin1String(R"PCRE(\b(%1)\b)PCRE").arg(wordsRegexString),
+                QStringLiteral(R"PCRE(\b(%1)\b)PCRE").arg(wordsRegexString),
                 QRegularExpression::CaseInsensitiveOption);
     }
 
