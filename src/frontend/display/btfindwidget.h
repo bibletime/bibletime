@@ -22,7 +22,7 @@ class QCheckBox;
 class QLineEdit;
 class QToolButton;
 
-class BtFindWidget: public QWidget {
+class BtFindWidget final: public QWidget {
 
     Q_OBJECT
 
