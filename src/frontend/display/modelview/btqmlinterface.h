@@ -66,20 +66,6 @@ public: /* Types: */
         QString selectedText;
     };
 
-private: /* Types: */
-
-    struct ThrottledHighlightWords {
-        QString words;
-        bool caseSensitive;
-
-        friend bool operator==(ThrottledHighlightWords const & lhs,
-                               ThrottledHighlightWords const & rhs) noexcept
-        {
-            return (lhs.words == rhs.words)
-                    && (lhs.caseSensitive == rhs.caseSensitive);
-        }
-    };
-
 public:
     void cancelMagTimer();
     Q_INVOKABLE void changeReference(int i);
@@ -190,9 +176,6 @@ private: // Fields:
 
     QList<QFont> m_fonts;
     int m_backgroundHighlightColorIndex = -1;
-    int m_highlightWordsTimerId = 0;
-    std::optional<ThrottledHighlightWords> m_lastAppliedHighlightWords;
-    std::optional<ThrottledHighlightWords> m_throttledHighlightWords;
     QStringList m_moduleNames;
     BtTextFilter m_textFilter;
     QString m_timeoutUrl;

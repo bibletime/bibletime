@@ -26,14 +26,41 @@ class BtFindWidget final: public QWidget {
 
     Q_OBJECT
 
+private: /* Types: */
+
+    struct HighlightState {
+        QString text;
+        bool caseSensitive;
+
+        friend bool operator==(HighlightState const & lhs,
+                               HighlightState const & rhs) noexcept
+        {
+            return (lhs.text == rhs.text)
+                   && (lhs.caseSensitive == rhs.caseSensitive);
+        }
+
+        friend bool operator!=(HighlightState const & lhs,
+                               HighlightState const & rhs) noexcept
+        {
+            return (lhs.text != rhs.text)
+                   || (lhs.caseSensitive != rhs.caseSensitive);
+        }
+    };
+
 public: // methods:
 
     BtFindWidget(QWidget * parent = nullptr);
 
     void showAndSelect();
 
+protected: // Methods:
+
+    void timerEvent(QTimerEvent * const event) final override;
+
 private: // methods:
 
+    void queueHighlight();
+    void highlightImmediately();
     void retranslateUi();
 
 Q_SIGNALS:
@@ -48,5 +75,7 @@ private: // fields:
     QToolButton * m_nextButton;
     QToolButton * m_previousButton;
     QCheckBox * m_caseCheckBox;
+    HighlightState m_lastHighlightState{{}, false};
+    int m_throttleTimerId = 0;
 
 };

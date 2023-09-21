@@ -20,6 +20,7 @@
 #include <QSizePolicy>
 #include <QSpacerItem>
 #include <Qt>
+#include <QTimerEvent>
 #include <QToolButton>
 #include <utility>
 #include "../../util/btconnect.h"
@@ -54,28 +55,26 @@ BtFindWidget::BtFindWidget(QWidget * parent)
     m_textEditor = new QLineEdit(this);
     widgetLayout->addWidget(m_textEditor);
     BT_CONNECT(m_textEditor, &QLineEdit::textChanged,
-               [this](QString const & v)
-               { Q_EMIT highlightText(v, m_caseCheckBox->isChecked()); });
+               this, &BtFindWidget::queueHighlight);
     BT_CONNECT(m_textEditor, &QLineEdit::returnPressed,
-               [this] {
-                   Q_EMIT highlightText(m_textEditor->text(),
-                                        m_caseCheckBox->isChecked());
-               });
+               this, &BtFindWidget::highlightImmediately);
 
     // Next and Previous buttons:
     m_previousButton = newButton(CResMgr::findWidget::icon_previous());
     BT_CONNECT(m_previousButton, &QToolButton::released,
+               this, &BtFindWidget::highlightImmediately);
+    BT_CONNECT(m_previousButton, &QToolButton::released,
                this, &BtFindWidget::findPrevious);
     m_nextButton = newButton(CResMgr::findWidget::icon_next());
+    BT_CONNECT(m_nextButton, &QToolButton::released,
+               this, &BtFindWidget::highlightImmediately);
     BT_CONNECT(m_nextButton, &QToolButton::released,
                this, &BtFindWidget::findNext);
 
     // Case checkbox:
     m_caseCheckBox = new QCheckBox(this);
     BT_CONNECT(m_caseCheckBox, &QCheckBox::stateChanged,
-               [this](int const s) {
-                   Q_EMIT highlightText(m_textEditor->text(), s == Qt::Checked);
-               });
+               this, &BtFindWidget::queueHighlight);
     widgetLayout->addWidget(m_caseCheckBox);
 
     // Spacer:
@@ -86,12 +85,42 @@ BtFindWidget::BtFindWidget(QWidget * parent)
     setFocusProxy(m_textEditor);
 
     retranslateUi();
+
+    BT_ASSERT(m_lastHighlightState.text == m_textEditor->text());
+    BT_ASSERT(m_lastHighlightState.caseSensitive
+              == m_caseCheckBox->isChecked());
 }
 
 void BtFindWidget::showAndSelect() {
     setVisible(true);
     m_textEditor->selectAll();
     m_textEditor->setFocus(Qt::ShortcutFocusReason);
+}
+
+void BtFindWidget::timerEvent(QTimerEvent * const event) {
+    auto const timerId = event->timerId();
+    BT_ASSERT(timerId);
+    if (timerId != m_throttleTimerId)
+        return QObject::timerEvent(event);
+
+    event->accept();
+    highlightImmediately();
+}
+
+void BtFindWidget::queueHighlight() {
+    killTimer(m_throttleTimerId);
+    m_throttleTimerId = startTimer(900);
+}
+
+void BtFindWidget::highlightImmediately() {
+    killTimer(m_throttleTimerId);
+    m_throttleTimerId = 0;
+
+    HighlightState newState{m_textEditor->text(), m_caseCheckBox->isChecked()};
+    if (m_lastHighlightState != newState) {
+        m_lastHighlightState = std::move(newState);
+        Q_EMIT highlightText(m_textEditor->text(), m_caseCheckBox->isChecked());
+    }
 }
 
 void BtFindWidget::retranslateUi() {
