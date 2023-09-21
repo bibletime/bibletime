@@ -85,7 +85,7 @@ BtFindWidget::BtFindWidget(QWidget * parent)
 }
 
 bool BtFindWidget::caseSensitive() const
-{ return m_caseCheckBox->checkState() == Qt::Checked; }
+{ return m_caseCheckBox->isChecked(); }
 
 QString BtFindWidget::text() const { return m_textEditor->text(); }
 
