@@ -32,8 +32,6 @@ public: // methods:
 
     void showAndSelect();
 
-    bool caseSensitive() const;
-
     QString text() const;
 
 private: // methods:
