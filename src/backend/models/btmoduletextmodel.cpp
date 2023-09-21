@@ -406,10 +406,6 @@ QString BtModuleTextModel::indexToKeyName(int index) const {
     return QStringLiteral("???");
 }
 
-int BtModuleTextModel::getFirstEntryIndex() const {
-    return m_firstEntry;
-}
-
 void BtModuleTextModel::setFindState(std::optional<FindState> findState) {
     if (m_findState
         && (!findState || (m_findState->index != findState->index)))

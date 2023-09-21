@@ -129,7 +129,7 @@ public:
     QString indexToKeyName(int index) const;
 
     /** Get index offset of first entry of module */
-    int getFirstEntryIndex() const;
+    int firstEntryIndex() const noexcept { return m_firstEntry; }
 
     /** Reimplemented from QAbstractItemModel. */
     int columnCount(const QModelIndex & parent = QModelIndex()) const override;

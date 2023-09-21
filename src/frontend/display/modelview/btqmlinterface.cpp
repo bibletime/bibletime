@@ -312,7 +312,8 @@ void BtQmlInterface::scrollToSwordKey(CSwordKey * key) {
     m_backgroundHighlightColorIndex = m_moduleTextModel->keyToIndex(*key);
 
     /* Convert from sword index to ListView index */
-    m_backgroundHighlightColorIndex = m_backgroundHighlightColorIndex - m_moduleTextModel->getFirstEntryIndex();
+    m_backgroundHighlightColorIndex =
+        m_backgroundHighlightColorIndex - m_moduleTextModel->firstEntryIndex();
 
     Q_EMIT backgroundHighlightColorIndexChanged();
     m_swordKey = key;
