@@ -36,20 +36,19 @@ BtFindWidget::BtFindWidget(QWidget * parent)
 
     // Buttons and text editor:
     auto const newButton =
-            [this, widgetLayout](QIcon const & icon, auto && ... slot) {
+            [this, widgetLayout](QIcon const & icon) {
                 QToolButton * const button = new QToolButton(this);
                 button->setIcon(icon);
                 button->setIconSize(QSize(16, 16));
                 button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
                 button->setAutoRaise(true);
                 widgetLayout->addWidget(button);
-                BT_CONNECT(button, &QToolButton::released,
-                           std::forward<decltype(slot)>(slot)...);
                 return button;
             };
 
     // Close button:
-    newButton(CResMgr::findWidget::icon_close(), this, &BtFindWidget::hide);
+    auto * const closeButton = newButton(CResMgr::findWidget::icon_close());
+    BT_CONNECT(closeButton, &QToolButton::released, this, &BtFindWidget::hide);
 
     // Text editor:
     m_textEditor = new QLineEdit(this);
@@ -64,13 +63,12 @@ BtFindWidget::BtFindWidget(QWidget * parent)
                });
 
     // Next and Previous buttons:
-    m_previousButton = newButton(
-                           CResMgr::findWidget::icon_previous(),
-                           this,
-                           &BtFindWidget::findPrevious);
-    m_nextButton = newButton(CResMgr::findWidget::icon_next(),
-                             this,
-                             &BtFindWidget::findNext);
+    m_previousButton = newButton(CResMgr::findWidget::icon_previous());
+    BT_CONNECT(m_previousButton, &QToolButton::released,
+               this, &BtFindWidget::findPrevious);
+    m_nextButton = newButton(CResMgr::findWidget::icon_next());
+    BT_CONNECT(m_nextButton, &QToolButton::released,
+               this, &BtFindWidget::findNext);
 
     // Case checkbox:
     m_caseCheckBox = new QCheckBox(this);
