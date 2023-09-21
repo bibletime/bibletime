@@ -85,9 +85,6 @@ public:
 
     int countHighlightsInItem(int index);
     void findText(bool backward);
-    void getNextMatchingItem(int index);
-    void getPreviousMatchingItem(int index);
-
 
     QString const & activeLink() const noexcept { return m_activeLink; }
     QColor getBackgroundColor() const;

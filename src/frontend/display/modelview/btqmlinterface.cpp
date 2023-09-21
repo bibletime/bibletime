@@ -473,10 +473,42 @@ void BtQmlInterface::findText(bool const backward) {
     if (!m_findState)
         m_findState = FindState{getCurrentModelIndex(), 0};
 
-    if (backward)
-        getPreviousMatchingItem(m_findState->index);
-    else
-        getNextMatchingItem(m_findState->index);
+    auto const num = countHighlightsInItem(m_findState->index);
+    if (backward) { // get previous matching item:
+        if (num > 0 && m_findState->subIndex == 0) {
+            // Found within m_findState->index item
+            m_findState->subIndex = 1;
+        } else if (auto index = m_findState->index; index > 0) {
+            if (m_findState->subIndex == 0)
+                --index;
+            for (int i = 0; i < 1000; ++i, --index) {
+                if (auto const num2 = countHighlightsInItem(index)) {
+                    m_findState->index = index;
+                    if (m_findState->subIndex == 0) {
+                        m_findState->subIndex = num2;
+                    } else {
+                        --m_findState->subIndex;
+                    }
+                    if (m_findState->subIndex != 0)
+                        break;
+                }
+            }
+        }
+    } else { // get next matching item:
+        if (num > m_findState->subIndex) {
+            // Found within m_findState->index item
+            ++m_findState->subIndex;
+        } else if (m_findState->index < m_moduleTextModel->rowCount()) {
+            auto index = m_findState->index + 1;
+            for (int i = 0; i < 1000; ++i, ++index) {
+                if (countHighlightsInItem(index)) {
+                    m_findState->index = index;
+                    m_findState->subIndex = 1;
+                    break;
+                }
+            }
+        }
+    }
 
     m_moduleTextModel->setFindState(m_findState);
     Q_EMIT positionItemOnScreen(m_findState->index);
@@ -488,59 +520,4 @@ int BtQmlInterface::countHighlightsInItem(int index) {
     QString text = m_moduleTextModel->data(mIndex, ModuleEntry::Text1Role).toString();
     int num = text.count(QStringLiteral("\"highlightwords"));
     return num;
-}
-
-void BtQmlInterface::getNextMatchingItem(int startIndex) {
-    int num = countHighlightsInItem(startIndex);
-    if (num > m_findState->subIndex) { // Found within startIndex item
-        m_findState->index = startIndex;
-        ++m_findState->subIndex;
-        return;
-    }
-
-    if (startIndex >= m_moduleTextModel->rowCount())
-        return;
-
-    int index = startIndex+1;
-    for (int i = 0; i < 1000; ++i) {
-        int num = countHighlightsInItem(index);
-        if (num > 0 ) {
-            m_findState->index = index;
-            m_findState->subIndex = 1;
-            return;
-        }
-        ++index;
-    }
-    return;
-}
-
-void BtQmlInterface::getPreviousMatchingItem(int startIndex) {
-    int num = countHighlightsInItem(startIndex);
-    if (num > 0 && m_findState->subIndex == 0) {
-        // Found within startIndex item
-        m_findState->index = startIndex;
-        m_findState->subIndex = 1;
-        return;
-    }
-
-    if (startIndex <= 0)
-        return;
-
-    int index = startIndex;
-    if (m_findState->subIndex == 0)
-        --index;
-    for (int i = 0; i < 1000; ++i) {
-        int num = countHighlightsInItem(index);
-        if (num > 0 ) {
-            m_findState->index = index;
-            if (m_findState->subIndex == 0)
-                m_findState->subIndex = num;
-            else
-                --m_findState->subIndex;
-            if (m_findState->subIndex != 0)
-                return;
-        }
-        --index;
-    }
-    return;
 }
