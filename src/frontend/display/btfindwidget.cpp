@@ -58,7 +58,10 @@ BtFindWidget::BtFindWidget(QWidget * parent)
                [this](QString const & v)
                { highlightText(v, m_caseCheckBox->isChecked()); });
     BT_CONNECT(m_textEditor, &QLineEdit::returnPressed,
-               [this] { highlightText(text(), m_caseCheckBox->isChecked()); });
+               [this] {
+                   highlightText(m_textEditor->text(),
+                                 m_caseCheckBox->isChecked());
+               });
 
     // Next and Previous buttons:
     m_previousButton = newButton(
@@ -72,7 +75,8 @@ BtFindWidget::BtFindWidget(QWidget * parent)
     // Case checkbox:
     m_caseCheckBox = new QCheckBox(this);
     BT_CONNECT(m_caseCheckBox, &QCheckBox::stateChanged,
-               [this](int const s) { highlightText(text(), s == Qt::Checked); });
+               [this](int const s)
+               { highlightText(m_textEditor->text(), s == Qt::Checked); });
     widgetLayout->addWidget(m_caseCheckBox);
 
     // Spacer:
@@ -84,8 +88,6 @@ BtFindWidget::BtFindWidget(QWidget * parent)
 
     retranslateUi();
 }
-
-QString BtFindWidget::text() const { return m_textEditor->text(); }
 
 void BtFindWidget::showAndSelect() {
     setVisible(true);

@@ -32,8 +32,6 @@ public: // methods:
 
     void showAndSelect();
 
-    QString text() const;
-
 private: // methods:
 
     void retranslateUi();
