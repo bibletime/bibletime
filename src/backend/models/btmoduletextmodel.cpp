@@ -409,7 +409,9 @@ int BtModuleTextModel::getFirstEntryIndex() const {
 }
 
 void BtModuleTextModel::setFindState(std::optional<FindState> findState) {
-    if (m_findState && m_findState->index != findState->index) {
+    if (m_findState
+        && (!findState || (m_findState->index != findState->index)))
+    {
         QModelIndex oldIndexToClear = index(m_findState->index, 0);
         m_findState = std::move(findState);
         Q_EMIT dataChanged(oldIndexToClear, oldIndexToClear);
