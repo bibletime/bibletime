@@ -12,9 +12,7 @@
 
 #include "language.h"
 
-#include <QByteArray>
 #include <QHash>
-#include <QList>
 #include <QLocale>
 #include <QObject>
 #include <QtGlobal>
