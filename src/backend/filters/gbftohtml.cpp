@@ -114,15 +114,18 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
     {
         auto t = QString::fromUtf8(buf.c_str());
         {
-            QRegExp tag(QStringLiteral("([.,;:]?<W[HGT][^>]*>\\s*)+"));
-            auto pos = tag.indexIn(t);
+            static QRegularExpression const tag(
+                QStringLiteral(R"PCRE(([.,;:]?<W[HGT][^>]*?>\s*)+)PCRE"));
+
+            QRegularExpressionMatch match;
+            auto pos = t.indexOf(tag, 0, &match);
             if (pos == -1) //no strong or morph code found in this text
                 return 1; //WARNING: Return already here
             do {
-                auto const partLength = pos + tag.matchedLength();
+                auto const partLength = pos + match.capturedLength();
                 list.append(t.left(partLength));
                 t.remove(0, partLength);
-                pos = tag.indexIn(t);
+                pos = t.indexOf(tag, 0, &match);
             } while (pos != -1);
         }
 
