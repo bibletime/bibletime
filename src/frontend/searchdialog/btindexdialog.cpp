@@ -109,8 +109,7 @@ void BtIndexDialog::populateModuleList() {
                                    | Qt::ItemIsTristate);
     m_modsWithoutIndices->setExpanded(true);
 
-    auto const & modules = CSwordBackend::instance().moduleList();
-    for (auto const & modulePtr : modules) {
+    for (auto const & modulePtr : CSwordBackend::instance().moduleList()) {
         if (modulePtr->hasIndex()) {
             auto item = new QTreeWidgetItem(m_modsWithIndices);
             item->setText(0, modulePtr->name());
