@@ -75,7 +75,6 @@ public: // types:
         }
         BookmarkItemBase(const BookmarkItemBase & other)
             : m_flags(other.m_flags)
-            , m_icon(other.m_icon)
             , m_parent(other.m_parent)
             , m_text(other.m_text)
             , m_tooltip(other.m_tooltip)
@@ -131,9 +130,10 @@ public: // types:
 
         Qt::ItemFlags flags() const { return m_flags; }
 
-        void setIcon(QIcon const & icon) { m_icon = icon; }
-
-        QIcon icon() const { return m_icon; }
+        virtual QIcon const & icon() const noexcept {
+            static QIcon const noIcon;
+            return noIcon;
+        }
 
         void setParent(BookmarkItemBase * parent) { m_parent = parent; }
 
@@ -152,7 +152,6 @@ public: // types:
 
         QList<BookmarkItemBase *> m_children;
         Qt::ItemFlags m_flags;
-        QIcon m_icon;
         BookmarkItemBase * m_parent;
         QString m_text;
         QString m_tooltip;
@@ -171,6 +170,9 @@ public: // types:
 
         /** Creates a copy. */
         BookmarkItem(const BookmarkItem & other);
+
+        QIcon const & icon() const noexcept final override
+        { return CResMgr::mainIndex::bookmark::icon(); }
 
         /** Returns the used module, 0 if there is no such module. */
         CSwordModuleInfo * module() const;
@@ -208,6 +210,9 @@ public: // types:
     public:
 
         BookmarkFolder(const QString & name, BookmarkItemBase * parent = nullptr);
+
+        QIcon const & icon() const noexcept final override
+        { return CResMgr::mainIndex::closedFolder::icon(); }
 
         /** Returns a list of direct childs of this item. */
         QList<BookmarkItemBase *> getChildList() const;
@@ -442,7 +447,6 @@ BookmarkFolder::BookmarkFolder(const QString & name, BookmarkItemBase * parent)
         : BookmarkItemBase(parent) {
     setText(name);
     setFlags(Qt::ItemIsEditable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
-    setIcon(CResMgr::mainIndex::closedFolder::icon());
 }
 
 QList<BookmarkItemBase*> BookmarkFolder::getChildList() const {
@@ -503,7 +507,6 @@ BookmarkItem::BookmarkItem(CSwordModuleInfo const & module,
         m_key = key;
     }
 
-    setIcon(CResMgr::mainIndex::bookmark::icon());
     setText(toHeader(key, module.name()));
     setFlags(Qt::ItemIsSelectable /*| Qt::ItemIsEditable*/ | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
 }
@@ -511,7 +514,6 @@ BookmarkItem::BookmarkItem(CSwordModuleInfo const & module,
 BookmarkItem::BookmarkItem(BookmarkItemBase * parent)
         : BookmarkItemBase(parent) {
     setFlags(Qt::ItemIsSelectable /*| Qt::ItemIsEditable*/ | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
-    setIcon(CResMgr::mainIndex::bookmark::icon());
     setText(toHeader(key(), module() ? module()->name() : QObject::tr("unknown")));
 }
 
@@ -521,7 +523,6 @@ BookmarkItem::BookmarkItem(const BookmarkItem & other)
         , m_description(other.m_description)
         , m_moduleName(other.m_moduleName)
 {
-    setIcon(CResMgr::mainIndex::bookmark::icon());
     setText(toHeader(key(), module() ? module()->name() : QObject::tr("unknown")));
 }
 
