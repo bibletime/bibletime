@@ -16,6 +16,7 @@
 #include <QClipboard>
 #include <QScreen>
 #include <QRegularExpression>
+#include <QRegularExpressionMatch>
 #include <QTimerEvent>
 #include <utility>
 #include "../../../backend/config/btconfig.h"
@@ -192,56 +193,54 @@ void BtQmlInterface::setHoveredLink(QString const & link) {
 }
 
 QString BtQmlInterface::getLemmaFromLink(const QString& url) {
-    QString reference;
-
-    QRegExp rx(QStringLiteral("sword://lemmamorph/([a-s]+)=([GH][0-9]+)"));
-    rx.setMinimal(false);
-    int pos1 = rx.indexIn(url);
-    if (pos1 > -1) {
-        reference = rx.cap(2);
-    }
-    return reference;
+    static QRegularExpression const rx(
+        QStringLiteral(R"PCRE(sword://lemmamorph/([a-s]+)=([GH][0-9]+))PCRE"));
+    if (auto const match = rx.match(url); match.hasMatch())
+        return match.captured(2);
+    return {};
 }
 
 QString BtQmlInterface::getBibleUrlFromLink(const QString& url) {
-    QString reference;
-
-    QRegExp rx(QStringLiteral("(sword://Bible/.*)\\|\\|(.*)=(.*)"));
-    rx.setMinimal(false);
-    int pos1 = rx.indexIn(url);
-    if (pos1 > -1) {
-        reference = rx.cap(1);
-    }
-    return reference;
+    static QRegularExpression const rx(
+        QStringLiteral(R"PCRE((sword://Bible/.*)\|\|(.*)=(.*))PCRE"));
+    if (auto const match = rx.match(url); match.hasMatch())
+        return match.captured(1);
+    return {};
 }
 
 QString BtQmlInterface::getReferenceFromUrl(const QString& url) {
     {
-        QRegExp rx(QStringLiteral("sword://(bible|lexicon)/(.*)/(.*)(\\|\\|)"),
-                   Qt::CaseInsensitive);
-        rx.setMinimal(false);
-        if (rx.indexIn(url) > -1)
+        static QRegularExpression const rx(
+            QStringLiteral(
+                R"PCRE(sword://(bible|lexicon)/(.*)/(.*)(\|\|))PCRE"),
+            QRegularExpression::CaseInsensitiveOption);
+        if (auto const match = rx.match(url); match.hasMatch())
             return QStringLiteral("href=sword://%1/%2/%3")
-                                  .arg(rx.cap(1), rx.cap(2), rx.cap(3));
+                        .arg(match.capturedRef(1),
+                             match.capturedRef(2),
+                             match.capturedRef(3));
     }{
-        QRegExp rx(QStringLiteral("sword://(bible|lexicon)/(.*)/(.*)"),
-                   Qt::CaseInsensitive);
-        rx.setMinimal(false);
-        if (rx.indexIn(url) > -1)
+        static QRegularExpression const rx(
+            QStringLiteral(R"PCRE(sword://(bible|lexicon)/(.*)/(.*))PCRE"),
+            QRegularExpression::CaseInsensitiveOption);
+        if (auto const match = rx.match(url); match.hasMatch())
             return QStringLiteral("href=sword://%1/%2/%3")
-                    .arg(rx.cap(1), rx.cap(2), rx.cap(3));
+                        .arg(match.capturedRef(1),
+                             match.capturedRef(2),
+                             match.capturedRef(3));
     }{
-        QRegExp rx(QStringLiteral("sword://footnote/(.*)=(.*)"),
-                   Qt::CaseInsensitive);
-        rx.setMinimal(false);
-        if (rx.indexIn(url) > -1)
-            return QStringLiteral("note=") + rx.cap(1);
+        static QRegularExpression const rx(
+            QStringLiteral(R"PCRE(sword://footnote/(.*)=(.*))PCRE"),
+            QRegularExpression::CaseInsensitiveOption);
+        if (auto const match = rx.match(url); match.hasMatch())
+            return QStringLiteral("note=") + match.capturedRef(1);
     }{
-        QRegExp rx(QStringLiteral("sword://lemmamorph/(.*)=(.*)/(.*)"),
-                   Qt::CaseInsensitive);
-        rx.setMinimal(false);
-        if (rx.indexIn(url) > -1)
-            return QStringLiteral("%1=%2").arg(rx.cap(1), rx.cap(2));
+        static QRegularExpression const rx(
+            QStringLiteral(R"PCRE(sword://lemmamorph/(.*)=(.*)/(.*))PCRE"),
+            QRegularExpression::CaseInsensitiveOption);
+        if (auto const match = rx.match(url); match.hasMatch())
+            return QStringLiteral("%1=%2").arg(match.capturedRef(1),
+                                               match.capturedRef(2));
     }
     return {};
 }
@@ -298,14 +297,10 @@ void BtQmlInterface::getFontsFromSettings() {
 }
 
 void BtQmlInterface::setBibleKey(const QString& link) {
-    QRegExp rx(QStringLiteral("sword://Bible/(.*)/(.*)\\|\\|(.*)=(.*)"));
-    rx.setMinimal(false);
-    int pos1 = rx.indexIn(link);
-    QString keyName;
-    if (pos1 > -1) {
-        keyName = rx.cap(2);
-        Q_EMIT setBibleReference(keyName);
-    }
+    static QRegularExpression const rx(
+        QStringLiteral(R"PCRE(sword://Bible/(.*)/(.*)\|\|(.*)=(.*))PCRE"));
+    if (auto const match = rx.match(link); match.hasMatch())
+        Q_EMIT setBibleReference(match.captured(2));
 }
 
 void BtQmlInterface::scrollToSwordKey(CSwordKey * key) {
@@ -336,13 +331,12 @@ void BtQmlInterface::dragHandler(int index) {
     QString moduleName;
     QString keyName;
 
-    QRegExp rx(QStringLiteral("sword://Bible/(.*)/(.*)\\|\\|(.*)=(.*)"));
-    rx.setMinimal(false);
-    int pos1 = rx.indexIn(m_activeLink);
+    static QRegularExpression const rx(
+        QStringLiteral(R"PCRE(sword://Bible/(.*)/(.*)\|\|(.*)=(.*))PCRE"));
 
-    if (pos1 > -1) {
-        moduleName = rx.cap(1);
-        keyName = rx.cap(2);
+    if (auto const match = rx.match(m_activeLink); match.hasMatch()) {
+        moduleName = match.captured(1);
+        keyName = match.captured(2);
     } else {
         moduleName = m_moduleNames.at(0);
         keyName = m_moduleTextModel->indexToKeyName(index);
