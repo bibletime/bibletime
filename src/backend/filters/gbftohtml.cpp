@@ -17,7 +17,6 @@
 #include <QByteArray>
 #include <QChar>
 #include <QList>
-#include <QRegExp>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #include <QString>
@@ -149,11 +148,13 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
         //If not, leave out the strongs info, because it can't be tight to a text
         //Comparing the first char with < is not enough, because the tokenReplace is done already
         //so there might be html tags already.
-        if (e.trimmed().remove(QRegExp(QStringLiteral("[.,;:]"))).left(2)
-            == QStringLiteral("<W"))
         {
-            result += e;
-            continue;
+            static QRegularExpression const re(
+                QStringLiteral(R"PCRE([.,;:])PCRE"));
+            if (e.trimmed().remove(re).left(2) == QStringLiteral("<W")) {
+                result += e;
+                continue;
+            }
         }
 
         bool insertedTag = false;
