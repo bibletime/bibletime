@@ -17,7 +17,8 @@
 #include <QByteArray>
 #include <QChar>
 #include <QObject>
-#include <QRegExp>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
 #include <QSharedPointer>
 #include <QStringList>
 #include <Qt>
@@ -91,11 +92,11 @@ QString decodeCrossReference(QString const & data,
     const CSwordModuleInfo * module(nullptr);
 
     // a prefixed module gives the module to look into
-    QRegExp const re(QStringLiteral("^[^ ]+:"));
+    static QRegularExpression const re(QStringLiteral(R"PCRE(^[^ ]+:)PCRE"));
     // re.setMinimal(true);
-    int pos = re.indexIn(data);
-    if (pos != -1)
-        pos += re.matchedLength() - 1;
+    int pos = re.match(data).capturedEnd();
+    if (pos >= 0)
+        --pos;
 
     if (pos > 0) {
         auto moduleName = data.left(pos);
@@ -349,15 +350,16 @@ QString decodeMorph(QString const & data) {
 }
 
 QString decodeSwordReference(QString const & data) {
-    QRegExp rx(QStringLiteral("sword://(bible|lexicon)/(.*)/(.*)"),
-               Qt::CaseInsensitive);
-    rx.setMinimal(false);
-    if (rx.indexIn(data) >= 0) {
+    static QRegularExpression const rx(
+        QStringLiteral(R"PCRE(sword://(bible|lexicon)/(.*?)/(.*?))PCRE"),
+        QRegularExpression::CaseInsensitiveOption);
+    if (auto const match = rx.match(data); match.hasMatch()) {
         if (auto * const module =
-                    CSwordBackend::instance().findModuleByName(rx.cap(2)))
+                    CSwordBackend::instance().findModuleByName(
+                        match.captured(2)))
         {
             std::unique_ptr<CSwordKey> key(module->createKey());
-            auto reference = rx.cap(3);
+            auto reference = match.captured(3);
             key->setKey(reference);
             return QStringLiteral("<div class=\"crossrefinfo\" lang=\"%1\">"
                                   "<h3>%2</h3><p>%3</p></div>")
