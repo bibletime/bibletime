@@ -134,8 +134,8 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
     //list is now a list of words with 1-n Strongs at the end, which belong to this word.
 
     //now create the necessary HTML in list entries and concat them to the result
-    QRegExp tag(QStringLiteral("<W([HGT])([^>]*)>"));
-    tag.setMinimal(true);
+    static QRegularExpression const tag(
+        QStringLiteral(R"PCRE(<W([HGT])([^>]*?)>)PCRE"));
 
     QString result;
     for (auto & e : list) { // for each entry to process
@@ -153,16 +153,24 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
             continue;
         }
 
-        int pos = tag.indexIn(e, 0); //try to find a strong number marker
         bool insertedTag = false;
         bool hasLemmaAttr = false;
         bool hasMorphAttr = false;
 
         int tagAttributeStart = -1;
 
-        while (pos != -1) { //work on all strong/lemma tags in this section, should be between 1-3 loops
-            const bool isMorph = (tag.cap(1) == QStringLiteral("T"));
-            auto const value = isMorph ? tag.cap(2) : tag.cap(2).prepend( tag.cap(1) );
+        /* Try to find a strong number marker. Work on all strong/lemma tags in
+           this section, should be between 1-3 loops: */
+        QRegularExpressionMatch match;
+        for (auto pos = e.indexOf(tag, 0, &match);
+             pos != -1;
+             pos = e.indexOf(tag, pos, &match))
+        {
+            auto const isMorph = match.captured(1) == QStringLiteral("T");
+            auto const value =
+                isMorph
+                ? match.captured(2)
+                : match.captured(2).prepend(match.captured(1));
 
             if (value.isEmpty()) {
                 break;
@@ -170,7 +178,7 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
 
             //insert the span
             if (!insertedTag) { //we have to insert a new tag end and beginning, i.e. our first loop
-                e.replace(pos, tag.matchedLength(), QStringLiteral("</span>"));
+                e.replace(pos, match.capturedLength(), QStringLiteral("</span>"));
                 pos += 7;
 
                 //skip blanks, commas, dots and stuff at the beginning, it doesn't belong to the morph code
@@ -198,7 +206,7 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
                 e.insert(startPos, std::move(rep));
             }
             else { //add the attribute to the existing tag
-                e.remove(pos, tag.matchedLength());
+                e.remove(pos, match.capturedLength());
 
                 if (tagAttributeStart == -1) {
                     continue; //nothing valid found
@@ -248,7 +256,6 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
             }
 
             insertedTag = true;
-            pos = tag.indexIn(e, pos);
         }
 
         result += e;
