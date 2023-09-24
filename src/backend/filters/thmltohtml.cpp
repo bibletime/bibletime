@@ -12,7 +12,6 @@
 
 #include "thmltohtml.h"
 
-#include <QRegExp>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #include <QString>
@@ -78,18 +77,19 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
     {
         auto t = QString::fromUtf8(buf.c_str());
         {
-            QRegExp const tag(
-                        QStringLiteral("([.,;]?<sync[^>]+(type|value)="
-                                       "\"([^\"]+)\"[^>]+(type|value)="
-                                       "\"([^\"]+)\"([^<]*)>)+"));
-            auto pos = tag.indexIn(t);
+            static QRegularExpression const tag(
+                QStringLiteral(R"PCRE(([.,;]?<sync[^>]+(type|value)=)PCRE"
+                               R"PCRE("([^"]+)"[^>]+(type|value)=)PCRE"
+                               R"PCRE("([^"]+)"([^<]*)>)+)PCRE"));
+            QRegularExpressionMatch match;
+            auto pos = t.indexOf(tag, 0, &match);
             if (pos == -1) //no strong or morph code found in this text
                 return 1; //WARNING: Return already here
             do {
-                auto const partLength = pos + tag.matchedLength();
+                auto const partLength = pos + match.capturedLength();
                 list.append(t.left(partLength));
                 t.remove(0, partLength);
-                pos = tag.indexIn(t);
+                pos = t.indexOf(tag, 0, &match);
             } while (pos != -1);
         }
 
@@ -98,15 +98,15 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
             list.append(std::move(t));
     }
 
-    QRegExp const tag(
-                QStringLiteral("<sync[^>]+(type|value|class)=\"([^\"]+)\"[^>]+"
-                               "(type|value|class)=\"([^\"]+)\"[^>]+"
-                               "((type|value|class)=\"([^\"]+)\")*([^<]*)>"));
+    static QRegularExpression const tag(
+        QStringLiteral(R"PCRE(<sync[^>]+(type|value|class)="([^"]+)"[^>]+)PCRE"
+                       R"PCRE((type|value|class)="([^"]+)"[^>]+)PCRE"
+                       R"PCRE(((type|value|class)="([^"]+)")*([^<]*)>)PCRE"));
     QString result;
     for (auto & e : list) {
 
         // pass text ahead of <sync> stright through
-        if (auto const pos = tag.indexIn(e); pos > 0) {
+        if (auto const pos = e.indexOf(tag); pos > 0) {
             result.append(e.left(pos));
             e.remove(0, pos);
         }
@@ -115,7 +115,8 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
         bool hasLemmaAttr = false;
         bool hasMorphAttr = false;
 
-        int pos = tag.indexIn(e);
+        QRegularExpressionMatch match;
+        auto pos = e.indexOf(tag, 0, &match);
         bool insertedTag = false;
 
         while (pos != -1) {
@@ -130,8 +131,8 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
                 if (i > 4)
                     i++;
 
-                auto const attrName = tag.cap(i);
-                auto const attrValue = tag.cap(i + 1);
+                auto const attrName = match.captured(i);
+                auto const attrValue = match.captured(i + 1);
                 if (attrName == QStringLiteral("type")) {
                     isMorph   = (attrValue == QStringLiteral("morph"));
                     isStrongs = (attrValue == QStringLiteral("Strongs"));
@@ -154,7 +155,7 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
 
             //insert the span
             if (!insertedTag) {
-                e.replace(pos, tag.matchedLength(), QStringLiteral("</span>"));
+                e.replace(pos, match.capturedLength(), QStringLiteral("</span>"));
                 pos += 7;
 
                 auto rep = QStringLiteral("<span lemma=\"%1\">").arg(value);
@@ -173,7 +174,7 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
                 e.insert(startPos, std::move(rep));
             }
             else { //add the attribute to the existing tag
-                e.remove(pos, tag.matchedLength());
+                e.remove(pos, match.capturedLength());
 
                 if ((!isMorph && hasLemmaAttr) || (isMorph && hasMorphAttr)) { //we append another attribute value, e.g. 3000 gets 3000|5000
                     //search the existing attribute start
@@ -222,7 +223,7 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
             }
 
             insertedTag = true;
-            pos = tag.indexIn(e, pos);
+            pos = e.indexOf(tag, pos, &match);
         }
 
         result.append(std::move(e));
