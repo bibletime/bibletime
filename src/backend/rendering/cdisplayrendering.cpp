@@ -12,7 +12,7 @@
 
 #include "cdisplayrendering.h"
 
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QString>
 #include <QtGlobal>
 #include "../../util/btassert.h"
@@ -210,9 +210,8 @@ QString CDisplayRendering::entryLink(KeyTreeItem const & item,
 QString CDisplayRendering::keyToHTMLAnchor(QString const & key) {
     // Be careful not to remove non-ASCII characters, this causes problems
     // with many languages.
-    return key.trimmed()
-            .remove(QRegExp(QStringLiteral("\\s")))
-            .replace(':', '_');
+    static QRegularExpression const re(QStringLiteral(R"PCRE(\s)PCRE"));
+    return key.trimmed().remove(re).replace(':', '_');
 }
 
 QString
