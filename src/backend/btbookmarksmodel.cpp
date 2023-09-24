@@ -144,10 +144,8 @@ public: // types:
          */
         int index() const {
             BT_ASSERT(parent());
-            for(int i = 0; i < parent()->childCount(); ++i)
-                if(parent()->child(i) == this)
-                    return i;
-            return -1;
+            return parent()->children().indexOf(
+                const_cast<BookmarkItemBase *>(this));
         }
 
     private:
