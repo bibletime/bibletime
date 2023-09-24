@@ -240,25 +240,9 @@ public: // methods:
     }
 
     BookmarkItemBase * item(const QModelIndex & index) const {
-        if(index.isValid()) {
-#ifdef QT_DEBUG
-            {
-                // check for item in tree
-                QList<BookmarkItemBase *> items;
-                items << m_rootItem;
-                for(int c = 0; ; ++c) {
-                    if(items[c] == index.internalPointer())
-                        break;
-                    if(items[c]->childCount())
-                        items.append(items[c]->children());
-                    BT_ASSERT(c < items.size());
-                }
-            }
-#endif
-            return reinterpret_cast<BookmarkItemBase *>(index.internalPointer());
-        }
-        else
-            return m_rootItem;
+        if (index.isValid())
+            return static_cast<BookmarkItemBase *>(index.internalPointer());
+        return m_rootItem;
     }
 
     template <typename T>
