@@ -146,9 +146,11 @@ void CRangeChooserDialog::initConnections() {
     BT_CONNECT(m_rangeEdit, &QTextEdit::textChanged,
                [this]{
                    m_resultList->clear();
+                   static QRegularExpression const re(
+                       QStringLiteral(R"PCRE(\s*-\s*)PCRE"));
                    auto const range =
                            m_rangeEdit->toPlainText().replace(
-                               QRegExp(QStringLiteral("\\s{0,}-\\s{0,}")),
+                               re,
                                QStringLiteral("-"));
 
                    auto const & backend = CSwordBackend::instance();
