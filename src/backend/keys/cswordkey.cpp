@@ -12,7 +12,8 @@
 
 #include "cswordkey.h"
 
-#include <QRegExp>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
 #include <QString>
 #include <string>
 #include "../../util/btassert.h"
@@ -87,25 +88,28 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
     // This is yucky, but if we want strong lexicon refs we have to do it here.
     if (m_module->type() == CSwordModuleInfo::Lexicon) {
         const QString t(text);
-        QRegExp const rx(QStringLiteral("(GREEK|HEBREW) for 0*([1-9]\\d*)"));
+        static QRegularExpression const rx(
+            QStringLiteral(R"PCRE((GREEK|HEBREW) for 0*([1-9]\d*))PCRE"));
+        QRegularExpressionMatch match;
         int pos = 0;
-        while ((pos = rx.indexIn(t, pos)) != -1) {
-            auto language = rx.cap(1);
+        while ((pos = t.indexOf(rx, pos, &match)) != -1) {
+            auto language = match.captured(1);
             auto langcode = language.at(0); // "G" or "H"
-            auto number = rx.cap(2);
+            auto number = match.captured(2);
             auto paddednumber = number.rightJustified(5, '0'); // Form 00123
 
             text.replace(
-                QRegExp(QStringLiteral(
-                            "(>[^<>]+)" // Avoid replacing inside tags
-                            "\\b(0*%1)\\b") // And span around 0's
-                        .arg(std::move(number))),
+                QRegularExpression(
+                    QStringLiteral(
+                        R"PCRE((>[^<>]+))PCRE" // Avoid replacing inside tags
+                        R"PCRE(\\b(0*%1)\\b)PCRE") // And span around 0's
+                    .arg(std::move(number))),
                 QStringLiteral("\\1<span lemma=\"%1%2\">"
                                "<a href=\"strongs://%3/%2\">\\2</a></span>")
                     .arg(std::move(langcode),
                          std::move(paddednumber),
                          std::move(language)));
-            pos += rx.matchedLength();
+            pos += match.capturedLength();
         }
     }
     return text;
