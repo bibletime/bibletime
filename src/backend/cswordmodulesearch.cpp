@@ -150,7 +150,8 @@ QStringList queryParser(QString const & queryString) {
     return(tokenList);
 }
 
-static QRegularExpression const spaceRegexp(QStringLiteral(R"PCRE(\s+)PCRE"));
+static auto const spaceRegexpString(QStringLiteral(R"PCRE(\s+)PCRE"));
+static QRegularExpression const spaceRegexp(spaceRegexpString);
 
 } // anonymous namespace
 
@@ -249,8 +250,7 @@ QString highlightSearchedText(QString const & content,
         auto words = searchedText.split(spaceRegexp, Qt::SkipEmptyParts);
         for (auto & word : words)
             word = QRegularExpression::escape(word);
-        highlightRegex =
-            QRegularExpression(words.join(QStringLiteral(R"PCRE(\s+)PCRE")));
+        highlightRegex = QRegularExpression(words.join(spaceRegexpString));
     } else {
         QString wordsRegexString;
         for (auto const & word : queryParser(searchedText)) {
