@@ -19,7 +19,6 @@
 #include <QFlags>
 #include <QFont>
 #include <QHBoxLayout>
-#include <QList>
 #include <QPalette>
 #include <QPushButton>
 #include <QSizePolicy>

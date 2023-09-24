@@ -15,7 +15,6 @@
 #include <memory>
 #include <QAction>
 #include <QLabel>
-#include <QList>
 #include <QMenu>
 #include <QPushButton>
 #include <QStackedWidget>

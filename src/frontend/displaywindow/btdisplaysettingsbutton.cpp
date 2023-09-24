@@ -13,7 +13,6 @@
 #include "btdisplaysettingsbutton.h"
 
 #include <QAction>
-#include <QList>
 #include <QMenu>
 #include <QString>
 #include <QToolButton>

@@ -19,7 +19,6 @@
 #include <QKeyEvent>
 #include <QLabel>
 #include <QLineEdit>
-#include <QList>
 #include <QMenu>
 #include <QModelIndex>
 #include <QToolButton>

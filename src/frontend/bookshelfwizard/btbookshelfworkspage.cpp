@@ -23,7 +23,6 @@
 #include <QHeaderView>
 #include <QLabel>
 #include <QLineEdit>
-#include <QList>
 #include <QMenu>
 #include <QNonConstOverload>
 #include <QSet>

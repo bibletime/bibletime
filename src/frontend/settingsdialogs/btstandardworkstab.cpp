@@ -15,7 +15,6 @@
 #include <QComboBox>
 #include <QFormLayout>
 #include <QLabel>
-#include <QList>
 #include <QSizePolicy>
 #include <QStringList>
 #include <QVBoxLayout>

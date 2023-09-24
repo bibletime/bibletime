@@ -15,7 +15,6 @@
 #include <QApplication>
 #include <QGroupBox>
 #include <QLabel>
-#include <QList>
 #include <QRadioButton>
 #include <QSizePolicy>
 #include <QSpacerItem>

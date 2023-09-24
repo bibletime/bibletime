@@ -13,7 +13,6 @@
 #include "cplaintextexportrendering.h"
 
 #include <memory>
-#include <QList>
 #include <QtGlobal>
 #include "../../util/btassert.h"
 #include "../drivers/btmodulelist.h"

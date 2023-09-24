@@ -18,7 +18,6 @@
 #include <QCoreApplication>
 #include <QEvent>
 #include <QIcon>
-#include <QList>
 #include <QModelIndex>
 #include <QPersistentModelIndex>
 #include <QVariant>

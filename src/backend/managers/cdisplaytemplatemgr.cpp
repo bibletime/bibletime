@@ -19,7 +19,6 @@
 #include <QFileInfo>
 #include <QFont>
 #include <QIODevice>
-#include <QList>
 #include <QObject>
 #include <QStringList>
 #include <QTextStream>

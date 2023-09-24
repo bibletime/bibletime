@@ -18,7 +18,6 @@
 #include <QDir>
 #include <QFile>
 #include <QIODevice>
-#include <QList>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #include <QTextCodec>

@@ -15,13 +15,11 @@
 #include <algorithm>
 #include <QChar>
 #include <QDataStream>
-#include <QList>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #include <QStringList>
 #include <QtCore>
 #include "../util/btassert.h"
-#include "../util/tool.h"
 #include "config/btconfig.h"
 #include "drivers/cswordmoduleinfo.h"
 #include "managers/cswordbackend.h"

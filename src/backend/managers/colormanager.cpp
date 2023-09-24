@@ -17,7 +17,6 @@
 #include <QColor>
 #include <QDir>
 #include <QFileInfo>
-#include <QList>
 #include <QPalette>
 #include <QSettings>
 #include <QStringList>

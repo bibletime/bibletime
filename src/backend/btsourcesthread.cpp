@@ -14,7 +14,6 @@
 
 #include <cstddef>
 #include <QDebug>
-#include <QList>
 #include <QString>
 #include <QStringList>
 #include <memory>

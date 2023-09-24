@@ -15,7 +15,6 @@
 #include <QCompleter>
 #include <QFontDatabase>
 #include <QIntValidator>
-#include <QList>
 #include <QNonConstOverload>
 #include <QVariant>
 #include "../../util/btconnect.h"

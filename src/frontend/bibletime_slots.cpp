@@ -18,7 +18,6 @@
 #include <QCursor>
 #include <QDesktopServices>
 #include <QInputDialog>
-#include <QList>
 #include <QMdiSubWindow>
 #include <QMenu>
 #include <QMetaObject>

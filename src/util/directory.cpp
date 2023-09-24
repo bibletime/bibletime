@@ -20,7 +20,6 @@
 #include <QFileInfo>
 #include <QFileInfoList>
 #include <QFlags>
-#include <QList>
 #include <QLocale>
 #include <QStringList>
 #include <QtGlobal>

@@ -16,7 +16,6 @@
 #include <QDialog>
 #include <QFontMetrics>
 #include <QHeaderView>
-#include <QList>
 #include <QMessageBox>
 #include <QModelIndex>
 #include <QPushButton>

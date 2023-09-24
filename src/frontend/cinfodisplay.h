@@ -14,7 +14,6 @@
 
 #include <QWidget>
 
-#include <QList>
 #include <QPair>
 #include "../backend/rendering/btinforendering.h"
 

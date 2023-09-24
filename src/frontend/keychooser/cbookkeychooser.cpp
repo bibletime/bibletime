@@ -16,7 +16,6 @@
 #include <memory>
 #include <QComboBox>
 #include <QHBoxLayout>
-#include <QList>
 #include <QStringList>
 #include <Qt>
 #include <QtAlgorithms>
