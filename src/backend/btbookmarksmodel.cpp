@@ -265,23 +265,6 @@ public: // methods:
     T * itemAs(QModelIndex const & index) const
     { return dynamic_cast<T *>(item(index)); }
 
-    /// \test
-    void printItems() const {
-        QList<BookmarkItemBase *> items;
-        QList<int> spaces;
-        items << m_rootItem;
-        spaces << 0;
-        for(int c = 0; c < items.size(); ++c) {
-            // qDebug() << QString().fill('\t', spaces[c]) << items[c]->text().left(24) << items[c]
-            //       << items[c]->parent() << items[c]->childCount();
-            if(items[c]->childCount())
-                for(int i = 0; i < items[c]->childCount(); ++i) {
-                    items.insert(c + i + 1, items[c]->children()[i]);
-                    spaces.insert(c + i + 1, spaces[c] + 1);
-                }
-        }
-    }
-
     void needSave(){
         if(m_defaultModel == q_ptr){
             if(!m_saveTimer.isActive())
