@@ -65,7 +65,7 @@ ReferenceManager::decodeHyperlink(QString const & hyperlink) {
        (if present).
     */
 
-    QStringRef ref(&hyperlink);
+    QStringView ref(hyperlink);
 
     static auto const preferredModule =
             [](ReferenceManager::Type const type) -> CSwordModuleInfo * {
@@ -88,7 +88,7 @@ ReferenceManager::decodeHyperlink(QString const & hyperlink) {
 
     DecodedHyperlink ret;
     static auto const removeCaseInsensitivePrefix =
-            [](QStringRef & ref, QString const & prefix) {
+            [](QStringView & ref, QString const & prefix) {
                 if (ref.startsWith(prefix, Qt::CaseInsensitive)) {
                     ref = ref.mid(prefix.size() - 1);
                     return true;

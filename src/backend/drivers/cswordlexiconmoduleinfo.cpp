@@ -171,10 +171,12 @@ QString CSwordLexiconModuleInfo::normalizeStrongsKey(const QString &key) const {
                     .match(key);
         match.hasMatch())
     {
-        auto const lang = match.capturedRef(1);
-        auto const digits = match.capturedRef(2);
+        auto const lang = match.capturedView(1);
+        auto const digits = match.capturedView(2);
 
-        auto size = qMax(digits.size(), m_strongsDigitsLength);
+        qsizetype size = (digits.size() > m_strongsDigitsLength)
+                          ? digits.size()
+                          : m_strongsDigitsLength;
         auto numPaddingZeroesRequired = size - digits.size();
         if (m_hasLeadingStrongsLetter)
             size += lang.size();

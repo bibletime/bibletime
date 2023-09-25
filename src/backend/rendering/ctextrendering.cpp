@@ -348,7 +348,7 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
                      i >= 0;
                      i = preverseHeading.indexOf('<', i))
                 {
-                    auto ref = preverseHeading.midRef(i + 1);
+                    auto ref = QStringView(preverseHeading).mid(i + 1);
                     if (ref.startsWith(QStringLiteral("title"))) {
                         ref = ref.mid(5); // strlen("title")
                         if (!ref.isEmpty() && greaterOrS.contains(ref[0])) {

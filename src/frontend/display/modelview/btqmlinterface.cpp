@@ -216,31 +216,31 @@ QString BtQmlInterface::getReferenceFromUrl(const QString& url) {
             QRegularExpression::CaseInsensitiveOption);
         if (auto const match = rx.match(url); match.hasMatch())
             return QStringLiteral("href=sword://%1/%2/%3")
-                        .arg(match.capturedRef(1),
-                             match.capturedRef(2),
-                             match.capturedRef(3));
+                        .arg(match.capturedView(1),
+                             match.capturedView(2),
+                             match.capturedView(3));
     }{
         static QRegularExpression const rx(
             QStringLiteral(R"PCRE(sword://(bible|lexicon)/(.*)/(.*))PCRE"),
             QRegularExpression::CaseInsensitiveOption);
         if (auto const match = rx.match(url); match.hasMatch())
             return QStringLiteral("href=sword://%1/%2/%3")
-                        .arg(match.capturedRef(1),
-                             match.capturedRef(2),
-                             match.capturedRef(3));
+                        .arg(match.capturedView(1),
+                             match.capturedView(2),
+                             match.capturedView(3));
     }{
         static QRegularExpression const rx(
             QStringLiteral(R"PCRE(sword://footnote/(.*)=(.*))PCRE"),
             QRegularExpression::CaseInsensitiveOption);
         if (auto const match = rx.match(url); match.hasMatch())
-            return QStringLiteral("note=") + match.capturedRef(1);
+            return QStringLiteral("note=%1").arg(match.capturedView(1));
     }{
         static QRegularExpression const rx(
             QStringLiteral(R"PCRE(sword://lemmamorph/(.*)=(.*)/(.*))PCRE"),
             QRegularExpression::CaseInsensitiveOption);
         if (auto const match = rx.match(url); match.hasMatch())
-            return QStringLiteral("%1=%2").arg(match.capturedRef(1),
-                                               match.capturedRef(2));
+            return QStringLiteral("%1=%2").arg(match.capturedView(1),
+                                               match.capturedView(2));
     }
     return {};
 }
