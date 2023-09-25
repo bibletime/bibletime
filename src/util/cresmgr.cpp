@@ -32,11 +32,11 @@ QString const actionName = QStringLiteral("viewInfoDisplay_action");
 
 namespace mainIndex {
 namespace search {
-const QKeySequence accel(Qt::CTRL + Qt::Key_O);
+const QKeySequence accel(Qt::CTRL | Qt::Key_O);
 QString const actionName = QStringLiteral("mainindex_search_action");
 }
 namespace searchdefaultbible {
-const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_F);
+const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_F);
 QString const actionName = QStringLiteral("mainindex_searchdefaultbible_action");
 }
 } // namespace mainIndex {
@@ -49,7 +49,7 @@ namespace saveProfile {
 QString const actionName = QStringLiteral("windowSaveProfile_action");
 }
 namespace saveToNewProfile {
-const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_S);
+const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_S);
 QString const actionName = QStringLiteral("windowSaveToNewProfile_action");
 }
 namespace deleteProfile {
@@ -64,52 +64,52 @@ const QKeySequence accel;
 QString const actionName = QStringLiteral("windowArrangementMode_action");
 
 namespace manual {
-const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_M);
+const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_M);
 QString const actionName = QStringLiteral("windowArrangementManual_action");
 }
 namespace autoTileHorizontal {
-const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_H);
+const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_H);
 QString const actionName = QStringLiteral("windowAutoTileHorizontal_action");
 }
 namespace autoTileVertical {
-const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_G);
+const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_G);
 QString const actionName = QStringLiteral("windowAutoTileVertical_action");
 }
 namespace autoTile {
-const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_I);
+const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_I);
 QString const actionName = QStringLiteral("windowAutoTile_action");
 }
 namespace autoTabbed {
-const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_T);
+const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_T);
 QString const actionName = QStringLiteral("windowAutoTabbed_action");
 }
 namespace autoCascade {
-const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_J);
+const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_J);
 QString const actionName = QStringLiteral("windowAutoCascade_action");
 }
 }
 namespace tileHorizontal {
-const QKeySequence accel(Qt::CTRL + Qt::Key_H);
+const QKeySequence accel(Qt::CTRL | Qt::Key_H);
 QString const actionName = QStringLiteral("windowTileHorizontal_action");
 }
 namespace tileVertical {
-const QKeySequence accel(Qt::CTRL + Qt::Key_G);
+const QKeySequence accel(Qt::CTRL | Qt::Key_G);
 QString const actionName = QStringLiteral("windowTileVertical_action");
 }
 namespace tile {
-const QKeySequence accel(Qt::CTRL + Qt::Key_I);
+const QKeySequence accel(Qt::CTRL | Qt::Key_I);
 QString const actionName = QStringLiteral("windowTile_action");
 }
 namespace cascade {
-const QKeySequence accel(Qt::CTRL + Qt::Key_J);
+const QKeySequence accel(Qt::CTRL | Qt::Key_J);
 QString const actionName = QStringLiteral("windowCascade_action");
 }
 namespace close {
-const QKeySequence accel(Qt::CTRL + Qt::Key_W);
+const QKeySequence accel(Qt::CTRL | Qt::Key_W);
 QString const actionName = QStringLiteral("windowClose_action");
 }
 namespace closeAll {
-const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_W);
+const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_W);
 QString const actionName = QStringLiteral("windowCloseAll_action");
 }
 }//mainMenu::window
@@ -141,16 +141,16 @@ QString const actionName = QStringLiteral("tipOfTheDay_action");
 namespace displaywindows {
 namespace general {
 namespace search {
-const QKeySequence accel(Qt::CTRL + Qt::Key_N);
+const QKeySequence accel(Qt::CTRL | Qt::Key_N);
 QString const actionName = QStringLiteral("window_search_action");
 }
 
 namespace backInHistory {
-const QKeySequence accel(Qt::ALT + Qt::Key_Left);
+const QKeySequence accel(Qt::ALT | Qt::Key_Left);
 QString const actionName = QStringLiteral("window_history_back_action");
 }
 namespace forwardInHistory {
-const QKeySequence accel(Qt::ALT + Qt::Key_Right);
+const QKeySequence accel(Qt::ALT | Qt::Key_Right);
 QString const actionName = QStringLiteral("window_history_forward_action");
 }
 namespace findStrongs {
@@ -161,37 +161,37 @@ QString const actionName = QStringLiteral("window_find_strongs_action");
 }
 namespace bibleWindow {
 namespace nextBook {
-const QKeySequence accel(Qt::CTRL + Qt::Key_Y);
+const QKeySequence accel(Qt::CTRL | Qt::Key_Y);
 }
 namespace previousBook {
-const QKeySequence accel(Qt::CTRL + Qt::SHIFT + Qt::Key_Y);
+const QKeySequence accel(Qt::CTRL | Qt::SHIFT | Qt::Key_Y);
 }
 
 namespace nextChapter {
-const QKeySequence accel(Qt::CTRL + Qt::Key_X);
+const QKeySequence accel(Qt::CTRL | Qt::Key_X);
 }
 namespace previousChapter {
-const QKeySequence accel(Qt::CTRL + Qt::SHIFT + Qt::Key_X);
+const QKeySequence accel(Qt::CTRL | Qt::SHIFT | Qt::Key_X);
 }
 namespace nextVerse {
-const QKeySequence accel(Qt::CTRL + Qt::Key_V);
+const QKeySequence accel(Qt::CTRL | Qt::Key_V);
 }
 namespace previousVerse {
-const QKeySequence accel(Qt::CTRL + Qt::SHIFT + Qt::Key_V);
+const QKeySequence accel(Qt::CTRL | Qt::SHIFT | Qt::Key_V);
 }
 }
 namespace commentaryWindow {
 namespace syncWindow {
-const QKeySequence accel(Qt::SHIFT + Qt::Key_S);
+const QKeySequence accel(Qt::SHIFT | Qt::Key_S);
 QString const actionName = QStringLiteral("commentary_syncWindow");
 }
 }
 namespace lexiconWindow {
 namespace nextEntry {
-const QKeySequence accel(Qt::CTRL + Qt::Key_V);
+const QKeySequence accel(Qt::CTRL | Qt::Key_V);
 }
 namespace previousEntry {
-const QKeySequence accel(Qt::CTRL + Qt::SHIFT + Qt::Key_V);
+const QKeySequence accel(Qt::CTRL | Qt::SHIFT | Qt::Key_V);
 }
 }
 
@@ -248,7 +248,7 @@ QString const actionName = QStringLiteral("writeWindow_fontSize");
 
 namespace mainIndex { // Bookshelf view
 namespace search {
-const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_M);
+const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_M);
 QString const actionName = QStringLiteral("GMsearch_action");
 }
 }//mainIndex
