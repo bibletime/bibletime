@@ -24,7 +24,6 @@
 #include <QListWidgetItem>
 #include <QMap>
 #include <QPushButton>
-#include <QRegExp>
 #include <Qt>
 #include <QTextEdit>
 #include <QVBoxLayout>
