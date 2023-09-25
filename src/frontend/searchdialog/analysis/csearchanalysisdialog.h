@@ -38,11 +38,13 @@ class CSearchAnalysisDialog : public QDialog {
     protected: // methods:
 
         void resizeEvent(QResizeEvent* event) override;
+        void showEvent(QShowEvent * event) override;
 
     private:
         CSearchAnalysisScene* m_analysis;
         CSearchAnalysisView* m_analysisView;
         QDialogButtonBox* m_buttonBox;
+        bool m_shown = false;
 };
 
 }

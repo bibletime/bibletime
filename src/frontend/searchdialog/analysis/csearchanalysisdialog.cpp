@@ -13,10 +13,10 @@
 #include "csearchanalysisdialog.h"
 
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QRect>
+#include <QScreen>
 #include <QtGlobal>
 #include <QVBoxLayout>
 #include <utility>
@@ -58,17 +58,24 @@ CSearchAnalysisDialog::CSearchAnalysisDialog(
     BT_CONNECT(m_buttonBox, &QDialogButtonBox::accepted,
                [this]{ m_analysis->saveAsHTML(); });
 
-    // Set initial width based on the search data, but limit to the
-    // width of the desktop
-    int const width = static_cast<int>(m_analysis->width() + DIALOG_BORDER);
-    int const desktopWidth =
-        QApplication::desktop()->screenGeometry(this).width();
-    resize(qMin(width, desktopWidth), DIALOG_HEIGHT);
 }
 
 void CSearchAnalysisDialog::resizeEvent(QResizeEvent* event) {
     QDialog::resizeEvent(event);
     m_analysis->resizeHeight(height());
+}
+
+void CSearchAnalysisDialog::showEvent(QShowEvent * const event) {
+    QDialog::showEvent(event);
+
+    /* Set initial width based on the search data, but limit to the width of the
+       desktop. */
+    if (m_shown)
+        return;
+    m_shown = true;
+    int const width = static_cast<int>(m_analysis->width() + DIALOG_BORDER);
+    int const desktopWidth = screen()->availableSize().width();
+    resize(qMin(width, desktopWidth), DIALOG_HEIGHT);
 }
 
 }
