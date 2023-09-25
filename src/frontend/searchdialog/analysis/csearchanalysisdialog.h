@@ -40,6 +40,10 @@ class CSearchAnalysisDialog : public QDialog {
         void resizeEvent(QResizeEvent* event) override;
         void showEvent(QShowEvent * event) override;
 
+    private: // Methods:
+
+        void retranslateUi();
+
     private:
         CSearchAnalysisScene* m_analysis;
         CSearchAnalysisView* m_analysisView;

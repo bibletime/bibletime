@@ -58,6 +58,7 @@ CSearchAnalysisDialog::CSearchAnalysisDialog(
     BT_CONNECT(m_buttonBox, &QDialogButtonBox::accepted,
                [this]{ m_analysis->saveAsHTML(); });
 
+    retranslateUi();
 }
 
 void CSearchAnalysisDialog::resizeEvent(QResizeEvent* event) {
@@ -77,5 +78,8 @@ void CSearchAnalysisDialog::showEvent(QShowEvent * const event) {
     int const desktopWidth = screen()->availableSize().width();
     resize(qMin(width, desktopWidth), DIALOG_HEIGHT);
 }
+
+void CSearchAnalysisDialog::retranslateUi()
+{ setWindowTitle(tr("Analysis of search results")); }
 
 }
