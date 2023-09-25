@@ -52,7 +52,7 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
     setWindowTitle(tr("New Installation Source"));
 
     QVBoxLayout* mainLayout = new QVBoxLayout( this );
-    mainLayout->setMargin( 10 );
+    mainLayout->setContentsMargins(10, 10, 10, 10);
     mainLayout->setSpacing( 5 );
 
     QHBoxLayout *captionLayout = new QHBoxLayout;
@@ -68,7 +68,7 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
 
     QGridLayout* layout = new QGridLayout;
     layout->setSpacing(3);
-    layout->setMargin(3);
+    layout->setContentsMargins(3, 3, 3, 3);
     mainLayout->addLayout(layout);
     layout->setSpacing( 5 );
 

@@ -31,7 +31,7 @@ BtTextFiltersTab::BtTextFiltersTab(CSwordSettingsPage *parent)
     : QWidget(parent)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
-    layout->setMargin(5);
+    layout->setContentsMargins(5, 5, 5, 5);
     layout->setSpacing(2);
 
     m_explanationLabel = new QLabel(this);

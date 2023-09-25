@@ -32,7 +32,7 @@ BtFindWidget::BtFindWidget(QWidget * parent)
 {
     // Overall layout:
     auto widgetLayout = new QHBoxLayout(this);
-    widgetLayout->setMargin(0);
+    widgetLayout->setContentsMargins(0, 0, 0, 0);
     widgetLayout->setSpacing(8);
 
     // Buttons and text editor:

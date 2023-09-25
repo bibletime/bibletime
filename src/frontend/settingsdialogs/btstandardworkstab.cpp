@@ -30,7 +30,7 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
     : QWidget(parent)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    mainLayout->setMargin(5);
+    mainLayout->setContentsMargins(5, 5, 5, 5);
     mainLayout->setSpacing(2);
 
     m_explanationLabel = new QLabel(this);
