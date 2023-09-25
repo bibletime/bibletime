@@ -99,14 +99,14 @@ void BtIndexDialog::populateModuleList() {
     m_modsWithIndices->setText(0, tr("Indexed Works"));
     m_modsWithIndices->setFlags(Qt::ItemIsUserCheckable
                                 | Qt::ItemIsEnabled
-                                | Qt::ItemIsTristate);
+                                | Qt::ItemIsAutoTristate);
     m_modsWithIndices->setExpanded(true);
 
     m_modsWithoutIndices = new QTreeWidgetItem(m_moduleList);
     m_modsWithoutIndices->setText(0, tr("Unindexed Works"));
     m_modsWithoutIndices->setFlags(Qt::ItemIsUserCheckable
                                    | Qt::ItemIsEnabled
-                                   | Qt::ItemIsTristate);
+                                   | Qt::ItemIsAutoTristate);
     m_modsWithoutIndices->setExpanded(true);
 
     for (auto const & modulePtr : CSwordBackend::instance().moduleList()) {

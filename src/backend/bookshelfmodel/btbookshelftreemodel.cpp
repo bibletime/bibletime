@@ -228,7 +228,7 @@ Qt::ItemFlags BtBookshelfTreeModel::flags(const QModelIndex & index) const {
 
         const Item & i = *static_cast<Item*>(index.internalPointer());
         if (i.type() != Item::ITEM_MODULE)
-            f |= Qt::ItemIsTristate;
+            f |= Qt::ItemIsAutoTristate;
     }
 
     return f;
