@@ -194,17 +194,11 @@ QString decodeFootnote(QString const & data) {
     const char * const note =
         m.getEntryAttributes()
             ["Footnote"][swordFootnote.toLatin1().data()]["body"].c_str();
-
-    QString text =
-            module->isUnicode() ? QString::fromUtf8(note) : QString(note);
-    text = QString::fromUtf8(m.renderText(
-                                 module->isUnicode()
-                                 ? static_cast<const char *>(text.toUtf8())
-                                 : static_cast<const char *>(text.toLatin1())));
-
     return QStringLiteral("<div class=\"footnoteinfo\" lang=\"%1\"><h3>%2</h3>"
                           "<p>%3</p></div>")
-           .arg(module->language()->abbrev(), QObject::tr("Footnote"), text);
+           .arg(module->language()->abbrev(),
+                QObject::tr("Footnote"),
+                QString::fromUtf8(m.renderText(note).c_str()));
 }
 
 CSwordModuleInfo * getFirstAvailableStrongsModule(bool wantHebrew) {
