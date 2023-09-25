@@ -216,10 +216,7 @@ void CSearchAnalysisScene::saveAsHTML() const {
     static auto const writer =
             +[](QTextStream & out, void * userPtr)
             { static_cast<UserData const * >(userPtr)->obj.saveAsHTML(out); };
-    util::tool::savePlainFile(fileName,
-                              *writer,
-                              &userData,
-                              QTextCodec::codecForName("UTF-8"));
+    util::tool::savePlainFile(fileName, *writer, &userData);
 }
 
 void CSearchAnalysisScene::saveAsHTML(QTextStream & out) const {

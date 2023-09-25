@@ -13,7 +13,6 @@
 #pragma once
 
 #include <QString>
-#include <QTextCodec>
 
 
 class CSwordModuleInfo;
@@ -35,10 +34,9 @@ namespace tool {
   \warning if a file with the given name already exists, it is first removed.
   \returns whether the file was properly saved.
 */
-bool savePlainFile(const QString & filename,
+bool savePlainFile(QString const & filename,
                    void (&writer)(QTextStream &, void *),
-                   void * userPtr,
-                   QTextCodec * fileCodec = QTextCodec::codecForLocale());
+                   void * userPtr);
 
 /**
   Creates the file filename and save the given text into the file.
@@ -49,9 +47,7 @@ bool savePlainFile(const QString & filename,
   \warning if a file with the given name already exists, it is first removed.
   \returns whether the file was properly saved.
 */
-bool savePlainFile(const QString & filename,
-                   const QString & text,
-                   QTextCodec * fileCodec = QTextCodec::codecForLocale());
+bool savePlainFile(QString const & filename, QString const & text);
 
 /**
   \param[in] module the module whose icon to return.

@@ -37,17 +37,6 @@ using namespace Rendering;
 
 using KTI = CTextRendering::KeyTreeItem;
 
-
-namespace {
-
-QTextCodec * getCodec(CExportManager::Format const format) {
-    if (format == CExportManager::HTML)
-        return QTextCodec::codecForName("UTF-8");
-    return QTextCodec::codecForLocale();
-}
-
-} // anonymous namespace
-
 CExportManager::CExportManager(bool const showProgress,
                                QString const & progressLabel,
                                FilterOptions const & filterOptions,
@@ -98,7 +87,7 @@ bool CExportManager::saveKey(CSwordKey const * const key,
             text = render->renderSingleKey(key->key(), modules);
         }
     }
-    util::tool::savePlainFile(filename, text, getCodec(format));
+    util::tool::savePlainFile(filename, text);
     return true;
 }
 
@@ -130,7 +119,7 @@ bool CExportManager::saveKeyList(CSwordModuleSearch::ModuleResultList const & l,
     }
 
     QString const text = newRenderer(format, addText)->renderKeyTree(tree);
-    util::tool::savePlainFile(filename, text, getCodec(format));
+    util::tool::savePlainFile(filename, text);
     closeProgressDialog();
     return true;
 }
@@ -160,7 +149,7 @@ bool CExportManager::saveKeyList(QList<CSwordKey *> const & list,
     }
 
     QString const text = newRenderer(format, addText)->renderKeyTree(tree);
-    util::tool::savePlainFile(filename, text, getCodec(format));
+    util::tool::savePlainFile(filename, text);
     closeProgressDialog();
     return true;
 }

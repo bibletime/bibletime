@@ -34,10 +34,8 @@ namespace tool {
 
 bool savePlainFile(const QString & filename,
                    void (&writer)(QTextStream &, void *),
-                   void * userPtr,
-                   QTextCodec * fileCodec)
+                   void * userPtr)
 {
-    BT_ASSERT(fileCodec);
     BT_ASSERT(!filename.isEmpty());
 
     QFile saveFile(filename);
@@ -47,7 +45,6 @@ bool savePlainFile(const QString & filename,
 
     if (saveFile.open(QIODevice::ReadWrite)) {
         QTextStream textstream(&saveFile);
-        textstream.setCodec(fileCodec);
         writer(textstream, userPtr);
         textstream.flush();
         saveFile.close();
@@ -71,15 +68,13 @@ bool savePlainFile(const QString & filename,
 
 /** Creates the file filename and put text into the file.
  */
-bool savePlainFile(const QString & filename,
-                   const QString & text,
-                   QTextCodec * const fileCodec)
+bool savePlainFile(QString const & filename, QString const & text)
 {
     struct UserData { QString const & text; } userData{text};
     static auto const writer =
             +[](QTextStream & out, void * textPtr)
             { out << static_cast<const UserData *>(textPtr)->text; };
-    return savePlainFile(filename, *writer, &userData, fileCodec);
+    return savePlainFile(filename, *writer, &userData);
 }
 
 QIcon const & getIconForModule(const CSwordModuleInfo * const module) {
