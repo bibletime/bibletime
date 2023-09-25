@@ -142,7 +142,7 @@ bool BtQmlInterface::hasSelectedText() const noexcept
 { return m_selection.has_value(); }
 
 QString BtQmlInterface::getSelectedText() const
-{ return m_selection->selectedText; }
+{ return m_selection.has_value() ? m_selection->selectedText : QString(); }
 
 QString BtQmlInterface::getRawText(int row, int column) {
     BT_ASSERT(column >= 0 && column <= m_moduleNames.count());
