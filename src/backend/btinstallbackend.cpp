@@ -163,7 +163,7 @@ QStringList sourceNameList() {
 
     //add Sword remote sources
     for (auto const & sourcePair : mgr.sources)
-        names << QString::fromLocal8Bit(sourcePair.second->caption);
+        names << QString::fromLocal8Bit(sourcePair.second->caption.c_str());
 
     // Add local directory sources
     SWConfig config(configFilename().toLatin1());

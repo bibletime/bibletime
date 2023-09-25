@@ -81,7 +81,7 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
         return QString();
 
     bool DoRender = mode != ProcessEntryAttributesOnly;
-    QString text = QString::fromUtf8(m.renderText(nullptr, -1, DoRender));
+    auto text = QString::fromUtf8(m.renderText(nullptr, -1, DoRender).c_str());
     if (!DoRender)
         return QString();
 
