@@ -21,7 +21,6 @@
 #include <QPushButton>
 #include <QStandardItem>
 #include <QStandardItemModel>
-#include <QStaticStringData>
 #include <QStringLiteral>
 #include <QTableView>
 #include <Qt>

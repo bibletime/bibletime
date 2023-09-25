@@ -15,7 +15,6 @@
 #include <QLabel>
 #include <QSizePolicy>
 #include <QSpacerItem>
-#include <QStaticStringData>
 #include <QStringLiteral>
 #include <Qt>
 #include <QVBoxLayout>

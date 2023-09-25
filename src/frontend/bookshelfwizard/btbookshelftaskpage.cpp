@@ -18,7 +18,6 @@
 #include <QRadioButton>
 #include <QSizePolicy>
 #include <QSpacerItem>
-#include <QStaticStringData>
 #include <QStringLiteral>
 #include <QVBoxLayout>
 #include "../../backend/managers/cswordbackend.h"

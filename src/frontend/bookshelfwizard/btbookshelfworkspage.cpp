@@ -27,7 +27,6 @@
 #include <QNonConstOverload>
 #include <QSet>
 #include <QSizePolicy>
-#include <QStaticStringData>
 #include <QStringList>
 #include <QStringLiteral>
 #include <Qt>

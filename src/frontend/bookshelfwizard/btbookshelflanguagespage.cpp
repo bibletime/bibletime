@@ -18,7 +18,6 @@
 #include <QListView>
 #include <QStandardItem>
 #include <QStandardItemModel>
-#include <QStaticStringData>
 #include <QStringLiteral>
 #include <Qt>
 #include <QVBoxLayout>
