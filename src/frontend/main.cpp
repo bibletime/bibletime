@@ -129,19 +129,20 @@ int parseCommandLine(bool & showDebugMessages,
 void registerMetaTypes() {
     qRegisterMetaType<FilterOptions>("FilterOptions");
     qRegisterMetaType<DisplayOptions>("DisplayOptions");
-    qRegisterMetaTypeStreamOperators<BtBookshelfTreeModel::Grouping>("BtBookshelfTreeModel::Grouping");
-
     qRegisterMetaType<alignmentMode>("alignmentMode");
-    qRegisterMetaTypeStreamOperators<alignmentMode>("alignmentMode");
-
     qRegisterMetaType<CSwordModuleSearch::SearchType>("SearchType");
-    qRegisterMetaTypeStreamOperators<CSwordModuleSearch::SearchType>("SearchType");
-
     qRegisterMetaType<BtConfig::StringMap>("StringMap");
-    qRegisterMetaTypeStreamOperators<BtConfig::StringMap>("StringMap");
-
     qRegisterMetaType<QList<int> >("QList<int>");
+
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+    qRegisterMetaTypeStreamOperators<BtBookshelfTreeModel::Grouping>(
+        "BtBookshelfTreeModel::Grouping");
+    qRegisterMetaTypeStreamOperators<alignmentMode>("alignmentMode");
+    qRegisterMetaTypeStreamOperators<CSwordModuleSearch::SearchType>(
+        "SearchType");
+    qRegisterMetaTypeStreamOperators<BtConfig::StringMap>("StringMap");
     qRegisterMetaTypeStreamOperators<QList<int> >("QList<int>");
+#endif
 
     // for Qml interface
     qmlRegisterType<BtQmlInterface>("BibleTime", 1, 0, "BtQmlInterface");
