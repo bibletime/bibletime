@@ -270,7 +270,11 @@ bool BtBibleKeyWidget::eventFilter(QObject *o, QEvent *e) {
     }
 }
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 void BtBibleKeyWidget::enterEvent(QEvent *) {
+#else
+void BtBibleKeyWidget::enterEvent(QEnterEvent *) {
+#endif
     m_dropDownHoverTimer.stop();
 
     resetDropDownButtons();
