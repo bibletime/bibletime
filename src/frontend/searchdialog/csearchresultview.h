@@ -42,7 +42,12 @@ class CSearchResultView  : public QTreeWidget {
         void initConnections();
 
         //from QTreeWidget
-        QMimeData * mimeData ( const QList<QTreeWidgetItem *> items ) const override;
+        QMimeData *
+        #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+        mimeData(QList<QTreeWidgetItem *> const items) const override;
+        #else
+        mimeData(QList<QTreeWidgetItem *> const & items) const override;
+        #endif
         QStringList mimeTypes () const override;
 
     public Q_SLOTS:
