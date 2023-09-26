@@ -12,6 +12,7 @@
 
 #include "bibletime.h"
 
+#include <QActionGroup>
 #include <QDebug>
 #include <QDockWidget>
 #include <QMdiSubWindow>
