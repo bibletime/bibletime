@@ -242,7 +242,7 @@ void CBookKeyChooser::keyChooserChanged(int newIndex) {
     Q_UNUSED(newIndex)
     QStringList items;
 
-    const int max = std::min(m_chooserWidgets.count(),
+    const int max = std::min(static_cast<int>(m_chooserWidgets.size()),
                              sender()->property(ID_PROPERTY_NAME).toInt());
     for (int i = 0; i < max; i++) {
         CKeyChooserWidget * const chooser = m_chooserWidgets.at(i);
