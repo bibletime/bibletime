@@ -133,6 +133,8 @@ void registerMetaTypes() {
     qRegisterMetaType<CSwordModuleSearch::SearchType>("SearchType");
     qRegisterMetaType<BtConfig::StringMap>("StringMap");
     qRegisterMetaType<QList<int> >("QList<int>");
+    qRegisterMetaType<BtBookshelfTreeModel::Grouping>(
+        "BtBookshelfTreeModel::Grouping");
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
     qRegisterMetaTypeStreamOperators<BtBookshelfTreeModel::Grouping>(
