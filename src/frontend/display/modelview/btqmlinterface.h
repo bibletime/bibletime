@@ -167,7 +167,7 @@ private: // Fields:
 
     bool m_firstHref = false;
     int m_linkTimerId = 0;
-    BtModuleTextModel* m_moduleTextModel;
+    BtModuleTextModel * const m_moduleTextModel;
     CSwordKey * m_swordKey = nullptr;
 
     QList<QFont> m_fonts;
