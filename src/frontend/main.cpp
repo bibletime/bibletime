@@ -220,7 +220,11 @@ int main(int argc, char* argv[]) {
     if (qtTranslator.load(defaultLocale,
                           QStringLiteral("qt_"),
                           QString(),
+                          #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
                           QLibraryInfo::location(
+                          #else
+                          QLibraryInfo::path(
+                          #endif
                               QLibraryInfo::TranslationsPath)))
         app.installTranslator(&qtTranslator);
     //then our own
