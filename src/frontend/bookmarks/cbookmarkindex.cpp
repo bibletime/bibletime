@@ -374,7 +374,11 @@ void CBookmarkIndex::dragMoveEvent(QDragMoveEvent * event) {
     event->accept();
 
     // Do this to paint the arrow:
+    #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
     m_dragMovementPosition = event->pos();
+    #else
+    m_dragMovementPosition = event->position().toPoint();
+    #endif
     viewport()->update();
 }
 
@@ -452,7 +456,12 @@ void CBookmarkIndex::dropEvent(QDropEvent * event) {
                        [this](QModelIndex const & index) { expand(index); });
     auto cleanup = qScopeGuard([&connection]() noexcept
                                { disconnect(connection); });
-    QModelIndex const index = indexAt(event->pos());
+    #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+    auto const pos = event->pos();
+    #else
+    auto const pos = event->position().toPoint();
+    #endif
+    auto const index = indexAt(pos);
     QModelIndex parentIndex;
     int indexUnderParent = 0;
 
@@ -460,7 +469,7 @@ void CBookmarkIndex::dropEvent(QDropEvent * event) {
     if (index.isValid()) {
         if (m_bookmarksModel->isFolder(index)) {
             QRect const rect = visualRect(index);
-            if (event->pos().y() > rect.bottom() - (2* rect.height() / 3) ) {
+            if (pos.y() > rect.bottom() - (2 * rect.height() / 3)) {
                 parentIndex = index;
             } else {
                 parentIndex = index.parent();
@@ -471,7 +480,7 @@ void CBookmarkIndex::dropEvent(QDropEvent * event) {
                 parentIndex = index.parent();
                 indexUnderParent = index.row(); // before the current bookmark
                 QRect const rect = visualRect(index);
-                if (event->pos().y() > rect.bottom() - rect.height() / 2)
+                if (pos.y() > rect.bottom() - rect.height() / 2)
                     indexUnderParent++; // after the current bookmark
             } else { // item is the extra item
                 parentIndex = index.parent();
