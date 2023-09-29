@@ -163,16 +163,15 @@ ENDIF()
 ######################################################
 # The bibletime application:
 #
-if (NOT USE_QT6)
-    qtquick_compiler_add_resources(bibletime_RESOURCES
-        "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview/modelviewqml.qrc")
-ENDIF()
-
 FILE(GLOB_RECURSE bibletime_SOURCES CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.h"
 )
-LIST(APPEND bibletime_SOURCES ${bibletime_RESOURCES})
+if (NOT USE_QT6)
+    qtquick_compiler_add_resources(bibletime_RESOURCES
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview/modelviewqml.qrc")
+    LIST(APPEND bibletime_SOURCES ${bibletime_RESOURCES})
+ENDIF()
 IF(APPLE)
     ADD_EXECUTABLE("bibletime" MACOSX_BUNDLE ${bibletime_SOURCES})
     SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "BibleTime")
