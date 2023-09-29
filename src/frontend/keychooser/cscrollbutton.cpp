@@ -48,7 +48,11 @@ void CScrollButton::mouseMoveEvent(QMouseEvent *e) {
         QPoint center(mapToGlobal(QPoint(width() / 2, height() / 2)));
 
         // Calculate movement change:
+        #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
         int vchange = (e->globalY() - center.y());
+        #else
+        int vchange = (e->globalPosition().toPoint().y() - center.y());
+        #endif
 
         if (vchange != 0) {
             // Adapt the change value, so we get a more natural feeling:
