@@ -174,7 +174,7 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     a->addAction(QStringLiteral("copySelectedText"), actn);
 
     actn = new QAction(QIcon(), tr("Copy by references..."), a);
-    actn->setShortcut(Qt::CTRL + Qt::Key_R);
+    actn->setShortcut(Qt::CTRL | Qt::Key_R);
     a->addAction(QStringLiteral("copyByReferences"), actn);
 
     actn = new QAction(QIcon(), tr("Find..."), a);
@@ -182,7 +182,7 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     a->addAction(QStringLiteral("findText"), actn);
 
     actn = new QAction(QIcon(), tr("Change location"), a);
-    actn->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
+    actn->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_L));
     a->addAction(QStringLiteral("openLocation"), actn);
 
     actn = new QAction(QIcon(), tr("Page down"), a);

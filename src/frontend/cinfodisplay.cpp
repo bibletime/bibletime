@@ -52,7 +52,7 @@ CInfoDisplay::CInfoDisplay(BibleTime * parent)
                               m_textBrowser, &QTextBrowser::selectAll);
 
                    QAction copyAction(tr("Copy"));
-                   copyAction.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_C));
+                   copyAction.setShortcut(QKeySequence(Qt::CTRL | Qt::Key_C));
                    BT_CONNECT(&copyAction, &QAction::triggered,
                               m_textBrowser, &QTextBrowser::copy);
 

@@ -89,18 +89,18 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     QAction* action = new QAction(a);
     action->setText(tr("&Quit"));
     action->setIcon(CResMgr::mainMenu::window::quit::icon());
-    action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
+    action->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q));
     action->setToolTip(tr("Quit BibleTime"));
     a->addAction(QStringLiteral("quit"), action);
 
     action = new QAction(a);
     action->setText(tr("Auto scroll up"));
-    action->setShortcut(QKeySequence(Qt::ShiftModifier + Qt::Key_Up));
+    action->setShortcut(QKeySequence(Qt::ShiftModifier | Qt::Key_Up));
     a->addAction(QStringLiteral("autoScrollUp"), action);
 
     action = new QAction(a);
     action->setText(tr("Auto scroll down"));
-    action->setShortcut(QKeySequence(Qt::ShiftModifier + Qt::Key_Down));
+    action->setShortcut(QKeySequence(Qt::ShiftModifier | Qt::Key_Down));
     a->addAction(QStringLiteral("autoScrollDown"), action);
 
     action = new QAction(a);
