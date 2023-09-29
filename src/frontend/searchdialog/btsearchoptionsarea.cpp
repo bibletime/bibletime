@@ -123,10 +123,15 @@ void BtSearchOptionsArea::initView() {
     int tsLeft, tsTop, tsRight, tsBottom;
     // Added space looks nicer and enhances readability
     typeSelectorLayout->getContentsMargins(&tsLeft, &tsTop, &tsRight, &tsBottom);
-    typeSelectorLayout->setContentsMargins(tsLeft, 0, tsRight, tsBottom + util::tool::mWidth(this, 1) );
-    typeSelectorLayout->setSpacing(typeSelectorLayout->spacing() + util::tool::mWidth(this, 1));
+    typeSelectorLayout->setContentsMargins(
+        tsLeft,
+        0,
+        tsRight,
+        tsBottom + util::tool::mWidth(*this, 1));
+    typeSelectorLayout->setSpacing(typeSelectorLayout->spacing()
+                                   + util::tool::mWidth(*this, 1));
     QHBoxLayout* fullButtonLayout = new QHBoxLayout();
-    fullButtonLayout->setSpacing(util::tool::mWidth(this, 1) / 2);
+    fullButtonLayout->setSpacing(util::tool::mWidth(*this, 1) / 2);
     m_typeAndButton = new QRadioButton(tr("All words"));
     m_typeAndButton->setChecked(true);
     m_typeOrButton = new QRadioButton(tr("Some words"));

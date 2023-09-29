@@ -82,14 +82,13 @@ bool inHTMLTag(int pos, const QString & text);
   to roughly calculate the size based on some text width rather than use a hard-
   coded value.
 
-  \param[in] widget the widget whose font metrics to use. If 0, then the font
-                    metrics of the application are used.
+  \param[in] widget the widget whose font metrics to use.
   \param[in] mCount the length of the string of 'M' characters to use for
                     calculating the width.
 
   \returns the width in pixels.
 */
-int mWidth(const QWidget * widget, int mCount);
+int mWidth(QWidget const & widget, int const mCount);
 
 /**
    \param[in] input The potentially invalid BCP 47 string from Sword to fix.

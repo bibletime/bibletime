@@ -398,7 +398,9 @@ void CBookmarkIndex::paintEvent(QPaintEvent * event) {
     // Initialize the static variables, including the arrow pixmap
     if (!arrowInitialized) {
         arrowInitialized = true;
-        pix = BtIcons::instance().icon_pointing_arrow.pixmap(util::tool::mWidth(this, 1));
+        pix =
+            BtIcons::instance().icon_pointing_arrow.pixmap(
+                util::tool::mWidth(*this, 1));
         halfPixHeight = pix.height() / 2;
     }
 

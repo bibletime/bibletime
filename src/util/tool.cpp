@@ -152,12 +152,8 @@ bool inHTMLTag(const int pos, const QString & text) {
     return (i1 > i2) && (i3 < i4);
 }
 
-int mWidth(const QWidget * const widget, const int mCount) {
-    const QString mString(mCount, 'M');
-    if (widget)
-        return widget->fontMetrics().horizontalAdvance(mString);
-    return QApplication::fontMetrics().horizontalAdvance(mString);
-}
+int mWidth(QWidget const & widget, int const mCount)
+{ return widget.fontMetrics().horizontalAdvance(QString(mCount, 'M')); }
 
 QString fixSwordBcp47(QString input) {
     input.replace('_', '-');

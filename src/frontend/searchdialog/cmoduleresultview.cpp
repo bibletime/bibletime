@@ -55,9 +55,9 @@ void CModuleResultView::initView() {
     setToolTip(tr("Works chosen for the search and the number of the hits in each work"));
     setHeaderLabels( QStringList(tr("Work")) << tr("Hits") );
 
-    setColumnWidth(0, util::tool::mWidth(this, 8));
-    setColumnWidth(1, util::tool::mWidth(this, 4));
-    QSize sz(util::tool::mWidth(this, 13), util::tool::mWidth(this, 5));
+    setColumnWidth(0, util::tool::mWidth(*this, 8));
+    setColumnWidth(1, util::tool::mWidth(*this, 4));
+    QSize sz(util::tool::mWidth(*this, 13), util::tool::mWidth(*this, 5));
     //setMinimumSize(sz);
     m_size = sz;
     /// \todo sorting

@@ -61,7 +61,7 @@ BtSearchResultArea::BtSearchResultArea(QWidget * parent)
 
     //Size is calculated from the font rather than set in pixels,
     // maybe this is better in different kinds of displays?
-    int mWidth = util::tool::mWidth(this, 1);
+    auto const mWidth = util::tool::mWidth(*this, 1);
     this->setMinimumSize(QSize(mWidth*40, mWidth*15));
     mainLayout = new QVBoxLayout(this);
     m_mainSplitter = new QSplitter(this);

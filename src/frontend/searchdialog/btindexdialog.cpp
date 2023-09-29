@@ -66,7 +66,7 @@ BtIndexDialog::BtIndexDialog(QWidget * parent, Qt::WindowFlags f)
 
     // configure the list view
     m_moduleList->setRootIsDecorated(true);
-    m_moduleList->setColumnWidth(0, util::tool::mWidth(m_moduleList, 20));
+    m_moduleList->setColumnWidth(0, util::tool::mWidth(*m_moduleList, 20));
     m_moduleList->setSortingEnabled(false);
 
     m_autoDeleteOrphanedIndicesBox->setChecked(
