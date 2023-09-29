@@ -15,9 +15,9 @@ import QtQuick 2.2
 
 Item {
     id: delegate
-    property int spacing: 1.5 * btQmlInterface.pixelsPerMM
+    property int spacing: 1.5 * BtQmlInterface.pixelsPerMM
     property int textWidth: (listView.width / listView.columns)
-    property int vertSpace: 1 * btQmlInterface.pixelsPerMM
+    property int vertSpace: 1 * BtQmlInterface.pixelsPerMM
     property bool updating: false
     required property int index
     required property string text0
@@ -59,7 +59,7 @@ Item {
 
     function dragStart(index, active) {
         if (active) {
-            btQmlInterface.dragHandler(index);
+            BtQmlInterface.dragHandler(index);
         }
     }
 
@@ -114,9 +114,9 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: delegate.left
-        font: btQmlInterface.font0
+        font: BtQmlInterface.font0
         width: delegate.textWidth
-        onHovered: btQmlInterface.setHoveredLink(link)
+        onHovered: BtQmlInterface.setHoveredLink(link)
     }
 
     ColumnItem {
@@ -127,9 +127,9 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView0.right
-        font: btQmlInterface.font1
+        font: BtQmlInterface.font1
         width: delegate.textWidth
-        onHovered: btQmlInterface.setHoveredLink(link)
+        onHovered: BtQmlInterface.setHoveredLink(link)
     }
 
     ColumnItem {
@@ -140,9 +140,9 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView1.right
-        font: btQmlInterface.font2
+        font: BtQmlInterface.font2
         width: delegate.textWidth
-        onHovered: btQmlInterface.setHoveredLink(link)
+        onHovered: BtQmlInterface.setHoveredLink(link)
     }
 
     ColumnItem {
@@ -153,9 +153,9 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView2.right
-        font: btQmlInterface.font3
+        font: BtQmlInterface.font3
         width: delegate.textWidth
-        onHovered: btQmlInterface.setHoveredLink(link)
+        onHovered: BtQmlInterface.setHoveredLink(link)
     }
 
     ColumnItem {
@@ -166,9 +166,9 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView3.right
-        font: btQmlInterface.font4
+        font: BtQmlInterface.font4
         width: delegate.textWidth
-        onHovered: btQmlInterface.setHoveredLink(link)
+        onHovered: BtQmlInterface.setHoveredLink(link)
     }
 
     ColumnItem {
@@ -179,9 +179,9 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView4.right
-        font: btQmlInterface.font5
+        font: BtQmlInterface.font5
         width: delegate.textWidth
-        onHovered: btQmlInterface.setHoveredLink(link)
+        onHovered: BtQmlInterface.setHoveredLink(link)
     }
 
     ColumnItem {
@@ -192,9 +192,9 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView5.right
-        font: btQmlInterface.font6
+        font: BtQmlInterface.font6
         width: delegate.textWidth
-        onHovered: btQmlInterface.setHoveredLink(link)
+        onHovered: BtQmlInterface.setHoveredLink(link)
     }
 
     ColumnItem {
@@ -205,9 +205,9 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView6.right
-        font: btQmlInterface.font7
+        font: BtQmlInterface.font7
         width: delegate.textWidth
-        onHovered: btQmlInterface.setHoveredLink(link)
+        onHovered: BtQmlInterface.setHoveredLink(link)
     }
 
     ColumnItem {
@@ -218,9 +218,9 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView7.right
-        font: btQmlInterface.font8
+        font: BtQmlInterface.font8
         width: delegate.textWidth
-        onHovered: btQmlInterface.setHoveredLink(link)
+        onHovered: BtQmlInterface.setHoveredLink(link)
     }
 
     ColumnItem {
@@ -231,8 +231,8 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView8.right
-        font: btQmlInterface.font9
+        font: BtQmlInterface.font9
         width: delegate.textWidth
-        onHovered: btQmlInterface.setHoveredLink(link)
+        onHovered: BtQmlInterface.setHoveredLink(link)
     }
 }

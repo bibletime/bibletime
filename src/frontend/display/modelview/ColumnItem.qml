@@ -17,9 +17,9 @@ Item {
     id: columnView
 
     property alias length: columnText.length
-    property color textColor: btQmlInterface.foregroundColor
-    property color textBackgroundColor: btQmlInterface.backgroundColor
-    property color textBackgroundHighlightColor: btQmlInterface.backgroundHighlightColor
+    property color textColor: BtQmlInterface.foregroundColor
+    property color textBackgroundColor: BtQmlInterface.backgroundColor
+    property color textBackgroundHighlightColor: BtQmlInterface.backgroundHighlightColor
     required property font font
 
     signal hovered(string link);
@@ -69,7 +69,7 @@ Item {
         anchors.left: parent.left
         anchors.right: parent.right
         color: (listView.backgroundHighlightIndex === index)? textBackgroundHighlightColor: textBackgroundColor
-        border.width: (btQmlInterface.moduleIsWritable(columnView.column))? 1 : 0
+        border.width: (BtQmlInterface.moduleIsWritable(columnView.column))? 1 : 0
         border.color: "gray"
     }
 

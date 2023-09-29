@@ -17,6 +17,7 @@
 #include <QGuiApplication>
 #include <QMimeData>
 #include <QMouseEvent>
+#include <QQmlContext>
 #include <QQmlEngine>
 #include <QQuickItem>
 #include <Qt>
@@ -25,18 +26,20 @@
 #include "../../../backend/managers/cswordbackend.h"
 #include "../../../util/btassert.h"
 #include "../../BtMimeData.h"
-#include "../btmodelviewreaddisplay.h"
 #include "btqmlinterface.h"
 
 
-BtQuickWidget::BtQuickWidget(BtModelViewReadDisplay * readDisplay)
-    : QQuickWidget(readDisplay)
-    , m_readDisplay(readDisplay)
+BtQuickWidget::BtQuickWidget(QWidget * const parent)
+    : QQuickWidget(parent)
+    , m_qmlInterface(
+        engine()->singletonInstance<BtQmlInterface *>(BtQmlInterface::typeId))
 {
+    BT_ASSERT(m_qmlInterface);
+
     setAcceptDrops(true);
 
-    engine()->addImportPath(QStringLiteral("qrc:/qml"));
-    setSource(QUrl(QStringLiteral("qrc:/qml/DisplayView.qml")));
+    engine()->addImportPath(QStringLiteral("qrc:/qt/qml"));
+    setSource(QUrl(QStringLiteral("qrc:/qt/qml/DisplayView.qml")));
 
     m_scrollTimer.setInterval(100);
     m_scrollTimer.setSingleShot(false);
@@ -70,7 +73,7 @@ void BtQuickWidget::dragEnterEvent(QDragEnterEvent * const e) {
         CSwordModuleInfo::ModuleType bookmarkType = m->type();
         if ((bookmarkType == CSwordModuleInfo::Bible
              || bookmarkType == CSwordModuleInfo::Commentary)
-            && m_readDisplay->qmlInterface()->isBibleOrCommentary())
+            && m_qmlInterface->isBibleOrCommentary())
         {
             e->acceptProposedAction();
         } else {
@@ -107,7 +110,7 @@ void BtQuickWidget::pageDown() { callQml("pageDown"); }
 void BtQuickWidget::pageUp() { callQml("pageUp"); }
 
 CSwordKey* BtQuickWidget::getMouseClickedKey() {
-    return m_readDisplay->qmlInterface()->getMouseClickedKey();
+    return m_qmlInterface->getMouseClickedKey();
 }
 
 void BtQuickWidget::scroll(int const pixels) { callQml("scroll", pixels); }
@@ -116,7 +119,7 @@ void BtQuickWidget::scroll(int const pixels) { callQml("scroll", pixels); }
 // QMdiSubwindow does not pass leaveEvent on down.
 bool BtQuickWidget::event(QEvent* e) {
     if (e->type() == QEvent::Leave)
-        m_readDisplay->qmlInterface()->cancelMagTimer();
+        m_qmlInterface->cancelMagTimer();
     return QQuickWidget::event(e);
 }
 

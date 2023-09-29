@@ -91,10 +91,10 @@ Rectangle {
             deselectCurrentSelection();
             selectionStart = null;
             selectionEnd = null;
-            btQmlInterface.clearSelection();
+            BtQmlInterface.clearSelection();
 
             draggingInProgress = true;
-            btQmlInterface.dragHandler(mousePressedItemIndex, pressedLink);
+            BtQmlInterface.dragHandler(mousePressedItemIndex, pressedLink);
             return; // Prevent starting of selection
         }
 
@@ -102,7 +102,7 @@ Rectangle {
             if (mousePressedTextPosition < 0) // Does not start selection
                 return;
             deselectCurrentSelection(); /// \todo This can be optimized
-            btQmlInterface.clearSelection();
+            BtQmlInterface.clearSelection();
             selectionInProgress = true;
             selectionStart = {
                 columnIndex: mousePressedColumnIndex,
@@ -163,7 +163,7 @@ Rectangle {
     // whole of the selected text. Hence we just recreate the respective
     // TextView QML widgets here to retrieve the selected texts.
     function selectedFromTextEdit(row, column, selectCallback) {
-        const rawText = btQmlInterface.rawText(row, column);
+        const rawText = BtQmlInterface.rawText(row, column);
         const item = Qt.createQmlObject(
                 'import QtQuick 2.10; TextEdit { visible: false }',
                 displayView); // parent
@@ -194,10 +194,10 @@ Rectangle {
                 if (end.textPosition < start.textPosition) {
                     [start, end] = [end, start];
                 } else if (end.textPosition == start.textPosition) {
-                    btQmlInterface.clearSelection();
+                    BtQmlInterface.clearSelection();
                     return;
                 }
-                btQmlInterface.setSelection(
+                BtQmlInterface.setSelection(
                         start.columnIndex,
                         start.itemIndex,
                         start.itemIndex,
@@ -225,7 +225,7 @@ Rectangle {
                         end.itemIndex,
                         start.columnIndex,
                         (item) => item.select(0, end.textPosition)));
-            btQmlInterface.setSelection(
+            BtQmlInterface.setSelection(
                     start.columnIndex,
                     start.itemIndex,
                     end.itemIndex,
@@ -236,12 +236,12 @@ Rectangle {
         deselectCurrentSelection();
         selectionStart = null;
         selectionEnd = null;
-        btQmlInterface.clearSelection();
+        BtQmlInterface.clearSelection();
 
         if (openPersonalCommentary(mousePressedX, mousePressedY))
             return;
         if (isBibleReference(pressedLink))
-            btQmlInterface.setBibleKey(pressedLink);
+            BtQmlInterface.setBibleKey(pressedLink);
     }
 
     function isBibleReference(url) {
@@ -280,28 +280,28 @@ Rectangle {
         updateReferenceText();
     }
 
+    function handlePositionItemOnScreen() {
+        listView.positionViewAtIndex(index, ListView.Contain);
+        updateReferenceText();
+    }
+
+    Component.onCompleted: {
+        BtQmlInterface.positionItemOnScreen.connect(handlePositionItemOnScreen);
+    }
+
     width: 10
     height: 10
-    color: btQmlInterface.backgroundColor
-
-    BtQmlInterface {
-        id: btQmlInterface
-
-        onPositionItemOnScreen: {
-            listView.positionViewAtIndex(index, ListView.Contain);
-            updateReferenceText();
-        }
-    }
+    color: BtQmlInterface.backgroundColor
 
     ListView {
         id: listView
 
-        property color textColor: btQmlInterface.foregroundColor
-        property color textBackgroundColor: btQmlInterface.backgroundColor
-        property int columns: btQmlInterface.numModules
+        property color textColor: BtQmlInterface.foregroundColor
+        property color textBackgroundColor: BtQmlInterface.backgroundColor
+        property int columns: BtQmlInterface.numModules
         property int savedRow: 0
         property int savedColumn: 0
-        property int backgroundHighlightIndex: btQmlInterface.backgroundHighlightColorIndex
+        property int backgroundHighlightIndex: BtQmlInterface.backgroundHighlightColorIndex
 
         function scroll(value) {
             var y = contentY;
@@ -309,25 +309,25 @@ Rectangle {
         }
 
         function startEdit(row, column) {
-            if (!btQmlInterface.moduleIsWritable(column))
+            if (!BtQmlInterface.moduleIsWritable(column))
                 return false;
-            if (btQmlInterface.indexToVerse(row) === 0 )
+            if (BtQmlInterface.indexToVerse(row) === 0 )
                 return false;
             savedRow = row;
             savedColumn = column;
-            btQmlInterface.openEditor(row, column);
+            BtQmlInterface.openEditor(row, column);
             return true;
         }
 
         function finishEdit(newText) {
-            btQmlInterface.setRawText(savedRow, savedColumn, newText)
+            BtQmlInterface.setRawText(savedRow, savedColumn, newText)
         }
 
         function updateReferenceText() {
             var index = indexAt(contentX,contentY+30);
             if (index < 0)
                 return;
-            btQmlInterface.changeReference(index);
+            BtQmlInterface.changeReference(index);
         }
 
         clip: true
@@ -339,10 +339,10 @@ Rectangle {
         boundsMovement: Flickable.StopAtBounds
         focus: true
         maximumFlickVelocity: 900
-        model: btQmlInterface.textModel
+        model: BtQmlInterface.textModel
         spacing: 2
         highlightFollowsCurrentItem: true
-        currentIndex: btQmlInterface.currentModelIndex
+        currentIndex: BtQmlInterface.currentModelIndex
         onCurrentIndexChanged: {
             positionViewAtIndex(currentIndex,ListView.Beginning)
         }

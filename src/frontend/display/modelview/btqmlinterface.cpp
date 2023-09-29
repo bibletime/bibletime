@@ -516,3 +516,5 @@ void BtQmlInterface::findText(bool const backward) {
     Q_EMIT positionItemOnScreen(m_findState->index);
     QApplication::restoreOverrideCursor();
 }
+
+int BtQmlInterface::typeId;

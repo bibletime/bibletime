@@ -48,7 +48,7 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(
     : QWidget(parentWidget)
     , m_parentWindow(displayWindow)
     , m_quickWidget(new BtQuickWidget(this))
-    , m_qmlInterface(m_quickWidget->rootObject()->findChild<BtQmlInterface *>())
+    , m_qmlInterface(m_quickWidget->qmlInterface())
     , m_scrollBar(new QScrollBar(this))
 {
     auto * const layout = new QHBoxLayout(this);

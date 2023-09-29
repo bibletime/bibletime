@@ -183,11 +183,24 @@ ENDIF()
 PREPARE_CXX_TARGET(bibletime)
 
 if (USE_QT6)
-    QT_ADD_QML_MODULE("bibletime" URI BtDisplay VERSION 1.0 QML_FILES
-        src/frontend/display/modelview/ColumnItem.qml
-        src/frontend/display/modelview/DisplayDelegate.qml
-        src/frontend/display/modelview/DisplayView.qml
+    SET(bibletime_QML_PATH
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview")
+    FILE(GLOB bibletime_QML_FILES CONFIGURE_DEPENDS
+        "${bibletime_QML_PATH}/*.qml")
+    FOREACH(file IN LISTS bibletime_QML_FILES)
+        STRING(REGEX REPLACE "^.*/([^/]+)$" "\\1" filename "${file}")
+        SET_SOURCE_FILES_PROPERTIES("${file}" PROPERTIES
+            QT_RESOURCE_ALIAS "${filename}")
+    ENDFOREACH()
+    QT_ADD_QML_MODULE("bibletime"
+        URI "BibleTime"
+        RESOURCE_PREFIX "/qt/qml"
+        NO_RESOURCE_TARGET_PATH
+        VERSION 1.0
+        QML_FILES ${bibletime_QML_FILES}
     )
+    INCLUDE_DIRECTORIES( # work around QTBUG-87221/QTBUG-93443
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview/")
 ENDIF()
 
 TARGET_LINK_LIBRARIES("bibletime"

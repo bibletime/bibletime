@@ -146,8 +146,13 @@ void registerMetaTypes() {
     qRegisterMetaTypeStreamOperators<QList<int> >("QList<int>");
 #endif
 
-    // for Qml interface
-    qmlRegisterType<BtQmlInterface>("BibleTime", 1, 0, "BtQmlInterface");
+    BtQmlInterface::typeId =
+        qmlRegisterSingletonType<BtQmlInterface>(
+            "BibleTime",
+            1,
+            0,
+            "BtQmlInterface",
+            [](QQmlEngine *, QJSEngine *) { return new BtQmlInterface(); });
 }
 
 } // anonymous namespace

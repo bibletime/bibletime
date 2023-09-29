@@ -24,14 +24,13 @@
 
 
 class CSwordKey;
-class BtModelViewReadDisplay;
 class BtQmlInterface;
 
 class BtQuickWidget : public QQuickWidget {
     Q_OBJECT
 
 public:
-    BtQuickWidget(BtModelViewReadDisplay * readDisplay);
+    BtQuickWidget(QWidget * const parent = nullptr);
 
     void scroll(int pixels);
     void updateReferenceText();
@@ -39,6 +38,8 @@ public:
     void pageUp();
 
     CSwordKey* getMouseClickedKey();
+
+    BtQmlInterface * qmlInterface() const noexcept { return m_qmlInterface; }
 
 protected:
        void dragMoveEvent(QDragMoveEvent * event) override;
@@ -63,7 +64,7 @@ private: // methods:
 
 private:
 
-    BtModelViewReadDisplay * m_readDisplay;
+    BtQmlInterface * const m_qmlInterface;
 
     QTimer m_scrollTimer;
 

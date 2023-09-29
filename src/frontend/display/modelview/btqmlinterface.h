@@ -17,6 +17,7 @@
 #include <QFont>
 #include <QList>
 #include <QObject>
+#include <QQmlEngine>
 #include <QString>
 #include "bttextfilter.h"
 
@@ -36,6 +37,8 @@ class RoleItemModel;
 class BtQmlInterface : public QObject {
 
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
     Q_PROPERTY(QColor       backgroundColor         READ getBackgroundColor NOTIFY backgroundColorChanged)
     Q_PROPERTY(QColor       backgroundHighlightColor READ getBackgroundHighlightColor NOTIFY backgroundHighlightColorChanged)
     Q_PROPERTY(int          backgroundHighlightColorIndex READ getBackgroundHighlightColorIndex NOTIFY backgroundHighlightColorIndexChanged)
@@ -162,6 +165,10 @@ private:
     QFont font(int column) const;
     void getFontsFromSettings();
     QString getReferenceFromUrl(const QString& url);
+
+public: // Fields:
+
+    static int typeId;
 
 private: // Fields:
 
