@@ -130,7 +130,12 @@ void BtQuickWidget::mouseDoubleClickEvent(QMouseEvent *event) {
 
 void BtQuickWidget::mousePressEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
-        callQml("leftMousePress", event->x(), event->y());
+        #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+        auto const position = event->pos();
+        #else
+        auto const position = event->position().toPoint();
+        #endif
+        callQml("leftMousePress", position.x(), position.y());
         event->accept();
         return;
     }
@@ -139,7 +144,12 @@ void BtQuickWidget::mousePressEvent(QMouseEvent *event) {
 
 void BtQuickWidget::mouseMoveEvent(QMouseEvent *event) {
     if ((event->buttons() & Qt::LeftButton) == Qt::LeftButton) {
-        auto const y = event->y();
+        #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+        auto const position = event->pos();
+        #else
+        auto const position = event->position().toPoint();
+        #endif
+        auto const y = position.y();
         if (y < 0 || y > height()) {
             if (!m_scrollTimer.isActive())
                 m_scrollTimer.start();
@@ -147,7 +157,7 @@ void BtQuickWidget::mouseMoveEvent(QMouseEvent *event) {
             m_scrollTimer.stop();
         }
 
-        callQml("leftMouseMove", event->x(), y);
+        callQml("leftMouseMove", position.x(), y);
         event->accept();
         return;
     }
@@ -157,7 +167,12 @@ void BtQuickWidget::mouseMoveEvent(QMouseEvent *event) {
 void BtQuickWidget::mouseReleaseEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
         m_scrollTimer.stop();
-        callQml("leftMouseRelease", event->x(), event->y());
+        #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+        auto const position = event->pos();
+        #else
+        auto const position = event->position().toPoint();
+        #endif
+        callQml("leftMouseRelease", position.x(), position.y());
         event->accept();
         return;
     }
