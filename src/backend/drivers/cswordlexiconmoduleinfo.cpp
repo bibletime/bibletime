@@ -121,18 +121,18 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
     m.setPosition(sword::TOP);
     snap(); //snap to top entry
 
-    do {
-        if ( isUnicode() ) {
+    if (isUnicode()) {
+        do {
             m_entries.append(QString::fromUtf8(m.getKeyText()));
-        }
-        else {
-            //for latin1 modules use fromLatin1 because of speed
-            QTextCodec* codec = QTextCodec::codecForName("Windows-1252");
+            m.increment();
+        } while (!m.popError());
+    } else {
+        QTextCodec * const codec = QTextCodec::codecForName("Windows-1252");
+        do {
             m_entries.append(codec->toUnicode(m.getKeyText()));
-        }
-
-        m.increment();
-    } while (!m.popError());
+            m.increment();
+        } while (!m.popError());
+    }
 
     m.setPosition(sword::TOP); // back to the first entry
     m.setSkipConsecutiveLinks(false);
