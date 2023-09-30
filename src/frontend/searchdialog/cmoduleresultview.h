@@ -20,6 +20,7 @@
 #include <QString>
 #include <QStringList>
 #include "../../backend/cswordmodulesearch.h"
+#include "btsearchresultarea.h"
 
 
 class CSwordModuleInfo;
@@ -107,7 +108,7 @@ class CModuleResultView : public QTreeWidget {
 
         QHash<CSwordModuleInfo const *, CSwordModuleSearch::ModuleResultList>
                 m_results;
-        QHash<const CSwordModuleInfo*, StrongsResultList*> m_strongsResults;
+        QHash<CSwordModuleInfo const *, QList<StrongsResult>> m_strongsResults;
         QSize m_size;
 };
 

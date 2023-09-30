@@ -15,6 +15,7 @@
 #include <QAction>
 #include <QContextMenuEvent>
 #include <QMenu>
+#include <QProgressDialog>
 #include <QStringList>
 #include <QtAlgorithms>
 #include <QTreeWidget>
@@ -24,6 +25,8 @@
 #include "../../backend/cswordmodulesearch.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../backend/managers/cswordbackend.h"
+#include "../../backend/rendering/cdisplayrendering.h"
+#include "../../backend/rendering/ctextrendering.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
@@ -33,6 +36,106 @@
 
 
 namespace Search {
+namespace {
+
+QString getStrongsNumberText(QString const & verseContent,
+                             int & startIndex,
+                             QString const & lemmaText)
+{
+    // get the strongs text
+    int idx1, idx2, index;
+    QString sNumber, strongsText;
+    //const bool cs = CSwordModuleSearch::caseSensitive;
+    const Qt::CaseSensitivity cs = Qt::CaseInsensitive;
+
+    if (startIndex == 0) {
+        index = verseContent.indexOf(QStringLiteral("<body"));
+    }
+    else {
+        index = startIndex;
+    }
+
+           // find all the "lemma=" inside the the content
+    while ((index = verseContent.indexOf(QStringLiteral("lemma="), index, cs))
+           != -1)
+    {
+        // get the strongs number after the lemma and compare it with the
+        // strongs number we are looking for
+        idx1 = verseContent.indexOf('"', index) + 1;
+        idx2 = verseContent.indexOf('"', idx1 + 1);
+        sNumber = verseContent.mid(idx1, idx2 - idx1);
+        if (sNumber == lemmaText) {
+            // strongs number is found now we need to get the text of this node
+            // search right until the '>' is found.  Get the text from here to
+            // the next '<'.
+            index = verseContent.indexOf('>', index, cs) + 1;
+            idx2  = verseContent.indexOf('<', index, cs);
+            strongsText = verseContent.mid(index, idx2 - index);
+            index = idx2;
+            startIndex = index;
+
+            return(strongsText);
+        }
+        else {
+            index += 6; // 6 is the length of "lemma="
+        }
+    }
+    return QString();
+}
+
+
+void populateStrongsResultList(
+    QList<StrongsResult> & list,
+    CSwordModuleInfo const * module,
+    CSwordModuleSearch::ModuleResultList const & result,
+    QString const & strongsNumber)
+{
+    using namespace Rendering;
+
+    auto const count = result.size();
+    if (!count)
+        return;
+
+    CTextRendering::KeyTreeItem::Settings settings;
+    BtConstModuleList modules;
+    modules.append(module);
+
+           // for whatever reason the text "Parsing...translations." does not appear.
+           // this is not critical but the text is necessary to get the dialog box
+           // to be wide enough.
+    QProgressDialog progress(QObject::tr("Parsing Strong's Numbers"), nullptr, 0, count);
+    //0, "progressDialog", tr("Parsing Strong's Numbers"), tr("Parsing Strong's numbers for translations."), true);
+    //progress->setAllowCancel(false);
+    //progress->setMinimumDuration(0);
+    progress.show();
+    progress.raise();
+
+    qApp->processEvents(QEventLoop::AllEvents, 1); //1 ms only
+
+    int index = 0;
+    for (auto const & keyPtr : result) {
+        progress.setValue(index++);
+        qApp->processEvents(QEventLoop::AllEvents, 1); //1 ms only
+
+        QString key = QString::fromUtf8(keyPtr->getText());
+        QString text = CDisplayRendering().renderSingleKey(key, modules, settings);
+        for (int sIndex = 0;;) {
+        continueloop:
+            QString rText = getStrongsNumberText(text, sIndex, strongsNumber);
+            if (rText.isEmpty()) break;
+
+            for (auto & result : list) {
+                if (result.keyText() == rText) {
+                    result.addKeyName(key);
+                    goto continueloop; // break, then continue
+                }
+            }
+            list.append(StrongsResult(rText, key));
+        }
+    }
+}
+
+} // anonymous namespace
 
 /********************************************
 ************  ModuleResultList **************
@@ -44,10 +147,7 @@ CModuleResultView::CModuleResultView(QWidget* parent)
     initConnections();
 }
 
-CModuleResultView::~CModuleResultView() {
-    qDeleteAll(m_strongsResults);
-}
-
+CModuleResultView::~CModuleResultView() = default;
 
 /** Initializes this widget. */
 void CModuleResultView::initView() {
@@ -149,7 +249,6 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
 
     clear();
     m_results.clear();
-    qDeleteAll(m_strongsResults);
     m_strongsResults.clear();
 
     bool strongsAvailable = false;
@@ -182,14 +281,17 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
             const int sTokenIndex = searchedText.indexOf(' ', sstIndex);
             const QString sNumber(searchedText.mid(sstIndex, sTokenIndex - sstIndex));
 
-            auto * const l = new StrongsResultList(m, result.results, sNumber);
-            m_strongsResults[m] = l;
-
-            for (auto const & strongResult : *l)
+            QList<StrongsResult> strongResultList;
+            populateStrongsResultList(strongResultList,
+                                      m,
+                                      result.results,
+                                      sNumber);
+            for (auto const & strongResult : strongResultList)
                 new QTreeWidgetItem(
                     item,
                     QStringList{strongResult.keyText(),
                                 QString::number(strongResult.keyCount())});
+            m_strongsResults[m] = std::move(strongResultList);
 
             /// \todo item->setOpen(true);
             strongsAvailable = true;
@@ -216,18 +318,12 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
         return;
     }
 
-    StrongsResultList *strongsResult = m_strongsResults[activeModule()];
-
-    if (!strongsResult) {
-        return;
-    }
-
-    for (int cnt = 0; cnt < strongsResult->count(); cnt++) {
-        if (strongsResult->at(cnt).keyText() == itemText) {
+    for (auto const & strongsResult : m_strongsResults[activeModule()]) {
+        if (strongsResult.keyText() == itemText) {
             //clear the verses list
             Q_EMIT moduleChanged();
             Q_EMIT strongsSelected(activeModule(),
-                                 strongsResult->at(cnt).getKeyList());
+                                   strongsResult.getKeyList());
             return;
         }
     }

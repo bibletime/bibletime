@@ -71,24 +71,6 @@ class StrongsResult {
         QStringList m_keyNameList;
 };
 
-/**
-* \todo Fix comment!
-* This class is used to keep track of the text strongs results.
-* It keeps track of all instances of all strongs text results.
-* This class makes use of the above class StrongsResult.
-*/
-class StrongsResultList: public QList<StrongsResult> {
-    public: // methods:
-        StrongsResultList(CSwordModuleInfo const *module,
-                          CSwordModuleSearch::ModuleResultList const & results,
-                          QString const & strongsNumber);
-
-    private: // methods:
-        QString getStrongsNumberText(const QString &verseContent,
-                                     int &startIndex,
-                                     const QString &lemmaText);
-};
-
 
 /** The page of the search dialog which contains the search result part.
   * @author The BibleTime team
