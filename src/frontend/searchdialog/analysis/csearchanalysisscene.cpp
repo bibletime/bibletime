@@ -16,7 +16,6 @@
 #include <QApplication>
 #include <QFileDialog>
 #include <QMap>
-#include <QTextCodec>
 #include <QTextStream>
 #include <QTextDocument>
 #include <QVector>

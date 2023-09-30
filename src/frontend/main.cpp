@@ -15,7 +15,6 @@
 #include <QLibraryInfo>
 #include <QLocale>
 #include <QQmlEngine>
-#include <QTextCodec>
 #include <QTranslator>
 #include "../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../backend/config/btconfig.h"
