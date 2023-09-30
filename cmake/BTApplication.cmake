@@ -4,7 +4,7 @@
 FIND_PACKAGE(CLucene REQUIRED)
 
 IF (USE_QT6)
-    FIND_PACKAGE(QT NAMES Qt6 VERSION 6.4 COMPONENTS Core Core5Compat)
+    FIND_PACKAGE(QT NAMES Qt6 VERSION 6.4 COMPONENTS Core)
 ELSE()
     FIND_PACKAGE(QT NAMES Qt5 VERSION 5.15 REQUIRED COMPONENTS Core)
 ENDIF()
@@ -22,9 +22,7 @@ FIND_PACKAGE(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS
     Quick
     QuickWidgets
 )
-IF(USE_QT6)
-    FIND_PACKAGE(Qt6 REQUIRED COMPONENTS Core5Compat)
-ELSE()
+IF(NOT USE_QT6)
     FIND_PACKAGE(Qt5 REQUIRED COMPONENTS QuickCompiler)
 ENDIF()
 
@@ -156,9 +154,6 @@ TARGET_LINK_LIBRARIES(bibletime_backend
         ${Sword_LDFLAGS}
         ${BibleTime_LDFLAGS}
 )
-IF(USE_QT6)
-    TARGET_LINK_LIBRARIES(bibletime_backend PUBLIC Qt6::Core5Compat)
-ENDIF()
 
 
 ######################################################
