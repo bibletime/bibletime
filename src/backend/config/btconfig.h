@@ -50,8 +50,6 @@ public: // types:
 
 private: // types:
 
-    using FontCacheMap = QHash<Language const *, FontSettingsPair>;
-
     enum InitState {
         INIT_NEED_UNIMPLEMENTED_BACKWARD_MIGRATE = -2,
         INIT_OK = 0,
@@ -287,7 +285,7 @@ private: // fields:
     static BtConfig * m_instance; //!< singleton instance
 
     QFont m_defaultFont; //!< default font used when no special one is set
-    FontCacheMap m_fontCache; //!< a cache for the fonts saved in the configuration file for speed
+    QHash<Language const *, FontSettingsPair> m_fontCache; //!< a cache for the fonts saved in the configuration file for speed
 
     static StringMap m_defaultSearchScopes;
 
