@@ -12,6 +12,9 @@
 
 #pragma once
 
+#include <optional>
+#include <QString>
+
 // Sword includes:
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wextra-semi"
@@ -44,6 +47,7 @@ class ThmlToHtml: public sword::ThMLHTML {
                       inscriptRef(false), inFootnoteTag(false),
                       swordFootnote(1) {}
 
+                std::optional<QString> absolutePath;
                 bool inscriptRef;
                 bool inFootnoteTag;
                 unsigned short int swordFootnote;

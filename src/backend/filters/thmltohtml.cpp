@@ -14,8 +14,6 @@
 
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
-#include <QString>
-#include <QTextCodec>
 #include <QUrl>
 #include <utility>
 #include "../../util/btassert.h"
@@ -401,14 +399,20 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
             if (value[0] == '/')
                 value++; //strip the first /
 
+            if (!myUserData->absolutePath.has_value()) {
+                auto const * const absoluteDataPath =
+                        myUserData->module->getConfigEntry("AbsoluteDataPath");
+                myUserData->absolutePath.emplace(
+                        myUserData->module->isUnicode()
+                        ? QString::fromUtf8(absoluteDataPath)
+                        : QString::fromLatin1(absoluteDataPath));
+            }
+
             buf.append("<img src=\"")
                .append(
                     QUrl::fromLocalFile(
                         QStringLiteral("%1/%2").arg(
-                            QTextCodec::codecForLocale()->toUnicode(
-                                myUserData->module->getConfigEntry(
-                                    "AbsoluteDataPath")
-                            ),
+                            *myUserData->absolutePath,
                             QString::fromUtf8(value))
                     ).toString().toUtf8().constData())
                .append("\" />");
