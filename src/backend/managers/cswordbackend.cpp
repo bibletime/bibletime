@@ -17,7 +17,9 @@
 #include <QFileInfo>
 #include <QSet>
 #include <QString>
-#include <QTextCodec>
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#include <QStringDecoder>
+#endif
 #include <string_view>
 #include "../../util/btconnect.h"
 #include "../../util/directory.h"
@@ -424,13 +426,34 @@ QStringList CSwordBackend::swordDirList() const {
     }
 
     // Search the sword.conf file(s) for sword directories that could contain modules
+    #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+    static constexpr auto const decoderFlags = QStringDecoder::Flag::Stateless;
+    #endif
     for (auto const & fileInfo : configs) {
         /*
           Get all DataPath and AugmentPath entries from the config file and add
           them to the list:
         */
         sword::SWConfig conf(fileInfo.absoluteFilePath().toUtf8().constData());
-        swordDirSet << QDir(QTextCodec::codecForLocale()->toUnicode(conf["Install"]["DataPath"].c_str())).absolutePath();
+
+        static auto const decodeConfEntry =
+                [](sword::SWBuf const & buf) -> QString {
+                    #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+                    return QString::fromUtf8(buf.c_str());
+                    #else
+                    QStringDecoder utf8Decoder("UTF-8", decoderFlags);
+                    auto result = utf8Decoder(buf.c_str());
+                    if (!utf8Decoder.hasError())
+                        return result;
+                    QStringDecoder cp1252Decoder("Windows-1252", decoderFlags);
+                    result = cp1252Decoder(buf.c_str());
+                    if (!cp1252Decoder.hasError())
+                        return result;
+                    return QString::fromLatin1(buf.c_str());
+                    #endif
+                };
+
+        swordDirSet << QDir(decodeConfEntry(conf["Install"]["DataPath"])).absolutePath();
 
         const sword::ConfigEntMap group(conf["Install"]);
         for (auto its = group.equal_range("AugmentPath");
@@ -438,7 +461,7 @@ QStringList CSwordBackend::swordDirList() const {
              ++(its.first))
         {
             // Added augment path:
-            swordDirSet << QDir(QTextCodec::codecForLocale()->toUnicode(its.first->second.c_str())).absolutePath();
+            swordDirSet << QDir(decodeConfEntry(its.first->second)).absolutePath();
         }
     }
 
