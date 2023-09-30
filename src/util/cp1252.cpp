@@ -12,13 +12,19 @@
 
 #include "cp1252.h"
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#include <QStringDecoder>
+#include <QStringEncoder>
+#else
 #include <QTextCodec>
+#endif
 #include "btassert.h"
 
 
 namespace util {
 namespace cp1252 {
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 namespace {
 
 QTextCodec const & codec() {
@@ -29,11 +35,29 @@ QTextCodec const & codec() {
 }
 
 } // anonymous namespace
+#endif
 
-QString toUnicode(QByteArray const & data) { return codec().toUnicode(data); }
+QString toUnicode(QByteArray const & data) {
+    #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+    return codec().toUnicode(data);
+    #else
+    QStringDecoder decoder("Windows-1252", QStringDecoder::Flag::Stateless);
+    auto result = decoder(data);
+    BT_ASSERT(!decoder.hasError());
+    return result;
+    #endif
+}
 
-QByteArray fromUnicode(QString const & str)
-{ return codec().fromUnicode(str); }
+QByteArray fromUnicode(QString const & str) {
+    #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+    return codec().fromUnicode(str);
+    #else
+    QStringEncoder encoder("Windows-1252", QStringEncoder::Flag::Stateless);
+    auto result = encoder(str);
+    BT_ASSERT(!encoder.hasError());
+    return result;
+    #endif
+}
 
 } /* namespace cp1252 { */
 } /* namespace util { */
