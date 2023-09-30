@@ -185,11 +185,11 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
             auto * const l = new StrongsResultList(m, result.results, sNumber);
             m_strongsResults[m] = l;
 
-            for (auto const & strongResult : *l) {
-                QStringList columns(strongResult.keyText());
-                columns.append(QString::number(strongResult.keyCount()));
-                new QTreeWidgetItem(item, columns);
-            }
+            for (auto const & strongResult : *l)
+                new QTreeWidgetItem(
+                    item,
+                    QStringList{strongResult.keyText(),
+                                QString::number(strongResult.keyCount())});
 
             /// \todo item->setOpen(true);
             strongsAvailable = true;
