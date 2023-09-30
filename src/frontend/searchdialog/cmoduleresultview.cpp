@@ -182,7 +182,14 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
             const int sTokenIndex = searchedText.indexOf(' ', sstIndex);
             const QString sNumber(searchedText.mid(sstIndex, sTokenIndex - sstIndex));
 
-            setupStrongsResults(m, result.results, item, sNumber);
+            auto * const l = new StrongsResultList(m, result.results, sNumber);
+            m_strongsResults[m] = l;
+
+            for (int cnt = 0; cnt < l->count(); ++cnt) {
+                QStringList columns(l->at(cnt).keyText());
+                columns.append(QString::number(l->at(cnt).keyCount()));
+                new QTreeWidgetItem(item, columns);
+            }
 
             /// \todo item->setOpen(true);
             strongsAvailable = true;
@@ -191,22 +198,6 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
 
     // Allow to hide the module strongs if there are any available
     setRootIsDecorated( strongsAvailable );
-}
-
-void CModuleResultView::setupStrongsResults(
-        CSwordModuleInfo const * module,
-        CSwordModuleSearch::ModuleResultList const & results,
-        QTreeWidgetItem * parent,
-        QString const & sNumber)
-{
-    StrongsResultList *m = new StrongsResultList(module, results, sNumber);
-    m_strongsResults[module] = m;
-
-    for (int cnt = 0; cnt < m->count(); ++cnt) {
-        QStringList columns(m->at(cnt).keyText());
-        columns.append(QString::number(m->at(cnt).keyCount()));
-        new QTreeWidgetItem(parent, columns);
-    }
 }
 
 /// \todo

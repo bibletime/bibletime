@@ -63,12 +63,6 @@ class CModuleResultView : public QTreeWidget {
         */
         void initConnections();
 
-
-        void setupStrongsResults(const CSwordModuleInfo *module,
-                                 CSwordModuleSearch::ModuleResultList const & results,
-                                 QTreeWidgetItem *parent,
-                                 const QString &searchedText);
-
     protected Q_SLOTS:
         /**
         * Is executed when an item was selected in the list.
