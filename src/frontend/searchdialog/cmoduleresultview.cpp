@@ -185,9 +185,9 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
             auto * const l = new StrongsResultList(m, result.results, sNumber);
             m_strongsResults[m] = l;
 
-            for (int cnt = 0; cnt < l->count(); ++cnt) {
-                QStringList columns(l->at(cnt).keyText());
-                columns.append(QString::number(l->at(cnt).keyCount()));
+            for (auto const & strongResult : *l) {
+                QStringList columns(strongResult.keyText());
+                columns.append(QString::number(strongResult.keyCount()));
                 new QTreeWidgetItem(item, columns);
             }
 
