@@ -212,15 +212,14 @@ void CModuleResultView::setupStrongsResults(
 /// \todo
 /** Is executed when an item was selected in the list. */
 void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
-    QString itemText;
-
     if (!i) {
         //Clear list
         Q_EMIT moduleChanged();
         return;
     }
-    if (auto * const m = CSwordBackend::instance().findModuleByName(i->text(0)))
-    {
+
+    auto const & itemText = i->text(0);
+    if (auto * const m = CSwordBackend::instance().findModuleByName(itemText)) {
         Q_EMIT moduleChanged();
         Q_EMIT moduleSelected(m, m_results.value(m));
         return;
@@ -232,7 +231,6 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
         return;
     }
 
-    itemText = i->text(0);
     for (int cnt = 0; cnt < strongsResult->count(); cnt++) {
         if (strongsResult->at(cnt).keyText() == itemText) {
             //clear the verses list
