@@ -1087,11 +1087,9 @@ QString CSwordModuleInfo::categoryName(const CSwordModuleInfo::Category & catego
 }
 
 QString CSwordModuleInfo::getSimpleConfigEntry(const QString & name) const {
-    QString ret = isUnicode()
-                  ? QString::fromUtf8(m_swordModule.getConfigEntry(name.toUtf8().constData()))
-                  : QString::fromLatin1(m_swordModule.getConfigEntry(name.toUtf8().constData()));
-
-    return ret.isEmpty() ? QString() : ret;
+    auto const * const value =
+            m_swordModule.getConfigEntry(name.toUtf8().constData());
+    return isUnicode() ? QString::fromUtf8(value) : QString::fromLatin1(value);
 }
 
 /// \note See http://www.crosswire.org/wiki/DevTools:conf_Files#Localization
