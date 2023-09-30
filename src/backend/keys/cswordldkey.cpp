@@ -13,7 +13,6 @@
 #include "cswordldkey.h"
 
 #include <QByteArray>
-#include <QTextCodec>
 #include "../../util/btassert.h"
 #include "../../util/cp1252.h"
 #include "../drivers/cswordmoduleinfo.h"
@@ -76,7 +75,7 @@ QString CSwordLDKey::key() const {
     if (m_module->isUnicode()) {
         return QString::fromUtf8(m_key.getText());
     } else {
-        return util::cp1252().toUnicode(m_key.getText());
+        return util::cp1252::toUnicode(m_key.getText());
     }
 }
 
@@ -91,7 +90,7 @@ bool CSwordLDKey::setKey(const QString &newKey) {
         return setKey(newKey.toUtf8().constData());
     }
     else {
-        return setKey(util::cp1252().fromUnicode(newKey).constData());
+        return setKey(util::cp1252::fromUnicode(newKey).constData());
     }
 }
 

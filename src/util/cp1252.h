@@ -12,10 +12,15 @@
 
 #pragma once
 
-class QTextCodec;
+#include <QByteArray>
+#include <QString>
+
 
 namespace util {
+namespace cp1252 {
 
-QTextCodec const & cp1252();
+QString toUnicode(QByteArray const & data);
+QByteArray fromUnicode(QString const & str);
 
+} /* namespace cp1252 { */
 } /* namespace util { */

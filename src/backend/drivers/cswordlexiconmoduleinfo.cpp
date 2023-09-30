@@ -20,7 +20,6 @@
 #include <QIODevice>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
-#include <QTextCodec>
 #include "../../util/cp1252.h"
 #include "../../util/directory.h"
 #include "../keys/cswordldkey.h"
@@ -128,9 +127,8 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
             m.increment();
         } while (!m.popError());
     } else {
-        auto const & codec = util::cp1252();
         do {
-            m_entries.append(codec.toUnicode(m.getKeyText()));
+            m_entries.append(util::cp1252::toUnicode(m.getKeyText()));
             m.increment();
         } while (!m.popError());
     }

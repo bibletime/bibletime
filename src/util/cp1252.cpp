@@ -12,18 +12,28 @@
 
 #include "cp1252.h"
 
-#include <QByteArray>
 #include <QTextCodec>
 #include "btassert.h"
 
 
 namespace util {
+namespace cp1252 {
 
-QTextCodec const & cp1252() {
+namespace {
+
+QTextCodec const & codec() {
     static auto const * const codec =
             QTextCodec::codecForName(QByteArrayLiteral("Windows-1252"));
     BT_ASSERT(codec);
     return *codec;
 }
 
+} // anonymous namespace
+
+QString toUnicode(QByteArray const & data) { return codec().toUnicode(data); }
+
+QByteArray fromUnicode(QString const & str)
+{ return codec().fromUnicode(str); }
+
+} /* namespace cp1252 { */
 } /* namespace util { */
