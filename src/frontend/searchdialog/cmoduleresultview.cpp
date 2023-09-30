@@ -42,47 +42,38 @@ QString getStrongsNumberText(QString const & verseContent,
                              int & startIndex,
                              QString const & lemmaText)
 {
-    // get the strongs text
-    int idx1, idx2, index;
-    QString sNumber, strongsText;
-    //const bool cs = CSwordModuleSearch::caseSensitive;
-    const Qt::CaseSensitivity cs = Qt::CaseInsensitive;
+    static constexpr Qt::CaseSensitivity const cs = Qt::CaseInsensitive;
 
+    int index;
     if (startIndex == 0) {
         index = verseContent.indexOf(QStringLiteral("<body"));
-    }
-    else {
+    } else {
         index = startIndex;
     }
 
-           // find all the "lemma=" inside the the content
+    // find all the "lemma=" inside the the content
     while ((index = verseContent.indexOf(QStringLiteral("lemma="), index, cs))
            != -1)
     {
         // get the strongs number after the lemma and compare it with the
         // strongs number we are looking for
-        idx1 = verseContent.indexOf('"', index) + 1;
-        idx2 = verseContent.indexOf('"', idx1 + 1);
-        sNumber = verseContent.mid(idx1, idx2 - idx1);
+        auto const idx1 = verseContent.indexOf('"', index) + 1;
+        auto idx2 = verseContent.indexOf('"', idx1 + 1);
+        auto const sNumber = verseContent.mid(idx1, idx2 - idx1);
         if (sNumber == lemmaText) {
             // strongs number is found now we need to get the text of this node
             // search right until the '>' is found.  Get the text from here to
             // the next '<'.
             index = verseContent.indexOf('>', index, cs) + 1;
             idx2  = verseContent.indexOf('<', index, cs);
-            strongsText = verseContent.mid(index, idx2 - index);
-            index = idx2;
-            startIndex = index;
-
-            return(strongsText);
-        }
-        else {
+            startIndex = idx2;
+            return verseContent.mid(index, idx2 - index);
+        } else {
             index += 6; // 6 is the length of "lemma="
         }
     }
-    return QString();
+    return {};
 }
-
 
 void populateStrongsResultList(
     QList<StrongsResult> & list,
