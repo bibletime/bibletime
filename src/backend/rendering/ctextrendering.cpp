@@ -13,7 +13,6 @@
 #include "ctextrendering.h"
 
 #include <memory>
-#include <QStringRef>
 #include <QtAlgorithms>
 #include "../../util/btassert.h"
 #include "../config/btconfig.h"
