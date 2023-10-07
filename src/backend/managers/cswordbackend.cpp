@@ -437,12 +437,13 @@ QStringList CSwordBackend::swordDirList() const {
         sword::SWConfig conf(fileInfo.absoluteFilePath().toUtf8().constData());
 
         static auto const decodeConfEntry =
-                [](sword::SWBuf const & buf) -> QString {
+                [](sword::SWBuf const & buf) {
                     #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
                     return QString::fromUtf8(buf.c_str());
                     #else
                     QStringDecoder utf8Decoder("UTF-8", decoderFlags);
-                    auto result = utf8Decoder(buf.c_str());
+                    // Do not use auto here due to QTBUG-117705/QTBUG-117902:
+                    QString result = utf8Decoder(buf.c_str());
                     if (!utf8Decoder.hasError())
                         return result;
                     QStringDecoder cp1252Decoder("Windows-1252", decoderFlags);

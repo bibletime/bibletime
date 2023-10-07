@@ -42,7 +42,8 @@ QString toUnicode(QByteArray const & data) {
     return codec().toUnicode(data);
     #else
     QStringDecoder decoder("Windows-1252", QStringDecoder::Flag::Stateless);
-    auto result = decoder(data);
+    // Do not use auto here due to QTBUG-117705/QTBUG-117902:
+    QString result = decoder(data);
     BT_ASSERT(!decoder.hasError());
     return result;
     #endif
@@ -53,7 +54,8 @@ QByteArray fromUnicode(QString const & str) {
     return codec().fromUnicode(str);
     #else
     QStringEncoder encoder("Windows-1252", QStringEncoder::Flag::Stateless);
-    auto result = encoder(str);
+    // Do not use auto here due to QTBUG-117705/QTBUG-117902:
+    QByteArray result = encoder(str);
     BT_ASSERT(!encoder.hasError());
     return result;
     #endif
