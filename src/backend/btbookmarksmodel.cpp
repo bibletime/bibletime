@@ -334,29 +334,23 @@ public: // methods:
 
     /** Loads a bookmark XML document from a named file or from the default bookmarks file. */
     QString loadXmlFromFile(QString fileName = QString()) {
-
         if (fileName.isEmpty())
             fileName = defaultBookmarksFile();
 
+        QTextStream t;
+        t.setAutoDetectUnicode(false);
+        #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+        t.setCodec(QTextCodec::codecForName(QByteArrayLiteral("UTF-8")));
+        #else
+        t.setEncoding(QStringConverter::Utf8);
+        #endif
+
         QFile file(fileName);
-        if (!file.exists())
-            return QString();
+        if (!file.open(QIODevice::ReadOnly))
+            return {};
 
-        QString xml;
-        if (file.open(QIODevice::ReadOnly)) {
-            QTextStream t;
-            t.setAutoDetectUnicode(false);
-
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-            t.setCodec(QTextCodec::codecForName(QByteArrayLiteral("UTF-8")));
-#else
-            t.setEncoding(QStringConverter::Utf8);
-#endif
-            t.setDevice(&file);
-            xml = t.readAll();
-            file.close();
-        }
-        return xml;
+        t.setDevice(&file);
+        return t.readAll();
     }
 
     /** Takes one item and saves the tree which is under it to a named file
