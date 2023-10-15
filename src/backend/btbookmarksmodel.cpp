@@ -131,8 +131,8 @@ public: // types:
           \returns index of this item in parent's child array.
          */
         int index() const {
-            BT_ASSERT(parent());
-            return parent()->children().indexOf(
+            BT_ASSERT(m_parent);
+            return m_parent->children().indexOf(
                 const_cast<BookmarkItemBase *>(this));
         }
 
