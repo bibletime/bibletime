@@ -98,6 +98,8 @@ public: // types:
         }
 
         QList<BookmarkItemBase *> & children() noexcept { return m_children; }
+        QList<BookmarkItemBase *> const & children() const noexcept
+        { return m_children; }
 
         void insertChild(int index, BookmarkItemBase * child) {
             child->setParent(this);
