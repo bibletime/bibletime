@@ -77,7 +77,6 @@ public: // types:
             : m_flags(other.m_flags)
             , m_parent(other.m_parent)
             , m_text(other.m_text)
-            , m_tooltip(other.m_tooltip)
         {}
 
         virtual ~BookmarkItemBase() {
@@ -116,9 +115,7 @@ public: // types:
 
         QString const & text() const { return m_text; }
 
-        void setToolTip(QString const & tooltip) { m_tooltip = tooltip; }
-
-        virtual QString toolTip() const { return m_tooltip; }
+        virtual QString toolTip() const { return {}; }
 
         void setFlags(Qt::ItemFlags flags) { m_flags = flags; }
 
@@ -148,7 +145,6 @@ public: // types:
         Qt::ItemFlags m_flags;
         BookmarkItemBase * m_parent;
         QString m_text;
-        QString m_tooltip;
 
     };
 
@@ -644,23 +640,11 @@ bool BtBookmarksModel::setData(const QModelIndex & index, const QVariant & val, 
     Q_D(BtBookmarksModel);
 
     BookmarkItemBase * i = d->item(index);
-    switch(role)
-    {
-        case Qt::DisplayRole:
-        case Qt::EditRole:
-        {
-            i->setText(val.toString());
-            if(dynamic_cast<BookmarkFolder *>(i) || dynamic_cast<BookmarkItem *>(i))
-                d->needSave();
-            return true;
-        }
-        case Qt::ToolTipRole:
-        {
-            i->setToolTip(val.toString());
-            if(dynamic_cast<BookmarkFolder *>(i) || dynamic_cast<BookmarkItem *>(i))
-                d->needSave();
-            return true;
-        }
+    if (role == Qt::DisplayRole || role == Qt::EditRole) {
+        i->setText(val.toString());
+        if(dynamic_cast<BookmarkFolder *>(i) || dynamic_cast<BookmarkItem *>(i))
+            d->needSave();
+        return true;
     }
     return false;
 }
