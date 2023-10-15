@@ -97,9 +97,7 @@ public: // types:
             return m_children[index];
         }
 
-        QList<BookmarkItemBase *> & children() {
-            return m_children;
-        }
+        QList<BookmarkItemBase *> & children() noexcept { return m_children; }
 
         void insertChild(int index, BookmarkItemBase * child) {
             child->setParent(this);
