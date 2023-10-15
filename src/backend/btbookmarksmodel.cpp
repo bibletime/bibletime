@@ -144,7 +144,7 @@ public: // types:
 
     };
 
-    class BookmarkItem : public BookmarkItemBase {
+    class BookmarkItem final : public BookmarkItemBase {
     public:
         friend class BookmarkLoader;
 
@@ -198,7 +198,7 @@ public: // types:
 
     };
 
-    class BookmarkFolder : public BookmarkItemBase {
+    class BookmarkFolder final : public BookmarkItemBase {
     public:
 
         BookmarkFolder(const QString & name, BookmarkItemBase * parent = nullptr);
