@@ -738,7 +738,7 @@ bool BtBookmarksModel::isBookmark(const QModelIndex &index) const
     return d->itemAs<BookmarkItem const>(index);
 }
 
-QModelIndexList BtBookmarksModel::copyItems(int row, const QModelIndex & parent, const QModelIndexList & toCopy)
+void BtBookmarksModel::copyItems(int row, const QModelIndex & parent, const QModelIndexList & toCopy)
 {
     Q_D(BtBookmarksModel);
     BT_ASSERT(dynamic_cast<BookmarkFolder *>(d->item(parent)));
@@ -777,7 +777,7 @@ QModelIndexList BtBookmarksModel::copyItems(int row, const QModelIndex & parent,
     }
 
     if (moreThanOneFolder || targetIncluded) {
-        return QModelIndexList();
+        return;
     }
 
 
@@ -788,12 +788,6 @@ QModelIndexList BtBookmarksModel::copyItems(int row, const QModelIndex & parent,
     endInsertRows();
 
     d->needSave();
-
-    QModelIndexList result;
-    for(int i = 0; i < newList.size(); ++i) {
-        result.append(index(row + i, 0, parent));
-    }
-    return result;
 }
 
 CSwordModuleInfo * BtBookmarksModel::module(const QModelIndex & index) const

@@ -80,9 +80,8 @@ public: // methods:
       \param[in] row new item will occupy given row.
       \param[in] parent if invalid new item will be placed on top level.
       \param[in] toCopy item to copy.
-      \returns newly created itemS that are copy of toCopy.
     */
-    QModelIndexList copyItems(int row, const QModelIndex & parent, const QModelIndexList & toCopy);
+    void copyItems(int row, const QModelIndex & parent, const QModelIndexList & toCopy);
 
     /**
       \returns whether item of index is a folder.
