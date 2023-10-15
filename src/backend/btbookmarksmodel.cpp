@@ -214,9 +214,6 @@ public: // types:
         QIcon const & icon() const noexcept final override
         { return CResMgr::mainIndex::closedFolder::icon(); }
 
-        /** Returns a list of direct childs of this item. */
-        QList<BookmarkItemBase *> getChildList() const;
-
         /** Returns true if the given item is this or a direct or indirect subitem of this. */
         bool hasDescendant(BookmarkItemBase const * item) const;
 
@@ -443,20 +440,12 @@ BookmarkFolder::BookmarkFolder(const QString & name, BookmarkItemBase * parent)
     setFlags(Qt::ItemIsEditable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
 }
 
-QList<BookmarkItemBase*> BookmarkFolder::getChildList() const {
-    QList<BookmarkItemBase*> list;
-    for (int i = 0; i < childCount(); i++) {
-        list.append(child(i));
-    }
-    return list;
-}
-
 bool BookmarkFolder::hasDescendant(BookmarkItemBase const * const item) const {
     if (this == item)
         return true;
-    if (getChildList().indexOf(const_cast<BookmarkItemBase *>(item)) > -1)
+    if (children().indexOf(const_cast<BookmarkItemBase *>(item)) > -1)
         return true;
-    for (auto const * const childItem : getChildList())
+    for (auto const * const childItem : children())
         if (BookmarkFolder const * const folder =
                 dynamic_cast<BookmarkFolder const *>(childItem))
             if (folder->hasDescendant(childItem))
@@ -466,7 +455,7 @@ bool BookmarkFolder::hasDescendant(BookmarkItemBase const * const item) const {
 
 BookmarkFolder * BookmarkFolder::deepCopy() const {
     BookmarkFolder* newFolder = new BookmarkFolder(this->text());
-    for (auto const * const subitem : getChildList()) {
+    for (auto const * const subitem : children()) {
         if (BookmarkItem const * const bmItem =
                 dynamic_cast<BookmarkItem const *>(subitem))
         {
