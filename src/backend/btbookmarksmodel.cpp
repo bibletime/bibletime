@@ -376,11 +376,11 @@ public: // methods:
     }
 
     /** Writes one item to a document element. */
-    void saveItem(BookmarkItemBase * item, QDomElement & parentElement) {
-        BookmarkFolder* folderItem = nullptr;
-        BookmarkItem* bookmarkItem = nullptr;
+    void saveItem(BookmarkItemBase const * item, QDomElement & parentElement) {
+        BookmarkFolder const * folderItem = nullptr;
+        BookmarkItem const * bookmarkItem = nullptr;
 
-        if ((folderItem = dynamic_cast<BookmarkFolder*>(item))) {
+        if ((folderItem = dynamic_cast<BookmarkFolder const *>(item))) {
             auto elem =
                     parentElement.ownerDocument().createElement(
                         QStringLiteral("Folder"));
@@ -392,7 +392,7 @@ public: // methods:
                 saveItem(folderItem->child(i), elem);
             }
         }
-        else if ((bookmarkItem = dynamic_cast<BookmarkItem*>(item))) {
+        else if ((bookmarkItem = dynamic_cast<BookmarkItem const *>(item))) {
             auto elem =
                     parentElement.ownerDocument().createElement(
                         QStringLiteral("Bookmark"));
