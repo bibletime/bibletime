@@ -91,10 +91,6 @@ public: // types:
             m_children.append(child);
         }
 
-        BookmarkItemBase * child(int index) const {
-            return m_children[index];
-        }
-
         QList<BookmarkItemBase *> & children() noexcept { return m_children; }
         QList<BookmarkItemBase *> const & children() const noexcept
         { return m_children; }
@@ -593,7 +589,7 @@ QModelIndex BtBookmarksModel::index(int row, int column, const QModelIndex & par
 
     const BookmarkItemBase * i = d->item(parent);
     if (i->children().size() > row && row >= 0)
-        return createIndex(row, column, i->child(row));
+        return createIndex(row, column, i->children()[row]);
     return QModelIndex();
 }
 
