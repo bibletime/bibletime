@@ -54,172 +54,171 @@
 
 
 namespace {
+
 inline QString toHeader(QString const & key, QString const & moduleName)
 { return QStringLiteral("%1 (%2)").arg(key).arg(moduleName); }
+
+class BookmarkItemBase {
+
+public: // methods:
+
+    BookmarkItemBase(BookmarkItemBase * parent = nullptr)
+        : m_parent(parent) {
+        if(m_parent) {
+            BT_ASSERT(!m_parent->m_children.contains(this));
+            m_parent->m_children.append(this);
+        }
+    }
+    BookmarkItemBase(const BookmarkItemBase & other)
+        : m_parent(other.m_parent)
+        , m_text(other.m_text)
+    {}
+
+    virtual ~BookmarkItemBase() {
+        qDeleteAll(m_children);
+    }
+
+    /** Children routines. */
+    void addChild(BookmarkItemBase * child) {
+        child->setParent(this);
+        BT_ASSERT(!m_children.contains(child));
+        m_children.append(child);
+    }
+
+    QList<BookmarkItemBase *> & children() noexcept { return m_children; }
+    QList<BookmarkItemBase *> const & children() const noexcept
+    { return m_children; }
+
+    void insertChild(int index, BookmarkItemBase * child) {
+        child->setParent(this);
+        BT_ASSERT(!m_children.contains(child));
+        m_children.insert(index, child);
+    }
+
+    void insertChildren(int index, QList<BookmarkItemBase *> children) {
+        for (auto * const c : children)
+            insertChild(index++, c);
+    }
+
+    void removeChild(int index) {
+        delete m_children[index];
+        m_children.removeAt(index);
+    }
+
+
+    void setText(QString const & text) { m_text = text; }
+
+    QString const & text() const { return m_text; }
+
+    virtual QString toolTip() const { return {}; }
+
+    virtual Qt::ItemFlags flags() const noexcept { return Qt::NoItemFlags; }
+
+    virtual QIcon const & icon() const noexcept {
+        static QIcon const noIcon;
+        return noIcon;
+    }
+
+    void setParent(BookmarkItemBase * parent) { m_parent = parent; }
+
+    BookmarkItemBase * parent() const { return m_parent; }
+
+    /**
+      \returns index of this item in parent's child array.
+     */
+    int index() const {
+        BT_ASSERT(m_parent);
+        return m_parent->children().indexOf(
+            const_cast<BookmarkItemBase *>(this));
+    }
+
+private:
+
+    QList<BookmarkItemBase *> m_children;
+    BookmarkItemBase * m_parent;
+    QString m_text;
+
+};
+
+class BookmarkItem final : public BookmarkItemBase {
+public:
+    friend class BookmarkLoader;
+
+    BookmarkItem(BookmarkItemBase * parent);
+
+    /** Creates a bookmark with module, key and description. */
+    BookmarkItem(const CSwordModuleInfo & module, const QString & key,
+                 const QString & description, const QString & title);
+
+    /** Creates a copy. */
+    BookmarkItem(const BookmarkItem & other);
+
+    Qt::ItemFlags flags() const noexcept final override {
+        return Qt::ItemIsSelectable // | Qt::ItemIsEditable
+               | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled
+               | Qt::ItemIsEnabled;
+    }
+
+    QIcon const & icon() const noexcept final override
+    { return CResMgr::mainIndex::bookmark::icon(); }
+
+    /** Returns the used module, 0 if there is no such module. */
+    CSwordModuleInfo * module() const;
+
+    /** Returns the used key. */
+    QString key() const;
+
+    void setKey(QString const & key) { m_key = key; }
+
+    /** Returns the used description. */
+    QString const & description() const { return m_description; }
+
+    void setDescription(QString const & description)
+    { m_description = description; }
+
+    /** Returns a tooltip for this bookmark. */
+    QString toolTip() const override;
+
+    /** Returns the english key.*/
+    QString const & englishKey() const { return m_key; }
+
+    void setModule(QString const & moduleName)
+    { m_moduleName = moduleName; }
+
+    QString const & moduleName() const { return m_moduleName; }
+
+private:
+    QString m_key;
+    QString m_description;
+    QString m_moduleName;
+
+};
+
+class BookmarkFolder final : public BookmarkItemBase {
+public:
+
+    BookmarkFolder(const QString & name, BookmarkItemBase * parent = nullptr);
+
+    Qt::ItemFlags flags() const noexcept final override {
+        return Qt::ItemIsSelectable | Qt::ItemIsEditable
+               | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled
+               | Qt::ItemIsEnabled;
+    }
+
+    QIcon const & icon() const noexcept final override
+    { return CResMgr::mainIndex::closedFolder::icon(); }
+
+    /** Returns true if the given item is this or a direct or indirect subitem of this. */
+    bool hasDescendant(BookmarkItemBase const * item) const;
+
+    /** Creates a deep copy of this item. */
+    BookmarkFolder * deepCopy() const;
+
+};
+
 }
 
 class BtBookmarksModelPrivate {
-
-public: // types:
-
-    class BookmarkItemBase {
-
-    public: // methods:
-
-        BookmarkItemBase(BookmarkItemBase * parent = nullptr)
-            : m_parent(parent) {
-            if(m_parent) {
-                BT_ASSERT(!m_parent->m_children.contains(this));
-                m_parent->m_children.append(this);
-            }
-        }
-        BookmarkItemBase(const BookmarkItemBase & other)
-            : m_parent(other.m_parent)
-            , m_text(other.m_text)
-        {}
-
-        virtual ~BookmarkItemBase() {
-            qDeleteAll(m_children);
-        }
-
-        /** Children routines. */
-        void addChild(BookmarkItemBase * child) {
-            child->setParent(this);
-            BT_ASSERT(!m_children.contains(child));
-            m_children.append(child);
-        }
-
-        QList<BookmarkItemBase *> & children() noexcept { return m_children; }
-        QList<BookmarkItemBase *> const & children() const noexcept
-        { return m_children; }
-
-        void insertChild(int index, BookmarkItemBase * child) {
-            child->setParent(this);
-            BT_ASSERT(!m_children.contains(child));
-            m_children.insert(index, child);
-        }
-
-        void insertChildren(int index, QList<BookmarkItemBase *> children) {
-            for (auto * const c : children)
-                insertChild(index++, c);
-        }
-
-        void removeChild(int index) {
-            delete m_children[index];
-            m_children.removeAt(index);
-        }
-
-
-        void setText(QString const & text) { m_text = text; }
-
-        QString const & text() const { return m_text; }
-
-        virtual QString toolTip() const { return {}; }
-
-        virtual Qt::ItemFlags flags() const noexcept { return Qt::NoItemFlags; }
-
-        virtual QIcon const & icon() const noexcept {
-            static QIcon const noIcon;
-            return noIcon;
-        }
-
-        void setParent(BookmarkItemBase * parent) { m_parent = parent; }
-
-        BookmarkItemBase * parent() const { return m_parent; }
-
-        /**
-          \returns index of this item in parent's child array.
-         */
-        int index() const {
-            BT_ASSERT(m_parent);
-            return m_parent->children().indexOf(
-                const_cast<BookmarkItemBase *>(this));
-        }
-
-    private:
-
-        QList<BookmarkItemBase *> m_children;
-        BookmarkItemBase * m_parent;
-        QString m_text;
-
-    };
-
-    class BookmarkItem final : public BookmarkItemBase {
-    public:
-        friend class BookmarkLoader;
-
-        BookmarkItem(BookmarkItemBase * parent);
-
-        /** Creates a bookmark with module, key and description. */
-        BookmarkItem(const CSwordModuleInfo & module, const QString & key,
-                       const QString & description, const QString & title);
-
-        /** Creates a copy. */
-        BookmarkItem(const BookmarkItem & other);
-
-        Qt::ItemFlags flags() const noexcept final override {
-            return Qt::ItemIsSelectable // | Qt::ItemIsEditable
-                   | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled
-                   | Qt::ItemIsEnabled;
-        }
-
-        QIcon const & icon() const noexcept final override
-        { return CResMgr::mainIndex::bookmark::icon(); }
-
-        /** Returns the used module, 0 if there is no such module. */
-        CSwordModuleInfo * module() const;
-
-        /** Returns the used key. */
-        QString key() const;
-
-        void setKey(QString const & key) { m_key = key; }
-
-        /** Returns the used description. */
-        QString const & description() const { return m_description; }
-
-        void setDescription(QString const & description)
-        { m_description = description; }
-
-        /** Returns a tooltip for this bookmark. */
-        QString toolTip() const override;
-
-        /** Returns the english key.*/
-        QString const & englishKey() const { return m_key; }
-
-        void setModule(QString const & moduleName)
-        { m_moduleName = moduleName; }
-
-        QString const & moduleName() const { return m_moduleName; }
-
-    private:
-        QString m_key;
-        QString m_description;
-        QString m_moduleName;
-
-    };
-
-    class BookmarkFolder final : public BookmarkItemBase {
-    public:
-
-        BookmarkFolder(const QString & name, BookmarkItemBase * parent = nullptr);
-
-        Qt::ItemFlags flags() const noexcept final override {
-            return Qt::ItemIsSelectable | Qt::ItemIsEditable
-                   | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled
-                   | Qt::ItemIsEnabled;
-        }
-
-        QIcon const & icon() const noexcept final override
-        { return CResMgr::mainIndex::closedFolder::icon(); }
-
-        /** Returns true if the given item is this or a direct or indirect subitem of this. */
-        bool hasDescendant(BookmarkItemBase const * item) const;
-
-        /** Creates a deep copy of this item. */
-        BookmarkFolder * deepCopy() const;
-
-    };
-
 
 public: // methods:
 
@@ -424,11 +423,6 @@ public: // fields:
 };
 
 BtBookmarksModel * BtBookmarksModelPrivate::m_defaultModel = nullptr;
-
-using BookmarkItemBase = BtBookmarksModelPrivate::BookmarkItemBase;
-using BookmarkItem = BtBookmarksModelPrivate::BookmarkItem;
-using BookmarkFolder = BtBookmarksModelPrivate::BookmarkFolder;
-
 
 BookmarkFolder::BookmarkFolder(const QString & name, BookmarkItemBase * parent)
         : BookmarkItemBase(parent) {
