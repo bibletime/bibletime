@@ -102,7 +102,6 @@ private:
 
 class BookmarkItem final : public BookmarkItemBase {
 public:
-    friend class BookmarkLoader;
 
     BookmarkItem(BookmarkFolder * parent);
 
