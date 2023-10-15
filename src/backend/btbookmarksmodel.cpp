@@ -400,9 +400,9 @@ public: // methods:
                               ? bookmarkItem->module()->config(
                                     CSwordModuleInfo::Description)
                               : QString());
-        if (!bookmarkItem->text().isEmpty()) {
-            elem.setAttribute(QStringLiteral("title"), bookmarkItem->text());
-        }
+            if (!bookmarkItem->text().isEmpty()) {
+                elem.setAttribute(QStringLiteral("title"), bookmarkItem->text());
+            }
             parentElement.appendChild(elem);
         }
     }
