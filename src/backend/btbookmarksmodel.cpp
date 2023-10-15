@@ -91,8 +91,6 @@ public: // types:
             m_children.append(child);
         }
 
-        int childCount() const { return m_children.size(); }
-
         BookmarkItemBase * child(int index) const {
             return m_children[index];
         }
@@ -369,9 +367,8 @@ public: // methods:
 
         //append the XML nodes of all child items
 
-        for (int i = 0; i < rootItem->childCount(); i++) {
-            saveItem(rootItem->child(i), content);
-        }
+        for (auto const * const itemPtr : rootItem->children())
+            saveItem(itemPtr, content);
         return doc.toString();
     }
 
@@ -388,9 +385,8 @@ public: // methods:
 
             parentElement.appendChild(elem);
 
-            for (int i = 0; i < folderItem->childCount(); i++) {
-                saveItem(folderItem->child(i), elem);
-            }
+            for (auto const * const itemPtr : folderItem->children())
+                saveItem(itemPtr, elem);
         }
         else if ((bookmarkItem = dynamic_cast<BookmarkItem const *>(item))) {
             auto elem =
@@ -581,7 +577,7 @@ BtBookmarksModel::~BtBookmarksModel() {
 int BtBookmarksModel::rowCount(const QModelIndex & parent) const {
     Q_D(const BtBookmarksModel);
 
-    return d->item(parent)->childCount();
+    return d->item(parent)->children().size();
 }
 
 int BtBookmarksModel::columnCount(const QModelIndex & parent) const {
@@ -596,7 +592,7 @@ QModelIndex BtBookmarksModel::index(int row, int column, const QModelIndex & par
     Q_D(const BtBookmarksModel);
 
     const BookmarkItemBase * i = d->item(parent);
-    if(i->childCount() > row && row >= 0)
+    if (i->children().size() > row && row >= 0)
         return createIndex(row, column, i->child(row));
     return QModelIndex();
 }
@@ -740,12 +736,10 @@ bool BtBookmarksModel::load(QString fileName, const QModelIndex & rootItem) {
     if(items.size() == 0)
         return false;
 
-    beginInsertRows(rootItem, i->childCount(), i->childCount() + items.size() - 1);
-
-    i->insertChildren(i->childCount(), items);
-
+    auto const numChildren = i->children().size();
+    beginInsertRows(rootItem, numChildren, numChildren + items.size() - 1);
+    i->insertChildren(numChildren, items);
     endInsertRows();
-
     return true;
 }
 
