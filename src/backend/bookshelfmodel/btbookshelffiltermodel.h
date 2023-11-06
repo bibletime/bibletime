@@ -44,12 +44,6 @@ public: // methods:
     int hiddenFilterKeyColumn() const { return m_hiddenFilterColumn; }
     bool showHidden() const noexcept { return m_showHidden; }
     bool showShown() const noexcept { return m_showShown; }
-    int categoryFilterRole() const noexcept { return m_categoryFilterRole; }
-    int categoryFilterKeyColumn() const noexcept
-    { return m_categoryFilterColumn; }
-
-    CSwordModuleInfo::Categories shownCategories() const noexcept
-    { return m_categoryFilter; }
 
 public Q_SLOTS:
 
@@ -67,16 +61,10 @@ public Q_SLOTS:
     void setShowHidden(bool show);
     void setShowShown(bool show);
 
-    // Category filter:
-    void setCategoryFilterRole(int role);
-    void setCategoryFilterKeyColumn(int column);
-    void setShownCategories(CSwordModuleInfo::Categories const & categories);
-
 private: // methods:
 
     bool nameFilterAcceptsRow(int row, QModelIndex const & parent) const;
     bool hiddenFilterAcceptsRow(int row, QModelIndex const & parent) const;
-    bool categoryFilterAcceptsRow(int row, QModelIndex const & parent) const;
 
 private: // fields:
 
@@ -93,10 +81,5 @@ private: // fields:
     int m_hiddenFilterColumn;
     bool m_showHidden;
     bool m_showShown;
-
-    // Categories filter:
-    CSwordModuleInfo::Categories m_categoryFilter;
-    int m_categoryFilterRole;
-    int m_categoryFilterColumn;
 
 };
