@@ -66,6 +66,7 @@ namespace {
 
 inline CSwordModuleInfo::Category retrieveCategory(
     CSwordModuleInfo::ModuleType const type,
+    CSwordModuleInfo::Features const features,
     sword::SWModule & module)
 {
     /// \todo Maybe we can use raw string comparsion instead of QString?
@@ -75,11 +76,11 @@ inline CSwordModuleInfo::Category retrieveCategory(
     if (cat == QStringLiteral("Cults / Unorthodox / Questionable Material")) {
         return CSwordModuleInfo::Cult;
     } else if (cat == QStringLiteral("Daily Devotional")
-               || module.getConfig().has("Feature","DailyDevotion"))
+               || features.testFlag(CSwordModuleInfo::FeatureDailyDevotion))
     {
         return CSwordModuleInfo::DailyDevotional;
     } else if (cat == QStringLiteral("Glossaries")
-               || module.getConfig().has("Feature", "Glossary"))
+               || features.testFlag(CSwordModuleInfo::FeatureGlossary))
     {
         return CSwordModuleInfo::Glossary;
     } else if (cat == QStringLiteral("Images")
@@ -101,6 +102,33 @@ inline CSwordModuleInfo::Category retrieveCategory(
                 return CSwordModuleInfo::UnknownCategory;
         }
     }
+}
+
+inline CSwordModuleInfo::Features retrieveFeatures(
+    sword::SWModule const & module)
+{
+    // See https://wiki.crosswire.org/DevTools:conf_Files
+    CSwordModuleInfo::Features features;
+    for (auto featureEntries = module.getConfig().equal_range("Feature");
+         featureEntries.first != featureEntries.second;
+         ++featureEntries.first)
+    {
+        #define T(f) \
+            if (featureEntries.first->second == #f) { \
+                features |= CSwordModuleInfo::Feature ## f; \
+            }
+        T(StrongsNumbers)
+        else T(GreekDef)
+        else T(HebrewDef)
+        else T(GreekParse)
+        else T(HebrewParse)
+        else T(DailyDevotion)
+        else T(Glossary)
+        else T(Images)
+        else T(NoParagraphs)
+        #undef T
+    }
+    return features;
 }
 
 static const TCHAR * stop_words[] = { nullptr };
@@ -197,7 +225,8 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule & module,
     , m_type(type)
     , m_cancelIndexing(false)
     , m_cachedName(QString::fromUtf8(module.getName()))
-    , m_cachedCategory(retrieveCategory(type, module))
+    , m_cachedFeatures(retrieveFeatures(module))
+    , m_cachedCategory(retrieveCategory(type, m_cachedFeatures, module))
     , m_cachedLanguage(
         Language::fromAbbrev(
               util::tool::fixSwordBcp47(
@@ -825,16 +854,6 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
         default:
             return {};
     }
-}
-
-bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const {
-    switch (feature) {
-        case GreekDef: return m_swordModule.getConfig().has("Feature", "GreekDef");
-        case HebrewDef: return m_swordModule.getConfig().has("Feature", "HebrewDef");
-        case GreekParse: return m_swordModule.getConfig().has("Feature", "GreekParse");
-        case HebrewParse: return m_swordModule.getConfig().has("Feature", "HebrewParse");
-    }
-    return false;
 }
 
 bool CSwordModuleInfo::has(CSwordModuleInfo::FilterOption const & option) const {

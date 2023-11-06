@@ -206,11 +206,11 @@ CSwordModuleInfo * getFirstAvailableStrongsModule(bool wantHebrew) {
         if (m->type() == CSwordLexiconModuleInfo::Lexicon) {
             auto lexModule = qobject_cast<CSwordLexiconModuleInfo *>(m);
             if (wantHebrew
-                && m->has(CSwordModuleInfo::HebrewDef)
+                && m->has(CSwordModuleInfo::FeatureHebrewDef)
                 && lexModule->hasStrongsKeys())
                 return m;
             if (!wantHebrew
-                && m->has(CSwordModuleInfo::GreekDef)
+                && m->has(CSwordModuleInfo::FeatureGreekDef)
                 && lexModule->hasStrongsKeys())
                 return m;
         }

@@ -131,12 +131,17 @@ public: // types:
     };
 
     enum Feature {
-        //StrongsNumbers, /**< Use for Bibles which have embedded strong numbers */ BT does not use this as a user option
-        GreekDef,
-        HebrewDef,
-        GreekParse,
-        HebrewParse
+        FeatureStrongsNumbers = 1,
+        FeatureGreekDef       = 1 << 1,
+        FeatureHebrewDef      = 1 << 2,
+        FeatureGreekParse     = 1 << 3,
+        FeatureHebrewParse    = 1 << 4,
+        FeatureDailyDevotion  = 1 << 5,
+        FeatureGlossary       = 1 << 6,
+        FeatureImages         = 1 << 7,
+        FeatureNoParagraphs   = 1 << 8,
     };
+    Q_DECLARE_FLAGS(Features, Feature)
 
     enum Category {
         UnknownCategory = 0x0,  /**< Unknown or unset category. */
@@ -291,7 +296,8 @@ wrong, or if the config file was write protected return false.
     /**
       \returns whether the module supports the feature given as parameter.
     */
-    bool has(const CSwordModuleInfo::Feature) const;
+    bool has(CSwordModuleInfo::Feature const feature) const noexcept
+    { return m_cachedFeatures.testFlag(feature); }
 
     bool has(CSwordModuleInfo::FilterOption const &) const;
 
@@ -418,6 +424,7 @@ private: // fields:
 
     // Cached data:
     QString const m_cachedName;
+    Features const m_cachedFeatures;
     CSwordModuleInfo::Category const m_cachedCategory;
     std::shared_ptr<Language const> const m_cachedLanguage;
     std::shared_ptr<Language const> const m_cachedGlossaryTargetLanguage;

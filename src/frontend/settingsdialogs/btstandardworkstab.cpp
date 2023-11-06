@@ -86,31 +86,31 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
                 standardLexicon,
                 Lexicon
                 && !(m->category() == CSwordModuleInfo::DailyDevotional)
-                && !(m->has(CSwordModuleInfo::HebrewDef)
+                && !(m->has(CSwordModuleInfo::FeatureHebrewDef)
                      && toLexModule(m)->hasStrongsKeys())
-                && !(m->has(CSwordModuleInfo::GreekDef)
+                && !(m->has(CSwordModuleInfo::FeatureGreekDef)
                      && toLexModule(m)->hasStrongsKeys())
-                && !m->has(CSwordModuleInfo::HebrewParse)
-                && !m->has(CSwordModuleInfo::GreekParse));
+                && !m->has(CSwordModuleInfo::FeatureHebrewParse)
+                && !m->has(CSwordModuleInfo::FeatureGreekParse));
     STANDARD_WORKS_TAB_ADD_ROW(
                 standardDailyDevotional,
                 Lexicon && m->category() == CSwordModuleInfo::DailyDevotional);
     STANDARD_WORKS_TAB_ADD_ROW(
                 standardHebrewStrongsLexicon,
                 Lexicon
-                && m->has(CSwordModuleInfo::HebrewDef)
+                && m->has(CSwordModuleInfo::FeatureHebrewDef)
                 && toLexModule(m)->hasStrongsKeys());
     STANDARD_WORKS_TAB_ADD_ROW(
                 standardGreekStrongsLexicon,
                 Lexicon
-                && m->has(CSwordModuleInfo::GreekDef)
+                && m->has(CSwordModuleInfo::FeatureGreekDef)
                 && toLexModule(m)->hasStrongsKeys());
     STANDARD_WORKS_TAB_ADD_ROW(
                 standardHebrewMorphLexicon,
-                Lexicon && m->has(CSwordModuleInfo::HebrewParse));
+                Lexicon && m->has(CSwordModuleInfo::FeatureHebrewParse));
     STANDARD_WORKS_TAB_ADD_ROW(
                 standardGreekMorphLexicon,
-                Lexicon && m->has(CSwordModuleInfo::GreekParse));
+                Lexicon && m->has(CSwordModuleInfo::FeatureGreekParse));
 #undef STANDARD_WORKS_TAB_ADD_ROW
 
     mainLayout->addLayout(formLayout);
