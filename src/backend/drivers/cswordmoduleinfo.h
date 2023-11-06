@@ -135,9 +135,7 @@ public: // types:
         GreekDef,
         HebrewDef,
         GreekParse,
-        HebrewParse,
-        featureMin = GreekDef,
-        featureMax = HebrewParse
+        HebrewParse
     };
 
     enum Category {
