@@ -1,3 +1,0 @@
-#include "iso_codes_info.h"
-
-const char *ISO_CODES_INFO = "@ISO_CODES_INFO@";
