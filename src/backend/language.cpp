@@ -11,8 +11,8 @@
 **********/
 
 #include "language.h"
-#include <iostream>
 
+#include <libintl.h>
 #include <QHash>
 #include <QLocale>
 #include <QObject>
@@ -33,20 +33,13 @@
 // Sword includes:
 #include <swlocale.h>
 
-// iso-codes includes
-#include <libintl.h>
-
-
 namespace {
-
-QString locale = "";
-
 
 struct LanguageMap: QHash<QString, std::shared_ptr<Language const>> {
     LanguageMap();
     void addLanguage(QStringList abbrevs, QString englishName);
-    void InitGetText(void);
-    void LoadISOCodes(void);
+    void InitGetText();
+    void LoadISOCodes();
 
     const char *localeDir;
 };
@@ -151,21 +144,15 @@ void LanguageMap::addLanguage(QStringList abbrevs, QString englishName)
     }
 }
 
-void LanguageMap::InitGetText(void)
+void LanguageMap::InitGetText()
 {
-#if !defined(__APPLE__)
     localeDir = "/usr/share/iso-codes/json/";
-#else
-    char *iso_codes_version = ISO_CODES_INFO.VERSION
-    localeDir = sprintf("/usr/local/Cellar/iso-codes/%s/share/iso-codes/json/", iso_codes_version);
-#endif
-
     bindtextdomain("iso_639-3", localeDir);
     bind_textdomain_codeset("iso_639-3", "UTF-8");
     textdomain("iso_639-3");
 }
 
-void LanguageMap::LoadISOCodes(void)
+void LanguageMap::LoadISOCodes()
 {
     QFile iso6393(QString::fromLocal8Bit(localeDir) + "iso_639-3.json");
 
@@ -191,8 +178,9 @@ void LanguageMap::LoadISOCodes(void)
 
         QJsonArray::const_iterator i;
 
-        for (i = iso6393Data.constBegin(); i != iso6393Data.constEnd(); ++i) {
-            QJsonObject entry = (*i).toObject();
+        // for (i = iso6393Data.constBegin(); i != iso6393Data.constEnd(); ++i) {
+        for (auto v: iso6393Data) {
+            QJsonObject entry = (v).toObject();
             if (entry.contains("alpha_2")) {
                 if (entry.contains("inverted_name")) {
                     addLanguage({entry["alpha_2"].toString(), entry["alpha_3"].toString()}, gettext(entry["inverted_name"].toString().toStdString().data()));
@@ -226,16 +214,16 @@ Language::Language(QStringList abbrevs, QString englishName)
 Language::~Language() = default;
 
 QString Language::translatedName() const
-{
-    return QObject::tr(englishName().toUtf8());
-}
+{ return QObject::tr(englishName().toUtf8()); }
 
 std::shared_ptr<Language const> Language::fromAbbrev(QString const & abbrev) {
     BT_ASSERT(!abbrev.contains('_')); // Weak check for certain BCP 47 bugs
 
     static LanguageMap languageMap;
 
+    BT_ASSERT(languageMap.contains(QStringLiteral("en")));
     static auto const defaultLanguage = *languageMap.find("en");
+
     if (abbrev.isEmpty())
         return defaultLanguage;
 
