@@ -13,19 +13,18 @@
 #include "language.h"
 
 #include <libintl.h>
+#include <QDir>
+#include <QFile>
 #include <QHash>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonValue>
 #include <QLocale>
 #include <QObject>
 #include <QtGlobal>
 #include <QIODevice>
 #include <QStringLiteral>
-#include <QDir>
-#include <QFile>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QJsonArray>
-#include <QJsonValue>
-#include <QDebug>
 #include <utility>
 #include "../util/btassert.h"
 #include "managers/btlocalemgr.h"
