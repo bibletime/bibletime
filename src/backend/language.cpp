@@ -38,10 +38,8 @@ namespace {
 struct LanguageMap: QHash<QString, std::shared_ptr<Language const>> {
     LanguageMap();
     void addLanguage(QStringList abbrevs, QString englishName);
-    void InitGetText();
-    void LoadISOCodes();
 
-    const char *localeDir;
+    const char * m_localeDir;
 };
 
 LanguageMap::LanguageMap() {
@@ -79,82 +77,14 @@ LanguageMap::LanguageMap() {
     */
     QObject::tr("Names of languages", "No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :)) ------ ");
 
-    InitGetText();
-    LoadISOCodes();
-
-    // Other codes not set in iso_639-3
-    addLanguage({"en-US"}, QT_TRANSLATE_NOOP("QObject", "English, American"));
-    addLanguage({"pt-BR"}, QT_TRANSLATE_NOOP("QObject", "Portuguese, Brazilian"));
-
-    addLanguage({"abq-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Abaza (Cyrillic script)"));
-    addLanguage({"ady-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Adyghe (Cyrillic script)"));
-    addLanguage({"agx-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Aghul (Cyrillic script)"));
-    addLanguage({"alt-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Southern Altai (Cyrillic script)"));
-    addLanguage({"av-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Avaric (Cyrillic script)"));
-    addLanguage({"ba-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Bashkir (Cyrillic script)"));
-    addLanguage({"bua-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Buriat (Cyrillic script)"));
-    addLanguage({"ce-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Chechen (Cyrillic script)"));
-    addLanguage({"cjs-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Shor (Cyrillic script)"));
-    addLanguage({"ckt-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Chukot (Cyrillic script)"));
-    addLanguage({"cop-sa"}, gettext("Coptic"));
-    addLanguage({"crh-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Crimean Tatar (Cyrillic script)"));
-    addLanguage({"cv-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Chuvash (Cyrillic script)"));
-    addLanguage({"dar-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Dargwa (Cyrillic script)"));
-    addLanguage({"dng-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Dungan (Cyrillic script)"));
-    addLanguage({"gag-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Gagauz (Cyrillic script)"));
-    addLanguage({"gag-Latn"}, QT_TRANSLATE_NOOP("QObject", "Gagauz (Latin script)"));
-    addLanguage({"ing-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Degexit'an (Cyrillic script)"));
-    addLanguage({"kaa-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Kara-Kalpak (Cyrillic script)"));
-    addLanguage({"kaa-Latn"}, QT_TRANSLATE_NOOP("QObject", "Kara-Kalpak (Latin script)"));
-    addLanguage({"kap-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Bezhta (Cyrillic script)"));
-    addLanguage({"kjh-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Khakas (Cyrillic script)"));
-    addLanguage({"kmr-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Kurdish, Northern (Cyrillic script)"));
-    addLanguage({"kmr-Latn"}, QT_TRANSLATE_NOOP("QObject", "Kurdish, Northern (Latin script)"));
-    addLanguage({"kpy-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Koryak (Cyrillic script)"));
-    addLanguage({"ky-Arab"}, QT_TRANSLATE_NOOP("QObject", "Kirghiz (Arabic script)"));
-    addLanguage({"ky-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Kirghiz (Cyrillic script)"));
-    addLanguage({"lez-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Lezghian (Cyrillic script)"));
-    // This next one is not in the iso_codes table - see https://iso639-3.sil.org/code/ncq
-    addLanguage({"ncq"}, QT_TRANSLATE_NOOP("QObject", "Katang, Northern"));
-    addLanguage({"nog-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Nogai (Cyrillic script)"));
-    addLanguage({"oss-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Ossetian (Cyrillic script)"));
-    addLanguage({"sah-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Yakut (Cyrillic script)"));
-    addLanguage({"tk-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Turkmen (Cyrillic script)"));
-    addLanguage({"tk-Latn"}, QT_TRANSLATE_NOOP("QObject", "Turkmen (Latin script)"));
-    addLanguage({"tkr-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Tsakhur (Cyrillic script)"));
-    addLanguage({"tt-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Tatar (Cyrillic script)"));
-    addLanguage({"tyv-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Tuvinian (Cyrillic script)"));
-    addLanguage({"uz-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Uzbek (Cyrillic script)"));
-    addLanguage({"uz-Latn"}, QT_TRANSLATE_NOOP("QObject", "Uzbek (Latin script)"));
-    addLanguage({"xal-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Kalmyk (Cyrillic script)"));
-    addLanguage({"xnj"}, QT_TRANSLATE_NOOP("QObject", "Ngoni"));
-    addLanguage({"yrk-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Nenets (Cyrillic script)"));
-    addLanguage({"zh-Hans"}, QT_TRANSLATE_NOOP("QObject", "Chinese, Simplified"));
-    addLanguage({"zh-Hant"}, QT_TRANSLATE_NOOP("QObject", "Chinese, Traditional"));
-}
-
-void LanguageMap::addLanguage(QStringList abbrevs, QString englishName)
-{
-    auto language =
-            std::make_shared<Language>(std::move(abbrevs),
-                                       std::move(englishName));
-    for (auto const & abbrev : language->abbrevs()) {
-        BT_ASSERT(!contains(abbrev));
-        insert(abbrev, language);
-    }
-}
-
-void LanguageMap::InitGetText()
-{
-    localeDir = "/usr/share/iso-codes/json/";
-    bindtextdomain("iso_639-3", localeDir);
+    // Initialize gettext with correct domain and code set
+    m_localeDir = "/usr/share/iso-codes/json/";
+    bindtextdomain("iso_639-3", m_localeDir);
     bind_textdomain_codeset("iso_639-3", "UTF-8");
     textdomain("iso_639-3");
-}
 
-void LanguageMap::LoadISOCodes()
-{
-    QFile iso6393(QString::fromLocal8Bit(localeDir) + "iso_639-3.json");
+    // Load the iso_683-3.json file in and populate the language information
+    QFile iso6393(QString::fromLocal8Bit(m_localeDir) + "iso_639-3.json");
 
     if (iso6393.open(QIODevice::ReadOnly)) {
         QByteArray data = iso6393.readAll();
@@ -178,7 +108,6 @@ void LanguageMap::LoadISOCodes()
 
         QJsonArray::const_iterator i;
 
-        // for (i = iso6393Data.constBegin(); i != iso6393Data.constEnd(); ++i) {
         for (auto v: iso6393Data) {
             QJsonObject entry = (v).toObject();
             if (entry.contains("alpha_2")) {
@@ -198,8 +127,34 @@ void LanguageMap::LoadISOCodes()
     } else {
         qWarning() << "Could not open iso_639-3.json file(" << iso6393.fileName() << ")";
     }
+    // Other codes not set in iso_639-3
+    // If you load the bookshelf manager there are some codes that are referenced in the various repositories that are
+    // not valid ios_693-3 codes. For these we have to provide manual translations.
+    addLanguage({"abq-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Abaza (Cyrillic script)"));
+    addLanguage({"cop-sa"}, QT_TRANSLATE_NOOP("QObject", "Coptic"));
+    addLanguage({"dng-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Dungan (Cyrillic script)"));
+    addLanguage({"gag-Latn"}, QT_TRANSLATE_NOOP("QObject", "Gagauz (Latin script)"));
+    addLanguage({"ing-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Degexit'an (Cyrillic script)"));
+    addLanguage({"lbe-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Lak (Cyrllic script)"));
+    addLanguage({"ncq"}, QT_TRANSLATE_NOOP("QObject", "Katang, Northern"));
+    addLanguage({"nog-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Nogai (Cyrillic script)"));
+    addLanguage({"oss-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Ossetian (Cyrillic script)"));
+    addLanguage({"tyv-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Tuvinian (Cyrillic script)"));
+    addLanguage({"xnj"}, QT_TRANSLATE_NOOP("QObject", "Ngoni"));
+    addLanguage({"zh-Hans"}, QT_TRANSLATE_NOOP("QObject", "Chinese, Simplified"));
+    addLanguage({"zh-Hant"}, QT_TRANSLATE_NOOP("QObject", "Chinese, Traditional"));
 }
 
+void LanguageMap::addLanguage(QStringList abbrevs, QString englishName)
+{
+    auto language =
+            std::make_shared<Language>(std::move(abbrevs),
+                                       std::move(englishName));
+    for (auto const & abbrev : language->abbrevs()) {
+        BT_ASSERT(!contains(abbrev));
+        insert(abbrev, language);
+    }
+}
 } // anonymous namespace
 
 Language::Language(QStringList abbrevs, QString englishName)
@@ -222,7 +177,7 @@ std::shared_ptr<Language const> Language::fromAbbrev(QString const & abbrev) {
     static LanguageMap languageMap;
 
     BT_ASSERT(languageMap.contains(QStringLiteral("en")));
-    static auto const defaultLanguage = *languageMap.find("en");
+    static auto const defaultLanguage = *languageMap.find(QStringLiteral("en"));
 
     if (abbrev.isEmpty())
         return defaultLanguage;
