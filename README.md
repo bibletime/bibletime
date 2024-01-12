@@ -58,7 +58,7 @@ generation of the howto in PDF format.
 
 ## FEEDBACK
 
-Please report any bugs your find to
+Please report any bugs you find to
 [our issue tracker](https://github.com/bibletime/bibletime/issues)
 or see [the BibleTime homepage](https://bibletime.info/) for additional information.
 
