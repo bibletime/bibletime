@@ -121,6 +121,40 @@ int rewriteLemmaOrMorphAsLink(QStringList & parts, int i, QString const & part)
     return 3;
 }
 
+int rewriteTag(QStringList & parts, int i, QString const & tag) {
+    if (i + 2 >= parts.count())
+        return 1;
+    parts[i] = "<" + tag + ">";
+    parts[i+2] ="</" + tag + ">";
+    return 3;
+}
+
+int rewriteTitle(QStringList & parts, int i, QString const & tag) {
+    if (i + 2 >= parts.count())
+        return 1;
+    parts[i] = "<div><big><" + tag + ">";
+    parts[i+2] ="</" + tag + "></big></div>";
+    return 3;
+}
+
+int rewriteClass(QStringList & parts, int i, QString const & part) {
+
+    if (part.contains(QStringLiteral(R"HTML(class="footnote")HTML"))) {
+        return rewriteFootnoteAsLink(parts, i, part);
+    } else if (part.contains(QStringLiteral(R"HTML(class="bold")HTML"))) {
+        return rewriteTag(parts, i, "b");
+    } else if (part.contains(QStringLiteral(R"HTML(class="italic")HTML"))) {
+        return rewriteTag(parts, i, "i");
+    } else if (part.contains(QStringLiteral(R"HTML(class="chaptertitle")HTML"))) {
+        return rewriteTitle(parts, i, "b");
+    } else if (part.contains(QStringLiteral(R"HTML(class="sectiontitle")HTML"))) {
+        return rewriteTitle(parts, i, "b");
+    } else if (part.contains(QStringLiteral(R"HTML(class="booktitle")HTML"))) {
+        return rewriteTitle(parts, i, "b");
+    }
+    return 3;
+}
+
 } // anonymous namespace
 
 BtTextFilter::BtTextFilter() = default;
@@ -141,7 +175,9 @@ QString BtTextFilter::processText(const QString &text) {
 
     for (int i = 0; i < parts.count();) {
         if (auto const & part = parts.at(i); part.startsWith('<')) { // is tag
-            if (part.contains(QStringLiteral(R"HTML(class="footnote")HTML"))) {
+            if (part.contains(QStringLiteral(R"HTML(class=)HTML"))) {
+                i += rewriteClass(parts, i, part);
+            } else if (part.contains(QStringLiteral(R"HTML(class="footnote")HTML"))) {
                 i += rewriteFootnoteAsLink(parts, i, part);
             } else if (part.contains(QStringLiteral(R"HTML(href=")HTML"))) {
                 rewriteHref(parts, i, part);
