@@ -93,12 +93,12 @@ BibleTime::BibleTime(BibleTimeApp & app, QWidget *parent, Qt::WindowFlags flags)
         QPixmap pm;
         if (pm.load(DU::getPicsDir().filePath(splashes[splashNumber]))) {
             splash = new QSplashScreen(pm);
-            splash->setAttribute(Qt::WA_DeleteOnClose);
             splash->finish(this);
             splash->showMessage(
                         splashHtml.arg(tr("Initializing the SWORD engine...")),
                         splashTextAlignment);
             splash->show();
+            splash->setAttribute(Qt::WA_DeleteOnClose);
             qApp->processEvents();
         } else {
             qWarning("Can't load startuplogo! Check your installation.");
