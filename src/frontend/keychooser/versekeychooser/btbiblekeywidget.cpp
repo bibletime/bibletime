@@ -327,7 +327,7 @@ void BtBibleKeyWidget::populateBookMenu(QMenu & menu) {
 }
 
 void BtBibleKeyWidget::populateChapterMenu(QMenu & menu) {
-    int count = m_module->chapterCount(m_key->book());
+    int count = m_module->chapterCount(m_key->bibleBook());
     for (int i = 1; i <= count; i++)
         menu.addAction(QString::number(i))->setProperty("chapter", i);
 }

@@ -107,6 +107,9 @@ void CSwordVerseKey::setModule(const CSwordModuleInfo *newModule) {
     m_valid = inVersification;
 }
 
+char CSwordVerseKey::bibleBook() const
+{ return ((testament() > 1) ? m_key.BMAX[0] : 0) + book(); }
+
 CSwordVerseKey CSwordVerseKey::lowerBound() const
 { return {&m_key.getLowerBound(), module()}; }
 

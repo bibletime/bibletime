@@ -159,7 +159,10 @@ class CSwordVerseKey final : public CSwordKey {
         void setIntros(bool v) { m_key.setIntros(v); }
         char testament() const { return m_key.getTestament(); }
         void setTestament(char v) { m_key.setTestament(v); }
+
+        /** Return book number within a testament */
         char book() const { return m_key.getBook(); }
+
         void setBook(char v) { m_key.setBook(v); }
         int chapter() const { return m_key.getChapter(); }
         void setChapter(int v) { m_key.setChapter(v); }
@@ -170,6 +173,10 @@ class CSwordVerseKey final : public CSwordKey {
         long index() const { return m_key.getIndex(); }
         void setIndex(long v) { m_key.setIndex(v); }
         void positionToTop() { m_key.setPosition(sword::TOP); }
+
+        /** Return book number within entire bible */
+        char bibleBook() const;
+
         QString versification() const {
             return m_key.getVersificationSystem();
         }
