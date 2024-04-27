@@ -190,6 +190,8 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
+    QGuiApplication::setDesktopFileName("info.bibletime.BibleTime");
+
     app.startInit();
     if (!app.initBtConfig()) {
         return EXIT_FAILURE;
