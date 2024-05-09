@@ -224,6 +224,7 @@ IF(BUILD_HTML)
                 "/usr/local/share/sgml/docbook/xsl-stylesheets/html/"
                 "/usr/local/share/xsl/docbook/html/"
                 "/usr/local/share/xml/docbook/stylesheet/nwalsh/html/"
+                "/usr/share/xml/docbook/xsl-stylesheets-1.79.2/html/"
             NO_DEFAULT_PATH)
         IF(NOT BT_DOCBOOK_XSL_HTML_CHUNK_XSL)
             MESSAGE(FATAL_ERROR "The required file html/chunk.xsl from \
