@@ -82,7 +82,13 @@ CMDIArea::CMDIArea(BibleTime * parent)
                });
 }
 
-void CMDIArea::fixSystemMenu(QMdiSubWindow* subWindow) {
+QMdiSubWindow * CMDIArea::addDisplayWindow(CDisplayWindow * const displayWindow)
+{
+    QMdiSubWindow * const subWindow = addSubWindow(displayWindow);
+    subWindow->setWindowIcon(displayWindow->windowIcon());
+    BT_CONNECT(displayWindow, &CDisplayWindow::windowIconChanged,
+               subWindow,     &QMdiSubWindow::setWindowIcon);
+
     // Change Qt QMdiSubWindow Close action to have no shortcuts
     // This makes our closeWindow actions with Ctrl-W work correctly
     for (auto * const action : subWindow->systemMenu()->actions()) {
@@ -91,15 +97,6 @@ void CMDIArea::fixSystemMenu(QMdiSubWindow* subWindow) {
             break;
         }
     }
-}
-
-QMdiSubWindow * CMDIArea::addDisplayWindow(CDisplayWindow * const displayWindow)
-{
-    QMdiSubWindow * const subWindow = addSubWindow(displayWindow);
-    subWindow->setWindowIcon(displayWindow->windowIcon());
-    BT_CONNECT(displayWindow, &CDisplayWindow::windowIconChanged,
-               subWindow,     &QMdiSubWindow::setWindowIcon);
-    fixSystemMenu(subWindow);
 
     // Manual arrangement mode
     enableWindowMinMaxFlags(true);

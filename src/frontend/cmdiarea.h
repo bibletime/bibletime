@@ -158,8 +158,6 @@ class CMDIArea: public QMdiArea {
 
         void emitWindowCaptionChanged();
 
-        void fixSystemMenu(QMdiSubWindow* subWindow);
-
     protected: // fields:
 
         MDIArrangementMode m_mdiArrangementMode;
