@@ -96,7 +96,6 @@ void CMDIArea::fixSystemMenu(QMdiSubWindow* subWindow) {
 QMdiSubWindow * CMDIArea::addDisplayWindow(CDisplayWindow * const displayWindow)
 {
     QMdiSubWindow * const subWindow = addSubWindow(displayWindow);
-    subWindow->installEventFilter(this);
     fixSystemMenu(subWindow);
 
     // Manual arrangement mode
