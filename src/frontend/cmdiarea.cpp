@@ -413,13 +413,12 @@ bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
             if (o == activeSubWindow()) {
                 Q_EMIT sigSetToplevelCaption(w->windowTitle());
             }
-            return QMdiArea::eventFilter(o, e);
             break;
         default:
             break;
     }
 
-    return false; // Don't filter the event out
+    return QMdiArea::eventFilter(o, e);
 }
 
 void CMDIArea::triggerWindowUpdate() {
