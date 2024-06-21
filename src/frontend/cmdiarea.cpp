@@ -96,6 +96,9 @@ void CMDIArea::fixSystemMenu(QMdiSubWindow* subWindow) {
 QMdiSubWindow * CMDIArea::addDisplayWindow(CDisplayWindow * const displayWindow)
 {
     QMdiSubWindow * const subWindow = addSubWindow(displayWindow);
+    subWindow->setWindowIcon(displayWindow->windowIcon());
+    BT_CONNECT(displayWindow, &CDisplayWindow::windowIconChanged,
+               subWindow,     &QMdiSubWindow::setWindowIcon);
     fixSystemMenu(subWindow);
 
     // Manual arrangement mode
