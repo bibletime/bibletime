@@ -93,9 +93,9 @@ void CMDIArea::fixSystemMenu(QMdiSubWindow* subWindow) {
     }
 }
 
-QMdiSubWindow * CMDIArea::addSubWindow(QWidget * widget)
+QMdiSubWindow * CMDIArea::addDisplayWindow(CDisplayWindow * const displayWindow)
 {
-    QMdiSubWindow * const subWindow = QMdiArea::addSubWindow(widget);
+    QMdiSubWindow * const subWindow = addSubWindow(displayWindow);
     subWindow->installEventFilter(this);
     fixSystemMenu(subWindow);
 

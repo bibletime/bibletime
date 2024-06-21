@@ -54,10 +54,7 @@ class CMDIArea: public QMdiArea {
         */
         CMDIArea(BibleTime *parent);
 
-        /**
-          Reimplementation of QMdiArea::addSubWindow().
-        */
-        QMdiSubWindow * addSubWindow(QWidget * widget);
+        QMdiSubWindow * addDisplayWindow(CDisplayWindow * displayWindow);
 
         /**
           Returns the BibleTime main window
