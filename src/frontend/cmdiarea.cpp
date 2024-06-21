@@ -99,8 +99,9 @@ QMdiSubWindow * CMDIArea::addDisplayWindow(CDisplayWindow * const displayWindow)
     }
 
     // Manual arrangement mode
-    enableWindowMinMaxFlags(true);
     if (m_mdiArrangementMode == ArrangementModeManual) {
+        enableWindowMinMaxFlags(true);
+
         // Note that the window size/maximization may be changed later by a session restore.
         // If we already have an active window, make the new one simular to it
         if (activeSubWindow()) {
