@@ -160,13 +160,6 @@ class CMDIArea: public QMdiArea {
 
         void fixSystemMenu(QMdiSubWindow* subWindow);
 
-    protected Q_SLOTS:
-
-        /**
-          Called whan a tabbed subwindow is closed from the tab
-        */
-        void closeTab(int i);
-
     protected: // fields:
 
         MDIArrangementMode m_mdiArrangementMode;

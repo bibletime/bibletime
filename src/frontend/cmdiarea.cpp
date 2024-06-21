@@ -153,14 +153,6 @@ void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMod
     }
 }
 
-void CMDIArea::closeTab(int i) {
-   QMdiSubWindow *sub = subWindowList()[i];
-   QWidget *win = sub->widget();
-   win->close();
-   setActiveSubWindow(sub);
-   closeActiveSubWindow();
-}
-
 void CMDIArea::myTileVertical() {
     if (!updatesEnabled()) {
         return;
