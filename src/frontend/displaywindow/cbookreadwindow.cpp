@@ -55,7 +55,7 @@ void CBookReadWindow::initActions() {
     m_treeAction = &ac->action(QStringLiteral("toggleTree"));
     BT_ASSERT(m_treeAction);
     BT_CONNECT(m_treeAction, &QAction::triggered,
-               this, &CBookReadWindow::treeToggled);
+               m_treeChooser, &CBookTreeChooser::setVisible);
     addAction(m_treeAction);
 
     ac->readShortcuts(QStringLiteral("Book shortcuts"));
@@ -170,16 +170,6 @@ void CBookReadWindow::setupMainWindowToolBars() {
     btMainWindow()->toolsToolBar()->addAction(
                 &actionCollection()->action(
                     CResMgr::displaywindows::general::search::actionName));
-}
-
-/** Is called when the action was executed to toggle the tree view. */
-void CBookReadWindow::treeToggled() {
-    if (m_treeAction->isChecked()) {
-        m_treeChooser->show();
-    }
-    else {
-        m_treeChooser->hide();
-    }
 }
 
 /** Reimplementation to take care of the tree chooser. */

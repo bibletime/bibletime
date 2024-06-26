@@ -58,13 +58,6 @@ protected Q_SLOTS:
 
     void modulesChanged() override;
 
-private Q_SLOTS:
-
-    /**
-        * Is called when the action was executed to toggle the tree view.
-        */
-    void treeToggled();
-
 private: // fields:
 
     QAction * m_treeAction;
