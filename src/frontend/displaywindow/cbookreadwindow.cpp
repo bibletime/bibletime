@@ -55,7 +55,7 @@ CBookReadWindow::CBookReadWindow(QList<CSwordModuleInfo *> const & modules,
     m_treeChooserDock->hide();
     addDockWidget(Qt::LeftDockWidgetArea, m_treeChooserDock);
 
-    init();
+    init(false);
 }
 
 void CBookReadWindow::applyProfileSettings(BtConfigCore const & conf) {
@@ -106,22 +106,6 @@ void CBookReadWindow::initConnections() {
                keyChooser(),  &CKeyChooser::updateKey);
     BT_CONNECT(keyChooser(),  &CKeyChooser::keyChanged,
                m_treeChooser, &CBookTreeChooser::updateKey);
-}
-
-/** Init the view */
-void CBookReadWindow::initView() {
-    // Add the Navigation toolbar
-    auto * const navigationToolBar = mainToolBar();
-    addToolBar(navigationToolBar);
-    setKeyChooser(
-                CKeyChooser::createInstance(constModules(),
-                                            key(),
-                                            navigationToolBar));
-
-    addModuleChooserBar();
-
-    // Add the Tools toolbar
-    addToolBar(buttonsToolBar());
 }
 
 void CBookReadWindow::initToolbars() {

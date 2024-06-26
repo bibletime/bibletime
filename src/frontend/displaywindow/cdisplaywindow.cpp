@@ -415,35 +415,6 @@ void CDisplayWindow::initConnections() {
                m_history, &BTHistory::move);
 }
 
-void CDisplayWindow::initView() {
-    // Add the Navigation toolbar
-    addToolBar(mainToolBar());
-
-    // Create keychooser
-    setKeyChooser(CKeyChooser::createInstance(constModules(),
-                                              m_swordKey.get(),
-                                              mainToolBar()));
-
-    addModuleChooserBar();
-
-    // Add the Tools toolbar
-    addToolBar(buttonsToolBar());
-
-    // Create the Text Header toolbar
-    addToolBarBreak();
-    m_headerBar = new QToolBar(this);
-    m_headerBar->setMovable(false);
-    m_headerBar->setWindowTitle(tr("Text area header"));
-    m_headerBar->setVisible(
-                btConfig().session().value<bool>(
-                    QStringLiteral("GUI/showTextWindowHeaders"),
-                    true));
-    BT_CONNECT(btMainWindow(), &BibleTime::toggledTextWindowHeader,
-               m_headerBar, &QToolBar::setVisible);
-
-    addToolBar(m_headerBar);
-}
-
 void CDisplayWindow::initToolbars() {
     //Navigation toolbar
     BT_ASSERT(m_actions.backInHistory);
@@ -730,8 +701,35 @@ void CDisplayWindow::addModuleChooserBar() {
 
 /** Initialize the window. Call this method from the outside, because calling
      this in the constructor is not possible! */
-bool CDisplayWindow::init() {
-    initView();
+bool CDisplayWindow::init(bool const addTextHeaderToolbar) {
+    // Add the Navigation toolbar
+    addToolBar(mainToolBar());
+
+    // Create keychooser
+    setKeyChooser(CKeyChooser::createInstance(constModules(),
+                                              m_swordKey.get(),
+                                              mainToolBar()));
+
+    addModuleChooserBar();
+
+    // Add the Tools toolbar
+    addToolBar(buttonsToolBar());
+
+    if (addTextHeaderToolbar) {
+        // Create the Text Header toolbar
+        addToolBarBreak();
+        m_headerBar = new QToolBar(this);
+        m_headerBar->setMovable(false);
+        m_headerBar->setWindowTitle(tr("Text area header"));
+        m_headerBar->setVisible(
+                    btConfig().session().value<bool>(
+                        QStringLiteral("GUI/showTextWindowHeaders"),
+                        true));
+        BT_CONNECT(btMainWindow(), &BibleTime::toggledTextWindowHeader,
+                   m_headerBar, &QToolBar::setVisible);
+        addToolBar(m_headerBar);
+    }
+
     initActions();
     initToolbars();
 

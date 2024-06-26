@@ -47,7 +47,6 @@ protected: // methods:
     void initActions() override;
     void initToolbars() override;
     void initConnections() override;
-    void initView() override;
     void setupMainWindowToolBars() override;
 
 protected Q_SLOTS:

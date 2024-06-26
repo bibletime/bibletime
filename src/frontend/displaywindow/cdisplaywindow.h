@@ -187,7 +187,7 @@ protected:
         * Initialize the window. Call this method from the outside,
         * because calling this in the constructor is not possible!
         */
-    bool init();
+    bool init(bool const addTextHeaderToolbar = true);
 
     void setDisplayOptions(DisplayOptions const & v) { m_displayOptions = v; }
 
@@ -214,9 +214,6 @@ protected:
 
     /** Initializes the signal / slot connections of this display window.*/
     virtual void initConnections();
-
-    /** Initialize the view of this display window.*/
-    virtual void initView();
 
     /** Initialize the toolbars.*/
     virtual void initToolbars();
