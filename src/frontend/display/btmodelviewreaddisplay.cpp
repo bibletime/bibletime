@@ -104,6 +104,8 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(
                });
     BT_CONNECT(m_qmlInterface, &BtQmlInterface::setBibleReference,
                this, &BtModelViewReadDisplay::setBibleReference);
+    BT_CONNECT(BibleTime::instance(), &BibleTime::colorThemeChanged,
+               m_qmlInterface, &BtQmlInterface::changeColorTheme);
 
     setLayout(layout);
 }

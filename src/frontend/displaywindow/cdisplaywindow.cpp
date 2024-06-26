@@ -84,9 +84,6 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
     // Create display widget for this window
     m_displayWidget = new BtModelViewReadDisplay(this, this);
     setCentralWidget(m_displayWidget);
-    BT_CONNECT(btMainWindow(), &BibleTime::colorThemeChanged,
-               m_displayWidget,
-               [d=m_displayWidget]{ d->qmlInterface()->changeColorTheme(); });
     m_displayWidget->setModules(m_moduleNames);
 
 }
