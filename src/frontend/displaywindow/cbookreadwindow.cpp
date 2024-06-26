@@ -88,7 +88,6 @@ void CBookReadWindow::initView() {
     auto const constMods = constModules();
     auto * const h = history();
 
-
     m_treeChooserDock = new QDockWidget(this);
     m_treeChooserDock->setFeatures(QDockWidget::NoDockWidgetFeatures);
     m_treeChooserDock->setAllowedAreas(
@@ -104,11 +103,6 @@ void CBookReadWindow::initView() {
     m_treeChooserDock->setWidget(m_treeChooser);
     m_treeChooserDock->hide();
     addDockWidget(Qt::LeftDockWidgetArea, m_treeChooserDock);
-
-    auto * const dw = new BtModelViewReadDisplay(this, this);
-    dw->setModules(moduleNames());
-    setDisplayWidget(dw);
-    setCentralWidget(dw);
 
     // Add the Navigation toolbar
     auto * const navigationToolBar = mainToolBar();

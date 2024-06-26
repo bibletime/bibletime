@@ -112,9 +112,6 @@ public:
         return m_displayWidget;
     }
 
-    /** Sets the display widget used by this display window.*/
-    void setDisplayWidget(BtModelViewReadDisplay * newDisplay);
-
     /** \returns whether syncs to the active window are allowed for this display
                  window. */
     virtual bool syncAllowed() const { return false; }
@@ -299,6 +296,6 @@ private:
     QToolBar * m_mainToolBar = nullptr;
     QToolBar * m_buttonsToolBar = nullptr;
     QToolBar * m_headerBar = nullptr;
-    BtModelViewReadDisplay * m_displayWidget = nullptr;
+    BtModelViewReadDisplay * m_displayWidget;
     BTHistory * const m_history;
 };

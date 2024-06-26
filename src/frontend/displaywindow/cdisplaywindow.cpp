@@ -80,6 +80,15 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
 
     setWindowIcon(m_modules.first()->moduleIcon());
     updateWindowTitle();
+
+    // Create display widget for this window
+    m_displayWidget = new BtModelViewReadDisplay(this, this);
+    setCentralWidget(m_displayWidget);
+    BT_CONNECT(btMainWindow(), &BibleTime::colorThemeChanged,
+               m_displayWidget,
+               [d=m_displayWidget]{ d->qmlInterface()->changeColorTheme(); });
+    m_displayWidget->setModules(m_moduleNames);
+
 }
 
 CDisplayWindow::~CDisplayWindow() = default;
@@ -410,12 +419,6 @@ void CDisplayWindow::initConnections() {
 }
 
 void CDisplayWindow::initView() {
-    // Create display widget for this window
-    auto readDisplay = new BtModelViewReadDisplay(this, this);
-    setDisplayWidget(readDisplay);
-    setCentralWidget(m_displayWidget);
-    readDisplay->setModules(m_moduleNames);
-
     // Add the Navigation toolbar
     addToolBar(mainToolBar());
 
@@ -732,7 +735,6 @@ void CDisplayWindow::addModuleChooserBar() {
      this in the constructor is not possible! */
 bool CDisplayWindow::init() {
     initView();
-    BT_ASSERT(m_displayWidget);
     initActions();
     initToolbars();
 
@@ -862,17 +864,6 @@ void CDisplayWindow::lookupKey( const QString& keyName ) {
         BT_ASSERT(mainWindow);
         mainWindow->createReadDisplayWindow(m, keyName);
     }
-}
-
-/** Sets the display widget used by this display window. */
-void CDisplayWindow::setDisplayWidget(BtModelViewReadDisplay * newDisplay) {
-    // Lets be orwellianly paranoid here:
-    BT_ASSERT(newDisplay);
-
-    m_displayWidget = newDisplay;
-
-    BT_CONNECT(btMainWindow(), &BibleTime::colorThemeChanged,
-               [newDisplay]{ newDisplay->qmlInterface()->changeColorTheme(); });
 }
 
 void CDisplayWindow::printAll()
