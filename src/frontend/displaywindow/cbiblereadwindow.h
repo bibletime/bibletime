@@ -47,9 +47,7 @@ public: // methods:
 protected: // methods:
 
     void initActions() override;
-    void initView() override;
     QMenu * newDisplayWidgetPopupMenu() override;
-    bool eventFilter( QObject* o, QEvent* e) override;
 
     struct {
         QAction* findText;

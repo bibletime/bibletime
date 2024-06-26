@@ -195,12 +195,6 @@ void CBibleReadWindow::initActions() {
     ac->readShortcuts(QStringLiteral("Bible shortcuts"));
 }
 
-void CBibleReadWindow::initView() {
-    CDisplayWindow::initView();
-
-    parentWidget()->installEventFilter(this);
-}
-
 QMenu * CBibleReadWindow::newDisplayWidgetPopupMenu() {
     auto * const popupMenu = new QMenu(this);
     BT_CONNECT(popupMenu, &QMenu::aboutToShow,
@@ -375,28 +369,6 @@ void CBibleReadWindow::reload() {
     keyChooser()->refreshContent();
 
     actionCollection()->readShortcuts(QStringLiteral("Bible shortcuts"));
-}
-
-/** No descriptions */
-bool CBibleReadWindow::eventFilter( QObject* o, QEvent* e) {
-    const bool ret = CDisplayWindow::eventFilter(o, e);
-
-    //   BT_ASSERT(o->inherits("CDisplayWindow"));
-    //   qWarning("class: %s", o->className());
-    if (e && (e->type() == QEvent::FocusIn)) { //sync other windows to this active
-
-        /* This is a hack to work around a KHTML problem (similair to the Drag&Drop problem we had):
-        * If new HTML content is loaded from inside a  kHTML event handler
-        * the widget's state will be confused, i.e. it's scrolling without having
-        * the mousebutton clicked.
-        *
-        * This is not really in a KHTML event handler but works anyway.
-        * Sometime KDE/Qt is hard to use ...
-        */
-        QTimer::singleShot(0, this, &CBibleReadWindow::syncWindows);
-    }
-
-    return ret;
 }
 
 void CBibleReadWindow::lookupSwordKey( CSwordKey* newKey ) {
