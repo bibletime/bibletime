@@ -33,6 +33,31 @@
 #include "bttoolbarpopupaction.h"
 
 
+CBookReadWindow::CBookReadWindow(QList<CSwordModuleInfo *> const & modules,
+                                 CMDIArea * parent)
+    : CDisplayWindow(modules, parent)
+{
+    auto * const h = history();
+
+    m_treeChooserDock = new QDockWidget(this);
+    m_treeChooserDock->setFeatures(QDockWidget::NoDockWidgetFeatures);
+    m_treeChooserDock->setAllowedAreas(
+                Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
+    // "Remove" title bar:
+    m_treeChooserDock->setTitleBarWidget(new QWidget(m_treeChooserDock));
+        m_treeChooser =
+                new CBookTreeChooser(constModules(), key(), m_treeChooserDock);
+        BT_CONNECT(m_treeChooser, &CKeyChooser::keyChanged,
+                   h, &BTHistory::add);
+        BT_CONNECT(h, &BTHistory::historyMoved,
+                   m_treeChooser, &CKeyChooser::handleHistoryMoved);
+    m_treeChooserDock->setWidget(m_treeChooser);
+    m_treeChooserDock->hide();
+    addDockWidget(Qt::LeftDockWidgetArea, m_treeChooserDock);
+
+    init();
+}
+
 void CBookReadWindow::applyProfileSettings(BtConfigCore const & conf) {
     CDisplayWindow::applyProfileSettings(conf);
 
@@ -85,30 +110,11 @@ void CBookReadWindow::initConnections() {
 
 /** Init the view */
 void CBookReadWindow::initView() {
-    auto const constMods = constModules();
-    auto * const h = history();
-
-    m_treeChooserDock = new QDockWidget(this);
-    m_treeChooserDock->setFeatures(QDockWidget::NoDockWidgetFeatures);
-    m_treeChooserDock->setAllowedAreas(
-                Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
-    // "Remove" title bar:
-    m_treeChooserDock->setTitleBarWidget(new QWidget(m_treeChooserDock));
-        m_treeChooser =
-                new CBookTreeChooser(constMods, key(), m_treeChooserDock);
-        BT_CONNECT(m_treeChooser, &CKeyChooser::keyChanged,
-                   h, &BTHistory::add);
-        BT_CONNECT(h, &BTHistory::historyMoved,
-                   m_treeChooser, &CKeyChooser::handleHistoryMoved);
-    m_treeChooserDock->setWidget(m_treeChooser);
-    m_treeChooserDock->hide();
-    addDockWidget(Qt::LeftDockWidgetArea, m_treeChooserDock);
-
     // Add the Navigation toolbar
     auto * const navigationToolBar = mainToolBar();
     addToolBar(navigationToolBar);
     setKeyChooser(
-                CKeyChooser::createInstance(constMods,
+                CKeyChooser::createInstance(constModules(),
                                             key(),
                                             navigationToolBar));
 

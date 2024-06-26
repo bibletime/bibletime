@@ -33,11 +33,7 @@ class CBookReadWindow: public CDisplayWindow {
 public: // methods:
 
     CBookReadWindow(QList<CSwordModuleInfo *> const & modules,
-                    CMDIArea * parent)
-        : CDisplayWindow(modules, parent)
-        , m_treeAction(nullptr)
-        , m_treeChooser(nullptr)
-    { init(); }
+                    CMDIArea * parent);
 
     CSwordModuleInfo::ModuleType moduleType() const override
     { return CSwordModuleInfo::GenericBook; }
@@ -60,7 +56,7 @@ protected Q_SLOTS:
 
 private: // fields:
 
-    QAction * m_treeAction;
+    QAction * m_treeAction = nullptr;
     CBookTreeChooser * m_treeChooser;
     QDockWidget * m_treeChooserDock = nullptr;
 };
