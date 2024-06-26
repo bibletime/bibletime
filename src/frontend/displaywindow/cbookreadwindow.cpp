@@ -175,7 +175,7 @@ void CBookReadWindow::setupMainWindowToolBars() {
 /** Is called when the action was executed to toggle the tree view. */
 void CBookReadWindow::treeToggled() {
     if (m_treeAction->isChecked()) {
-        m_treeChooser->doShow();
+        m_treeChooser->show();
     }
     else {
         m_treeChooser->hide();

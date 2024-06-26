@@ -44,10 +44,13 @@ public: // methods:
     CSwordKey * key() final override { return m_key; }
     void setKey(CSwordKey * key) final override;
 
+protected: // Methods:
+
+    void showEvent(QShowEvent * const showEvent) override;
+
 public Q_SLOTS:
 
     void updateKey(CSwordKey *) final override;
-    void doShow();
 
 private: // methods:
 
