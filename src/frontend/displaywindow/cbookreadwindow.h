@@ -62,4 +62,5 @@ private: // fields:
 
     QAction * m_treeAction;
     CBookTreeChooser * m_treeChooser;
+    QDockWidget * m_treeChooserDock = nullptr;
 };

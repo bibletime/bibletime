@@ -13,7 +13,7 @@
 #include "cbookreadwindow.h"
 
 #include <QAction>
-#include <QSplitter>
+#include <QDockWidget>
 #include <Qt>
 #include <QToolBar>
 #include "../../backend/config/btconfigcore.h"
@@ -55,7 +55,7 @@ void CBookReadWindow::initActions() {
     m_treeAction = &ac->action(QStringLiteral("toggleTree"));
     BT_ASSERT(m_treeAction);
     BT_CONNECT(m_treeAction, &QAction::triggered,
-               m_treeChooser, &CBookTreeChooser::setVisible);
+               m_treeChooserDock, &QDockWidget::setVisible);
     addAction(m_treeAction);
 
     ac->readShortcuts(QStringLiteral("Book shortcuts"));
@@ -85,21 +85,30 @@ void CBookReadWindow::initConnections() {
 
 /** Init the view */
 void CBookReadWindow::initView() {
-    QSplitter* splitter = new QSplitter(this);
-
     auto const constMods = constModules();
     auto * const h = history();
-    m_treeChooser = new CBookTreeChooser(constMods, key(), splitter);
-    BT_CONNECT(m_treeChooser, &CKeyChooser::keyChanged,
-               h, &BTHistory::add);
-    BT_CONNECT(h, &BTHistory::historyMoved,
-               m_treeChooser, &CKeyChooser::handleHistoryMoved);
 
-    auto * const dw = new BtModelViewReadDisplay(this, splitter);
+
+    m_treeChooserDock = new QDockWidget(this);
+    m_treeChooserDock->setFeatures(QDockWidget::NoDockWidgetFeatures);
+    m_treeChooserDock->setAllowedAreas(
+                Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
+    // "Remove" title bar:
+    m_treeChooserDock->setTitleBarWidget(new QWidget(m_treeChooserDock));
+        m_treeChooser =
+                new CBookTreeChooser(constMods, key(), m_treeChooserDock);
+        BT_CONNECT(m_treeChooser, &CKeyChooser::keyChanged,
+                   h, &BTHistory::add);
+        BT_CONNECT(h, &BTHistory::historyMoved,
+                   m_treeChooser, &CKeyChooser::handleHistoryMoved);
+    m_treeChooserDock->setWidget(m_treeChooser);
+    m_treeChooserDock->hide();
+    addDockWidget(Qt::LeftDockWidgetArea, m_treeChooserDock);
+
+    auto * const dw = new BtModelViewReadDisplay(this, this);
     dw->setModules(moduleNames());
     setDisplayWidget(dw);
-    m_treeChooser->hide();
-    splitter->setStretchFactor(1,3);
+    setCentralWidget(dw);
 
     // Add the Navigation toolbar
     auto * const navigationToolBar = mainToolBar();
@@ -113,8 +122,6 @@ void CBookReadWindow::initView() {
 
     // Add the Tools toolbar
     addToolBar(buttonsToolBar());
-
-    setCentralWidget( splitter );
 }
 
 void CBookReadWindow::initToolbars() {
