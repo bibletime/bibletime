@@ -28,6 +28,10 @@ ENDIF()
 
 FIND_PACKAGE(Sword 1.8.1 REQUIRED)
 
+# Translation related
+FIND_PACKAGE(Intl REQUIRED)
+FIND_PACKAGE(IsoCodes REQUIRED)
+
 ######################################################
 # Build options, definitions, linker flags etc for all targets:
 #
@@ -147,6 +151,8 @@ TARGET_INCLUDE_DIRECTORIES(bibletime_backend
         ${Sword_INCLUDE_DIRS}
 )
 TARGET_LINK_LIBRARIES(bibletime_backend
+    PRIVATE
+        Intl::Intl
     PUBLIC
         Qt::Widgets
         Qt::Xml
