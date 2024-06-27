@@ -177,6 +177,6 @@ void CCommentaryReadWindow::previousVerse() {
         keyChooser()->setKey(key());
 }
 
-bool CCommentaryReadWindow::syncAllowed() const {
+bool CCommentaryReadWindow::syncAllowed() const noexcept {
     return m_syncButton->isChecked();
 }

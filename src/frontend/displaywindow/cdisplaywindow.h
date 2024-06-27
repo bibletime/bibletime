@@ -89,16 +89,18 @@ public:
     virtual void applyProfileSettings(BtConfigCore const & windowConf);
 
     /** Returns the display options used by this display window. */
-    DisplayOptions const & displayOptions() const { return m_displayOptions; }
+    DisplayOptions const & displayOptions() const noexcept
+    { return m_displayOptions; }
 
     /** Returns the filter options used by this window. */
-    FilterOptions const & filterOptions() const { return m_filterOptions; }
+    FilterOptions const & filterOptions() const noexcept
+    { return m_filterOptions; }
 
     /** Returns the keychooser widget of this display window. */
-    CKeyChooser * keyChooser() const { return m_keyChooser; }
+    CKeyChooser * keyChooser() const noexcept { return m_keyChooser; }
 
     /** Returns the key of this display window. */
-    CSwordKey * key() const {
+    CSwordKey * key() const noexcept {
         BT_ASSERT(m_swordKey);
         return m_swordKey.get();
     }
@@ -114,14 +116,14 @@ public:
 
     /** Returns the display widget used by this implementation of
         CDisplayWindow. */
-    BtModelViewReadDisplay * displayWidget() const {
+    BtModelViewReadDisplay * displayWidget() const noexcept {
         BT_ASSERT(m_displayWidget);
         return m_displayWidget;
     }
 
     /** \returns whether syncs to the active window are allowed for this display
                  window. */
-    virtual bool syncAllowed() const { return false; }
+    virtual bool syncAllowed() const noexcept { return false; }
 
     /**
         * Return pointer to the BibleTime main window
@@ -132,7 +134,8 @@ public:
         */
     void windowActivated();
 
-    BtActionCollection * actionCollection() const { return m_actionCollection; }
+    ActionCollection * actionCollection() const noexcept
+    { return m_actionCollection; }
 
     bool hasSelectedText();
 

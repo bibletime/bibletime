@@ -45,7 +45,7 @@ public: // Types:
 
         void storeProfileSettings(BtConfigCore & windowConf) const override;
         void applyProfileSettings(BtConfigCore const & windowConf) override;
-        bool syncAllowed() const override;
+        bool syncAllowed() const noexcept override;
 
     public Q_SLOTS:
         void nextBook();
