@@ -619,8 +619,6 @@ void CDisplayWindow::reload() {
 
         m_actionCollection->readShortcuts(
                     QStringLiteral("Displaywindow shortcuts"));
-        m_actionCollection->readShortcuts(
-                    QStringLiteral("Readwindow shortcuts"));
         Q_EMIT sigModuleListChanged(m_modules);
     }
 
