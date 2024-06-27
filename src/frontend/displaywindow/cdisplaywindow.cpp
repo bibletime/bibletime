@@ -48,6 +48,13 @@ inline QWidget * getProfileWindow(QWidget * w) {
     return nullptr;
 }
 
+void prepareToolBar(QToolBar* bar, const QString& title, bool visible) {
+    bar->setAllowedAreas(Qt::TopToolBarArea);
+    bar->setFloatable(false);
+    bar->setWindowTitle(title);
+    bar->setVisible(visible);
+}
+
 } // anonymous namespace
 
 
@@ -87,18 +94,46 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
     setCentralWidget(m_displayWidget);
     m_displayWidget->setModules(m_moduleNames);
 
-    // Add the Navigation toolbar
-    addToolBar(mainToolBar());
+    // Create the Navigation toolbar:
+    m_mainToolBar = new QToolBar(this);
+    prepareToolBar(m_mainToolBar,
+                   tr("Navigation"),
+                   btConfig().session().value<bool>(
+                       QStringLiteral("GUI/showTextWindowNavigator"),
+                       true));
+    BT_CONNECT(btMainWindow(), &BibleTime::toggledTextWindowNavigator,
+               m_mainToolBar, &QToolBar::setVisible);
+    addToolBar(m_mainToolBar);
 
     // Create keychooser
     setKeyChooser(CKeyChooser::createInstance(constModules(),
                                               m_swordKey.get(),
-                                              mainToolBar()));
+                                              m_mainToolBar));
 
-    addModuleChooserBar();
+    // Create module chooser bar:
+    m_moduleChooserBar = new BtModuleChooserBar(this);
+    m_moduleChooserBar->setWindowTitle(tr("Work chooser buttons"));
+    m_moduleChooserBar->setLayoutDirection(Qt::LeftToRight);
+    m_moduleChooserBar->setVisible(
+                btConfig().session().value<bool>(
+                    QStringLiteral(
+                        "GUI/showTextWindowModuleSelectorButtons"),
+                    true));
+    m_moduleChooserBar->associateWithWindow(this);
+    BT_CONNECT(btMainWindow(), &BibleTime::toggledTextWindowModuleChooser,
+               m_moduleChooserBar, &BtModuleChooserBar::setVisible);
+    addToolBar(m_moduleChooserBar);
 
-    // Add the Tools toolbar
-    addToolBar(buttonsToolBar());
+    // Create the Tools toolbar:
+    m_buttonsToolBar = new QToolBar(this);
+    prepareToolBar(m_buttonsToolBar,
+                   tr("Tool"),
+                   btConfig().session().value<bool>(
+                       QStringLiteral("GUI/showTextWindowToolButtons"),
+                       true));
+    BT_CONNECT(btMainWindow(), &BibleTime::toggledTextWindowToolButtons,
+               m_buttonsToolBar, &QToolBar::setVisible);
+    addToolBar(m_buttonsToolBar);
 
     if (addTextHeaderToolbar) {
         // Create the Text Header toolbar
@@ -446,18 +481,18 @@ void CDisplayWindow::initConnections() {
 void CDisplayWindow::initToolbars() {
     //Navigation toolbar
     BT_ASSERT(m_actions.backInHistory);
-    mainToolBar()->addAction(m_actions.backInHistory); //1st button
-    mainToolBar()->addAction(m_actions.forwardInHistory); //2nd button
-    mainToolBar()->addWidget(m_keyChooser);
+    m_mainToolBar->addAction(m_actions.backInHistory); //1st button
+    m_mainToolBar->addAction(m_actions.forwardInHistory); //2nd button
+    m_mainToolBar->addWidget(m_keyChooser);
 
     //Tools toolbar
-    buttonsToolBar()->addAction(
+    m_buttonsToolBar->addAction(
                 &m_actionCollection->action(
                     CResMgr::displaywindows::general::search::actionName));
 
-    auto * const button = new BtDisplaySettingsButton(buttonsToolBar());
+    auto * const button = new BtDisplaySettingsButton(m_buttonsToolBar);
     setDisplaySettingsButton(button);
-    buttonsToolBar()->addWidget(button);
+    m_buttonsToolBar->addWidget(button);
 
     // Text Header toolbar
     auto * const h =
@@ -553,7 +588,7 @@ void CDisplayWindow::setupMainWindowToolBars() {
     btMainWindow()->toolsToolBar()->addAction(
                 &m_actionCollection->action(
                     CResMgr::displaywindows::general::search::actionName));
-    auto * const button = new BtDisplaySettingsButton(buttonsToolBar());
+    auto * const button = new BtDisplaySettingsButton(m_buttonsToolBar);
     setDisplaySettingsButton(button);
     btMainWindow()->toolsToolBar()->addWidget(button);
 }
@@ -709,24 +744,6 @@ void CDisplayWindow::lookupSwordKey(CSwordKey * newKey) {
     updateWindowTitle();
 }
 
-void CDisplayWindow::addModuleChooserBar() {
-    BT_ASSERT(!m_moduleChooserBar);
-    m_moduleChooserBar = new BtModuleChooserBar(this);
-    m_moduleChooserBar->setWindowTitle(tr("Work chooser buttons"));
-    m_moduleChooserBar->setLayoutDirection(Qt::LeftToRight);
-    m_moduleChooserBar->setVisible(
-                btConfig().session().value<bool>(
-                    QStringLiteral(
-                        "GUI/showTextWindowModuleSelectorButtons"),
-                    true));
-    m_moduleChooserBar->associateWithWindow(this);
-
-    BT_CONNECT(btMainWindow(), &BibleTime::toggledTextWindowModuleChooser,
-               m_moduleChooserBar, &BtModuleChooserBar::setVisible);
-
-    addToolBar(m_moduleChooserBar);
-}
-
 /** Initialize the window. Call this method from the outside, because calling
      this in the constructor is not possible! */
 bool CDisplayWindow::init() {
@@ -738,10 +755,8 @@ bool CDisplayWindow::init() {
             QStringLiteral("GUI/showToolbarsInEachWindow"),
             true))
     {
-        if (m_mainToolBar)
-            m_mainToolBar->setHidden(true);
-        if (m_buttonsToolBar)
-            m_buttonsToolBar->setHidden(true);
+        m_mainToolBar->setHidden(true);
+        m_buttonsToolBar->setHidden(true);
         if (m_moduleChooserBar)
             m_moduleChooserBar->setHidden(true);
     }
@@ -759,41 +774,6 @@ bool CDisplayWindow::init() {
 
     m_isInitialized = true;
     return true;
-}
-
-static void prepareToolBar(QToolBar* bar, const QString& title, bool visible) {
-    bar->setAllowedAreas(Qt::TopToolBarArea);
-    bar->setFloatable(false);
-    bar->setWindowTitle(title);
-    bar->setVisible(visible);
-}
-
-QToolBar * CDisplayWindow::mainToolBar() {
-    if (!m_mainToolBar) {
-        m_mainToolBar = new QToolBar(this);
-        prepareToolBar(m_mainToolBar,
-                       tr("Navigation"),
-                       btConfig().session().value<bool>(
-                           QStringLiteral("GUI/showTextWindowNavigator"),
-                           true));
-        BT_CONNECT(btMainWindow(), &BibleTime::toggledTextWindowNavigator,
-                   m_mainToolBar, &QToolBar::setVisible);
-    }
-    return m_mainToolBar;
-}
-
-QToolBar * CDisplayWindow::buttonsToolBar() {
-    if (!m_buttonsToolBar) {
-        m_buttonsToolBar = new QToolBar(this);
-        prepareToolBar(m_buttonsToolBar,
-                       tr("Tool"),
-                       btConfig().session().value<bool>(
-                           QStringLiteral("GUI/showTextWindowToolButtons"),
-                           true));
-        BT_CONNECT(btMainWindow(), &BibleTime::toggledTextWindowToolButtons,
-                   m_buttonsToolBar, &QToolBar::setVisible);
-    }
-    return m_buttonsToolBar;
 }
 
 /** Sets the display settings button. */

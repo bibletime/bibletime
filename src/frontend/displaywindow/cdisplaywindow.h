@@ -97,10 +97,10 @@ public:
     }
 
     /** Returns the main navigation toolbar. */
-    QToolBar * mainToolBar();
+    QToolBar * mainToolBar() const noexcept { return m_mainToolBar; }
 
     /** Returns the tool buttons toolbar. */
-    QToolBar * buttonsToolBar();
+    QToolBar * buttonsToolBar() const noexcept { return m_buttonsToolBar; }
 
     /** Sets the display settings button.*/
     void setDisplaySettingsButton( BtDisplaySettingsButton* button );
@@ -208,9 +208,6 @@ protected:
     /** Sets the keychooser widget for this display window.*/
     void setKeyChooser( CKeyChooser* ck );
 
-    /** Creates and adds the module chooser bar to the toolbar. */
-    void addModuleChooserBar();
-
     /** Lookup the given key.*/
     virtual void lookupSwordKey(CSwordKey *);
 
@@ -291,9 +288,9 @@ private:
     CKeyChooser * m_keyChooser = nullptr;
     std::unique_ptr<CSwordKey> const m_swordKey;
     bool m_isInitialized = false; ///< Whether init() has been called
-    BtModuleChooserBar* m_moduleChooserBar = nullptr;
-    QToolBar * m_mainToolBar = nullptr;
-    QToolBar * m_buttonsToolBar = nullptr;
+    QToolBar * m_mainToolBar;
+    BtModuleChooserBar* m_moduleChooserBar;
+    QToolBar * m_buttonsToolBar;
     QToolBar * m_headerBar = nullptr;
     BtModelViewReadDisplay * m_displayWidget;
     BTHistory * const m_history;
