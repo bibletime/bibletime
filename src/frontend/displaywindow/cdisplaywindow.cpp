@@ -182,9 +182,13 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
     addToolBar(m_mainToolBar);
 
     // Create keychooser
-    setKeyChooser(CKeyChooser::createInstance(constModules(),
-                                              m_swordKey.get(),
-                                              m_mainToolBar));
+    m_keyChooser = CKeyChooser::createInstance(constModules(),
+                                               m_swordKey.get(),
+                                               m_mainToolBar);
+    BT_CONNECT(m_keyChooser, &CKeyChooser::keyChanged,
+               m_history,    &BTHistory::add);
+    BT_CONNECT(m_history,    &BTHistory::historyMoved,
+               m_keyChooser, &CKeyChooser::handleHistoryMoved);
 
     // Create module chooser bar:
     m_moduleChooserBar = new BtModuleChooserBar(this);
@@ -683,15 +687,6 @@ void CDisplayWindow::setBibleReference(const QString& reference) {
     message::showInformation(this, tr("Choose Standard Bible"),
                              tr("Please choose a Bible in the Settings > "
                                 "Configure dialog."));
-}
-
-/** Sets the keychooser widget for this display window. */
-void CDisplayWindow::setKeyChooser( CKeyChooser* ck ) {
-    m_keyChooser = ck;
-    BT_CONNECT(ck, &CKeyChooser::keyChanged,
-               m_history, &BTHistory::add);
-    BT_CONNECT(m_history, &BTHistory::historyMoved,
-               ck, &CKeyChooser::handleHistoryMoved);
 }
 
 void CDisplayWindow::modulesChanged() {

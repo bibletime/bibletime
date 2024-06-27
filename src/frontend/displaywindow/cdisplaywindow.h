@@ -216,9 +216,6 @@ protected:
     /** Initializes the internel keyboard actions.*/
     virtual void initActions() = 0;
 
-    /** Sets the keychooser widget for this display window.*/
-    void setKeyChooser( CKeyChooser* ck );
-
     /** Lookup the given key.*/
     virtual void lookupSwordKey(CSwordKey *);
 
