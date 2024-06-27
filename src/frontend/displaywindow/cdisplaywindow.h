@@ -48,10 +48,6 @@ public:
 
     virtual CSwordModuleInfo::ModuleType moduleType() const;
 
-    /** Insert the keyboard accelerators of this window into the given
-        actioncollection.*/
-    static void insertKeyboardActions( BtActionCollection* const a );
-
     /** Returns pointer to the mdi area object.*/
     CMDIArea * mdi() const { return m_mdi; }
 

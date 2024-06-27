@@ -55,6 +55,87 @@ void prepareToolBar(QToolBar* bar, const QString& title, bool visible) {
     bar->setVisible(visible);
 }
 
+/**
+ * \returns a new BtActionCollection with all CDisplayWindow keyboard actions.
+*/
+BtActionCollection * newActionCollection(QObject * const parent = nullptr) {
+    BtActionCollection * a = new BtActionCollection(parent);
+
+    auto * actn = new QAction(QIcon(), CDisplayWindow::tr("Copy"), a);
+    actn->setShortcut(QKeySequence::Copy);
+    a->addAction(QStringLiteral("copySelectedText"), actn);
+
+    actn = new QAction(QIcon(), CDisplayWindow::tr("Copy by references..."), a);
+    actn->setShortcut(Qt::CTRL | Qt::Key_R);
+    a->addAction(QStringLiteral("copyByReferences"), actn);
+
+    actn = new QAction(QIcon(), CDisplayWindow::tr("Find..."), a);
+    actn->setShortcut(QKeySequence::Find);
+    a->addAction(QStringLiteral("findText"), actn);
+
+    actn = new QAction(QIcon(), CDisplayWindow::tr("Change location"), a);
+    actn->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_L));
+    a->addAction(QStringLiteral("openLocation"), actn);
+
+    actn = new QAction(QIcon(), CDisplayWindow::tr("Page down"), a);
+    actn->setShortcut(QKeySequence(Qt::Key_PageDown));
+    a->addAction(QStringLiteral("pageDown"), actn);
+
+    actn = new QAction(QIcon(), CDisplayWindow::tr("Page up"), a);
+    actn->setShortcut(QKeySequence(Qt::Key_PageUp));
+    a->addAction(QStringLiteral("pageUp"), actn);
+
+    actn = new QAction(CResMgr::displaywindows::general::search::icon(),
+                       CDisplayWindow::tr("Search with works of this window"),
+                       a);
+    actn->setShortcut(CResMgr::displaywindows::general::search::accel);
+    a->addAction(CResMgr::displaywindows::general::search::actionName, actn);
+
+    BtToolBarPopupAction* action = new BtToolBarPopupAction(
+                CResMgr::displaywindows::general::backInHistory::icon(),
+                CDisplayWindow::tr("Back in history"),
+                a
+                );
+    action->setShortcut(CResMgr::displaywindows::general::backInHistory::accel);
+    a->addAction(CResMgr::displaywindows::general::backInHistory::actionName,
+                 action);
+
+    action = new BtToolBarPopupAction(
+                CResMgr::displaywindows::general::forwardInHistory::icon(),
+                CDisplayWindow::tr("Forward in history"),
+                a
+                );
+    action->setShortcut(
+                CResMgr::displaywindows::general::forwardInHistory::accel);
+    a->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName,
+                 action);
+
+    actn = new QAction(CDisplayWindow::tr("Copy reference only"), a);
+    a->addAction(QStringLiteral("copyReferenceOnly"), actn);
+
+    actn = new QAction(CDisplayWindow::tr("Save entry as HTML"), a);
+    a->addAction(QStringLiteral("saveHtml"), actn);
+
+    actn = new QAction(CDisplayWindow::tr("Print reference only"), a);
+    a->addAction(QStringLiteral("printReferenceOnly"), actn);
+
+    actn = new QAction(CDisplayWindow::tr("Entry with text"), a);
+    a->addAction(QStringLiteral("copyEntryWithText"), actn);
+
+    actn = new QAction(CDisplayWindow::tr("Entry as plain text"), a);
+    a->addAction(QStringLiteral("saveEntryAsPlain"), actn);
+
+    actn = new QAction(CDisplayWindow::tr("Entry with text"), a);
+    a->addAction(QStringLiteral("printEntryWithText"), actn);
+
+    actn = new QAction(CDisplayWindow::tr("Strong's Search"), a);
+    actn->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
+    a->addAction(CResMgr::displaywindows::general::findStrongs::actionName,
+                 actn);
+
+    return a;
+}
+
 } // anonymous namespace
 
 
@@ -62,7 +143,7 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
                                bool const addTextHeaderToolbar,
                                CMDIArea * const parent)
     : QMainWindow(parent)
-    , m_actionCollection(new BtActionCollection(this))
+    , m_actionCollection(newActionCollection(this))
     , m_mdi(parent)
     , m_modules(modules)
     , m_swordKey((static_cast<void>(BT_ASSERT(!modules.empty())),
@@ -137,6 +218,7 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
 
     if (addTextHeaderToolbar) {
         addToolBarBreak();
+
         auto * const headerBar = new QToolBar(this);
         headerBar->setMovable(false);
         headerBar->setWindowTitle(tr("Text area header"));
@@ -251,82 +333,7 @@ void CDisplayWindow::applyProfileSettings(BtConfigCore const & conf) {
     setUpdatesEnabled(true);
 }
 
-void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
-    auto * actn = new QAction(QIcon(), tr("Copy"), a);
-    actn->setShortcut(QKeySequence::Copy);
-    a->addAction(QStringLiteral("copySelectedText"), actn);
-
-    actn = new QAction(QIcon(), tr("Copy by references..."), a);
-    actn->setShortcut(Qt::CTRL | Qt::Key_R);
-    a->addAction(QStringLiteral("copyByReferences"), actn);
-
-    actn = new QAction(QIcon(), tr("Find..."), a);
-    actn->setShortcut(QKeySequence::Find);
-    a->addAction(QStringLiteral("findText"), actn);
-
-    actn = new QAction(QIcon(), tr("Change location"), a);
-    actn->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_L));
-    a->addAction(QStringLiteral("openLocation"), actn);
-
-    actn = new QAction(QIcon(), tr("Page down"), a);
-    actn->setShortcut(QKeySequence(Qt::Key_PageDown));
-    a->addAction(QStringLiteral("pageDown"), actn);
-
-    actn = new QAction(QIcon(), tr("Page up"), a);
-    actn->setShortcut(QKeySequence(Qt::Key_PageUp));
-    a->addAction(QStringLiteral("pageUp"), actn);
-
-    actn = new QAction(CResMgr::displaywindows::general::search::icon(),
-                       tr("Search with works of this window"), a);
-    actn->setShortcut(CResMgr::displaywindows::general::search::accel);
-    a->addAction(CResMgr::displaywindows::general::search::actionName, actn);
-
-    BtToolBarPopupAction* action = new BtToolBarPopupAction(
-                CResMgr::displaywindows::general::backInHistory::icon(),
-                tr("Back in history"),
-                a
-                );
-    action->setShortcut(CResMgr::displaywindows::general::backInHistory::accel);
-    a->addAction(CResMgr::displaywindows::general::backInHistory::actionName,
-                 action);
-
-    action = new BtToolBarPopupAction(
-                CResMgr::displaywindows::general::forwardInHistory::icon(),
-                tr("Forward in history"),
-                a
-                );
-    action->setShortcut(
-                CResMgr::displaywindows::general::forwardInHistory::accel);
-    a->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName,
-                 action);
-
-    actn = new QAction(tr("Copy reference only"), a);
-    a->addAction(QStringLiteral("copyReferenceOnly"), actn);
-
-    actn = new QAction(tr("Save entry as HTML"), a);
-    a->addAction(QStringLiteral("saveHtml"), actn);
-
-    actn = new QAction(tr("Print reference only"), a);
-    a->addAction(QStringLiteral("printReferenceOnly"), actn);
-
-    actn = new QAction(tr("Entry with text"), a);
-    a->addAction(QStringLiteral("copyEntryWithText"), actn);
-
-    actn = new QAction(tr("Entry as plain text"), a);
-    a->addAction(QStringLiteral("saveEntryAsPlain"), actn);
-
-    actn = new QAction(tr("Entry with text"), a);
-    a->addAction(QStringLiteral("printEntryWithText"), actn);
-
-    actn = new QAction(tr("Strong's Search"), a);
-    actn->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
-    a->addAction(CResMgr::displaywindows::general::findStrongs::actionName,
-                 actn);
-}
-
 void CDisplayWindow::initActions() {
-    insertKeyboardActions(m_actionCollection);
-
     namespace DWG = CResMgr::displaywindows::general;
     initAction(DWG::search::actionName,
                [this]
