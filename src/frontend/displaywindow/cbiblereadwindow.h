@@ -30,19 +30,26 @@ class CBibleReadWindow: public CDisplayWindow  {
 
     Q_OBJECT
 
+public: // Types:
+
+    class ActionCollection : public CDisplayWindow::ActionCollection {
+
+    public: // Methods:
+
+        ActionCollection(QObject * parent = nullptr);
+
+    };
+
 public: // methods:
 
     CBibleReadWindow(QList<CSwordModuleInfo *> const & modules,
-                     CMDIArea * parent)
-        : CDisplayWindow(modules, true, parent)
-    { init(); }
+                     CMDIArea * parent);
 
     CSwordModuleInfo::ModuleType moduleType() const override
     { return CSwordModuleInfo::Bible; }
 
     void storeProfileSettings(BtConfigCore & windowConf) const override;
     void applyProfileSettings(BtConfigCore const & windowConf) override;
-    static void insertKeyboardActions( BtActionCollection* const a );
 
 protected: // methods:
 

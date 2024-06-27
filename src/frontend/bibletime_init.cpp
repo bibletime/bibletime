@@ -33,7 +33,6 @@
 #include "cinfodisplay.h"
 #include "cmdiarea.h"
 #include "display/btfindwidget.h"
-#include "displaywindow/btactioncollection.h"
 #include "displaywindow/btmodulechooserbar.h"
 #include "keychooser/ckeychooser.h"
 #include "bookmarks/cbookmarkindex.h"
@@ -43,6 +42,236 @@
 
 
 using namespace InfoDisplay;
+
+BibleTime::ActionCollection::ActionCollection(QObject * const parent)
+    : BtActionCollection(parent)
+{
+    QAction* action = new QAction(this);
+    action->setText(tr("&Quit"));
+    action->setIcon(CResMgr::mainMenu::window::quit::icon());
+    action->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q));
+    action->setToolTip(tr("Quit BibleTime"));
+    addAction(QStringLiteral("quit"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Auto scroll up"));
+    action->setShortcut(QKeySequence(Qt::ShiftModifier | Qt::Key_Up));
+    addAction(QStringLiteral("autoScrollUp"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Auto scroll down"));
+    action->setShortcut(QKeySequence(Qt::ShiftModifier | Qt::Key_Down));
+    addAction(QStringLiteral("autoScrollDown"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Auto scroll pause"));
+    action->setShortcut(QKeySequence(Qt::Key_Space));
+    action->setDisabled(true);
+    addAction(QStringLiteral("autoScrollPause"), action);
+
+    action = new QAction(this);
+    action->setText(tr("&Fullscreen mode"));
+    action->setIcon(CResMgr::mainMenu::window::showFullscreen::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::showFullscreen::accel));
+    action->setToolTip(tr("Toggle fullscreen mode of the main window"));
+    addAction(QStringLiteral("toggleFullscreen"), action);
+
+    action = new QAction(this);
+    action->setText(tr("&Show toolbar"));
+    action->setShortcut(QKeySequence(Qt::Key_F6));
+    addAction(QStringLiteral("showToolbar"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Search in &open works..."));
+    action->setIcon(CResMgr::mainMenu::mainIndex::search::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::mainIndex::search::accel));
+    action->setToolTip(tr("Search in all works that are currently open"));
+    addAction(QStringLiteral("searchOpenWorks"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Search in standard &Bible..."));
+    action->setIcon(CResMgr::mainMenu::mainIndex::searchdefaultbible::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::mainIndex::searchdefaultbible::accel));
+    action->setToolTip(tr("Search in the standard Bible"));
+    addAction(QStringLiteral("searchStdBible"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Save as &new session..."));
+    action->setIcon(CResMgr::mainMenu::window::saveToNewProfile::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::saveToNewProfile::accel));
+    action->setToolTip(tr("Create and save a new session"));
+    addAction(QStringLiteral("saveNewSession"), action);
+
+    action = new QAction(this);
+    action->setText(tr("&Manual mode"));
+    action->setIcon(CResMgr::mainMenu::window::arrangementMode::manual::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::manual::accel));
+    action->setToolTip(tr("Manually arrange the open windows"));
+    addAction(QStringLiteral("manualArrangement"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Auto-tile &vertically"));
+    action->setIcon(CResMgr::mainMenu::window::arrangementMode::autoTileVertical::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::autoTileVertical::accel));
+    action->setToolTip(tr("Automatically tile the open windows vertically (arrange side by side)"));
+    addAction(QStringLiteral("autoVertical"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Auto-tile &horizontally"));
+    action->setIcon(CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::accel));
+    action->setToolTip(tr("Automatically tile the open windows horizontally (arrange on top of each other)"));
+    addAction(QStringLiteral("autoHorizontal"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Auto-&tile"));
+    action->setIcon(CResMgr::mainMenu::window::arrangementMode::autoTile::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::autoTile::accel));
+    action->setToolTip(tr("Automatically tile the open windows"));
+    addAction(QStringLiteral("autoTile"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Ta&bbed"));
+    action->setIcon(CResMgr::mainMenu::window::arrangementMode::autoTabbed::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::autoTabbed::accel));
+    action->setToolTip(tr("Automatically tab the open windows"));
+    addAction(QStringLiteral("autoTabbed"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Auto-&cascade"));
+    action->setIcon(CResMgr::mainMenu::window::arrangementMode::autoCascade::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::autoCascade::accel));
+    action->setToolTip(tr("Automatically cascade the open windows"));
+    addAction(QStringLiteral("autoCascade"), action);
+
+    action = new QAction(this);
+    action->setText(tr("&Cascade"));
+    action->setIcon(CResMgr::mainMenu::window::cascade::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::cascade::accel));
+    action->setToolTip(tr("Cascade the open windows"));
+    addAction(QStringLiteral("cascade"), action);
+
+    action = new QAction(this);
+    action->setText(tr("&Tile"));
+    action->setIcon(CResMgr::mainMenu::window::tile::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::tile::accel));
+    action->setToolTip(tr("Tile the open windows"));
+    addAction(QStringLiteral("tile"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Tile &vertically"));
+    action->setIcon(CResMgr::mainMenu::window::tileVertical::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::tileVertical::accel));
+    action->setToolTip(tr("Vertically tile (arrange side by side) the open windows"));
+    addAction(QStringLiteral("tileVertically"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Tile &horizontally"));
+    action->setIcon(CResMgr::mainMenu::window::tileHorizontal::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::tileHorizontal::accel));
+    action->setToolTip(tr("Horizontally tile (arrange on top of each other) the open windows"));
+    addAction(QStringLiteral("tileHorizontally"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Close &window"));
+    action->setIcon(CResMgr::mainMenu::window::close::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::close::accel));
+    action->setToolTip(tr("Close the current open window"));
+    addAction(QStringLiteral("closeWindow"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Cl&ose all windows"));
+    action->setIcon(CResMgr::mainMenu::window::closeAll::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::closeAll::accel));
+    action->setToolTip(tr("Close all open windows inside BibleTime"));
+    addAction(QStringLiteral("closeAllWindows"), action);
+
+    action = new QAction(this);
+    action->setText(tr("&Configure BibleTime..."));
+    action->setIcon(CResMgr::mainMenu::settings::configureDialog::icon());
+    action->setToolTip(tr("Set BibleTime's preferences"));
+    addAction(QStringLiteral("setPreferences"), action);
+
+    action = new QAction(this);
+    action->setText(tr("Bookshelf Manager..."));
+    action->setIcon(CResMgr::mainMenu::settings::swordSetupDialog::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::settings::swordSetupDialog::accel));
+    action->setToolTip(tr("Configure your bookshelf and install/update/remove/index works"));
+    addAction(QStringLiteral("bookshelfWizard"), action);
+
+    action = new QAction(this);
+    action->setText(tr("&Handbook"));
+    action->setIcon(CResMgr::mainMenu::help::handbook::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::help::handbook::accel));
+    action->setToolTip(tr("Open BibleTime's handbook"));
+    addAction(QStringLiteral("openHandbook"), action);
+
+    action = new QAction(this);
+    action->setText(tr("&Bible Study Howto"));
+    action->setIcon(CResMgr::mainMenu::help::bibleStudyHowTo::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::help::bibleStudyHowTo::accel));
+    action->setToolTip(tr("Open the Bible study HowTo included with BibleTime.<br/>This HowTo is an introduction on how to study the Bible in an efficient way."));
+    addAction(QStringLiteral("bibleStudyHowto"), action);
+
+    action = new QAction(this);
+    action->setText(tr("&About BibleTime"));
+    action->setIcon(CResMgr::mainMenu::help::aboutBibleTime::icon());
+    action->setToolTip(tr("Information about the BibleTime program"));
+    addAction(QStringLiteral("aboutBibleTime"), action);
+
+    action = new QAction(this);
+    action->setText(tr("&Tip of the day..."));
+    action->setIcon(CResMgr::mainMenu::help::tipOfTheDay::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::help::tipOfTheDay::accel));
+    action->setToolTip(tr("Show tips about BibleTime"));
+    addAction(QStringLiteral("tipOfTheDay"), action);
+
+    action = new QAction(this);
+    addAction(QStringLiteral("showToolbarsInTextWindows"), action);
+
+    action = new QAction(this);
+    addAction(QStringLiteral("showNavigation"), action);
+
+    action = new QAction(this);
+    addAction(QStringLiteral("showWorks"), action);
+
+    action = new QAction(this);
+    addAction(QStringLiteral("showTools"), action);
+
+    action = new QAction(this);
+    addAction(QStringLiteral("showFormat"), action);
+
+    action = new QAction(this);
+    addAction(QStringLiteral("showParallelTextHeaders"), action);
+
+    action = new QAction(this);
+    addAction(QStringLiteral("showBookshelf"), action);
+
+    action = new QAction(this);
+    addAction(QStringLiteral("showBookmarks"), action);
+
+    action = new QAction(this);
+    addAction(QStringLiteral("showMag"), action);
+
+    retranslate();
+}
+
+void BibleTime::ActionCollection::retranslate() {
+    action(QStringLiteral("showToolbarsInTextWindows"))
+            .setText(tr("Show toolbars in text windows"));
+    action(QStringLiteral("showToolbar")).setText(tr("Show main toolbar"));
+    action(QStringLiteral("showNavigation"))
+            .setText(tr("Show navigation bar"));
+    action(QStringLiteral("showWorks")).setText(tr("Show works toolbar"));
+    action(QStringLiteral("showTools")).setText(tr("Show tools toolbar"));
+    action(QStringLiteral("showFormat"))
+            .setText(tr("Show formatting toolbar"));
+    action(QStringLiteral("showBookshelf")).setText(tr("Show bookshelf"));
+    action(QStringLiteral("showBookmarks")).setText(tr("Show bookmarks"));
+    action(QStringLiteral("showMag")).setText(tr("Show mag"));
+    action(QStringLiteral("showParallelTextHeaders"))
+            .setText(tr("Show parallel text headers"));
+}
 
 /**Initializes the view of this widget*/
 void BibleTime::initView() {
@@ -81,219 +310,6 @@ void BibleTime::initView() {
 
     BT_CONNECT(&m_autoScrollTimer, &QTimer::timeout,
                this, &BibleTime::slotAutoScroll);
-}
-
-// Creates QAction's for all actions that can have keyboard shortcuts
-// Used in creating the main window and by the configuration dialog for setting shortcuts
-void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
-    QAction* action = new QAction(a);
-    action->setText(tr("&Quit"));
-    action->setIcon(CResMgr::mainMenu::window::quit::icon());
-    action->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q));
-    action->setToolTip(tr("Quit BibleTime"));
-    a->addAction(QStringLiteral("quit"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Auto scroll up"));
-    action->setShortcut(QKeySequence(Qt::ShiftModifier | Qt::Key_Up));
-    a->addAction(QStringLiteral("autoScrollUp"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Auto scroll down"));
-    action->setShortcut(QKeySequence(Qt::ShiftModifier | Qt::Key_Down));
-    a->addAction(QStringLiteral("autoScrollDown"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Auto scroll pause"));
-    action->setShortcut(QKeySequence(Qt::Key_Space));
-    action->setDisabled(true);
-    a->addAction(QStringLiteral("autoScrollPause"), action);
-
-    action = new QAction(a);
-    action->setText(tr("&Fullscreen mode"));
-    action->setIcon(CResMgr::mainMenu::window::showFullscreen::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::showFullscreen::accel));
-    action->setToolTip(tr("Toggle fullscreen mode of the main window"));
-    a->addAction(QStringLiteral("toggleFullscreen"), action);
-
-    action = new QAction(a);
-    action->setText(tr("&Show toolbar"));
-    action->setShortcut(QKeySequence(Qt::Key_F6));
-    a->addAction(QStringLiteral("showToolbar"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Search in &open works..."));
-    action->setIcon(CResMgr::mainMenu::mainIndex::search::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::mainIndex::search::accel));
-    action->setToolTip(tr("Search in all works that are currently open"));
-    a->addAction(QStringLiteral("searchOpenWorks"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Search in standard &Bible..."));
-    action->setIcon(CResMgr::mainMenu::mainIndex::searchdefaultbible::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::mainIndex::searchdefaultbible::accel));
-    action->setToolTip(tr("Search in the standard Bible"));
-    a->addAction(QStringLiteral("searchStdBible"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Save as &new session..."));
-    action->setIcon(CResMgr::mainMenu::window::saveToNewProfile::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::saveToNewProfile::accel));
-    action->setToolTip(tr("Create and save a new session"));
-    a->addAction(QStringLiteral("saveNewSession"), action);
-
-    action = new QAction(a);
-    action->setText(tr("&Manual mode"));
-    action->setIcon(CResMgr::mainMenu::window::arrangementMode::manual::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::manual::accel));
-    action->setToolTip(tr("Manually arrange the open windows"));
-    a->addAction(QStringLiteral("manualArrangement"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Auto-tile &vertically"));
-    action->setIcon(CResMgr::mainMenu::window::arrangementMode::autoTileVertical::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::autoTileVertical::accel));
-    action->setToolTip(tr("Automatically tile the open windows vertically (arrange side by side)"));
-    a->addAction(QStringLiteral("autoVertical"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Auto-tile &horizontally"));
-    action->setIcon(CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::accel));
-    action->setToolTip(tr("Automatically tile the open windows horizontally (arrange on top of each other)"));
-    a->addAction(QStringLiteral("autoHorizontal"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Auto-&tile"));
-    action->setIcon(CResMgr::mainMenu::window::arrangementMode::autoTile::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::autoTile::accel));
-    action->setToolTip(tr("Automatically tile the open windows"));
-    a->addAction(QStringLiteral("autoTile"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Ta&bbed"));
-    action->setIcon(CResMgr::mainMenu::window::arrangementMode::autoTabbed::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::autoTabbed::accel));
-    action->setToolTip(tr("Automatically tab the open windows"));
-    a->addAction(QStringLiteral("autoTabbed"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Auto-&cascade"));
-    action->setIcon(CResMgr::mainMenu::window::arrangementMode::autoCascade::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::autoCascade::accel));
-    action->setToolTip(tr("Automatically cascade the open windows"));
-    a->addAction(QStringLiteral("autoCascade"), action);
-
-    action = new QAction(a);
-    action->setText(tr("&Cascade"));
-    action->setIcon(CResMgr::mainMenu::window::cascade::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::cascade::accel));
-    action->setToolTip(tr("Cascade the open windows"));
-    a->addAction(QStringLiteral("cascade"), action);
-
-    action = new QAction(a);
-    action->setText(tr("&Tile"));
-    action->setIcon(CResMgr::mainMenu::window::tile::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::tile::accel));
-    action->setToolTip(tr("Tile the open windows"));
-    a->addAction(QStringLiteral("tile"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Tile &vertically"));
-    action->setIcon(CResMgr::mainMenu::window::tileVertical::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::tileVertical::accel));
-    action->setToolTip(tr("Vertically tile (arrange side by side) the open windows"));
-    a->addAction(QStringLiteral("tileVertically"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Tile &horizontally"));
-    action->setIcon(CResMgr::mainMenu::window::tileHorizontal::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::tileHorizontal::accel));
-    action->setToolTip(tr("Horizontally tile (arrange on top of each other) the open windows"));
-    a->addAction(QStringLiteral("tileHorizontally"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Close &window"));
-    action->setIcon(CResMgr::mainMenu::window::close::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::close::accel));
-    action->setToolTip(tr("Close the current open window"));
-    a->addAction(QStringLiteral("closeWindow"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Cl&ose all windows"));
-    action->setIcon(CResMgr::mainMenu::window::closeAll::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::closeAll::accel));
-    action->setToolTip(tr("Close all open windows inside BibleTime"));
-    a->addAction(QStringLiteral("closeAllWindows"), action);
-
-    action = new QAction(a);
-    action->setText(tr("&Configure BibleTime..."));
-    action->setIcon(CResMgr::mainMenu::settings::configureDialog::icon());
-    action->setToolTip(tr("Set BibleTime's preferences"));
-    a->addAction(QStringLiteral("setPreferences"), action);
-
-    action = new QAction(a);
-    action->setText(tr("Bookshelf Manager..."));
-    action->setIcon(CResMgr::mainMenu::settings::swordSetupDialog::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::settings::swordSetupDialog::accel));
-    action->setToolTip(tr("Configure your bookshelf and install/update/remove/index works"));
-    a->addAction(QStringLiteral("bookshelfWizard"), action);
-
-    action = new QAction(a);
-    action->setText(tr("&Handbook"));
-    action->setIcon(CResMgr::mainMenu::help::handbook::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::help::handbook::accel));
-    action->setToolTip(tr("Open BibleTime's handbook"));
-    a->addAction(QStringLiteral("openHandbook"), action);
-
-    action = new QAction(a);
-    action->setText(tr("&Bible Study Howto"));
-    action->setIcon(CResMgr::mainMenu::help::bibleStudyHowTo::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::help::bibleStudyHowTo::accel));
-    action->setToolTip(tr("Open the Bible study HowTo included with BibleTime.<br/>This HowTo is an introduction on how to study the Bible in an efficient way."));
-    a->addAction(QStringLiteral("bibleStudyHowto"), action);
-
-    action = new QAction(a);
-    action->setText(tr("&About BibleTime"));
-    action->setIcon(CResMgr::mainMenu::help::aboutBibleTime::icon());
-    action->setToolTip(tr("Information about the BibleTime program"));
-    a->addAction(QStringLiteral("aboutBibleTime"), action);
-
-    action = new QAction(a);
-    action->setText(tr("&Tip of the day..."));
-    action->setIcon(CResMgr::mainMenu::help::tipOfTheDay::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::help::tipOfTheDay::accel));
-    action->setToolTip(tr("Show tips about BibleTime"));
-    a->addAction(QStringLiteral("tipOfTheDay"), action);
-
-    action = new QAction(a);
-    a->addAction(QStringLiteral("showToolbarsInTextWindows"), action);
-
-    action = new QAction(a);
-    a->addAction(QStringLiteral("showNavigation"), action);
-
-    action = new QAction(a);
-    a->addAction(QStringLiteral("showWorks"), action);
-
-    action = new QAction(a);
-    a->addAction(QStringLiteral("showTools"), action);
-
-    action = new QAction(a);
-    a->addAction(QStringLiteral("showFormat"), action);
-
-    action = new QAction(a);
-    a->addAction(QStringLiteral("showParallelTextHeaders"), action);
-
-    action = new QAction(a);
-    a->addAction(QStringLiteral("showBookshelf"), action);
-
-    action = new QAction(a);
-    a->addAction(QStringLiteral("showBookmarks"), action);
-
-    action = new QAction(a);
-    a->addAction(QStringLiteral("showMag"), action);
-
-    retranslateUiActions(a);
 }
 
 static QToolBar* createToolBar(QWidget* parent, bool visible) {
@@ -372,8 +388,7 @@ void BibleTime::createCentralWidget()
 
 /** Initializes the action objects of the GUI */
 void BibleTime::initActions() {
-    m_actionCollection = new BtActionCollection(this);
-    insertKeyboardActions(m_actionCollection);
+    m_actionCollection = new ActionCollection(this);
 
     // File menu actions:
     m_openWorkAction =
@@ -632,7 +647,7 @@ void BibleTime::initActions() {
                    this,                &BibleTime::slotShowDebugWindow);
     }
 
-    retranslateUiActions(m_actionCollection);
+    m_actionCollection->retranslate();
 }
 
 void BibleTime::initMenubar() {
@@ -797,29 +812,7 @@ void BibleTime::retranslateUi() {
     if (m_debugWidgetAction)
         m_debugWidgetAction->setText(tr("Show \"What's this widget\" dialog"));
 
-    retranslateUiActions(m_actionCollection);
-}
-
-/** retranslation for actions used in this class
-*   This is called for two different collections of actions
-*   One set is for the actual use in the menus, etc
-*   The second is used during the use of the configuration shortcut editor
-*/
-void BibleTime::retranslateUiActions(BtActionCollection* ac) {
-    ac->action(QStringLiteral("showToolbarsInTextWindows"))
-            .setText(tr("Show toolbars in text windows"));
-    ac->action(QStringLiteral("showToolbar")).setText(tr("Show main toolbar"));
-    ac->action(QStringLiteral("showNavigation"))
-            .setText(tr("Show navigation bar"));
-    ac->action(QStringLiteral("showWorks")).setText(tr("Show works toolbar"));
-    ac->action(QStringLiteral("showTools")).setText(tr("Show tools toolbar"));
-    ac->action(QStringLiteral("showFormat"))
-            .setText(tr("Show formatting toolbar"));
-    ac->action(QStringLiteral("showBookshelf")).setText(tr("Show bookshelf"));
-    ac->action(QStringLiteral("showBookmarks")).setText(tr("Show bookmarks"));
-    ac->action(QStringLiteral("showMag")).setText(tr("Show mag"));
-    ac->action(QStringLiteral("showParallelTextHeaders"))
-            .setText(tr("Show parallel text headers"));
+    m_actionCollection->retranslate();
 }
 
 /** Initializes the SIGNAL / SLOT connections */

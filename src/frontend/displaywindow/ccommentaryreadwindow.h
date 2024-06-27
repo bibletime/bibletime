@@ -24,16 +24,21 @@ class QAction;
   */
 class CCommentaryReadWindow : public CDisplayWindow  {
         Q_OBJECT
+
+public: // Types:
+
+    class ActionCollection : public CDisplayWindow::ActionCollection {
+
+    public: // Methods:
+
+        ActionCollection(QObject * parent = nullptr);
+
+    };
+
     public:
-        /**
-        * Reimplementation.
-        */
-        static void insertKeyboardActions( BtActionCollection* const a );
 
         CCommentaryReadWindow(QList<CSwordModuleInfo *> const & modules,
-                              CMDIArea * parent)
-            : CDisplayWindow(modules, true, parent)
-        { init(); }
+                              CMDIArea * parent);
 
         CSwordModuleInfo::ModuleType moduleType() const override
         { return CSwordModuleInfo::Commentary; }

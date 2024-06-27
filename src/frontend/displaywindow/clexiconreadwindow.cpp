@@ -21,25 +21,26 @@
 #include "btactioncollection.h"
 
 
+CLexiconReadWindow::ActionCollection::ActionCollection(QObject * const parent)
+    : CDisplayWindow::ActionCollection(parent)
+{
+    auto * actn = new QAction(tr("Next entry"), this);
+    actn->setShortcut(CResMgr::displaywindows::lexiconWindow::nextEntry::accel);
+    addAction(QStringLiteral("nextEntry"), actn);
+
+    actn = new QAction(tr("Previous entry"), this);
+    actn->setShortcut(CResMgr::displaywindows::lexiconWindow::previousEntry::accel);
+    addAction(QStringLiteral("previousEntry"), actn);
+}
+
 CLexiconReadWindow::CLexiconReadWindow(
         QList<CSwordModuleInfo *> const & modules,
         CMDIArea * parent)
-    : CDisplayWindow(modules, true, parent)
+    : CDisplayWindow(modules, true, new ActionCollection(), parent)
 { init(); }
-
-void CLexiconReadWindow::insertKeyboardActions(BtActionCollection * a) {
-    auto * actn = new QAction(tr("Next entry"), a);
-    actn->setShortcut(CResMgr::displaywindows::lexiconWindow::nextEntry::accel);
-    a->addAction(QStringLiteral("nextEntry"), actn);
-
-    actn = new QAction(tr("Previous entry"), a);
-    actn->setShortcut(CResMgr::displaywindows::lexiconWindow::previousEntry::accel);
-    a->addAction(QStringLiteral("previousEntry"), actn);
-}
 
 void CLexiconReadWindow::initActions() {
     CDisplayWindow::initActions();
-    insertKeyboardActions(actionCollection());
     initAddAction(QStringLiteral("nextEntry"),
                   this,
                   &CLexiconReadWindow::nextEntry);

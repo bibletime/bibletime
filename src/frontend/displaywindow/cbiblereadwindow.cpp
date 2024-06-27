@@ -30,6 +30,66 @@
 #include "../keychooser/ckeychooser.h"
 #include "btactioncollection.h"
 
+CBibleReadWindow::ActionCollection::ActionCollection(QObject * const parent)
+    : CDisplayWindow::ActionCollection(parent)
+{
+    QAction* qaction;
+
+    qaction = new QAction(tr("Next book"), this);
+    qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
+    addAction(QStringLiteral("nextBook"), qaction);
+
+    qaction = new QAction(tr("Previous book"), this);
+    qaction->setShortcut( CResMgr::displaywindows::bibleWindow::previousBook::accel);
+    addAction(QStringLiteral("previousBook"), qaction);
+
+    qaction = new QAction(tr("Next chapter"), this);
+    qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
+    addAction(QStringLiteral("nextChapter"), qaction);
+
+    qaction = new QAction(tr("Previous chapter"), this);
+    qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
+    addAction(QStringLiteral("previousChapter"), qaction);
+
+    qaction = new QAction(tr("Next verse"), this);
+    qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
+    addAction(QStringLiteral("nextVerse"), qaction);
+
+    qaction = new QAction(tr("Previous verse"), this);
+    qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
+    addAction(QStringLiteral("previousVerse"), qaction);
+
+    //popup menu items
+    qaction = new QAction(tr("Copy chapter"), this);
+    addAction(QStringLiteral("copyChapter"), qaction);
+
+    qaction = new QAction(tr("Save chapter as plain text"), this);
+    addAction(QStringLiteral("saveChapterAsPlainText"), qaction);
+
+    qaction = new QAction(tr("Save chapter as HTML"), this);
+    addAction(QStringLiteral("saveChapterAsHTML"), qaction);
+
+    qaction = new QAction(tr("Print chapter"), this);
+    qaction->setShortcut(QKeySequence::Print);
+    addAction(QStringLiteral("printChapter"), qaction);
+
+    qaction = new QAction(tr("Text of reference"), this);
+    addAction(QStringLiteral("copyTextOfReference"), qaction);
+
+    qaction = new QAction(tr("Reference with text"), this);
+    addAction(QStringLiteral("copyReferenceWithText"), qaction);
+
+    qaction = new QAction(tr("Reference with text"), this);
+    addAction(QStringLiteral("printReferenceWithText"), qaction);
+
+    qaction = new QAction(tr("Reference with text"), this);
+    addAction(QStringLiteral("saveReferenceWithText"), qaction);
+}
+
+CBibleReadWindow::CBibleReadWindow(QList<CSwordModuleInfo *> const & modules,
+                                   CMDIArea * parent)
+    : CDisplayWindow(modules, true, new ActionCollection(), parent)
+{ init(); }
 
 void CBibleReadWindow::applyProfileSettings(BtConfigCore const & conf) {
     CDisplayWindow::applyProfileSettings(conf);
@@ -51,77 +111,8 @@ void CBibleReadWindow::storeProfileSettings(BtConfigCore & conf) const {
     CDisplayWindow::storeProfileSettings(conf);
 }
 
-
-/** Reimplementation. */
-void CBibleReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
-    QAction* qaction;
-
-    qaction = new QAction(tr("Next book"), a);
-    qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
-    a->addAction(QStringLiteral("nextBook"), qaction);
-
-    qaction = new QAction(tr("Previous book"), a);
-    qaction->setShortcut( CResMgr::displaywindows::bibleWindow::previousBook::accel);
-    a->addAction(QStringLiteral("previousBook"), qaction);
-
-    qaction = new QAction(tr("Next chapter"), a);
-    qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
-    a->addAction(QStringLiteral("nextChapter"), qaction);
-
-    qaction = new QAction(tr("Previous chapter"), a);
-    qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
-    a->addAction(QStringLiteral("previousChapter"), qaction);
-
-    qaction = new QAction(tr("Next verse"), a);
-    qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
-    a->addAction(QStringLiteral("nextVerse"), qaction);
-
-    qaction = new QAction(tr("Previous verse"), a);
-    qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
-    a->addAction(QStringLiteral("previousVerse"), qaction);
-
-    //popup menu items
-    qaction = new QAction(tr("Copy chapter"), a);
-    a->addAction(QStringLiteral("copyChapter"), qaction);
-
-    qaction = new QAction(tr("Save chapter as plain text"), a);
-    a->addAction(QStringLiteral("saveChapterAsPlainText"), qaction);
-
-    qaction = new QAction(tr("Save chapter as HTML"), a);
-    a->addAction(QStringLiteral("saveChapterAsHTML"), qaction);
-
-    qaction = new QAction(tr("Print chapter"), a);
-    qaction->setShortcut(QKeySequence::Print);
-    a->addAction(QStringLiteral("printChapter"), qaction);
-
-    //    qaction = new QAction( /* QIcon(CResMgr::displaywindows::general::findStrongs::icon), */ tr("Strong's search"), a);
-    //    qaction->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
-    //    qaction->setToolTip(tr("Find all occurences of the Strong number currently under the mouse cursor"));
-    //    a->addAction(CResMgr::displaywindows::general::findStrongs::actionName, qaction);
-
-    //    qaction = new QAction(tr("Reference only"), a );
-    //    a->addAction("copyReferenceOnly", qaction);
-
-    qaction = new QAction(tr("Text of reference"), a);
-    a->addAction(QStringLiteral("copyTextOfReference"), qaction);
-
-    qaction = new QAction(tr("Reference with text"), a);
-    a->addAction(QStringLiteral("copyReferenceWithText"), qaction);
-
-    qaction = new QAction(tr("Reference with text"), a);
-    a->addAction(QStringLiteral("printReferenceWithText"), qaction);
-
-    qaction = new QAction(tr("Reference with text"), a);
-    a->addAction(QStringLiteral("saveReferenceWithText"), qaction);
-}
-
 void CBibleReadWindow::initActions() {
-    BtActionCollection* ac = actionCollection();
-
-    CDisplayWindow::initActions(); //make sure the predefined actions are available
-
-    insertKeyboardActions(ac);
-
+    CDisplayWindow::initActions();
     initAddAction(QStringLiteral("nextBook"),
                   this,
                   &CBibleReadWindow::nextBook);
@@ -141,6 +132,7 @@ void CBibleReadWindow::initActions() {
                   this,
                   &CBibleReadWindow::previousVerse);
 
+    auto * const ac = actionCollection();
     m_actions.findText = &ac->action(QStringLiteral("findText"));
     m_actions.findStrongs = &ac->action(CResMgr::displaywindows::general::findStrongs::actionName);
     m_actions.copy.referenceOnly =

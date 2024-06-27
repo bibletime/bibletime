@@ -26,12 +26,22 @@ class CSwordModuleInfo;
 /** \brief The class used to display lexicons. */
 class CLexiconReadWindow: public CDisplayWindow {
 
+    Q_OBJECT
+
+public: // Types:
+
+    class ActionCollection : public CDisplayWindow::ActionCollection {
+
+    public: // Methods:
+
+        ActionCollection(QObject * parent = nullptr);
+
+    };
+
 public: // methods:
 
     CLexiconReadWindow(QList<CSwordModuleInfo *> const & modules,
                        CMDIArea * parent);
-
-    static void insertKeyboardActions(BtActionCollection * a);
 
 public Q_SLOTS:
 

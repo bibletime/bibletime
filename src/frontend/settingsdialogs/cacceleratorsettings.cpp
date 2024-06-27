@@ -61,14 +61,13 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
     // create shortcuteditors
     auto const initShortcutEditor =
         [this](WindowType & windowType,
-               void (& insertKeyboardActions)(BtActionCollection * const),
+               BtActionCollection * const actionCollection,
                char const * const groupName)
         {
-            windowType.actionCollection = new BtActionCollection(this);
-            insertKeyboardActions(windowType.actionCollection);
-            windowType.actionCollection->readShortcuts(groupName);
+            windowType.actionCollection = actionCollection;
+            actionCollection->readShortcuts(groupName);
             windowType.keyChooser =
-                    new BtShortcutsEditor(windowType.actionCollection,
+                    new BtShortcutsEditor(actionCollection,
                                           m_keyChooserStack);
             m_keyChooserStack->addWidget(windowType.keyChooser);
             BT_CONNECT(
@@ -141,22 +140,22 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
                 });
         };
     initShortcutEditor(m_application,
-                       BibleTime::insertKeyboardActions,
+                       new BibleTime::ActionCollection(this),
                        "Application shortcuts");
     initShortcutEditor(m_general,
-                       CDisplayWindow::insertKeyboardActions,
+                       new CDisplayWindow::ActionCollection(this),
                        "Displaywindow shortcuts");
     initShortcutEditor(m_bible,
-                       CBibleReadWindow::insertKeyboardActions,
+                       new CBibleReadWindow::ActionCollection(this),
                        "Bible shortcuts");
     initShortcutEditor(m_commentary,
-                       CCommentaryReadWindow::insertKeyboardActions,
+                       new CCommentaryReadWindow::ActionCollection(this),
                        "Commentary shortcuts");
     initShortcutEditor(m_lexicon,
-                       CLexiconReadWindow::insertKeyboardActions,
+                       new CLexiconReadWindow::ActionCollection(this),
                        "Lexicon shortcuts");
     initShortcutEditor(m_book,
-                       CBookReadWindow::insertKeyboardActions,
+                       new CBookReadWindow::ActionCollection(this),
                        "Book shortcuts");
 
     mainLayout->addWidget(m_keyChooserStack);

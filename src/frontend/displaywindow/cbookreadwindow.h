@@ -30,6 +30,16 @@ class CBookReadWindow: public CDisplayWindow {
 
     Q_OBJECT
 
+public: // Types:
+
+    class ActionCollection : public CDisplayWindow::ActionCollection {
+
+    public: // Methods:
+
+        ActionCollection(QObject * parent = nullptr);
+
+    };
+
 public: // methods:
 
     CBookReadWindow(QList<CSwordModuleInfo *> const & modules,
@@ -40,7 +50,6 @@ public: // methods:
 
     void storeProfileSettings(BtConfigCore & windowConf) const override;
     void applyProfileSettings(BtConfigCore const & windowConf) override;
-    static void insertKeyboardActions(BtActionCollection * const a);
 
 protected: // methods:
 

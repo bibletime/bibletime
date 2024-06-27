@@ -24,46 +24,52 @@
 #include "../keychooser/ckeychooser.h"
 #include "btactioncollection.h"
 
-
-void CCommentaryReadWindow::insertKeyboardActions(BtActionCollection* const a) {
+CCommentaryReadWindow::ActionCollection::ActionCollection(QObject * const parent)
+    : CDisplayWindow::ActionCollection(parent)
+{
     QAction* qaction;
 
-    qaction = new QAction(tr("Next book"), a);
+    qaction = new QAction(tr("Next book"), this);
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
-    a->addAction(QStringLiteral("nextBook"), qaction);
+    addAction(QStringLiteral("nextBook"), qaction);
 
-    qaction = new QAction(tr("Previous book"), a);
+    qaction = new QAction(tr("Previous book"), this);
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousBook::accel);
-    a->addAction(QStringLiteral("previousBook"), qaction);
+    addAction(QStringLiteral("previousBook"), qaction);
 
-    qaction = new QAction(tr("Next chapter"), a);
+    qaction = new QAction(tr("Next chapter"), this);
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
-    a->addAction(QStringLiteral("nextChapter"), qaction);
+    addAction(QStringLiteral("nextChapter"), qaction);
 
-    qaction = new QAction(tr("Previous chapter"), a);
+    qaction = new QAction(tr("Previous chapter"), this);
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
-    a->addAction(QStringLiteral("previousChapter"), qaction);
+    addAction(QStringLiteral("previousChapter"), qaction);
 
-    qaction = new QAction(tr("Next verse"), a);
+    qaction = new QAction(tr("Next verse"), this);
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
-    a->addAction(QStringLiteral("nextVerse"), qaction);
+    addAction(QStringLiteral("nextVerse"), qaction);
 
-    qaction = new QAction(tr("Previous verse"), a);
+    qaction = new QAction(tr("Previous verse"), this);
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
-    a->addAction(QStringLiteral("previousVerse"), qaction);
+    addAction(QStringLiteral("previousVerse"), qaction);
 
     qaction = new QAction(CResMgr::displaywindows::commentaryWindow::syncWindow::icon(),
-        tr("Synchronize"), a);
+        tr("Synchronize"), this);
     qaction->setCheckable(true);
     qaction->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);
     qaction->setToolTip(tr("Synchronize the displayed entry of this work with the active Bible window"));
-    a->addAction(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName, qaction);
+    addAction(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName, qaction);
 }
 
+CCommentaryReadWindow::CCommentaryReadWindow(
+        QList<CSwordModuleInfo *> const & modules,
+        CMDIArea * parent)
+    : CDisplayWindow(modules, true, new ActionCollection(), parent)
+{ init(); }
+
 void CCommentaryReadWindow::initActions() {
-    CDisplayWindow::initActions(); //make sure the predefined actions are available
+    CDisplayWindow::initActions();
     BtActionCollection* ac = actionCollection();
-    insertKeyboardActions(ac);
 
     initAddAction(QStringLiteral("nextBook"),
                   this,

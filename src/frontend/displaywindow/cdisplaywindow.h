@@ -44,6 +44,17 @@ class CLexiconReadWindow;
 class CDisplayWindow : public QMainWindow {
     Q_OBJECT
     friend class CLexiconReadWindow;
+
+public: // Types:
+
+    class ActionCollection : public BtActionCollection {
+
+    public: // Methods:
+
+        ActionCollection(QObject * parent = nullptr);
+
+    };
+
 public:
 
     virtual CSwordModuleInfo::ModuleType moduleType() const;
@@ -175,6 +186,7 @@ protected:
 
     CDisplayWindow(BtModuleList const & modules,
                    bool const addTextHeaderToolbar,
+                   ActionCollection * actionCollection,
                    CMDIArea * const parent);
     ~CDisplayWindow() override;
 
@@ -269,7 +281,7 @@ protected: // fields:
     } m_actions;
 
 private:
-    BtActionCollection * const m_actionCollection;
+    ActionCollection * const m_actionCollection;
     CMDIArea * const m_mdi;
 
     BtModuleList m_modules;

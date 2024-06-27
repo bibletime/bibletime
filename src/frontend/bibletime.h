@@ -19,6 +19,7 @@
 #include <QTimer>
 #include "../backend/drivers/btmodulelist.h"
 #include "../backend/drivers/cswordmoduleinfo.h"
+#include "displaywindow/btactioncollection.h"
 
 
 namespace InfoDisplay { class CInfoDisplay; }
@@ -132,6 +133,18 @@ class BibleTime final : public QMainWindow {
 
     friend class CDisplayWindow;
 
+public: // Types:
+
+    class ActionCollection : public BtActionCollection {
+
+    public: // Methods:
+
+        ActionCollection(QObject * parent = nullptr);
+
+        void retranslate();
+
+    };
+
 public:
 
     BibleTime(BibleTimeApp & app,
@@ -216,9 +229,6 @@ public Q_SLOTS:
     */
     void processCommandline(bool ignoreSession, QString const & bibleKey);
 
-    /** Creates QAction's that have keyboard shortcuts. */
-    static void insertKeyboardActions(BtActionCollection * const a);
-
     void autoScrollStop();
 
 Q_SIGNALS:
@@ -256,9 +266,6 @@ private: // methods:
 
     /** Retranslates the UI. */
     void retranslateUi();
-
-    /** Retranslates the UI actions. */
-    static void retranslateUiActions(BtActionCollection * ac);
 
     /**
       Refreshes all presenter supporting at least in of the features given as
@@ -436,7 +443,7 @@ private: // fields:
     QAction * m_aboutBibleTimeAction;
     QAction * m_tipOfTheDayAction;
 
-    BtActionCollection * m_actionCollection;
+    ActionCollection * m_actionCollection;
 
     QAction * m_autoScrollUpAction;
     QAction * m_autoScrollDownAction;

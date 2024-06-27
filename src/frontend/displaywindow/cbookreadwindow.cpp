@@ -33,9 +33,17 @@
 #include "bttoolbarpopupaction.h"
 
 
+CBookReadWindow::ActionCollection::ActionCollection(QObject * const parent)
+    : CDisplayWindow::ActionCollection(parent)
+{
+    auto * const qaction = new QAction(tr("Toggle tree view"), this);
+    qaction->setCheckable(true);
+    addAction(QStringLiteral("toggleTree"), qaction);
+}
+
 CBookReadWindow::CBookReadWindow(QList<CSwordModuleInfo *> const & modules,
                                  CMDIArea * parent)
-    : CDisplayWindow(modules, false, parent)
+    : CDisplayWindow(modules, false, new ActionCollection(), parent)
 {
     auto * const h = history();
 
@@ -75,7 +83,6 @@ void CBookReadWindow::storeProfileSettings(BtConfigCore & conf) const {
 void CBookReadWindow::initActions() {
     CDisplayWindow::initActions();
     BtActionCollection* ac = actionCollection();
-    insertKeyboardActions(ac);
 
     m_treeAction = &ac->action(QStringLiteral("toggleTree"));
     BT_ASSERT(m_treeAction);
@@ -84,16 +91,6 @@ void CBookReadWindow::initActions() {
     addAction(m_treeAction);
 
     ac->readShortcuts(QStringLiteral("Book shortcuts"));
-}
-
-void CBookReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
-    QAction* qaction;
-
-    qaction = new QAction( /* QIcon(CResMgr::displaywindows::bookWindow::toggleTree::icon), */
-                           tr("Toggle tree view"), a);
-    qaction->setCheckable(true);
-    // qaction->setShortcut(CResMgr::displaywindows::bookWindow::toggleTree::accel);
-    a->addAction(QStringLiteral("toggleTree"), qaction);
 }
 
 /** No descriptions */
