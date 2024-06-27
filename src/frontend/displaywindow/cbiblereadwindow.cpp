@@ -112,7 +112,6 @@ void CBibleReadWindow::storeProfileSettings(BtConfigCore & conf) const {
 }
 
 void CBibleReadWindow::initActions() {
-    CDisplayWindow::initActions();
     initAddAction(QStringLiteral("nextBook"),
                   this,
                   &CBibleReadWindow::nextBook);

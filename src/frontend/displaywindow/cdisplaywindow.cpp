@@ -240,6 +240,117 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
 
         addToolBar(headerBar);
     }
+
+    // Initialize actions:
+    namespace DWG = CResMgr::displaywindows::general;
+    initAction(DWG::search::actionName,
+               [this]
+               { BibleTime::instance()->openSearchDialog(constModules()); });
+    initAddAction(
+                QStringLiteral("openLocation"),
+                [this]{
+                    if (btConfig().session().value<bool>(
+                            QStringLiteral("GUI/showToolbarsInEachWindow"),
+                            true))
+                    {
+                        m_keyChooser->setFocus();
+                    } else if (auto * const kc = btMainWindow()->keyChooser()) {
+                        kc->setFocus();
+                    }
+                });
+    initAddAction(QStringLiteral("pageDown"),
+                  m_displayWidget,
+                  &BtModelViewReadDisplay::pageDown);
+    initAddAction(QStringLiteral("pageUp"),
+                  m_displayWidget,
+                  &BtModelViewReadDisplay::pageUp);
+    initAddAction(QStringLiteral("copySelectedText"),
+                  m_displayWidget,
+                  &BtModelViewReadDisplay::copySelectedText);
+    initAddAction(QStringLiteral("copyByReferences"),
+                  m_displayWidget,
+                  &BtModelViewReadDisplay::copyByReferences);
+    initAddAction(QStringLiteral("findText"),
+                  btMainWindow(),
+                  &BibleTime::openFindWidget);
+    initAddAction(DWG::backInHistory::actionName,
+                  m_history,
+                  &BTHistory::back);
+    initAddAction(DWG::forwardInHistory::actionName,
+                  m_history,
+                  &BTHistory::fw);
+    m_actions.backInHistory =
+            &m_actionCollection->actionAs<BtToolBarPopupAction>(
+                CResMgr::displaywindows::general::backInHistory::actionName);
+    addAction(m_actions.backInHistory);
+    m_actions.forwardInHistory =
+            &m_actionCollection->actionAs<BtToolBarPopupAction>(
+                CResMgr::displaywindows::general::forwardInHistory::actionName);
+    addAction(m_actions.forwardInHistory);
+    m_actions.findText =
+            &m_actionCollection->action(QStringLiteral("findText"));
+    m_actions.findStrongs =
+            &initAddAction(
+                CResMgr::displaywindows::general::findStrongs::actionName,
+                [this]{
+                    QString searchText;
+                    for (auto const & strongNumber
+                         : m_displayWidget->getCurrentNodeInfo().split(
+                             '|',
+                             Qt::SkipEmptyParts))
+                        searchText.append(
+                                    QStringLiteral("strong:%1 ")
+                                    .arg(strongNumber));
+                    BibleTime::instance()->openSearchDialog(constModules(),
+                                                            searchText);
+                });
+    m_actions.copy.reference =
+            &initAddAction(QStringLiteral("copyReferenceOnly"),
+                           m_displayWidget,
+                           &BtModelViewReadDisplay::copyAnchorOnly);
+    m_actions.copy.entry = &initAddAction(QStringLiteral("copyEntryWithText"),
+                                          m_displayWidget,
+                                          &BtModelViewReadDisplay::copyAll);
+    m_actions.copy.selectedText =
+            &m_actionCollection->action(QStringLiteral("copySelectedText"));
+    m_actions.copy.byReferences =
+            &m_actionCollection->action(QStringLiteral("copyByReferences"));
+    m_actions.save.entryAsPlain =
+            &initAddAction(
+                QStringLiteral("saveEntryAsPlain"),
+                [this]{
+                    CExportManager mgr(true,
+                                       tr("Saving"),
+                                       filterOptions(),
+                                       displayOptions());
+                    mgr.saveKey(m_swordKey.get(),
+                                CExportManager::Text,
+                                true,
+                                constModules());
+                });
+    m_actions.save.entryAsHTML =
+            &initAddAction(
+                QStringLiteral("saveHtml"),
+                [this]{
+                    CExportManager mgr(true,
+                                       tr("Saving"),
+                                       filterOptions(),
+                                       displayOptions());
+                    mgr.saveKey(m_swordKey.get(),
+                                CExportManager::HTML,
+                                true,
+                                constModules());
+                });
+    m_actions.print.reference =
+            &initAddAction(QStringLiteral("printReferenceOnly"),
+                           this,
+                           &CDisplayWindow::printAnchorWithText);
+    addAction(m_actions.print.reference);
+    m_actions.print.entry = &initAddAction(QStringLiteral("printEntryWithText"),
+                                           this,
+                                           &CDisplayWindow::printAll);
+    m_actionCollection->readShortcuts(
+                QStringLiteral("Displaywindow shortcuts"));
 }
 
 CDisplayWindow::~CDisplayWindow() = default;
@@ -326,133 +437,6 @@ void CDisplayWindow::applyProfileSettings(BtConfigCore const & conf) {
         w->showMaximized();
 
     setUpdatesEnabled(true);
-}
-
-void CDisplayWindow::initActions() {
-    namespace DWG = CResMgr::displaywindows::general;
-    initAction(DWG::search::actionName,
-               [this]
-               { BibleTime::instance()->openSearchDialog(constModules()); });
-    initAddAction(
-                QStringLiteral("openLocation"),
-                [this]{
-                    if (btConfig().session().value<bool>(
-                            QStringLiteral("GUI/showToolbarsInEachWindow"),
-                            true))
-                    {
-                        m_keyChooser->setFocus();
-                    } else if (auto * const kc = btMainWindow()->keyChooser()) {
-                        kc->setFocus();
-                    }
-                });
-    initAddAction(QStringLiteral("pageDown"),
-                  m_displayWidget,
-                  &BtModelViewReadDisplay::pageDown);
-    initAddAction(QStringLiteral("pageUp"),
-                  m_displayWidget,
-                  &BtModelViewReadDisplay::pageUp);
-
-    initAddAction(QStringLiteral("copySelectedText"),
-                  m_displayWidget,
-                  &BtModelViewReadDisplay::copySelectedText);
-    initAddAction(QStringLiteral("copyByReferences"),
-                  m_displayWidget,
-                  &BtModelViewReadDisplay::copyByReferences);
-    initAddAction(QStringLiteral("findText"),
-                  btMainWindow(),
-                  &BibleTime::openFindWidget);
-    initAddAction(DWG::backInHistory::actionName,
-                  m_history,
-                  &BTHistory::back);
-    initAddAction(DWG::forwardInHistory::actionName,
-                  m_history,
-                  &BTHistory::fw);
-
-    auto * const ac = m_actionCollection;
-    m_actions.backInHistory =
-            &ac->actionAs<BtToolBarPopupAction>(
-                CResMgr::displaywindows::general::backInHistory::actionName);
-    addAction(m_actions.backInHistory);
-
-    m_actions.forwardInHistory =
-            &ac->actionAs<BtToolBarPopupAction>(
-                CResMgr::displaywindows::general::forwardInHistory::actionName);
-    addAction(m_actions.forwardInHistory);
-
-    m_actions.findText = &ac->action(QStringLiteral("findText"));
-
-    m_actions.findStrongs =
-            &initAddAction(
-                CResMgr::displaywindows::general::findStrongs::actionName,
-                [this]{
-                    QString searchText;
-                    for (auto const & strongNumber
-                         : m_displayWidget->getCurrentNodeInfo().split(
-                             '|',
-                             Qt::SkipEmptyParts))
-                        searchText.append(
-                                    QStringLiteral("strong:%1 ")
-                                    .arg(strongNumber));
-                    BibleTime::instance()->openSearchDialog(constModules(),
-                                                            searchText);
-                });
-
-    m_actions.copy.reference =
-            &initAddAction(QStringLiteral("copyReferenceOnly"),
-                           m_displayWidget,
-                           &BtModelViewReadDisplay::copyAnchorOnly);
-
-    m_actions.copy.entry = &initAddAction(QStringLiteral("copyEntryWithText"),
-                                          m_displayWidget,
-                                          &BtModelViewReadDisplay::copyAll);
-
-    m_actions.copy.selectedText =
-            &ac->action(QStringLiteral("copySelectedText"));
-
-    m_actions.copy.byReferences =
-            &ac->action(QStringLiteral("copyByReferences"));
-
-    m_actions.save.entryAsPlain =
-            &initAddAction(
-                QStringLiteral("saveEntryAsPlain"),
-                [this]{
-                    CExportManager mgr(true,
-                                       tr("Saving"),
-                                       filterOptions(),
-                                       displayOptions());
-                    mgr.saveKey(m_swordKey.get(),
-                                CExportManager::Text,
-                                true,
-                                constModules());
-                });
-
-    m_actions.save.entryAsHTML =
-            &initAddAction(
-                QStringLiteral("saveHtml"),
-                [this]{
-                    CExportManager mgr(true,
-                                       tr("Saving"),
-                                       filterOptions(),
-                                       displayOptions());
-                    mgr.saveKey(m_swordKey.get(),
-                                CExportManager::HTML,
-                                true,
-                                constModules());
-                });
-
-    m_actions.print.reference =
-            &initAddAction(QStringLiteral("printReferenceOnly"),
-                           this,
-                           &CDisplayWindow::printAnchorWithText);
-    addAction(m_actions.print.reference);
-
-    m_actions.print.entry = &initAddAction(QStringLiteral("printEntryWithText"),
-                                           this,
-                                           &CDisplayWindow::printAll);
-
-    // init with the user defined settings
-    m_actionCollection->readShortcuts(
-                QStringLiteral("Displaywindow shortcuts"));
 }
 
 void CDisplayWindow::initConnections() {

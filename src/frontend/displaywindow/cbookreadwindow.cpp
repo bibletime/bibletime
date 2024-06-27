@@ -81,7 +81,6 @@ void CBookReadWindow::storeProfileSettings(BtConfigCore & conf) const {
 }
 
 void CBookReadWindow::initActions() {
-    CDisplayWindow::initActions();
     BtActionCollection* ac = actionCollection();
 
     m_treeAction = &ac->action(QStringLiteral("toggleTree"));

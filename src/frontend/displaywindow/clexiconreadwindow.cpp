@@ -40,7 +40,6 @@ CLexiconReadWindow::CLexiconReadWindow(
 { init(); }
 
 void CLexiconReadWindow::initActions() {
-    CDisplayWindow::initActions();
     initAddAction(QStringLiteral("nextEntry"),
                   this,
                   &CLexiconReadWindow::nextEntry);

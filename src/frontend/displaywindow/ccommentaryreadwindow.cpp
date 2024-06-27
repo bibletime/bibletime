@@ -68,7 +68,6 @@ CCommentaryReadWindow::CCommentaryReadWindow(
 { init(); }
 
 void CCommentaryReadWindow::initActions() {
-    CDisplayWindow::initActions();
     BtActionCollection* ac = actionCollection();
 
     initAddAction(QStringLiteral("nextBook"),
