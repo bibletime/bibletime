@@ -34,7 +34,7 @@ public: // methods:
 
     CBibleReadWindow(QList<CSwordModuleInfo *> const & modules,
                      CMDIArea * parent)
-        : CDisplayWindow(modules, parent)
+        : CDisplayWindow(modules, true, parent)
     { init(); }
 
     CSwordModuleInfo::ModuleType moduleType() const override

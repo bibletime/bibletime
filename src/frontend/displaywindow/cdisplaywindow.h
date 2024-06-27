@@ -177,7 +177,9 @@ protected:
 
     friend class CBibleReadWindow;
 
-    CDisplayWindow(BtModuleList const & modules, CMDIArea * const parent);
+    CDisplayWindow(BtModuleList const & modules,
+                   bool const addTextHeaderToolbar,
+                   CMDIArea * const parent);
     ~CDisplayWindow() override;
 
     /** Returns history for this window */
@@ -187,7 +189,7 @@ protected:
         * Initialize the window. Call this method from the outside,
         * because calling this in the constructor is not possible!
         */
-    bool init(bool const addTextHeaderToolbar = true);
+    bool init();
 
     void setDisplayOptions(DisplayOptions const & v) { m_displayOptions = v; }
 

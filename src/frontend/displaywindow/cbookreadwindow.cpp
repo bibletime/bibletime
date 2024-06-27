@@ -35,7 +35,7 @@
 
 CBookReadWindow::CBookReadWindow(QList<CSwordModuleInfo *> const & modules,
                                  CMDIArea * parent)
-    : CDisplayWindow(modules, parent)
+    : CDisplayWindow(modules, false, parent)
 {
     auto * const h = history();
 
@@ -55,7 +55,7 @@ CBookReadWindow::CBookReadWindow(QList<CSwordModuleInfo *> const & modules,
     m_treeChooserDock->hide();
     addDockWidget(Qt::LeftDockWidgetArea, m_treeChooserDock);
 
-    init(false);
+    init();
 }
 
 void CBookReadWindow::applyProfileSettings(BtConfigCore const & conf) {
