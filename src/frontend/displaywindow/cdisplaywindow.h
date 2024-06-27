@@ -291,7 +291,6 @@ private:
     QToolBar * m_mainToolBar;
     BtModuleChooserBar* m_moduleChooserBar;
     QToolBar * m_buttonsToolBar;
-    QToolBar * m_headerBar = nullptr;
     BtModelViewReadDisplay * m_displayWidget;
     BTHistory * const m_history;
 };

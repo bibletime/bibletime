@@ -136,18 +136,32 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
     addToolBar(m_buttonsToolBar);
 
     if (addTextHeaderToolbar) {
-        // Create the Text Header toolbar
         addToolBarBreak();
-        m_headerBar = new QToolBar(this);
-        m_headerBar->setMovable(false);
-        m_headerBar->setWindowTitle(tr("Text area header"));
-        m_headerBar->setVisible(
+        auto * const headerBar = new QToolBar(this);
+        headerBar->setMovable(false);
+        headerBar->setWindowTitle(tr("Text area header"));
+        headerBar->setVisible(
                     btConfig().session().value<bool>(
                         QStringLiteral("GUI/showTextWindowHeaders"),
                         true));
         BT_CONNECT(btMainWindow(), &BibleTime::toggledTextWindowHeader,
-                   m_headerBar, &QToolBar::setVisible);
-        addToolBar(m_headerBar);
+                   headerBar, &QToolBar::setVisible);
+
+        auto * const headerWidget =
+                new BtTextWindowHeader(m_modules.first()->type(),
+                                       m_modules,
+                                       headerBar);
+        BT_CONNECT(this,         &CDisplayWindow::sigModuleListChanged,
+                   headerWidget, &BtTextWindowHeader::setModules);
+        BT_CONNECT(headerWidget, &BtTextWindowHeader::moduleAdded,
+                   this,         &CDisplayWindow::slotAddModule);
+        BT_CONNECT(headerWidget, &BtTextWindowHeader::moduleReplaced,
+                   this,         &CDisplayWindow::slotReplaceModule);
+        BT_CONNECT(headerWidget, &BtTextWindowHeader::moduleRemoved,
+                   this,         &CDisplayWindow::slotRemoveModule);
+        headerBar->addWidget(headerWidget);
+
+        addToolBar(headerBar);
     }
 }
 
@@ -493,21 +507,6 @@ void CDisplayWindow::initToolbars() {
     auto * const button = new BtDisplaySettingsButton(m_buttonsToolBar);
     setDisplaySettingsButton(button);
     m_buttonsToolBar->addWidget(button);
-
-    // Text Header toolbar
-    auto * const h =
-            new BtTextWindowHeader(m_modules.first()->type(),
-                                   m_modules,
-                                   this);
-    BT_CONNECT(this, &CDisplayWindow::sigModuleListChanged,
-               h, &BtTextWindowHeader::setModules);
-    BT_CONNECT(h, &BtTextWindowHeader::moduleAdded,
-               this, &CDisplayWindow::slotAddModule);
-    BT_CONNECT(h, &BtTextWindowHeader::moduleReplaced,
-               this, &CDisplayWindow::slotReplaceModule);
-    BT_CONNECT(h, &BtTextWindowHeader::moduleRemoved,
-               this, &CDisplayWindow::slotRemoveModule);
-    m_headerBar->addWidget(h);
 }
 
 QMenu * CDisplayWindow::newDisplayWidgetPopupMenu() {
