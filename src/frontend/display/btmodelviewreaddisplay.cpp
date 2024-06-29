@@ -106,6 +106,11 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(
                this, &BtModelViewReadDisplay::setBibleReference);
     BT_CONNECT(BibleTime::instance(), &BibleTime::colorThemeChanged,
                m_qmlInterface, &BtQmlInterface::changeColorTheme);
+    BT_CONNECT(m_qmlInterface, &BtQmlInterface::activeLinkChanged, this,
+               [this](QString const & newLink) {
+                m_activeAnchor = m_qmlInterface->getBibleUrlFromLink(newLink);
+                setNodeInfo(m_qmlInterface->getLemmaFromLink(newLink));
+               });
 
     setLayout(layout);
 }
@@ -137,10 +142,6 @@ void BtModelViewReadDisplay::copyAsPlainText(TextPart const part)
 { QGuiApplication::clipboard()->setText(text(part)); }
 
 void BtModelViewReadDisplay::contextMenuEvent(QContextMenuEvent * event) {
-    auto const & activeLink = m_qmlInterface->activeLink();
-    m_activeAnchor = m_qmlInterface->getBibleUrlFromLink(activeLink);
-    setNodeInfo(m_qmlInterface->getLemmaFromLink(activeLink));
-
     if (m_popup)
         m_popup->exec(event->globalPos());
 }
