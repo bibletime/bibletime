@@ -247,9 +247,9 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
 
     // Initialize actions:
     namespace DWG = CResMgr::displaywindows::general;
-    initAction(DWG::search::actionName,
-               [this]
-               { BibleTime::instance()->openSearchDialog(constModules()); });
+    initAddAction(DWG::search::actionName,
+                  [this]
+                  { BibleTime::instance()->openSearchDialog(constModules()); });
     initAddAction(
                 QStringLiteral("openLocation"),
                 [this]{
