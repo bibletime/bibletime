@@ -183,31 +183,23 @@ void CBibleReadWindow::initActions() {
                            this,
                            &CBibleReadWindow::printAll);
 
+    BT_CONNECT(displayWidget(), &BtModelViewReadDisplay::activeAnchorChanged,
+               this,
+               [this](QString const & newActiveAnchor) {
+                bool const hasActiveAnchor = !newActiveAnchor.isEmpty();
+                m_actions.copy.referenceTextOnly->setEnabled(
+                            hasActiveAnchor);
+                m_actions.copy.referenceAndText->setEnabled(
+                            hasActiveAnchor);
+                m_actions.save.referenceAndText->setEnabled(
+                            hasActiveAnchor);
+               });
+
     ac->readShortcuts(QStringLiteral("Bible shortcuts"));
 }
 
 QMenu * CBibleReadWindow::newDisplayWidgetPopupMenu() {
     auto * const popupMenu = new QMenu(this);
-    BT_CONNECT(popupMenu, &QMenu::aboutToShow,
-               [this] {
-                    auto const & display = *displayWidget();
-                    m_actions.findStrongs->setEnabled(
-                                !display.getCurrentNodeInfo().isNull());
-
-                    bool const hasActiveAnchor = display.hasActiveAnchor();
-                    m_actions.copy.referenceOnly->setEnabled(hasActiveAnchor);
-                    m_actions.copy.referenceTextOnly->setEnabled(
-                                hasActiveAnchor);
-                    m_actions.copy.referenceAndText->setEnabled(
-                                hasActiveAnchor);
-
-                    m_actions.save.referenceAndText->setEnabled(
-                                hasActiveAnchor);
-
-                    m_actions.print.reference->setEnabled(hasActiveAnchor);
-
-                    m_actions.copy.selectedText->setEnabled(hasSelectedText());
-                });
     popupMenu->setTitle(tr("Bible window"));
     popupMenu->setIcon(firstModule()->moduleIcon());
     popupMenu->addAction(m_actions.findText);

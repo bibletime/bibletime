@@ -238,9 +238,8 @@ void BtModelViewReadDisplay::print(TextPart const type,
     }
 
     case AnchorWithText: {
-        if (hasActiveAnchor()) {
-            mgr.printByHyperlink(m_activeAnchor, displayOptions, filterOptions );
-        }
+        if (!m_activeAnchor.isEmpty())
+            mgr.printByHyperlink(m_activeAnchor, displayOptions, filterOptions);
         break;
     }
 

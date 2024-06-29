@@ -268,9 +268,18 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
     initAddAction(QStringLiteral("pageUp"),
                   m_displayWidget,
                   &BtModelViewReadDisplay::pageUp);
-    initAddAction(QStringLiteral("copySelectedText"),
-                  m_displayWidget,
-                  &BtModelViewReadDisplay::copySelectedText);
+    auto & copySelectedTextAction =
+            initAddAction(QStringLiteral("copySelectedText"),
+                          m_displayWidget,
+                          &BtModelViewReadDisplay::copySelectedText);
+    BT_CONNECT(m_displayWidget->qmlInterface(),
+               &BtQmlInterface::selectionChanged,
+               this,
+               [&copySelectedTextAction](
+                 std::optional<BtQmlInterface::Selection> const & newSelection)
+               {
+                copySelectedTextAction.setEnabled(newSelection.has_value());
+               });
     initAddAction(QStringLiteral("copyByReferences"),
                   m_displayWidget,
                   &BtModelViewReadDisplay::copyByReferences);
@@ -308,6 +317,9 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
                     BibleTime::instance()->openSearchDialog(constModules(),
                                                             searchText);
                 });
+    BT_CONNECT(m_displayWidget, &BtModelViewReadDisplay::nodeInfoChanged, this,
+               [this](QString const & nodeInfo)
+               { m_actions.findStrongs->setEnabled(!nodeInfo.isNull()); });
     m_actions.copy.reference =
             &initAddAction(QStringLiteral("copyReferenceOnly"),
                            m_displayWidget,
@@ -353,6 +365,13 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
     m_actions.print.entry = &initAddAction(QStringLiteral("printEntryWithText"),
                                            this,
                                            &CDisplayWindow::printAll);
+    BT_CONNECT(m_displayWidget, &BtModelViewReadDisplay::activeAnchorChanged,
+               this,
+               [this](QString const & newActiveAnchor) {
+                bool const hasActiveAnchor = !newActiveAnchor.isEmpty();
+                m_actions.copy.reference->setEnabled(hasActiveAnchor);
+                m_actions.print.reference->setEnabled(hasActiveAnchor);
+               });
     m_actionCollection->readShortcuts(
                 QStringLiteral("Displaywindow shortcuts"));
 }
@@ -501,21 +520,6 @@ void CDisplayWindow::initToolbars() {
 
 QMenu * CDisplayWindow::newDisplayWidgetPopupMenu() {
     auto * const popupMenu = new QMenu(this);
-    BT_CONNECT(popupMenu, &QMenu::aboutToShow,
-                [this] {
-                    // enable the action depending on the supported module
-                    // features
-                    m_actions.findStrongs->setEnabled(
-                            !m_displayWidget->nodeInfo().isNull());
-
-                    bool const hasActiveAnchor =
-                            m_displayWidget->hasActiveAnchor();
-                    m_actions.copy.reference->setEnabled(hasActiveAnchor);
-
-                    m_actions.print.reference->setEnabled(hasActiveAnchor);
-
-                    m_actions.copy.selectedText->setEnabled(hasSelectedText());
-                });
     popupMenu->setTitle(tr("Lexicon window"));
     popupMenu->setIcon(m_modules.first()->moduleIcon());
     popupMenu->addAction(m_actions.findText);
@@ -581,9 +585,6 @@ void CDisplayWindow::setupMainWindowToolBars() {
     setDisplaySettingsButton(button);
     btMainWindow()->toolsToolBar()->addWidget(button);
 }
-
-bool CDisplayWindow::hasSelectedText()
-{ return m_displayWidget->qmlInterface()->hasSelectedText(); }
 
 void CDisplayWindow::copyDisplayedText()
 { CExportManager().copyKey(m_swordKey.get(), CExportManager::Text, true); }

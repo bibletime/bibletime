@@ -142,9 +142,6 @@ void BtQmlInterface::setSelection(int const column,
 
 void BtQmlInterface::clearSelection() noexcept { m_selection.reset(); }
 
-bool BtQmlInterface::hasSelectedText() const noexcept
-{ return m_selection.has_value(); }
-
 QString BtQmlInterface::getSelectedText() const
 { return m_selection.has_value() ? m_selection->selectedText : QString(); }
 

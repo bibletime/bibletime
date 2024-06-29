@@ -159,9 +159,6 @@ public: // methods:
 
     BtQmlInterface * qmlInterface() const noexcept { return m_qmlInterface; }
 
-    /** \returns whether the display has an active anchor. */
-    bool hasActiveAnchor() const { return !m_activeAnchor.isEmpty(); }
-
 Q_SIGNALS:
 
     void nodeInfoChanged(QString newNodeInfo);

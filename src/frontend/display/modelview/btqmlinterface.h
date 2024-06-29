@@ -135,7 +135,6 @@ public:
                                   int endIndex,
                                   QString const & selectedText);
     Q_INVOKABLE void clearSelection() noexcept;
-    bool hasSelectedText() const noexcept;
     QString getSelectedText() const;
 
     std::optional<Selection> const & selection() const noexcept

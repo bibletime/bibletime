@@ -137,8 +137,6 @@ public:
     ActionCollection * actionCollection() const noexcept
     { return m_actionCollection; }
 
-    bool hasSelectedText();
-
     /** Updates the status of the popup menu entries. */
     virtual void copyDisplayedText();
 
