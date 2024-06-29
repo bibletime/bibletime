@@ -189,7 +189,11 @@ void BtQmlInterface::setHoveredLink(QString const & link) {
     if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
         return;
     setMagReferenceByUrl(link);
-    m_activeLink = link;
+
+    if (m_activeLink != link) {
+        m_activeLink = link;
+        activeLinkChanged(link);
+    }
 }
 
 QString BtQmlInterface::getLemmaFromLink(const QString& url) {

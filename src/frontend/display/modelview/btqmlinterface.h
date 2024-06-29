@@ -156,6 +156,7 @@ Q_SIGNALS:
     void textModelChanged();
     void updateReference(const QString& reference);
     void dragOccuring(const QString& moduleName, const QString& keyName);
+    void activeLinkChanged(QString newActiveLink);
 
 protected: // Methods:
 
