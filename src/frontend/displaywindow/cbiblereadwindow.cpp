@@ -211,10 +211,7 @@ QMenu * CBibleReadWindow::newDisplayWidgetPopupMenu() {
     popupMenu->setTitle(tr("Bible window"));
     popupMenu->setIcon(firstModule()->moduleIcon());
     popupMenu->addAction(m_actions.findText);
-    QKeySequence ks = m_actions.findText->shortcut();
-    QString keys = ks.toString();
     popupMenu->addAction(m_actions.findStrongs);
-
     popupMenu->addSeparator();
 
     m_actions.copyMenu = new QMenu(tr("Copy"), popupMenu);
