@@ -67,6 +67,20 @@ public: /* Types: */
         int startIndex;
         int endIndex;
         QString selectedText;
+
+        friend bool operator==(Selection const & lhs, Selection const & rhs) {
+            return lhs.column == rhs.column
+                    && lhs.startIndex == rhs.startIndex
+                    && lhs.endIndex == rhs.endIndex
+                    && lhs.selectedText == rhs.selectedText;
+        }
+
+        friend bool operator!=(Selection const & lhs, Selection const & rhs) {
+            return lhs.column != rhs.column
+                    || lhs.startIndex != rhs.startIndex
+                    || lhs.endIndex != rhs.endIndex
+                    || lhs.selectedText != rhs.selectedText;
+        }
     };
 
 public:
@@ -157,6 +171,7 @@ Q_SIGNALS:
     void updateReference(const QString& reference);
     void dragOccuring(const QString& moduleName, const QString& keyName);
     void activeLinkChanged(QString newActiveLink);
+    void selectionChanged(std::optional<Selection> newSelection);
 
 protected: // Methods:
 

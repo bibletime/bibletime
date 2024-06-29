@@ -133,7 +133,11 @@ void BtQmlInterface::setSelection(int const column,
     BT_ASSERT(startIndex >= 0);
     BT_ASSERT(endIndex >= 0);
     BT_ASSERT(!selectedText.isEmpty());
-    m_selection.emplace(Selection{column, startIndex, endIndex, selectedText});
+    Selection newSelection{column, startIndex, endIndex, selectedText};
+    if (m_selection != newSelection) {
+        m_selection.emplace(newSelection);
+        Q_EMIT selectionChanged(std::move(newSelection));
+    }
 }
 
 void BtQmlInterface::clearSelection() noexcept { m_selection.reset(); }
