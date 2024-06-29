@@ -269,7 +269,6 @@ protected: // fields:
         } copy;
         QMenu * saveMenu;
         struct {
-            QAction * reference;
             QAction * entryAsPlain;
             QAction * entryAsHTML;
         } save;
