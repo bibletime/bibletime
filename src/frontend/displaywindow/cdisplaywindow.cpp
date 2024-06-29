@@ -520,8 +520,6 @@ void CDisplayWindow::initToolbars() {
 
 QMenu * CDisplayWindow::newDisplayWidgetPopupMenu() {
     auto * const popupMenu = new QMenu(this);
-    popupMenu->setTitle(tr("Lexicon window"));
-    popupMenu->setIcon(m_modules.first()->moduleIcon());
     popupMenu->addAction(m_actions.findText);
     popupMenu->addAction(m_actions.findStrongs);
     popupMenu->addSeparator();

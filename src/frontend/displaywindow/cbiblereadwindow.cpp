@@ -200,8 +200,6 @@ void CBibleReadWindow::initActions() {
 
 QMenu * CBibleReadWindow::newDisplayWidgetPopupMenu() {
     auto * const popupMenu = new QMenu(this);
-    popupMenu->setTitle(tr("Bible window"));
-    popupMenu->setIcon(firstModule()->moduleIcon());
     popupMenu->addAction(m_actions.findText);
     popupMenu->addAction(m_actions.findStrongs);
     popupMenu->addSeparator();
