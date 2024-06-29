@@ -165,6 +165,7 @@ public: // methods:
 Q_SIGNALS:
 
     void nodeInfoChanged(QString newNodeInfo);
+    void activeAnchorChanged(QString newActiveAnchor);
 
 private Q_SLOTS:
 

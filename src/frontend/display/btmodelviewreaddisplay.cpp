@@ -25,6 +25,7 @@
 #include <QString>
 #include <QTimer>
 #include <QToolBar>
+#include <utility>
 #include "../../backend/keys/cswordkey.h"
 #include "../../backend/drivers/cswordbiblemoduleinfo.h"
 #include "../../backend/managers/cswordbackend.h"
@@ -108,7 +109,11 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(
                m_qmlInterface, &BtQmlInterface::changeColorTheme);
     BT_CONNECT(m_qmlInterface, &BtQmlInterface::activeLinkChanged, this,
                [this](QString const & newLink) {
-                m_activeAnchor = m_qmlInterface->getBibleUrlFromLink(newLink);
+                auto newAnchor = m_qmlInterface->getBibleUrlFromLink(newLink);
+                if (m_activeAnchor != newAnchor) {
+                    m_activeAnchor = newAnchor;
+                    activeAnchorChanged(std::move(newAnchor));
+                }
                 setNodeInfo(m_qmlInterface->getLemmaFromLink(newLink));
                });
 
