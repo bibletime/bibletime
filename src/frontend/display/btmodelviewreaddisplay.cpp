@@ -139,7 +139,7 @@ void BtModelViewReadDisplay::copyAsPlainText(TextPart const part)
 void BtModelViewReadDisplay::contextMenuEvent(QContextMenuEvent * event) {
     auto const & activeLink = m_qmlInterface->activeLink();
     m_activeAnchor = m_qmlInterface->getBibleUrlFromLink(activeLink);
-    setLemma(m_qmlInterface->getLemmaFromLink(activeLink));
+    setNodeInfo(m_qmlInterface->getLemmaFromLink(activeLink));
 
     if (m_popup)
         m_popup->exec(event->globalPos());
@@ -348,6 +348,9 @@ void BtModelViewReadDisplay::findText(bool const backward)
 { m_qmlInterface->findText(backward); }
 
 // Save the Lemma (Strongs number) attribute
-void BtModelViewReadDisplay::setLemma(const QString& lemma) {
-    m_nodeInfo = lemma;
+void BtModelViewReadDisplay::setNodeInfo(QString const & newNodeInfo) {
+    if (m_nodeInfo != newNodeInfo) {
+        m_nodeInfo = newNodeInfo;
+        Q_EMIT nodeInfoChanged(newNodeInfo);
+    }
 }

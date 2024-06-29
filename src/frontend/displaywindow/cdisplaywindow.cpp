@@ -299,7 +299,7 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
                 [this]{
                     QString searchText;
                     for (auto const & strongNumber
-                         : m_displayWidget->getCurrentNodeInfo().split(
+                         : m_displayWidget->nodeInfo().split(
                              '|',
                              Qt::SkipEmptyParts))
                         searchText.append(
@@ -506,7 +506,7 @@ QMenu * CDisplayWindow::newDisplayWidgetPopupMenu() {
                     // enable the action depending on the supported module
                     // features
                     m_actions.findStrongs->setEnabled(
-                            !m_displayWidget->getCurrentNodeInfo().isNull());
+                            !m_displayWidget->nodeInfo().isNull());
 
                     bool const hasActiveAnchor =
                             m_displayWidget->hasActiveAnchor();

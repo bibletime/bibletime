@@ -135,7 +135,7 @@ public: // methods:
 
     void findText(bool const backward);
 
-    QString getCurrentNodeInfo() const { return m_nodeInfo; }
+    QString nodeInfo() const { return m_nodeInfo; }
 
     void pageDown();
 
@@ -147,7 +147,7 @@ public: // methods:
 
     void setFilterOptions(FilterOptions filterOptions);
 
-    void setLemma(const QString& lemma);
+    void setNodeInfo(QString const & newNodeInfo);
 
     void setModules(QStringList const & modules);
 
@@ -161,6 +161,10 @@ public: // methods:
 
     /** \returns whether the display has an active anchor. */
     bool hasActiveAnchor() const { return !m_activeAnchor.isEmpty(); }
+
+Q_SIGNALS:
+
+    void nodeInfoChanged(QString newNodeInfo);
 
 private Q_SLOTS:
 
