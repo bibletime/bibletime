@@ -192,6 +192,10 @@ void CBibleReadWindow::initActions() {
                            this,
                            &CBibleReadWindow::printAll);
 
+#ifdef BUILD_TEXT_TO_SPEECH
+    m_actions.speakSelectedText = &ac->action("speakSelectedText");
+#endif
+
     ac->readShortcuts(QStringLiteral("Bible shortcuts"));
 }
 
@@ -216,6 +220,10 @@ QMenu * CBibleReadWindow::newDisplayWidgetPopupMenu() {
                     m_actions.print.reference->setEnabled(hasActiveAnchor);
 
                     m_actions.copy.selectedText->setEnabled(hasSelectedText());
+
+#ifdef BUILD_TEXT_TO_SPEECH
+                    m_actions.speakSelectedText->setEnabled(hasSelectedText());
+#endif
                 });
     popupMenu->setTitle(tr("Bible window"));
     popupMenu->setIcon(firstModule()->moduleIcon());
@@ -250,6 +258,11 @@ QMenu * CBibleReadWindow::newDisplayWidgetPopupMenu() {
     m_actions.printMenu->addAction(m_actions.print.reference);
     m_actions.printMenu->addAction(m_actions.print.chapter);
     popupMenu->addMenu(m_actions.printMenu);
+
+#ifdef BUILD_TEXT_TO_SPEECH
+    popupMenu->addAction(m_actions.speakSelectedText);
+#endif
+
     return popupMenu;
 }
 

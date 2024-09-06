@@ -308,6 +308,11 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     actn->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
     a->addAction(CResMgr::displaywindows::general::findStrongs::actionName,
                  actn);
+
+#ifdef BUILD_TEXT_TO_SPEECH
+    actn = new QAction(tr("Speak selected text"), a);
+    a->addAction("speakSelectedText", actn);
+#endif
 }
 
 void CDisplayWindow::initActions() {
@@ -351,6 +356,12 @@ void CDisplayWindow::initActions() {
     initAddAction(DWG::forwardInHistory::actionName,
                   m_history,
                   &BTHistory::fw);
+
+#ifdef BUILD_TEXT_TO_SPEECH
+    initAddAction("speakSelectedText",
+                  m_displayWidget,
+                  &BtModelViewReadDisplay::speakSelectedText);
+#endif
 
     auto * const ac = m_actionCollection;
     m_actions.backInHistory =
@@ -433,6 +444,10 @@ void CDisplayWindow::initActions() {
     m_actions.print.entry = &initAddAction(QStringLiteral("printEntryWithText"),
                                            this,
                                            &CDisplayWindow::printAll);
+
+#ifdef BUILD_TEXT_TO_SPEECH
+    m_actions.speakSelectedText = &ac->action("speakSelectedText");
+#endif
 
     // init with the user defined settings
     m_actionCollection->readShortcuts(
@@ -526,6 +541,10 @@ QMenu * CDisplayWindow::newDisplayWidgetPopupMenu() {
                     m_actions.print.reference->setEnabled(hasActiveAnchor);
 
                     m_actions.copy.selectedText->setEnabled(hasSelectedText());
+
+#ifdef BUILD_TEXT_TO_SPEECH
+                    m_actions.speakSelectedText->setEnabled(hasSelectedText());
+#endif
                 });
     popupMenu->setTitle(tr("Lexicon window"));
     popupMenu->setIcon(m_modules.first()->moduleIcon());

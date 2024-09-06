@@ -270,6 +270,9 @@ protected: // fields:
             QAction * reference;
             QAction * entry;
         } print;
+#ifdef BUILD_TEXT_TO_SPEECH
+        QAction * speakSelectedText;
+#endif
     } m_actions;
 
 private:

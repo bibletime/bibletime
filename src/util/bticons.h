@@ -56,6 +56,7 @@ public: // fields:
 
     /* Regular icons: */
     RegularIcon const icon_add;
+    RegularIcon const icon_audio;
     RegularIcon const icon_automatically;
     RegularIcon const icon_back;
     RegularIcon const icon_bible;

@@ -25,6 +25,9 @@
 #include <QMdiSubWindow>
 #include <QSplashScreen>
 #include <QSplitter>
+#ifdef BUILD_TEXT_TO_SPEECH
+#include <QTextToSpeech>
+#endif
 #include <type_traits>
 #include "../backend/config/btconfig.h"
 #include "../backend/drivers/cswordmoduleinfo.h"
@@ -333,3 +336,42 @@ void BibleTime::openSearchDialog(BtConstModuleList modules,
 }
 
 void BibleTime::openFindWidget() { m_findWidget->showAndSelect(); }
+
+#ifdef BUILD_TEXT_TO_SPEECH
+void BibleTime::speakText(const QString &text)
+{
+    if (!m_textToSpeech)
+        m_textToSpeech = createTextToSpeechInstance();
+
+    m_textToSpeech->say(text);
+}
+
+std::unique_ptr<QTextToSpeech> BibleTime::createTextToSpeechInstance()
+{
+    std::unique_ptr<QTextToSpeech> tts;
+
+    // restore settings from config
+    const QString configuredEngine = btConfig().value<QString>(QStringLiteral("GUI/ttsEngine"));
+    if (QTextToSpeech::availableEngines().contains(configuredEngine)) {
+        tts = std::make_unique<QTextToSpeech>(configuredEngine);
+    } else {
+        tts = std::make_unique<QTextToSpeech>();
+    }
+
+    const QLocale configuredLocale = btConfig().value<QLocale>(QStringLiteral("GUI/ttsLocale"));
+    if (tts->availableLocales().contains(configuredLocale)) {
+        tts->setLocale(configuredLocale);
+    }
+
+    const QString configuredVoice = btConfig().value<QString>(QStringLiteral("GUI/ttsVoice"));
+    const QVector<QVoice> voices = tts->availableVoices();
+    for (const QVoice& voice : voices) {
+        if (voice.name() == configuredVoice) {
+            tts->setVoice(voice);
+            break;
+        }
+    }
+
+    return tts;
+}
+#endif

@@ -16,6 +16,9 @@
 
 #include <QList>
 #include <QPointer>
+#ifdef BUILD_TEXT_TO_SPEECH
+#include <QTextToSpeech>
+#endif
 #include <QTimer>
 #include "../backend/drivers/btmodulelist.h"
 #include "../backend/drivers/cswordmoduleinfo.h"
@@ -190,6 +193,21 @@ public:
 
     void openSearchDialog(BtConstModuleList modules,
                           QString const & searchText = {});
+
+#ifdef BUILD_TEXT_TO_SPEECH
+    /**
+      Speaks the given text.
+      \param[in] text The text to speak.
+     */
+    void speakText(const QString& text);
+
+    /**
+      Creates a QTextToSpeech instance, taking text-to-speech
+      settings into account.
+      \returns The QTextToSpeech instance.
+     */
+    static std::unique_ptr<QTextToSpeech> createTextToSpeechInstance();
+#endif
 
 public Q_SLOTS:
 
@@ -453,6 +471,10 @@ private: // fields:
 
     QAction * m_debugWidgetAction = nullptr;
     QPointer<QWidget> m_debugWindow;
+
+#ifdef BUILD_TEXT_TO_SPEECH
+    std::unique_ptr<QTextToSpeech> m_textToSpeech;
+#endif
 
 };
 

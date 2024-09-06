@@ -22,6 +22,10 @@ SET(USE_QT6 "OFF" CACHE BOOL
 SET(BUILD_BIBLETIME "ON" CACHE BOOL
     "Whether to build and install the BibleTime application")
 
+SET(BUILD_TEXT_TO_SPEECH "ON" CACHE BOOL
+    "Whether to build BibleTime with text-to-speech (TTS) support. \
+This requires Qt's TextToSpeech module.")
+
 SET(BUILD_HANDBOOK_HTML "ON" CACHE BOOL
     "Whether to build and install the handbook in HTML format")
 SET(BUILD_HANDBOOK_HTML_LANGUAGES "" CACHE STRING

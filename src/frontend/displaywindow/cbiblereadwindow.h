@@ -78,6 +78,10 @@ protected: // methods:
             QAction* chapter;
         }
         print;
+
+#ifdef BUILD_TEXT_TO_SPEECH
+        QAction* speakSelectedText;
+#endif
     }
     m_actions;
 

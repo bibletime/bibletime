@@ -126,6 +126,12 @@ void BibleTime::slotSettingsOptions() {
                    refreshDisplayWindows();
                    refreshProfileMenus();
                    m_infoDisplay->updateColors();
+
+#ifdef BUILD_TEXT_TO_SPEECH
+                   // reset current text-to-speech instance, will be recreated
+                   // based on current config when needed
+                   m_textToSpeech.reset();
+#endif
                });
 
     dlg->show();
