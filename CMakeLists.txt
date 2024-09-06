@@ -17,7 +17,6 @@ CMAKE_POLICY(SET CMP0028 NEW)
 #
 SET(USE_QT6 "OFF" CACHE BOOL
     "Whether to build with Qt6 instead of Qt5.")
-#NOTE: BibleTime will not compile with Qt6 yet.
 
 SET(BUILD_BIBLETIME "ON" CACHE BOOL
     "Whether to build and install the BibleTime application")
