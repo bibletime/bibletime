@@ -40,12 +40,6 @@
 #include <swbuf.h>
 
 
-namespace {
-
-enum class SourceProtocol : int { Local, FTP, SFTP, HTTP, HTTPS };
-
-} // anonymous namespace
-
 CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *parent*/)
         : QDialog(),
         m_remoteListAdded(false) {

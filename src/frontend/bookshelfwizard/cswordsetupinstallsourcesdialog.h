@@ -39,3 +39,7 @@ class CSwordSetupInstallSourcesDialog final: public QDialog  {
         QComboBox *m_protocolCombo;
         bool m_remoteListAdded;
 };
+
+// enum defined here instead of in src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp
+// to work around Qt 6 lupdate bug https://bugreports.qt.io/browse/QTBUG-128904
+enum class SourceProtocol : int { Local, FTP, SFTP, HTTP, HTTPS };
