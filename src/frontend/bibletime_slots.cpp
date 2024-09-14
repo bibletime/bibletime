@@ -63,7 +63,7 @@ public: // methods:
     }
 
     void retranslateUi()
-    { setWindowTitle(tr("What's this widget?")); }
+    { setWindowTitle(QCoreApplication::translate("DebugWindow", "What's this widget?")); }
 
     void timerEvent(QTimerEvent * const event) override {
         if (event->timerId() == m_updateTimerId) {
@@ -81,18 +81,19 @@ public: // methods:
                     if (!objectHierarchy.isEmpty()) {
                         objectHierarchy
                                 .append(QStringLiteral("<br/>"))
-                                .append(tr("<b>child of:</b> %1").arg(
+                                .append(QCoreApplication::translate("DebugWindow",
+                                            "<b>child of:</b> %1").arg(
                                             classHierarchy));
                     } else {
                         objectHierarchy.append(
-                                    tr("<b>This widget is:</b> %1").arg(
+                            QCoreApplication::translate("DebugWindow","<b>This widget is:</b> %1").arg(
                                         classHierarchy));
                     }
                     w = w->parent();
                 } while (w);
                 setHtml(objectHierarchy);
             } else {
-                setText(tr("No widget"));
+                setText(QCoreApplication::translate("DebugWindow", "No widget"));
             }
         } else {
             QTextEdit::timerEvent(event);

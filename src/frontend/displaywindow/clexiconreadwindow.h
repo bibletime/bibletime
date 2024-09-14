@@ -26,6 +26,8 @@ class CSwordModuleInfo;
 /** \brief The class used to display lexicons. */
 class CLexiconReadWindow: public CDisplayWindow {
 
+    Q_OBJECT
+
 public: // methods:
 
     CLexiconReadWindow(QList<CSwordModuleInfo *> const & modules,
