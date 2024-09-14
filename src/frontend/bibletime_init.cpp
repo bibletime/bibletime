@@ -546,12 +546,12 @@ void BibleTime::initActions() {
             &m_actionCollection->action(QStringLiteral("autoTabbed"));
     m_windowAutoTabbedAction->setCheckable(true);
 
-    //: Vertical tiling means that windows are vertical, placed side by side
+    // Vertical tiling means that windows are vertical, placed side by side
     m_windowAutoTileVerticalAction =
             &m_actionCollection->action(QStringLiteral("autoVertical"));
     m_windowAutoTileVerticalAction->setCheckable(true);
 
-    //: Horizontal tiling means that windows are horizontal, placed on top of each other
+    // Horizontal tiling means that windows are horizontal, placed on top of each other
     m_windowAutoTileHorizontalAction =
             &m_actionCollection->action(QStringLiteral("autoHorizontal"));
     m_windowAutoTileHorizontalAction->setCheckable(true);
