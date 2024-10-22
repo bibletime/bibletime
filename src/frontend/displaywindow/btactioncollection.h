@@ -36,8 +36,6 @@ public: // methods:
 
     void addAction(QString const & name, QAction * const action);
 
-    void removeAction(QString const & name);
-
     QAction & action(QString const & name) const;
 
     template <typename T>

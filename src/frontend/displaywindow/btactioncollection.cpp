@@ -42,14 +42,6 @@ void BtActionCollection::addAction(QString const & name,
     }
 }
 
-void BtActionCollection::removeAction(QString const & name) {
-    #ifndef NDEBUG
-    int const r =
-    #endif
-            m_actions.remove(name);
-    BT_ASSERT(r > 0);
-}
-
 QKeySequence BtActionCollection::getDefaultShortcut(QAction & action)
 { return action.property(defaultShortcutPropertyName).value<QKeySequence>(); }
 
