@@ -69,7 +69,7 @@ BibleTime::ActionCollection::ActionCollection(
     view.fullscreen = new QAction(this);
     view.fullscreen->setCheckable(true);
     view.fullscreen->setIcon(CResMgr::mainMenu::view::showFullscreen::icon());
-    view.fullscreen->setShortcut(tr("F5", "View|Full screen"));
+    view.fullscreen->setShortcut(tr("F11", "View|Full screen"));
     addAction(QStringLiteral("toggleFullscreen"), view.fullscreen);
 
     view.showBookshelf = showBookshelfAction;
