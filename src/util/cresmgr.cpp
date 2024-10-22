@@ -20,6 +20,10 @@ namespace CResMgr {
 namespace mainMenu { // Main menu
 
 namespace view { // Main menu->View
+namespace showFullscreen {
+const QKeySequence accel(Qt::Key_F5);
+QString const actionName = QStringLiteral("windowFullscreen_action");
+}
 namespace showMainIndex {
 const QKeySequence accel(Qt::Key_F9);
 QString const actionName = QStringLiteral("viewMainIndex_action");
@@ -54,10 +58,6 @@ QString const actionName = QStringLiteral("windowSaveToNewProfile_action");
 }
 namespace deleteProfile {
 QString const actionName = QStringLiteral("windowDeleteProfile_action");
-}
-namespace showFullscreen {
-const QKeySequence accel(Qt::Key_F5);
-QString const actionName = QStringLiteral("windowFullscreen_action");
 }
 namespace arrangementMode {
 const QKeySequence accel;

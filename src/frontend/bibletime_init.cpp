@@ -48,7 +48,7 @@ BibleTime::ActionCollection::ActionCollection(QObject * const parent)
 {
     QAction* action = new QAction(this);
     action->setText(tr("&Quit"));
-    action->setIcon(CResMgr::mainMenu::window::quit::icon());
+    action->setIcon(CResMgr::mainMenu::file::quit::icon());
     action->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q));
     action->setToolTip(tr("Quit BibleTime"));
     addAction(QStringLiteral("quit"), action);
@@ -71,8 +71,8 @@ BibleTime::ActionCollection::ActionCollection(QObject * const parent)
 
     action = new QAction(this);
     action->setText(tr("&Fullscreen mode"));
-    action->setIcon(CResMgr::mainMenu::window::showFullscreen::icon());
-    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::showFullscreen::accel));
+    action->setIcon(CResMgr::mainMenu::view::showFullscreen::icon());
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::view::showFullscreen::accel));
     action->setToolTip(tr("Toggle fullscreen mode of the main window"));
     addAction(QStringLiteral("toggleFullscreen"), action);
 

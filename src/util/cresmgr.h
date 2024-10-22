@@ -74,7 +74,16 @@ namespace cults { BT_GETICON(questionable) }
 
 namespace mainMenu { // Main menu
 
+namespace file { // Main menu->File
+namespace quit { BT_GETICON(exit) }
+}
+
 namespace view { // Main menu->View
+namespace showFullscreen {
+BT_GETICON(window_fullscreen)
+extern const QKeySequence accel;
+extern QString const actionName;
+}
 namespace showBookshelf { BT_GETICON(books) }
 namespace showBookmarks { BT_GETICON(bookmark) }
 namespace showMag { BT_GETICON(document_magnifier) }
@@ -104,7 +113,6 @@ extern QString const actionName;
 }
 
 namespace window { //Main menu->Window
-namespace quit { BT_GETICON(exit) }
 namespace loadProfile {
 BT_GETICON(view_profile)
 extern QString const actionName;
@@ -120,11 +128,6 @@ extern QString const actionName;
 }
 namespace deleteProfile {
 BT_GETICON(view_profile)
-extern QString const actionName;
-}
-namespace showFullscreen {
-BT_GETICON(window_fullscreen)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace arrangementMode {
