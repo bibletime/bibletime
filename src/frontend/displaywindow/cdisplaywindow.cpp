@@ -360,7 +360,7 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
     m_actions.print.reference =
             &initAddAction(QStringLiteral("printReferenceOnly"),
                            this,
-                           &CDisplayWindow::printAnchorWithText);
+                           &CDisplayWindow::printAnchorOnly);
     addAction(m_actions.print.reference);
     m_actions.print.entry = &initAddAction(QStringLiteral("printEntryWithText"),
                                            this,
@@ -820,6 +820,9 @@ void CDisplayWindow::lookupKey( const QString& keyName ) {
 
 void CDisplayWindow::printAll()
 { m_displayWidget->printAll(m_displayOptions, m_filterOptions); }
+
+void CDisplayWindow::printAnchorOnly()
+{ m_displayWidget->printAnchorOnly(m_displayOptions, m_filterOptions); }
 
 void CDisplayWindow::printAnchorWithText()
 { m_displayWidget->printAnchorWithText(m_displayOptions, m_filterOptions); }

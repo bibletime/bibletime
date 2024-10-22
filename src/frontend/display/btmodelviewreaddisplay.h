@@ -108,6 +108,10 @@ public: // methods:
                   FilterOptions const & filterOptions)
     { print(Document, displayOptions, filterOptions); }
 
+    void printAnchorOnly(DisplayOptions const & displayOptions,
+                             FilterOptions const & filterOptions)
+    { print(AnchorOnly, displayOptions, filterOptions); }
+
     void printAnchorWithText(DisplayOptions const & displayOptions,
                              FilterOptions const & filterOptions)
     { print(AnchorWithText, displayOptions, filterOptions); }

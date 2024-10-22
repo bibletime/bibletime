@@ -239,7 +239,7 @@ protected Q_SLOTS:
     void lookup();
 
     void printAll();
-
+    void printAnchorOnly();
     void printAnchorWithText();
 
 private: // methods:
