@@ -21,26 +21,21 @@ namespace mainMenu { // Main menu
 
 namespace view { // Main menu->View
 namespace showFullscreen {
-const QKeySequence accel(Qt::Key_F5);
 QString const actionName = QStringLiteral("windowFullscreen_action");
 }
 namespace showMainIndex {
-const QKeySequence accel(Qt::Key_F9);
 QString const actionName = QStringLiteral("viewMainIndex_action");
 }
 namespace showInfoDisplay {
-const QKeySequence accel(Qt::Key_F8);
 QString const actionName = QStringLiteral("viewInfoDisplay_action");
 }
 } // namespace view {
 
 namespace mainIndex {
 namespace search {
-const QKeySequence accel(Qt::CTRL | Qt::Key_O);
 QString const actionName = QStringLiteral("mainindex_search_action");
 }
 namespace searchdefaultbible {
-const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_F);
 QString const actionName = QStringLiteral("mainindex_searchdefaultbible_action");
 }
 } // namespace mainIndex {
@@ -53,70 +48,55 @@ namespace saveProfile {
 QString const actionName = QStringLiteral("windowSaveProfile_action");
 }
 namespace saveToNewProfile {
-const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_S);
 QString const actionName = QStringLiteral("windowSaveToNewProfile_action");
 }
 namespace deleteProfile {
 QString const actionName = QStringLiteral("windowDeleteProfile_action");
 }
 namespace arrangementMode {
-const QKeySequence accel;
 QString const actionName = QStringLiteral("windowArrangementMode_action");
 
 namespace manual {
-const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_M);
 QString const actionName = QStringLiteral("windowArrangementManual_action");
 }
 namespace autoTileHorizontal {
-const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_H);
 QString const actionName = QStringLiteral("windowAutoTileHorizontal_action");
 }
 namespace autoTileVertical {
-const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_G);
 QString const actionName = QStringLiteral("windowAutoTileVertical_action");
 }
 namespace autoTile {
-const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_I);
 QString const actionName = QStringLiteral("windowAutoTile_action");
 }
 namespace autoTabbed {
-const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_T);
 QString const actionName = QStringLiteral("windowAutoTabbed_action");
 }
 namespace autoCascade {
-const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_J);
 QString const actionName = QStringLiteral("windowAutoCascade_action");
 }
 }
 namespace tileHorizontal {
-const QKeySequence accel(Qt::CTRL | Qt::Key_H);
 QString const actionName = QStringLiteral("windowTileHorizontal_action");
 }
 namespace tileVertical {
-const QKeySequence accel(Qt::CTRL | Qt::Key_G);
 QString const actionName = QStringLiteral("windowTileVertical_action");
 }
 namespace tile {
-const QKeySequence accel(Qt::CTRL | Qt::Key_I);
 QString const actionName = QStringLiteral("windowTile_action");
 }
 namespace cascade {
-const QKeySequence accel(Qt::CTRL | Qt::Key_J);
 QString const actionName = QStringLiteral("windowCascade_action");
 }
 namespace close {
-const QKeySequence accel(Qt::CTRL | Qt::Key_W);
 QString const actionName = QStringLiteral("windowClose_action");
 }
 namespace closeAll {
-const QKeySequence accel(Qt::CTRL | Qt::ALT | Qt::Key_W);
 QString const actionName = QStringLiteral("windowCloseAll_action");
 }
 }//mainMenu::window
 
 namespace settings { //Main menu->Settings
 namespace swordSetupDialog {
-const QKeySequence accel(Qt::Key_F4);
 QString const actionName = QStringLiteral("options_sword_setup");
 }
 
@@ -124,15 +104,12 @@ QString const actionName = QStringLiteral("options_sword_setup");
 
 namespace help { //Main menu->Help
 namespace handbook {
-const QKeySequence accel(Qt::Key_F1);
 QString const actionName = QStringLiteral("helpHandbook_action");
 }
 namespace bibleStudyHowTo {
-const QKeySequence accel(Qt::Key_F2);
 QString const actionName = QStringLiteral("helpHowTo_action");
 }
 namespace tipOfTheDay {
-const QKeySequence accel(Qt::Key_F3);
 QString const actionName = QStringLiteral("tipOfTheDay_action");
 }
 }//mainMenu::help

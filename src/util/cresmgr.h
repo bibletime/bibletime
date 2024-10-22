@@ -81,7 +81,6 @@ namespace quit { BT_GETICON(exit) }
 namespace view { // Main menu->View
 namespace showFullscreen {
 BT_GETICON(window_fullscreen)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace showBookshelf { BT_GETICON(books) }
@@ -89,12 +88,10 @@ namespace showBookmarks { BT_GETICON(bookmark) }
 namespace showMag { BT_GETICON(document_magnifier) }
 namespace showMainIndex {
 BT_GETICON(view_index)
-extern const QKeySequence accel;
 extern QString const actionName;
 } /* namespace showMainIndex { */
 namespace showInfoDisplay {
 BT_GETICON(view_mag)
-extern const QKeySequence accel;
 extern QString const actionName;
 } /* namespace showInfoDisplay { */
 } /* namespace view { */
@@ -102,12 +99,10 @@ extern QString const actionName;
 namespace mainIndex { //configuration for the main index and the view->search menu
 namespace search {
 BT_GETICON(find)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace searchdefaultbible {
 BT_GETICON(find)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 }
@@ -123,7 +118,6 @@ extern QString const actionName;
 }
 namespace saveToNewProfile {
 BT_GETICON(view_profile)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace deleteProfile {
@@ -132,68 +126,55 @@ extern QString const actionName;
 }
 namespace arrangementMode {
 BT_GETICON(cascade_auto)
-extern const QKeySequence accel;
 extern QString const actionName;
 
 namespace manual {
 BT_GETICON(manual)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace autoTileHorizontal {
 BT_GETICON(tile_horiz_auto)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace autoTileVertical {
 BT_GETICON(tile_vert_auto)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace autoTile {
 BT_GETICON(tile_auto)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace autoTabbed {
 BT_GETICON(tabbed)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace autoCascade {
 BT_GETICON(cascade_auto)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 }
 namespace tileHorizontal {
 BT_GETICON(tile_horiz)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace tileVertical {
 BT_GETICON(tile_vert)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace tile {
 BT_GETICON(tile)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace cascade {
 BT_GETICON(cascade)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace close {
 BT_GETICON(fileclose)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace closeAll {
 BT_GETICON(fileclose)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 }
@@ -202,7 +183,6 @@ namespace settings { //Main menu->Settings
 namespace configureDialog { BT_GETICON(configure) }
 namespace swordSetupDialog {
 BT_GETICON(swordconfig)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 }
@@ -210,17 +190,14 @@ extern QString const actionName;
 namespace help { //Main menu->Help
 namespace handbook {
 BT_GETICON(contents2)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace bibleStudyHowTo {
 BT_GETICON(contents2)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace tipOfTheDay {
 BT_GETICON(light_bulb)
-extern const QKeySequence accel;
 extern QString const actionName;
 }
 namespace aboutBibleTime { BT_GETICON(bibletime) }

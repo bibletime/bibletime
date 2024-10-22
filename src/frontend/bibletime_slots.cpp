@@ -121,7 +121,7 @@ void BibleTime::slotSettingsOptions() {
                        if (auto * citem = dynamic_cast<CIndexItemBase*>(*it))
                            citem->update(); */
 
-                   m_actionCollection->readShortcuts(
+                   m_actions->readShortcuts(
                                QStringLiteral("Application shortcuts"));
                    refreshDisplayWindows();
                    refreshProfileMenus();
@@ -141,18 +141,18 @@ void BibleTime::slotBookshelfWizard()
 
 /** Is called just before the window menu is shown. */
 void BibleTime::slotWindowMenuAboutToShow() {
-    BT_ASSERT(m_windowMenu);
+    BT_ASSERT(m_windowsMenu);
 
     const int numSubWindows = m_mdi->subWindowList().count();
-    m_windowCloseAction->setEnabled(numSubWindows);
-    m_windowCloseAllAction->setEnabled(numSubWindows);
+    m_actions->windows.closeWindow->setEnabled(numSubWindows);
+    m_actions->windows.closeAllWindows->setEnabled(numSubWindows);
     m_openWindowsMenu->setEnabled(numSubWindows);
 
     const bool enableManualArrangeActions = numSubWindows > 1;
-    m_windowCascadeAction->setEnabled(enableManualArrangeActions);
-    m_windowTileAction->setEnabled(enableManualArrangeActions);
-    m_windowTileVerticalAction->setEnabled(enableManualArrangeActions);
-    m_windowTileHorizontalAction->setEnabled(enableManualArrangeActions);
+    m_actions->windows.tileVertically->setEnabled(enableManualArrangeActions);
+    m_actions->windows.tileHorizontally->setEnabled(enableManualArrangeActions);
+    m_actions->windows.tile->setEnabled(enableManualArrangeActions);
+    m_actions->windows.cascade->setEnabled(enableManualArrangeActions);
 }
 
 /** Is called just before the open windows menu is shown. */
@@ -174,47 +174,47 @@ void BibleTime::slotUpdateWindowArrangementActions(QAction * trigerredAction) {
     BT_ASSERT(trigerredAction);
 
     auto guiConfig = btConfig().session().group(QStringLiteral("GUI"));
-    if (trigerredAction == m_windowAutoTileVerticalAction) {
+    if (trigerredAction == m_actions->windows.arrangementMode.autoTileVertically) {
         m_mdi->setMDIArrangementMode(CMDIArea::ArrangementModeTileVertical);
         guiConfig.setValue(QStringLiteral("alignmentMode"), autoTileVertical);
     }
-    else if (trigerredAction == m_windowAutoTileHorizontalAction) {
+    else if (trigerredAction == m_actions->windows.arrangementMode.autoTileHorizontally) {
         m_mdi->setMDIArrangementMode(CMDIArea::ArrangementModeTileHorizontal);
         guiConfig.setValue(QStringLiteral("alignmentMode"), autoTileHorizontal);
     }
-    else if (trigerredAction == m_windowAutoTileAction) {
+    else if (trigerredAction == m_actions->windows.arrangementMode.autoTile) {
         m_mdi->setMDIArrangementMode(CMDIArea::ArrangementModeTile);
         guiConfig.setValue(QStringLiteral("alignmentMode"), autoTile);
     }
-    else if (trigerredAction == m_windowAutoTabbedAction) {
+    else if (trigerredAction == m_actions->windows.arrangementMode.tabbed) {
         m_mdi->setMDIArrangementMode(CMDIArea::ArrangementModeTabbed);
         guiConfig.setValue(QStringLiteral("alignmentMode"), autoTabbed);
     }
-    else if (trigerredAction == m_windowAutoCascadeAction) {
+    else if (trigerredAction == m_actions->windows.arrangementMode.autoCascade) {
         m_mdi->setMDIArrangementMode(CMDIArea::ArrangementModeCascade);
         guiConfig.setValue(QStringLiteral("alignmentMode"), autoCascade);
     }
     else {
-        BT_ASSERT(trigerredAction == m_windowManualModeAction
-                 || trigerredAction == m_windowTileAction
-                 || trigerredAction == m_windowCascadeAction
-                 || trigerredAction == m_windowTileVerticalAction
-                 || trigerredAction == m_windowTileHorizontalAction);
+        BT_ASSERT(trigerredAction == m_actions->windows.arrangementMode.manual
+                 || trigerredAction == m_actions->windows.tile
+                 || trigerredAction == m_actions->windows.cascade
+                 || trigerredAction == m_actions->windows.tileVertically
+                 || trigerredAction == m_actions->windows.tileHorizontally);
 
-        if (trigerredAction != m_windowManualModeAction)
-            m_windowManualModeAction->setChecked(true);
+        if (trigerredAction != m_actions->windows.arrangementMode.manual)
+            m_actions->windows.arrangementMode.manual->setChecked(true);
 
         m_mdi->enableWindowMinMaxFlags(true);
         m_mdi->setMDIArrangementMode(CMDIArea::ArrangementModeManual);
         guiConfig.setValue(QStringLiteral("alignmentMode"), manual);
 
-        if (trigerredAction == m_windowTileAction)
+        if (trigerredAction == m_actions->windows.tile)
             m_mdi->myTile();
-        else if (trigerredAction == m_windowCascadeAction)
+        else if (trigerredAction == m_actions->windows.cascade)
             m_mdi->myCascade();
-        else if (trigerredAction == m_windowTileVerticalAction)
+        else if (trigerredAction == m_actions->windows.tileVertically)
             m_mdi->myTileVertical();
-        else if (trigerredAction == m_windowTileHorizontalAction)
+        else if (trigerredAction == m_actions->windows.tileHorizontally)
             m_mdi->myTileHorizontal();
 
         return;
@@ -223,21 +223,17 @@ void BibleTime::slotUpdateWindowArrangementActions(QAction * trigerredAction) {
     m_mdi->enableWindowMinMaxFlags(false);
 }
 
-void BibleTime::slotTile() {
-    slotUpdateWindowArrangementActions( m_windowTileAction );
-}
+void BibleTime::slotTile()
+{ slotUpdateWindowArrangementActions(m_actions->windows.tile); }
 
-void BibleTime::slotCascade() {
-    slotUpdateWindowArrangementActions( m_windowCascadeAction );
-}
+void BibleTime::slotCascade()
+{ slotUpdateWindowArrangementActions(m_actions->windows.cascade); }
 
-void BibleTime::slotTileVertical() {
-    slotUpdateWindowArrangementActions( m_windowTileVerticalAction );
-}
+void BibleTime::slotTileVertical()
+{ slotUpdateWindowArrangementActions(m_actions->windows.tileVertically); }
 
-void BibleTime::slotTileHorizontal() {
-    slotUpdateWindowArrangementActions( m_windowTileHorizontalAction );
-}
+void BibleTime::slotTileHorizontal()
+{ slotUpdateWindowArrangementActions(m_actions->windows.tileHorizontally); }
 
 /** Shows/hides the toolbar */
 void BibleTime::slotToggleMainToolbar() {
@@ -246,7 +242,7 @@ void BibleTime::slotToggleMainToolbar() {
     bool const currentState =
             guiConf.value<bool>(QStringLiteral("showMainToolbar"), true);
     guiConf.setValue(QStringLiteral("showMainToolbar"), !currentState);
-    if ( m_showMainWindowToolbarAction->isChecked()) {
+    if (m_actions->view.toolbars.showMainToolbar->isChecked()) {
         m_mainToolBar->show();
     }
     else {
@@ -529,29 +525,29 @@ void BibleTime::reloadProfile() {
      * though, so we restore their state here.
      */
     auto const guiConf = sessionConf.group(QStringLiteral("GUI"));
-    setQActionCheckedNoTrigger(m_windowFullscreenAction, isFullScreen());
+    setQActionCheckedNoTrigger(m_actions->view.fullscreen, isFullScreen());
     setQActionCheckedNoTrigger(
-                m_showTextAreaHeadersAction,
+                m_actions->view.showParallelTextHeadings,
                 guiConf.value<bool>(QStringLiteral("showTextWindowHeaders"),
                                     true));
     setQActionCheckedNoTrigger(
-                m_showMainWindowToolbarAction,
+                m_actions->view.toolbars.showMainToolbar,
                 guiConf.value<bool>(QStringLiteral("showMainToolbar"), true));
     setQActionCheckedNoTrigger(
-                m_showTextWindowNavigationAction,
+                m_actions->view.toolbars.showNavigationToolbar,
                 guiConf.value<bool>(QStringLiteral("showTextWindowNavigator"),
                                     true));
     setQActionCheckedNoTrigger(
-                m_showTextWindowModuleChooserAction,
+                m_actions->view.toolbars.showWorksToolbar,
                 guiConf.value<bool>(
                     QStringLiteral("showTextWindowModuleSelectorButtons"),
                     true));
     setQActionCheckedNoTrigger(
-                m_showTextWindowToolButtonsAction,
+                m_actions->view.toolbars.showToolsToolbar,
                 guiConf.value<bool>(QStringLiteral("showTextWindowToolButtons"),
                                     true));
     setQActionCheckedNoTrigger(
-                m_toolbarsInEachWindow,
+                m_actions->view.toolbars.showToolbarsInTextWindows,
                 guiConf.value<bool>(QStringLiteral("showToolbarsInEachWindow"),
                                     true));
 
@@ -672,14 +668,14 @@ void BibleTime::autoScroll() {
         m_autoScrollSpeed += nudgeSpeed;
         if (m_autoScrollSpeed == 0) {
             m_autoScrollTimer.stop();
-            m_autoScrollPauseAction->setEnabled(false);
+            m_actions->view.scroll.pauseAutoScroll->setEnabled(false);
             return;
         }
         m_autoScrollTimer.setInterval(intervals[m_autoScrollSpeed + 10]);
     }
 
     m_autoScrollTimer.start();
-    m_autoScrollPauseAction->setEnabled(true);
+    m_actions->view.scroll.pauseAutoScroll->setEnabled(true);
 }
 
 template void BibleTime::autoScroll<true>();
@@ -706,7 +702,7 @@ bool BibleTime::autoScrollAnyKey() {
 void BibleTime::autoScrollStop() {
     m_autoScrollTimer.stop();
     m_autoScrollSpeed = 0;
-    m_autoScrollPauseAction->setEnabled(false);
+    m_actions->view.scroll.pauseAutoScroll->setEnabled(false);
 }
 
 void BibleTime::slotAutoScroll() {

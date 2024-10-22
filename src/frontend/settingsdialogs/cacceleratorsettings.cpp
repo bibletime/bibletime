@@ -140,7 +140,11 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
                 });
         };
     initShortcutEditor(m_application,
-                       new BibleTime::ActionCollection(this),
+                       new BibleTime::ActionCollection(
+                           new QAction(this), // dummy "Show bookshelf" action
+                           new QAction(this), // dummy "Show bookmarks" action
+                           new QAction(this), // dummy "Show mag" action
+                           this),
                        "Application shortcuts");
     initShortcutEditor(m_general,
                        new CDisplayWindow::ActionCollection(this),

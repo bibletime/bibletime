@@ -137,11 +137,77 @@ public: // Types:
 
     class ActionCollection : public BtActionCollection {
 
+    public: // Fields:
+
+        struct { // File menu:
+            BtOpenWorkAction * openWork;
+            QAction * quit;
+        } file;
+
+        struct { // View menu:
+            QAction * fullscreen;
+            QAction * showBookshelf;
+            QAction * showBookmarks;
+            QAction * showMag;
+            QAction * showParallelTextHeadings;
+            struct { // Toolbars submenu:
+                QAction * showMainToolbar;
+                QAction * showNavigationToolbar;
+                QAction * showWorksToolbar;
+                QAction * showToolsToolbar;
+                QAction * showToolbarsInTextWindows;
+            } toolbars;
+            struct { // Scroll submenu:
+                QAction * autoScrollUp;
+                QAction * autoScrollDown;
+                QAction * pauseAutoScroll;
+            } scroll;
+        } view;
+
+        struct { // Search menu:
+            QAction * searchOpenWorks;
+            QAction * searchStandardBible;
+        } search;
+
+        struct { // Windows menu:
+            QAction * closeWindow;
+            QAction * closeAllWindows;
+            QAction * tileVertically;
+            QAction * tileHorizontally;
+            QAction * tile;
+            QAction * cascade;
+            struct { // Arrangement mode submenu:
+                QAction * manual;
+                QAction * tabbed;
+                QAction * autoTileVertically;
+                QAction * autoTileHorizontally;
+                QAction * autoTile;
+                QAction * autoCascade;
+            } arrangementMode;
+            QAction * saveAsNewSession;
+        } windows;
+
+        struct { // Settings menu:
+            QAction * bookshelfManager;
+            QAction * configureBibleTime;
+        } settings;
+
+        struct help { // Help menu:
+            QAction * handbook;
+            QAction * bibleStudyHowto;
+            QAction * tipOfTheDay;
+            QAction * aboutBibleTime;
+        } help;
+
     public: // Methods:
 
-        ActionCollection(QObject * parent = nullptr);
+        ActionCollection(
+                QAction * showBookshelfAction,
+                QAction * showBookmarksAction,
+                QAction * showMagAction,
+                QObject * parent = nullptr);
 
-        void retranslate();
+        void retranslateUi();
 
     };
 
@@ -384,72 +450,22 @@ private: // fields:
     BtModuleChooserBar * m_worksToolBar;
     QToolBar * m_toolsToolBar;
 
-    // File menu:
     QMenu * m_fileMenu;
-    BtOpenWorkAction * m_openWorkAction;
-    QAction * m_quitAction;
-
-    // View menu:
     QMenu * m_viewMenu;
-    QAction * m_showBookshelfAction;
-    QAction * m_showBookmarksAction;
-    QAction * m_showMagAction;
     QMenu * m_toolBarsMenu;
     QMenu * m_scrollMenu;
-    QAction * m_showMainWindowToolbarAction;
-    QAction * m_showTextAreaHeadersAction;
-    QAction * m_showTextWindowNavigationAction;
-    QAction * m_showTextWindowModuleChooserAction;
-    QAction * m_showTextWindowToolButtonsAction;
-    QAction * m_toolbarsInEachWindow;
-
-    // Search menu:
     QMenu * m_searchMenu;
-    QAction * m_searchOpenWorksAction;
-    QAction * m_searchStandardBibleAction;
-
-    // Window menu:
-    QMenu * m_windowMenu;
+    QMenu * m_windowsMenu;
     QMenu * m_openWindowsMenu;
-    QAction * m_windowCascadeAction;
-    QAction * m_windowTileAction;
-    QAction * m_windowTileHorizontalAction;
-    QAction * m_windowTileVerticalAction;
-    QAction * m_windowManualModeAction;
     QMenu * m_windowArrangementMenu;
     QActionGroup * m_windowArrangementActionGroup;
-    QAction * m_windowAutoCascadeAction;
-    QAction * m_windowAutoTileAction;
-    QAction * m_windowAutoTabbedAction;
-    QAction * m_windowAutoTileVerticalAction;
-    QAction * m_windowAutoTileHorizontalAction;
-    QAction * m_windowCloseAction;
-    QAction * m_windowCloseAllAction;
-    QAction * m_windowSaveToNewProfileAction;
     QMenu * m_windowLoadProfileMenu;
     QActionGroup * m_windowLoadProfileActionGroup;
     QMenu * m_windowDeleteProfileMenu;
-
-    // Settings menu:
     QMenu * m_settingsMenu;
-    QAction * m_setPreferencesAction;
-    QAction * m_bookshelfManagerAction;
-    QAction * m_bookshelfWizardAction;
-
-    // Help menu:
     QMenu * m_helpMenu;
-    QAction * m_openHandbookAction;
-    QAction * m_bibleStudyHowtoAction;
-    QAction * m_aboutBibleTimeAction;
-    QAction * m_tipOfTheDayAction;
 
-    ActionCollection * m_actionCollection;
-
-    QAction * m_autoScrollUpAction;
-    QAction * m_autoScrollDownAction;
-    QAction * m_autoScrollPauseAction;
-
-    QAction * m_windowFullscreenAction;
+    ActionCollection * m_actions;
 
     CMDIArea * m_mdi;
     BtFindWidget * m_findWidget;
