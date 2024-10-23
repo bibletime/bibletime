@@ -246,15 +246,6 @@ int main(int argc, char* argv[]) {
     auto * const mainWindow = new BibleTime(app);
     mainWindow->setAttribute(Qt::WA_DeleteOnClose);
 
-    // a new BibleTime version was installed (maybe a completely new installation)
-    if (btConfig().value<QString>(QStringLiteral("bibletimeVersion"),
-                                  BT_VERSION) != BT_VERSION)
-    {
-        btConfig().setValue(QStringLiteral("bibletimeVersion"),
-                            QString(BT_VERSION));
-        mainWindow->saveConfigSettings();
-    }
-
     auto const showWelcome = CSwordBackend::instance().moduleList().empty();
     if (showWelcome && BtWelcomeDialog().exec() == QDialog::Accepted)
         mainWindow->slotBookshelfWizard();
