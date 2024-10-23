@@ -132,6 +132,7 @@ CDisplayWindow::ActionCollection::ActionCollection(QObject * const parent)
 }
 
 CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
+                               QString const & key,
                                bool const addTextHeaderToolbar,
                                ActionCollection * actionCollection,
                                CMDIArea * const parent)
@@ -150,6 +151,8 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
         m_moduleNames.append(module->name());
 
     BT_ASSERT(m_swordKey);
+    if (!key.isEmpty())
+        m_swordKey->setKey(key);
     setMinimumSize(100, 100);
     setFocusPolicy(Qt::ClickFocus);
 

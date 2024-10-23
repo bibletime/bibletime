@@ -87,8 +87,9 @@ CBibleReadWindow::ActionCollection::ActionCollection(QObject * const parent)
 }
 
 CBibleReadWindow::CBibleReadWindow(QList<CSwordModuleInfo *> const & modules,
+                                   QString const & key,
                                    CMDIArea * parent)
-    : CDisplayWindow(modules, true, new ActionCollection(), parent)
+    : CDisplayWindow(modules, key, true, new ActionCollection(), parent)
 { init(); }
 
 void CBibleReadWindow::applyProfileSettings(BtConfigCore const & conf) {

@@ -35,8 +35,9 @@ CLexiconReadWindow::ActionCollection::ActionCollection(QObject * const parent)
 
 CLexiconReadWindow::CLexiconReadWindow(
         QList<CSwordModuleInfo *> const & modules,
+        QString const & key,
         CMDIArea * parent)
-    : CDisplayWindow(modules, true, new ActionCollection(), parent)
+    : CDisplayWindow(modules, key, true, new ActionCollection(), parent)
 { init(); }
 
 void CLexiconReadWindow::initActions() {

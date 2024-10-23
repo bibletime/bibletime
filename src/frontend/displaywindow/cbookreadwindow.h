@@ -43,6 +43,7 @@ public: // Types:
 public: // methods:
 
     CBookReadWindow(QList<CSwordModuleInfo *> const & modules,
+                    QString const & key,
                     CMDIArea * parent);
 
     CSwordModuleInfo::ModuleType moduleType() const override

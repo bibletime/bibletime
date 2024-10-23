@@ -41,6 +41,7 @@ public: // Types:
 public: // methods:
 
     CLexiconReadWindow(QList<CSwordModuleInfo *> const & modules,
+                       QString const & key,
                        CMDIArea * parent);
 
 public Q_SLOTS:

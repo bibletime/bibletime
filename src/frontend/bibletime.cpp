@@ -151,16 +151,16 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(
     CDisplayWindow * displayWindow;
     switch (modules.first()->type()) {
         case CSwordModuleInfo::Bible:
-            displayWindow = new CBibleReadWindow(modules, m_mdi);
+            displayWindow = new CBibleReadWindow(modules, key, m_mdi);
             break;
         case CSwordModuleInfo::Commentary:
-            displayWindow = new CCommentaryReadWindow(modules, m_mdi);
+            displayWindow = new CCommentaryReadWindow(modules, key, m_mdi);
             break;
         case CSwordModuleInfo::Lexicon:
-            displayWindow = new CLexiconReadWindow(modules, m_mdi);
+            displayWindow = new CLexiconReadWindow(modules, key, m_mdi);
             break;
         case CSwordModuleInfo::GenericBook:
-            displayWindow = new CBookReadWindow(modules, m_mdi);
+            displayWindow = new CBookReadWindow(modules, key, m_mdi);
             break;
         default:
             qFatal("unknown module type");
@@ -168,7 +168,6 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(
     }
     m_mdi->addDisplayWindow(displayWindow);
     displayWindow->show();
-    displayWindow->lookupKey(key);
 
     /* We have to process pending events here, otherwise displayWindow is not
        fully painted. */

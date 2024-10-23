@@ -63,8 +63,9 @@ CCommentaryReadWindow::ActionCollection::ActionCollection(QObject * const parent
 
 CCommentaryReadWindow::CCommentaryReadWindow(
         QList<CSwordModuleInfo *> const & modules,
+        QString const & key,
         CMDIArea * parent)
-    : CDisplayWindow(modules, true, new ActionCollection(), parent)
+    : CDisplayWindow(modules, key, true, new ActionCollection(), parent)
 { init(); }
 
 void CCommentaryReadWindow::initActions() {

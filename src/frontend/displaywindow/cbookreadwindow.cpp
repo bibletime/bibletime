@@ -42,8 +42,9 @@ CBookReadWindow::ActionCollection::ActionCollection(QObject * const parent)
 }
 
 CBookReadWindow::CBookReadWindow(QList<CSwordModuleInfo *> const & modules,
+                                 QString const & key,
                                  CMDIArea * parent)
-    : CDisplayWindow(modules, false, new ActionCollection(), parent)
+    : CDisplayWindow(modules, key, false, new ActionCollection(), parent)
 {
     auto * const h = history();
 

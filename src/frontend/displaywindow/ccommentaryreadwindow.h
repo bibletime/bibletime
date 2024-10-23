@@ -38,6 +38,7 @@ public: // Types:
     public:
 
         CCommentaryReadWindow(QList<CSwordModuleInfo *> const & modules,
+                              QString const & key,
                               CMDIArea * parent);
 
         CSwordModuleInfo::ModuleType moduleType() const override

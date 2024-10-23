@@ -186,6 +186,7 @@ protected:
     friend class CBibleReadWindow;
 
     CDisplayWindow(BtModuleList const & modules,
+                   QString const & key,
                    bool const addTextHeaderToolbar,
                    ActionCollection * actionCollection,
                    CMDIArea * const parent);
