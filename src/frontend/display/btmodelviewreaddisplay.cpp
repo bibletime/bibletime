@@ -330,7 +330,7 @@ void BtModelViewReadDisplay::scrollToKey(CSwordKey * key) {
 void BtModelViewReadDisplay::scroll(int value) { m_quickWidget->scroll(value); }
 
 void BtModelViewReadDisplay::setFilterOptions(FilterOptions filterOptions) {
-    m_qmlInterface->setFilterOptions(filterOptions);
+    m_qmlInterface->textModel()->setFilterOptions(filterOptions);
 }
 
 void BtModelViewReadDisplay::settingsChanged() {

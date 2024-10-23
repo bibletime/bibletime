@@ -147,7 +147,6 @@ public:
     void scrollToSwordKey(CSwordKey * key);
     void setContextMenuIndex(int index);
     void setContextMenuColumn(int index);
-    void setFilterOptions(FilterOptions filterOptions);
     void setHighlightWords(const QString& words, bool caseSensitivy);
     void setModules(const QStringList &modules);
     void settingsChanged();

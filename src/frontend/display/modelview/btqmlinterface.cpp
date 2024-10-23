@@ -54,10 +54,6 @@ bool BtQmlInterface::isBibleOrCommentary() {
     }
 }
 
-void BtQmlInterface::setFilterOptions(FilterOptions filterOptions) {
-    m_moduleTextModel->setFilterOptions(filterOptions);
-}
-
 int BtQmlInterface::getContextMenuIndex() const {
     return m_contextMenuIndex;
 }
