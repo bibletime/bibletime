@@ -301,23 +301,41 @@ void BibleTime::ActionCollection::retranslateUi() {
     view.showMag->setToolTip(tr("Toggle visibility of the mag window"));
 
     view.showParallelTextHeadings->setText(tr("Show parallel text headers"));
+    view.showParallelTextHeadings->setToolTip(
+                tr("Toggle the works header row visibility in windows"));
 
     view.toolbars.showMainToolbar->setText(tr("Show main toolbar"));
+    view.toolbars.showMainToolbar->setToolTip(
+                tr("Toggle the main toolbar visibility"));
 
     view.toolbars.showNavigationToolbar->setText(tr("Show navigation toolbar"));
+    view.toolbars.showNavigationToolbar->setToolTip(
+                tr("Toggle the navigation toolbar visibility"));
 
     view.toolbars.showWorksToolbar->setText(tr("Show works toolbar"));
+    view.toolbars.showWorksToolbar->setToolTip(
+                tr("Toggle the works toolbar visibility"));
 
     view.toolbars.showToolsToolbar->setText(tr("Show tools toolbar"));
+    view.toolbars.showToolsToolbar->setToolTip(
+                tr("Toggle the window tools toolbar visibility"));
 
     view.toolbars.showToolbarsInTextWindows->setText(
                 tr("Show toolbars in text windows"));
+    view.toolbars.showToolbarsInTextWindows->setToolTip(
+                tr("Toggle the location of subwindow-specific toolbars between "
+                   "the main window and subwindows"));
 
     view.scroll.autoScrollUp->setText(tr("Auto scroll up"));
+    view.scroll.autoScrollUp->setToolTip(
+                tr("Adjust automatic scrolling speed in the up direction"));
 
     view.scroll.autoScrollDown->setText(tr("Auto scroll down"));
+    view.scroll.autoScrollDown->setToolTip(
+                tr("Adjust automatic scrolling speed in the down direction"));
 
     view.scroll.pauseAutoScroll->setText(tr("Pause auto scroll"));
+    view.scroll.pauseAutoScroll->setToolTip(tr("Pause/resume auto scrolling"));
 
     search.searchOpenWorks->setText(tr("Search in &open works..."));
     search.searchOpenWorks->setToolTip(
