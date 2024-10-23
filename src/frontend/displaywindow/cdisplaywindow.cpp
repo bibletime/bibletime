@@ -776,7 +776,6 @@ void CDisplayWindow::setDisplaySettingsButton(BtDisplaySettingsButton *button) {
                this, // Needed
                [this](DisplayOptions const & displayOptions) {
                    m_displayOptions = displayOptions;
-                   m_displayWidget->setDisplayOptions(displayOptions);
                    Q_EMIT sigDisplayOptionsChanged(m_displayOptions);
                });
     BT_CONNECT(button, &BtDisplaySettingsButton::sigChanged,
