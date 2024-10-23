@@ -26,7 +26,6 @@
 #include "../../../backend/keys/cswordkey.h"
 #include "../../../backend/managers/colormanager.h"
 #include "../../../backend/managers/cswordbackend.h"
-#include "../../../backend/models/btmoduletextmodel.h"
 #include "../../../backend/rendering/btinforendering.h"
 #include "../../../backend/rendering/cplaintextexportrendering.h"
 #include "../../../backend/rendering/ctextrendering.h"
@@ -40,7 +39,7 @@
 BtQmlInterface::BtQmlInterface(QObject * parent)
     : QObject(parent)
     , m_moduleTextModel(new BtModuleTextModel(this))
-{ m_moduleTextModel->setTextFilter(&m_textFilter); }
+{}
 
 BtQmlInterface::~BtQmlInterface() = default;
 

@@ -63,13 +63,6 @@ struct ModuleEntry {
     };
 };
 
-class BtModuleTextFilter {
-
-public:
-    virtual ~BtModuleTextFilter() = 0;
-    virtual QString processText(const QString& text) = 0;
-};
-
 
 /**
   * @page modelviewmodel Details about the module text model
@@ -164,9 +157,6 @@ public:
     /** Load module pointers from module names */
     void reloadModules();
 
-    /** Set the text options used for rendering module text. */
-    void setTextFilter(BtModuleTextFilter * textFilter);
-
 private:
 
     CSwordTreeKey indexToBookKey(int index) const;
@@ -188,7 +178,6 @@ private:
 
     int m_firstEntry;
     int m_maxEntries;
-    BtModuleTextFilter * m_textFilter;
     Rendering::CDisplayRendering m_displayRendering;
     std::optional<FindState> m_findState;
 };

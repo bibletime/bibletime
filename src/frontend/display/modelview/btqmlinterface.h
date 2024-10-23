@@ -19,12 +19,12 @@
 #include <QObject>
 #include <QQmlEngine>
 #include <QString>
-#include "bttextfilter.h"
+#include "../../../backend/models/btmoduletextmodel.h"
 
 
 class CSwordKey;
 class CSwordModuleInfo;
-
+class CSwordVerseKey;
 class RoleItemModel;
 
 /**
@@ -194,7 +194,6 @@ private: // Fields:
     QList<QFont> m_fonts;
     int m_backgroundHighlightColorIndex = -1;
     QStringList m_moduleNames;
-    BtTextFilter m_textFilter;
     QString m_timeoutUrl;
     int m_contextMenuIndex;
     int m_contextMenuColumn;
