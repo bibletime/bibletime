@@ -145,8 +145,6 @@ public:
     virtual bool setData(const QModelIndex &index,
                          const QVariant &value, int role = Qt::EditRole) override;
 
-    void setDisplayOptions(const DisplayOptions & displayOptions);
-
     /** Set the state of the currently found word functionality */
     void setFindState(std::optional<FindState> findState);
 
@@ -156,8 +154,9 @@ public:
     /** Used by model to get the roleNames and corresponding role numbers. */
     QHash<int, QByteArray> roleNames() const override;
 
-    /** Set the filter options used for rendering module text. */
-    void setFilterOptions(FilterOptions filterOptions);
+    /** Set the display and filter options used for rendering module text. */
+    void setOptions(DisplayOptions const & displayOptions,
+                    FilterOptions const & filterOptions);
 
     /** Specifies one or more module names for use by the model */
     void setModules(const QStringList& modules);

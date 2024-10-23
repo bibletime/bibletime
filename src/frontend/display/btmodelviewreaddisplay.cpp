@@ -315,9 +315,9 @@ BtModelViewReadDisplay::text(TextPart const part) {
 
 void BtModelViewReadDisplay::setDisplayFocus() { m_quickWidget->setFocus(); }
 
-void BtModelViewReadDisplay::setDisplayOptions(const DisplayOptions &displayOptions) {
-    m_qmlInterface->textModel()->setDisplayOptions(displayOptions);
-}
+void BtModelViewReadDisplay::setOptions(DisplayOptions const & displayOptions,
+                                        FilterOptions const & filterOptions)
+{ m_qmlInterface->textModel()->setOptions(displayOptions, filterOptions); }
 
 void BtModelViewReadDisplay::setModules(const QStringList &modules) {
     m_qmlInterface->setModules(modules);
@@ -328,10 +328,6 @@ void BtModelViewReadDisplay::scrollToKey(CSwordKey * key) {
 }
 
 void BtModelViewReadDisplay::scroll(int value) { m_quickWidget->scroll(value); }
-
-void BtModelViewReadDisplay::setFilterOptions(FilterOptions filterOptions) {
-    m_qmlInterface->textModel()->setFilterOptions(filterOptions);
-}
 
 void BtModelViewReadDisplay::settingsChanged() {
     m_qmlInterface->settingsChanged();

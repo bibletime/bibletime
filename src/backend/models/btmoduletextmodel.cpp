@@ -428,18 +428,16 @@ void BtModuleTextModel::setHighlightWords(
     endResetModel();
 }
 
-void BtModuleTextModel::setDisplayOptions(const DisplayOptions & displayOptions) {
-    if (m_displayRendering.displayOptions().displayOptionsAreEqual(displayOptions))
+void BtModuleTextModel::setOptions(DisplayOptions const & displayOptions,
+                                   FilterOptions const & filterOptions)
+{
+    if (m_displayRendering.displayOptions().displayOptionsAreEqual(
+            displayOptions)
+        && m_displayRendering.filterOptions().filterOptionsAreEqual(
+            filterOptions))
         return;
     beginResetModel();
     m_displayRendering.setDisplayOptions(displayOptions);
-    endResetModel();
-}
-
-void BtModuleTextModel::setFilterOptions(FilterOptions filterOptions) {
-    if (m_displayRendering.filterOptions().filterOptionsAreEqual(filterOptions))
-            return;
-    beginResetModel();
     m_displayRendering.setFilterOptions(filterOptions);
     endResetModel();
 }

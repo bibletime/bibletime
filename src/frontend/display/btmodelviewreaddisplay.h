@@ -133,7 +133,8 @@ public: // methods:
 
     void setDisplayFocus();
 
-    void setDisplayOptions(const DisplayOptions &displayOptions);
+    void setOptions(DisplayOptions const & displayOptions,
+                    FilterOptions const & filterOptions);
 
     void highlightText(const QString& text, bool caseSensitive);
 
@@ -148,8 +149,6 @@ public: // methods:
     void scrollToKey(CSwordKey * key);
 
     void scroll(int pixels);
-
-    void setFilterOptions(FilterOptions filterOptions);
 
     void setNodeInfo(QString const & newNodeInfo);
 

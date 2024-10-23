@@ -713,8 +713,7 @@ void CDisplayWindow::lookupSwordKey(CSwordKey * newKey) {
     if (m_swordKey.get() != newKey)
         m_swordKey->setKey(newKey->key());
 
-    m_displayWidget->setDisplayOptions(displayOptions());
-    m_displayWidget->setFilterOptions(filterOptions());
+    m_displayWidget->setOptions(displayOptions(), filterOptions());
     m_displayWidget->scrollToKey(newKey);
     BibleTime::instance()->autoScrollStop();
 
