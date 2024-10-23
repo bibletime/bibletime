@@ -100,7 +100,7 @@ public:
     CKeyChooser * keyChooser() const noexcept { return m_keyChooser; }
 
     /** Returns the key of this display window. */
-    CSwordKey * key() const noexcept {
+    CSwordKey * swordKey() const noexcept {
         BT_ASSERT(m_swordKey);
         return m_swordKey.get();
     }

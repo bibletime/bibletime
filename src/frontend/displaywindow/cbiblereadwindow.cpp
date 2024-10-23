@@ -234,50 +234,50 @@ QMenu * CBibleReadWindow::newDisplayWidgetPopupMenu() {
 /** Moves to the next book. */
 void CBibleReadWindow::nextBook() {
     if (verseKey()->next(CSwordVerseKey::UseBook)) {
-        keyChooser()->setKey(key());
+        keyChooser()->setKey(swordKey());
     }
 }
 
 /** Moves one book behind. */
 void CBibleReadWindow::previousBook() {
     if (verseKey()->previous(CSwordVerseKey::UseBook)) {
-        keyChooser()->setKey(key());
+        keyChooser()->setKey(swordKey());
     }
 }
 
 /** Moves to the next book. */
 void CBibleReadWindow::nextChapter() {
     if (verseKey()->next(CSwordVerseKey::UseChapter)) {
-        keyChooser()->setKey(key());
+        keyChooser()->setKey(swordKey());
     }
 }
 
 /** Moves one book behind. */
 void CBibleReadWindow::previousChapter() {
     if (verseKey()->previous(CSwordVerseKey::UseChapter)) {
-        keyChooser()->setKey(key());
+        keyChooser()->setKey(swordKey());
     }
 }
 
 /** Moves to the next book. */
 void CBibleReadWindow::nextVerse() {
     if (verseKey()->next(CSwordVerseKey::UseVerse)) {
-        keyChooser()->setKey(key());
+        keyChooser()->setKey(swordKey());
     }
 }
 
 /** Moves one book behind. */
 void CBibleReadWindow::previousVerse() {
     if (verseKey()->previous(CSwordVerseKey::UseVerse)) {
-        keyChooser()->setKey(key());
+        keyChooser()->setKey(swordKey());
     }
 }
 
 /** wrapper around key() to return the right type of key. */
 CSwordVerseKey* CBibleReadWindow::verseKey() {
-    CSwordVerseKey* k = dynamic_cast<CSwordVerseKey*>(CDisplayWindow::key());
+    CSwordVerseKey * const k =
+            dynamic_cast<CSwordVerseKey*>(CDisplayWindow::swordKey());
     BT_ASSERT(k);
-
     return k;
 }
 
@@ -358,7 +358,7 @@ void CBibleReadWindow::syncWindows() {
     for (auto * const subWindow : mdi()->subWindowList()) {
         CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(subWindow->widget());
         if (w && w->syncAllowed()) {
-            w->lookupKey( key()->key() );
+            w->lookupKey(swordKey()->key());
         }
     }
 }

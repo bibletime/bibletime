@@ -135,7 +135,8 @@ void CCommentaryReadWindow::reload() {
 
 /** rapper around key() to return the right type of key. */
 CSwordVerseKey* CCommentaryReadWindow::verseKey() {
-    CSwordVerseKey* k = dynamic_cast<CSwordVerseKey*>(CDisplayWindow::key());
+    CSwordVerseKey * const k =
+            dynamic_cast<CSwordVerseKey*>(CDisplayWindow::swordKey());
     BT_ASSERT(k);
     return k;
 }
@@ -143,37 +144,37 @@ CSwordVerseKey* CCommentaryReadWindow::verseKey() {
 /** Moves to the next book. */
 void CCommentaryReadWindow::nextBook() {
     if (verseKey()->next(CSwordVerseKey::UseBook))
-        keyChooser()->setKey(key());
+        keyChooser()->setKey(swordKey());
 }
 
 /** Moves one book behind. */
 void CCommentaryReadWindow::previousBook() {
     if (verseKey()->previous(CSwordVerseKey::UseBook))
-        keyChooser()->setKey(key());
+        keyChooser()->setKey(swordKey());
 }
 
 /** Moves to the next book. */
 void CCommentaryReadWindow::nextChapter() {
     if (verseKey()->next(CSwordVerseKey::UseChapter))
-        keyChooser()->setKey(key());
+        keyChooser()->setKey(swordKey());
 }
 
 /** Moves one book behind. */
 void CCommentaryReadWindow::previousChapter() {
     if (verseKey()->previous(CSwordVerseKey::UseChapter))
-        keyChooser()->setKey(key());
+        keyChooser()->setKey(swordKey());
 }
 
 /** Moves to the next book. */
 void CCommentaryReadWindow::nextVerse() {
     if (verseKey()->next(CSwordVerseKey::UseVerse))
-        keyChooser()->setKey(key());
+        keyChooser()->setKey(swordKey());
 }
 
 /** Moves one book behind. */
 void CCommentaryReadWindow::previousVerse() {
     if (verseKey()->previous(CSwordVerseKey::UseVerse))
-        keyChooser()->setKey(key());
+        keyChooser()->setKey(swordKey());
 }
 
 bool CCommentaryReadWindow::syncAllowed() const noexcept {

@@ -59,7 +59,7 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(
     m_quickWidget->show();
     BT_CONNECT(m_quickWidget, &BtQuickWidget::referenceDropped,
                [this](QString const & reference) { /// \todo Fix me
-                   auto key(m_parentWindow->key());
+                   auto key(m_parentWindow->swordKey());
                    key->setKey(reference);
                    m_parentWindow->lookupKey(reference);
                });
@@ -77,7 +77,7 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(
 
     BT_CONNECT(m_qmlInterface, &BtQmlInterface::updateReference,
                [this](QString const & reference) {
-                   auto * const key = m_parentWindow->key();
+                   auto * const key = m_parentWindow->swordKey();
                    key->setKey(reference);
                    m_parentWindow->keyChooser()->updateKey(key);
                    m_parentWindow->updateWindowTitle();
@@ -192,7 +192,7 @@ void BtModelViewReadDisplay::print(TextPart const type,
                                    FilterOptions const & filterOptions)
 {
     using CSBiMI = CSwordBibleModuleInfo;
-    CSwordKey* const key = m_parentWindow->key();
+    CSwordKey* const key = m_parentWindow->swordKey();
     const CSwordModuleInfo *module = key->module();
 
     CExportManager mgr(false,
@@ -257,7 +257,7 @@ BtModelViewReadDisplay::text(TextPart const part) {
     QString text;
     switch (part) {
     case Document: {
-        CSwordKey* const key = m_parentWindow->key();
+        CSwordKey* const key = m_parentWindow->swordKey();
         const CSwordModuleInfo *module = key->module();
         //This is never used for Bibles, so it is not implemented for
         //them.  If it should be, see CReadDisplay::print() for example

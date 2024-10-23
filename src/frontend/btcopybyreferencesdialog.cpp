@@ -66,7 +66,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
                this, &BtCopyByReferencesDialog::resetThreshold);
     formLayout->addRow(m_workLabel, m_workCombo);
 
-    auto const parentKey = parent->key();
+    auto const parentKey = parent->swordKey();
 
     m_firstKeyChooser =
             CKeyChooser::createInstance(modules, parentKey->copy(), this);

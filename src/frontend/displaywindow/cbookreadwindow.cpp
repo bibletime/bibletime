@@ -54,7 +54,9 @@ CBookReadWindow::CBookReadWindow(QList<CSwordModuleInfo *> const & modules,
     // "Remove" title bar:
     m_treeChooserDock->setTitleBarWidget(new QWidget(m_treeChooserDock));
         m_treeChooser =
-                new CBookTreeChooser(constModules(), key(), m_treeChooserDock);
+                new CBookTreeChooser(constModules(),
+                                     swordKey(),
+                                     m_treeChooserDock);
         BT_CONNECT(m_treeChooser, &CKeyChooser::keyChanged,
                    h, &BTHistory::add);
         BT_CONNECT(h, &BTHistory::historyMoved,
@@ -132,7 +134,7 @@ void CBookReadWindow::setupMainWindowToolBars() {
     btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
     CKeyChooser * const keyChooser =
             CKeyChooser::createInstance(constMods,
-                                        key(),
+                                        swordKey(),
                                         btMainWindow()->navToolBar());
     auto * const h = history();
     BT_CONNECT(keyChooser, &CKeyChooser::keyChanged,
