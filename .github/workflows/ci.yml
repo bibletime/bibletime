@@ -63,12 +63,12 @@ jobs:
     - name: Install
       run: make "-j$(cat "${HOME}/info/num_threads")" install
       working-directory: build
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v4
       if: success()
       with:
         name: handbooks
         path: '~/local/share/doc/bibletime/handbook/'
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v4
       if: success()
       with:
         name: howtos
