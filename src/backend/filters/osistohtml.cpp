@@ -138,7 +138,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
     // manually process if it wasn't a simple substitution
 
     if (!substituteToken(buf, token)) {
-        UserData* myUserData = dynamic_cast<UserData*>(userData);
+        UserData* myUserData = static_cast<UserData*>(userData);
         sword::SWModule* myModule = const_cast<sword::SWModule*>(myUserData->module); //hack
 
         sword::XMLTag const tag(token);
