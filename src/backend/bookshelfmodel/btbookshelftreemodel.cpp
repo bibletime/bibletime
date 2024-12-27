@@ -381,7 +381,7 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module,
     {
         Grouping intermediateGrouping(m_groupingOrder);
         while (!intermediateGrouping.empty()) {
-            switch (intermediateGrouping.front()) {
+            switch (intermediateGrouping.takeFirst()) {
                 case GROUP_CATEGORY:
                     parentIndex = getGroup<CategoryItem>(module,
                                                          parentIndex,
@@ -398,7 +398,6 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module,
                                                          beginInsert);
                     break;
             }
-            intermediateGrouping.pop_front();
         }
     }
 
