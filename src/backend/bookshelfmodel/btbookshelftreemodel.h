@@ -165,16 +165,17 @@ protected Q_SLOTS:
 
 private: // methods:
 
-    void addModule(CSwordModuleInfo & module, bool checked);
+    void addModule(CSwordModuleInfo & module, bool checked, bool inReset);
     void removeModule(CSwordModuleInfo & module);
 
     BookshelfModel::Item & getItem(QModelIndex const & index) const;
     QModelIndex getIndex(BookshelfModel::Item const & item);
-    void resetParentCheckStates(QModelIndex parentIndex);
+    void resetParentCheckStates(QModelIndex parentIndex, bool inReset);
 
     template <class T>
     QModelIndex getGroup(CSwordModuleInfo const & module,
-                         QModelIndex const parentIndex)
+                         QModelIndex const parentIndex,
+                         bool & beginInsert)
     {
         BookshelfModel::Item & parentItem = getItem(parentIndex);
         int groupIndex;
@@ -183,9 +184,11 @@ private: // methods:
         if (!groupItem) {
             groupItem = new T(module);
             groupIndex = parentItem.indexFor(*groupItem);
-            beginInsertRows(parentIndex, groupIndex, groupIndex);
+            if (beginInsert) {
+                beginInsertRows(parentIndex, groupIndex, groupIndex);
+                beginInsert = false;
+            }
             parentItem.insertChild(groupIndex, groupItem);
-            endInsertRows();
         }
         return index(groupIndex, 0, parentIndex);
     }

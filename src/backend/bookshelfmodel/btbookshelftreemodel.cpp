@@ -215,7 +215,7 @@ bool BtBookshelfTreeModel::setData(QModelIndex const & itemIndex,
     }
 
     // Recursively change parent check states.
-    resetParentCheckStates(itemIndex.parent());
+    resetParentCheckStates(itemIndex.parent(), false);
 
     return true;
 }
@@ -253,6 +253,7 @@ void BtBookshelfTreeModel::setSourceModel(
     if (m_sourceModel == sourceModel)
         return;
 
+    beginResetModel();
     if (m_sourceModel) {
         auto & model = *m_sourceModel;
         disconnect(&model, &QAbstractItemModel::rowsAboutToBeRemoved,
@@ -261,12 +262,10 @@ void BtBookshelfTreeModel::setSourceModel(
                    this,   &BtBookshelfTreeModel::moduleInserted);
         disconnect(&model, &QAbstractItemModel::dataChanged,
                    this,   &BtBookshelfTreeModel::moduleDataChanged);
-        beginRemoveRows(QModelIndex(), 0, m_rootItem->children().size() - 1);
         m_rootItem = std::make_unique<RootItem>();
         m_modules.clear();
         m_sourceIndexMap.clear();
         m_checkedModulesCache.clear();
-        endRemoveRows();
     }
 
     m_sourceModel = std::move(sourceModel);
@@ -297,9 +296,10 @@ void BtBookshelfTreeModel::setSourceModel(
                 checked = (m_defaultChecked == CHECKED);
             }
             m_sourceIndexMap[&module] = moduleIndex;
-            addModule(module, checked);
+            addModule(module, checked, true);
         }
     }
+    endResetModel();
 }
 
 void BtBookshelfTreeModel::setGroupingOrder(Grouping const & groupingOrder,
@@ -314,10 +314,9 @@ void BtBookshelfTreeModel::setGroupingOrder(Grouping const & groupingOrder,
         BtModuleSet const checked(m_checkedModulesCache);
         m_checkedModulesCache.clear();
 
-        beginRemoveRows(QModelIndex(), 0, m_rootItem->children().size() - 1);
+        beginResetModel();
         m_rootItem = std::make_unique<RootItem>();
         m_modules.clear();
-        endRemoveRows();
 
         for (int i = 0; i < m_sourceModel->rowCount(); i++) {
             QModelIndex const sourceIndex(m_sourceModel->index(i, 0));
@@ -325,8 +324,9 @@ void BtBookshelfTreeModel::setGroupingOrder(Grouping const & groupingOrder,
                 m_sourceModel->data(sourceIndex,
                                     BtBookshelfModel::ModulePointerRole).value<void *>());
             m_sourceIndexMap[&module] = sourceIndex;
-            addModule(module, checked.contains(&module));
+            addModule(module, checked.contains(&module), true);
         }
+        endResetModel();
     }
 
     if (emitSignal)
@@ -370,25 +370,32 @@ void BtBookshelfTreeModel::resetData() {
 }
 
 void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module,
-                                     bool const checked)
+                                     bool const checked,
+                                     bool const inReset)
 {
     if (m_modules.contains(&module))
         return;
 
-    beginResetModel();
+    bool beginInsert = !inReset;
     QModelIndex parentIndex;
     {
         Grouping intermediateGrouping(m_groupingOrder);
         while (!intermediateGrouping.empty()) {
             switch (intermediateGrouping.front()) {
                 case GROUP_CATEGORY:
-                    parentIndex = getGroup<CategoryItem>(module, parentIndex);
+                    parentIndex = getGroup<CategoryItem>(module,
+                                                         parentIndex,
+                                                         beginInsert);
                     break;
                 case GROUP_LANGUAGE:
-                    parentIndex = getGroup<LanguageItem>(module, parentIndex);
+                    parentIndex = getGroup<LanguageItem>(module,
+                                                         parentIndex,
+                                                         beginInsert);
                     break;
                 case GROUP_INDEXING:
-                    parentIndex = getGroup<IndexingItem>(module, parentIndex);
+                    parentIndex = getGroup<IndexingItem>(module,
+                                                         parentIndex,
+                                                         beginInsert);
                     break;
             }
             intermediateGrouping.pop_front();
@@ -401,25 +408,18 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module,
     int const newIndex(parentItem.indexFor(*newItem));
 
     // Actually do the insertion:
-    beginInsertRows(parentIndex, newIndex, newIndex);
+    if (beginInsert)
+        beginInsertRows(parentIndex, newIndex, newIndex);
     parentItem.insertChild(newIndex, newItem);
     m_modules.insert(&module, newItem);
     if (checked) // Add to checked modules cache
         m_checkedModulesCache.insert(&module);
 
-    endInsertRows();
+    if (!inReset)
+        endInsertRows();
 
     // Reset parent item check states, if needed:
-    resetParentCheckStates(parentIndex);
-
-    /**
-      \bug Calling reset() shouldn't be necessary here, but omitting it will
-           will break things like switching to a grouped layout or installing
-           new modules. As a side effect, all attached views will also reset
-           themselves.
-    */
-
-    endResetModel();
+    resetParentCheckStates(parentIndex, inReset);
 }
 
 void BtBookshelfTreeModel::removeModule(CSwordModuleInfo & module) {
@@ -449,7 +449,7 @@ void BtBookshelfTreeModel::removeModule(CSwordModuleInfo & module) {
     endRemoveRows();
 
     // Reset parent item check states, if needed:
-    resetParentCheckStates(parentIndex);
+    resetParentCheckStates(parentIndex, false);
 }
 
 Item & BtBookshelfTreeModel::getItem(QModelIndex const & index) const {
@@ -478,7 +478,9 @@ QModelIndex BtBookshelfTreeModel::getIndex(BookshelfModel::Item const & item) {
     return i;
 }
 
-void BtBookshelfTreeModel::resetParentCheckStates(QModelIndex parentIndex) {
+void BtBookshelfTreeModel::resetParentCheckStates(QModelIndex parentIndex,
+                                                  bool const inReset)
+{
     for ( ; parentIndex.isValid(); parentIndex = parentIndex.parent()) {
         Item & parentItem = *static_cast<Item *>(parentIndex.internalPointer());
 
@@ -517,7 +519,9 @@ void BtBookshelfTreeModel::resetParentCheckStates(QModelIndex parentIndex) {
             break;
 
         parentItem.setCheckState(newState);
-        Q_EMIT dataChanged(parentIndex, parentIndex);
+
+        if (!inReset)
+            Q_EMIT dataChanged(parentIndex, parentIndex);
     } // for ( ; parentIndex.isValid(); parentIndex = parentIndex.parent())
 }
 
@@ -574,7 +578,7 @@ void BtBookshelfTreeModel::moduleInserted(QModelIndex const & parent,
             checked = (m_defaultChecked == CHECKED);
         }
         m_sourceIndexMap[&module] = moduleIndex;
-        addModule(module, checked);
+        addModule(module, checked, false);
     }
 }
 
