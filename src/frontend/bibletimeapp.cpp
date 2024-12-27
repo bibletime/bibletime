@@ -122,6 +122,7 @@ BibleTimeApp::BibleTimeApp(int &argc, char **argv)
 {
     setApplicationName(QStringLiteral("bibletime"));
     setApplicationVersion(BT_VERSION);
+    setDesktopFileName(QStringLiteral("info.bibletime.BibleTime"));
 
     // Support for retina displays
     #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
