@@ -50,7 +50,7 @@ public: // types:
         UserRole = BtBookshelfModel::UserRole + 100
     };
 
-    enum Group {
+    enum Group : int {
         GROUP_CATEGORY = 0,
         GROUP_LANGUAGE = 1,
         GROUP_INDEXING

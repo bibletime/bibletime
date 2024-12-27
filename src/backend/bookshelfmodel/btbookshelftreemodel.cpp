@@ -613,7 +613,7 @@ QDataStream & operator >>(QDataStream & is,
     is >> s;
     o.clear();
     for (int i = 0; i < s; i++) {
-        int g;
+        std::underlying_type_t<BtBookshelfTreeModel::Group> g;
         is >> g;
         o.append(static_cast<BtBookshelfTreeModel::Group>(g));
     }
