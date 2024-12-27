@@ -366,7 +366,9 @@ void BtBookshelfTreeModel::resetData() {
     } while (!queue.isEmpty());
 }
 
-void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module, bool checked) {
+void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module,
+                                     bool const checked)
+{
     if (m_modules.contains(&module))
         return;
 
