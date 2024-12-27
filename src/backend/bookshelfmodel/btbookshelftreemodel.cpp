@@ -371,8 +371,41 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module, bool checked) {
         return;
 
     beginResetModel();
-    Grouping g(m_groupingOrder);
-    addModule(module, QModelIndex(), g, checked);
+    QModelIndex parentIndex;
+    {
+        Grouping intermediateGrouping(m_groupingOrder);
+        while (!intermediateGrouping.empty()) {
+            switch (intermediateGrouping.front()) {
+                case GROUP_CATEGORY:
+                    parentIndex = getGroup<CategoryItem>(module, parentIndex);
+                    break;
+                case GROUP_LANGUAGE:
+                    parentIndex = getGroup<LanguageItem>(module, parentIndex);
+                    break;
+                case GROUP_INDEXING:
+                    parentIndex = getGroup<IndexingItem>(module, parentIndex);
+                    break;
+            }
+            intermediateGrouping.pop_front();
+        }
+    }
+
+    Item & parentItem = getItem(parentIndex);
+    ModuleItem * const newItem = new ModuleItem(module, *this);
+    newItem->setCheckState(checked ? Qt::Checked : Qt::Unchecked);
+    const int newIndex(parentItem.indexFor(*newItem));
+
+    // Actually do the insertion:
+    beginInsertRows(parentIndex, newIndex, newIndex);
+    parentItem.insertChild(newIndex, newItem);
+    m_modules.insert(&module, newItem);
+    if (checked) // Add to checked modules cache
+        m_checkedModulesCache.insert(&module);
+
+    endInsertRows();
+
+    // Reset parent item check states, if needed:
+    resetParentCheckStates(parentIndex);
 
     /**
       \bug Calling reset() shouldn't be necessary here, but omitting it will
@@ -382,50 +415,6 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module, bool checked) {
     */
 
     endResetModel();
-}
-
-void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module,
-                                     QModelIndex parentIndex,
-                                     Grouping & intermediateGrouping,
-                                     bool checked)
-{
-    if (!intermediateGrouping.empty()) {
-        QModelIndex newIndex;
-        switch (intermediateGrouping.front()) {
-
-            case GROUP_CATEGORY:
-                newIndex = getGroup<CategoryItem>(module, parentIndex);
-                break;
-
-            case GROUP_LANGUAGE:
-                newIndex = getGroup<LanguageItem>(module, parentIndex);
-                break;
-
-            case GROUP_INDEXING:
-                newIndex = getGroup<IndexingItem>(module, parentIndex);
-                break;
-
-        }
-        intermediateGrouping.pop_front();
-        addModule(module, newIndex, intermediateGrouping, checked);
-    } else {
-        Item & parentItem = getItem(parentIndex);
-        ModuleItem * const newItem = new ModuleItem(module, *this);
-        newItem->setCheckState(checked ? Qt::Checked : Qt::Unchecked);
-        const int newIndex(parentItem.indexFor(*newItem));
-
-        // Actually do the insertion:
-        beginInsertRows(parentIndex, newIndex, newIndex);
-        parentItem.insertChild(newIndex, newItem);
-        m_modules.insert(&module, newItem);
-        if (checked) // Add to checked modules cache
-            m_checkedModulesCache.insert(&module);
-
-        endInsertRows();
-
-        // Reset parent item check states, if needed:
-        resetParentCheckStates(parentIndex);
-    }
 }
 
 void BtBookshelfTreeModel::removeModule(CSwordModuleInfo & module) {

@@ -166,10 +166,6 @@ protected Q_SLOTS:
 private: // methods:
 
     void addModule(CSwordModuleInfo & module, bool checked);
-    void addModule(CSwordModuleInfo & module,
-                   QModelIndex parentIndex,
-                   Grouping & intermediateGrouping,
-                   bool checked);
     void removeModule(CSwordModuleInfo & module);
 
     BookshelfModel::Item & getItem(const QModelIndex & index) const;
