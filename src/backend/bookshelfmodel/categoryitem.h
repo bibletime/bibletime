@@ -35,7 +35,7 @@ public: // methods:
     bool fitFor(CSwordModuleInfo const & module) const override
     { return module.category() == m_category; }
 
-    bool operator<(const Item & other) const override;
+    bool operator<(Item const & other) const override;
 
 private: // fields:
 

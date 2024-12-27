@@ -33,10 +33,10 @@
 using namespace BookshelfModel;
 
 bool BtBookshelfTreeModel::Grouping::loadFrom(BtConfigCore const & config,
-                                              const QString & key)
+                                              QString const & key)
 {
     BT_ASSERT(!key.isNull());
-    QVariant v = config.qVariantValue(key, QVariant());
+    QVariant const v = config.qVariantValue(key, QVariant());
     if (!v.canConvert<Grouping>())
         return false;
 
@@ -51,7 +51,7 @@ void BtBookshelfTreeModel::Grouping::saveTo(BtConfigCore & config,
     config.setValue(key, QVariant::fromValue(*this));
 }
 
-BtBookshelfTreeModel::BtBookshelfTreeModel(QObject * parent)
+BtBookshelfTreeModel::BtBookshelfTreeModel(QObject * const parent)
     : QAbstractItemModel(parent)
     , m_rootItem(std::make_unique<RootItem>())
     , m_defaultChecked(MODULE_HIDDEN)
@@ -59,15 +59,15 @@ BtBookshelfTreeModel::BtBookshelfTreeModel(QObject * parent)
 
 BtBookshelfTreeModel::BtBookshelfTreeModel(BtConfigCore const & config,
                                            QString const & configKey,
-                                           QObject * parent)
+                                           QObject * const parent)
        : QAbstractItemModel(parent)
        , m_rootItem(std::make_unique<RootItem>())
        , m_groupingOrder(config, configKey)
        , m_defaultChecked(MODULE_HIDDEN)
        , m_checkable(false) {}
 
-BtBookshelfTreeModel::BtBookshelfTreeModel(const Grouping & grouping,
-                                           QObject * parent)
+BtBookshelfTreeModel::BtBookshelfTreeModel(Grouping const & grouping,
+                                           QObject * const parent)
         : QAbstractItemModel(parent)
         , m_rootItem(std::make_unique<RootItem>())
         , m_groupingOrder(grouping)
@@ -76,22 +76,22 @@ BtBookshelfTreeModel::BtBookshelfTreeModel(const Grouping & grouping,
 
 BtBookshelfTreeModel::~BtBookshelfTreeModel() = default;
 
-int BtBookshelfTreeModel::rowCount(const QModelIndex & parent) const {
+int BtBookshelfTreeModel::rowCount(QModelIndex const & parent) const {
     return getItem(parent).children().size();
 }
 
-int BtBookshelfTreeModel::columnCount(const QModelIndex & parent) const {
+int BtBookshelfTreeModel::columnCount(QModelIndex const & parent) const {
     Q_UNUSED(parent)
 
     return 1;
 }
 
-bool BtBookshelfTreeModel::hasChildren(const QModelIndex & parent) const {
+bool BtBookshelfTreeModel::hasChildren(QModelIndex const & parent) const {
     return !getItem(parent).children().isEmpty();
 }
 
-QModelIndex BtBookshelfTreeModel::index(int row, int column,
-                                        const QModelIndex & parent) const
+QModelIndex BtBookshelfTreeModel::index(int const row, int const column,
+                                        QModelIndex const & parent) const
 {
     if (!hasIndex(row, column, parent)) return QModelIndex();
 
@@ -103,11 +103,11 @@ QModelIndex BtBookshelfTreeModel::index(int row, int column,
     return createIndex(row, column, childItem);
 }
 
-QModelIndex BtBookshelfTreeModel::parent(const QModelIndex & index) const {
+QModelIndex BtBookshelfTreeModel::parent(QModelIndex const & index) const {
     if (!index.isValid())
         return QModelIndex();
 
-    Item * childItem(static_cast<Item*>(index.internalPointer()));
+    Item const * childItem(static_cast<Item*>(index.internalPointer()));
     BT_ASSERT(childItem);
     Item * parentItem(childItem->parent());
     BT_ASSERT(parentItem);
@@ -118,11 +118,12 @@ QModelIndex BtBookshelfTreeModel::parent(const QModelIndex & index) const {
     return createIndex(parentItem->childIndex(), 0, parentItem);
 }
 
-QVariant BtBookshelfTreeModel::data(const QModelIndex & index, int role) const {
+QVariant
+BtBookshelfTreeModel::data(QModelIndex const & index, int const role) const {
     if (!index.isValid() || index.column() != 0)
         return QVariant();
 
-    const Item * const i = static_cast<Item*>(index.internalPointer());
+    Item const * const i = static_cast<Item*>(index.internalPointer());
     BT_ASSERT(i);
     switch (role) {
 
@@ -137,7 +138,7 @@ QVariant BtBookshelfTreeModel::data(const QModelIndex & index, int role) const {
         case BtBookshelfModel::ModulePointerRole:
             /* This case is just an optimization. */
             if (i->type() == Item::ITEM_MODULE) {
-                const ModuleItem & mi = *static_cast<const ModuleItem *>(i);
+                ModuleItem const & mi = *static_cast<ModuleItem const *>(i);
                 return QVariant::fromValue(static_cast<void *>(&mi.moduleInfo()));
             }
             return QVariant::fromValue(nullptr);
@@ -147,7 +148,7 @@ QVariant BtBookshelfTreeModel::data(const QModelIndex & index, int role) const {
         case BtBookshelfModel::ModuleHiddenRole:
         default:
             if (i->type() == Item::ITEM_MODULE)
-                return data(static_cast<const ModuleItem *>(i)->moduleInfo(), role);
+                return data(static_cast<ModuleItem const *>(i)->moduleInfo(), role);
 
             return i->data(role);
 
@@ -155,14 +156,16 @@ QVariant BtBookshelfTreeModel::data(const QModelIndex & index, int role) const {
     return QVariant();
 }
 
-QVariant BtBookshelfTreeModel::data(CSwordModuleInfo & module, int role) const {
+QVariant
+BtBookshelfTreeModel::data(CSwordModuleInfo & module, int const role) const {
     BT_ASSERT(m_sourceIndexMap.contains(&module));
     return m_sourceModel->data(m_sourceIndexMap.value(&module), role);
 }
 
-bool BtBookshelfTreeModel::setData(const QModelIndex & itemIndex,
-                                   const QVariant & value,
-                                   int role) {
+bool BtBookshelfTreeModel::setData(QModelIndex const & itemIndex,
+                                   QVariant const & value,
+                                   int const role)
+{
     BT_ASSERT(itemIndex.isValid());
     using IP = QPair<Item *, QModelIndex>;
 
@@ -190,7 +193,7 @@ bool BtBookshelfTreeModel::setData(const QModelIndex & itemIndex,
             item->setCheckState(newState);
             Q_EMIT dataChanged(p.second, p.second);
             if (item->type() == Item::ITEM_MODULE) {
-                ModuleItem & mItem = *static_cast<ModuleItem *>(item);
+                ModuleItem const & mItem = *static_cast<ModuleItem *>(item);
                 CSwordModuleInfo & mInfo = mItem.moduleInfo();
                 if (newState == Qt::Checked) {
                     m_checkedModulesCache.insert(&mInfo);
@@ -200,7 +203,7 @@ bool BtBookshelfTreeModel::setData(const QModelIndex & itemIndex,
                     Q_EMIT moduleChecked(&mInfo, false);
                 }
             } else {
-                const QList<Item *> & children = item->children();
+                QList<Item *> const & children = item->children();
                 for (int i = 0; i < children.size(); i++)
                     q.append(IP(children.at(i), index(i, 0, p.second)));
             }
@@ -217,7 +220,7 @@ bool BtBookshelfTreeModel::setData(const QModelIndex & itemIndex,
     return true;
 }
 
-Qt::ItemFlags BtBookshelfTreeModel::flags(const QModelIndex & index) const {
+Qt::ItemFlags BtBookshelfTreeModel::flags(QModelIndex const & index) const {
     if (!index.isValid())
         return Qt::ItemFlags();
 
@@ -226,7 +229,7 @@ Qt::ItemFlags BtBookshelfTreeModel::flags(const QModelIndex & index) const {
     if (m_checkable) {
         f |= Qt::ItemIsUserCheckable;
 
-        const Item & i = *static_cast<Item*>(index.internalPointer());
+        Item const & i = *static_cast<Item*>(index.internalPointer());
         if (i.type() != Item::ITEM_MODULE)
             f |= Qt::ItemIsAutoTristate;
     }
@@ -234,9 +237,9 @@ Qt::ItemFlags BtBookshelfTreeModel::flags(const QModelIndex & index) const {
     return f;
 }
 
-QVariant BtBookshelfTreeModel::headerData(int section,
-                                          Qt::Orientation orientation,
-                                          int role) const
+QVariant BtBookshelfTreeModel::headerData(int const section,
+                                          Qt::Orientation const orientation,
+                                          int const role) const
 {
     if (orientation == Qt::Horizontal)
         return m_sourceModel->headerData(section, orientation, role);
@@ -278,7 +281,7 @@ void BtBookshelfTreeModel::setSourceModel(
                    this,   &BtBookshelfTreeModel::moduleDataChanged);
 
         for (int i = 0; i < model.rowCount(); i++) {
-            const QModelIndex moduleIndex(model.index(i, 0));
+            QModelIndex const moduleIndex(model.index(i, 0));
             CSwordModuleInfo & module = *static_cast<CSwordModuleInfo *>(
                 model.data(moduleIndex,
                            BtBookshelfModel::ModulePointerRole).value<void*>());
@@ -299,8 +302,8 @@ void BtBookshelfTreeModel::setSourceModel(
     }
 }
 
-void BtBookshelfTreeModel::setGroupingOrder(const Grouping & groupingOrder,
-                                            bool emitSignal)
+void BtBookshelfTreeModel::setGroupingOrder(Grouping const & groupingOrder,
+                                            bool const emitSignal)
 {
     if (m_groupingOrder == groupingOrder)
         return;
@@ -317,7 +320,7 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping & groupingOrder,
         endRemoveRows();
 
         for (int i = 0; i < m_sourceModel->rowCount(); i++) {
-            const QModelIndex sourceIndex(m_sourceModel->index(i, 0));
+            QModelIndex const sourceIndex(m_sourceModel->index(i, 0));
             CSwordModuleInfo & module = *static_cast<CSwordModuleInfo *>(
                 m_sourceModel->data(sourceIndex,
                                     BtBookshelfModel::ModulePointerRole).value<void *>());
@@ -330,7 +333,7 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping & groupingOrder,
         Q_EMIT groupingOrderChanged(groupingOrder);
 }
 
-void BtBookshelfTreeModel::setCheckable(bool checkable) {
+void BtBookshelfTreeModel::setCheckable(bool const checkable) {
     if (m_checkable == checkable)
         return;
     m_checkable = checkable;
@@ -355,11 +358,11 @@ void BtBookshelfTreeModel::resetData() {
     QModelIndexList queue;
     queue.append(QModelIndex());
     do {
-        QModelIndex parent(queue.takeFirst());
+        QModelIndex const parent(queue.takeFirst());
         Q_EMIT dataChanged(index(0, 0, parent),
                          index(rowCount(parent) - 1, columnCount() - 1, parent));
         for (int i = 0; i < rowCount(parent); i++) {
-            const QModelIndex childIndex(index(i, 0, parent));
+            QModelIndex const childIndex(index(i, 0, parent));
             if (rowCount(childIndex) > 0)
                 queue.append(childIndex);
         }
@@ -395,7 +398,7 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module,
     Item & parentItem = getItem(parentIndex);
     ModuleItem * const newItem = new ModuleItem(module, *this);
     newItem->setCheckState(checked ? Qt::Checked : Qt::Unchecked);
-    const int newIndex(parentItem.indexFor(*newItem));
+    int const newIndex(parentItem.indexFor(*newItem));
 
     // Actually do the insertion:
     beginInsertRows(parentIndex, newIndex, newIndex);
@@ -424,7 +427,7 @@ void BtBookshelfTreeModel::removeModule(CSwordModuleInfo & module) {
     if (it == m_modules.end())
         return;
 
-    Item * i = it.value();
+    Item const * i = it.value();
 
     // Set i to be the lowest item (including empty groups) to remove:
     BT_ASSERT(i->parent());
@@ -435,8 +438,8 @@ void BtBookshelfTreeModel::removeModule(CSwordModuleInfo & module) {
     BT_ASSERT(i->parent());
 
     // Calculate item indexes:
-    const int index = i->childIndex();
-    const QModelIndex parentIndex(getIndex(*i->parent()));
+    int const index = i->childIndex();
+    QModelIndex const parentIndex(getIndex(*i->parent()));
 
     // Actually remove the item:
     beginRemoveRows(parentIndex, index, index);
@@ -449,7 +452,7 @@ void BtBookshelfTreeModel::removeModule(CSwordModuleInfo & module) {
     resetParentCheckStates(parentIndex);
 }
 
-Item & BtBookshelfTreeModel::getItem(const QModelIndex & index) const {
+Item & BtBookshelfTreeModel::getItem(QModelIndex const & index) const {
     if (UNLIKELY(!index.isValid()))
         return *m_rootItem;
 
@@ -458,11 +461,11 @@ Item & BtBookshelfTreeModel::getItem(const QModelIndex & index) const {
     return *item;
 }
 
-QModelIndex BtBookshelfTreeModel::getIndex(const BookshelfModel::Item & item) {
-    const BookshelfModel::Item * it = &item;
+QModelIndex BtBookshelfTreeModel::getIndex(BookshelfModel::Item const & item) {
+    BookshelfModel::Item const * it = &item;
     QList<int> indexes;
     for (;;) {
-        const int i = it->childIndex();
+        int const i = it->childIndex();
         if (i < 0)
             break;
         indexes.append(i);
@@ -479,11 +482,11 @@ void BtBookshelfTreeModel::resetParentCheckStates(QModelIndex parentIndex) {
     for ( ; parentIndex.isValid(); parentIndex = parentIndex.parent()) {
         Item & parentItem = *static_cast<Item *>(parentIndex.internalPointer());
 
-        const Qt::CheckState oldState = parentItem.checkState();
+        Qt::CheckState const oldState = parentItem.checkState();
         bool haveCheckedChildren = false;
         bool haveUncheckedChildren = false;
         for (int i = 0; i < parentItem.children().size(); i++) {
-            const Qt::CheckState state = parentItem.children().at(i)->checkState();
+            Qt::CheckState const state = parentItem.children().at(i)->checkState();
             if (state == Qt::PartiallyChecked) {
                 haveCheckedChildren = true;
                 haveUncheckedChildren = true;
@@ -518,8 +521,8 @@ void BtBookshelfTreeModel::resetParentCheckStates(QModelIndex parentIndex) {
     } // for ( ; parentIndex.isValid(); parentIndex = parentIndex.parent())
 }
 
-void BtBookshelfTreeModel::moduleDataChanged(const QModelIndex & topLeft,
-                                             const QModelIndex & bottomRight)
+void BtBookshelfTreeModel::moduleDataChanged(QModelIndex const & topLeft,
+                                             QModelIndex const & bottomRight)
 {
     BT_ASSERT(!topLeft.parent().isValid());
     BT_ASSERT(!bottomRight.parent().isValid());
@@ -527,8 +530,8 @@ void BtBookshelfTreeModel::moduleDataChanged(const QModelIndex & topLeft,
     BT_ASSERT(bottomRight.column() == 0);
 
     for (int i = topLeft.row(); i <= bottomRight.row(); i++) {
-        const QModelIndex moduleIndex(m_sourceModel->index(i, 0, topLeft.parent()));
-        const QVariant data(m_sourceModel->data(moduleIndex,
+        QModelIndex const moduleIndex(m_sourceModel->index(i, 0, topLeft.parent()));
+        QVariant const data(m_sourceModel->data(moduleIndex,
                                                 BtBookshelfModel::ModulePointerRole));
         CSwordModuleInfo & module = *static_cast<CSwordModuleInfo *>(data.value<void *>());
         QModelIndex itemIndex(getIndex(*m_modules[&module]));
@@ -547,15 +550,15 @@ void BtBookshelfTreeModel::moduleDataChanged(const QModelIndex & topLeft,
     }
 }
 
-void BtBookshelfTreeModel::moduleInserted(const QModelIndex & parent,
-                                          int start,
-                                          int end)
+void BtBookshelfTreeModel::moduleInserted(QModelIndex const & parent,
+                                          int const start,
+                                          int const end)
 {
     BT_ASSERT(start <= end);
 
     for (int i = start; i <= end; i++) {
-        const QModelIndex moduleIndex(m_sourceModel->index(i, 0, parent));
-        const QVariant data(m_sourceModel->data(moduleIndex,
+        QModelIndex const moduleIndex(m_sourceModel->index(i, 0, parent));
+        QVariant const data(m_sourceModel->data(moduleIndex,
                                                 BtBookshelfModel::ModulePointerRole));
         CSwordModuleInfo & module = *static_cast<CSwordModuleInfo *>(data.value<void *>());
 
@@ -575,15 +578,15 @@ void BtBookshelfTreeModel::moduleInserted(const QModelIndex & parent,
     }
 }
 
-void BtBookshelfTreeModel::moduleRemoved(const QModelIndex & parent,
-                                         int start,
-                                         int end)
+void BtBookshelfTreeModel::moduleRemoved(QModelIndex const & parent,
+                                         int const start,
+                                         int const end)
 {
     BT_ASSERT(start <= end);
 
     for (int i = start; i <= end; i++) {
-        const QModelIndex moduleIndex(m_sourceModel->index(i, 0, parent));
-        const QVariant data(m_sourceModel->data(moduleIndex,
+        QModelIndex const moduleIndex(m_sourceModel->index(i, 0, parent));
+        QVariant const data(m_sourceModel->data(moduleIndex,
                                                 BtBookshelfModel::ModulePointerRole));
         CSwordModuleInfo & module = *static_cast<CSwordModuleInfo *>(data.value<void*>());
         removeModule(module);
@@ -592,7 +595,7 @@ void BtBookshelfTreeModel::moduleRemoved(const QModelIndex & parent,
 }
 
 QDataStream & operator <<(QDataStream & os,
-                          const BtBookshelfTreeModel::Grouping & o)
+                          BtBookshelfTreeModel::Grouping const & o)
 {
     os << o.size();
     for (BtBookshelfTreeModel::Group const g : o)

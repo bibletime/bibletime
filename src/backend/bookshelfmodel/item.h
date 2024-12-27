@@ -36,7 +36,7 @@ public: // types:
 
 public: // methods:
 
-    Item(Type type)
+    Item(Type const type)
         : m_type(type)
         , m_parent(nullptr)
         , m_checkState(Qt::Unchecked) {}
@@ -82,7 +82,7 @@ public: // methods:
       \param[in] index The child index to insert the item at.
       \param[in] newItem The item to insert.
     */
-    void insertChild(int index, Item * newItem) {
+    void insertChild(int const index, Item * const newItem) {
         BT_ASSERT(newItem);
         BT_ASSERT(index >= 0 && index <= m_children.size());
         m_children.insert(index, newItem);
@@ -90,10 +90,10 @@ public: // methods:
     }
 
     template <class T>
-    T * getGroupItem(CSwordModuleInfo & module, int & outIndex) {
+    T * getGroupItem(CSwordModuleInfo const & module, int & outIndex) {
         for (int i = 0; i < m_children.size(); i++) {
             BT_ASSERT(m_children.at(i)->type() == T::staticItemType());
-            T * item = static_cast<T *>(m_children.at(i));
+            T * const item = static_cast<T *>(m_children.at(i));
             if (item->fitFor(module)) {
                 outIndex = i;
                 return item;
@@ -116,7 +116,7 @@ public: // methods:
       \brief Sets the check state of this item.
       \param[in] state new check state.
     */
-    void setCheckState(const Qt::CheckState state) { m_checkState = state; }
+    void setCheckState(Qt::CheckState const state) { m_checkState = state; }
 
     /**
       \brief Returns whether this item is fit to contain the given module.
@@ -124,16 +124,16 @@ public: // methods:
       \retval true If this item is a group and can contain the given module.
       \retval false This item is not a group or is a wrong group.
     */
-    virtual bool fitFor(const CSwordModuleInfo & module) const = 0;
+    virtual bool fitFor(CSwordModuleInfo const & module) const = 0;
 
     /**
       \brief Comparsion operator used sorting child items.
     */
-    virtual bool operator<(const Item & other) const;
+    virtual bool operator<(Item const & other) const;
 
 private: // methods:
 
-    void setParent(Item * parent) noexcept
+    void setParent(Item * const parent) noexcept
     { m_parent = (static_cast<void>(BT_ASSERT(parent)), parent); }
 
 private: // fields:
@@ -151,7 +151,7 @@ public: // methods:
 
     RootItem() : Item(Item::ITEM_ROOT) {}
 
-    bool fitFor(const CSwordModuleInfo &) const override;
+    bool fitFor(CSwordModuleInfo const &) const override;
 
 };
 

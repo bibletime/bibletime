@@ -70,14 +70,14 @@ public: // types:
             /**
               \warning Be careful using this constructor!
             */
-            explicit Grouping(bool empty = false) {
+            explicit Grouping(bool const empty = false) {
                 if (empty)
                     return;
                 push_back(GROUP_CATEGORY);
                 push_back(GROUP_LANGUAGE);
             }
 
-            explicit Grouping(Group group) { push_back(group); }
+            explicit Grouping(Group const group) { push_back(group); }
 
             Grouping(BtConfigCore const & config, QString const & key) {
                 if (loadFrom(config, key))
@@ -100,26 +100,26 @@ public: // methods:
     BtBookshelfTreeModel(BtConfigCore const & config,
                          QString const & configKey,
                          QObject * parent = nullptr);
-    BtBookshelfTreeModel(const Grouping & grouping, QObject * parent = nullptr);
+    BtBookshelfTreeModel(Grouping const & grouping, QObject * parent = nullptr);
     ~BtBookshelfTreeModel() override;
 
-    int rowCount(const QModelIndex & parent = QModelIndex()) const override;
-    int columnCount(const QModelIndex & parent = QModelIndex()) const override;
-    bool hasChildren(const QModelIndex & parent = QModelIndex()) const override;
+    int rowCount(QModelIndex const & parent = QModelIndex()) const override;
+    int columnCount(QModelIndex const & parent = QModelIndex()) const override;
+    bool hasChildren(QModelIndex const & parent = QModelIndex()) const override;
     QModelIndex index(int row,
                       int column,
-                      const QModelIndex & parent = QModelIndex())
+                      QModelIndex const & parent = QModelIndex())
             const override;
-    QModelIndex parent(const QModelIndex & index) const override;
-    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole)
+    QModelIndex parent(QModelIndex const & index) const override;
+    QVariant data(QModelIndex const & index, int role = Qt::DisplayRole)
             const override;
     QVariant data(CSwordModuleInfo & module, int role = Qt::DisplayRole) const;
-    Qt::ItemFlags flags(const QModelIndex & index) const override;
+    Qt::ItemFlags flags(QModelIndex const & index) const override;
     QVariant headerData(int section,
                         Qt::Orientation orientation,
                         int role = Qt::DisplayRole) const override;
-    bool setData(const QModelIndex & index,
-                 const QVariant & value,
+    bool setData(QModelIndex const & index,
+                 QVariant const & value,
                  int role) override;
 
     CSwordModuleInfo * module(QModelIndex const & index) const {
@@ -141,10 +141,10 @@ public: // methods:
 public Q_SLOTS:
 
     void setSourceModel(std::shared_ptr<QAbstractItemModel> sourceModel);
-    void setGroupingOrder(const BtBookshelfTreeModel::Grouping & groupingOrder,
+    void setGroupingOrder(BtBookshelfTreeModel::Grouping const & groupingOrder,
                           bool emitSignal = true);
     void setCheckable(bool checkable);
-    void setDefaultChecked(CheckedBehavior b) { m_defaultChecked = b; }
+    void setDefaultChecked(CheckedBehavior const b) { m_defaultChecked = b; }
     void setCheckedModules(BtConstModuleSet const & modules);
 
 Q_SIGNALS:
@@ -158,23 +158,23 @@ protected: // methods:
 
 protected Q_SLOTS:
 
-    void moduleDataChanged(const QModelIndex & topLeft,
-                           const QModelIndex & bottomRight);
-    void moduleInserted(const QModelIndex & parent, int start, int end);
-    void moduleRemoved(const QModelIndex & parent, int start, int end);
+    void moduleDataChanged(QModelIndex const & topLeft,
+                           QModelIndex const & bottomRight);
+    void moduleInserted(QModelIndex const & parent, int start, int end);
+    void moduleRemoved(QModelIndex const & parent, int start, int end);
 
 private: // methods:
 
     void addModule(CSwordModuleInfo & module, bool checked);
     void removeModule(CSwordModuleInfo & module);
 
-    BookshelfModel::Item & getItem(const QModelIndex & index) const;
-    QModelIndex getIndex(const BookshelfModel::Item & item);
+    BookshelfModel::Item & getItem(QModelIndex const & index) const;
+    QModelIndex getIndex(BookshelfModel::Item const & item);
     void resetParentCheckStates(QModelIndex parentIndex);
 
     template <class T>
-    QModelIndex getGroup(CSwordModuleInfo & module,
-                         QModelIndex parentIndex)
+    QModelIndex getGroup(CSwordModuleInfo const & module,
+                         QModelIndex const parentIndex)
     {
         BookshelfModel::Item & parentItem = getItem(parentIndex);
         int groupIndex;
@@ -204,7 +204,7 @@ private: // fields:
 
 };
 
-QDataStream & operator <<(QDataStream & os, const BtBookshelfTreeModel::Grouping & o);
+QDataStream & operator <<(QDataStream & os, BtBookshelfTreeModel::Grouping const & o);
 QDataStream & operator >>(QDataStream & is, BtBookshelfTreeModel::Grouping & o);
 
 Q_DECLARE_METATYPE(BtBookshelfTreeModel::Grouping)

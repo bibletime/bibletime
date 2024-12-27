@@ -30,9 +30,9 @@ int Item::indexFor(Item const & newItem) {
 
     int i = 0;
     for (;;) {
-        Item * const nextItem(m_children.at(i));
-        BT_ASSERT(nextItem->type() == newItem.type());
-        if (newItem < *nextItem)
+        auto const & nextItem = *m_children.at(i);
+        BT_ASSERT(nextItem.type() == newItem.type());
+        if (newItem < nextItem)
             return i;
 
         i++;
@@ -41,7 +41,7 @@ int Item::indexFor(Item const & newItem) {
     }
 }
 
-QVariant Item::data(int role) const {
+QVariant Item::data(int const role) const {
     switch (role) {
 
         case Qt::CheckStateRole:
@@ -62,15 +62,15 @@ QVariant Item::data(int role) const {
     }
 }
 
-bool Item::operator<(const Item & other) const {
+bool Item::operator<(Item const & other) const {
     if (m_type != other.type())
         return m_type < other.type();
 
-    const QString first(data(Qt::DisplayRole).toString().toLower());
-    const QString second(other.data(Qt::DisplayRole).toString().toLower());
+    auto const first(data(Qt::DisplayRole).toString().toLower());
+    auto const second(other.data(Qt::DisplayRole).toString().toLower());
     return first.localeAwareCompare(second) < 0;
 }
 
-bool RootItem::fitFor(const CSwordModuleInfo &) const { return true; }
+bool RootItem::fitFor(CSwordModuleInfo const &) const { return true; }
 
 } // namespace BookshelfModel

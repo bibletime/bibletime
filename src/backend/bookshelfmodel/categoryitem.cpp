@@ -19,7 +19,7 @@
 namespace BookshelfModel {
 
 
-QVariant CategoryItem::data(int role) const {
+QVariant CategoryItem::data(int const role) const {
     switch (role) {
 
         case Qt::DisplayRole:
@@ -34,11 +34,11 @@ QVariant CategoryItem::data(int role) const {
     }
 }
 
-bool CategoryItem::operator<(const Item & other) const {
+bool CategoryItem::operator<(Item const & other) const {
     if (other.type() != ITEM_CATEGORY)
         return ITEM_CATEGORY < other.type();
 
-    const CategoryItem & o = static_cast<const CategoryItem &>(other);
+    auto & o = static_cast<CategoryItem const &>(other);
     if (m_category == CSwordModuleInfo::UnknownCategory)
         return false;
     if (o.m_category == CSwordModuleInfo::UnknownCategory)

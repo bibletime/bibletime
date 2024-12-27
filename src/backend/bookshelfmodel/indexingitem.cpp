@@ -18,7 +18,7 @@
 
 namespace BookshelfModel {
 
-QVariant IndexingItem::data(int role) const {
+QVariant IndexingItem::data(int const role) const {
     if (role != Qt::DisplayRole)
         return Item::data(role);
 

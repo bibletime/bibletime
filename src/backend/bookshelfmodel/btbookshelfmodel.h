@@ -72,14 +72,14 @@ public: // methods:
 
 
     // Virtual methods implemented from QAbstractListModel:
-    int rowCount(const QModelIndex & parent = QModelIndex()) const override;
+    int rowCount(QModelIndex const & parent = QModelIndex()) const override;
     QVariant data(CSwordModuleInfo * module, int role) const;
-    QVariant data(const QModelIndex & index, int role) const override;
+    QVariant data(QModelIndex const & index, int role) const override;
     QVariant headerData(int section,
                         Qt::Orientation orientation,
                         int role = Qt::DisplayRole) const override;
-    bool setData(const QModelIndex & index,
-                 const QVariant & value,
+    bool setData(QModelIndex const & index,
+                 QVariant const & value,
                  int role = ModuleHiddenRole) override;
 
     /**
@@ -129,14 +129,14 @@ public: // methods:
       \param[in] modules The list of modules to remove from this model.
       \param[in] destroy If true, the given CSwordModuleInfo instances are destroyed.
     */
-    void removeModules(const QList<CSwordModuleInfo *> & modules,
+    void removeModules(QList<CSwordModuleInfo *> const & modules,
                        bool destroy = false);
 
     /**
       Returns the first module found with the given name.
       \param[in] name Name of the module to find.
     */
-    CSwordModuleInfo* getModule(const QString & name) const;
+    CSwordModuleInfo* getModule(QString const & name) const;
 
     /**
       Returns the list of handled modules as a list of CSwordModuleInfo* pointers.

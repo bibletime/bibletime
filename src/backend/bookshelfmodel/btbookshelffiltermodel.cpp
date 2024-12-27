@@ -114,7 +114,7 @@ bool BtBookshelfFilterModel::filterAcceptsRow(int row,
 }
 
 bool BtBookshelfFilterModel::nameFilterAcceptsRow(
-        int row,
+        int const row,
         QModelIndex const & parent) const
 {
     if (m_nameFilter.isEmpty())
@@ -137,7 +137,7 @@ bool BtBookshelfFilterModel::nameFilterAcceptsRow(
 }
 
 bool BtBookshelfFilterModel::hiddenFilterAcceptsRow(
-        int row,
+        int const row,
         QModelIndex const & parent) const
 {
     if (m_showHidden && m_showShown)

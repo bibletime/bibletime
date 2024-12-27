@@ -19,7 +19,7 @@
 
 namespace BookshelfModel {
 
-QVariant LanguageItem::data(int role) const {
+QVariant LanguageItem::data(int const role) const {
     switch (role) {
 
         case Qt::DisplayRole:

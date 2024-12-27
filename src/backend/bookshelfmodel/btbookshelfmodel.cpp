@@ -30,14 +30,15 @@ std::shared_ptr<BtBookshelfModel> BtBookshelfModel::newInstance()
 
 BtBookshelfModel::~BtBookshelfModel() noexcept = default;
 
-int BtBookshelfModel::rowCount(const QModelIndex & parent) const {
+int BtBookshelfModel::rowCount(QModelIndex const & parent) const {
     if (parent.isValid())
         return 0;
 
     return m_data.size();
 }
 
-QVariant BtBookshelfModel::data(CSwordModuleInfo * module, int role) const {
+QVariant BtBookshelfModel::data(CSwordModuleInfo * module, int const role) const
+{
     BT_ASSERT(module);
     switch (role) {
         case Qt::DisplayRole:
@@ -71,20 +72,21 @@ QVariant BtBookshelfModel::data(CSwordModuleInfo * module, int role) const {
     }
 }
 
-QVariant BtBookshelfModel::data(const QModelIndex &index, int role) const {
+QVariant BtBookshelfModel::data(QModelIndex const & index, int const role) const
+{
     if (!index.isValid() || index.column() != 0 || index.parent().isValid())
         return QVariant();
 
-    int row = index.row();
+    int const row = index.row();
     if (row >= m_data.size())
         return QVariant();
 
     return data(m_data.at(row), role);
 }
 
-QVariant BtBookshelfModel::headerData(int section,
-                                      Qt::Orientation orientation,
-                                      int role) const
+QVariant BtBookshelfModel::headerData(int const section,
+                                      Qt::Orientation const orientation,
+                                      int const role) const
 {
     if (role == Qt::DisplayRole
        && orientation == Qt::Horizontal
@@ -96,11 +98,11 @@ QVariant BtBookshelfModel::headerData(int section,
     return QVariant();
 }
 
-bool BtBookshelfModel::setData(const QModelIndex & index,
-                               const QVariant & value,
-                               int role)
+bool BtBookshelfModel::setData(QModelIndex const & index,
+                               QVariant const & value,
+                               int const role)
 {
-    int row = index.row();
+    int const row = index.row();
     if (role == ModuleHiddenRole
         && row >= 0
         && row < m_data.size()
@@ -117,7 +119,7 @@ bool BtBookshelfModel::setData(const QModelIndex & index,
     return false;
 }
 
-void BtBookshelfModel::clear(bool destroy) {
+void BtBookshelfModel::clear(bool const destroy) {
     if (m_data.size() <= 0)
         return;
 
@@ -147,7 +149,7 @@ void BtBookshelfModel::addModule(CSwordModuleInfo * const module) {
 }
 
 void BtBookshelfModel::removeModule(CSwordModuleInfo * const module,
-                                    bool destroy) {
+                                    bool const destroy) {
     const int index = m_data.indexOf(module);
     if (index == -1)
         return;
@@ -165,8 +167,8 @@ void BtBookshelfModel::removeModule(CSwordModuleInfo * const module,
         delete module;
 }
 
-void BtBookshelfModel::removeModules(const QList<CSwordModuleInfo *> & modules,
-                                     bool destroy)
+void BtBookshelfModel::removeModules(QList<CSwordModuleInfo *> const & modules,
+                                     bool const destroy)
 {
     QSet<CSwordModuleInfo *> moduleSet;
     for (auto module: modules)
@@ -174,13 +176,15 @@ void BtBookshelfModel::removeModules(const QList<CSwordModuleInfo *> & modules,
     removeModules(moduleSet, destroy);
 }
 
-void BtBookshelfModel::removeModules(BtConstModuleSet const & modules, bool destroy){
+void BtBookshelfModel::removeModules(BtConstModuleSet const & modules,
+                                     bool const destroy)
+{
     // This is inefficient, since signals are emitted for each removed module:
     for (auto const * const module : modules)
         removeModule(const_cast<CSwordModuleInfo *>(module), destroy);
 }
 
-CSwordModuleInfo * BtBookshelfModel::getModule(const QString & name) const {
+CSwordModuleInfo * BtBookshelfModel::getModule(QString const & name) const {
     for (auto * const module : m_data)
         if (UNLIKELY(module->name() == name))
             return module;
