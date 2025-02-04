@@ -32,6 +32,7 @@
 #include "../../../backend/rendering/btinforendering.h"
 #include "../../../util/btassert.h"
 #include "../../bibletime.h"
+#include "../../btmoduleindexdialog.h"
 #include "../../cinfodisplay.h"
 #include "../../edittextwizard/btedittextwizard.h"
 
@@ -252,8 +253,19 @@ QString BtQmlInterface::rawText(int const row, int const column) {
 
 void BtQmlInterface::setRawText(int row, int column, const QString& text) {
     QModelIndex index = m_moduleTextModel->index(row, 0);
-    int role = ModuleEntry::Text0Role + column;
-    m_moduleTextModel->setData(index, text, role);
+    int const role = ModuleEntry::Text0Role + column;
+    Q_ASSERT(column < m_moduleNames.size());
+    if (m_moduleTextModel->setData(index, text, role)) {
+        if (auto * const module =
+                CSwordBackend::instance().findModuleByName(
+                    m_moduleNames[column]))
+        {
+            if (module->hasIndex()) {
+                module->deleteIndex();
+                BtModuleIndexDialog::indexAllModules({module});
+            }
+        }
+    }
 }
 
 void BtQmlInterface::cancelMagTimer() {
