@@ -45,7 +45,7 @@ namespace Rendering {
 CDisplayRendering::CDisplayRendering()
     : CDisplayRendering(btConfig().getDisplayOptions(),
                         btConfig().getFilterOptions())
-{};
+{}
 
 CDisplayRendering::CDisplayRendering(DisplayOptions const & displayOptions,
                                      FilterOptions const & filterOptions)
