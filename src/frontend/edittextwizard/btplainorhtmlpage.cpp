@@ -55,7 +55,7 @@ void BtPlainOrHtmlPage::setHtmlMode(bool html) {
 
 void BtPlainOrHtmlPage::retranslateUi() {
     m_plainTextRadioButton->setText(
-                tr("Personal Commentary Editor", "Edit Plain text"));
+                tr("Edit Plain text", "Personal Commentary Editor"));
     m_htmlRadioButton->setText(
-                tr("Personal Commentary Editor", "Edit HTML text"));
+                tr("Edit HTML text", "Personal Commentary Editor"));
 }
