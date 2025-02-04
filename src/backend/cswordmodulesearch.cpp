@@ -246,12 +246,17 @@ QString highlightSearchedText(QString const & content,
     QRegularExpression highlightRegex; // Construct highLightRegex:
     if (plainSearchedText) {
         auto words = searchedText.split(spaceRegexp, Qt::SkipEmptyParts);
+        if (words.isEmpty())
+            return content.left(bodyIndex) + ret;
         for (auto & word : words)
             word = QRegularExpression::escape(word);
         highlightRegex = QRegularExpression(words.join(spaceRegexpString));
     } else {
+        auto const query = queryParser(searchedText);
+        if (query.isEmpty())
+            return content.left(bodyIndex) + ret;
         QString wordsRegexString;
-        for (auto const & word : queryParser(searchedText)) {
+        for (auto const & word : query) {
             QString wordRegexString;
             auto const wordSize = word.size();
             wordRegexString.reserve(wordSize + 3);
