@@ -314,11 +314,6 @@ wrong, or if the config file was write protected return false.
     void write(CSwordKey * key, const QString & newText);
 
     /**
-      Deletes the current entry and removes it from the module.
-    */
-    void deleteEntry(CSwordKey * const key);
-
-    /**
       \returns the language of the module.
     */
     std::shared_ptr<Language const> language() const

@@ -900,14 +900,6 @@ void CSwordModuleInfo::write(CSwordKey * key, const QString & newText) {
                       : newText.toLocal8Bit().constData());
 }
 
-void CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
-    BT_ASSERT(key);
-    m_swordModule.setKey(isUnicode()
-                    ? key->key().toUtf8().constData()
-                    : key->key().toLocal8Bit().constData());
-    m_swordModule.deleteEntry();
-}
-
 QString CSwordModuleInfo::aboutText() const {
     static auto const row(
                 QStringLiteral("<tr><td><b>%1</b></td><td>%2</td></tr>"));
