@@ -87,7 +87,6 @@ public:
     void cancelMagTimer();
     Q_INVOKABLE void changeReference(int i);
     Q_INVOKABLE void dragHandler(int index);
-    QString getRawText(int row, int column);
     Q_INVOKABLE bool moduleIsWritable(int column);
     Q_INVOKABLE void openEditor(int row, int column);
     void setMagReferenceByUrl(const QString& url);

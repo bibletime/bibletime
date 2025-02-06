@@ -59,7 +59,18 @@ struct ModuleEntry {
         Title6Role = Qt::UserRole + 26,
         Title7Role = Qt::UserRole + 27,
         Title8Role = Qt::UserRole + 28,
-        Title9Role = Qt::UserRole + 29
+        Title9Role = Qt::UserRole + 29,
+
+        Edit0Role = Qt::UserRole + 30,
+        Edit1Role = Qt::UserRole + 31,
+        Edit2Role = Qt::UserRole + 32,
+        Edit3Role = Qt::UserRole + 33,
+        Edit4Role = Qt::UserRole + 34,
+        Edit5Role = Qt::UserRole + 35,
+        Edit6Role = Qt::UserRole + 36,
+        Edit7Role = Qt::UserRole + 37,
+        Edit8Role = Qt::UserRole + 38,
+        Edit9Role = Qt::UserRole + 39,
     };
 };
 

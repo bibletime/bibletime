@@ -364,6 +364,8 @@ static int getColumnFromRole(int role) {
         return role - ModuleEntry::Text0Role;
     if (role >= ModuleEntry::Title0Role && role <= ModuleEntry::Title9Role)
         return role - ModuleEntry::Title0Role;
+    if (role >= ModuleEntry::Edit0Role && role <= ModuleEntry::Edit9Role)
+        return role - ModuleEntry::Edit0Role;
     return 0;
 }
 
@@ -372,7 +374,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
     CSwordVerseKey key = indexToVerseKey(row);
     int verse = key.verse();
 
-    if (role >= ModuleEntry::TextRole && role <= ModuleEntry::Title9Role) {
+    if (role >= ModuleEntry::TextRole && role <= ModuleEntry::Edit9Role) {
         if (verse == 0)
             return QString();
         QString text;
@@ -406,6 +408,8 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
             }
 
             // Personal commentary
+            if (role >= ModuleEntry::Edit0Role && role <= ModuleEntry::Edit9Role)
+                return mKey.rawText();
             if (module->isWritable()) {
                 auto const & rawText = mKey.rawText();
                 auto text =
@@ -615,6 +619,8 @@ bool BtModuleTextModel::setData(
         const QModelIndex &index,
         const QVariant &value,
         int role) {
+    if (role < ModuleEntry::Edit0Role || role > ModuleEntry::Edit9Role)
+        return false;
     auto const & module = *m_moduleInfoList.at(getColumnFromRole(role));
     CSwordVerseKey mKey(indexToVerseKey(index.row(), module));
     const_cast<CSwordModuleInfo &>(module).write(&mKey, value.toString());

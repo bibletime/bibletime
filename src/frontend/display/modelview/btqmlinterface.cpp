@@ -141,38 +141,13 @@ void BtQmlInterface::clearSelection() noexcept { m_selection.reset(); }
 QString BtQmlInterface::getSelectedText() const
 { return m_selection.has_value() ? m_selection->selectedText : QString(); }
 
-QString BtQmlInterface::getRawText(int row, int column) {
-    BT_ASSERT(column >= 0 && column <= m_moduleNames.count());
-    CSwordVerseKey key = m_moduleTextModel->indexToVerseKey(row);
-    QString moduleName = m_moduleNames.at(column);
-    auto * const module =
-            CSwordBackend::instance().findModuleByName(moduleName);
-    CSwordVerseKey mKey(module);
-    mKey.setKey(key.key());
-    auto rawText = mKey.rawText();
-
-    /* Since rawText is a complete HTML page at the moment, strip away headers
-       and footers of a HTML page, keeping only the contents of <body>: */
-    static auto const reFlags =
-            QRegularExpression::CaseInsensitiveOption
-            | QRegularExpression::DotMatchesEverythingOption
-            | QRegularExpression::DontCaptureOption
-            | QRegularExpression::UseUnicodePropertiesOption;
-    static QRegularExpression const reBefore(
-                QStringLiteral("^.*?<body(\\s[^>]*?)?>"), reFlags);
-    static QRegularExpression const reAfter(
-                QStringLiteral("</body>.*?$"), reFlags);
-    if (auto const m = reBefore.match(rawText); m.hasMatch())
-        rawText.remove(0, m.capturedLength());
-    if (auto const m = reAfter.match(rawText); m.hasMatch())
-        rawText.chop(m.capturedLength());
-    return rawText;
-}
-
 void BtQmlInterface::openEditor(int row, int column) {
     BtEditTextWizard wiz;
     wiz.setTitle(tr("Edit %1").arg(m_moduleTextModel->indexToKeyName(row)));
-    wiz.setText(getRawText(row, column));
+    wiz.setText(
+            m_moduleTextModel->data(
+                    m_moduleTextModel->index(row, 0),
+                    ModuleEntry::Edit0Role + column).toString());
     wiz.setFont(m_fonts.at(column));
     if (wiz.exec() == QDialog::Accepted)
         setRawText(row, column, wiz.text());
@@ -253,7 +228,7 @@ QString BtQmlInterface::rawText(int const row, int const column) {
 
 void BtQmlInterface::setRawText(int row, int column, const QString& text) {
     QModelIndex index = m_moduleTextModel->index(row, 0);
-    int const role = ModuleEntry::Text0Role + column;
+    int const role = ModuleEntry::Edit0Role + column;
     Q_ASSERT(column < m_moduleNames.size());
     if (m_moduleTextModel->setData(index, text, role)) {
         if (auto * const module =
