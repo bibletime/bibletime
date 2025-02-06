@@ -47,7 +47,7 @@ QString CSwordKey::rawText() {
         return QString();
 
     auto & m = m_module->swordModule();
-    m.getKey()->setText( rawKey() );
+    m.getKey()->copyFrom(asSwordKey());
 
     if (key().isNull())
         return QString();
@@ -62,7 +62,7 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
     if (auto * const vk_mod = dynamic_cast<sword::VerseKey *>(m.getKey()))
         vk_mod->setIntros(true);
 
-    m.getKey()->setText(rawKey());
+    m.getKey()->copyFrom(asSwordKey());
 
     if (m_module->type() == CSwordModuleInfo::Lexicon) {
         m_module->snap();
@@ -120,7 +120,7 @@ QString CSwordKey::strippedText() {
         return QString();
 
     auto & m = m_module->swordModule();
-    m.getKey()->setText(std::string(rawKey()).c_str());
+    m.getKey()->copyFrom(asSwordKey());
 
     return QString::fromUtf8(m.stripText());
 }
