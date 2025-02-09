@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nl">
+<TS version="2.1" language="uk">
 <context>
     <name></name>
     <message>
@@ -16,7 +16,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="49"/>
         <source>Information About %1</source>
-        <translation>Informatie Over %1</translation>
+        <translation>Інформація про %1</translation>
     </message>
 </context>
 <context>
@@ -24,47 +24,47 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="839"/>
         <source>&amp;File</source>
-        <translation>&amp;Bestand</translation>
+        <translation>&amp;Файл</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="840"/>
         <source>&amp;View</source>
-        <translation>&amp;Beeld</translation>
+        <translation>&amp;Вигляд</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="844"/>
         <source>&amp;Search</source>
-        <translation>&amp;Zoek</translation>
+        <translation>&amp;Пошук</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="848"/>
         <source>Sw&amp;itch session</source>
-        <translation>&amp;Verwissel sessie</translation>
+        <translation>Перемикнути сеанс</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="853"/>
         <source>Se&amp;ttings</source>
-        <translation>&amp;Instellingen</translation>
+        <translation>Налаштування</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="856"/>
         <source>&amp;Help</source>
-        <translation>&amp;Help</translation>
+        <translation>&amp;Довідка</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="286"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Afsluiten</translation>
+        <translation>Вийти</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="413"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation>Open de Bijbelstudie-handleiding die bij BibleTime zit.&lt;br/&gt;Deze handleiding is een introductie op het efficiënt bestuderen van de Bijbel </translation>
+        <translation>Відкрити посібник з вивчення Біблії.&lt;br/&gt;Цей посібник допоможе вивчати Біблію краще.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="422"/>
         <source>Information about the BibleTime program</source>
-        <translation>Informatie over het BibleTime-programma</translation>
+        <translation>Інформація про програму BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="845"/>
@@ -74,272 +74,272 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="849"/>
         <source>&amp;Delete session</source>
-        <translation>&amp;Wis sessie</translation>
+        <translation>&amp;Вилучити сесію</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="847"/>
         <source>&amp;Arrangement mode</source>
-        <translation>&amp;Rangschik modus</translation>
+        <translation>&amp;Режим розташування</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="369"/>
         <source>&amp;Manual mode</source>
-        <translation>&amp;Handmatige modus</translation>
+        <translation>Вручн&amp;у</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="378"/>
         <source>Auto-tile &amp;vertically</source>
-        <translation>Automatisch &amp;verticaal schikken</translation>
+        <translation>Авто по &amp;вертикалі</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="384"/>
         <source>Auto-tile &amp;horizontally</source>
-        <translation>Automatisch &amp;horizontaal schikken</translation>
+        <translation>Авто по &amp;горизонталі</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="393"/>
         <source>Auto-&amp;cascade</source>
-        <translation>Automatisch &amp;achter elkaar schikken</translation>
+        <translation>Авто &amp;каскад</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="366"/>
         <source>&amp;Cascade</source>
-        <translation>&amp;Achter elkaar schikken</translation>
+        <translation>&amp;Каскад</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="354"/>
         <source>Tile &amp;vertically</source>
-        <translation>&amp;Verticaal schikken</translation>
+        <translation>По &amp;вертикалі</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="358"/>
         <source>Tile &amp;horizontally</source>
-        <translation>&amp;Horizontaal schikken</translation>
+        <translation>По &amp;горизонталі</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="350"/>
         <source>Cl&amp;ose all windows</source>
-        <translation>&amp;Sluit alle windows</translation>
+        <translation>Зак&amp;рити усі вікна</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="352"/>
         <source>Close all open windows inside BibleTime</source>
-        <translation>Sluit alle geopende vensters in BibleTime</translation>
+        <translation>Закрити усі відкриті вікна всередині BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="400"/>
         <source>Bookshelf Manager...</source>
-        <translation>Boekenplank-beheerder</translation>
+        <translation>Упорядник книжкової полиці ...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="408"/>
         <source>&amp;Handbook</source>
-        <translation>&amp;Handleiding</translation>
+        <translation>&amp;Довідник</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="411"/>
         <source>&amp;Bible Study Howto</source>
-        <translation>&amp;Bijbelstudie handleiding</translation>
+        <translation>&amp;Як вивчати Біблію</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="413"/>
         <source>Error locating handbook!</source>
-        <translation type="unfinished"></translation>
+        <translation>Керівництво з пошуку помилок!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="414"/>
         <source>A suitable installed handbook could not be found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Відповідного встановленого керівництва знайти не вдалося!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="420"/>
         <source>Error opening handbook!</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка відкриття довідника!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="421"/>
         <source>The installed handbook could not be opened!</source>
-        <translation type="unfinished"></translation>
+        <translation>Встановлений довідник не може бути відкрито!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="429"/>
         <source>Error locating howto!</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка визначення місцезнаходження довідника!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="430"/>
         <source>A suitable installed howto could not be found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Відповідного встановленого керівництва знайти не вдалося!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="436"/>
         <source>Error opening howto!</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка відкриття керівництва!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="437"/>
         <source>The installed howto could not be opened!</source>
-        <translation type="unfinished"></translation>
+        <translation>Встановлене керівництво не може бути відкрито!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="726"/>
         <source>Please enter a name for the new session.</source>
-        <translation>Vul alstublieft een naam in voor de nieuwe sessie</translation>
+        <translation>Будь ласка, уведіть назву для нової сесії.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="734"/>
         <source>Session already exists</source>
-        <translation>Sessie bestaat al</translation>
+        <translation>Сесія вже існує</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="735"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
-        <translation>Sessie met de naam &quot;%1&quot; bestaat al. Geef alstublieft een andere naam op.</translation>
+        <translation>Сесія з іменем &quot;%1&quot; вже існує. Будь ласка, вкажіть інше ім&apos;я.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="287"/>
         <source>Quit BibleTime</source>
-        <translation>Sluit BibleTime</translation>
+        <translation>Вийти з BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="329"/>
         <source>Auto scroll up</source>
-        <translation>Automatisch omhoog scrollen</translation>
+        <translation>Автоматичне гортання вгору</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="333"/>
         <source>Auto scroll down</source>
-        <translation>Automatisch omlaag scrollen</translation>
+        <translation>Автоматичне гортання вниз</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="340"/>
         <source>Search in &amp;open works...</source>
-        <translation>Zoek in &amp;open werken...</translation>
+        <translation>Шукати у &amp;відкритих книгах...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="344"/>
         <source>Search in standard &amp;Bible...</source>
-        <translation>Zoek in standaard &amp;Bijbel...</translation>
+        <translation>Шукати у стандартній &amp;Біблії...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="397"/>
         <source>Save as &amp;new session...</source>
-        <translation>Bewaar als &amp;nieuwe sessie...</translation>
+        <translation>Зберегти як &amp;нову сесію...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="398"/>
         <source>Create and save a new session</source>
-        <translation>Maak en bewaar een nieuwe sessie</translation>
+        <translation>Створити та зберегти нову сесію</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="371"/>
         <source>Manually arrange the open windows</source>
-        <translation>Handmatig de open vensters schikken</translation>
+        <translation>Вирівняти відкриті вікна вручну</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="380"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
-        <translation>Automatisch de open vensters rangschikken (zij aan zij)</translation>
+        <translation>Автоматично викладати відкриті вікна вертикально (розташувати поруч)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="386"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
-        <translation>Automatisch de open vensters rangschikken (bovenop elkaar)</translation>
+        <translation>Автоматично викладати відкриті вікна горизонтально (викласти один на одного)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="389"/>
         <source>Auto-&amp;tile</source>
-        <translation>Automatisch &amp;schikken</translation>
+        <translation>Авто &amp;плиткою</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="391"/>
         <source>Automatically tile the open windows</source>
-        <translation>Automatisch de open vensters rangschikken</translation>
+        <translation>Автоматично вирівнювати плиткою відкриті вікна</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="373"/>
         <source>Ta&amp;bbed</source>
-        <translation>&amp;Getabt</translation>
+        <translation>Вкла&amp;дками</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="375"/>
         <source>Automatically tab the open windows</source>
-        <translation>Automatisch tab maken van open vensters </translation>
+        <translation>Автоматично розташовувати відкриті вікна вкладками</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="395"/>
         <source>Automatically cascade the open windows</source>
-        <translation>Open vensters automatisch achter elkaar zetten</translation>
+        <translation>Автоматично розташовувати відкриті вікна каскадом</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="367"/>
         <source>Cascade the open windows</source>
-        <translation>Open vensters achter elkaar zetten</translation>
+        <translation>Розташувати відкриті вікна каскадом</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="363"/>
         <source>&amp;Tile</source>
-        <translation>&amp;Rangschikken</translation>
+        <translation>&amp;Плитка</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="364"/>
         <source>Tile the open windows</source>
-        <translation>Open vensters schikken</translation>
+        <translation>Розташувати відкриті вікна плиткою</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="356"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
-        <translation>Schik open vensters verticaal (naast elkaar rangschikken)</translation>
+        <translation>Відкриті вікна викладати вертикально плиткою (розташовувати поруч)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="360"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
-        <translation>Schik open vensters horizontaal (boven elkaar rangschikken)</translation>
+        <translation>Відкриті вікна викладати горизонтально плиткою (розташовувати одна на одній)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="347"/>
         <source>Close &amp;window</source>
-        <translation>Sluit &amp;venster</translation>
+        <translation>Закрити &amp;вікно</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="348"/>
         <source>Close the current open window</source>
-        <translation>Sluit het huidig geopende venster</translation>
+        <translation>Закрити поточне відкрите вікно</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="405"/>
         <source>&amp;Configure BibleTime...</source>
-        <translation>&amp;Configureer BibleTime...</translation>
+        <translation>&amp;Налаштувати BibleTime...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="406"/>
         <source>Set BibleTime&apos;s preferences</source>
-        <translation>Stel BibleTimes voorkeuren in</translation>
+        <translation>Вказати уподобання BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="402"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
-        <translation>Configureer je boekenplank en installeer/update/verwijder/indexeer werken</translation>
+        <translation>Налаштувати бібліотеку та встановити/оновити/вилучити/індексувати книги</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="409"/>
         <source>Open BibleTime&apos;s handbook</source>
-        <translation>Open BibleTimes handleiding</translation>
+        <translation>Відкрити керівництво по BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="417"/>
         <source>&amp;Tip of the day...</source>
-        <translation>&amp;Tip van de dag...</translation>
+        <translation>&amp;Порада дня...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="418"/>
         <source>Show tips about BibleTime</source>
-        <translation>Toon tips over BibleTime</translation>
+        <translation>Показувати поради по BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="294"/>
         <source>Toggle visibility of the bookshelf window</source>
-        <translation>Schakel de zichtbaarheid van het boekenplank-venster</translation>
+        <translation>Перемикнути показ вікна бібліотеки</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="64"/>
@@ -510,12 +510,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="298"/>
         <source>Toggle visibility of the bookmarks window</source>
-        <translation>Schakel de zichtbaarheid van het bladwijzer-venster</translation>
+        <translation>Перемикнути показ вікна закладок</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="301"/>
         <source>Toggle visibility of the mag window</source>
-        <translation>Toon/verberg het lens venster</translation>
+        <translation>Перемикнути показ вікна збільшувального скла</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="305"/>
@@ -575,27 +575,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="834"/>
         <source>Main toolbar</source>
-        <translation>Hoofdwerkbalk</translation>
+        <translation>Головна панель</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="835"/>
         <source>Navigation toolbar</source>
-        <translation>Navigatiewerkbalk</translation>
+        <translation>Навігаційна панель</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="836"/>
         <source>Works toolbar</source>
-        <translation>Naslagwerk werkbalk</translation>
+        <translation>Панель книг</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="837"/>
         <source>Tools toolbar</source>
-        <translation>Gereedschappenwerkbalk</translation>
+        <translation>Панель знарядь</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="842"/>
         <source>Scroll</source>
-        <translation>Scrollen</translation>
+        <translation>Гортання</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="859"/>
@@ -605,117 +605,117 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="307"/>
         <source>Show main toolbar</source>
-        <translation>Laat hoofdwerkbalk zien</translation>
+        <translation>Показувати головну панель</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="315"/>
         <source>Show works toolbar</source>
-        <translation>Toon naslagwerk werkbalk</translation>
+        <translation>Показувати панель книг</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="319"/>
         <source>Show tools toolbar</source>
-        <translation>Laat gereedschappenwerkbalk zien</translation>
+        <translation>Показувати панель знарядь</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="292"/>
         <source>Show bookshelf</source>
-        <translation>Laat boekenplank zien</translation>
+        <translation>Показувати бібліотеку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="296"/>
         <source>Show bookmarks</source>
-        <translation>Laat bladwijzers zien</translation>
+        <translation>Показувати закладки</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="300"/>
         <source>Show mag</source>
-        <translation>Toon Lens</translation>
+        <translation>Показувати збільшувальне скло</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="841"/>
         <source>Toolbars</source>
-        <translation>Werkbalken</translation>
+        <translation>Панелі</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="324"/>
         <source>Show toolbars in text windows</source>
-        <translation>Laat werkbalken in tekstvensters zien</translation>
+        <translation>Показувати панелі у текстових вікнах</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="303"/>
         <source>Show parallel text headers</source>
-        <translation>Toon parallelle tekst kopjes</translation>
+        <translation>Показувати заголовки при паралельному перегляді</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="846"/>
         <source>O&amp;pen windows</source>
-        <translation>&amp;Open vensters</translation>
+        <translation>Від&amp;криті вікна</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="342"/>
         <source>Search in all works that are currently open</source>
-        <translation>Zoek in alle open werken</translation>
+        <translation>Шукати в усіх відкритих на дану мить книгах</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="345"/>
         <source>Search in the standard Bible</source>
-        <translation>Zoek in de standaard Bijbel</translation>
+        <translation>Шукати у стандартній Біблії</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="725"/>
         <source>New Session</source>
-        <translation>Nieuwe sessie</translation>
+        <translation>Нова Сесія</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="97"/>
         <source>Initializing the SWORD engine...</source>
-        <translation>Bezig met het initialiseren van de SWORD engine...</translation>
+        <translation>Ініціалізація рушія SWORD...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="110"/>
         <source>Creating BibleTime&apos;s user interface...</source>
-        <translation>Bezig met het creëren van de BibleTime gebruikersinterface...</translation>
+        <translation>Створення користувацького інтерфейсу BibleTime ...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="118"/>
         <source>Initializing menu- and toolbars...</source>
-        <translation>Bezig met het initialiseren van de menu&apos;s en werkbalken...</translation>
+        <translation>Створення меню та панелей...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="192"/>
         <source>Unlock Work</source>
-        <translation>Ontgrendel Werk</translation>
+        <translation>Розблокувати книгу</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="193"/>
         <source>Enter the unlock key for %1.</source>
-        <translation>Voer de unlock code in voor %1.</translation>
+        <translation>Уведіть ключ розблокування для %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="221"/>
         <source>Warning: Invalid unlock key!</source>
-        <translation>Waarschuwing: Ongeldige unlock code!</translation>
+        <translation>Попередження: Неправильний ключ розблокування!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="222"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
-        <translation>De unlock code die u heeft ingevoerd, kon deze module niet correct ontgrendelen. Probeert u het alstublieft opnieuw.</translation>
+        <translation>Уведений вами ключ розблокування не відповідає даному модулю. Будь ласка, спробуйте ще раз.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="420"/>
         <source>&amp;About BibleTime</source>
-        <translation>&amp;Over BibleTime</translation>
+        <translation>&amp;Про BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="832"/>
         <source>Bookmarks</source>
-        <translation>Bladwijzers</translation>
+        <translation>Закладки</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="833"/>
         <source>Mag</source>
-        <translation>Lens</translation>
+        <translation>Збільшувальне скло</translation>
     </message>
 </context>
 <context>
@@ -723,27 +723,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="189"/>
         <source>Warning!</source>
-        <translation>Waarschuwing!</translation>
+        <translation>Увага!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="190"/>
         <source>Migration to the new configuration system is not yet implemented. Proceeding might result in &lt;b&gt;loss of data&lt;/b&gt;. Please backup your configuration files before you continue!&lt;br/&gt;&lt;br/&gt;Do you want to continue? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation>Migratie naar het nieuwe configuratie systeem is nog niet geïmplementeerd. Als u doorgaat zou dit kunnen resulteren in 1dataverlies1. Maakt u alstublieft een backup van uw configuratie bestanden voordat u verder gaat!23Wilt u doorgaan? Kies &quot;Nee&quot; om BibleTime onmiddellijk af te sluiten.</translation>
+        <translation>Перехід на новую систему конфігурації ще не реалізовано. Продовження &lt;b&gt;може призвести до втрати даних.&lt;/b&gt; Будь ласка, створіть резервну копію ваших конфігураційних файлів, перед чим продовжити! Бажаєте продовжити?&lt;br/&gt;&lt;br/&gt;Натисніть &quot;Ні&quot;, щоб негайно вийти з BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="202"/>
         <source>Error loading configuration!</source>
-        <translation>Er is een fout opgetreden tijdens het laden van de configuratie!</translation>
+        <translation>Помилка завантаження конфігурації!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="203"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation>Het inlezen van BibleTime&apos;s configuratie is mislukt, doordat het configuratiebestand van een nieuwere versie van BibleTime afkomstig blijkt te zijn. Dit is waarschijnlijk het gevolg van een downgrade, d.w.z. het installeren van een oudere versie van BibleTime. Inlezen van het nieuwe configuratiebestand zou 1dataverlies1 tot gevolg kunnen hebben.23Weet u zeker dat u het nieuwe configuratiebestand wilt inlezen? Kies &quot;Nee&quot; om BibleTime onmiddellijk af te sluiten.</translation>
+        <translation>Не вдалося завантажити конфігурацію BibleTime, бо, здається, файл конфігурації відповідає новішій версії BibleTime. Ймовірно, це викликано тим, що версію BibleTime було знижено. Завантаження нового файлу конфігурації може призвести до &lt;b&gt;втрати даних&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Ви все ще волієте спробувати завантажити новий файл конфігурації? Натисніть кнопку «Ні», щоб негайно вийти з BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="276"/>
         <source>Fatal error!</source>
-        <translation>Fatale fout!</translation>
+        <translation>Фатальна помилка!</translation>
     </message>
 </context>
 <context>
@@ -751,128 +751,128 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="99"/>
         <source>Updating Works</source>
-        <translation>Bezig met het updaten van de Werken</translation>
+        <translation>Оновлення модулів</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="101"/>
         <source>The selected works are being updated.</source>
-        <translation>De geselecteerde werken worden bijgewerkt.</translation>
+        <translation>Обрані модулі оновлюються</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="105"/>
         <source>Installing Works</source>
-        <translation>Bezig met het installeren van de werken</translation>
+        <translation>Встановлення модулів</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="107"/>
         <source>The selected works are being installed.</source>
-        <translation>De geselecteerde werken worden geïnstalleerd.</translation>
+        <translation>Обрані модулі встановлюються</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="61"/>
         <source>Choose Languages</source>
-        <translation>Kies Talen</translation>
+        <translation>Обрати мови</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="62"/>
         <source>Choose one or more languages to install works from.</source>
-        <translation>Kies een of meerdere talen waarvan u werken wilt installeren.</translation>
+        <translation>Обрати одну або декілька мов для встановлення модулів.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="75"/>
         <source>Choose Remote Libraries</source>
-        <translation>Kies Online Bibliotheken</translation>
+        <translation>Обрати віддалені бібліотеки</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="77"/>
         <source>Choose one or more remote libraries to install works from.</source>
-        <translation>Kies een of meerdere online bibliotheken waarvan u werken wilt installeren.</translation>
+        <translation>Обрати одну або декілька віддалених бібліотек для встановлення модулів.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="84"/>
         <source>Updating Remote Libraries</source>
-        <translation>Online Bibliotheken aan het bijwerken</translation>
+        <translation>Оновлення віддалених бібліотек</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="86"/>
         <source>Updating information from remote libraries.</source>
-        <translation>Informatie van online bibliotheken aan het bijwerken</translation>
+        <translation>Оновлення інформації з віддалених бібліотек.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="75"/>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="98"/>
         <source>Bookshelf Manager</source>
-        <translation>Boekenplank Manager</translation>
+        <translation>Упорядник книг</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="77"/>
         <source>Install, update, or remove works on your bookshelf.</source>
-        <translation>Installeer, update, of verwijder werken van uw boekenplank.</translation>
+        <translation>Встановлення, оновлення, чи вилучення модулів на своїй книжковій полиці</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="80"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;WARNING&lt;/span&gt;: Installing or updating works uses the internet. If you live in a persecuted country you may not want to do this.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;WAARSCHUWING&lt;/span&gt;: Voor het installeren of updaten van werken wordt het Internet gebruikt. Als u in een vervolgd land woont, zou u dit mogelijk niet willen doen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;УВАГА&lt;/span&gt;: Встановлення, або оновлення модулів використовує Інтернет. Якщо ви живете у країні, де зазнаєте гонінь, ви, можливо, не забажаєте цього робити.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="86"/>
         <source>Bookshelf task</source>
-        <translation>Boekenplank taak</translation>
+        <translation>Завдання книжкової полиці</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="89"/>
         <source>Install additional works (uses internet)</source>
-        <translation>Installeer extra werken (vereist internet)</translation>
+        <translation>Встановлення додаткових модулів (використовується інтернет)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="93"/>
         <source>Update installed works (uses internet)</source>
-        <translation>Update geïnstalleerde werken (vereist internet)</translation>
+        <translation>Оновлення встановлених модулів (використовується інтернет)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="96"/>
         <source>Remove installed works</source>
-        <translation>Verwijder geïnstalleerde werken</translation>
+        <translation>Вилучити встановлені модулі</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="201"/>
         <source>Install Works</source>
-        <translation>Installeer Werken</translation>
+        <translation>Встановити модулі</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="202"/>
         <source>Choose one or more works to install.</source>
-        <translation>Kies een of meerdere werken om te installeren.</translation>
+        <translation>Обрати один, або декілька модулів для встановлення.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="207"/>
         <source>Update Works</source>
-        <translation>Update Werken</translation>
+        <translation>Оновити модулі</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="208"/>
         <source>Choose one or more works to update.</source>
-        <translation>Kies een of meerdere werken om te updaten.</translation>
+        <translation>Обрати один, або декілька модулів для оновлення.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="214"/>
         <source>Remove Works</source>
-        <translation>Verwijder Werken</translation>
+        <translation>Вилучити модулі</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="215"/>
         <source>Choose one or more works to remove.</source>
-        <translation>Kies een of meerdere werken om te verwijderen.</translation>
+        <translation>Обрати один, або декілька модулів для вилучення.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="100"/>
         <source>Canceling Downloads</source>
-        <translation>Bezig met het annuleren van downloads</translation>
+        <translation>Скасуваня стягування</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="103"/>
         <source>The Bookshelf Manager will close when the current download finishes.</source>
-        <translation>De Boekenplank Manager wordt afgesloten zodra de huidige download voltooid is.</translation>
+        <translation>Упорядник книжкової полиці закриється, коли поточне завантаження завершиться.</translation>
     </message>
 </context>
 <context>
@@ -880,22 +880,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="196"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
-        <translation>BibleTime is een eenvoudig maar krachtig Bijbelstudie hulpmiddel.</translation>
+        <translation>BibleTime — це простий у використанні, але потужний знадіб для вивчення Біблії.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="346"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
-        <translation>BibleTime wordt vrijgegeven onder de GPL licentie. U kunt het programma zonder restricties downloaden en gebruiken voor persoonlijke-, privé-, publieke- en commerciële doeleinden, maar kan het programma slechts dan weggeven of distribueren als u ook de corresponderende broncode distribueert.</translation>
+        <translation>Программа BibleTime випущена за ліцензією GPL. Ви можете стягнути та використовувати програму з особистою, суспільною, або комерційною метою без обмежень, але маєте розповсюджувати створену на її основі програму лише разом із відповідним сирцевим кодом.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="352"/>
         <source>The complete legally binding license is below.</source>
-        <translation>De complete juridisch bindende licentie staat hieronder.</translation>
+        <translation>Повний текст юридично обов&apos;язкової ліцензії наведено нижче.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="181"/>
         <source>About BibleTime</source>
-        <translation>Over BibleTime</translation>
+        <translation>Про BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="193"/>
@@ -905,47 +905,47 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
         <source>(c)1999-2021, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(c)1999-2020, Команда BibleTime {1999-2021,?}</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="205"/>
         <source>&amp;Contributors</source>
-        <translation>&amp;Medewerkers</translation>
+        <translation>&amp;Сприячі</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="216"/>
         <source>The following people contributed to BibleTime:</source>
-        <translation>De volgende mensen hebben bijgedragen aan BibleTime:</translation>
+        <translation>Такі люди беруть участь у розробці BibleTime:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="218"/>
         <source>documentation and translation manager</source>
-        <translation>documentatie en vertaling manager</translation>
+        <translation>керівник з документації та перекладів</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
         <source>project manager</source>
-        <translation>project manager</translation>
+        <translation>керівник проєкту</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="244"/>
         <source>tester</source>
-        <translation>tester</translation>
+        <translation>тестер</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="244"/>
         <source>usability expert</source>
-        <translation>bruikbaarheids expert</translation>
+        <translation>експерт з юзабіліті</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="309"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation>BibleTime maakt gebruik van het SWORD Project. Het SWORD Project is het gratis Bijbel software project van de CrossWire Bible Society. Het doel is om platform-onafhankelijke open-source tools &amp;mdash; te maken die vallen onder de GNU General Public License &amp;mdash; en die het voor programmeurs en Bijbelgenootschappen mogelijk maken om sneller en makkelijker Bijbelsoftware te schrijven.</translation>
+        <translation>BibleTime використовує Проєкт SWORD. Проєкт SWORD це програмний продукт Библійного Товариства Crosswire. Він призначений для створення кроссплатформового набору знадобів із відкритим сирцевим кодом захищеного GNU General Public License, за допомогою якого програмери та Біблійні товариства можуть просто та швидко створювати свої програмні продукти.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="315"/>
         <source>The SWORD Project: </source>
-        <translation>Het SWORD Project:</translation>
+        <translation>Проєкт SWORD:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="323"/>
@@ -955,73 +955,73 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="326"/>
         <source>Qt toolkit version %1</source>
-        <translation>Qt toolkit versie %1</translation>
+        <translation>Версія Qt %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="333"/>
         <source>More info...</source>
-        <translation>Meer informatie...</translation>
+        <translation>Більше інформації...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="342"/>
         <source>&amp;License</source>
-        <translation>&amp;Licentie</translation>
+        <translation>&amp;Ліцензія</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="208"/>
         <source>designer</source>
-        <translation>ontwerper</translation>
+        <translation>оздоблювач</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="207"/>
         <source>developer</source>
-        <translation>ontwikkelaar</translation>
+        <translation>розробник</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
         <source>project founder</source>
-        <translation>project oprichter</translation>
+        <translation>засновник проєкту</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="225"/>
         <source>packager</source>
-        <translation>verpakker</translation>
+        <translation>пакувальник</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="226"/>
         <source>creator of The Sword Project</source>
-        <translation>maker van het SWORD Project</translation>
+        <translation>творець Проєкту SWORD</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="228"/>
         <source>domain sponsor</source>
-        <translation>domein sponsor</translation>
+        <translation>доменний спонсор</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="229"/>
         <source>howto</source>
-        <translation>handleiding</translation>
+        <translation>посібник</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="209"/>
         <source>artist</source>
-        <translation>artiest</translation>
+        <translation>художник</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>documentation</source>
-        <translation>documentatie</translation>
+        <translation>документація</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
         <source>The following people translated BibleTime into their language:</source>
-        <translation>De volgende mensen vertaalden BibleTime naar hun eigen taal:</translation>
+        <translation>Такі люди здійснили переклад BibleTime своєю мовою:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="292"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
-        <translation>Mogelijk missen er enkele namen; als u fouten of omissies opmerkt, meldt u dit dan alstublieft bij %1.</translation>
+        <translation>Можливо, деякі імена відсутні, будь ласка, подайте проблему на %1, якщо помітите помилки чи упущення.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="303"/>
@@ -1031,17 +1031,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="307"/>
         <source>SWORD library version %1</source>
-        <translation>SWORD bibliotheek versie %1</translation>
+        <translation>Версія бібліотеки SWORD %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="328"/>
         <source>This program uses Qt version %1.</source>
-        <translation>Dit programma maakt gebruik van Qt versie %1.</translation>
+        <translation>Ця програма використовує Qt версії %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="330"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
-        <translation>Qt is een cross-platform programma- en gebruikersinterface framework, geschreven in C++. Het is vrijgegeven onder de LGPL licentie.</translation>
+        <translation>Qt — это кроссплатформовий фреймворк для створення застосунків, написаний мовою C++. Він випущений за ліцензією LGPL.</translation>
     </message>
 </context>
 <context>
@@ -1049,52 +1049,52 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="133"/>
         <source>Select book</source>
-        <translation type="unfinished">Selecteer boek</translation>
+        <translation type="unfinished">Оберіть книгу</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="150"/>
         <source>Select chapter</source>
-        <translation type="unfinished">Selecteer hoofdstuk</translation>
+        <translation type="unfinished">Оберіть розділ</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="169"/>
         <source>Select verse</source>
-        <translation type="unfinished">Selecteer vers</translation>
+        <translation type="unfinished">Оберіть вірш</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="195"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation>Scroll door de items in de lijst. Klik op de knop en beweeg de muis om een item te vergroten of te verkleinen.</translation>
+        <translation>Гортає через елементи переліку. Натисніть кнопку та рухайте вказівником, щоб збільшити, чи зменшити елементи.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="197"/>
         <source>Next book</source>
-        <translation>Volgend boek</translation>
+        <translation>Наступна книга</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="199"/>
         <source>Previous book</source>
-        <translation>Vorig boek</translation>
+        <translation>Попередня книга</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="202"/>
         <source>Next chapter</source>
-        <translation>Volgend hoofdstuk</translation>
+        <translation>Наступний розділ</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="204"/>
         <source>Previous chapter</source>
-        <translation>Vorig hoofdstuk</translation>
+        <translation>Попередній розділ</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="207"/>
         <source>Next verse</source>
-        <translation>Volgend vers</translation>
+        <translation>Наступний вірш</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="209"/>
         <source>Previous verse</source>
-        <translation>Vorig vers</translation>
+        <translation>Попередній вірш</translation>
     </message>
 </context>
 <context>
@@ -1102,47 +1102,47 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="201"/>
         <source>Bookshelf</source>
-        <translation>Boekenplank</translation>
+        <translation>Бібліотека</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="203"/>
         <source>&amp;Open</source>
-        <translation>&amp;Open</translation>
+        <translation>&amp;Відкрити</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="204"/>
         <source>&amp;Unlock...</source>
-        <translation>&amp;Ontgrendel...</translation>
+        <translation>Роз&amp;блокувати...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="205"/>
         <source>&amp;About...</source>
-        <translation>&amp;Over...</translation>
+        <translation>&amp;Про...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="207"/>
         <source>There are currently no works installed. Please click the button below to install new works.</source>
-        <translation>Er zijn nog geen werken geïnstalleerd. Klik alstublieft op de knop hieronder om nieuwe werken te installeren.</translation>
+        <translation>Жодної книги не встановлено. Будь ласка, тисніть наступну кнопку, щоб перейти до встановлення книг.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="209"/>
         <source>&amp;Install works...</source>
-        <translation>&amp;Installeer werken...</translation>
+        <translation>&amp;Встановити книги...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="104"/>
         <source>Warning: Module locked!</source>
-        <translation>Waarschuwing: Module is vergrendeld!</translation>
+        <translation>Попередження: модуль заблоковано!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="105"/>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
-        <translation>U probeert om toegang te verkrijgen tot een versleutelde module. Voer alstublieft bij het volgende dialoog de unlock code in om de module te openen.</translation>
+        <translation>Ви намагаєтеся відкрити зашифрований модуль. Уведіть ключ розблокування у відповідному діалозі, щоб відкрити модуль.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="194"/>
         <source>&amp;Search in %1...</source>
-        <translation>&amp;Zoek in %1...</translation>
+        <translation>&amp;Шукати у %1...</translation>
     </message>
 </context>
 <context>
@@ -1150,27 +1150,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="107"/>
         <source>Category/Language</source>
-        <translation>Categorie/Taal</translation>
+        <translation>Категорія/Мова</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="108"/>
         <source>Category</source>
-        <translation>Categorie</translation>
+        <translation>Категорія</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="109"/>
         <source>Language/Category</source>
-        <translation>Taal/Categorie</translation>
+        <translation>Мова/Категорія</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="110"/>
         <source>Language</source>
-        <translation>Taal</translation>
+        <translation>Мова</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="113"/>
         <source>No grouping</source>
-        <translation>Geen groepering</translation>
+        <translation>Без групування</translation>
     </message>
 </context>
 <context>
@@ -1178,22 +1178,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="96"/>
         <source>Stop</source>
-        <translation>Stop</translation>
+        <translation>Зупинити</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="154"/>
         <source>Installing &quot;%1&quot;</source>
-        <translation>Bezig met installeren van &quot;%1&quot;</translation>
+        <translation>Встановлення &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="188"/>
         <source>Some of the selected works were not installed.</source>
-        <translation>Enkele geselecteerde werken zijn niet geïnstalleerd.</translation>
+        <translation>Деякі модулі не було встановлено.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="191"/>
         <source>The selected works have been installed.</source>
-        <translation>De geselecteerde werken zijn geïnstalleerd.</translation>
+        <translation>Обрані модулі було встановлено.</translation>
     </message>
 </context>
 <context>
@@ -1201,7 +1201,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="77"/>
         <source>English</source>
-        <translation>Engels</translation>
+        <translation>Англійський</translation>
     </message>
 </context>
 <context>
@@ -1209,7 +1209,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="95"/>
         <source>Module</source>
-        <translation>Module</translation>
+        <translation>Модуль</translation>
     </message>
 </context>
 <context>
@@ -1217,7 +1217,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfremovefinalpage.cpp" line="53"/>
         <source>The selected works have been removed.</source>
-        <translation>De geselecteerde werken zijn verwijderd.</translation>
+        <translation>Обрані модулі було вилучено.</translation>
     </message>
 </context>
 <context>
@@ -1225,27 +1225,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="130"/>
         <source>Remove</source>
-        <translation>Verwijder</translation>
+        <translation>Вилучити</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="141"/>
         <source>&lt; Add new remote library &gt;</source>
-        <translation>&lt; Voeg nieuwe online bibliotheek toe &gt;</translation>
+        <translation>&lt;Додати нову віддалену бібліотеку &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="143"/>
         <source>Add</source>
-        <translation>Voeg toe</translation>
+        <translation>Додати</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="185"/>
         <source>Delete Source</source>
-        <translation>Verwijder Bron</translation>
+        <translation>Вилучити джерело</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="186"/>
         <source>Do you really want to delete this source?</source>
-        <translation>Weet u zeker dat u deze bron wilt verwijderen?</translation>
+        <translation>Ви справді волієте вилучити джерело?</translation>
     </message>
 </context>
 <context>
@@ -1253,7 +1253,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="82"/>
         <source>Stop</source>
-        <translation>Stop</translation>
+        <translation>Зупинити</translation>
     </message>
 </context>
 <context>
@@ -1261,23 +1261,23 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="170"/>
         <source>Fi&amp;lter:</source>
-        <translation>&amp;Filter:</translation>
+        <translation>Фі&amp;льтр:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="171"/>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="173"/>
         <source>Grouping</source>
-        <translation>Groepering</translation>
+        <translation>Групування</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="172"/>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation>Verander de groepering van de items op de boekenplank.</translation>
+        <translation>Змінити групування елементів у бібліотеці.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="174"/>
         <source>Show/hide works</source>
-        <translation>Toon/verberg werken</translation>
+        <translation>Показати/приховати книги</translation>
     </message>
 </context>
 <context>
@@ -1285,62 +1285,62 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="199"/>
         <source>Fi&amp;lter:</source>
-        <translation>&amp;Filter:</translation>
+        <translation>Фі&amp;льтр:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="205"/>
         <source>Install Works &gt;</source>
-        <translation>Installeer Werken &gt;</translation>
+        <translation>Встановити Модулі &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="211"/>
         <source>Update Works &gt;</source>
-        <translation>Update Werken &gt;</translation>
+        <translation>Оновити модулі &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="218"/>
         <source>Remove Works &gt;</source>
-        <translation>Verwijder Werken &gt;</translation>
+        <translation>Вилучити модулі &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="222"/>
         <source>Install &amp;folder:</source>
-        <translation>Installatie &amp;map:</translation>
+        <translation>Тека &amp;встановлення:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="223"/>
         <source>The folder where the new works will be installed</source>
-        <translation>De map waar de nieuwe werken zullen worden geïnstalleerd</translation>
+        <translation>Тека, у яку буде встановлено нові книги</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="228"/>
         <source>There are no works to update.</source>
-        <translation>Er zijn geen werken die bijgewerkt kunnen worden.</translation>
+        <translation>Відсутні модулі для оновлення.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="230"/>
         <source>No works are currently installed so they cannot be removed.</source>
-        <translation>Er zijn momenteel geen werken geïnstalleerd dus er kan niets worden verwijderd.</translation>
+        <translation>На даний час ніяких модулів не встановлено, тому вони не можуть бути вилучені.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="235"/>
         <source>No works can be installed with the current selection of remote libraries and languages. Please go back and make a different selection.</source>
-        <translation>Er kunnen geen werken worden geïnstalleerd met de huidige selectie van online bibliotheken en talen. Ga alstublieft terug en maak een andere selectie.</translation>
+        <translation>Жоден модуль не може бути встановлений з поточним вибором віддалених бібліотек і мов. Будь ласка, поверніться та зробіть інший вибір.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="240"/>
         <source>Grouping:</source>
-        <translation>Groepering:</translation>
+        <translation>Групування</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="241"/>
         <source>Grouping</source>
-        <translation>Groepering</translation>
+        <translation>Групування</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="243"/>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation>Verander de groepering van de items op de boekenplank.</translation>
+        <translation>Змінити групування елементів у бібліотеці.</translation>
     </message>
 </context>
 <context>
@@ -1348,47 +1348,47 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="80"/>
         <source>Old testament</source>
-        <translation>Oude testament</translation>
+        <translation>Старий Заповіт</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="82"/>
         <source>Moses/Pentateuch/Torah</source>
-        <translation>Mozes/Pentateuch/Torah</translation>
+        <translation>Мойсей/П&apos;ятикнижжя/Тора</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="84"/>
         <source>History</source>
-        <translation>Geschiedenis</translation>
+        <translation>Історичні</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="86"/>
         <source>Prophets</source>
-        <translation>Profeten</translation>
+        <translation>Пророки</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="88"/>
         <source>New testament</source>
-        <translation>Nieuwe testament</translation>
+        <translation>Новий Заповіт</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="90"/>
         <source>Gospels</source>
-        <translation>Evangeliën</translation>
+        <translation>Євангеліє</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="92"/>
         <source>Letters/Epistles</source>
-        <translation>Brieven/Epistels</translation>
+        <translation>Листи/Послання</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="94"/>
         <source>Paul&apos;s Epistles</source>
-        <translation>Paulus&apos; Brieven</translation>
+        <translation>Послання Павла</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="134"/>
         <source>Default Session</source>
-        <translation type="unfinished">Standaard Sessie</translation>
+        <translation type="unfinished">Типова сесія</translation>
     </message>
 </context>
 <context>
@@ -1396,7 +1396,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="131"/>
         <source>Copy by References</source>
-        <translation>Kopieer Tekstverwijzingen</translation>
+        <translation>Копіювати посилання</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="132"/>
@@ -1424,62 +1424,62 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="147"/>
         <source>Show verse numbers</source>
-        <translation>Toon vers nummers</translation>
+        <translation>Показувати номери віршів</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="148"/>
         <source>Show headings</source>
-        <translation>Toon kopjes</translation>
+        <translation>Показувати заголовки</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="149"/>
         <source>Highlight words of Jesus</source>
-        <translation>Markeer woorden van Jezus</translation>
+        <translation>Виділяти слова Ісуса Христа</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="150"/>
         <source>Show Hebrew vowel points</source>
-        <translation>Toon Hebreeuwse klinker punctuatie</translation>
+        <translation>Показати івритські голосні точки</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="151"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation>Toon Hebreeuwse articulatietekens / teamim</translation>
+        <translation>Показувати знаки єврейської кантіляції</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="152"/>
         <source>Show Greek accents</source>
-        <translation>Toon Griekse accenten</translation>
+        <translation>Показувати грецькі наголоси</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="153"/>
         <source>Use alternative textual variant</source>
-        <translation>Gebruik alternatieve tekst variant</translation>
+        <translation>Використовувати альтернативний текстуальний варіант</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="154"/>
         <source>Show scripture cross-references</source>
-        <translation>Toon schrift kruisverwijzingen</translation>
+        <translation>Показувати перехресні посилання</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="155"/>
         <source>Show footnotes</source>
-        <translation>Toon voetnoten</translation>
+        <translation>Показувати виноски</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="156"/>
         <source>Show morph segmentation</source>
-        <translation>Toon morfologische segmentatie</translation>
+        <translation>Показувати морфологічне ділення</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="163"/>
         <source>Display settings</source>
-        <translation>Beeld voorkeuren</translation>
+        <translation>Налаштування показу</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="166"/>
         <source>Display settings: No options available</source>
-        <translation>Beeld voorkeuren: Geen opties beschikbaar</translation>
+        <translation>Налаштування показу: немає доступних опцій</translation>
     </message>
 </context>
 <context>
@@ -1487,22 +1487,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="76"/>
         <source>Edit Bookmark</source>
-        <translation>Wijzig Bladwijzer</translation>
+        <translation>Змінити закладку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="77"/>
         <source>Location:</source>
-        <translation>Locatie:</translation>
+        <translation>Місце:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="78"/>
         <source>Title:</source>
-        <translation>Titel:</translation>
+        <translation>Назва:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="79"/>
         <source>Description:</source>
-        <translation>Beschrijving:</translation>
+        <translation>Опис:</translation>
     </message>
 </context>
 <context>
@@ -1511,34 +1511,34 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="143"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="144"/>
         <source>Bold</source>
-        <translation>Vetgedrukt</translation>
+        <translation>Напівжирний</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="145"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="146"/>
         <source>Italic</source>
-        <translation>Scheefgedrukt</translation>
+        <translation>Нахил</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="147"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="148"/>
         <source>Underline</source>
-        <translation>Onderstreept</translation>
+        <translation>Підкреслений</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="149"/>
         <source>Left</source>
-        <translation>Links</translation>
+        <translation>Ліворуч</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="150"/>
         <source>Align left</source>
-        <translation>Links uitlijnen</translation>
+        <translation>Вирівняти ліворуч</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="151"/>
         <source>Center</source>
-        <translation>Midden</translation>
+        <translation>По центру</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="152"/>
@@ -1548,27 +1548,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="153"/>
         <source>Right</source>
-        <translation>Rechts</translation>
+        <translation>Праворуч</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="154"/>
         <source>Align right</source>
-        <translation>Rechts uitlijnen</translation>
+        <translation>Вирівняти праворуч</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="156"/>
         <source>Font</source>
-        <translation>Lettertype</translation>
+        <translation>Шрифт</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="157"/>
         <source>Font size</source>
-        <translation>Lettertype grootte</translation>
+        <translation>Розмір шрифту</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="158"/>
         <source>Font color</source>
-        <translation>Lettertype kleur</translation>
+        <translation>Колір шрифту</translation>
     </message>
 </context>
 <context>
@@ -1577,22 +1577,22 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="127"/>
         <source>The text you want to search for</source>
         <comment>findWidget</comment>
-        <translation>De tekst waarnaar u wilt zoeken</translation>
+        <translation>Текст, який потрібно шукати</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="129"/>
         <source>Previous</source>
-        <translation>Vorige</translation>
+        <translation>Попереднє</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="130"/>
         <source>Next</source>
-        <translation>Volgende</translation>
+        <translation>Наступне</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="131"/>
         <source>Match case</source>
-        <translation>Hoofdlettergevoelig</translation>
+        <translation>Враховувати регістр</translation>
     </message>
 </context>
 <context>
@@ -1600,22 +1600,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="159"/>
         <source>&amp;Language:</source>
-        <translation>&amp;Taal:</translation>
+        <translation>&amp;Мова:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="160"/>
         <source>The font selection below will apply to all texts in this language</source>
-        <translation>De lettertype selectie hieronder zal op alle teksten in deze taal worden toegepast</translation>
+        <translation>Обраний нижче шрифт буде застосовано до всіх текстів цієї мови</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="161"/>
         <source>Use custom font</source>
-        <translation>Gebruik een aangepast lettertype</translation>
+        <translation>Використовувати особливий шрифт</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="158"/>
         <source>Fonts</source>
-        <translation>Lettertypen</translation>
+        <translation>Шрифти</translation>
     </message>
 </context>
 <context>
@@ -1623,72 +1623,72 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="99"/>
         <source>Indexed Works</source>
-        <translation>Geïndexeerde Werken</translation>
+        <translation>Індексовані Книги</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="106"/>
         <source>Unindexed Works</source>
-        <translation>Ongeïndexeerde Werken</translation>
+        <translation>Неіндексовані Книги</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="116"/>
         <source>%1 KiB</source>
-        <translation>%1 KB</translation>
+        <translation>%1 КіБ</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="122"/>
         <source>0 KiB</source>
-        <translation>0 KB</translation>
+        <translation>0 КіБ</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="130"/>
         <source>Manage Search Indexes</source>
-        <translation>Beheer Zoek Indexen</translation>
+        <translation>Керування Пошуковими Індексами</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="133"/>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
-        <translation>Indien geselecteerd, dan zullen indexen die geen corresponderend werk hebben worden verwijderd wanneer BibleTime start</translation>
+        <translation>Якщо вибрано, індекси для відсутніх книг буде вилучено при старті програми</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="136"/>
         <source>Automatically delete orphaned indexes when BibleTime starts</source>
-        <translation>Verwijder in onbruik geraakte indexen als BibleTime opstart</translation>
+        <translation>Автоматично вилучати самотні індекси на старті BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="139"/>
         <source>Delete the selected indexes</source>
-        <translation>Verwijder de geselecteerde indexen</translation>
+        <translation>Вилучити вибрані індекси</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="140"/>
         <source>Delete</source>
-        <translation>Verwijder</translation>
+        <translation>Вилучити</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="142"/>
         <source>&amp;Close</source>
-        <translation>&amp;Sluit</translation>
+        <translation>&amp;Закрити</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="144"/>
         <source>Create new indexes for the selected works</source>
-        <translation>Creëer nieuwe indexen voor de geselecteerde werken</translation>
+        <translation>Створити нові індекси для вибраних книг</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="145"/>
         <source>Create...</source>
-        <translation>Creëer...</translation>
+        <translation>Створити...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="147"/>
         <source>Work</source>
-        <translation>Werk</translation>
+        <translation>Модулі</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="147"/>
         <source>Index size</source>
-        <translation>Index grootte</translation>
+        <translation>Розмір індексу</translation>
     </message>
 </context>
 <context>
@@ -1696,17 +1696,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btinstallpagemodel.cpp" line="79"/>
         <source>Work</source>
-        <translation>Werk</translation>
+        <translation>Книги</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btinstallpagemodel.cpp" line="80"/>
         <source>Version</source>
-        <translation>Versie</translation>
+        <translation>Версія</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btinstallpagemodel.cpp" line="81"/>
         <source>Description</source>
-        <translation>Beschrijving</translation>
+        <translation>Опис</translation>
     </message>
 </context>
 <context>
@@ -1715,12 +1715,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="64"/>
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="75"/>
         <source>Show password</source>
-        <translation>Toon wachtwoord</translation>
+        <translation>Показати пароль</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="71"/>
         <source>Hide password</source>
-        <translation>Verberg wachtwoord</translation>
+        <translation>Приховати пароль</translation>
     </message>
 </context>
 <context>
@@ -1728,12 +1728,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="68"/>
         <source>Select a work [%1]</source>
-        <translation>Selecteer een werk [%1]</translation>
+        <translation>Оберіть книгу [%1]</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="70"/>
         <source>Select an additional work</source>
-        <translation>Selecteer een extra werk</translation>
+        <translation>Оберіть додаткову книгу</translation>
     </message>
 </context>
 <context>
@@ -1741,7 +1741,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechoosermenu.cpp" line="134"/>
         <source>NONE</source>
-        <translation>GEEN</translation>
+        <translation>НІЧОГО</translation>
     </message>
 </context>
 <context>
@@ -1749,22 +1749,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="36"/>
         <source>Preparing to index modules...</source>
-        <translation>Bezig met voorbereiden om modules te indexeren...</translation>
+        <translation>Приготування до індексації модулю...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="36"/>
         <source>Cancel</source>
-        <translation>Annuleer</translation>
+        <translation>Скасувати</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="40"/>
         <source>Creating indices</source>
-        <translation>Bezig met het aanmaken van indices</translation>
+        <translation>Створення індексу</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="75"/>
         <source>Creating index for work: %1</source>
-        <translation>Index aanmaken voor werk: %1</translation>
+        <translation>Створення індексу для книги: %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="86"/>
@@ -1774,12 +1774,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="90"/>
         <source>Indexing aborted</source>
-        <translation>Indexen geannuleerd</translation>
+        <translation>Індексацію скасовано</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="91"/>
         <source>An internal error occurred while building the index:&lt;br/&gt;&lt;br/&gt;%1</source>
-        <translation>Er trad een interne fout op tijdens het aanmaken van de index:&lt;br/&gt;&lt;br/&gt;%1</translation>
+        <translation>При побудові індексу трапилася внутрішня помилка:&lt;br/&gt;&lt;br/&gt;%1</translation>
     </message>
 </context>
 <context>
@@ -1787,7 +1787,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/models/btmoduletextmodel.cpp" line="421"/>
         <source>Click to edit</source>
-        <translation>Klik om te bewerken</translation>
+        <translation>Кнапайте для редагування</translation>
     </message>
 </context>
 <context>
@@ -1795,7 +1795,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btopenworkaction.cpp" line="122"/>
         <source>&amp;Open work</source>
-        <translation>&amp;Open werk</translation>
+        <translation>&amp;Відкрити книгу</translation>
     </message>
 </context>
 <context>
@@ -1803,12 +1803,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btopenworkaction.cpp" line="65"/>
         <source>&amp;Grouping order</source>
-        <translation>&amp;Groepeer volgorde</translation>
+        <translation>&amp;Порядок групування</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btopenworkaction.cpp" line="66"/>
         <source>Sets the grouping order for the items in this menu.</source>
-        <translation>Stelt de groepeer volgorde in voor de items in dit menu.</translation>
+        <translation>Вказати порядок групування для елементів у цьому меню.</translation>
     </message>
 </context>
 <context>
@@ -1817,13 +1817,13 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="58"/>
         <source>Edit Plain text</source>
         <comment>Personal Commentary Editor</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Змінити початковий текст</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="60"/>
         <source>Edit HTML text</source>
         <comment>Personal Commentary Editor</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Змінити HTML текст</translation>
     </message>
 </context>
 <context>
@@ -1839,12 +1839,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="62"/>
         <source>Works to Search in</source>
-        <translation>Werken om te doorzoeken</translation>
+        <translation>Книги для Пошуку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="64"/>
         <source>Select the works which should be searched.</source>
-        <translation>Selecteer de werken die doorzocht moeten worden.</translation>
+        <translation>Оберіть книги, в яких слід шукати.</translation>
     </message>
 </context>
 <context>
@@ -1852,22 +1852,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="127"/>
         <source>Configure shortcuts</source>
-        <translation>Configureer aliassen</translation>
+        <translation>Налаштувати сполучення клавішів</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="128"/>
         <source>Select first or second shortcut and type the shortcut with keyboard</source>
-        <translation>Selecteer eerste of tweede alias en type de toets in via het toetsenbord</translation>
+        <translation>Оберіть перше, або друге сполучення клавішів і уведіть його з набірниці</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="131"/>
         <source>First shortcut</source>
-        <translation>Eerste alias</translation>
+        <translation>Перше сполучення</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="134"/>
         <source>Second shortcut</source>
-        <translation>Tweede alias</translation>
+        <translation>Друге сполучення</translation>
     </message>
 </context>
 <context>
@@ -1876,7 +1876,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="240"/>
         <source>Select to change key</source>
-        <translation>Selecteer om de toets te wijzigen</translation>
+        <translation>Оберіть, щоб змінити клавіш</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="135"/>
@@ -1896,27 +1896,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="150"/>
         <source>Shortcut for selected action name</source>
-        <translation>Alias voor de geselecteerde actie naam</translation>
+        <translation>Сполучення для вибраної дії</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="158"/>
         <source>None</source>
-        <translation>Geen</translation>
+        <translation>Нічого</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="164"/>
         <source>Default</source>
-        <translation>Standaard</translation>
+        <translation>Усталено</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="170"/>
         <source>Custom</source>
-        <translation>Aangepast</translation>
+        <translation>Користувацький</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="190"/>
         <source>Default key:</source>
-        <translation>Standaard toets:</translation>
+        <translation>Типовий клавіш:</translation>
     </message>
 </context>
 <context>
@@ -1924,28 +1924,28 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="31"/>
         <source>Getting Library List</source>
-        <translation>Bezig met het verkrijgen van Bibliotheek Lijst</translation>
+        <translation>Отримання переліку бібліотеки</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="37"/>
         <location filename="../../src/backend/btsourcesthread.cpp" line="49"/>
         <source>Updating stopped</source>
-        <translation>Het bijwerken is gestopt</translation>
+        <translation>Оновлення зупинено</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="54"/>
         <source>Updating remote library &quot;%1&quot;</source>
-        <translation>Bezig met het bijwerken van online bibliotheek &quot;%1&quot;</translation>
+        <translation>Оновлення віддаленої бібліотеки &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="67"/>
         <source>Remote libraries have been updated.</source>
-        <translation>Online bibliotheken zijn bijgewerkt.</translation>
+        <translation>Віддалені бібліотеки було оновлено.</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="70"/>
         <source>The following remote libraries failed to update: </source>
-        <translation>De volgende online bibliotheken konden niet worden bijgewerkt:</translation>
+        <translation>Такі віддалені бібліотеки не було оновлено:</translation>
     </message>
 </context>
 <context>
@@ -1959,87 +1959,87 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="142"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>Standaard boekwerken worden gebruikt wanneer er niet een bepaald boekwerk is gespecificeerd, bijvoorbeeld wanneer er op een hyperlink naar een Bijbel of lexicon is geklikt.</translation>
+        <translation>Стандартні модулі будуть використовуватися, коли не буде вказано конкретних модулів, наприклад, при клаці по гіперпосиланню у Біблії, або словнику.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="145"/>
         <source>Bible:</source>
-        <translation>Bijbel:</translation>
+        <translation>Біблія:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="147"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>De standaard Bijbel wordt gebruikt wanneer er wordt geklikt op een hyperlink naar een Bijbel.</translation>
+        <translation>При клаці по гіперпосиланню у Біблії, буде використано стандартну Біблію</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="150"/>
         <source>Commentary:</source>
-        <translation>Commentaar:</translation>
+        <translation>Коментар:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="152"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>Het standaard commentaar wordt gebruikt wanneer er wordt geklikt op een hyperlink naar een commentaar.</translation>
+        <translation>При клаці по гіперпосиланню у коментарі, буде використано стандартний коментар</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="155"/>
         <source>Lexicon:</source>
-        <translation>Lexicon:</translation>
+        <translation>Словник:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="157"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Het standaard lexicon wordt gebruikt wanneer er wordt geklikt op een hyperlink naar een lexicon.</translation>
+        <translation>При клаці по гіперпосиланню у словнику, буде використано стандартний словник</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="160"/>
         <source>Daily devotional:</source>
-        <translation>Dagboek:</translation>
+        <translation>Настанови:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="162"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Het standaard dagboek zal worden gebruikt om een korte overdenking te tonen bij het opstarten</translation>
+        <translation>Для показу короткої настанови при запуску буде використовуватися стандартний модуль з настановами</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="166"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Hebreeuws Strong&apos;s lexicon:</translation>
+        <translation>Єврейський словник Стронґа:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="168"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Het standaard Hebreeuwse lexicon wordt gebruikt wanneer er geklikt wordt op een hyperlink naar een Hebreeuws lexicon</translation>
+        <translation>При клаці по гіперпосиланню у єврейському словнику, буде використано стандартний єврейський словник</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="171"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Grieks Strong&apos;s lexicon:</translation>
+        <translation>Грецький словник Стронґа:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="173"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Het standaard Griekse lexicon wordt gebruikt wanneer er geklikt wordt op een hyperlink naar een Grieks lexicon</translation>
+        <translation>При клаці по гіперпосиланню у грецькому словнику, буде використано стандартний грецький словник </translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="177"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Hebreeuws morfologisch lexicon:</translation>
+        <translation>Єврейський морфологічний словник:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="179"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Het standaard morfologische lexicon voor Hebreeuwse teksten wordt gebruikt wanneer er op een hyperlink van een morfologische tag in een Hebreeuwse tekst geklikt wordt</translation>
+        <translation>При клаці по гіперпосиланню морфологічного теґу в єврейському тексті, буде використано стандартний морфологічний словник для єврейських текстів</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Grieks morfologisch lexicon:</translation>
+        <translation>Грецький морфологічний словник:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Het standaard morfologische lexicon voor Griekse teksten wordt gebruikt wanneer er op een hyperlink van een morfologische tag in een Griekse tekst geklikt wordt</translation>
+        <translation>При клаці по гіперпосиланню морфологічного теґу в грецькому тексті, буде використано стандартний морфологічний словник для грецьких текстів</translation>
     </message>
 </context>
 <context>
@@ -2047,47 +2047,47 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="78"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. These settings apply to newly opened display windows only. You can override these settings in each display window.</source>
-        <translation>Filters bepalen het uiterlijk van de tekst. Hier kunt u de standaard instellingen voor alle filters specificeren. Deze instellingen gelden alleen voor nieuw geopende display vensters. U kunt deze instellingen in elk venster individueel aanpassen.</translation>
+        <translation>Фільтри визначають зовнішній вигляд тексту. Тут ви можете вказати усталені налаштування для всіх фільтрів. Ці налаштування будуть застосовуватися лише до наново відкритих вікон. Можна перевизначити ці налаштування у кожному вікні.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="83"/>
         <source>Show verse numbers</source>
-        <translation>Toon versnummers</translation>
+        <translation>Показувати номери віршів</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="84"/>
         <source>Show section headings</source>
-        <translation>Toon sectie kopjes</translation>
+        <translation>Показувати заголовки секцій</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="85"/>
         <source>Show scripture cross-references</source>
-        <translation>Toon schriftverwijzingen</translation>
+        <translation>Показувати перехресні посилання</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="86"/>
         <source>Show Greek accents</source>
-        <translation>Toon Griekse accenten</translation>
+        <translation>Показувати грецькі наголоси</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="87"/>
         <source>Show Hebrew vowel points</source>
-        <translation>Toon Hebreeuwse klinker punctuatie</translation>
+        <translation>Показати івритські голосні точки</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="88"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation>Toon Hebreeuwse articulatietekens / teamim</translation>
+        <translation>Показувати знаки єврейської кантіляції</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="89"/>
         <source>Show morph segmentation</source>
-        <translation>Toon morfologische segmentatie</translation>
+        <translation>Показувати морфологічне ділення</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="90"/>
         <source>Use textual variants</source>
-        <translation>Gebruik tekst varianten</translation>
+        <translation>Використовувати текстові варіанти</translation>
     </message>
 </context>
 <context>
@@ -2095,22 +2095,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="57"/>
         <source>Add/remove/replace</source>
-        <translation>Voeg toe/verwijder/vervang</translation>
+        <translation>Додати/вилучити/замінити</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="60"/>
         <source>Remove</source>
-        <translation>Verwijder</translation>
+        <translation>Вилучити</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="70"/>
         <source>Replace</source>
-        <translation>Vervang</translation>
+        <translation>Замінити</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="85"/>
         <source>Add</source>
-        <translation>Voeg toe</translation>
+        <translation>Додати</translation>
     </message>
 </context>
 <context>
@@ -2118,87 +2118,87 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="79"/>
         <source>Tip Of The Day</source>
-        <translation>Tip Van De Dag</translation>
+        <translation>Порада дня</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="98"/>
         <source>Show tips at startup</source>
-        <translation>Toon tips bij het opstarten</translation>
+        <translation>Показувати поради при запуску</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="110"/>
         <source>Next Tip</source>
-        <translation>Volgende Tip</translation>
+        <translation>Наступний</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="137"/>
         <source>The currently active window can be auto scrolled up or down. Start scrolling by pressing Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
-        <translation type="unfinished"></translation>
+        <translation>Поточне активне вікно можна автоматично гортати вгору, чи вниз. Почніть гортання, натиснувши Shift+Down. Ви можете збільшити швидкість гортання, натиснувши Shift+Down декілька разів. Щоб призупинити гортання, натисніть Пробіл. Щоб знову почати гортання з попередньою швидкістю, знову натисніть Пробіл. Щоб уповільнити гортання, чи гортати в іншому напрямку, натисніть Shift+Up один, або декілька разів. Натиснення будь-якого іншого клавіша, чи зміна активного вікна зупинить гортання.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="145"/>
         <source>To add multiple Bible works in parallel in your active Bible or commentary window select this icon and choose another Bible or commentary work.</source>
-        <translation>Om meerdere Bijbel werken parallel toe te voegen in je actieve Bijbel- of commentaar venster, selecteer dan dit icon en kies een andere Bijbel of commentaar.</translation>
+        <translation>Щоб додати декілька Біблійних модулів паралельно в активному вікні Біблії або коментаря, виберіть цей значок та оберіть іншу Біблію чи комментар.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="149"/>
         <source>To add multiple commentary works in parallel in your active commentary window select this icon and choose another commentary work.</source>
-        <translation>Om meerdere commentaren parallel in het actieve commentaarvenster te voegen, selecteer dan dit icoon en kies een ander commentaar.</translation>
+        <translation>Щоб додати декілька книг коментарів для паралельного перегляду в активне вікно коментарів, натисніть цю піктограму та виберіть інший коментар.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="153"/>
         <source>To learn more about the BibleTime project please go to our web site.</source>
-        <translation>Om meer te weten te komen over het BibleTime project kunt u onze website bezoeken.</translation>
+        <translation>Щоб дізнатися більше про проєкт BibleTime відвідайте наш сайт.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="156"/>
         <source>To synchronize a commentary window with the active Bible window, activate the commentary window and select this icon.</source>
-        <translation>Om een commentaar venster te synchroniseren met het actieve Bijbelvenster, activeer dan het commentaar venster en selecteer dit icoon.</translation>
+        <translation>Щоб синхронізувати вікно коментаря та Біблії, активуйте цю піктограму у вікні коментаря.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="159"/>
         <source>Select the icon again to stop the synchronization.</source>
-        <translation>Selecteer het icoon opnieuw om de synchronisatie te stoppen.</translation>
+        <translation>Натисніть піктограму знову, щоб зупинити синхронізацію.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="161"/>
         <source>To create a bookmark drag any verse reference from a Bible or commentary work into the Bookmarks window. An arrow will indicate the position that the bookmark will go when you release the cursor. Other works will have a reference in the upper left corner that can be used to create a bookmark.</source>
-        <translation>Om een bladwijzer aan te maken, sleep dan een versverwijzing vanuit een Bijbel of commentaar naar het Bladwijzers venster. Een pijl geeft de locatie aan waar de bladwijzer zal terechtkomen wanneer u de cursor loslaat. Andere boekwerken zullen in de linkerbovenhoek een verwijzing hebben die kan worden gebruikt om een bladwijzer aan te maken.</translation>
+        <translation>Щоб створити закладку перетягніть будь-яке посилання на вірш із Біблії, або коментаря у вікно Закладок. Якщо ви відпустите вказівник, стрілка буде вказувати позицію закладки. В інших модулях буде посилання у лівому верхньому кутку, яке можна використовувати для створення закладок.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="166"/>
         <source>To change a bookmark title or description, right click on the bookmark and select the Edit Bookmark menu. After finishing the edit the description can be seen by hovering over the bookmark.</source>
-        <translation>Om de naam of omschrijving van een bladwijzer te veranderen, klik dan met uw rechter muisknop op de bladwijzer en selecteer het Bewerk Bladwijzer menu. Nadat u de wijziging heeft aangebracht, kan de omschrijving gezien worden door de muispijl boven de bookmark te houden.</translation>
+        <translation>Щоб змінити заголовок, або опис закладки, натисніть правою кнопкою миші на закладці та виберіть Редагувати Закладку. Відредагувавши закладку опис можна побачити, навівши вказівник на закладку.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="170"/>
         <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
-        <translation>Om meer informatie over een werk te vinden, ga dan naar het Boekenplank venster, klik met de rechter muisknop op het werk, en selecteer het Over menu.</translation>
+        <translation>Щоб отримати більше інформації про книгу, у вікні Бібліотеки натисніть правою кнопкою мишки на книзі, а потім натисніть Про Книгу.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="173"/>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
-        <translation>De Boekenplank, Bookmark, en Lens vensters kunnen worden verplaatst naar nieuwe locaties, door ze te slepen bij de titel bovenaan elk venster. Deze vensters kunnen links-, rechts-, boven- of onder de vensters met boekwerken geplaatst worden. Ze kunnen ook bovenop elkaar geplaatst worden; er verschijnen dan tabs zodat elk venster kan worden geselecteerd. Ze kunnen ook worden vergroot of verkleind door de rand tussen het venster en een ander venster te verslepen.</translation>
+        <translation>Вікна Бібліотеки, Закладок і Збільшувального скла може бути пересунуто в інше положення шляхом перетягування їх за заголовок вгорі кожного вікна. Вони можуть бути посунуті вліво, вправо, вгору, або вниз Вікна Книг. Вони можуть бути розташовані згори одне одного та згорнуті у вкладки, так що кожне вікно буде доступним. Їм можна міняти розмір шляхом перетягування за край між вікном й іншим вікном.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="179"/>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
-        <translation>Het is mogelijk om te zoeken naar Strong&apos;s nummers in een boekwerk. Begin met een boekwerk dat Strong&apos;s nummer heeft, en houd de muispijl boven een woord. Klik met uw rechter-muisknop op het woord, en kies dan het Strong&apos;s Zoek menu. Er verschijnt een zoek dialoog waarmee u kunt zien waar hetzelfde Strong&apos;s nummer nog op andere plekken in dit boekwerk gebruikt wordt.</translation>
+        <translation>Ви можете здійснювати пошук номерів Стронґа у книзі. Відкрийте книгу, що містить номери Стронґа, та наведіть вказівником на слово. Натисніть правою кнопкою мишки на слові й оберіть Пошук за Номерами Стронґа. З&apos;явиться діалог пошуку, в якому ви зможете побачити, де використовуються слова з таким самим номером Стронґа.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="184"/>
         <source>You can save personal notes for specific verse references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source, English as the language,  and look under Commentary. Once installed, open it like any other window, or in  parallel with a bible. Click a verse to edit it.</source>
-        <translation>Je kunt persoonlijke notities voor specifieke tekst verwijzingen bewaren. Installeer hiervoor het Persoonlijke commentaar. Open de Boekenplank Beheerder, kies dan Crosswire als bron, Engels als taal, en kijk onder Commentaar. Eenmaal geïnstalleerd, dan kan het geopend worden zoals elk ander venster, of parallel met een Bijbel. Klik op een vers om het te bewerken.</translation>
+        <translation>Ви можете зберігати особисті нотатки для конкретних посилань на вірші. Ви повинні встановити Особистий коментар. Відкрийте Упорядник книг, оберіть Crosswire у якості джерела, Англійська у якості мови та подивіться в розділі Коментарі. Після встановлення відкрийте його, як будь-яке інше вікно, чи паралельно з Біблією. Натисніть на вірш, щоб відредагувати його.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="193"/>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
-        <translation>Standaard boekwerken worden gebruikt wanneer er niet een bepaald boekwerk is gespecificeerd, bijvoorbeeld wanneer er op een hyperlink naar een Bijbel of lexicon geklikt is.</translation>
+        <translation>Можна зберігати відкриті вікна як сесію. Така сесія пізніше може бути відновлена. Можна зберегти стільки сесій, скільки завгодно. Ці можливості доступні з меню Вікно.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="189"/>
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
-        <translation>U kunt Strong&apos;s nummer informatie bekijken in het LENS venster, door de muis boven een woord te houden in een Bijbel die Strong&apos;s nummers bevat. Het is daarvoor wel noodzakelijk om de StrongsGreek en StrongsHebrew lexicons van Crosswire geïnstalleerd te hebben.</translation>
+        <translation>Ви можете бачити інформацію про цікавий вам номер Стронґа у вікні Збільшувальне скло, навівши вказівник на слово. Використовуйте Біблію, яка містить номери Стронґа, також необхідно встановити лексикони StrongsGreek і StrongsHebrew із джерела Crosswire.</translation>
     </message>
 </context>
 <context>
@@ -2206,12 +2206,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="67"/>
         <source>Welcome to BibleTime</source>
-        <translation>Welkom bij BijbleTime</translation>
+        <translation>Ласкаво просимо до BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="71"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
-        <translation>BibleTime is een eenvoudig maar krachtig Bijbelstudie hulpmiddel.</translation>
+        <translation>BibleTime — це простий у використанні, але потужний знадіб для вивчення Біблії.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="73"/>
@@ -2226,12 +2226,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="81"/>
         <source>Install later</source>
-        <translation>Installeer later</translation>
+        <translation>Встановити пізніше</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="84"/>
         <source>Install works...</source>
-        <translation>Installeer werken...</translation>
+        <translation>Встановити модулі...</translation>
     </message>
 </context>
 <context>
@@ -2252,6 +2252,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -2262,42 +2263,42 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="176"/>
         <source>Choose action group:</source>
-        <translation>Kies actie groep:</translation>
+        <translation>Оберіть групу дій:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="178"/>
         <source>Main Window</source>
-        <translation>Hoofdvenster</translation>
+        <translation>Головне вікно</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="179"/>
         <source>All text windows</source>
-        <translation>Alle tekst vensters</translation>
+        <translation>Усі текстові вікна</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="180"/>
         <source>Bible windows</source>
-        <translation>Bijbel vensters</translation>
+        <translation>Вікна Біблії</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="181"/>
         <source>Commentary windows</source>
-        <translation>Commentaar vensters</translation>
+        <translation>Вікна коментарів</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="182"/>
         <source>Lexicon windows</source>
-        <translation>Lexicon vensters</translation>
+        <translation>Вікна лексиконів</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="183"/>
         <source>Book windows</source>
-        <translation>Boek vensters</translation>
+        <translation>Вікна книг</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="174"/>
         <source>Shortcuts</source>
-        <translation>Aliassen</translation>
+        <translation>Ярлики</translation>
     </message>
 </context>
 <context>
@@ -2305,89 +2306,89 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="38"/>
         <source>Next book</source>
-        <translation>Volgend boek</translation>
+        <translation>Наступна книга</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="42"/>
         <source>Previous book</source>
-        <translation>Vorig boek</translation>
+        <translation>Попередня книга</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="46"/>
         <source>Next chapter</source>
-        <translation>Volgend hoofdstuk</translation>
+        <translation>Наступний розділ</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="50"/>
         <source>Previous chapter</source>
-        <translation>Vorig hoofdstuk</translation>
+        <translation>Попередній розділ</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="54"/>
         <source>Next verse</source>
-        <translation>Volgend vers</translation>
+        <translation>Наступний вірш</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="58"/>
         <source>Previous verse</source>
-        <translation>Vorig vers</translation>
+        <translation>Попередній вірш</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="63"/>
         <source>Copy chapter</source>
-        <translation>Kopieer hoofdstuk</translation>
+        <translation>Копіювати розділ</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="66"/>
         <source>Save chapter as plain text</source>
-        <translation>Bewaar hoofdstuk als platte tekst</translation>
+        <translation>Зберегти розділ як звичайний текст</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="69"/>
         <source>Save chapter as HTML</source>
-        <translation>Bewaar hoofdstuk als HTML</translation>
+        <translation>Зберегти розділ як HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="72"/>
         <source>Print chapter</source>
-        <translation>Print hoofdstuk</translation>
+        <translation>Друкувати розділ</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="76"/>
         <source>Text of reference</source>
-        <translation>Tekst van verwijzing</translation>
+        <translation>Текст довідки</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="79"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="82"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="85"/>
         <source>Reference with text</source>
-        <translation>Verwijzing met tekst</translation>
+        <translation>Посилання з текстом</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="208"/>
         <source>Copy</source>
-        <translation>Kopieer</translation>
+        <translation>Копіювати</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="222"/>
         <source>Save...</source>
-        <translation>Bewaar...</translation>
+        <translation>Зберегти...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="228"/>
         <source>Print...</source>
-        <translation>Print...</translation>
+        <translation>Друк...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="298"/>
         <source>Copying</source>
-        <translation>Bezig met kopiëren</translation>
+        <translation>Копіювання</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="333"/>
         <source>Saving</source>
-        <translation>Bezig met Bewaren</translation>
+        <translation>Збереження</translation>
     </message>
 </context>
 <context>
@@ -2395,7 +2396,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="39"/>
         <source>Toggle tree view</source>
-        <translation>Toon/verberg boomstructuur</translation>
+        <translation>Перемикнути дерево</translation>
     </message>
 </context>
 <context>
@@ -2403,92 +2404,92 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="233"/>
         <source>Delete Items</source>
-        <translation>Verwijder Items</translation>
+        <translation>Вилучити елементи</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="316"/>
         <source>The work to which the bookmark points to is not installed.</source>
-        <translation>Het werk waar deze bookmark naar verwijst is niet geïnstalleerd.</translation>
+        <translation>Книга, на яку вказує закладка, не встановлена.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="551"/>
         <source>Can drop only bookmarks or one folder</source>
-        <translation>Kan hier alleen bookmarks of een map plaatsen</translation>
+        <translation>Можна кидати лише закладки, або теку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="92"/>
         <source>Bookmarks</source>
-        <translation>Bladwijzers</translation>
+        <translation>Закладки</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="106"/>
         <source>New folder</source>
-        <translation>Nieuwe map</translation>
+        <translation>Нова тека</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="122"/>
         <source>Rename folder</source>
-        <translation>Wijzig mapnaam</translation>
+        <translation>Перейменувати теку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="128"/>
         <source>Edit bookmark...</source>
-        <translation>Wijzig bladwijzer...</translation>
+        <translation>Редагувати закладку ...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="149"/>
         <source>Sort folder bookmarks...</source>
-        <translation>Sorteer map bladwijzers...</translation>
+        <translation>Ґатункувати закладки у теці...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="155"/>
         <source>Sort all bookmarks...</source>
-        <translation>Sorteer alle bladwijzers...</translation>
+        <translation>Ґатункувати усі закладки...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="168"/>
         <source>Import to folder...</source>
-        <translation>Importeer naar map...</translation>
+        <translation>Імпорт у теку...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="181"/>
         <source>Export from folder...</source>
-        <translation>Exporteer uit map...</translation>
+        <translation>Експортувати з теки...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="194"/>
         <source>Print bookmarks...</source>
-        <translation>Print bladwijzers...</translation>
+        <translation>Роздрукувати закладки...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="228"/>
         <source>Remove selected items...</source>
-        <translation>Verwijder geselecteerde items...</translation>
+        <translation>Вилучити виділені елементи...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="555"/>
         <source>Can&apos;t drop folder into the folder itself or into its subfolder</source>
-        <translation>Kan deze map niet in zichzelf of in een submap plaatsen</translation>
+        <translation>Не можна кидати теку в саму себе, або підтеку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="562"/>
         <source>Copy</source>
-        <translation>Kopieer</translation>
+        <translation>Копіювати</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="563"/>
         <source>Move</source>
-        <translation>Verplaats</translation>
+        <translation>Перемістити</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="616"/>
         <source>Drag references from text views to this view</source>
-        <translation>Sleep verwijzingen van tekstviews naar deze view</translation>
+        <translation>Перетягуйте сюди посилання з вікон текстів</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="234"/>
         <source>Do you really want to delete the selected items and folders?</source>
-        <translation>Weet u zeker dat u de geselecteerde items en mappen wilt verwijderen?</translation>
+        <translation>Ви впевнені, що бажаєте вилучити вибрані елементи та директорії?</translation>
     </message>
 </context>
 <context>
@@ -2496,42 +2497,42 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="32"/>
         <source>Next book</source>
-        <translation>Volgend boek</translation>
+        <translation>Наступна книга</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="36"/>
         <source>Previous book</source>
-        <translation>Vorig boek</translation>
+        <translation>Попередня книга</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="40"/>
         <source>Next chapter</source>
-        <translation>Volgend hoofdstuk</translation>
+        <translation>Наступний розділ</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="44"/>
         <source>Previous chapter</source>
-        <translation>Vorig hoofdstuk</translation>
+        <translation>Попередній розділ</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="48"/>
         <source>Next verse</source>
-        <translation>Volgend vers</translation>
+        <translation>Наступний вірш</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="52"/>
         <source>Previous verse</source>
-        <translation>Vorig vers</translation>
+        <translation>Попередній вірш</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="57"/>
         <source>Synchronize</source>
-        <translation>Synchroniseer</translation>
+        <translation>Синхронізувати</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="60"/>
         <source>Synchronize the displayed entry of this work with the active Bible window</source>
-        <translation>Synchroniseer het getoonde werk met het actieve Bijbelvenster</translation>
+        <translation>Синхронізувати поточне місце цієї книги з вікном активної Біблії</translation>
     </message>
 </context>
 <context>
@@ -2539,7 +2540,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="31"/>
         <source>Configure BibleTime</source>
-        <translation>Configureer BibleTime</translation>
+        <translation>Налаштувати BibleTime</translation>
     </message>
 </context>
 <context>
@@ -2547,22 +2548,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="122"/>
         <source>Language for names of Bible books:</source>
-        <translation>Taal voor de namen van Bijbelboeken:</translation>
+        <translation>Мова для імен книг Біблії:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="123"/>
         <source>The languages which can be used for the biblical book names. Translations are provided by the Sword library.</source>
-        <translation>De talen die kunnen worden gebruikt voor Bijbelse boeknamen. Vertalingen werden aangeleverd door de Sword bibliotheek.</translation>
+        <translation>Мови, які можуть використовуватися для назв біблійних книг. Переклади надаються бібліотекою Sword.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="127"/>
         <source>Show startup logo:</source>
-        <translation>Toon opstart logo:</translation>
+        <translation>Показувати заставку при запуску:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="128"/>
         <source>Show the BibleTime logo on startup.</source>
-        <translation>Toon het BibleTime logo bij het opstarten.</translation>
+        <translation>Показувати заставку BibleTime при завантаженні.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="130"/>
@@ -2587,17 +2588,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="135"/>
         <source>Available display styles:</source>
-        <translation>Beschikbare beeld stijlen:</translation>
+        <translation>Доступні стилі показу:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="136"/>
         <source>Style preview</source>
-        <translation>Stijl voorvertoning</translation>
+        <translation>Передпрогляд стилів</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="142"/>
         <source>Did you know? You can help translating the GUI of BibleTime to your language at &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt;.</source>
-        <translation>Wist je dat? Je kunt ook helpen om de grafische interface van BibleTime naar jouw taal te vertalen, bij &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt;.</translation>
+        <translation>А ви знали? Ви можете допомогти перекласти графічний інтерфейс BibleTime вашою мовою за посиланням &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="238"/>
@@ -2701,7 +2702,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="120"/>
         <source>Display</source>
-        <translation>Beeld</translation>
+        <translation>Зовнішній вигляд</translation>
     </message>
 </context>
 <context>
@@ -2709,94 +2710,94 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="96"/>
         <source>Back in history</source>
-        <translation>Terug in geschiedenis</translation>
+        <translation>Назад до дієпису</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="104"/>
         <source>Forward in history</source>
-        <translation>Vooruit in geschiedenis</translation>
+        <translation>Вперед</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="64"/>
         <source>Copy</source>
-        <translation>Kopieer</translation>
+        <translation>Копіювати</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="68"/>
         <source>Copy by references...</source>
-        <translation>Kopieer tekstverwijzingen...</translation>
+        <translation>Копіювати за посиланням...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="72"/>
         <source>Find...</source>
-        <translation>Zoek...</translation>
+        <translation>Шукати...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="76"/>
         <source>Change location</source>
-        <translation>Verander locatie</translation>
+        <translation>Змінити місце</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="80"/>
         <source>Page down</source>
-        <translation>Pagina omhoog</translation>
+        <translation>Униз</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="84"/>
         <source>Page up</source>
-        <translation>Pagina omlaag</translation>
+        <translation>Угору</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="89"/>
         <source>Search with works of this window</source>
-        <translation>Zoek in de werken van dit venster</translation>
+        <translation>Шукати в книгах цього вікна</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="111"/>
         <source>Copy reference only</source>
-        <translation type="unfinished">Kopieer alleen de verwijzing</translation>
+        <translation type="unfinished">Копіювати лише посилання</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="114"/>
         <source>Save entry as HTML</source>
-        <translation type="unfinished">Bewaar dit item als HTML</translation>
+        <translation type="unfinished">Зберегти запис як HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="117"/>
         <source>Print reference only</source>
-        <translation type="unfinished">Print alleen de verwijzing</translation>
+        <translation type="unfinished">Друкувати лише посилання</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="120"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="126"/>
         <source>Entry with text</source>
-        <translation type="unfinished">Item met tekst</translation>
+        <translation type="unfinished">Запис з текстом</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="123"/>
         <source>Entry as plain text</source>
-        <translation type="unfinished">Item als tekst</translation>
+        <translation type="unfinished">Запис як простий текст</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="129"/>
         <source>Strong&apos;s Search</source>
-        <translation type="unfinished">Strong&apos;s Zoekopdracht</translation>
+        <translation type="unfinished">Пошук за номером Стронґа</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="198"/>
         <source>Work chooser buttons</source>
-        <translation>Werk keuzeknoppen</translation>
+        <translation>Кнопки вибору книг</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="226"/>
         <source>Text area header</source>
-        <translation>Tekstgedeelte kopje</translation>
+        <translation>Заголовок зони тексту</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="342"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="355"/>
         <source>Saving</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Збереження</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="404"/>
@@ -2806,17 +2807,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="530"/>
         <source>Copy...</source>
-        <translation type="unfinished">Kopieer...</translation>
+        <translation type="unfinished">Копіювати...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="539"/>
         <source>Save...</source>
-        <translation type="unfinished">Bewaar...</translation>
+        <translation type="unfinished">Зберегти...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="548"/>
         <source>Print...</source>
-        <translation type="unfinished">Print...</translation>
+        <translation type="unfinished">Друк...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="689"/>
@@ -2831,12 +2832,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="179"/>
         <source>Navigation</source>
-        <translation>Navigatie</translation>
+        <translation>Навігація</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="213"/>
         <source>Tool</source>
-        <translation>Gereedschap</translation>
+        <translation>Знадіб</translation>
     </message>
 </context>
 <context>
@@ -2844,22 +2845,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="59"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation>Scroll door de items in de lijst. Klik op de knop en beweeg de muis om een item te vergroten of te verkleinen.</translation>
+        <translation>Гортає через елементи переліку. Натисніть кнопку та рухайте вказівником, щоб збільшити, чи зменшити елементи.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="57"/>
         <source>Entries of the current work</source>
-        <translation>Items van het huidige werk</translation>
+        <translation>Записи поточної книги</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="58"/>
         <source>Next entry</source>
-        <translation>Volgende item</translation>
+        <translation>Наступний запис</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="60"/>
         <source>Previous entry</source>
-        <translation>Vorige item</translation>
+        <translation>Попередній запис</translation>
     </message>
 </context>
 <context>
@@ -2867,12 +2868,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="27"/>
         <source>Next entry</source>
-        <translation>Volgende item</translation>
+        <translation>Наступний запис</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="31"/>
         <source>Previous entry</source>
-        <translation>Vorige item</translation>
+        <translation>Попередній запис</translation>
     </message>
 </context>
 <context>
@@ -2880,33 +2881,33 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="910"/>
         <source>Version</source>
-        <translation>Versie</translation>
+        <translation>Версія</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="913"/>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="921"/>
         <source>unknown</source>
-        <translation>onbekend</translation>
+        <translation>невідомо</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="918"/>
         <source>Markup</source>
-        <translation>Markup</translation>
+        <translation>Розмітка</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="925"/>
         <source>Location</source>
-        <translation>Locatie</translation>
+        <translation>Розташування</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="929"/>
         <source>Language</source>
-        <translation>Taal</translation>
+        <translation>Мова</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="933"/>
         <source>Category</source>
-        <translation>Categorie</translation>
+        <translation>Категорія</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="937"/>
@@ -2916,137 +2917,137 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="941"/>
         <source>Writable</source>
-        <translation>Beschrijfbaar</translation>
+        <translation>Доступний для запису</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="942"/>
         <source>yes</source>
-        <translation>ja</translation>
+        <translation>так</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="942"/>
         <source>no</source>
-        <translation>nee</translation>
+        <translation>ні</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="946"/>
         <source>Unlock key</source>
-        <translation>Unlock code</translation>
+        <translation>Ключ розблокування</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="949"/>
         <source>Unlock info</source>
-        <translation>Ontgrendel info</translation>
+        <translation>Розблокувати інформацію</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="977"/>
         <source>Features</source>
-        <translation>Mogelijkheden</translation>
+        <translation>Спеціальні можливості</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="985"/>
         <source>Take care, this work contains cult / questionable material!</source>
-        <translation>Wees voorzichtig, dit werk bevat sektarisch / bedenkelijk materiaal!</translation>
+        <translation>Будьте обережні, модуль містить конфесійний, або спірний матеріал!</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="989"/>
         <source>About</source>
-        <translation>Over</translation>
+        <translation>Про</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="996"/>
         <source>Distribution license</source>
-        <translation>Distributie licentie</translation>
+        <translation>Ліцензія розповсюдження</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="997"/>
         <source>Distribution source</source>
-        <translation>Distributie bron</translation>
+        <translation>Джерело розповсюдження</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="998"/>
         <source>Distribution notes</source>
-        <translation>Distributie notities</translation>
+        <translation>Коментарі розповсюдження</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="999"/>
         <source>Text source</source>
-        <translation>Tekstbron</translation>
+        <translation>Джерело тексту</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1000"/>
         <source>Copyright notes</source>
-        <translation>Copyright notities</translation>
+        <translation>Нотатки про авторське право</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1001"/>
         <source>Copyright holder</source>
-        <translation>Copyright houder</translation>
+        <translation>Правовласник</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1002"/>
         <source>Copyright date</source>
-        <translation>Copyright datum</translation>
+        <translation>Дата авторського права</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1003"/>
         <source>Copyright contact name</source>
-        <translation>Copyright contact naam</translation>
+        <translation>Контактне ім&apos;я щодо авторських прав</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1004"/>
         <source>Copyright contact address</source>
-        <translation>Copyright contact adres</translation>
+        <translation>Контактна адреса щодо авторських прав</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1005"/>
         <source>Copyright contact email</source>
-        <translation>Copyright contact email</translation>
+        <translation>Контактна електронна адреса щодо авторських прав</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1080"/>
         <source>Bibles</source>
-        <translation>Bijbels</translation>
+        <translation>Біблії</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1082"/>
         <source>Commentaries</source>
-        <translation>Bijbelcommentaren</translation>
+        <translation>Коментарі</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1084"/>
         <source>Books</source>
-        <translation>Boeken</translation>
+        <translation>Книги</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1086"/>
         <source>Cults/Unorthodox</source>
-        <translation>Sektarisch/Onorthodox</translation>
+        <translation>Культи/Неортодоксальні</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1088"/>
         <source>Maps and Images</source>
-        <translation>Landkaarten en Plaatjes</translation>
+        <translation>Мапи та зображення</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1090"/>
         <source>Daily Devotionals</source>
-        <translation>Dagboeken</translation>
+        <translation>Настанови</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1092"/>
         <source>Lexicons and Dictionaries</source>
-        <translation>Lexicons en Woordenboeken</translation>
+        <translation>Лексикони та Словники</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1094"/>
         <source>Glossaries</source>
-        <translation>Woordenlijsten</translation>
+        <translation>Глосарії</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1096"/>
         <source>Unknown</source>
-        <translation>Onbekend</translation>
+        <translation>Невідомий</translation>
     </message>
 </context>
 <context>
@@ -3054,17 +3055,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="45"/>
         <source>Standard works</source>
-        <translation>Standaard werken</translation>
+        <translation>Усталені модулі</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="46"/>
         <source>Text filters</source>
-        <translation>Tekst filters</translation>
+        <translation>Текстові фільтри</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="43"/>
         <source>Desk</source>
-        <translation>Bureau</translation>
+        <translation>Профілі</translation>
     </message>
 </context>
 <context>
@@ -3072,126 +3073,126 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="52"/>
         <source>New Installation Source</source>
-        <translation>Nieuwe Installatie Bron</translation>
+        <translation>Нове джерело встановлення</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="60"/>
         <source>Caption</source>
-        <translation>Onderschrift</translation>
+        <translation>Заголовок</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="75"/>
         <source>Type</source>
-        <translation>Type</translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="78"/>
         <source>Server</source>
-        <translation>Server</translation>
+        <translation>Сервер</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="81"/>
         <source>Path</source>
-        <translation>Pad</translation>
+        <translation>Шлях</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="86"/>
         <source>Remote FTP</source>
-        <translation type="unfinished">Remote FTP</translation>
+        <translation type="unfinished">Віддалений FTP</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="87"/>
         <source>Remote SFTP</source>
-        <translation type="unfinished">Remote SFTP</translation>
+        <translation type="unfinished">Віддалений SFTP</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="88"/>
         <source>Remote HTTP</source>
-        <translation type="unfinished">Remote HTTP</translation>
+        <translation type="unfinished">Віддалений HTTP</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="89"/>
         <source>Remote HTTPS</source>
-        <translation type="unfinished">Remote HTTPS</translation>
+        <translation type="unfinished">Віддалений HTTPS</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="90"/>
         <source>Local</source>
-        <translation type="unfinished">Lokaal</translation>
+        <translation type="unfinished">Локальний</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="104"/>
         <source>Get list...</source>
-        <translation>Haal lijst op...</translation>
+        <translation>Отримати перелік ...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="105"/>
         <source>Download a list of sources from CrossWire server and add sources</source>
-        <translation>Download een lijst met bronnen van CrossWire server en voeg bronnen toe</translation>
+        <translation>Завантажити та додати перелік джерел із сервера Crosswire</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="191"/>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="166"/>
         <source>Please provide a caption.</source>
-        <translation>Geeft u alstublieft een onderschrift op.</translation>
+        <translation>Будь ласка, надайте підпис.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="170"/>
         <source>A source with this caption already exists. Please provide a different caption.</source>
-        <translation>Er bestaat al een bron met dit onderschrift. Geef alstublieft een ander onderschrift op.</translation>
+        <translation>Джерело з таким іменем вже існує. Будь ласка, вкажіть інше ім&apos;я.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="177"/>
         <source>Please provide a server name.</source>
-        <translation>Voer alstublieft een servernaam in.</translation>
+        <translation>Будь ласка вкажіть ім&apos;я сервера</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="187"/>
         <source>Please provide a valid, readable path.</source>
-        <translation>Geef alstublieft een geldig, leesbaar pad op.</translation>
+        <translation>Вкажіть правильний, читабельний шлях</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="183"/>
         <source>Please provide a path.</source>
-        <translation>Geef alstublieft een pad op.</translation>
+        <translation>Вкажіть шлях</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="112"/>
         <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
 
 Do you want to continue?</source>
-        <translation>Een lijst met bronnen zal worden gedownload van een online server. Deze bronnen zullen aan de huidige lijst worden toegevoegd. Een nieuwe bron zal een oude vervangen indien deze hetzelfde label heeft. U kunt later bronnen verwijderen die u niet wilt behouden.
+        <translation>Перелік джерел буде завантажено з сервера та додано до поточного переліку. Нові джерела замінять старі з таким самим іменем. За бажання ви зможете їх вилучити..
 
-Wilt u doorgaan?</translation>
+Ви бажаєте продовжити?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="111"/>
         <source>Get source list from remote server?</source>
-        <translation>Bronnenlijst van de online server verkrijgen?</translation>
+        <translation>Завантажити перелік джерел із сервера?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="125"/>
         <source>Cancel</source>
-        <translation>Annuleer</translation>
+        <translation>Скасувати</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="130"/>
         <source>Downloading List</source>
-        <translation>Bezig met het downloaden van de lijst</translation>
+        <translation>Завантажити перелік</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="124"/>
         <source>Connecting...</source>
-        <translation>Contact maken...</translation>
+        <translation>З&apos;єднання...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="142"/>
         <source>Refreshing...</source>
-        <translation>Verversen...</translation>
+        <translation>Оновлення...</translation>
     </message>
 </context>
 <context>
@@ -3222,22 +3223,22 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="129"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
-        <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Versie: %3&lt;/p&gt;&lt;/div&gt;</translation>
+        <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Версія: %3&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="54"/>
         <source>Copy</source>
-        <translation>Kopieer</translation>
+        <translation>Копіювати</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="49"/>
         <source>Select all</source>
-        <translation>Selecteer alles</translation>
+        <translation>Обрати все</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="83"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
-        <translation>&lt;small&gt;Dit is de Lens viewer. Houd de muispijl stil boven hyperlinks of andere items die data bevatten, en binnen enkele momenten zal de inhoud in de Lens viewer verschijnen. Beweeg de muis snel naar de Lens viewer, of vergrendel de view door de Shift-toets ingedrukt te houden terwijl u de muis beweegt.&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Це зона перегляду Збільшувальним склом. Перемістіть вказівник на посилання, або інший елемент і вміст з&apos;явиться тут після невеликої затримки. Швидко перемістіть вказівник у вікно Збільшувального скла, або натисніть Shift щоб втримати вміст вікна.&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -3245,329 +3246,329 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/backend/filters/osistohtml.cpp" line="470"/>
         <source>Added text</source>
-        <translation>Toegevoegde tekst</translation>
+        <translation>Доданий текст</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="66"/>
         <source>Names of languages</source>
         <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
         <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
-        <translation>Namen van talen</translation>
+        <translation>Назви мов</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="82"/>
         <source>Afrikaans</source>
-        <translation>Afrikaans</translation>
+        <translation>Африкаанс</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="84"/>
         <source>Amuzgo, Guerrero</source>
-        <translation>Amuzgo, Guerrero</translation>
+        <translation>Амузґо, Ґерреро</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="85"/>
         <source>English, Old (ca.450-1100)</source>
-        <translation>Engels, Oud (ca.450-1100)</translation>
+        <translation>Англійська, рання (450-1100)</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="86"/>
         <source>Arabic</source>
-        <translation>Arabisch</translation>
+        <translation>Арабська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="88"/>
         <source>Azerbaijani</source>
-        <translation>Azerbeidzjaans</translation>
+        <translation>Азербайджанська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="89"/>
         <source>Azerbaijani, South</source>
-        <translation>Azerbeidzjaans, Zuid</translation>
+        <translation>Азербайджанська, Південь</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="92"/>
         <source>Belarusian</source>
-        <translation>Witrussisch</translation>
+        <translation>Білоруська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="93"/>
         <source>Bulgarian</source>
-        <translation>Bulgaars</translation>
+        <translation>Болгарська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="98"/>
         <source>Breton</source>
-        <translation>Breton</translation>
+        <translation>Бретонська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="99"/>
         <source>Bosnian</source>
-        <translation>Bosnisch</translation>
+        <translation>Боснійська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="100"/>
         <source>Catalan</source>
-        <translation>Catelaans</translation>
+        <translation>Каталонська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="102"/>
         <source>Chinantec, Comaltepec</source>
-        <translation>Chinanteeks, Comaltepec</translation>
+        <translation>Чинантекська, Комальтепекська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="103"/>
         <source>Cebuano</source>
-        <translation>Cebuano</translation>
+        <translation>Цебуано</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="104"/>
         <source>Chamorro</source>
-        <translation>Chamorro</translation>
+        <translation>Чаморро</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="105"/>
         <source>Chontal, Highland Oaxaca</source>
-        <translation>Chontaals, Hoogland Oaxaca</translation>
+        <translation>Чонтал (Хайленд-Оахака)</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="106"/>
         <source>Chinantec, Quiotepec</source>
-        <translation>Chinanteeks, Quiotepec</translation>
+        <translation>Чинантекська, К&apos;єтепекська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="109"/>
         <source>Cakchiquel, Western</source>
-        <translation>Cakchiquel, Westers</translation>
+        <translation>Каккікельська, західна</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="110"/>
         <source>Chinantec, Lalana</source>
-        <translation>Chinanteeks, Lalana</translation>
+        <translation>Чинантекська, Лаланська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="111"/>
         <source>Chinantec, Tepetotutla</source>
-        <translation>Chinanteeks, Tepetotutla</translation>
+        <translation>Чинантекська, Тепінапська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="112"/>
         <source>Coptic</source>
-        <translation>Koptisch</translation>
+        <translation>Коптська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="113"/>
         <source>Czech</source>
-        <translation>Tjechisch</translation>
+        <translation>Чеська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="114"/>
         <source>Chinantec, Sochiapan</source>
-        <translation>Chinanteeks, Sochiapan</translation>
+        <translation>Чинантекська, Сочіапанська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="115"/>
         <source>Chol, Tila</source>
-        <translation>Ch&apos;ol, Tila</translation>
+        <translation>Чол, Тіла</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="116"/>
         <source>Chatino, Western Highland</source>
-        <translation>Chatino, West Hoogland</translation>
+        <translation>Чатіно (Західний Хайленд)</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="117"/>
         <source>Church Slavic</source>
-        <translation>Kerkslavisch</translation>
+        <translation>Церковнослов&apos;янська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="119"/>
         <source>Welsh</source>
-        <translation>Wels</translation>
+        <translation>Валійська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="120"/>
         <source>Danish</source>
-        <translation>Deens</translation>
+        <translation>Данська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="121"/>
         <source>German</source>
-        <translation>Duits</translation>
+        <translation>Німецька</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="122"/>
         <source>Duruma</source>
-        <translation>Duruma</translation>
+        <translation>Дурума</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="124"/>
         <source>Greek, Modern (1453-)</source>
-        <translation>Grieks, Modern (1453-)</translation>
+        <translation>Грецька, сучасна (1453-)</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="125"/>
         <source>English</source>
-        <translation>Engels</translation>
+        <translation>Англійська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="126"/>
         <source>American English</source>
-        <translation>Amerikaans Engels</translation>
+        <translation>Американська англійська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="127"/>
         <source>English, Middle (1100-1500)</source>
-        <translation>Engels, Middeleeuws (1100-1500)</translation>
+        <translation>Англійська, середньовічна (1100-1500)</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="128"/>
         <source>Esperanto</source>
-        <translation>Esperanto</translation>
+        <translation>Есперанто</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="129"/>
         <source>Spanish</source>
-        <translation>Spaans</translation>
+        <translation>Еспанська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="130"/>
         <source>Estonian</source>
-        <translation>Estlands</translation>
+        <translation>Естонська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="131"/>
         <source>Basque</source>
-        <translation>Baskisch</translation>
+        <translation>Баскська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="132"/>
         <source>Persian</source>
-        <translation>Farsi</translation>
+        <translation>Перська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="133"/>
         <source>Finnish</source>
-        <translation>Fins</translation>
+        <translation>Фінська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="136"/>
         <source>French</source>
-        <translation>Frans</translation>
+        <translation>Французька</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="137"/>
         <source>Frisian</source>
-        <translation>Fries</translation>
+        <translation>Фризька</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="138"/>
         <source>Irish</source>
-        <translation>Iers</translation>
+        <translation>Ірландська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="139"/>
         <source>Gaelic (Scots)</source>
-        <translation>Gaelisch (Schots)</translation>
+        <translation>Гельська(Шотландська)</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="140"/>
         <source>Geez</source>
-        <translation>Geez</translation>
+        <translation>Ґеез</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="144"/>
         <source>Gothic</source>
-        <translation>Gotisch</translation>
+        <translation>Ґотська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="145"/>
         <source>Manx</source>
-        <translation>Manx</translation>
+        <translation>Манкська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="146"/>
         <source>Greek, Ancient (to 1453)</source>
-        <translation>Grieks, Oud (tot 1453)</translation>
+        <translation>Грецька, древня (до 1453)</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="150"/>
         <source>Hebrew</source>
-        <translation>Hebreeuws</translation>
+        <translation>Єврейська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="147"/>
         <source>Hausa</source>
-        <translation>Hausa</translation>
+        <translation>Хауса</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="148"/>
         <source>Hawaiian</source>
-        <translation>Hawaiiaans</translation>
+        <translation>Гавайська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="151"/>
         <source>Hindi</source>
-        <translation>Hindi</translation>
+        <translation>Гінді</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="153"/>
         <source>Croatian</source>
-        <translation>Kroaats</translation>
+        <translation>Хорватська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="155"/>
         <source>Hungarian</source>
-        <translation>Hongaars</translation>
+        <translation>Угорська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="156"/>
         <source>Huave, San Mateo Del Mar</source>
-        <translation>Huave, San Mateo Del Mar</translation>
+        <translation>Хуаве, Сан-Матео-дель-Мар</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="157"/>
         <source>Armenian</source>
-        <translation>Armeens</translation>
+        <translation>Вірменська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="160"/>
         <source>Indonesian</source>
-        <translation>Indonesisch</translation>
+        <translation>Індонезійська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="163"/>
         <source>Icelandic</source>
-        <translation>Ijslands</translation>
+        <translation>Ісландська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="164"/>
         <source>Italian</source>
-        <translation>Italiaans</translation>
+        <translation>Італійська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="300"/>
         <source>Zapotec, San Juan Guelav໚</source>
-        <translation>Zapoteeks, San Juan Guelav໚</translation>
+        <translation>Сапотек, Сан-Хуан Гелав</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="303"/>
         <source>Zapotec, Amatlán</source>
-        <translation>Zapoteeks, Amatlán</translation>
+        <translation>Сапотекська, Аматланська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="305"/>
         <source>Zapotec, Yalálag</source>
-        <translation>Zapoteeks, Yalálag</translation>
+        <translation>Сапотекська, Ялалагська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="308"/>
         <source>Zapotec, Quioquitani-Quierí</source>
-        <translation>Zapoteeks, Quioquitani-Quierí</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="166"/>
         <source>Ixil, San Juan Cotzal</source>
-        <translation>Ixil, San Juan Cotzal</translation>
+        <translation>Іксіл, Сан-Хуан Коцал</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="149"/>
@@ -3577,302 +3578,302 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/backend/language.cpp" line="168"/>
         <source>Japanese</source>
-        <translation>Japans</translation>
+        <translation>Японська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="169"/>
         <source>Jacalteco, Eastern</source>
-        <translation>Jacalteco, Oosters</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="170"/>
         <source>Javanese, Caribbean</source>
-        <translation>Javaans, Caribisch</translation>
+        <translation>Яванська, карибська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="171"/>
         <source>Georgian</source>
-        <translation>Georgisch</translation>
+        <translation>Грузинська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="179"/>
         <source>Korean</source>
-        <translation>Koreaans</translation>
+        <translation>Корейська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="181"/>
         <source>Kurdish</source>
-        <translation>Koerdisch</translation>
+        <translation>Курдська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="184"/>
         <source>Kirghiz</source>
-        <translation>Kirgizisch</translation>
+        <translation>Киргизька</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="185"/>
         <source>Latin</source>
-        <translation>Latijn</translation>
+        <translation>Латинська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="186"/>
         <source>Lacandon</source>
-        <translation>Lacandón</translation>
+        <translation>Лакандон</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="191"/>
         <source>Lithuanian</source>
-        <translation>Litouws</translation>
+        <translation>Литовська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="192"/>
         <source>Latvian</source>
-        <translation>Lets</translation>
+        <translation>Латиська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="193"/>
         <source>Malagasy</source>
-        <translation>Malagasi</translation>
+        <translation>Малаґасійська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="195"/>
         <source>Maori</source>
-        <translation>Maori</translation>
+        <translation>Маорі</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="196"/>
         <source>Mixe, Isthmus</source>
-        <translation>Mixe, Isthmus</translation>
+        <translation>Істмуський міхе</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="197"/>
         <source>Mixtec, Coatzospan</source>
-        <translation>Mixteeks, Coatzospan</translation>
+        <translation>Коацоспанська міштекська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="198"/>
         <source>Macedonian</source>
-        <translation>Macedonisch</translation>
+        <translation>Македонська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="199"/>
         <source>Mixtec, Silacayoapan</source>
-        <translation>Mixteeks, Silacayoapan</translation>
+        <translation>Сілакайоапанська міштекська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="203"/>
         <source>More</source>
-        <translation>More</translation>
+        <translation>Більше</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="205"/>
         <source>Malay</source>
-        <translation>Maleis</translation>
+        <translation>Малайська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="206"/>
         <source>Maltese</source>
-        <translation>Maltees</translation>
+        <translation>Мальтійська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="209"/>
         <source>Mam, Todos Santos Cuchumatán</source>
-        <translation type="unfinished"></translation>
+        <translation>Мамо, Тодос Сантос Кучуматан</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="214"/>
         <source>Norwegian Bokmål</source>
-        <translation>Noors Bokmål</translation>
+        <translation>Норвезька Букмол</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="215"/>
         <source>Nahuatl, Michoacán</source>
-        <translation type="unfinished"></translation>
+        <translation>Науатль, Мічоакан</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="217"/>
         <source>Low German; Low Saxon</source>
-        <translation>Laag Duits; Nedersaksisch</translation>
+        <translation>Германо-саксонська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="218"/>
         <source>Nepali</source>
-        <translation>Nepalese</translation>
+        <translation>Непальська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="219"/>
         <source>Nahuatl, Guerrero</source>
-        <translation>Nahuatl, Guerrero</translation>
+        <translation>Науатль, Ґерреро</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="220"/>
         <source>Nahuatl, Northern Oaxaca</source>
-        <translation>Nahuatl, Noordelijk Oaxaca</translation>
+        <translation>Науатль, Північна Оахака</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="222"/>
         <source>Dutch</source>
-        <translation>Nederlands</translation>
+        <translation>Нідерландська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="223"/>
         <source>Norwegian Nynorsk</source>
-        <translation>Noors Nynorsk</translation>
+        <translation>Норвезька Нюношк</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="224"/>
         <source>Norwegian</source>
-        <translation>Noors</translation>
+        <translation>Норвезька</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="234"/>
         <source>Papiamento</source>
-        <translation>Papiamees</translation>
+        <translation>Пап&apos;яменто</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="236"/>
         <source>Polish</source>
-        <translation>Pools</translation>
+        <translation>Польська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="239"/>
         <source>Persian (Dari)</source>
-        <translation>Persisch (Dari)</translation>
+        <translation>Перська (Dari)</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="241"/>
         <source>Portuguese</source>
-        <translation>Portugees</translation>
+        <translation>Портуґальська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="242"/>
         <source>Brazilian Portuguese</source>
-        <translation>Braziliaans Portugees</translation>
+        <translation>Бразильська портуґальська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="247"/>
         <source>Romanian</source>
-        <translation>Roemeens</translation>
+        <translation>Румунська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="248"/>
         <source>Russian</source>
-        <translation>Russisch</translation>
+        <translation>Російська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="252"/>
         <source>Scots</source>
-        <translation>Schots</translation>
+        <translation>Шотландська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="257"/>
         <source>Slovak</source>
-        <translation>Slovaaks</translation>
+        <translation>Словацька</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="258"/>
         <source>Slovenian</source>
-        <translation>Sloveens</translation>
+        <translation>Словенська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="261"/>
         <source>Somali</source>
-        <translation>Somalisch</translation>
+        <translation>Сомалійська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="262"/>
         <source>Albanian</source>
-        <translation>Albaans</translation>
+        <translation>Албанська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="268"/>
         <source>Swedish</source>
-        <translation>Zweeds</translation>
+        <translation>Шведська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="269"/>
         <source>Swahili</source>
-        <translation>Swahili</translation>
+        <translation>Свахілі</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="270"/>
         <source>Syriac</source>
-        <translation>Syrisch</translation>
+        <translation>Сирійська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="271"/>
         <source>Tamil</source>
-        <translation>Tamil</translation>
+        <translation>Тамільська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="274"/>
         <source>Thai</source>
-        <translation>Thais</translation>
+        <translation>Тайська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="276"/>
         <source>Tagalog</source>
-        <translation>Tagalog</translation>
+        <translation>Таґалоґська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="278"/>
         <source>Tswana</source>
-        <translation>Tswana</translation>
+        <translation>Тсванська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="279"/>
         <source>Turkish</source>
-        <translation>Turks</translation>
+        <translation>Турецька</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="282"/>
         <source>Tektiteko</source>
-        <translation>Tektiteko</translation>
+        <translation>Тектитеко</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="284"/>
         <source>Tahitian</source>
-        <translation>Tahitisch</translation>
+        <translation>Таїтська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="287"/>
         <source>Ukrainian</source>
-        <translation>Oekraïens</translation>
+        <translation>Українська солов&apos;їна</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="289"/>
         <source>Orya</source>
-        <translation>Orya</translation>
+        <translation>Оря</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="290"/>
         <source>Uspanteco</source>
-        <translation>Uspanteco</translation>
+        <translation>Успантеко</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="292"/>
         <source>Vietnamese</source>
-        <translation>Vietnamees</translation>
+        <translation>В&apos;єтнамська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="295"/>
         <source>Xhosa</source>
-        <translation>Xhosa</translation>
+        <translation>Хосська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="91"/>
         <source>Bavarian</source>
-        <translation>Beiers</translation>
+        <translation>Баварська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="107"/>
         <source>Chinantec, Ozumacín</source>
-        <translation type="unfinished"></translation>
+        <translation>Чінантек, Озумацін</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="165"/>
         <source>Itzá</source>
-        <translation type="unfinished"></translation>
+        <translation>Іца</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="172"/>
@@ -3882,143 +3883,143 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/backend/language.cpp" line="188"/>
         <source>Lombard</source>
-        <translation>Lombard</translation>
+        <translation>Ломбардська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="232"/>
         <source>Otomi, Querétaro</source>
-        <translation type="unfinished"></translation>
+        <translation>Отомі, Керетаро</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="238"/>
         <source>Uma</source>
-        <translation>Uma</translation>
+        <translation>Ума</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="244"/>
         <source>Quiché, West Central</source>
-        <translation type="unfinished"></translation>
+        <translation>Кіче, Західний Центральний</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="264"/>
         <source>Sranan</source>
-        <translation>Sranan</translation>
+        <translation>Тонґо (Сурінам)</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="285"/>
         <source>Tzotzil, Zinacantán</source>
-        <translation type="unfinished"></translation>
+        <translation>Цоціл, Зінкантан</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="297"/>
         <source>Yiddish</source>
-        <translation>Jiddisch</translation>
+        <translation>Їдиш</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="298"/>
         <source>Yoruba</source>
-        <translation type="unfinished"></translation>
+        <translation>Йоруба</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="301"/>
         <source>Zapotec, Mitla</source>
-        <translation>Zapoteeks, Vallei (Mitla)</translation>
+        <translation>Сапотекська, Мітла</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="302"/>
         <source>Chinese</source>
-        <translation>Chinees</translation>
+        <translation>Китайська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="304"/>
         <source>Zapotec, Zoogocho</source>
-        <translation>Zapoteeks, Zoogocho</translation>
+        <translation>Сапотекська, Зоогочо</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="306"/>
         <source>Zapotec, Chichicapan</source>
-        <translation>Zapoteeks, Chichicapan</translation>
+        <translation>Сапотекська, Чічікапанська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="307"/>
         <source>Zapotec, Southern Rincon</source>
-        <translation>Zapoteeks, Zuid Rincon</translation>
+        <translation>Сапотекська, Південний Рінкон</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="309"/>
         <source>Zapotec, Yatee</source>
-        <translation>Zapoteeks, Yatee</translation>
+        <translation>Сапотекська, Ятее</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="310"/>
         <source>Zulu</source>
-        <translation>Zoeloe</translation>
+        <translation>Зулу</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="162"/>
         <source>Footnotes</source>
-        <translation>Voetnoten</translation>
+        <translation>Виноски</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="167"/>
         <source>Strong&apos;s numbers</source>
-        <translation>Strong&apos;s nummers</translation>
+        <translation>Номери Стронґа</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="172"/>
         <source>Headings</source>
-        <translation>Kopjes</translation>
+        <translation>Заголовки</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="177"/>
         <source>Morphological tags</source>
-        <translation>Morphologische tags</translation>
+        <translation>Морфологічні теґи</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="182"/>
         <source>Lemmas</source>
-        <translation>Lemmas</translation>
+        <translation>Лемми</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="187"/>
         <source>Hebrew vowel points</source>
-        <translation>Hebreeuwse klinker punctuatie</translation>
+        <translation>Крапки єврейських голосних</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="192"/>
         <source>Hebrew cantillation marks</source>
-        <translation>Hebreeuwse articulatietekens / teamim</translation>
+        <translation>Знаки єврейської кантиляції</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="197"/>
         <source>Greek accents</source>
-        <translation>Griekse accenten</translation>
+        <translation>Грецькі наголоси</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="207"/>
         <source>Red letter words</source>
-        <translation>Rode letter woorden</translation>
+        <translation>Виділення слів червоним</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="212"/>
         <source>Textual variants</source>
-        <translation>Tekstuele varianten</translation>
+        <translation>Текстуальні варіанти</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="202"/>
         <source>Scripture cross-references</source>
-        <translation>Schrift kruisverwijzingen</translation>
+        <translation>Перехресні посилання Писання</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="218"/>
         <source>Morph segmentation</source>
-        <translation>Morphologische segmentatie</translation>
+        <translation>Морфологічне ділення</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="383"/>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="209"/>
         <source>HTML files</source>
-        <translation>HTML bestanden</translation>
+        <translation>Файли HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="50"/>
@@ -4026,166 +4027,166 @@ Wilt u doorgaan?</translation>
         <location filename="../../src/frontend/display/btmodelviewreaddisplay.cpp" line="185"/>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="210"/>
         <source>All files</source>
-        <translation>Alle bestanden</translation>
+        <translation>Усі файли</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="386"/>
         <location filename="../../src/frontend/display/btmodelviewreaddisplay.cpp" line="184"/>
         <source>Text files</source>
-        <translation>Tekst bestanden</translation>
+        <translation>Текстові файли</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="392"/>
         <source>Save file</source>
-        <translation>Bewaar bestand</translation>
+        <translation>Зберегти файл</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/btmodelviewreaddisplay.cpp" line="182"/>
         <source>Save document ...</source>
-        <translation>Bewaar document...</translation>
+        <translation>Зберегти документ ...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="49"/>
         <source>BibleTime bookmark files</source>
-        <translation>BibleTime bladwijzer bestanden</translation>
+        <translation>Файли закладок BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/backend/btbookmarksmodel.cpp" line="493"/>
         <location filename="../../src/backend/btbookmarksmodel.cpp" line="502"/>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="139"/>
         <source>unknown</source>
-        <translation>onbekend</translation>
+        <translation>невідомо</translation>
     </message>
     <message>
         <location filename="../../src/backend/btbookmarksmodel.cpp" line="862"/>
         <source>New folder</source>
-        <translation>Nieuwe map</translation>
+        <translation>Нова тека</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="54"/>
         <location filename="../../src/util/tool.cpp" line="60"/>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="63"/>
         <source>Please check permissions etc.</source>
-        <translation>Check alstublieft permissies etc.</translation>
+        <translation>Будь ласка, перевірте права доступу тощо.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="56"/>
         <source>Error while writing to file.</source>
-        <translation>Fout tijdens het schrijven naar bestand.</translation>
+        <translation>Помилка при запису в файл.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="57"/>
         <source>Please check that enough disk space is available.</source>
-        <translation>Check alstublieft of er genoeg schijfruimte beschikbaar is.</translation>
+        <translation>Будь ласка, перевірте, чи вистачає на диску місця.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="62"/>
         <source>The file couldn&apos;t be opened for saving.</source>
-        <translation>Het bestand kon niet worden geopend om het te bewaren.</translation>
+        <translation>Цей файл не вдається відкрити для збереження.</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="154"/>
         <source>Haitian Creole</source>
-        <translation>Haïtiaans Creools</translation>
+        <translation>Гаїтянська креольська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="207"/>
         <source>(Multiple languages)</source>
-        <translation>(Meerdere talen)</translation>
+        <translation>(Декілька мов)</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="208"/>
         <source>Mam, Central</source>
-        <translation>Mam, Centraal</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="210"/>
         <source>Mixe, Juquila</source>
-        <translation>Mixe, Juquila</translation>
+        <translation>Мікс, Джукіла</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="211"/>
         <source>Mixtec, Jamiltepec</source>
-        <translation>Mixteeks, Jamiltepec</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="212"/>
         <source>Burmese</source>
-        <translation>Burmees</translation>
+        <translation>Бірманська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="237"/>
         <source>Potawatomi</source>
-        <translation>Potawatomi</translation>
+        <translation>Потаватомі</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="277"/>
         <source>Klingon</source>
-        <translation>Klingon</translation>
+        <translation>Клінгонська</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="296"/>
         <source>Mixtec, Diuxi-Tilantongo</source>
-        <translation>Mixteeks, Diuxi-Tilantongo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/filters/osistohtml.cpp" line="487"/>
         <source>Verb tense changed</source>
-        <translation>Werkwoord tijdsvorm is veranderd</translation>
+        <translation>Словесний вираз змінився</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="188"/>
         <source>Export Bookmarks</source>
-        <translation>Exporteer Bookmarks</translation>
+        <translation>Експорт закладок</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="175"/>
         <source>Import bookmarks</source>
-        <translation>Importeer bookmarks</translation>
+        <translation>Імпорт закладок</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="97"/>
         <source>Parsing Strong&apos;s Numbers</source>
-        <translation>Bezig met het parsen van Strong&apos;s Nummers</translation>
+        <translation>Опрацювання номерів Стронґа</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="26"/>
         <source>Indexed works</source>
-        <translation>Geïndexeerde werken</translation>
+        <translation>Індексовані книги</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="27"/>
         <source>Unindexed works</source>
-        <translation>Niet geïndexeerde werken</translation>
+        <translation>Не індексовані книги</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="46"/>
         <source>Show this help message and exit</source>
-        <translation>Toon dit hulpbericht en sluit af</translation>
+        <translation>Показати це повідомлення та вийти</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="49"/>
         <source>Output BibleTime version and exit</source>
-        <translation>Geef BibleTime versie en sluit af</translation>
+        <translation>Вивести версію BibleTime та вийти</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="52"/>
         <source>Open a clean session</source>
-        <translation>Open een blanke sessie</translation>
+        <translation>Відкрити чисту сесію</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="55"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
-        <translation>Open de standaard Bijbel met de verwijzing &lt;ref&gt;</translation>
+        <translation>Відкрити Стандартну Біблію з посилання &lt;ref&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="58"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
-        <translation>Voor command-line argumenten geparset door de Qt toolkit, zie %1.</translation>
+        <translation>Для аргументів передаваних Qt через командний рядок, див. %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="108"/>
@@ -4195,43 +4196,43 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/main.cpp" line="115"/>
         <source>Error: Invalid command-line argument: %1</source>
-        <translation>Fout: Ongeldig command-line argument: %1</translation>
+        <translation>Помилка: неправильний аргумент: %1</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="73"/>
         <source>CSS base template not found!</source>
-        <translation>CSS basis template niet gevonden!</translation>
+        <translation>Базовий шаблон CSS не знайдено!</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="90"/>
         <source>Default template &quot;%1&quot; not found!</source>
-        <translation>Standaard template &quot;%1&quot; niet gevonden!</translation>
+        <translation>Типовий шаблон &quot;%1&quot; не знайдено!</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="71"/>
         <source>Abbreviation</source>
-        <translation>Afkorting</translation>
+        <translation>Абревіатура</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="79"/>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="159"/>
         <source>Cross references</source>
-        <translation>Kruisverwijzingen</translation>
+        <translation>Перехресні посилання</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="200"/>
         <source>Footnote</source>
-        <translation>Voetnoot</translation>
+        <translation>Виноски</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="248"/>
         <source>Strongs</source>
-        <translation>Strongs</translation>
+        <translation>Номери Стронґа</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="338"/>
         <source>Morphology</source>
-        <translation>Morfologie</translation>
+        <translation>Морфологічні теґи</translation>
     </message>
 </context>
 <context>
@@ -4240,117 +4241,117 @@ Wilt u doorgaan?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="65"/>
         <source>OK</source>
         <comment>Dialog Button</comment>
-        <translation>OK</translation>
+        <translation>ТАК</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="66"/>
         <source>Open</source>
         <comment>Dialog Button</comment>
-        <translation>Open</translation>
+        <translation>Відкрити</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="67"/>
         <source>Save</source>
         <comment>Dialog Button</comment>
-        <translation>Bewaar</translation>
+        <translation>Зберегти</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="88"/>
         <source>Back</source>
         <comment>Dialog Button</comment>
-        <translation>Terug</translation>
+        <translation>Назад</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="89"/>
         <source>Next</source>
         <comment>Dialog Button</comment>
-        <translation>Volgende</translation>
+        <translation>Наступне</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="90"/>
         <source>Commit</source>
         <comment>Dialog Button</comment>
-        <translation>Commit</translation>
+        <translation>Підтвердити</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="91"/>
         <source>Finish</source>
         <comment>Dialog Button</comment>
-        <translation>Beëindig</translation>
+        <translation>Завершити</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="92"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="68"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
-        <translation>Annuleer</translation>
+        <translation>Скасувати</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="69"/>
         <source>Close</source>
         <comment>Dialog Button</comment>
-        <translation>Sluit af</translation>
+        <translation>Закрити</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="70"/>
         <source>Discard</source>
         <comment>Dialog Button</comment>
-        <translation>Maak ongedaan</translation>
+        <translation>Скинути</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="71"/>
         <source>Apply</source>
         <comment>Dialog Button</comment>
-        <translation>Pas toe</translation>
+        <translation>Застосувати</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="72"/>
         <source>Reset</source>
         <comment>Dialog Button</comment>
-        <translation>Reset</translation>
+        <translation>Скинути</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="73"/>
         <source>Restore defaults</source>
         <comment>Dialog Button</comment>
-        <translation>Herstel standaard instellingen</translation>
+        <translation>Відновити типові налаштування</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="93"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="74"/>
         <source>Help</source>
         <comment>Dialog Button</comment>
-        <translation>Help</translation>
+        <translation>Допомога</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="75"/>
         <source>Save All</source>
         <comment>Dialog Button</comment>
-        <translation>Bewaar Alles</translation>
+        <translation>Зберегти все</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="76"/>
         <source>Yes</source>
         <comment>Dialog Button</comment>
-        <translation>Ja</translation>
+        <translation>Так</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="77"/>
         <source>Yes to all</source>
         <comment>Dialog Button</comment>
-        <translation>Ja op alles</translation>
+        <translation>Так для всіх</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="78"/>
         <source>No</source>
         <comment>Dialog Button</comment>
-        <translation>Nee</translation>
+        <translation>Ні</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="79"/>
         <source>No to all</source>
         <comment>Dialog Button</comment>
-        <translation>Nee op alles</translation>
+        <translation>Ні для всіх</translation>
     </message>
 </context>
 <context>
@@ -4358,58 +4359,58 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="99"/>
         <source>Search for:</source>
-        <translation>Zoek naar:</translation>
+        <translation>Шукати:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="106"/>
         <source>&amp;Search</source>
-        <translation>&amp;Zoek</translation>
+        <translation>&amp;Пошук</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="108"/>
         <source>Start to search the text in the chosen works</source>
-        <translation>Begin te zoeken naar de tekst in de gekozen werken</translation>
+        <translation>Почати пошук тексту у вибраних книгах</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="111"/>
         <source>Ch&amp;oose...</source>
-        <translation>&amp;Kies...</translation>
+        <translation>Об&amp;рати...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="113"/>
         <source>Choose works for the search</source>
-        <translation>Selecteer werken om in te zoeken</translation>
+        <translation>Обрати книги пошуку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="116"/>
         <source>S&amp;etup...</source>
-        <translation>&amp;Setup...</translation>
+        <translation>На&amp;лаштування...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="140"/>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="412"/>
         <source>All of the words (AND is added between the words)</source>
-        <translation>Alle woorden (AND wordt tussen de woorden gevoegd)</translation>
+        <translation>Усі слова (AND буде додано між словами)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="144"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
-        <translation> (&lt;a href=&apos;syntax_help&apos;&gt;volledige syntax&lt;/a&gt;)</translation>
+        <translation> (&lt;a href=&apos;syntax_help&apos;&gt;синтаксис&lt;/a&gt;)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="155"/>
         <source>Scope:</source>
-        <translation>Bereik:</translation>
+        <translation>Діапазон:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="176"/>
         <source>The text you want to search for</source>
-        <translation>De tekst waarnaar u wilt zoeken</translation>
+        <translation>Текст, який потрібно шукати</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="180"/>
         <source>Works:</source>
-        <translation>Werken:</translation>
+        <translation>Книги:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="368"/>
@@ -4430,42 +4431,42 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
         <source>All words</source>
-        <translation>Alle woorden</translation>
+        <translation>Усі слова</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="118"/>
         <source>Configure predefined scopes for search</source>
-        <translation>Configureer voorgedefinieerde zoekbereiken</translation>
+        <translation>Налаштувати зумовлені діапазони пошуку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
         <source>Some words</source>
-        <translation>Enkele woorden</translation>
+        <translation>Декілька слів</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
         <source>Free</source>
-        <translation>Gratis</translation>
+        <translation>Вільний</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="141"/>
         <source>Some of the words (OR is added between the words)</source>
-        <translation>Enige woorden (OR wordt tussen de woorden gevoegd)</translation>
+        <translation>Декілька слів (OR буде додано між словами)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="142"/>
         <source>Full lucene syntax</source>
-        <translation>Volledige lucene syntax</translation>
+        <translation>Увесь синтаксис lucene</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="145"/>
         <source>Click the link to get help for search syntax</source>
-        <translation>Klik de link om hulp te krijgen bij de zoek syntax</translation>
+        <translation>Натисніть на посилання для отримання довідки по пошуковому синтаксису</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="166"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
-        <translation>Kies de scope (boeken/hoofdstukken/verzen om in te zoeken).&lt;br /&gt;Van toepassing op Bijbels en commentaren.</translation>
+        <translation>Оберіть діапазон (книги/розділи/вірші для пошуку) .&lt;br /&gt;Застосовно до Біблій і коментарів.</translation>
     </message>
 </context>
 <context>
@@ -4473,17 +4474,17 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="115"/>
         <source>Text of the selected search result item</source>
-        <translation>Tekst van het geselecteerde zoek resultaat</translation>
+        <translation>Текст обраного результату пошуку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="103"/>
         <source>Select all</source>
-        <translation>Selecteer alles</translation>
+        <translation>Обрати все</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="107"/>
         <source>Copy</source>
-        <translation>Kopieer</translation>
+        <translation>Копіювати</translation>
     </message>
 </context>
 <context>
@@ -4491,107 +4492,107 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="63"/>
         <source>Search Syntax Help</source>
-        <translation>Hulp bij Zoek Syntax</translation>
+        <translation>Довідка по Пошуковому Синтаксису</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="164"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="169"/>
         <source>Which words to find</source>
-        <translation>Welke woorden te vinden</translation>
+        <translation>Які слова шукати</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="165"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="186"/>
         <source>Grouping and order</source>
-        <translation>Groepering en volgorde</translation>
+        <translation>Групування та порядок</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="166"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="196"/>
         <source>Wildcards (partial words)</source>
-        <translation>Wildcards (gedeeltelijke woorden)</translation>
+        <translation>Шаблони (по частині слова)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="167"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="209"/>
         <source>Text fields (different parts of text)</source>
-        <translation>Tekstvelden (verschillende delen van tekst)</translation>
+        <translation>Поля (різні частини тексту)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="168"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="225"/>
         <source>Other syntax features</source>
-        <translation>Overige syntax features</translation>
+        <translation>Інші можливості синтаксису</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="178"/>
         <source>jesus AND god</source>
         <comment>Do not translate &quot;AND&quot;.</comment>
-        <translation>jesus AND god</translation>
+        <translation>Ісус AND Бог</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="179"/>
         <source>Finds verses with both &apos;Jesus&apos; and &apos;God&apos;</source>
-        <translation>Vindt verzen met beide &apos;Jesus&apos; en &apos;God&apos;</translation>
+        <translation>Знайде вірші, що містять обидва слова &apos;Ісус&apos; і &apos;Бог&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="180"/>
         <source>jesus OR god</source>
         <comment>Do not translate &quot;OR&quot;.</comment>
-        <translation>jesus OR god</translation>
+        <translation>Ісус OR Бог</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="181"/>
         <source>Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both</source>
-        <translation>Vindt verzen met &apos;Jesus&apos; of &apos;God&apos; of beide</translation>
+        <translation>Знайде вірші, що містять слова &apos;Ісус&apos; або &apos;Бог&apos; чи обидва слова</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="182"/>
         <source>jesus NOT god</source>
         <comment>Do not translate &quot;NOT&quot;.</comment>
-        <translation>jesus NOT god</translation>
+        <translation>Ісус NOT Бог</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="183"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="185"/>
         <source>Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;</source>
-        <translation>Vindt verzen met &apos;Jesus&apos; maar zonder &apos;God&apos;</translation>
+        <translation>Знайде вірші, що містять слово &apos;Ісус&apos;, але без слова &apos;Бог&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="184"/>
         <source>+jesus -god</source>
-        <translation>+jesus -god</translation>
+        <translation>+Ісус -Бог</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="187"/>
         <source>Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.</source>
-        <translation>Worden kunnen worden gegroepeerd met &lt;strong&gt;haakjes&lt;/strong&gt;. Strikte woord volgorde kan worden gedefinieerd met &lt;strong&gt;quotes&lt;/strong&gt;.</translation>
+        <translation>Слова можуть бути згруповані &lt;strong&gt;круглими дужками&lt;/strong&gt;. Суворий порядок слів можна визначити &lt;strong&gt;лапками&lt;/strong&gt;.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="189"/>
         <source>(a AND b) OR c</source>
         <comment>Do not translate &quot;AND&quot; or &quot;OR&quot;.</comment>
-        <translation>(a AND b) OR c</translation>
+        <translation>(а AND б) OR в</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="190"/>
         <source>Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;</source>
-        <translation>Vindt verzen met beide &apos;a&apos; AND &apos;b&apos;, en verzen met &apos;c&apos;</translation>
+        <translation>Знайде вірші з обома словами &apos;а&apos; та &apos;б&apos;, і вірші з &apos;в&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="191"/>
         <source>&quot;says lord&quot;</source>
-        <translation>&quot;says lord&quot;</translation>
+        <translation>&quot;говорять господь&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="194"/>
         <source>&quot;says the lord&quot;</source>
-        <translation>&quot;says the lord&quot;</translation>
+        <translation>&quot;говорять Господь&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="195"/>
         <source>Finds all verses with &apos;says the LORD&apos;</source>
-        <translation>Vindt alle verzen met &apos;says the LORD&apos;</translation>
+        <translation>Знайде вірші з &apos;говорять Господь&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="158"/>
@@ -4622,7 +4623,7 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="202"/>
         <source>All words beginning with &apos;a&apos;</source>
-        <translation>Alle woorden die beginnen met &apos;a&apos;</translation>
+        <translation>Усі слова, що починаються з &apos;а&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="203"/>
@@ -4632,7 +4633,7 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="204"/>
         <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
-        <translation>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</translation>
+        <translation>&apos;Ассирія&apos;, &apos;аромат&apos;, &apos;абба&apos; тощо.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="205"/>
@@ -4642,7 +4643,7 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="206"/>
         <source>&apos;at&apos; and &apos;an&apos;</source>
-        <translation>&apos;at&apos; en &apos;an&apos;</translation>
+        <translation>&apos;Ар&apos; і &apos;аз&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="207"/>
@@ -4652,59 +4653,59 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="208"/>
         <source>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</source>
-        <translation>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</translation>
+        <translation>&apos;Алва&apos;, &apos;Анна&apos;, &apos;Авва&apos; тощо.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="210"/>
         <source>Available text fields:</source>
-        <translation>Beschikbare tekst velden:</translation>
+        <translation>Дозволені поля:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="211"/>
         <source>Searches headings</source>
-        <translation>Zoekt de kopjes</translation>
+        <translation>Шукає за заголовками</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="212"/>
         <source>Searches footnotes</source>
-        <translation>Zoekt de voetnoten</translation>
+        <translation>Шукає по виноскам</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="213"/>
         <source>Searches Strong&apos;s numbers</source>
-        <translation>Zoekt de Strong&apos;s nummers</translation>
+        <translation>Шукає за номерами Стронґа</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="214"/>
         <source>Searches morphology codes</source>
-        <translation>Zoekt morfologische codes</translation>
+        <translation>Шукає за морфологічними кодами</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="215"/>
         <source>Examples:</source>
-        <translation>Voorbeelden:</translation>
+        <translation>Приклади:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="216"/>
         <source>heading:Jesus</source>
         <comment>Do not translate &quot;heading:&quot;.</comment>
-        <translation>heading:Jesus</translation>
+        <translation>заголовок:Ісус</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="217"/>
         <source>Finds headings with &apos;Jesus&apos;</source>
-        <translation>Vindt kopjes met &apos;Jesus&apos;</translation>
+        <translation>Знайде заголовки, що містять &apos;Ісус&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="218"/>
         <source>footnote:Jesus AND footnote:said</source>
         <comment>Do not translate &quot;footnote:&quot; or &quot;AND&quot;.</comment>
-        <translation>footnote:Jesus AND footnote:said</translation>
+        <translation>footnote:Ісус AND footnote:сказав</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="220"/>
         <source>Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;</source>
-        <translation>Vindt voetnoten met &apos;Jesus&apos; en &apos;said&apos;</translation>
+        <translation>Знайде виноски, що містять &apos;Ісус&apos; і &apos;сказав&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="221"/>
@@ -4715,7 +4716,7 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="222"/>
         <source>Finds verses with Strong&apos;s Greek number 846</source>
-        <translation>Vindt verzen met Strong&apos;s Griekse nummer 846</translation>
+        <translation>Знайде вірші, що містять Грецький номер Стронґа 846</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="223"/>
@@ -4726,7 +4727,7 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="224"/>
         <source>Finds verses with morphology code &apos;N-NSF&apos;</source>
-        <translation>Vindt verzen met morfologische code &apos;N-NSF&apos;</translation>
+        <translation>Знайде вірші, з морфологічним кодом &apos;N-NSF&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="226"/>
@@ -4739,62 +4740,62 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="147"/>
         <source>Work</source>
-        <translation>Werk</translation>
+        <translation>Модулі</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="147"/>
         <source>Hits</source>
-        <translation>Hits</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="161"/>
         <source>Copy...</source>
-        <translation>Kopieer...</translation>
+        <translation>Копіювати...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="163"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="189"/>
         <source>Reference only</source>
-        <translation>Alleen verwijzing</translation>
+        <translation>Лише посилання</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="174"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="200"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="215"/>
         <source>Reference with text</source>
-        <translation>Verwijzing met tekst</translation>
+        <translation>Посилання з текстом</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="187"/>
         <source>Save...</source>
-        <translation>Bewaar...</translation>
+        <translation>Зберегти...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="213"/>
         <source>Print...</source>
-        <translation>Print...</translation>
+        <translation>Друк...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="167"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="178"/>
         <source>Copying search result</source>
-        <translation>Bezig met kopiëren van het zoekresultaat</translation>
+        <translation>Копіювання результату пошуку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="193"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="204"/>
         <source>Saving search result</source>
-        <translation>Bezig met opslaan van het zoekresultaat</translation>
+        <translation>Збереження результату пошуку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="219"/>
         <source>Printing search result</source>
-        <translation>Bezig met printen van het zoekresultaat</translation>
+        <translation>Друк результату пошуку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="146"/>
         <source>Works chosen for the search and the number of the hits in each work</source>
-        <translation>Werken geselecteerd voor de zoekopdracht en het aantal zoekresultaten in elk werk</translation>
+        <translation>Книги пошуку та кількість збігів у кожній книзі</translation>
     </message>
 </context>
 <context>
@@ -4802,72 +4803,72 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="222"/>
         <source>S&amp;earch range:</source>
-        <translation>&amp;Zoekbereik:</translation>
+        <translation>Ді&amp;апазон пошуку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="223"/>
         <source>Select a scope from the list to edit the searchranges</source>
-        <translation>Selecteer een scope van de lijst om de zoekbereiken te wijzigen</translation>
+        <translation>Оберіть діапазон для редагування з переліку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="234"/>
         <source>&amp;Name:</source>
-        <translation>&amp;Naam:</translation>
+        <translation>&amp;Ім&apos;я:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="237"/>
         <source>Edi&amp;t current range:</source>
-        <translation>&amp;Edit huidig bereik:</translation>
+        <translation>Ре&amp;дагувати поточний діапазон:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="238"/>
         <source>Change the search ranges of the selected searchscope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation>Verander de zoekbereiken van het geselecteerde zoek scope item. Kijk bijvoorbeeld naar de voorgedefinieerde zoek scopes om te zien hoe zoekbereiken worden samengesteld.</translation>
+        <translation>Редагувати пошукові діапазони виборного елемента. Можна подивится передвстановлені пошукові діапазони, щоб зрозуміти, як вони влаштовані.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="243"/>
         <source>Parsed search range:</source>
-        <translation>Geparst zoekbereik:</translation>
+        <translation>Визначені межі пошуку:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="189"/>
         <source>New range</source>
-        <translation>Nieuw bereik</translation>
+        <translation>Нові межі</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="226"/>
         <source>&amp;Add new scope</source>
-        <translation>&amp;Voeg nieuwe scope toe</translation>
+        <translation>&amp;Додати новий діапазон</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="227"/>
         <source>Add a new search scope. First enter an appropriate name, then edit the search ranges.</source>
-        <translation>Voeg een nieuw zoek scope toe. Voer eerst een toepasselijke naam in, en edit vervolgens de zoek ranges.</translation>
+        <translation>Додати новий діапазон пошуку. Спочатку уведіть відповідну назву, а потім відредагуйте межі пошуку.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="231"/>
         <source>Delete current &amp;scope</source>
-        <translation>Verwijder huidige &amp;scope</translation>
+        <translation>Вилучити поточний &amp;діапазон</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="232"/>
         <source>Delete the selected search scope</source>
-        <translation>Verwijder de geselecteerde zoek scope</translation>
+        <translation>Вилучити вибраний пошуковий діапазон</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="235"/>
         <source>Change the name of the selected search scope</source>
-        <translation>Verander naam van het geselecteerde zoek scope</translation>
+        <translation>Змінити ім&apos;я вибраного пошукового діапазону</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="244"/>
         <source>The search ranges which will be used for the search, parsed to the canonical form</source>
-        <translation>De zoekbereiken die zullen worden gebruikt bij de zoekopdracht, geparst naar de canonieke vorm</translation>
+        <translation>Пошукові діапазони, які будуть використані для пошуку, опрацьованого в канонічній формі</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="220"/>
         <source>Setup Search Scopes</source>
-        <translation>Stel Zoek Scopes In</translation>
+        <translation>Налаштувати пошукові діапазони</translation>
     </message>
 </context>
 <context>
@@ -4883,32 +4884,32 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="207"/>
         <source>Save Search Analysis</source>
-        <translation>Bewaar Zoek Analyse</translation>
+        <translation>Зберегти аналіз пошуку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="222"/>
         <source>BibleTime Search Analysis</source>
-        <translation>BibleTime Zoek Analyse</translation>
+        <translation>Аналіз Пошуку в BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="244"/>
         <source>Search text:</source>
-        <translation>Zoek tekst:</translation>
+        <translation>Шукати текст:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="248"/>
         <source>Results by work and book</source>
-        <translation>Resultaten per werk en boek</translation>
+        <translation>Результати за роботами та книгами</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="250"/>
         <source>Book</source>
-        <translation>Boek</translation>
+        <translation>Книга</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="271"/>
         <source>Total hits</source>
-        <translation>Totaal aantal hits</translation>
+        <translation>Усього збігів</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="282"/>
@@ -4921,22 +4922,22 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="142"/>
         <source>Missing indices</source>
-        <translation>Missende indices</translation>
+        <translation>Відсутні індекси</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="48"/>
         <source>Search</source>
-        <translation>Zoek</translation>
+        <translation>Пошук</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="144"/>
         <source>The following modules need to be indexed before they can be searched in:</source>
-        <translation>De volgende modules moeten worden geïndexeerd voordat ze kunnen worden doorzocht:</translation>
+        <translation>Такі модулі необхідно індексувати, щоб робити в них пошук:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="147"/>
         <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
-        <translation>Indexen kan een lange tijd duren. Klik &quot;Ja&quot; om de modules te indexeren en de zoekopdracht te starten, of &quot;Nee&quot; om de zoekopdracht te annuleren.</translation>
+        <translation>Індексація може бути тривалою. Натисніть &quot;Так&quot; для індексації та початку пошуку, або &quot;Ні&quot; для скасування пошуку.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="183"/>
@@ -4946,42 +4947,42 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="187"/>
         <source>Search aborted</source>
-        <translation>Zoekopdracht geannuleerd</translation>
+        <translation>Пошук скасовано</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="188"/>
         <source>An internal error occurred while executing your search:&lt;br/&gt;&lt;br/&gt;%1</source>
-        <translation>Er trad een interne fout op tijdens het uitvoeren van uw zoekopdracht:&lt;br/&gt;&lt;br/&gt;%1</translation>
+        <translation>Сталася внутрішня помилка під час виконання пошуку:&lt;br/&gt;&lt;br/&gt;%1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="62"/>
         <source>Drag any verse reference onto an open Bible window</source>
-        <translation>Sleep een tekstverwijzing naar een open Bijbel venster</translation>
+        <translation>Перетягніть посилання вірша у відкрите вікно Біблії</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="70"/>
         <source>&amp;Analyze results...</source>
-        <translation>&amp;Analyseer resultaten...</translation>
+        <translation>&amp;Аналіз результатів...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="71"/>
         <source>Show a graphical analysis of the search result</source>
-        <translation>Toon een grafische analyse van het zoekresultaat</translation>
+        <translation>Показує графічний аналіз результатів пошуку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="74"/>
         <source>&amp;Manage Indexes...</source>
-        <translation>&amp;Beheer Indexen...</translation>
+        <translation>&amp;Керування індексами...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="75"/>
         <source>Recreate search indexes</source>
-        <translation>Herbouw zoek indexen</translation>
+        <translation>Перестворити пошукові індекси</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="79"/>
         <source>&amp;Close</source>
-        <translation>&amp;Sluit</translation>
+        <translation>&amp;Закрити</translation>
     </message>
 </context>
 <context>
@@ -4989,57 +4990,57 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="42"/>
         <source>Results</source>
-        <translation>Resultaten</translation>
+        <translation>Результати</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="50"/>
         <source>Copy...</source>
-        <translation>Kopieer...</translation>
+        <translation>Копіювати...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="71"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="94"/>
         <source>Reference only</source>
-        <translation>Alleen verwijzing</translation>
+        <translation>Лише посилання</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="80"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="103"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="116"/>
         <source>Reference with text</source>
-        <translation>Verwijzing met tekst</translation>
+        <translation>Посилання з текстом</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="91"/>
         <source>Save...</source>
-        <translation>Bewaar...</translation>
+        <translation>Зберегти...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="113"/>
         <source>Print...</source>
-        <translation>Print...</translation>
+        <translation>Друк...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="122"/>
         <source>Printing search result</source>
-        <translation>Bezig met printen van het zoekresultaat</translation>
+        <translation>Друк результату пошуку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="98"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="108"/>
         <source>Saving search result</source>
-        <translation>Bezig met opslaan van het zoekresultaat</translation>
+        <translation>Збереження результату пошуку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="75"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="84"/>
         <source>Copying search result</source>
-        <translation>Kopieer zoekresultaat</translation>
+        <translation>Копіювання результату пошуку</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="41"/>
         <source>Search result of the selected work</source>
-        <translation>Zoekresultaat van het geselecteerde werk</translation>
+        <translation>Результати пошуку вибраних книг</translation>
     </message>
 </context>
 </TS>

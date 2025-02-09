@@ -1,31 +1,33 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # ねむりのユテコ, 2016
 # "Sleepy" Eutychus, 2016
 # "Sleepy" Eutychus, 2017-2018
+# "Sleepy" Eutychus, 2016
 # Sleepy_Eutychus, 2016
+# "Sleepy" Eutychus, 2020-2021,2023-2024
+# "Sleepy" Eutychus, 2024
 # "Sleepy" Eutychus, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2018-05-01 14:55+0000\n"
-"Last-Translator: \"Sleepy\" Eutychus\n"
-"Language-Team: Japanese (http://www.transifex.com/bibletime/bibletime/"
-"language/ja/)\n"
-"Language: ja\n"
+"PO-Revision-Date: 2011-12-12 15:28+0000\n"
+"Last-Translator: \"Sleepy\" Eutychus, 2024\n"
+"Language-Team: Japanese (http://app.transifex.com/bibletime/bibletime/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-basics.docbook:2
 msgid "Bible Study Basics"
-msgstr "聖書研究法"
+msgstr "聖書研究の基礎"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:4
@@ -41,60 +43,44 @@ msgstr "新約聖書『ヨハネの福音書』5章39〜40節"
 #: docs/howto/en/docbook/howto-basics.docbook:8
 msgid ""
 "You search the Scriptures, because you think that in them you have eternal "
-"life; and it is these that bear witness of Me; and you are unwilling to come "
-"to Me, that you may have life."
-msgstr ""
-"あなたがたは、聖書の中に永遠のいのちがあると思って、聖書を調べています。その"
-"聖書は、わたしについて証ししているものです。それなのに、あなたがたは、いのち"
-"を得るためにわたしのもとに来ようとはしません。"
+"life; and it is these that bear witness of Me; and you are unwilling to come"
+" to Me, that you may have life."
+msgstr "あなたがたは、聖書の中に永遠のいのちがあると思って、聖書を調べています。その聖書は、わたしについて証ししているものです。それなのに、あなたがたは、いのちを得るためにわたしのもとに来ようとはしません。"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:14
 msgid ""
 "The chief purpose of the book is to bring us to the Person.  Martin Luther "
 "said <quote>we go to the cradle only for the sake of the baby</quote>; just "
-"so in Bible study, we do it not for its own sake but for fellowship with God."
-msgstr ""
-"この書の最大の目的は、その方のもとへわたしたちを導くことにあります。マルチ"
-"ン・ルターいわく、<quote>揺籃へ行くは赤児の為にのみ</quote>。しかし聖書研究と"
-"は、自分のためではなく、神さまとの交わりのためのものなのです。"
+"so in Bible study, we do it not for its own sake but for fellowship with "
+"God."
+msgstr "この書の最大の目的は、その方のもとへわたしたちを導くことにあります。マルチン・ルターいわく、<quote>揺籃へ行くは赤児のためにのみ</quote>。そう、聖書研究とは、聖書研究そのもののためではなく、神さまとの交わりのためのものなのです。"
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-basics.docbook:20
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.97, 104."
-msgstr ""
-"ジョン・R・W・ストット<emphasis>『論客キリスト』(Christ the "
-"Controversialist)</emphasis>インターバーシティ出版(InterVarsity Press)、1978"
-"年、97ページ、104ページ。"
+msgstr "ジョン・R・W・ストット<emphasis>『論客キリスト』(Christ the Controversialist)</emphasis>インターバーシティ出版(InterVarsity Press)、1978年、97ページ、104ページ。"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:23
 msgid ""
 "The Jews to whom Jesus spoke [...] imagined that to possess Scripture was "
 "tantamount to possessing life. Hillel used to say, \"He who has gotten to "
-"himself words of Torah has gotten to himself the life of the world to come."
-"\" Their study was an end in itself. In this they were grievously deceived. "
-"[...]"
-msgstr ""
-"イエスさまの時代のユダヤ人は、(略)聖書を持ってさえいれば、いのちを持つことが"
-"できるのだとばかり思っていました。ヒレルというパリサイ人は「モーセの律法を与"
-"えられた者は、来たるべき世にいのちを与えられたのだ」などと言っていました。そ"
-"のような聖書研究は、研究のための研究でしかありません。ひどい思い違いをしてい"
-"るのです。(略)"
+"himself words of Torah has gotten to himself the life of the world to "
+"come.\" Their study was an end in itself. In this they were grievously "
+"deceived. [...]"
+msgstr "イエスさまの語りかけたユダヤ人は、(略)聖書を持つことはいのちを持つことに等しいと思っていました。ヒレルは「律法(トーラー)のことばを自分のものにした者は、来たるべき世のいのちを自分のものにしたのだ」と言っていました。そのような聖書研究は、研究のための研究でしかありません。ひどい思い違いをしているのです。(略)"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:28
 msgid ""
 "There is neither merit nor profit in the reading of Scripture for its own "
-"sake, but only if it effectively introduces us to Jesus Christ. Whenever the "
-"Bible is read, what is needed is an eager expectation that through it we may "
-"meet Christ."
-msgstr ""
-"聖書を読むことそのもののために読むようになってしまい、イエス・キリストとの出"
-"会いが抜けてしまっては、得もなければ益もありません。いつでも聖書を読むときに"
-"は、熱烈にキリストとの出会いを求めることが大切です。"
+"sake, but only if it effectively introduces us to Jesus Christ. Whenever the"
+" Bible is read, what is needed is an eager expectation that through it we "
+"may meet Christ."
+msgstr "聖書を読むことそのもののために読むようになってしまい、イエス・キリストとの出会いが抜けてしまっては、得もなければ益もありません。いつでも聖書を読むときには、熱烈にキリストとの出会いを求めることが大切です。"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:35
@@ -108,11 +94,7 @@ msgid ""
 "and memorization provide a microscopic view of scripture. Meditating on the "
 "scriptures brings hearing, reading, studying and memorization together and "
 "cements the word in our minds."
-msgstr ""
-"みことばを聞き、聖書を読めば、深遠な真理も望遠鏡のように視界に収めることがで"
-"きます。そのため聖書を研究し、記憶するならば、委細も詳細も顕微鏡のように正確"
-"に分析することができます。聖書を熟思することは、そのように聞き、読み、研究"
-"し、記憶し、みことばを肝に銘ずるということなのです。"
+msgstr "みことばを聞き、聖書を読めば、深遠な真理も望遠鏡のように視界に収めることができます。そのため聖書を研究し、記憶するならば、委細も詳細も顕微鏡のように正確に分析することができます。聖書を熟思することは、そのように聞き、読み、研究し、記憶し、みことばを肝に銘ずるということなのです。"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:42
@@ -122,11 +104,9 @@ msgstr "聞く"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:43
 msgid ""
-"Lk.11:28 <quote>blessed are those who hear the word of God, and observe it.</"
-"quote>"
-msgstr ""
-"新約聖書『ルカによる福音書』11章28節 <quote>しかし、イエスは言われた。「幸い"
-"なのは、むしろ神のことばを聞いてそれを守る人たちです。」</quote>"
+"Lk.11:28 <quote>blessed are those who hear the word of God, and observe "
+"it.</quote>"
+msgstr "新約聖書『ルカによる福音書』11章28節《<quote>しかし、イエスは言われた。「幸いなのは、むしろ神のことばを聞いてそれを守る人たちです。」</quote>》"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:48
@@ -138,19 +118,14 @@ msgstr "読む"
 msgid ""
 "Rev.1:3 <quote>Blessed is he who reads and those who hear the words of this "
 "prophecy [...]</quote>"
-msgstr ""
-"新約聖書『ヨハネの黙示録』1章3節 <quote>この預言のことばを朗読する者と、それ"
-"を聞いて、そこに書かれていることを守る者たちは、幸いである。時が近づいている"
-"からである。</quote>"
+msgstr "新約聖書『ヨハネの黙示録』1章3節《<quote>この預言のことばを朗読する者と、それを聞いて、そこに書かれていることを守る者たちは、幸いである。時が近づいているからである。</quote>》"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:52
 msgid ""
-"1 Tim.4:13 <quote>give attention to the public reading of Scripture [...]</"
-"quote>"
-msgstr ""
-"新約聖書『テモテへの手紙 第一』4章13節 <quote>私が行くまで、聖書の朗読と勧め"
-"と教えに専念しなさい。</quote>"
+"1 Tim.4:13 <quote>give attention to the public reading of Scripture "
+"[...]</quote>"
+msgstr "新約聖書『テモテへの手紙 第一』4章13節《<quote>私が行くまで、聖書の朗読と勧めと教えに専念しなさい。</quote>》"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/howto-basics.docbook:57
@@ -162,12 +137,9 @@ msgstr "研究"
 #: docs/howto/en/docbook/howto-basics.docbook:58
 msgid ""
 "Acts 17:11 <quote>Now these were more noble-minded than those in "
-"Thessalonica, for they received the word with great eagerness, examining the "
-"Scriptures daily, to see whether these things were so.</quote>"
-msgstr ""
-"新約聖書『使徒の働き』17章11節 <quote>この町のユダヤ人は、テサロニケにいる者"
-"たちよりも素直で、非常に熱心にみことばを受け入れ、はたしてそのとおりかどう"
-"か、毎日聖書を調べた。</quote>"
+"Thessalonica, for they received the word with great eagerness, examining the"
+" Scriptures daily, to see whether these things were so.</quote>"
+msgstr "新約聖書『使徒の働き』17章11節《<quote>この町のユダヤ人は、テサロニケにいる者たちよりも素直で、非常に熱心にみことばを受け入れ、はたしてそのとおりかどうか、毎日聖書を調べた。</quote>》"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:63
@@ -175,10 +147,7 @@ msgid ""
 "2 Tim.2:15 <quote>Be diligent [KJV `Study'] to present yourself approved to "
 "God as a workman who does not need to be ashamed, handling accurately the "
 "word of truth.</quote>"
-msgstr ""
-"新約聖書『テモテへの手紙 第二』2章15節 <quote>あなたは務めにふさわしいと認め"
-"られる人として、すなわち、真理のみことばをまっすぐに説き明かす、恥じることの"
-"ない働き人として、自分を神に献げるように最善を尽くしなさい。</quote>"
+msgstr "新約聖書『テモテへの手紙 第二』2章15節《<quote>あなたは務めにふさわしいと認められる人として、すなわち、真理のみことばをまっすぐに説き明かす、恥じることのない働き人として、自分を神に献げるように最善を尽くしなさい(ジェームズ王欽定訳では「研究しなさい」と同じ)。</quote>》"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:69
@@ -188,49 +157,33 @@ msgstr "記憶"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:70
 msgid ""
-"Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against "
-"Thee.</quote>"
-msgstr ""
-"旧約聖書『詩篇』119篇11節 <quote>私はあなたのみことばを心に蓄えます。 あなた"
-"の前に罪ある者とならないために。</quote>"
+"Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against"
+" Thee.</quote>"
+msgstr "旧約聖書『詩篇』119篇11節《<quote>私はあなたのみことばを心に蓄えます。 あなたの前に罪ある者とならないために。</quote>》"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:75
 msgid "Meditate"
-msgstr "熟思"
+msgstr "思い巡らす"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:76
 msgid ""
-"Ps.1:2-3 <quote>But his delight is in the law of the Lord, And in His law he "
-"meditates day and night. And he will be like a tree firmly planted by "
+"Ps.1:2-3 <quote>But his delight is in the law of the Lord, And in His law he"
+" meditates day and night. And he will be like a tree firmly planted by "
 "streams of water, Which yields its fruit in its season, And its leaf does "
 "not wither; And in whatever he does, he prospers.</quote>"
-msgstr ""
-"旧約聖書『詩篇』1篇2〜3節 <quote>主のおしえを喜びとし\n"
-"昼も夜も そのおしえを口ずさむ人。\n"
-"その人は\n"
-"流れのほとりに植えられた木。\n"
-"時が来ると実を結び\n"
-"その葉は枯れず\n"
-"そのなすことはすべて栄える。</quote>"
+msgstr "旧約聖書『詩篇』1篇2〜3節《<quote>【主】のおしえを喜びとし / 昼も夜も そのおしえを口ずさむ(注 あるいは「思い巡らす」)人。 / その人は / 流れのほとりに植えられた木。 / 時が来ると実を結び / その葉は枯れず / そのなすことはすべて栄える。</quote>》"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:82
 msgid ""
-"The Navigators illustrate this by saying that as the thumb can touch all the "
-"fingers, we can meditate on the Word as we do any of the first four. "
+"The Navigators illustrate this by saying that as the thumb can touch all the"
+" fingers, we can meditate on the Word as we do any of the first four. "
 "Meditation is a key to revelation. A new Christian needs to hear and read "
-"the Bible more than they need to study and memorize it. This is so that they "
-"become familiar with the overall message of the Bible."
-msgstr ""
-"『ナビゲーター』(The Navigators)の示すとおり、親指はすべての指に触れることが"
-"できますが―訳註 <ulink url=\"http://www.navigators.org/Tools/Discipleship"
-"%20Resources/Tools/The%20Prayer%20Hand\">『祈りの手(The Prayer Hand)』</"
-"ulink>参照―みことばを熟思するという親指も、聞き、読み、研究し、記憶するという"
-"ほかの指と同様です。熟思は黙示を神さまからいただくための鍵です。新たにクリス"
-"チャンになった人にとっては、研究や記憶よりも、聖書全体のメッセージに慣れるた"
-"め、聞いたり読んだりすることが重要です。"
+"the Bible more than they need to study and memorize it. This is so that they"
+" become familiar with the overall message of the Bible."
+msgstr "『ナビゲーター』(The Navigators)の示すとおり、親指はすべての指に触れることができますが―訳註 <ulink url=\"http://www.navigators.org/Tools/Discipleship%20Resources/Tools/The%20Prayer%20Hand\">『祈りの手(The Prayer Hand)』</ulink>参照―みことばを思い巡らすという親指も、聞き、読み、研究し、記憶するというほかの指と同様です。思い巡らすことは、啓示を神さまからいただくための鍵です。新たにクリスチャンになった人にとっては、研究や記憶よりも、聖書全体のメッセージに慣れるため、聞いたり読んだりすることが重要です。"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:91
@@ -247,8 +200,7 @@ msgstr "課題研究"
 msgid ""
 "Pick out a certain topic and follow it through, using cross-references or a "
 "concordance."
-msgstr ""
-"ひとつの課題を選び、それについて引照やコンコルダンスなどを用いて調べる。"
+msgstr "ひとつの課題を選び、それについて引照やコンコルダンスなどを用いて調べる。"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:98
@@ -259,9 +211,7 @@ msgstr "人物研究"
 #: docs/howto/en/docbook/howto-basics.docbook:99
 msgid ""
 "Studying the life of a Bible character, e.g. Joseph's life in Gen.37-50."
-msgstr ""
-"聖書の人物の生涯について研究する。例、旧約聖書『創世記』37〜50章のヨセフの生"
-"涯など。"
+msgstr "聖書の人物の生涯について研究する。例、旧約聖書『創世記』37〜50章のヨセフの生涯など。"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:103
@@ -271,7 +221,7 @@ msgstr "徹底研究"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:104
 msgid "Studying a certain passage: paragraph, chapter, or book."
-msgstr "ひとつの箇所(段落・章・篇・巻など)を研究する。"
+msgstr "ひとつの箇所(段落・章・篇・書巻など)を研究する。"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:109
@@ -286,11 +236,9 @@ msgstr "内容"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:112
 msgid ""
-"What does it say? What does it say in the original language? Be careful with "
-"definitions. Don't read into it what it doesn't say."
-msgstr ""
-"何と述べているか? 原語では何と述べているか? 定義に注意。書いていないことを読"
-"み取らないように。"
+"What does it say? What does it say in the original language? Be careful with"
+" definitions. Don't read into it what it doesn't say."
+msgstr "何と述べているか? 原語では何と述べているか? 定義に注意。書いていないことを読み取らないように。"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:117
@@ -302,11 +250,10 @@ msgstr "文脈"
 msgid ""
 "What do the verses around it say? \"Context is king\" is the rule -- the "
 "passage must make sense within the structure of the entire passage and book."
-msgstr ""
-"節周辺では何と述べているか? 「文脈は王なり」が鉄則である。箇所全体や巻全体の"
-"構造の中での意味が、その箇所にはある。"
+msgstr "節周辺では何と述べているか? 「文脈は王なり」が鉄則である。箇所全体や書巻全体の構造の中での意味が、その箇所にはある。"
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-basics.docbook:123
 #: docs/howto/en/docbook/howto-interpretation.docbook:37
 msgid "Cross-reference"
@@ -318,9 +265,7 @@ msgid ""
 "What do other verses about this subject say through the rest of the Bible? "
 "God doesn't contradict Himself, so our interpretation needs to stand the "
 "test of other scriptures."
-msgstr ""
-"ほかの節は本件について何と述べているか? それ以外の聖書全体の記述はどうか? 神"
-"に自己矛盾はない。ゆえに我々の解釈は聖書のほかの巻の検証に立つ必要がある。"
+msgstr "ほかの節は本件について何と述べているか? それ以外の聖書全体の記述はどうか? 神に自己矛盾はない。ゆえに我々の解釈は聖書のほかの書巻の検証に立つ必要がある。"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:131
@@ -331,16 +276,11 @@ msgstr "新約聖書『マタイの福音書』6章1〜18節の徹底研究"
 #: docs/howto/en/docbook/howto-basics.docbook:132
 msgid ""
 "Let's study together Mt.6:1-18. Read it to yourself, first looking for the "
-"key verse, the verse that sums up the whole passage. Think you have it? Test "
-"it by picking different places in the passage and asking yourself if they "
+"key verse, the verse that sums up the whole passage. Think you have it? Test"
+" it by picking different places in the passage and asking yourself if they "
 "relate to the thought of the key verse. Once you find it, write it as Roman "
 "numeral One of your outline:"
-msgstr ""
-"新約聖書『マタイの福音書』6章1〜18節をご一緒に研究しましょう。黙読して、まず"
-"鍵となる節を見つけます。箇所全体を要約する節がそうです。いかがでしょうか。確"
-"認のため、その箇所のべつのところを選んで、その節とどのように関係するか考えて"
-"みましょう。鍵となる節が見つかったら、ノートのローマ数字 I のところにこう書き"
-"ましょう。"
+msgstr "新約聖書『マタイの福音書』6章1〜18節をご一緒に研究しましょう。黙読して、まず鍵となる節を見つけます。箇所全体を要約する節がそうです。いかがでしょうか。確認のため、その箇所の別のところを選んで、その節とどのように関係するか考えてみましょう。鍵となる節が見つかったら、ノートのローマ数字 I のところにこう書きましょう。"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:140
@@ -350,13 +290,10 @@ msgstr "人に見せるために人前で善行をしないように気をつけ
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:144
 msgid ""
-"What does <quote>practicing your righteousness</quote>mean? Does the passage "
-"give any examples? What area of our lives is being addressed? <emphasis>Our "
-"motives!</emphasis> What sub-headings develop this thought?"
-msgstr ""
-"<quote>善行をしない</quote>とはどのような意味でしょうか。この箇所に例がありま"
-"すか。生活のどの範囲のことを言っているのでしょうか。<emphasis>わたしたちの動"
-"機です!</emphasis> どのような副見出しでこの考えを展開してゆけますか。"
+"What does <quote>practicing your righteousness</quote>mean? Does the passage"
+" give any examples? What area of our lives is being addressed? <emphasis>Our"
+" motives!</emphasis> What sub-headings develop this thought?"
+msgstr "《<quote>善行をしない</quote>》とはどのような意味でしょうか。この箇所に例がありますか。生活のどの範囲のことを言っているのでしょうか。<emphasis>わたしたちの動機です!</emphasis> どのような副見出しでこの考えを展開してゆけますか。"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:151
@@ -378,25 +315,24 @@ msgstr "祈るとき"
 msgid ""
 "Now fill in the outline with specific instructions of how to avoid wrong "
 "ways of practicing our righteousness:"
-msgstr ""
-"それでは、間違った善行をしないようにするにはどうすればよいか、具体的な指示を"
-"書いてノートを埋めてゆきましょう。"
+msgstr "それでは、間違った善行をしないようにするにはどうすればよいか、具体的な指示を書いてノートを埋めてゆきましょう。"
 
-#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:167
 msgid ""
-"don't sound a trumpet. (how might someone <quote>sound a trumpet</"
-"quote>today?)"
-msgstr ""
-"ラッパを吹いてはいけません。(今日、どのような行動が<quote>ラッパを吹</quote>"
-"くことにあたるだろうか?)"
+"don't sound a trumpet. (how might someone <quote>sound a "
+"trumpet</quote>today?)"
+msgstr "ラッパを吹いてはいけません。(今日、どのような行動が《<quote>ラッパを吹</quote>》くことにあたるだろうか?)"
 
-#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:171
 msgid "do it secretly."
 msgstr "隠れてしなさい。"
 
-#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:174
 msgid "etc."
 msgstr "ほか…。"
@@ -431,17 +367,20 @@ msgstr "50音順やアルファベット順の見出しから探す。"
 msgid "Go down the column of listings until you find your verse."
 msgstr "その項目に列挙された聖書箇所を順に引く。"
 
-#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:201
 msgid "<quote>Faithful are the wounds of a friend</quote>"
-msgstr "<quote>愛する者が傷つけるのは誠実による。</quote>"
+msgstr "《<quote>愛する者が傷つけるのは誠実による。</quote>》"
 
-#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:206
 msgid "<quote>We are ambassadors of Christ.</quote>"
-msgstr "<quote>私たちはキリストに代わる使節なのです。</quote>"
+msgstr "《<quote>私たちはキリストに代わる使節なのです。</quote>》"
 
-#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:210
 msgid "The story of the rich man and Lazarus."
 msgstr "金持ちとラザロの話"
@@ -460,13 +399,10 @@ msgstr "課題研究をするには"
 #: docs/howto/en/docbook/howto-basics.docbook:216
 msgid ""
 "Let's say you wanted to do a study of the word \"redemption.\" First you "
-"would look up that word in the concordance and look up references listed for "
-"it. Then you could look up related words and references listed for them, e."
-"g.  \"redeem, redeemed, ransom,\" even \"buy\" or \"bought.\""
-msgstr ""
-"「贖い」という語を研究するとします。まずコンコルダンスを引き、その箇所の引照"
-"を引きます。すると関連語句やそれらの引照を引くことができます。例、「贖う」"
-"「贖われた」「贖いの代価」など。「買う」「買った」と同様。"
+"would look up that word in the concordance and look up references listed for"
+" it. Then you could look up related words and references listed for them, "
+"e.g.  \"redeem, redeemed, ransom,\" even \"buy\" or \"bought.\""
+msgstr "「贖い」という語を研究するとします。まずコンコルダンスを引き、その箇所の引照を引きます。すると関連語句やそれらの引照を引くことができます。例、「贖う」「贖われた」「贖いの代価」など。「買う」「買った」と同様。"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:223
@@ -481,13 +417,7 @@ msgid ""
 "judgeth all things.</quote>Maybe there are two different Greek words here, "
 "both being translated \"judge\" in English? (We're using Strong's from here "
 "out.)"
-msgstr ""
-"新約聖書『マタイの福音書』7章1節で<quote>さばいてはいけません。自分がさばかれ"
-"ないためです。</quote>という「さばく」と『コリント人への手紙 第一』2章15節で"
-"<quote>御霊を受けている人はすべてのことを判断しますが、その人自身はだれによっ"
-"ても判断されません。</quote>という「判断する」が、英文『ジェイムズ王欽定訳』"
-"ではいずれも 'judge' (judgeth) だということに気づいたとします。べつのギリシア"
-"語なのでしょうか? (ストロング・コンコルダンスを使用)"
+msgstr "新約聖書『マタイの福音書』7章1節で《<quote>さばいてはいけません。自分がさばかれないためです。</quote>》という「さばく」と『コリント人への手紙 第一』2章15節で《<quote>御霊を受けている人はすべてのことを判断しますが、その人自身はだれによっても判断されません。</quote>》という「判断する」が、英文『ジェームズ王欽定訳』ではいずれも 'judge' (judgeth) だということに気づいたとします。別のギリシア語なのでしょうか? (ストロング・コンコルダンスを使用)"
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:232
@@ -499,9 +429,7 @@ msgstr "\"judge\" を引く。"
 msgid ""
 "Go down the column of entries to Mt.7:1. To the right is a number, 2919. "
 "This refers to the Greek word used. Write it down."
-msgstr ""
-"新約聖書『マタイの福音書』7章1節にあるストロング番号2919番のギリシア語を写"
-"す。"
+msgstr "新約聖書『マタイの福音書』7章1節にあるストロング番号2919番のギリシア語を写す。"
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:240
@@ -511,19 +439,15 @@ msgstr "\"judgeth\" を引く。"
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:243
 msgid "Go down the column to 1 Cor.2:15 . . . . . 350."
-msgstr ""
-"新約聖書『コリント人への手紙 第一』2章15節にあるストロング番号350番のギリシア"
-"語を写す。"
+msgstr "新約聖書『コリント人への手紙 第一』2章15節にあるストロング番号350番のギリシア語を写す。"
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:246
 msgid ""
-"Turn in the back to the Greek dictionary. (Remember, you're in the NT so the "
-"language is Greek, while the OT is Hebrew.) Compare the meaning of 2919 with "
-"the meaning of 350 and you have your answer!"
-msgstr ""
-"ギリシア語辞典で2919番と350番のギリシア語を比較すると答えが出る。(旧約聖書の"
-"場合はヘブル語)"
+"Turn in the back to the Greek dictionary. (Remember, you're in the NT so the"
+" language is Greek, while the OT is Hebrew.) Compare the meaning of 2919 "
+"with the meaning of 350 and you have your answer!"
+msgstr "ギリシア語辞典で2919番と350番のギリシア語を比較すると答えが出る。(旧約聖書の場合はヘブル語)"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:254
@@ -533,9 +457,9 @@ msgstr "名前の意味を調べるには"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:255
 msgid ""
-"By the same process we can find the meaning of a name in the Greek or Hebrew."
-msgstr ""
-"同様の手順によりギリシア語やヘブル語の名前の意味を調べることができます。"
+"By the same process we can find the meaning of a name in the Greek or "
+"Hebrew."
+msgstr "同様の手順によりギリシア語やヘブル語の名前の意味を調べることができます。"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:257
@@ -573,49 +497,39 @@ msgid ""
 "Understanding God's word is of great importance to all who call on God's "
 "name. Study of the Bible is one of the primary ways that we learn to "
 "communicate with God."
-msgstr ""
-"神の御名を呼び求める者すべてにとって、神のみことばを理解することは大いに重要"
-"です。聖書研究は、神さまとの交わりの重要な第一歩のひとつです。"
+msgstr "神のみことばを理解することは、神の御名を呼び求める者すべてにとって大いに重要です。聖書研究は、神さまとの交わりの主要な方法のひとつです。"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:7
 msgid "A Book that is Unique"
-msgstr "類まれなる唯一の書"
+msgstr "ユニークな書"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:8
 msgid "The Bible stands alone in many ways. It is unique in:"
-msgstr ""
-"聖書にはこのように、他の追随を許さぬたくさんのユニークな特色があります。"
+msgstr "聖書にはこのように、他の追随を許さぬたくさんのユニークな特色があります。"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:11
 msgid ""
 "popularity. Bible sales in North America: more than $500 million per year. "
 "The Bible is both the all-time and year-to-year best seller!"
-msgstr ""
-"ものすごい人気―毎年いつもベストセラーで、北米だけでも5億ドル以上の売上があり"
-"ます。"
+msgstr "人気―毎年いつもベストセラーで、北米だけでも5億ドル以上の売上があります。"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:16
 msgid ""
 "authorship. It was written over a period of 1600 years by 40 different "
 "authors from different backgrounds, yet reads as if written by one."
-msgstr ""
-"ものすごい著者―1,600年以上もの時間をかけて、生まれも育ちも時代背景も別々の40"
-"人が別々に書いたにもかかわらず、ただひとりの神の著書として読むことができま"
-"す。"
+msgstr "著者―1,600年以上もの時間をかけて、生まれも育ちも時代背景も別々の40人が別々に書いたにもかかわらず、ただひとりの神の著書として読むことができます。"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:21
 msgid ""
-"preservation. F. F. Bruce in <emphasis>Are New Testament Documents Reliable?"
-"</emphasis> compares New Testament manuscripts with other ancient texts:"
-msgstr ""
-"ものすごい保全性―フレドリク・ファイヴィ・ブルース著、柳田友信訳<emphasis>『新"
-"約聖書は信頼できるか』(Are New Testament Documents Reliable?)</emphasis>で"
-"は、新約聖書の写本と他の古文書とが比較されています。"
+"preservation. F. F. Bruce in <emphasis>Are New Testament Documents "
+"Reliable?</emphasis> compares New Testament manuscripts with other ancient "
+"texts:"
+msgstr "保全性―フレドリク・ファイヴィ・ブルース著、柳田友信訳<emphasis>『新約聖書は信頼できるか』(Are New Testament Documents Reliable?)</emphasis>では、新約聖書の写本と他の古文書とが比較されています。"
 
 #. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:28
@@ -766,21 +680,18 @@ msgid ""
 "Ten copies of Caesar's <emphasis>Gallic War</emphasis> exist, the earliest "
 "of which was copied 900 years after Caesar wrote the original, etc. For the "
 "New Testament we have full manuscripts dating to 350 A. D., papyri "
-"containing most of the New Testament from the 200s, and a fragment of John's "
-"gospel from 130 A. D. How many manuscripts do we have to compare to each "
+"containing most of the New Testament from the 200s, and a fragment of John's"
+" gospel from 130 A. D. How many manuscripts do we have to compare to each "
 "other? 5,000 in Greek and 10,000 in Latin!"
-msgstr ""
+msgstr "カエサル著 <emphasis>ガリア戦記</emphasis> は、カエサルが原文を著した900年後に写された最も初期のものなど、10の写本が現存しています。新約聖書は、西暦350年のものとされた全文の手書き写本、新約聖書の大部分を含む3世紀のパピルス、西暦130年の『ヨハネの福音書』の断片があります。比較すべき手書き写本はいくつあるのでしょう。ギリシア語5,000部にラテン語10,000部です!"
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:90
 msgid ""
 "Textual critic F. J. A. Hort, \"The New Testament in the Original Greek\", "
-"vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of Life</"
-"emphasis>p. 25-26"
-msgstr ""
-"本文批評家 F・J・A・ホート(1828-1892)『ギリシア語原語新約聖書』(The New "
-"Testament in the Original Greek) 第1巻561ページ、マクミラン刊、引用"
-"<emphasis>『いのちにかかわる問題』</emphasis>(Questions of Life)25〜26ページ"
+"vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of "
+"Life</emphasis>p. 25-26"
+msgstr "本文批評家 F・J・A・ホート(1828-1892)『ギリシア語原語新約聖書』(The New Testament in the Original Greek) 第1巻561ページ、マクミラン刊、引用<emphasis>『いのちにかかわる問題』(Questions of Life)</emphasis>25〜26ページ"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:93
@@ -788,9 +699,7 @@ msgid ""
 "\"In the verity and fullness of the evidence on which it rests, the text of "
 "the New Testament stands absolutely and unapproachably alone among other "
 "ancient prose writings.\""
-msgstr ""
-"「真実の十分な証拠があることにかけては、新約聖書本文の立場は不動であって、他"
-"のいかなる古文書の追随をも許さないのである」"
+msgstr "「証拠が真実かつ十分であることにかけては、新約聖書本文の立場は不動であって、他のいかなる古文書の追随をも許さないのである」"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:99
@@ -803,44 +712,44 @@ msgid ""
 "<emphasis>Heb.4:12</emphasis> \"<emphasis>For the word of God is living and "
 "active...</emphasis>\" Jesus said <emphasis>(Mt.4:4),</emphasis>\" "
 "<emphasis>It is written, Man shall not live on bread alone, but on every "
-"word that proceeds [lit., is proceeding] from the mouth of God.</emphasis>\" "
-"As we read the Bible, God's Spirit is there to speak it to our hearts in a "
+"word that proceeds [lit., is proceeding] from the mouth of God.</emphasis>\""
+" As we read the Bible, God's Spirit is there to speak it to our hearts in a "
 "continually-fresh way."
-msgstr ""
+msgstr "<emphasis>新約聖書『ヘブル人への手紙』4章12節</emphasis>《<emphasis>神のことばは生きていて、力があり、(略)</emphasis>》<emphasis>新約聖書『マタイの福音書』4章4節</emphasis>《<emphasis>イエスは答えられた。「『人はパンだけで生きるのではなく、神の口から出る(原語の字義的には「出ている」)一つ一つのことばで生きる』と書いてある。」</emphasis>》聖書を読むとき、神の霊がそこにあってわたしたちの心にみことばを語りかけ、わたしたちの心を新たにしつづけるのです。 "
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:109
 msgid ""
 "2 Tim.3:16 declares, \" <emphasis>All scripture is inspired by God [lit., "
-"God-breathed].</emphasis>\" Do you believe this? Before you answer, consider "
-"Jesus' attitude toward the Scriptures."
-msgstr ""
+"God-breathed].</emphasis>\" Do you believe this? Before you answer, consider"
+" Jesus' attitude toward the Scriptures."
+msgstr "『テモテへの手紙 第二』3章16節によれば、《<emphasis>聖書はすべて神の霊感(原語の字義的には「息吹」)によるもの</emphasis>》です。あなたは、このことを信じますか。答えを出す前に、聖書に対するイエスさまの姿勢のことをよく考えてみてください。"
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:114
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.93-95"
-msgstr ""
+msgstr "ジョン・R・W・ストット <emphasis>『論客キリスト』(Christ the Controversialist)</emphasis>インターバーシティ出版(InterVarsity Press)、1978年、93〜95ページ。"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:117
 msgid ""
 "He referred to the human authors, but took it for granted that behind them "
 "all was a single divine Author. He could equally say 'Moses said' or 'God "
-"said' (Mk.7:10). He could quote a comment of the narrator in Genesis 2:24 as "
-"an utterance of the Creator Himself (Mt.19:4-5). Similarly He said, 'Well "
+"said' (Mk.7:10). He could quote a comment of the narrator in Genesis 2:24 as"
+" an utterance of the Creator Himself (Mt.19:4-5). Similarly He said, 'Well "
 "did Isaiah prophesy of you hypocrites, as it is written', when what He went "
-"on to quote is the direct speech of the Lord God (Mk.7:6 &amp; Is.29:13). It "
-"is from Jesus Himself that the New Testament authors have gained their "
-"conviction of the dual authorship of Scripture. For them it was just as true "
-"to say that 'God spoke of old to our fathers by the prophets' (Heb.1:1) as "
+"on to quote is the direct speech of the Lord God (Mk.7:6 &amp; Is.29:13). It"
+" is from Jesus Himself that the New Testament authors have gained their "
+"conviction of the dual authorship of Scripture. For them it was just as true"
+" to say that 'God spoke of old to our fathers by the prophets' (Heb.1:1) as "
 "it was to say that 'men moved by the Holy Spirit spoke from God' (2 "
 "Pe.1:21).  God did not speak in such a way as to obliterate the personality "
-"of the human authors, nor did men speak in such a way as to corrupt the Word "
-"of the divine Author. God spoke. Men spoke.  Neither truth must be allowed "
+"of the human authors, nor did men speak in such a way as to corrupt the Word"
+" of the divine Author. God spoke. Men spoke.  Neither truth must be allowed "
 "to detract from the other.  ..."
-msgstr ""
+msgstr "イエスさまは人間の筆者のことを仰せられましたが、筆者たちすべての背後にただひとりの神である著者が当然おられるものとお考えでした。新約聖書『マルコの福音書』7章10節にある《モーセは(略)言いました》というのを「神は言われた」というのと同じ意味で言っておられました。新約聖書『マタイの福音書』19章4、5節によれば、旧約聖書『創世記』2章24節のナレーターのコメントを創造主ご自身のみことばとして引用することができました。同様に、新約聖書『マルコの福音書』7章6節では、旧約聖書『イザヤ書』29章13節から神である主の直接話法を引用するに際し《イザヤは、あなたがた偽善者について見事に預言し、こう書いています。》とおっしゃいました。聖書に著者と筆者がいることについて、新約聖書の筆者たちはイエスご自身から確信を得ています。彼らにとっては新約聖書『ヘブル人の手紙』1章1節で《神は昔、預言者たちによって、多くの部分に分け、多くの方法で先祖たちに語られましたが、》というのと、新約聖書『ペテロの手紙 第二』1章21節で《聖霊に動かされた人たちが神から受けて語ったものです》というのとは同様に真実でした。神は人間の筆者の人格を殺すようにして語られたのではありませんし、人間のほうも神である著者のみことばを損なうように語ったのではありません。神が語った。人が語った。どちらの真理も他方を損なうものではないのです。"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:134
@@ -849,7 +758,7 @@ msgid ""
 "witness. The testimony of the Bible is the testimony of God. And the chief "
 "reason why the Christian believes in the divine origin of the Bible is that "
 "Jesus Christ Himself taught it."
-msgstr ""
+msgstr "これはそのとき、キリストがごらんになる聖書の見方でした。聖書の証人は神の証人でした。聖書の証しは神の証しでした。クリスチャンが聖書を神によるものと考えるおもな理由は、イエス・キリストご自身がそのようにお教えになったからです。"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:140
@@ -857,48 +766,49 @@ msgid ""
 "2 Tim.3:16 goes on, \" <emphasis>and profitable for teaching, for "
 "correction, for training in righteousness, that the man of God may be "
 "adequate, equipped for every good work.</emphasis>\" If we accept that the "
-"Bible really is God speaking to us, it follows that it will be our authority "
-"in all matters of faith and conduct."
-msgstr ""
+"Bible really is God speaking to us, it follows that it will be our authority"
+" in all matters of faith and conduct."
+msgstr "新約聖書『テモテへの手紙 第二』3章16節はこのように続きます。《<emphasis>聖書はすべて神の霊感によるもので、教えと戒めと矯正と義の訓練のために有益です。</emphasis>》これを受け入れるなら、聖書は真にわたしたちへの神の語りかけであって、信仰と行いのすべてにおいてわたしたちの権威となることになります。"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:148
 msgid "A Book that Works"
-msgstr ""
+msgstr "働きの書"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:149
 msgid ""
-"What will studying the Bible do for you? 1 Thess.2:13 says that the Bible \" "
-"<emphasis>performs its work in you who believe.</emphasis>\" Beside each "
+"What will studying the Bible do for you? 1 Thess.2:13 says that the Bible \""
+" <emphasis>performs its work in you who believe.</emphasis>\" Beside each "
 "scripture, write down the work the Word performs."
-msgstr ""
+msgstr "聖書研究はあなたに何をもたらすでしょうか。新約聖書『テサロニケ人への手紙 第一』2章13節によれば、聖書は《<emphasis>信じているあなたがたのうちに働いています。</emphasis>》それぞれの聖書箇所のかたわらに、神のみことばの働きを書きとめてみましょう。"
 
 #. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:154
 msgid "What does Bible study do for Christians?"
-msgstr ""
+msgstr "聖書研究はクリスチャンに何をもたらすか"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:158
 msgid "Reference"
-msgstr ""
+msgstr "聖書箇所"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:159
 msgid "Action"
-msgstr ""
+msgstr "もたらすこと"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:164
 msgid "Eph. 5:26"
-msgstr ""
+msgstr "新約聖書『エペソ人への手紙』5章26節"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:165
 msgid ""
-"cleanses -- \"...having cleansed her by the washing of water with the word.\""
-msgstr ""
+"cleanses -- \"...having cleansed her by the washing of water with the "
+"word.\""
+msgstr "洗う 《(略)みことばにより、水の洗いをもって、教会をきよめて聖なるものとするためであり、》"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:169
@@ -910,31 +820,31 @@ msgstr "新約聖書『使徒の働き』20章32節"
 msgid ""
 "builds up -- \" ...the word of His grace, which is able to build you up and "
 "to give you the inheritance among all those who are sanctified. \""
-msgstr ""
+msgstr "成長させる 《(神の恵みの)みことばは、あなたがたを成長させ、聖なるものとされたすべての人々ともに、あなたがたに御国を受け継がせることができるのです。》"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:175
 msgid "Rom. 15:4"
-msgstr "新約聖書『ローマ人への手紙 第一』15章4節"
+msgstr "新約聖書『ローマ人への手紙』15章4節"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:176
 msgid ""
 "encourages -- \"that through perseverance and the encouragement of the "
 "Scriptures we might have hope.\""
-msgstr ""
+msgstr "励ます 《聖書が与える忍耐と励ましによって、私たちが希望を持ち続けるためです。》"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:181
 msgid "Rom. 10:17"
-msgstr "新約聖書『ローマ人への手紙 第一』10章17節"
+msgstr "新約聖書『ローマ人への手紙』10章17節"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:182
 msgid ""
 "gives faith -- \"So faith comes from hearing, and hearing by the word of "
 "Christ.\""
-msgstr ""
+msgstr "信仰を与える 《ですから、信仰は聞くことから始まります。聞くことは、キリストについてのことばを通して実現するのです。》"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:186
@@ -946,7 +856,7 @@ msgstr "新約聖書『コリント人への手紙 第一』10章4節"
 msgid ""
 "instructs -- \"Now these things happened to them for an example, and they "
 "were written for our instruction\""
-msgstr ""
+msgstr "教訓となる 《これらのことが彼らに起こったのは、戒めのためであり、それが書かれたのは、世の終わりに臨んでいる私たちへの教訓とするためです。》"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:192
@@ -959,12 +869,12 @@ msgid ""
 "nourishment -- \"But He answered and said, 'It is written, Man shall not "
 "live on bread alone, but on every word that proceeds out of the mouth of "
 "God.'\""
-msgstr ""
+msgstr "糧となる 《イエスは答えられた。「『人はパンだけで生きるのではなく、神の口から出る一つ一つのことばで生きる』と書いてある。」》"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:202
 msgid "A Book that Liberates"
-msgstr ""
+msgstr "解放の書"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:203
@@ -975,253 +885,255 @@ msgid ""
 "knowledge? Find the answers by examining the first half of the sentence, in "
 "v.31. \" <emphasis>If you abide in My word, then you are truly disciples of "
 "Mine...</emphasis>\""
-msgstr ""
+msgstr "新約聖書『ヨハネの福音書』8章32節《<emphasis>あなたがたは真理を知り、真理はあなたがたを自由にします。」</emphasis>》これは、いつもここだけが引用されます。条件つきの約束なのでしょうか。それとも無条件の約束でしょうか。知識なら何でも当てはまるのでしょうか。31節にある、文章の前半をよく調べて答えを見つけましょう。《<emphasis>「あなたがたは、わたしのことばにとどまるなら、本当にわたしの弟子です。</emphasis>》"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:211
 msgid ""
 "We see that this is a conditional promise, specifically speaking of the "
 "truth of God's word."
-msgstr ""
+msgstr "条件つきの約束であることが分かりました。特に神のみことばの真理について述べたものです。"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:213
 msgid ""
-"The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent wind."
-"</emphasis>\" <emphasis>As a result, we are no longer to be children, tossed "
-"here and there by waves, and carried about by every wind of doctrine...</"
-"emphasis>\"One thing studying the Bible does for us is to ground us in the "
-"truth, with the result that we won't be easily \"blown away.\""
-msgstr ""
+"The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent "
+"wind.</emphasis>\" <emphasis>As a result, we are no longer to be children, "
+"tossed here and there by waves, and carried about by every wind of "
+"doctrine...</emphasis>\"One thing studying the Bible does for us is to "
+"ground us in the truth, with the result that we won't be easily \"blown "
+"away.\""
+msgstr "新約聖書『エペソ人への手紙』4章14節で用いられるギリシア語の「風」は<emphasis>暴風</emphasis>という意味です。《<emphasis>こうして、私たちはもはや子どもではなく、人の悪巧みや人を欺く悪賢い策略から出た、どんな教えの風にも、吹き回されたり、もてあそばれたりすることがなく、</emphasis>》聖書研究がわたしたちにもたらすものひとつは、真理の基礎をたたきこみ、容易に「吹き回されたり」しないようにすることです。"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:221
 msgid ""
 "<emphasis>But Jesus answered and said to them,</emphasis>\" <emphasis>You "
-"are mistaken [KJV Ye do err], not understanding the Scriptures, or the power "
-"of God.</emphasis>\" Mt.22:29"
-msgstr ""
+"are mistaken [KJV Ye do err], not understanding the Scriptures, or the power"
+" of God.</emphasis>\" Mt.22:29"
+msgstr "<emphasis>イエスは彼らに答えられた。</emphasis>「<emphasis>あなたがたは聖書も神の力も知らないので、思い違いをしています。</emphasis>新約聖書『マタイの福音書』22章29節"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:224
 msgid "What 2 things do we need to know to be kept from error?"
-msgstr ""
+msgstr "間違いを犯さないために知る必要があるふたつのものとは何でしょう?"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:228
 msgid "God's word"
-msgstr ""
+msgstr "神のみことば"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:231
 msgid "God's power"
-msgstr ""
+msgstr "神の力"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:236
 msgid "A Book that Wars"
-msgstr ""
+msgstr "戦の書"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:237
 msgid "Eph.6:10-18 is one picture of our spiritual armament."
-msgstr ""
+msgstr "新約聖書『エペソ人への手紙』6章10〜18節はわたしたちの霊的武具の描写です。"
 
 #. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:239
 msgid "Spiritual Armor"
-msgstr ""
+msgstr "霊の武具"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:243
 msgid "Question"
-msgstr ""
+msgstr "問"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:244
 msgid "Answer"
-msgstr ""
+msgstr "答"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:249
 msgid "How many of the weapons listed here are defensive weapons?"
-msgstr ""
+msgstr "防具はいくつ?"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:251
 msgid "5"
-msgstr ""
+msgstr "5つ"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:254
 msgid "How many are offensive?"
-msgstr ""
+msgstr "武器はいくつ?"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:255
 msgid "One"
-msgstr ""
+msgstr "ひとつ"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:258
 msgid "Which one(s)?"
-msgstr ""
+msgstr "それは何?"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:259
 msgid "the word - <foreignphrase>rhema</foreignphrase>"
-msgstr ""
+msgstr "みことば<foreignphrase>レーマ</foreignphrase>"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:267
 msgid "Exhortations"
-msgstr ""
+msgstr "奨励"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:268
 msgid ""
 "2 Tim.2:15 (KJV) \" <emphasis>Study to show thyself approved unto God, a "
-"workman that needeth not to be ashamed, rightly dividing the word of truth.</"
-"emphasis>\""
-msgstr ""
+"workman that needeth not to be ashamed, rightly dividing the word of "
+"truth.</emphasis>\""
+msgstr "新約聖書『テモテへの手紙 第二』2章15節《<emphasis>あなたは務めにふさわしいと認められる人として、すなわち、真理のみことばをまっすぐに説き明かす、恥じることのない働き人として、自分を神に献げるように最善を尽くしなさい。</emphasis>》"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:272
 msgid ""
 "Col.3:16 \" <emphasis>Let the word of Christ richly dwell within you; with "
 "all wisdom teaching and admonishing one another with psalms and hymns and "
-"spiritual songs, singing with thankfulness in your hearts to God.</emphasis>"
-"\""
-msgstr ""
+"spiritual songs, singing with thankfulness in your hearts to "
+"God.</emphasis>\""
+msgstr "新約聖書『コロサイ人への手紙』3章16節には《<emphasis>キリストのことばが、あなたがたのうちに豊かに住むようにしなさい。知恵を尽くして互いに教え、忠告し合い、詩と賛美と霊の歌により、感謝をもって心から神に向かって歌いなさい。</emphasis>》とあります。"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:277
 msgid "If you're rich in something, how much of it do you have?"
-msgstr ""
+msgstr "何かが豊かにあるというとき、その何かはどのくらいありますか?"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:279
 msgid "Not a little!"
-msgstr ""
+msgstr "ちょっとやそっとではありません!"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:280
 msgid ""
-"Eccl.12:11-12 \" <emphasis>The words of wise men are like goads, and masters "
-"of these collections are like well-driven nails; they are given by one "
+"Eccl.12:11-12 \" <emphasis>The words of wise men are like goads, and masters"
+" of these collections are like well-driven nails; they are given by one "
 "Shepherd. But beyond this, my son, be warned: the writing of many books is "
-"endless, and excessive devotion to books is wearying to the body.</emphasis>"
-"\""
-msgstr ""
+"endless, and excessive devotion to books is wearying to the "
+"body.</emphasis>\""
+msgstr "旧約聖書『伝道者の書』12章11、12節《 <emphasis>知恵のある者たちのことばは / 突き棒のようなもの、 / それらが編纂された書は / よく打ち付けられた釘のようなもの。 / これらは一人の牧者によって与えられた。 / わが子よ、さらに次のことにも気をつけよ。 / 多くの書物を書くのはきりがない。 / 学びに没頭すると、からだが疲れる。</emphasis>》"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:288
 msgid "Appendix: \"Once for All\""
-msgstr ""
+msgstr "付録:「ただ一度」"
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:290
 msgid ""
-"John R. W. Stott, <emphasis>Christ the Controversialist,</"
-"emphasis>InterVarsity Press 1978, pp.106-107"
-msgstr ""
+"John R. W. Stott, <emphasis>Christ the "
+"Controversialist,</emphasis>InterVarsity Press 1978, pp.106-107"
+msgstr "ジョン・R・W・ストット<emphasis>『論客キリスト』(Christ the Controversialist)</emphasis>インターバーシティ出版(InterVarsity Press)、1978年、106ページ、107ページ。"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:293
 msgid ""
 "The truth regarding the finality of God's initiative in Christ is conveyed "
-"by one word of the Greek Testament, namely the adverb <foreignphrase>hapax</"
-"foreignphrase>and <foreignphrase>ephapax</foreignphrase>. It is usually "
-"translated in the Authorized Version once, meaning once for all. It is used "
-"of what is so done as to be of perpetual validity and never need repetition, "
-"and is applied in the NT to both revelation and redemption. Thus, Jude "
-"refers to the faith which was once for all delivered to the saints (Jude 3), "
-"and Romans says, \" <emphasis>Christ also died for sins once for all</"
-"emphasis>\" (Rom.6:10, see also 1 Pe.3:18; Heb.9:26-28)."
-msgstr ""
+"by one word of the Greek Testament, namely the adverb "
+"<foreignphrase>hapax</foreignphrase>and "
+"<foreignphrase>ephapax</foreignphrase>. It is usually translated in the "
+"Authorized Version once, meaning once for all. It is used of what is so done"
+" as to be of perpetual validity and never need repetition, and is applied in"
+" the NT to both revelation and redemption. Thus, Jude refers to the faith "
+"which was once for all delivered to the saints (Jude 3), and Romans says, \""
+" <emphasis>Christ also died for sins once for all</emphasis>\" (Rom.6:10, "
+"see also 1 Pe.3:18; Heb.9:26-28)."
+msgstr "キリストにある神のイニシアチブの究極性に関する真理は、新約聖書ではひとつの語で表現されます。副詞の <foreignphrase>hapax</foreignphrase>と <foreignphrase>ephapax</foreignphrase>です。通常それは、欽定訳聖書では once と訳されます。ただ一度(once for all)という意味です。これは永久に正当で繰り返す必要のないものごとにいい、新約聖書では啓示と贖いの両方の用例があります。たとえば、新約聖書『ユダの手紙』3節では《聖徒たちにひとたび伝えられた信仰》に言及していますし、同『ローマ人への手紙』6章10節には《<emphasis>キリストが死なれたのは、ただ一度罪に対して死なれた</emphasis>》とあります。(新約聖書『ペテロの手紙 第一』3章18節、同『ヘブル人への手紙』9章26〜28節も参照)"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:305
 msgid ""
 "Thus we may say that God has spoken once for all and Christ has suffered "
 "once for all. This means that the Christian revelation and the Christian "
-"redemption are both alike in Christ complete. Nothing can be added to either "
-"without being derogatory to Christ... These are the two rocks on which the "
+"redemption are both alike in Christ complete. Nothing can be added to either"
+" without being derogatory to Christ... These are the two rocks on which the "
 "Protestant Reformation was built -- Gods revealed word without the addition "
-"of human traditions and Christ's finished work without the addition of human "
-"merits. The Reformers great watchwords were <foreignphrase>sola scriptura</"
-"foreignphrase>for our authority and <foreignphrase>sola gratia</"
-"foreignphrase>for our salvation."
-msgstr ""
+"of human traditions and Christ's finished work without the addition of human"
+" merits. The Reformers great watchwords were <foreignphrase>sola "
+"scriptura</foreignphrase>for our authority and <foreignphrase>sola "
+"gratia</foreignphrase>for our salvation."
+msgstr "つまり、神はただ一度言われ、キリストはただ一度十字架にかかられたといえるでしょう。これはクリスチャンの啓示とクリスチャンの贖いがキリストのうちに等しく完成していることを意味しています。キリストには、何もつけ加えるものがありません。つけ加えるとすれば冒瀆になってしまいます。プロテスタントによる宗教改革が拠って立つふたつの岩があります。人間の伝統をつけ加えない神の啓示されたみことばと、人間の善行をつけ加えないキリストの完成されたみわざです。宗教改革者の掲げる大いなるスローガンのふたつに、わたしたちの権威についての<foreignphrase>sola scriptura(ソラ・スクリプトゥラ、聖書のみ)</foreignphrase>とわたしたちの救いについての<foreignphrase>sola gratia(ソラ・グラティア、恵みのみ)</foreignphrase>があります。"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:320
 msgid "Supplement: Bible Reading Programs"
-msgstr ""
+msgstr "おまけ: 聖書通読計画"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:321
 msgid ""
 "Here are some easy programs to systematically read your Bible. You can do "
-"more than one at a time if you like, for instance #1 with #4, or #2 with #5. "
-"Vary the program from year to year to keep it fresh!"
-msgstr ""
+"more than one at a time if you like, for instance #1 with #4, or #2 with #5."
+" Vary the program from year to year to keep it fresh!"
+msgstr "規則正しく聖書を読んでゆく、かんたんな計画です。よろしければ、ひとつといわずやってみてください。たとえば1番と4番、2番と5番などです。年ごとの計画をいろいろくふうして、新鮮さを保ってゆきましょう!"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:327
 msgid "New Testament in a Year: read one chapter each day, 5 days a week."
-msgstr ""
+msgstr "新約聖書を一年で: 毎日一章ずつ、一週間に5日読みましょう。"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:331
 msgid ""
-"Proverbs in a Month: read one chapter of Proverbs each day, corresponding to "
-"the day of the month."
-msgstr ""
+"Proverbs in a Month: read one chapter of Proverbs each day, corresponding to"
+" the day of the month."
+msgstr "箴言をひと月で: 箴言のひとつの章をその月の対応する日に読みましょう。"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:335
 msgid ""
 "Psalms in a Month: read 5 Psalms at intervals of 30 each day, for instance "
 "on the 20th you read Ps.20, 50, 80, 110, &amp; 140."
-msgstr ""
+msgstr "詩篇をひと月で: 5つの篇を30間隔で毎日読みましょう。たとえば20日目は20篇と50篇、80篇、110篇、140篇です。"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:340
 msgid ""
 "Psalms &amp; Proverbs in 6 months: read through Psalms and Proverbs one "
 "chapter per day."
-msgstr ""
+msgstr "詩篇と箴言を6か月で: 詩篇と箴言を一日あたり一篇または一章読んで読み通しましょう。"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:344
 msgid ""
 "Old Testament without Psalms &amp; Proverbs in 2 years: if you read one "
-"chapter a day of the Old Testament, skipping over Psalms &amp; Proverbs, you "
-"will read the Old Testament in 2 years and 2 weeks."
-msgstr ""
+"chapter a day of the Old Testament, skipping over Psalms &amp; Proverbs, you"
+" will read the Old Testament in 2 years and 2 weeks."
+msgstr "詩篇と箴言以外の旧約聖書を2年で: 詩篇と箴言を抜かして旧約聖書を一日一章読むと、2年と2週間で読めます。"
 
 #. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:2
 msgid "Rules of Bible Interpretation (Hermeneutics)"
-msgstr ""
+msgstr "聖書解釈の鉄則 (解釈学)"
 
 #. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:3
 msgid ""
-"We already learned about the \"3 Cs\": content, context, cross-reference. We "
-"want to expand that now by delving briefly into biblical hermeneutics, whose "
-"goal is to discover the meaning intended by the original author (and "
+"We already learned about the \"3 Cs\": content, context, cross-reference. We"
+" want to expand that now by delving briefly into biblical hermeneutics, "
+"whose goal is to discover the meaning intended by the original author (and "
 "Author!). While many applications of a passage are valid, only one "
 "interpretation is valid. The scripture itself says this by saying that no "
 "scripture is of any private interpretation (2 Pe.1:20 KJV <quote>Knowing "
-"this first, that no prophesy of scripture is of any private interpretation.</"
-"quote>). Certain rules are helps toward discovering the correct meaning; by "
-"ignoring these rules people have brought much trouble on themselves and "
-"their followers. 2 Pe.3:16 <quote>...in which are some things hard to "
-"understand, which the untaught and unstable distort, as they do also the "
-"rest of the Scriptures, to their own destruction.</quote>"
-msgstr ""
+"this first, that no prophesy of scripture is of any private "
+"interpretation.</quote>). Certain rules are helps toward discovering the "
+"correct meaning; by ignoring these rules people have brought much trouble on"
+" themselves and their followers. 2 Pe.3:16 <quote>...in which are some "
+"things hard to understand, which the untaught and unstable distort, as they "
+"do also the rest of the Scriptures, to their own destruction.</quote>"
+msgstr "わたしたちはすでに、内容(content)、文脈(context)、引照(cross-reference)の「みっつのC」について学びました。聖書解釈学をかんたんに掘り下げながら「みっつのC」を広げてみましょう。原文の筆者の(そして著者の)意図した意味を発見することがゴールです。聖書箇所の適用は数多くあっても、解釈はただひとつです。聖書そのものが、聖書のどんな預言も勝手に解釈するものではないと述べて、そのことを言っています。新約聖書『ペテロの手紙 第二』1章20節《<quote>ただし、聖書のどんな預言も勝手に解釈するものではないことを、まず心得ておきなさい。</quote>》正しい意味を発見する助けとなる鉄則があります。ある人々はこれを無視して自分たちとその弟子に多くのトラブルをもたらしました。新約聖書『ペテロの手紙 第二』3章16節《<quote>(略)その中には理解しにくいところがあります。無知な、心の定まらない人たちは、聖書の他の箇所と同様、それらを曲解して、自分自身に滅びを招きます。</quote>》"
 
 #. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:17
@@ -1229,34 +1141,37 @@ msgid ""
 "How do we go about discovering the intended meaning of a passage? Let's say "
 "your attention has been drawn to a particular verse whose meaning is not "
 "clear to you. How do you study it out? Keep these rules in mind:"
-msgstr ""
+msgstr "聖書箇所の意図する意味が分かるためにはどうすればよいのでしょう。意味のよく分からない箇所が気になるとき、どうやって研究すればよいでしょう。この鉄則を心がけてください。"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:22
 msgid "Rule 1 - Interpret according to the exact meaning of the words."
-msgstr ""
+msgstr "鉄則①…字義どおり解釈する"
 
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:24
 msgid ""
-"The more precise we can be with the exact, original meaning of the words the "
-"better our interpretation will be. Try to find the exact meaning of the key "
-"words by following these steps:"
-msgstr ""
+"The more precise we can be with the exact, original meaning of the words the"
+" better our interpretation will be. Try to find the exact meaning of the key"
+" words by following these steps:"
+msgstr "みことばの正確なもとの意味に忠実であるほど、わたしたちの解釈はよくなります。つぎのステップで、キーワードの正確な意味を調べてみましょう:"
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:30
 msgid "Definition"
-msgstr ""
+msgstr "定義"
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:31
 msgid ""
-"Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb "
-"tense is also crucial."
-msgstr ""
+"Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb"
+" tense is also crucial."
+msgstr "ギリシア語やヘブル語の辞書で定義を調べましょう。動詞は、時制も重要です。"
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:38
 msgid ""
 "Compare scripture with scripture. Seeing how the same Greek or Hebrew word "
@@ -1267,12 +1182,12 @@ msgid ""
 "isn't the English word good enough? <emphasis>Because more than one Greek "
 "word may be translated into the same English word, and the Greek words may "
 "have different shades of meaning.</emphasis>"
-msgstr ""
+msgstr "聖書と聖書を比較します。同じギリシア語やヘブル語(日本語ではなく)の聖書的用法を調べれば、定義が明らかになったり、新しい光が差し込んだりするかもしれません。同じ筆者はこの語を他の箇所にどのように用いているでしょうか。他の筆者はどうでしょうか。聖書以外の用法が参考書に載っているかもしれません。なぜ原語を調べる必要があるのでしょうか。どうして日本語では不十分なのでしょうか。<emphasis>なぜなら、同じ日本語に訳されていていても、原語では使われている語やその意味合いが異なる場合があるからです。</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:53
 msgid "Example 1A"
-msgstr "例 1A"
+msgstr "例①A"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:54
@@ -1280,126 +1195,137 @@ msgid ""
 "Jn.20:17 <emphasis>\"Touch me not\"</emphasis> (KJV) sounds harsh, doesn't "
 "it? Sounds like Jesus doesn't want to be touched now that He is risen, that "
 "He is too holy or something. But that doesn't seem right, so let's look it "
-"up in Spiros Zodhiates' <emphasis>The Complete Word Study New Testament</"
-"emphasis> (AMG Publishers, 1991)."
-msgstr ""
+"up in Spiros Zodhiates' <emphasis>The Complete Word Study New "
+"Testament</emphasis> (AMG Publishers, 1991)."
+msgstr "新約聖書『ヨハネの福音書』20章17節《<emphasis>わたしにすがりついていてはいけません。</emphasis> 》は、文語訳では《われに觸るな》と訳されています。「触るな」とは乱暴な言い方ではないでしょうか。復活したイエスさまが神聖になりすぎたか何かで、触られたくないかのように聞こえます。しかし、そうではないようです。スピロス・ソディアティス(Spiros Zodhiates)の <emphasis>新約聖書聖言研究大全 (The Complete Word Study New Testament)</emphasis> (AMG Publishers, 1991)を見てみましょう。"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:61
 msgid ""
-"Definition: Turning to John 20:17, above the word \"Touch\" we see \"pim680."
-"\" The letters give us a code for the part of speech, and the number refers "
-"to Strong's dictionary reference.  Let's look up the definition (p. 879). "
-"\"680. Haptomai; from hapto (681), touch. Refers to such handling of an "
-"object as to exert a modifying influence upon it... Distinguished from "
-"pselaphao (5584), which actually only means to touch the surface of "
-"something. \" Now look up \"pim.\" The grammar codes in Zodhiates come right "
-"after Revelation; on p. 849 we see that pim stands for \"present imperative "
-"active (80)\". On p.857, \"Present Imperative.  In the active voice, it may "
-"indicate a command to do something in the future which involves continuous "
-"or repeated action or, when it is negated, a command to stop doing "
-"something. \" This is a negative command, so it is to stop doing something "
-"that is already occurring. So, what have we found?"
-msgstr ""
+"Definition: Turning to John 20:17, above the word \"Touch\" we see "
+"\"pim680.\" The letters give us a code for the part of speech, and the "
+"number refers to Strong's dictionary reference.  Let's look up the "
+"definition (p. 879). \"680. Haptomai; from hapto (681), touch. Refers to "
+"such handling of an object as to exert a modifying influence upon it... "
+"Distinguished from pselaphao (5584), which actually only means to touch the "
+"surface of something. \" Now look up \"pim.\" The grammar codes in Zodhiates"
+" come right after Revelation; on p. 849 we see that pim stands for \"present"
+" imperative active (80)\". On p.857, \"Present Imperative.  In the active "
+"voice, it may indicate a command to do something in the future which "
+"involves continuous or repeated action or, when it is negated, a command to "
+"stop doing something. \" This is a negative command, so it is to stop doing "
+"something that is already occurring. So, what have we found?"
+msgstr "定義: 新約聖書『ヨハネの福音書』20章17節を見てみると、Touchという語の上にpim680とあります。この文字は品詞を示すもので、番号はストロング番号です。定義を調べましょう。(879ページ)「680、ハプトマイ。語根、ハプト(681、触れる)。変化させる影響力を発しながら何かを手にする。(略)セラファオー(5584)はこれと異なり、ものの表面に触れるだけである」。pimも引いてみましょう。ソディアティスの文法コードは新約聖書『ヨハネの黙示録』の直後の849ページにあり、pimとは「現在(Present)命令法(Imperative)能動態(Active)」のことだと分かります。857ページには「現在命令法は、能動態の場合、未来に継続もしくは反復の動作を行う何らかの命令を表し、また否定文の場合、何らかの動作をしているのをやめさせる命令を表す」とあります。これは否定の命令で、すでに生じている何らかの動作をやめさせようとするものです。さて、何が分かったでしょうか。"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:77
 msgid ""
 "<emphasis>Mary is already clinging to Jesus, and he is saying to stop "
 "holding him!</emphasis>"
-msgstr ""
+msgstr "<emphasis>マリアはもうイエスさまにすがりついていて、イエスさまはしがみつくのをやめるようマリアに言ったのです!</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:82
 msgid "Example 1B"
-msgstr "例 1B"
+msgstr "例①B"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:83
 msgid ""
 "In James 5:14, <emphasis>Elders are told to pray and anoint someone who is "
 "sick</emphasis>. What is this anointing?"
-msgstr ""
+msgstr "新約聖書『ヤコブの手紙』5章14節<emphasis>あなたがたのうちに病気の人がいれば、教会の長老たちを招き、主の御名によって、オリーブ油を塗って祈ってもらいなさい。</emphasis>この「オリーブ油を塗る」とは何でしょうか?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:86
 msgid ""
 "Definition of aleipho (218) - \"to oil\" (Strong's); but we also have "
 "another Greek word translated \"anoint\", chrio (5548) - \"to smear or rub "
-"with oil, i.e. to consecrate to an office or religious service\" (Strong's). "
-"Since it's a verb, consider the tense also, \"apta\" aorist participle "
+"with oil, i.e. to consecrate to an office or religious service\" (Strong's)."
+" Since it's a verb, consider the tense also, \"apta\" aorist participle "
 "active. \"The aorist participle expresses simple action, as opposed to "
 "continuous action...When its relationship to the main verb is temporal, it "
 "usually signifies action prior to that of the main verb.\" (Zodhiates p.851)"
-msgstr ""
+msgstr "ストロング希英辞典によるストロング番号G218 aleipho の定義は \"to oil\" です。「油を塗る」という意味のギリシア語はもうひとつ、G5548の chrio があります。ストロング希英辞典には \"to smear or rub with oil, i.e. to consecrate to an office or religious service\" とあります。動詞なので時制も考慮しましょう、\"apta\" のアオリスト分詞能動態です。《アオリスト分詞は、単純な動作を表し、連続の動作とは対照をなす。(略)主動詞と時制を異にするとき、それは通常、主動詞に先行する動作を示す》 (ソディアティス 　851ページ)"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:100
 msgid "Mt.6:17 But you, when you fast, anoint your head"
-msgstr ""
+msgstr "新約聖書『マタイの福音書』6章17節《断食するときは頭に油を塗り、顔を洗いなさい。》"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:104
-msgid "Mk.16:1 [the women] brought spices that they might come and anoint Him."
-msgstr ""
+msgid ""
+"Mk.16:1 [the women] brought spices that they might come and anoint Him."
+msgstr "新約聖書『マルコの福音書』16章1節《(女たち)は、イエスに油を塗りに行こうと思い、香料を買った。》"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:108
 msgid ""
-"Mk.6:13 And they were...anointing with oil many sick people and healing them."
-msgstr ""
+"Mk.6:13 And they were...anointing with oil many sick people and healing "
+"them."
+msgstr "新約聖書『マルコの福音書』6章13節《油を塗って多くの病人を癒やした。》"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:112
 msgid "Lk.7:38 [...] kissing His feet and anointing them with the perfume"
-msgstr ""
+msgstr "新約聖書『ルカの福音書』7章38節《その足に口づけして香油を塗った。》"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:116
 msgid ""
 "Jn.12:3 Mary [...] anointed the feet of Jesus, and wiped them with her hair"
-msgstr ""
+msgstr "新約聖書『ヨハネの福音書』12章3節《香油を(略)イエスの足に塗り、自分の髪でその足をぬぐった。》"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:97
-msgid ""
-"Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgid "Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr "aleiphoの引照<placeholder type=\"orderedlist\" id=\"0\"/>"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:125
 msgid ""
-"Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me "
-"to preach [...]</quote>"
-msgstr ""
+"Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me"
+" to preach [...]</quote>"
+msgstr "新約聖書『ルカの福音書』4章18節《<quote>主の霊がわたしの上にある。貧しい人に良い知らせを伝えるため、主はわたしに油を注ぎ、</quote>》"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:130
 msgid "Acts 4:27 Jesus, whom Thou hast anointed"
-msgstr ""
+msgstr "新約聖書『使徒の働き』4章27節《油を注がれた、あなたの聖なるしもべイエス》"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:133
 msgid "Acts 10:38 God anointed Jesus with the Holy Ghost and power"
-msgstr ""
+msgstr "新約聖書『使徒の働き』10章38節《神はこのイエスに聖霊と力によって油を注がれました。》"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:137
 msgid "2 Cor.1:21 Now He who...anointed us is God"
-msgstr ""
+msgstr "新約聖書『コリント人への手紙 第二』1章21節《私たちに油を注がれた方は神です。》"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:122
 msgid "Cross-references of chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "chrioの引照<placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:142
 msgid ""
-"So what's the difference between aleipho and chrio? Look back over the cross-"
-"references and the definitions, and sum up the difference: <emphasis>"
-"\"aleipho\" is a practical use of oil and \"chrio\" is a spiritual</emphasis>"
-msgstr ""
+"So what's the difference between aleipho and chrio? Look back over the "
+"cross-references and the definitions, and sum up the difference: "
+"<emphasis>\"aleipho\" is a practical use of oil and \"chrio\" is a "
+"spiritual</emphasis>"
+msgstr "では、aleipho と chrio の違いは何でしょうか? 引照と定義から振り返って、違いをまとめてみましょう: <emphasis>aleipho は油の実際的な用法であり、chrio は霊的な用法である。</emphasis>"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:147
@@ -1408,7 +1334,7 @@ msgid ""
 "oil at that time, when the good Samaritan cared for the man beat up by "
 "robbers he poured oil and wine in the wound. So oil had a medicinal use in "
 "Jesus' day."
-msgstr ""
+msgstr "良きサマリア人が強盗に襲われた人を手当てしたときの油の実際的な用法(その語が使われていないとしても)の実例としては、サマリア人が油とぶどう酒を傷に注いでいます。このように、イエスさまの時代、油には医療的用途がありました。"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:151
@@ -1417,7 +1343,7 @@ msgid ""
 "<emphasis>\"Is any among you sick? Let him call for the elders of the "
 "church; and let them pray over him, anointing him with oil in the name of "
 "the Lord.\"</emphasis>Is \"anointing\" spiritual or practical? Practical!"
-msgstr ""
+msgstr "それでは、今のみことばの研究で学んだことを新約聖書『ヤコブの手紙』5章14節で実際にやってみましょう。<emphasis>あなたがたのうちに病気の人がいれば、教会の長老たちを招き、主の御名によって、オリーブ油を塗って祈ってもらいなさい。</emphasis>「オリーブ油を塗る」は霊的でしょうか、実際的でしょうか。実際的です!"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:157
@@ -1426,14 +1352,14 @@ msgid ""
 "\"having anointed,\" so the order is the anointing first, then the prayer "
 "(\"in the name of the Lord\"refers to the prayer, not the anointing). James "
 "5 is saying that the elders should give the sick person medicine and pray "
-"for him in the name of the Lord. Doesn't that express a beautiful balance of "
-"practical and spiritual in our God!"
-msgstr ""
+"for him in the name of the Lord. Doesn't that express a beautiful balance of"
+" practical and spiritual in our God!"
+msgstr "そして、ギリシア語の時制(アオリスト分詞)は「オリーブ油を塗って」とうまく訳され、順序としてはまず油を塗って、そして祈りです(「主の御名によって」は祈りのことであり、油を塗ることではありません)。新約聖書『ヤコブの手紙』5章は、長老が病人に治療を行い、主の御名によって彼のために祈らなければならないと言っています。それはわたしたちの神さまの実際と精神の美しいバランスを表しているのではないでしょうか!"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:167
 msgid "Rule 2 - Interpret within the biblical context"
-msgstr ""
+msgstr "鉄則②…聖書の文脈に従って解釈する"
 
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:168
@@ -1441,36 +1367,37 @@ msgid ""
 "Interpret scripture in harmony with other scripture. What do the verses on "
 "each side say? What is the theme of the chapter? The book? Does your "
 "interpretation fit with these? If not, it is flawed. Usually, the context "
-"supplies what we need to correctly interpret the passage. Context is key. If "
-"confusion remains as to the meaning after we have interpreted the text "
+"supplies what we need to correctly interpret the passage. Context is key. If"
+" confusion remains as to the meaning after we have interpreted the text "
 "within its context, we have to look further."
-msgstr ""
+msgstr "他の箇所と調和して聖書を解釈してください。それぞれの節には何と書かれていますか? 章のテーマは何ですか? 書巻は? あなたの解釈は、これらに合いますか? そうでないなら、不備があります。通常、文脈は、正しくその箇所を解釈するのに必要なものを提供します。文脈は鍵です。その文脈の範囲内でテキストを解釈したあと意味の混乱があれば、さらに調べる必要があります。"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:176
 msgid "Example 2A"
-msgstr "例 2A"
+msgstr "例②A"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:177
 msgid ""
 "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and the "
 "Spirit.\"</emphasis>In context, what is the water under discussion here?"
-msgstr ""
+msgstr "以前の課で新約聖書『ヨハネの福音書』3章5節について考慮しました。<emphasis>水と御霊によって生まれなければ</emphasis>文脈によると、ここで議論している水とは何でしょう?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:180
 msgid ""
-"Water baptism is not under discussion here, which would be a big switch from "
-"the subject being discussed by Jesus and Nicodemus. Watch out for a sudden "
+"Water baptism is not under discussion here, which would be a big switch from"
+" the subject being discussed by Jesus and Nicodemus. Watch out for a sudden "
 "change of topic, it may be a clue that your interpretation has been "
-"derailed! The water is the amniotic fluid, \"born of water\" = natural birth."
-msgstr ""
+"derailed! The water is the amniotic fluid, \"born of water\" = natural "
+"birth."
+msgstr "水のバプテスマの話ではありません。それだとイエスさまとニコデモの論ずる主題から大きく切り替わることになります。話題の急転に注意してください、解釈が狂うことは解決の糸口かもしれません! 水とは、羊水(「水によって生まれる」=自然の出生)です。"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:187
 msgid "Example 2B"
-msgstr "例 2B"
+msgstr "例②B"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:188
@@ -1478,12 +1405,12 @@ msgid ""
 "1 Cor.14:34 <quote>Let the women keep silent in the churches</quote>has to "
 "be taken within the biblical context of 1 Cor.11:5 <quote>every woman [...] "
 "while praying or prophesying [...]</quote>"
-msgstr ""
+msgstr "新約聖書『コリント人への手紙 第一』14章34節《<quote>女の人は教会では黙っていなさい。</quote>》というのは11章5節の文脈に従って考えなくてはなりません。《<quote>女はだれでも祈りや預言をするとき、</quote>》"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:195
 msgid "Example 2C"
-msgstr "例 2C"
+msgstr "例②C"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:196
@@ -1495,14 +1422,14 @@ msgid ""
 "light of the clear teaching elsewhere that regeneration happens by faith in "
 "Christ, we have to interpret it otherwise. Peter is urging baptism as a way "
 "for his hearers to respond to the gospel. If baptism were the pathway to "
-"being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did "
-"not send me to baptize, but to preach the gospel\"</emphasis>?"
-msgstr ""
+"being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did"
+" not send me to baptize, but to preach the gospel\"</emphasis>?"
+msgstr "新約聖書『使徒の働き』2章38節《<quote>そこで、ペテロは彼らに言った。「それぞれ罪を赦していただくために、悔い改めて、イエス・キリストの名によってバプテスマを受けなさい。</quote>》これは、洗礼による新生を教えているのでしょうか。関連聖句がこれしかないなら、それが結論となるでしょう。しかし、新生はキリスト信仰によって起こるという他の箇所の明白な教えの光に照らしてみると、それらの箇所のように理解せざるを得なくなります。ペテロは、福音への応答の方法として洗礼を勧めているのです。洗礼がもし新生のための道すじであるなら、どのようにしてパウロは、《<emphasis>キリストが私を遣わされたのは、バプテスマを授けるためではなく、福音を、ことばの知恵によらずに宣べ伝えるためでした</emphasis>》と新約聖書『コリント人への手紙 第一』1章17節に書くことができたのでしょうか。"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:211
 msgid "Rule 3 - Interpret within the historical and cultural context"
-msgstr ""
+msgstr "鉄則③…歴史的・文化的背景に従って解釈する"
 
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:213
@@ -1511,22 +1438,22 @@ msgid ""
 "<quote>What did it mean to the original readers?</quote>; later we can ask, "
 "<quote>What does it mean to me?</quote>. We have to take into account the "
 "historical and cultural background of the author and the recipients."
-msgstr ""
+msgstr "まず第一に、 <quote>これはわたしにとってどういう意味があるだろう?</quote>ではなく<quote>当初の読者にとってどういう意味があったのだろう?</quote>と考えます。そのあとで <quote>わたしにとってどういう意味があるだろう?</quote>と考えることができます. 筆者や受取人の歴史的・文化的背景を考慮する必要があるのです。"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:221
 msgid "Example 3A"
-msgstr "例 3A"
+msgstr "例③A"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:223
 msgid ""
-"<quote>3 days &amp; 3 nights</quote>(Mt.12:40) have led some to come up with "
-"a \"Wednesday crucifixion theory,\" esp. the cult of Armstrongism. How could "
-"Jesus die on Friday afternoon and rise Sunday morning yet \"be raised on the "
-"third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't help "
-"explain the apparent contradiction."
-msgstr ""
+"<quote>3 days &amp; 3 nights</quote>(Mt.12:40) have led some to come up with"
+" a \"Wednesday crucifixion theory,\" esp. the cult of Armstrongism. How "
+"could Jesus die on Friday afternoon and rise Sunday morning yet \"be raised "
+"on the third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't"
+" help explain the apparent contradiction."
+msgstr "《<quote>三日三晩</quote>》(新約聖書『マタイの福音書』12章40節)という記述からカルト宗教のアームストロング主義のような水曜磔刑説に陥る人もいました。イエスさまは金曜日に死んで日曜日によみがえったのに、どうやって《三日目によみがえ》る(新約聖書『マタイの福音書』16章21節)のでしょうか。「三」や「日」の正確な意味はこの矛盾らしきものの説明の助けにはなりません。"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:229
@@ -1539,12 +1466,12 @@ msgid ""
 "p.m. = day 1. Friday 6 p.m. to Saturday 6 p.m. = day 2. Saturday 6 p.m. to "
 "Sunday 5 or so a.m. = day 3. Interpreting within the cultural context keeps "
 "us out of trouble."
-msgstr ""
+msgstr "ちょっとした歴史的知識が必要です。ユダヤ人は1日の一部分でも1日と数えました。ちょうどわたしたちがバケツの水を数えるのと同じです。(バケツに6杯半あるとき、1杯の半分は1杯ではないとしても、バケツ7杯というでしょう)そのように、ユダヤ人の考えでは1日の一部分でも1日とされました、そして、1日は午後6時から始まって、午後6時に終わりました。(訳注…厳密にいうと、聖書時代のユダヤの暦の1日は午後6時ではなく日没に始まって日没に終わりましたが、現在は計算しやすいように午後6時を日付の変わり目としており、ここでもそうしています)金曜日の午後3時から午後6時は1日目、金曜日の午後6時から土曜日の午後6時は2日目、土曜日の午後6時から日曜日の午前5時ごろまでは3日目です。文化的文脈を考慮して解釈すれば、トラブルがありません。"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:240
 msgid "Example 3B"
-msgstr "例 3B"
+msgstr "例③B"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:241
@@ -1555,29 +1482,29 @@ msgid ""
 "dismemberment would happen to them if they didn't live up to their part of "
 "the contract. But in this case only God goes thru, making it a unilateral "
 "covenant."
-msgstr ""
+msgstr "旧約聖書『創世記』15章7〜21節。歴史的文脈は、動物ふたつに切ってその間を歩くことがアブラハムの時代の通常の契約の方法であったということです。両者がその間を歩くと、違反した者はこの獣のように裂かれるという固い契りが結ばれるのです。しかしこの場合、神さまだけが通過し、一方的契約となさるのです。"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:251
 msgid "Rule 4 - Interpret according to the normal usage of words in language"
-msgstr ""
+msgstr "鉄則④…通常の語法どおり解釈する"
 
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:253
 msgid ""
 "Let literal language be literal and figurative language be figurative. And "
 "watch out for idioms, which have special meanings."
-msgstr ""
+msgstr "文字通りのことばは文字通りに、比喩的なことばは比喩的に。特殊な意味を持つ慣用句に注意。"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:257
 msgid "Example 4A"
-msgstr "例 4A"
+msgstr "例④A"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:259
 msgid "<quote>evil eye</quote>in Mt.6:23."
-msgstr ""
+msgstr "《<quote>目が悪ければ</quote>》新約聖書『マタイの福音書』6章23節"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:260
@@ -1585,7 +1512,7 @@ msgid ""
 "Rule 1, definition of \"evil\" and \"eye\" - no help here. Rule 2, context: "
 "seems to confuse us even more. It doesn't seem to fit with what goes before "
 "and after! This should tip us off that we aren't understanding it rightly!!"
-msgstr ""
+msgstr "鉄則①、「目」と「悪」の字義…手がかりはありません。鉄則②、文脈。よけいに混乱してきます。前後の何かが当てはまるようには見えません。正確に理解していないことは伝わってきます。"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:264
@@ -1596,22 +1523,22 @@ msgid ""
 "because I am generous [lit. \"good\"]?</emphasis>\" We find that having an "
 "\"evil eye\" is a Hebrew idiom for being stingy or envious. Now go back to "
 "Mt.6 and notice how this understanding ties in so perfectly to the context."
-msgstr ""
+msgstr "ヘブル語の言い回しに<quote>目が悪い</quote>というのがあります。 この言い回しの他の用例を引いてみましょう。新約聖書『マタイの福音書』20章15節《<emphasis>自分のもので自分のしたいことをしてはいけませんか。それとも、私が気前がいい(目がいい)ので、あなたはねたんでいる(目が悪い)のですか。</emphasis>》 ヘブル語の「目が悪い」という言い回しに「気前が悪い」ないし「ねたんでいる」という意味があることが分かりました。さあ、6章に戻って、この理解がどれほど完璧に文脈に調和しているかに注目してみましょう。"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:275
 msgid "Example 4B"
-msgstr "例 4B"
+msgstr "例④B"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:276
 msgid "Is.59:1 <quote>The Lord's hand is not short;</quote>"
-msgstr ""
+msgstr "旧約聖書『イザヤ書』59章1節《<quote>【主】の手が短くて救えないのではない。</quote>》"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:278
 msgid "Deut.33:27 <quote>Underneath are the everlasting arms.</quote>"
-msgstr ""
+msgstr "旧約聖書『申命記』33章27節《<quote>下には永遠の腕がある。</quote>》"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:280
@@ -1624,33 +1551,29 @@ msgid ""
 "like these. Dr. Martin then asked the Mormons to read one more scripture: "
 "Ps.91:4 <quote>He will cover you with His feathers; And under His wings "
 "shalt thou trust</quote>. W.M. said, <quote>By the same rules of "
-"interpretation that you just proved God to be a man, you just proved that He "
-"is a bird</quote>. The Mormons had to laugh as they realised the "
+"interpretation that you just proved God to be a man, you just proved that He"
+" is a bird</quote>. The Mormons had to laugh as they realised the "
 "ridiculousness of their position."
-msgstr ""
+msgstr "モルモン教では、神さまのからだの器官の話を用いて、神さまがかつて我々のような人間だったという証明をしようとします。そして、そう信じ込ませると、我々も神さまになれるのだという教えに入るのです。『<emphasis>カルトの王国(Kingdom of the Cults)</emphasis>』の著者、ウォルター・マーティン博士の講義にモルモン教の長老グループが来て、そのような聖句を列挙して博士に言いがかりをつけました。博士はもうひとつ聖句を読むようモルモン教徒に頼みました。旧約聖書『詩篇』91篇4節《<quote>主は ご自分の羽であなたをおおい / あなたは その翼の下に身を避ける。</quote>》博士は<quote>あなたがたの理屈でいうと、神さまは鳥だということになりますね</quote>と言いました。モルモン教徒は自分たちの立場のばからしさに笑うしかありませんでした。"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:297
 msgid ""
 "Rule 5 - Understand the purpose of parables and the difference between a "
 "parable and an allegory"
-msgstr "その5 … たとえの趣旨、たとえと寓話の違いを理解しよう。"
+msgstr "鉄則⑤…たとえの趣旨、たとえと寓話の違いを理解する"
 
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:299
 msgid ""
-"An allegory is: <emphasis>A story where each element has a meaning.</"
-"emphasis>"
-msgstr ""
-"寓話とは、<emphasis>話を形づくるそれぞれの要素に意味があり、それぞれが比喩的"
-"に何かを表わしている話</emphasis>のこと。"
+"An allegory is: <emphasis>A story where each element has a "
+"meaning.</emphasis>"
+msgstr "寓話とは、<emphasis>話を形づくるそれぞれの要素に意味があり、それぞれが比喩的に何かを表わしている話</emphasis>をいいます。"
 
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:302
 msgid "Every parable is an allegory, true or false?"
-msgstr ""
-"聖書のたとえはすべて寓話であり、話に出てくるものは常に必ず何かを比喩的に表し"
-"ている。○か×か?"
+msgstr "聖書のたとえはすべて寓話である。○か×か?"
 
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:303
@@ -1661,47 +1584,47 @@ msgid ""
 "one point. It's dangerous to get our doctrine from parables; they can be "
 "twisted to say all sorts of things. We need to get our doctrine from clear "
 "scriptures that lay it out; then if a parable illustrates that, fine."
-msgstr ""
+msgstr "いくつかのたとえは寓話です。たとえば、種を蒔く人のたとえは寓話です。種は神さまのみことばです。茨はこの世の思い煩いと富の誘惑などです。ほとんどのたとえは寓話ではなく単純にひとつの要点を示す話です。たとえから教義を立てるのは危険です。いろいろなことを言うために、ひとひねり加えられていることがあるからです。教義は明白に記述された聖句から立てなくてはなりません。 寓話が明白に記述しているのならよいのですが。"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:311
 msgid "Example 5A"
-msgstr "例 5A"
+msgstr "例⑤A"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:312
 msgid ""
-"The parable of the widow with the unrighteous judge in Lk.18:1-8. This story "
-"illustrates one lesson: boldness in prayer.  If we draw it into an allegory, "
-"what do we have?"
-msgstr ""
+"The parable of the widow with the unrighteous judge in Lk.18:1-8. This story"
+" illustrates one lesson: boldness in prayer.  If we draw it into an "
+"allegory, what do we have?"
+msgstr "新約聖書『ルカの福音書』18章1〜8節のやもめと不正な裁判官のたとえ。この話の教訓は力強く祈ることです。もし寓話にとらわれてしまったら、どうなってしまうでしょう。"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:315
 msgid ""
 "All sorts of violence happens to the meanings: God is reluctant to protect "
 "the rights of widows, prayer \"bothers\" Him, etc."
-msgstr ""
+msgstr "暴力にはすべて理由がある。神は不承ぶしょう、やもめやら、神を「煩わせる」祈りやらの権利を守るのだ。"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:320
 msgid "Example 5B"
-msgstr "例 5B"
+msgstr "例⑤B"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:321
 msgid ""
 "The parable of the unrighteous steward in Lk.16:1-9. What is the point of "
 "the parable? Is it an allegory?"
-msgstr ""
+msgstr "新約聖書『ルカの福音書』16章1〜9節の不正な管理人のたとえ。このたとえの要点は何でしょうか? これは寓話ですか?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:323
 msgid ""
-"The steward is commended for only one thing, his shrewdness in using what he "
-"had to prepare for a time when he wouldn't have it. But he is not commended "
-"for his unethical behavior in cheating his master."
-msgstr ""
+"The steward is commended for only one thing, his shrewdness in using what he"
+" had to prepare for a time when he wouldn't have it. But he is not commended"
+" for his unethical behavior in cheating his master."
+msgstr "この管理人がほめられたのはただひとつ、管理の仕事がなくなったときに備えて発揮された彼の抜け目なさだけです。主人をだます不正な行いは、ほめられていません。"
 
 #. type: Content of the bibletime entity
 #: docs/howto/en/docbook/index.docbook:5
@@ -1733,49 +1656,41 @@ msgstr "ハーマン"
 msgid "The BibleTime Team"
 msgstr "BibleTime チーム"
 
-#.  TRANS:ROLES_OF_TRANSLATORS 
+#.  TRANS:ROLES_OF_TRANSLATORS
 #. type: Content of: <book><bookinfo>
 #: docs/howto/en/docbook/index.docbook:26
 msgid ""
-"<copyright> <year>1999-2021</year> <holder>The &bibletime; Team (bt-"
+"<copyright> <year>1999-2016</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
-msgstr ""
-"<copyright> <year>1999-2021</year> <holder>The &bibletime; Team (bt-"
-"devel@crosswire.org)</holder> </copyright>"
+msgstr "<copyright> <year>1999-2016</year> <holder>The &bibletime; Team (bt-devel@crosswire.org)</holder> </copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:31
 msgid ""
-"This document was originally created by Mr. Bob Harman and is licensed under "
-"the terms of the license <ulink url=\"http://creativecommons.org/licenses/by-"
-"sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</ulink>."
-msgstr ""
-"本書はボブ・ハーマン(Mr. Bob Harman)の原作によるものであって、<ulink url="
-"\"http://creativecommons.org/licenses/by-sa/3.0/deed.ja\"> \"Creative "
-"Commons 表示 - 継承 3.0 非移植\" (CC BY-SA 3.0)</ulink>ライセンスのもとにあり"
-"ます。"
+"This document was originally created by Mr. Bob Harman and is licensed under"
+" the terms of the license <ulink "
+"url=\"http://creativecommons.org/licenses/by-sa/3.0/\"> \"Creative Commons "
+"Attribution-Share Alike\"</ulink>."
+msgstr "本書はボブ・ハーマン(Mr. Bob Harman)の原作によるものであって、<ulink url=\"http://creativecommons.org/licenses/by-sa/3.0/deed.ja\"> \"Creative Commons 表示 - 継承 3.0 非移植\" (CC BY-SA 3.0)</ulink>ライセンスのもとにあります。"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:35
 msgid ""
 "Scripture quotes are from the New American Standard Bible unless otherwise "
 "indicated."
-msgstr ""
-"本書での聖句引用は、特に断りのない場合、いのちのことば社発行の『聖書 新改訳"
-"2017』によります。©2017 新日本聖書刊行会"
+msgstr "本書での聖句引用は、特に断りのない場合、いのちのことば社発行の『聖書 新改訳2017』によります。© 2017 新日本聖書刊行会"
 
 #. type: Content of: <book><bookinfo><abstract><title>
 #: docs/howto/en/docbook/index.docbook:39
 msgid "Abstract"
-msgstr "抄録"
+msgstr "本書の概要"
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/howto/en/docbook/index.docbook:40
 msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
 "Bible."
-msgstr ""
-"<application>聖書研究法</application>は聖書を研究するためのガイドです。"
+msgstr "<application>聖書研究法</application>は聖書を研究するためのガイドです。"
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/howto/en/docbook/index.docbook:43
@@ -1784,15 +1699,9 @@ msgid ""
 "readers to study the scriptures to see what they say. This particular study "
 "guide has been chosen as it takes care not to advocate any particular "
 "denominational doctrine. We recommend you to read and study the scriptures "
-"to understand what they say. If you start with the attitude that you want to "
-"have the Lord sow his word in your heart He will not disappoint you."
-msgstr ""
-"&bibletime; チーム一同は、本書がみなさんにとって、聖書を学び、その語ることを"
-"知るきっかけとなることを願っています。この特別(particular)の研究ガイドは、い"
-"かなる特定(particular)の教派の教義をも主張しないよう、注意深く選ばれました。"
-"聖書の語ることを理解するために、聖書を読み、研究なさることをおすすめします。"
-"主がみことばという種をあなたの心にまいて下さることを望む姿勢で始めれば、決し"
-"て裏切られることはありません。"
+"to understand what they say. If you start with the attitude that you want to"
+" have the Lord sow his word in your heart He will not disappoint you."
+msgstr "&bibletime; チーム一同は、本書がみなさんにとって、聖書を学び、その語ることを知るための励みとなることを願っています。この特別(particular)の研究ガイドは、いかなる特定(particular)の教派の教義をも主張しないよう、注意深く選ばれました。聖書の語ることを理解するために、聖書を読み、研究なさることをおすすめします。みことばの種を心にまいていただくことを願ってするなら、主は失望をお与えになることはありません。"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/index.docbook:52
@@ -1802,4 +1711,4 @@ msgstr "聖書"
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/index.docbook:54
 msgid "HowTo"
-msgstr "方法"
+msgstr "聖書研究法"

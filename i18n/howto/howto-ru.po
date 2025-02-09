@@ -1,26 +1,25 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Emet, 2015
 # Emet, 2015
+# hlm hlmfn, 2020-2021
+# Jaak Ristioja, 2021
 # Vlad Savitsky <vlad_savitsky@mail.ru>, 2003-2004
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2017-09-21 13:11+0000\n"
-"Last-Translator: Jaak Ristioja\n"
-"Language-Team: Russian (http://www.transifex.com/bibletime/bibletime/"
-"language/ru/)\n"
-"Language: ru\n"
+"PO-Revision-Date: 2011-12-12 15:28+0000\n"
+"Last-Translator: Jaak Ristioja, 2021\n"
+"Language-Team: Russian (http://app.transifex.com/bibletime/bibletime/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-basics.docbook:2
@@ -35,61 +34,50 @@ msgstr "Цель, с которой мы приступаем к изучени�
 #. type: Content of: <chapter><sect1><para><blockquote><attribution>
 #: docs/howto/en/docbook/howto-basics.docbook:7
 msgid "Jn.5:39-40"
-msgstr ""
+msgstr "Ин.5:39-40"
 
 #. type: Content of: <chapter><sect1><para><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:8
 msgid ""
 "You search the Scriptures, because you think that in them you have eternal "
-"life; and it is these that bear witness of Me; and you are unwilling to come "
-"to Me, that you may have life."
-msgstr ""
-"Вы исследуете Писания, ибо вы думаете чрез них иметь жизнь вечную; а они "
-"свидетельствуют о Мне. Но вы не хотите придти ко Мне, чтобы иметь жизнь."
+"life; and it is these that bear witness of Me; and you are unwilling to come"
+" to Me, that you may have life."
+msgstr "Вы исследуете Писания, ибо вы думаете чрез них иметь жизнь вечную; а они свидетельствуют о Мне. Но вы не хотите придти ко Мне, чтобы иметь жизнь."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:14
 msgid ""
 "The chief purpose of the book is to bring us to the Person.  Martin Luther "
 "said <quote>we go to the cradle only for the sake of the baby</quote>; just "
-"so in Bible study, we do it not for its own sake but for fellowship with God."
-msgstr ""
-"Основная цель книги - привести нас к Личности. Мартин Лютер сказал: <quote>;"
-"\"мы идём к колыбели только ради ребёнка\"</quote>; так же и с изучением "
-"Библии - мы делаем это не ради самого изучения, но, чтобы иметь общение с "
-"Богом."
+"so in Bible study, we do it not for its own sake but for fellowship with "
+"God."
+msgstr "Основная цель книги - привести нас к Личности. Мартин Лютер сказал: <quote>;\"мы идём к колыбели только ради ребёнка\"</quote>; так же и с изучением Библии - мы делаем это не ради самого изучения, но, чтобы иметь общение с Богом."
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-basics.docbook:20
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.97, 104."
-msgstr ""
-"Джон Р. В. Скотт (John R.W. Stott), <emphasis>Христос - Спорщик (Christ the "
-"Controversialist)</emphasis>, InterVarsity Press 1978, стр.97, 104."
+msgstr "Джон Р. В. Скотт (John R.W. Stott), <emphasis>Христос - Спорщик (Christ the Controversialist)</emphasis>, InterVarsity Press 1978, стр.97, 104."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:23
 msgid ""
 "The Jews to whom Jesus spoke [...] imagined that to possess Scripture was "
 "tantamount to possessing life. Hillel used to say, \"He who has gotten to "
-"himself words of Torah has gotten to himself the life of the world to come."
-"\" Their study was an end in itself. In this they were grievously deceived. "
-"[...]"
-msgstr ""
+"himself words of Torah has gotten to himself the life of the world to "
+"come.\" Their study was an end in itself. In this they were grievously "
+"deceived. [...]"
+msgstr "Иудеи, к которым обращался Иисус, [ ... ] воображали, что обладание Писанием равносильно обладанию жизнью. Гиллель говорил: \"Тот, кто получил в свое распоряжение слова Торы, получил в свое распоряжение жизнь грядущего мира.\" Их учеба была самоцелью. В этом они были сильно обмануты...]"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:28
 msgid ""
 "There is neither merit nor profit in the reading of Scripture for its own "
-"sake, but only if it effectively introduces us to Jesus Christ. Whenever the "
-"Bible is read, what is needed is an eager expectation that through it we may "
-"meet Christ."
-msgstr ""
-"Нет ни заслуги, ни пользы в чтении Писания ради самого чтения, а только в "
-"том случае, если это действительно сближает нас с Иисусом Христом. Всякий "
-"раз при чтении Библии, необходимо усердное ожидание того, чтобы через чтение "
-"встретиться со Христом."
+"sake, but only if it effectively introduces us to Jesus Christ. Whenever the"
+" Bible is read, what is needed is an eager expectation that through it we "
+"may meet Christ."
+msgstr "Нет ни заслуги, ни пользы в чтении Писания ради самого чтения, а только в том случае, если это действительно сближает нас с Иисусом Христом. Всякий раз при чтении Библии, необходимо усердное ожидание того, чтобы через чтение встретиться со Христом."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:35
@@ -103,7 +91,7 @@ msgid ""
 "and memorization provide a microscopic view of scripture. Meditating on the "
 "scriptures brings hearing, reading, studying and memorization together and "
 "cements the word in our minds."
-msgstr ""
+msgstr "Слушание и чтение обеспечивают зрительный обзор Священного Писания, в то время как изучение и запоминание обеспечивают микроскопический взгляд на священное писание. Размышление над священными писаниями объединяет слушание, чтение, изучение и запоминание и закрепляет слово в нашем разуме."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:42
@@ -113,11 +101,9 @@ msgstr "Слышать"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:43
 msgid ""
-"Lk.11:28 <quote>blessed are those who hear the word of God, and observe it.</"
-"quote>"
-msgstr ""
-"Луки.11:28 <quote>\"... блаженны слышащие слово Божие и соблюдающие его.\"</"
-"quote>"
+"Lk.11:28 <quote>blessed are those who hear the word of God, and observe "
+"it.</quote>"
+msgstr "Луки.11:28 <quote>\"... блаженны слышащие слово Божие и соблюдающие его.\"</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:48
@@ -129,15 +115,13 @@ msgstr "Читать"
 msgid ""
 "Rev.1:3 <quote>Blessed is he who reads and those who hear the words of this "
 "prophecy [...]</quote>"
-msgstr ""
-"Откр.1:3 <quote>\"Блажен читающий и слушающие слова пророчества сего "
-"[...]\"</quote>"
+msgstr "Откр.1:3 <quote>\"Блажен читающий и слушающие слова пророчества сего [...]\"</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:52
 msgid ""
-"1 Tim.4:13 <quote>give attention to the public reading of Scripture [...]</"
-"quote>"
+"1 Tim.4:13 <quote>give attention to the public reading of Scripture "
+"[...]</quote>"
 msgstr "1 Тим.4:13 <quote>\"Доколе не приду, занимайся чтением [...]\"</quote>"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
@@ -150,12 +134,9 @@ msgstr "Изучать"
 #: docs/howto/en/docbook/howto-basics.docbook:58
 msgid ""
 "Acts 17:11 <quote>Now these were more noble-minded than those in "
-"Thessalonica, for they received the word with great eagerness, examining the "
-"Scriptures daily, to see whether these things were so.</quote>"
-msgstr ""
-"Деян.17:11 <quote>\" Здешние были благомысленнее Фессалоникских: они приняли "
-"слово со всем усердием, ежедневно разбирая Писания, точно ли это так.\"</"
-"quote>"
+"Thessalonica, for they received the word with great eagerness, examining the"
+" Scriptures daily, to see whether these things were so.</quote>"
+msgstr "Деян.17:11 <quote>\" Здешние были благомысленнее Фессалоникских: они приняли слово со всем усердием, ежедневно разбирая Писания, точно ли это так.\"</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:63
@@ -163,10 +144,7 @@ msgid ""
 "2 Tim.2:15 <quote>Be diligent [KJV `Study'] to present yourself approved to "
 "God as a workman who does not need to be ashamed, handling accurately the "
 "word of truth.</quote>"
-msgstr ""
-"2 Тим.2:15 <quote>\"Старайся [в переводе Библии короля Иакова (KJV) - "
-"`Изучай, чтобы'] представить себя Богу достойным, делателем неукоризненным, "
-"верно преподающим слово истины.\"</quote>"
+msgstr "2 Тим.2:15 <quote>\"Старайся [в переводе Библии короля Иакова (KJV) - `Изучай, чтобы'] представить себя Богу достойным, делателем неукоризненным, верно преподающим слово истины.\"</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:69
@@ -176,11 +154,9 @@ msgstr "Запоминать"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:70
 msgid ""
-"Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against "
-"Thee.</quote>"
-msgstr ""
-"Пс.118:11 <quote>\"В сердце моем сокрыл я слово Твое, чтобы не грешить пред "
-"Тобою.\"</quote>"
+"Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against"
+" Thee.</quote>"
+msgstr "Пс.118:11 <quote>\"В сердце моем сокрыл я слово Твое, чтобы не грешить пред Тобою.\"</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:75
@@ -190,25 +166,21 @@ msgstr "Размышлять"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:76
 msgid ""
-"Ps.1:2-3 <quote>But his delight is in the law of the Lord, And in His law he "
-"meditates day and night. And he will be like a tree firmly planted by "
+"Ps.1:2-3 <quote>But his delight is in the law of the Lord, And in His law he"
+" meditates day and night. And he will be like a tree firmly planted by "
 "streams of water, Which yields its fruit in its season, And its leaf does "
 "not wither; And in whatever he does, he prospers.</quote>"
-msgstr ""
-"Пс.1:2-3 <quote>\"но в законе Господа воля его, и о законе Его размышляет он "
-"день и ночь! И будет он как дерево, посаженное при потоках вод, которое "
-"приносит плод свой во время свое, и лист которого не вянет; и во всем, что "
-"он ни делает, успеет.\"</quote>"
+msgstr "Пс.1:2-3 <quote>\"но в законе Господа воля его, и о законе Его размышляет он день и ночь! И будет он как дерево, посаженное при потоках вод, которое приносит плод свой во время свое, и лист которого не вянет; и во всем, что он ни делает, успеет.\"</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:82
 msgid ""
-"The Navigators illustrate this by saying that as the thumb can touch all the "
-"fingers, we can meditate on the Word as we do any of the first four. "
+"The Navigators illustrate this by saying that as the thumb can touch all the"
+" fingers, we can meditate on the Word as we do any of the first four. "
 "Meditation is a key to revelation. A new Christian needs to hear and read "
-"the Bible more than they need to study and memorize it. This is so that they "
-"become familiar with the overall message of the Bible."
-msgstr ""
+"the Bible more than they need to study and memorize it. This is so that they"
+" become familiar with the overall message of the Bible."
+msgstr "Навигаторы объясняют это тем, что, поскольку большой палец может касаться всех пальцев, мы можем размышлять над словом так же, любым из первых четырех способов. Размышление-это ключ к откровению. Новый христианин должен слышать и читать Библию больше, чем изучать и запоминать ее. Это делается для того, чтобы они познакомились с общим посланием Библии."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:91
@@ -225,9 +197,7 @@ msgstr "Тематическое изучение"
 msgid ""
 "Pick out a certain topic and follow it through, using cross-references or a "
 "concordance."
-msgstr ""
-"Выберите определённую тему и исследуйте её, используя перекрёстные ссылки "
-"или симфонию."
+msgstr "Выберите определённую тему и исследуйте её, используя перекрёстные ссылки или симфонию."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:98
@@ -238,8 +208,7 @@ msgstr "Изучение действующих лиц"
 #: docs/howto/en/docbook/howto-basics.docbook:99
 msgid ""
 "Studying the life of a Bible character, e.g. Joseph's life in Gen.37-50."
-msgstr ""
-"Изучение жизни библейских персонажей, например жизнь Иосифа в Быт.37-50."
+msgstr "Изучение жизни библейских персонажей, например жизнь Иосифа в Быт.37-50."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:103
@@ -264,11 +233,9 @@ msgstr "Содержание"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:112
 msgid ""
-"What does it say? What does it say in the original language? Be careful with "
-"definitions. Don't read into it what it doesn't say."
-msgstr ""
-"Что это значит? Что это значит на языке оригинала? Будьте осторожны со "
-"значениями слов. Не ищите в них того, о чём они не говорят."
+"What does it say? What does it say in the original language? Be careful with"
+" definitions. Don't read into it what it doesn't say."
+msgstr "Что это значит? Что это значит на языке оригинала? Будьте осторожны со значениями слов. Не ищите в них того, о чём они не говорят."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:117
@@ -280,9 +247,10 @@ msgstr "Контекст"
 msgid ""
 "What do the verses around it say? \"Context is king\" is the rule -- the "
 "passage must make sense within the structure of the entire passage and book."
-msgstr ""
+msgstr "Что говорят стихи вокруг него? \"Контекст - это основа\" - таково правило: отрывок должен иметь смысл в структуре всего отрывка и книги."
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-basics.docbook:123
 #: docs/howto/en/docbook/howto-interpretation.docbook:37
 msgid "Cross-reference"
@@ -294,10 +262,7 @@ msgid ""
 "What do other verses about this subject say through the rest of the Bible? "
 "God doesn't contradict Himself, so our interpretation needs to stand the "
 "test of other scriptures."
-msgstr ""
-"Что говорят об этой теме другие стихи во всей Библии? Бог не противоречит "
-"Себе, поэтому наше истолкование должно выдержать проверку других мест "
-"Писания. "
+msgstr "Что говорят об этой теме другие стихи во всей Библии? Бог не противоречит Себе, поэтому наше истолкование должно выдержать проверку других мест Писания. "
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:131
@@ -308,24 +273,24 @@ msgstr "Экспозиционное изучение отрывка Матфе�
 #: docs/howto/en/docbook/howto-basics.docbook:132
 msgid ""
 "Let's study together Mt.6:1-18. Read it to yourself, first looking for the "
-"key verse, the verse that sums up the whole passage. Think you have it? Test "
-"it by picking different places in the passage and asking yourself if they "
+"key verse, the verse that sums up the whole passage. Think you have it? Test"
+" it by picking different places in the passage and asking yourself if they "
 "relate to the thought of the key verse. Once you find it, write it as Roman "
 "numeral One of your outline:"
-msgstr ""
+msgstr "Давайте вместе изучать МФ.6:1-18. Прочтите его про себя, прежде всего ища ключевой стих, Стих, который подводит итог всему отрывку. Думаете, вы его нашли? Исследуйте его, выбирая различные места в отрывке и спрашивая себя, относятся ли они к мысли ключевого стиха. Как только вы найдете его, запишите его в виде римской цифры один из ваших контуров:"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:140
 msgid "Beware of practicing your righteousness before men to be noticed"
-msgstr ""
+msgstr "Остерегайтесь практиковать свою праведность перед людьми, чтобы быть замеченными"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:144
 msgid ""
-"What does <quote>practicing your righteousness</quote>mean? Does the passage "
-"give any examples? What area of our lives is being addressed? <emphasis>Our "
-"motives!</emphasis> What sub-headings develop this thought?"
-msgstr ""
+"What does <quote>practicing your righteousness</quote>mean? Does the passage"
+" give any examples? What area of our lives is being addressed? <emphasis>Our"
+" motives!</emphasis> What sub-headings develop this thought?"
+msgstr "Что значит <quote>практиковать свою праведность</quote>? Дает ли этот отрывок какие-либо примеры? К какой сфере нашей жизни мы обращаемся? <emphasis>Наши мотивы!</emphasis> Какие подзаголовки развивают эту мысль?"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:151
@@ -347,23 +312,24 @@ msgstr "Когда вы молитесь"
 msgid ""
 "Now fill in the outline with specific instructions of how to avoid wrong "
 "ways of practicing our righteousness:"
-msgstr ""
-"Теперь заполните конспект особыми инструкциями о том, как избежать неверных "
-"путей проявления своей праведности:"
+msgstr "Теперь заполните конспект особыми инструкциями о том, как избежать неверных путей проявления своей праведности:"
 
-#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:167
 msgid ""
-"don't sound a trumpet. (how might someone <quote>sound a trumpet</"
-"quote>today?)"
+"don't sound a trumpet. (how might someone <quote>sound a "
+"trumpet</quote>today?)"
 msgstr "не трубите. (как может кто-то <quote>трубить</quote> сегодня?)"
 
-#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:171
 msgid "do it secretly."
 msgstr "делайте это тайно."
 
-#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:174
 msgid "etc."
 msgstr "и т.д."
@@ -398,17 +364,20 @@ msgstr "Найдите это слово по алфавиту."
 msgid "Go down the column of listings until you find your verse."
 msgstr "Просмотрите колонку списка и найдите нужный вам стих."
 
-#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:201
 msgid "<quote>Faithful are the wounds of a friend</quote>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:206
 msgid "<quote>We are ambassadors of Christ.</quote>"
-msgstr ""
+msgstr "<quote>Мы-посланники Христа.</quote>"
 
-#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:210
 msgid "The story of the rich man and Lazarus."
 msgstr "История о богаче и Лазаре."
@@ -427,10 +396,10 @@ msgstr "Чтобы сделать тематическое исследован�
 #: docs/howto/en/docbook/howto-basics.docbook:216
 msgid ""
 "Let's say you wanted to do a study of the word \"redemption.\" First you "
-"would look up that word in the concordance and look up references listed for "
-"it. Then you could look up related words and references listed for them, e."
-"g.  \"redeem, redeemed, ransom,\" even \"buy\" or \"bought.\""
-msgstr ""
+"would look up that word in the concordance and look up references listed for"
+" it. Then you could look up related words and references listed for them, "
+"e.g.  \"redeem, redeemed, ransom,\" even \"buy\" or \"bought.\""
+msgstr "Допустим, вы хотите изучить слово \"искупление\".\" Сначала вы бы посмотрели это слово в симфонии или сносках и посмотрели ссылки, перечисленные для него. Затем вы можете посмотреть связанные слова и ссылки, перечисленные для них, например \"выкупить, выкупить, выкупить\", даже \"купить\" или \"купил\".\""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:223
@@ -445,24 +414,24 @@ msgid ""
 "judgeth all things.</quote>Maybe there are two different Greek words here, "
 "both being translated \"judge\" in English? (We're using Strong's from here "
 "out.)"
-msgstr ""
+msgstr "Что делать, если вы заметили противоречие в RST между МФ.7:1 <quote>Не судите, да не судимы будете,</quote> и 1 Кор.2:15 <quote>Но духовный судит о всем, а о нём судить никто не может. </quote>  Может быть, здесь есть два разных греческих слова, которые переводятся как \"судья\" по-русски? (Поэтому мы используем Стронг.)"
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:232
 msgid "Look up \"judge\"."
-msgstr ""
+msgstr "Посмотрите слово \"судья\"."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:235
 msgid ""
 "Go down the column of entries to Mt.7:1. To the right is a number, 2919. "
 "This refers to the Greek word used. Write it down."
-msgstr ""
+msgstr "Спуститесь по колонке записей к МФ.7:1. Справа есть число, 2919. Оно относится к греческому слову, используемому. Запишите его."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:240
 msgid "Now look up \"judgeth\"."
-msgstr ""
+msgstr "Теперь посмотрите \"судит\"."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:243
@@ -472,10 +441,10 @@ msgstr "Найдите в колонке 1 Кор.2:15 . . . . . 350."
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:246
 msgid ""
-"Turn in the back to the Greek dictionary. (Remember, you're in the NT so the "
-"language is Greek, while the OT is Hebrew.) Compare the meaning of 2919 with "
-"the meaning of 350 and you have your answer!"
-msgstr ""
+"Turn in the back to the Greek dictionary. (Remember, you're in the NT so the"
+" language is Greek, while the OT is Hebrew.) Compare the meaning of 2919 "
+"with the meaning of 350 and you have your answer!"
+msgstr "Вернитесь к греческому словарю. (Помните, что вы находитесь в НЗ, поэтому язык греческий, А ВЗ - иврит.) Сравните значение 2919 со значением 350, и вы получите свой ответ!"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:254
@@ -485,10 +454,9 @@ msgstr "Чтобы найти значения имён"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:255
 msgid ""
-"By the same process we can find the meaning of a name in the Greek or Hebrew."
-msgstr ""
-"Таким же образом мы можем найти значение имени в греческом или еврейском "
-"языке."
+"By the same process we can find the meaning of a name in the Greek or "
+"Hebrew."
+msgstr "Таким же образом мы можем найти значение имени в греческом или еврейском языке."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:257
@@ -526,7 +494,7 @@ msgid ""
 "Understanding God's word is of great importance to all who call on God's "
 "name. Study of the Bible is one of the primary ways that we learn to "
 "communicate with God."
-msgstr ""
+msgstr "Понимание Слова Божьего имеет огромное значение для всех, кто призывает имя Божье. Изучение Библии - это один из основных способов, которым мы учимся общаться с Богом."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:7
@@ -543,21 +511,22 @@ msgstr "Библия стоит особняком во многих отнош�
 msgid ""
 "popularity. Bible sales in North America: more than $500 million per year. "
 "The Bible is both the all-time and year-to-year best seller!"
-msgstr ""
+msgstr "популярность. Продажи Библии в Северной Америке: более 500 миллионов долларов в год. Библия является одной из самых продаваемых со всех времен и из года в год!"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:16
 msgid ""
 "authorship. It was written over a period of 1600 years by 40 different "
 "authors from different backgrounds, yet reads as if written by one."
-msgstr ""
+msgstr "автор. Она была написана в течение 1600 лет 40 различными авторами из разных слоев общества, но читается так, как будто написана одним человеком."
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:21
 msgid ""
-"preservation. F. F. Bruce in <emphasis>Are New Testament Documents Reliable?"
-"</emphasis> compares New Testament manuscripts with other ancient texts:"
-msgstr ""
+"preservation. F. F. Bruce in <emphasis>Are New Testament Documents "
+"Reliable?</emphasis> compares New Testament manuscripts with other ancient "
+"texts:"
+msgstr "надежность. Ф. Ф. Брюс в книге <emphasis>надежны ли документы Нового Завета?</emphasis> сравнивает рукописи Нового Завета с другими древними текстами:"
 
 #. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:28
@@ -614,7 +583,7 @@ msgstr "1300 лет"
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:46
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:49
@@ -640,7 +609,7 @@ msgstr "1000 лет"
 #: docs/howto/en/docbook/howto-importance.docbook:53
 #: docs/howto/en/docbook/howto-importance.docbook:69
 msgid "20"
-msgstr ""
+msgstr "20"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:56
@@ -660,7 +629,7 @@ msgstr "950 лет"
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:61
 msgid "10"
-msgstr ""
+msgstr "10"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:64
@@ -708,18 +677,18 @@ msgid ""
 "Ten copies of Caesar's <emphasis>Gallic War</emphasis> exist, the earliest "
 "of which was copied 900 years after Caesar wrote the original, etc. For the "
 "New Testament we have full manuscripts dating to 350 A. D., papyri "
-"containing most of the New Testament from the 200s, and a fragment of John's "
-"gospel from 130 A. D. How many manuscripts do we have to compare to each "
+"containing most of the New Testament from the 200s, and a fragment of John's"
+" gospel from 130 A. D. How many manuscripts do we have to compare to each "
 "other? 5,000 in Greek and 10,000 in Latin!"
-msgstr ""
+msgstr "Существует десять копий <emphasis>Галльской войны</emphasis> Цезаря, самая ранняя из которых была скопирована через 900 лет после того, как Цезарь написал оригинал, и т. д. Что касается Нового Завета, то у нас есть полные рукописи, датируемые 350 годом нашей эры, папирусы, содержащие большую часть Нового Завета 200-х годов, и фрагмент Евангелия от Иоанна 130 года нашей эры."
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:90
 msgid ""
 "Textual critic F. J. A. Hort, \"The New Testament in the Original Greek\", "
-"vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of Life</"
-"emphasis>p. 25-26"
-msgstr ""
+"vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of "
+"Life</emphasis>p. 25-26"
+msgstr "Текстолог Ф. Дж. А. Хорт, \"Новый Завет в греческом оригинале\", т. 1 ст. 561, Macmillan Co., цитирует в <emphasis>Вопросы о жизни</emphasis> ст. 25-26"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:93
@@ -727,10 +696,7 @@ msgid ""
 "\"In the verity and fullness of the evidence on which it rests, the text of "
 "the New Testament stands absolutely and unapproachably alone among other "
 "ancient prose writings.\""
-msgstr ""
-"\"По истинности и полноте доказательств текст Нового Завета остаётся "
-"абсолютно и неоспоримо исключительным среди других старинных прозаичных "
-"рукописей.\""
+msgstr "\"По истинности и полноте доказательств текст Нового Завета остаётся абсолютно и неоспоримо исключительным среди других старинных прозаичных рукописей.\""
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:99
@@ -743,46 +709,44 @@ msgid ""
 "<emphasis>Heb.4:12</emphasis> \"<emphasis>For the word of God is living and "
 "active...</emphasis>\" Jesus said <emphasis>(Mt.4:4),</emphasis>\" "
 "<emphasis>It is written, Man shall not live on bread alone, but on every "
-"word that proceeds [lit., is proceeding] from the mouth of God.</emphasis>\" "
-"As we read the Bible, God's Spirit is there to speak it to our hearts in a "
+"word that proceeds [lit., is proceeding] from the mouth of God.</emphasis>\""
+" As we read the Bible, God's Spirit is there to speak it to our hearts in a "
 "continually-fresh way."
-msgstr ""
+msgstr "<emphasis>Евр.4:12</emphasis> \"<emphasis>Ибо Слово Божие живо и действенно...</emphasis>\" Иисус говорит <emphasis>(МФ.4:4)</emphasis>\" <emphasis>Написано: Не хлебом единым будет жить человек, но всяким словом, исходящим из уст Божиих.</emphasis>\" Когда мы читаем Библию, Дух Божий находится там, чтобы говорить ее нашим сердцам постоянно новым образом."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:109
 msgid ""
 "2 Tim.3:16 declares, \" <emphasis>All scripture is inspired by God [lit., "
-"God-breathed].</emphasis>\" Do you believe this? Before you answer, consider "
-"Jesus' attitude toward the Scriptures."
-msgstr ""
+"God-breathed].</emphasis>\" Do you believe this? Before you answer, consider"
+" Jesus' attitude toward the Scriptures."
+msgstr "2 Тим.3:16 гласит: \"<emphasis>Все Писание богодухновенно.</emphasis>\" Вы в это верите? Прежде чем ответить, подумайте об отношении Иисуса к священным писаниям."
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:114
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.93-95"
-msgstr ""
-"Джон Р. В. Скотт (John R.W. Stott), <emphasis>Христос - Спорщик (Christ the "
-"Controversialist)</emphasis>, InterVarsity Press 1978, стр.93-95 "
+msgstr "Джон Р. В. Скотт (John R.W. Stott), <emphasis>Христос - Спорщик (Christ the Controversialist)</emphasis>, InterVarsity Press 1978, стр.93-95 "
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:117
 msgid ""
 "He referred to the human authors, but took it for granted that behind them "
 "all was a single divine Author. He could equally say 'Moses said' or 'God "
-"said' (Mk.7:10). He could quote a comment of the narrator in Genesis 2:24 as "
-"an utterance of the Creator Himself (Mt.19:4-5). Similarly He said, 'Well "
+"said' (Mk.7:10). He could quote a comment of the narrator in Genesis 2:24 as"
+" an utterance of the Creator Himself (Mt.19:4-5). Similarly He said, 'Well "
 "did Isaiah prophesy of you hypocrites, as it is written', when what He went "
-"on to quote is the direct speech of the Lord God (Mk.7:6 &amp; Is.29:13). It "
-"is from Jesus Himself that the New Testament authors have gained their "
-"conviction of the dual authorship of Scripture. For them it was just as true "
-"to say that 'God spoke of old to our fathers by the prophets' (Heb.1:1) as "
+"on to quote is the direct speech of the Lord God (Mk.7:6 &amp; Is.29:13). It"
+" is from Jesus Himself that the New Testament authors have gained their "
+"conviction of the dual authorship of Scripture. For them it was just as true"
+" to say that 'God spoke of old to our fathers by the prophets' (Heb.1:1) as "
 "it was to say that 'men moved by the Holy Spirit spoke from God' (2 "
 "Pe.1:21).  God did not speak in such a way as to obliterate the personality "
-"of the human authors, nor did men speak in such a way as to corrupt the Word "
-"of the divine Author. God spoke. Men spoke.  Neither truth must be allowed "
+"of the human authors, nor did men speak in such a way as to corrupt the Word"
+" of the divine Author. God spoke. Men spoke.  Neither truth must be allowed "
 "to detract from the other.  ..."
-msgstr ""
+msgstr "Он ссылался на человеческих авторов, но считал само собой разумеющимся, что за всеми ними стоит один божественный Автор. Он мог одинаково сказать «сказал Моисей» или «сказал Бог» (Марка 7: 10). Он мог процитировать комментарий рассказчика в Бытие 2:24 как высказывание Самого Творца (Мф 19: 4-5). Точно так же Он сказал: «Хорошо пророчествовал Исаия о вас, лицемерах, как написано», тогда как то, что Он продолжил, является прямой речью Господа Бога (Марка 7: 6 и Исайя 29: 13). Именно от Самого Иисуса авторы Нового Завета убедились в двойном авторстве Писания. Для них было так же верно сказать, что `` Бог в древности говорил отцам нашим через пророков '' (Евр.1: 1), так же как и сказать, что `` люди, движимые Святым Духом, говорили от Бога '' (2 Пет. 1:21). Бог не говорил таким образом, чтобы стереть личность авторов-людей, и люди не говорили таким образом, чтобы исказить Слово божественного Автора. Бог говорил. Говорили люди. Ни одна из правд не должна отвлекать от другой. ..."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:134
@@ -791,7 +755,7 @@ msgid ""
 "witness. The testimony of the Bible is the testimony of God. And the chief "
 "reason why the Christian believes in the divine origin of the Bible is that "
 "Jesus Christ Himself taught it."
-msgstr ""
+msgstr "Таков был взгляд Христа на Священное Писание. Их свидетельство было Божьим свидетельством. Свидетельство Библии - это свидетельство Бога. И главная причина, по которой христианин верит в божественное происхождение Библии, состоит в том, что этому учил Сам Иисус Христос."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:140
@@ -799,9 +763,9 @@ msgid ""
 "2 Tim.3:16 goes on, \" <emphasis>and profitable for teaching, for "
 "correction, for training in righteousness, that the man of God may be "
 "adequate, equipped for every good work.</emphasis>\" If we accept that the "
-"Bible really is God speaking to us, it follows that it will be our authority "
-"in all matters of faith and conduct."
-msgstr ""
+"Bible really is God speaking to us, it follows that it will be our authority"
+" in all matters of faith and conduct."
+msgstr "2 Тим. 3:16-17 далее: \"<emphasis>и полезно для научения, обличения, исправления, для наставления в праведности, да будет совершен Божий человек, ко всякому доброму делу приготовлен.</emphasis>\" Если мы признаем, что Библия действительно есть Бог, говорящий с нами, то из этого следует, что она будет нашим авторитетом во всех вопросах веры и поведения."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:148
@@ -811,10 +775,10 @@ msgstr "Действенная Книга"
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:149
 msgid ""
-"What will studying the Bible do for you? 1 Thess.2:13 says that the Bible \" "
-"<emphasis>performs its work in you who believe.</emphasis>\" Beside each "
+"What will studying the Bible do for you? 1 Thess.2:13 says that the Bible \""
+" <emphasis>performs its work in you who believe.</emphasis>\" Beside each "
 "scripture, write down the work the Word performs."
-msgstr ""
+msgstr "Что даст вам изучение Библии? В 1 Фес.2:13 говорится, что Библия \"<emphasis>которое и действует в вас, верующих</emphasis>\" Рядом с каждым стихом запишите работу, которую выполняет Слово."
 
 #. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:154
@@ -839,9 +803,9 @@ msgstr "Еф.5:26"
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:165
 msgid ""
-"cleanses -- \"...having cleansed her by the washing of water with the word.\""
-msgstr ""
-"очищает -- \"...чтобы освятить ее, очистив банею водною посредством слова;\" "
+"cleanses -- \"...having cleansed her by the washing of water with the "
+"word.\""
+msgstr "очищает -- \"...чтобы освятить ее, очистив банею водною посредством слова;\" "
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:169
@@ -853,7 +817,7 @@ msgstr "Деян.20:32"
 msgid ""
 "builds up -- \" ...the word of His grace, which is able to build you up and "
 "to give you the inheritance among all those who are sanctified. \""
-msgstr ""
+msgstr "созидает - \"... слово благодати может созидать вас и дать вам наследие с освященными\"."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:175
@@ -865,8 +829,7 @@ msgstr "Рим.15:4"
 msgid ""
 "encourages -- \"that through perseverance and the encouragement of the "
 "Scriptures we might have hope.\""
-msgstr ""
-"утешает -- \"чтобы мы терпением и утешением из Писаний сохраняли надежду.\""
+msgstr "утешает -- \"чтобы мы терпением и утешением из Писаний сохраняли надежду.\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:181
@@ -890,9 +853,7 @@ msgstr "1 Кор.10:11"
 msgid ""
 "instructs -- \"Now these things happened to them for an example, and they "
 "were written for our instruction\""
-msgstr ""
-"наставляет -- \"Все это происходило с ними, как образы; а описано в "
-"наставление нам, достигшим последних веков.\""
+msgstr "наставляет -- \"Все это происходило с ними, как образы; а описано в наставление нам, достигшим последних веков.\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:192
@@ -905,9 +866,7 @@ msgid ""
 "nourishment -- \"But He answered and said, 'It is written, Man shall not "
 "live on bread alone, but on every word that proceeds out of the mouth of "
 "God.'\""
-msgstr ""
-"питает -- \"Он же сказал ему в ответ: написано: не хлебом одним будет жить "
-"человек, но всяким словом, исходящим из уст Божиих.\""
+msgstr "питает -- \"Он же сказал ему в ответ: написано: не хлебом одним будет жить человек, но всяким словом, исходящим из уст Божиих.\""
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:202
@@ -923,32 +882,33 @@ msgid ""
 "knowledge? Find the answers by examining the first half of the sentence, in "
 "v.31. \" <emphasis>If you abide in My word, then you are truly disciples of "
 "Mine...</emphasis>\""
-msgstr ""
+msgstr "Ин.8:32 \"<emphasis>и познаете истину, и истина сделает вас свободными.</emphasis>\" Является ли это условным или безусловным обещанием? Применима ли она ко всем видам знаний? Найдите ответы, изучив первую половину предложения в стихе 31. \"<emphasis>Если вы пребываете в Моем Слове, тогда вы истинные ученики мои...</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:211
 msgid ""
 "We see that this is a conditional promise, specifically speaking of the "
 "truth of God's word."
-msgstr ""
+msgstr "Мы видим, что это условное обетование, конкретно говорящее об истине Слова Божьего."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:213
 msgid ""
-"The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent wind."
-"</emphasis>\" <emphasis>As a result, we are no longer to be children, tossed "
-"here and there by waves, and carried about by every wind of doctrine...</"
-"emphasis>\"One thing studying the Bible does for us is to ground us in the "
-"truth, with the result that we won't be easily \"blown away.\""
-msgstr ""
+"The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent "
+"wind.</emphasis>\" <emphasis>As a result, we are no longer to be children, "
+"tossed here and there by waves, and carried about by every wind of "
+"doctrine...</emphasis>\"One thing studying the Bible does for us is to "
+"ground us in the truth, with the result that we won't be easily \"blown "
+"away.\""
+msgstr "Греческое слово \"ветер\", используемое в Еф.4:14, означает <emphasis>сильный ветер</emphasis>.\" <emphasis>В результате мы больше не должны быть детьми, которых кидает туда-сюда волнами и уносит каждый ветер учения...</emphasis>\"Одна вещь, которую изучение Библии делает для нас, - это укрепляет нас в истине,в результате чего мы не будем легко \"сдуваться.\""
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:221
 msgid ""
 "<emphasis>But Jesus answered and said to them,</emphasis>\" <emphasis>You "
-"are mistaken [KJV Ye do err], not understanding the Scriptures, or the power "
-"of God.</emphasis>\" Mt.22:29"
-msgstr ""
+"are mistaken [KJV Ye do err], not understanding the Scriptures, or the power"
+" of God.</emphasis>\" Mt.22:29"
+msgstr "<emphasis>Но Иисус сказал им в ответ:</emphasis>\" <emphasis>заблуждаетесь, не зная ни Писания, ни силы Божией</emphasis> \" (МФ 22: 29)."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:224
@@ -998,7 +958,7 @@ msgstr "Сколько из перечисленного оружия испол
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:251
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:254
@@ -1008,7 +968,7 @@ msgstr "Сколько для нападения?"
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:255
 msgid "One"
-msgstr ""
+msgstr "Один"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:258
@@ -1029,18 +989,18 @@ msgstr "Увещевания"
 #: docs/howto/en/docbook/howto-importance.docbook:268
 msgid ""
 "2 Tim.2:15 (KJV) \" <emphasis>Study to show thyself approved unto God, a "
-"workman that needeth not to be ashamed, rightly dividing the word of truth.</"
-"emphasis>\""
-msgstr ""
+"workman that needeth not to be ashamed, rightly dividing the word of "
+"truth.</emphasis>\""
+msgstr "2 Тим. 2: 15 (KJV) \" <emphasis>Старайся представить себя Богу достойным, делателем неукоризненным, верно преподающим слово истины.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:272
 msgid ""
 "Col.3:16 \" <emphasis>Let the word of Christ richly dwell within you; with "
 "all wisdom teaching and admonishing one another with psalms and hymns and "
-"spiritual songs, singing with thankfulness in your hearts to God.</emphasis>"
-"\""
-msgstr ""
+"spiritual songs, singing with thankfulness in your hearts to "
+"God.</emphasis>\""
+msgstr "Кол. 3: 16 \" Слово Христово да вселяется в вас обильно, со всякою премудростью; научайте и вразумляйте друг друга псалмами, славословием и духовными песнями, во благодати воспевая в сердцах ваших Господу.\""
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:277
@@ -1055,12 +1015,12 @@ msgstr "Ведь не чуть-чуть!"
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:280
 msgid ""
-"Eccl.12:11-12 \" <emphasis>The words of wise men are like goads, and masters "
-"of these collections are like well-driven nails; they are given by one "
+"Eccl.12:11-12 \" <emphasis>The words of wise men are like goads, and masters"
+" of these collections are like well-driven nails; they are given by one "
 "Shepherd. But beyond this, my son, be warned: the writing of many books is "
-"endless, and excessive devotion to books is wearying to the body.</emphasis>"
-"\""
-msgstr ""
+"endless, and excessive devotion to books is wearying to the "
+"body.</emphasis>\""
+msgstr "Еккл. 12: 11-12 \" <emphasis>Слова мудрых – как иглы и как вбитые гвозди, и составители их – от единого пастыря. А что сверх всего этого, сын мой, того берегись: составлять много книг – конца не будет, и много читать – утомительно для тела.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:288
@@ -1070,37 +1030,38 @@ msgstr "Приложение: \"Однажды для всех\""
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:290
 msgid ""
-"John R. W. Stott, <emphasis>Christ the Controversialist,</"
-"emphasis>InterVarsity Press 1978, pp.106-107"
+"John R. W. Stott, <emphasis>Christ the "
+"Controversialist,</emphasis>InterVarsity Press 1978, pp.106-107"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:293
 msgid ""
 "The truth regarding the finality of God's initiative in Christ is conveyed "
-"by one word of the Greek Testament, namely the adverb <foreignphrase>hapax</"
-"foreignphrase>and <foreignphrase>ephapax</foreignphrase>. It is usually "
-"translated in the Authorized Version once, meaning once for all. It is used "
-"of what is so done as to be of perpetual validity and never need repetition, "
-"and is applied in the NT to both revelation and redemption. Thus, Jude "
-"refers to the faith which was once for all delivered to the saints (Jude 3), "
-"and Romans says, \" <emphasis>Christ also died for sins once for all</"
-"emphasis>\" (Rom.6:10, see also 1 Pe.3:18; Heb.9:26-28)."
-msgstr ""
+"by one word of the Greek Testament, namely the adverb "
+"<foreignphrase>hapax</foreignphrase>and "
+"<foreignphrase>ephapax</foreignphrase>. It is usually translated in the "
+"Authorized Version once, meaning once for all. It is used of what is so done"
+" as to be of perpetual validity and never need repetition, and is applied in"
+" the NT to both revelation and redemption. Thus, Jude refers to the faith "
+"which was once for all delivered to the saints (Jude 3), and Romans says, \""
+" <emphasis>Christ also died for sins once for all</emphasis>\" (Rom.6:10, "
+"see also 1 Pe.3:18; Heb.9:26-28)."
+msgstr "Истина о завершенности Божьего начинания во Христе передается одним словом греческого Завета, а именно наречием <foreignphrase>hapax</foreignphrase> и <foreignphrase>ephapax</foreignphrase>. Обычно он переводится в авторизованной версии один раз, то есть раз навсегда. Он используется для того, что сделано таким образом, чтобы иметь вечную ценность и никогда не нуждаться в повторении, и применяется в Новом Завете как к откровению, так и к искуплению. Таким образом, Иуда говорит о вере, которая была раз навсегда предана святым (Иуда 3), а в послании к Римлянам говорится: \"<emphasis>и Христос умер за грехи раз навсегда</emphasis>\" (Рим.6:10, см. Также 1 пет.3:18; Евр.9: 26-28)."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:305
 msgid ""
 "Thus we may say that God has spoken once for all and Christ has suffered "
 "once for all. This means that the Christian revelation and the Christian "
-"redemption are both alike in Christ complete. Nothing can be added to either "
-"without being derogatory to Christ... These are the two rocks on which the "
+"redemption are both alike in Christ complete. Nothing can be added to either"
+" without being derogatory to Christ... These are the two rocks on which the "
 "Protestant Reformation was built -- Gods revealed word without the addition "
-"of human traditions and Christ's finished work without the addition of human "
-"merits. The Reformers great watchwords were <foreignphrase>sola scriptura</"
-"foreignphrase>for our authority and <foreignphrase>sola gratia</"
-"foreignphrase>for our salvation."
-msgstr ""
+"of human traditions and Christ's finished work without the addition of human"
+" merits. The Reformers great watchwords were <foreignphrase>sola "
+"scriptura</foreignphrase>for our authority and <foreignphrase>sola "
+"gratia</foreignphrase>for our salvation."
+msgstr "Таким образом, мы можем сказать, что Бог говорил один раз за всех, и Христос страдал один раз за всех. Это означает, что Христианское откровение и Христианское искупление одинаково совершены во Христе. Ничего нельзя добавить ни к тому, ни к другому, не уничижая Христа... Это две скалы, на которых была построена протестантская Реформация-богооткровенное слово без добавления человеческих традиций и законченный труд Христа без добавления человеческих заслуг. Великими лозунгами реформаторов были <foreignphrase>sola scriptura</foreignphrase> для нашей власти и <foreignphrase>sola gratia</foreignphrase> для нашего спасения."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:320
@@ -1111,9 +1072,9 @@ msgstr "Дополнение: Программы чтения Библии"
 #: docs/howto/en/docbook/howto-importance.docbook:321
 msgid ""
 "Here are some easy programs to systematically read your Bible. You can do "
-"more than one at a time if you like, for instance #1 with #4, or #2 with #5. "
-"Vary the program from year to year to keep it fresh!"
-msgstr ""
+"more than one at a time if you like, for instance #1 with #4, or #2 with #5."
+" Vary the program from year to year to keep it fresh!"
+msgstr "Вот несколько простых программ для систематического чтения Библии. Вы можете выполнять несколько операций одновременно, если хотите, например #1 с #4 или #2 с #5. Меняйте программу из года в год, чтобы она оставалась свежей!"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:327
@@ -1123,40 +1084,31 @@ msgstr "Новый Завет за год: читайте одну главу к
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:331
 msgid ""
-"Proverbs in a Month: read one chapter of Proverbs each day, corresponding to "
-"the day of the month."
-msgstr ""
-"Притчи за месяц: читайте одну главу Притч каждый день, соответственно числу "
-"месяца."
+"Proverbs in a Month: read one chapter of Proverbs each day, corresponding to"
+" the day of the month."
+msgstr "Притчи за месяц: читайте одну главу Притч каждый день, соответственно числу месяца."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:335
 msgid ""
 "Psalms in a Month: read 5 Psalms at intervals of 30 each day, for instance "
 "on the 20th you read Ps.20, 50, 80, 110, &amp; 140."
-msgstr ""
-"Псалмы за месяц: читайте 5 Псалмов с интервалом 30 каждый день, например 20-"
-"го числа вы читаете Пс.20, 50, 80, 110 и 140."
+msgstr "Псалмы за месяц: читайте 5 Псалмов с интервалом 30 каждый день, например 20-го числа вы читаете Пс.20, 50, 80, 110 и 140."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:340
 msgid ""
 "Psalms &amp; Proverbs in 6 months: read through Psalms and Proverbs one "
 "chapter per day."
-msgstr ""
-"Псалмы и Притчи за 6 месяцев: читайте по порядку Псалмы и Притчи по одной "
-"главе в день."
+msgstr "Псалмы и Притчи за 6 месяцев: читайте по порядку Псалмы и Притчи по одной главе в день."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:344
 msgid ""
 "Old Testament without Psalms &amp; Proverbs in 2 years: if you read one "
-"chapter a day of the Old Testament, skipping over Psalms &amp; Proverbs, you "
-"will read the Old Testament in 2 years and 2 weeks."
-msgstr ""
-"Ветхий Завет без Псалмов и Притч за 2 года: если вы будете читать одну главу "
-"в день из Ветхого Завета, пропуская Псалмы и Притчи, то вы прочтёте Ветхий "
-"Завет за 2 года и 2 недели."
+"chapter a day of the Old Testament, skipping over Psalms &amp; Proverbs, you"
+" will read the Old Testament in 2 years and 2 weeks."
+msgstr "Ветхий Завет без Псалмов и Притч за 2 года: если вы будете читать одну главу в день из Ветхого Завета, пропуская Псалмы и Притчи, то вы прочтёте Ветхий Завет за 2 года и 2 недели."
 
 #. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:2
@@ -1166,19 +1118,19 @@ msgstr "Правила толкования Библии (Герменевтик
 #. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:3
 msgid ""
-"We already learned about the \"3 Cs\": content, context, cross-reference. We "
-"want to expand that now by delving briefly into biblical hermeneutics, whose "
-"goal is to discover the meaning intended by the original author (and "
+"We already learned about the \"3 Cs\": content, context, cross-reference. We"
+" want to expand that now by delving briefly into biblical hermeneutics, "
+"whose goal is to discover the meaning intended by the original author (and "
 "Author!). While many applications of a passage are valid, only one "
 "interpretation is valid. The scripture itself says this by saying that no "
 "scripture is of any private interpretation (2 Pe.1:20 KJV <quote>Knowing "
-"this first, that no prophesy of scripture is of any private interpretation.</"
-"quote>). Certain rules are helps toward discovering the correct meaning; by "
-"ignoring these rules people have brought much trouble on themselves and "
-"their followers. 2 Pe.3:16 <quote>...in which are some things hard to "
-"understand, which the untaught and unstable distort, as they do also the "
-"rest of the Scriptures, to their own destruction.</quote>"
-msgstr ""
+"this first, that no prophesy of scripture is of any private "
+"interpretation.</quote>). Certain rules are helps toward discovering the "
+"correct meaning; by ignoring these rules people have brought much trouble on"
+" themselves and their followers. 2 Pe.3:16 <quote>...in which are some "
+"things hard to understand, which the untaught and unstable distort, as they "
+"do also the rest of the Scriptures, to their own destruction.</quote>"
+msgstr "Мы уже познакомились с \"3 Cs\": содержание, контекст, перекрестные ссылки. Теперь мы хотим расширить эту тему, вкратце углубившись в библейскую герменевтику, цель которой состоит в том, чтобы раскрыть смысл, предназначенный первоначальным автором (и автором!). В то время как многие приложения отрывка являются действительными, только одна интерпретация является действительной. Само Писание говорит об этом, говоря, что ни одно Писание не имеет никакого частного толкования (2 Пе. 1: 20 KJV,<quote> зная это во-первых, что ни одно пророчество Писания не имеет никакого частного толкования</quote>).; игнорируя эти правила, люди навлекли много бед на себя и своих последователей. 2 Пе. 3: 16 <quote>...в котором есть некоторые вещи, которые трудно понять, которые необученные и неустойчивые искажают, как и остальные Писания, к своей собственной гибели.</quote>"
 
 #. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:17
@@ -1186,7 +1138,7 @@ msgid ""
 "How do we go about discovering the intended meaning of a passage? Let's say "
 "your attention has been drawn to a particular verse whose meaning is not "
 "clear to you. How do you study it out? Keep these rules in mind:"
-msgstr ""
+msgstr "Как мы идем к обнаружению предполагаемого значения отрывка? Допустим, ваше внимание было привлечено к определенному стиху, смысл которого вам не ясен. Как вы его изучаете? Запомните эти правила:"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:22
@@ -1196,24 +1148,27 @@ msgstr "Правило 1 - Истолковывать в соответстви�
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:24
 msgid ""
-"The more precise we can be with the exact, original meaning of the words the "
-"better our interpretation will be. Try to find the exact meaning of the key "
-"words by following these steps:"
-msgstr ""
+"The more precise we can be with the exact, original meaning of the words the"
+" better our interpretation will be. Try to find the exact meaning of the key"
+" words by following these steps:"
+msgstr "Чем точнее мы можем определить точное, изначальное значение слов, тем лучше будет наша интерпретация. Попробуйте найти точное значение ключевых слов, выполнив следующие действия:"
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:30
 msgid "Definition"
-msgstr ""
+msgstr "Определение"
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:31
 msgid ""
-"Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb "
-"tense is also crucial."
-msgstr ""
+"Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb"
+" tense is also crucial."
+msgstr "Посмотрите определение в греческом или еврейском словаре. Для глаголов время глагола также имеет решающее значение."
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:38
 msgid ""
 "Compare scripture with scripture. Seeing how the same Greek or Hebrew word "
@@ -1224,7 +1179,7 @@ msgid ""
 "isn't the English word good enough? <emphasis>Because more than one Greek "
 "word may be translated into the same English word, and the Greek words may "
 "have different shades of meaning.</emphasis>"
-msgstr ""
+msgstr "Сравните Писание с Писанием. Видя, как то же самое греческое или еврейское слово (не английское слово) используется в Писании, можно прояснить или пролить новый свет на определение. Как тот же автор использует это слово в другом месте? Другие авторы? Ваши справочные инструменты могут дать вам возможность использовать это слово и в небиблейских документах. <emphasis>Почему мы должны обращаться к оригинальным языкам; почему английское слово недостаточно хорошо? Потому что несколько греческих слов могут быть переведены на одно и то же английское слово, и греческие слова могут иметь разные оттенки значения.</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:53
@@ -1237,111 +1192,120 @@ msgid ""
 "Jn.20:17 <emphasis>\"Touch me not\"</emphasis> (KJV) sounds harsh, doesn't "
 "it? Sounds like Jesus doesn't want to be touched now that He is risen, that "
 "He is too holy or something. But that doesn't seem right, so let's look it "
-"up in Spiros Zodhiates' <emphasis>The Complete Word Study New Testament</"
-"emphasis> (AMG Publishers, 1991)."
-msgstr ""
+"up in Spiros Zodhiates' <emphasis>The Complete Word Study New "
+"Testament</emphasis> (AMG Publishers, 1991)."
+msgstr "Ин. 20: 17 <emphasis>\"Не прикасайся ко мне\"</emphasis> (KJV) звучит грубо, не так ли? Похоже, Иисус не хочет, чтобы к нему прикасались теперь, когда он воскрес, что он слишком свят или что-то в этом роде. Но это не кажется правильным, так давайте рассмотрим его Spiros Zodhiates' <emphasis>полное слово изучения Нового Завета</emphasis> (AMG издателей, 1991)."
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:61
 msgid ""
-"Definition: Turning to John 20:17, above the word \"Touch\" we see \"pim680."
-"\" The letters give us a code for the part of speech, and the number refers "
-"to Strong's dictionary reference.  Let's look up the definition (p. 879). "
-"\"680. Haptomai; from hapto (681), touch. Refers to such handling of an "
-"object as to exert a modifying influence upon it... Distinguished from "
-"pselaphao (5584), which actually only means to touch the surface of "
-"something. \" Now look up \"pim.\" The grammar codes in Zodhiates come right "
-"after Revelation; on p. 849 we see that pim stands for \"present imperative "
-"active (80)\". On p.857, \"Present Imperative.  In the active voice, it may "
-"indicate a command to do something in the future which involves continuous "
-"or repeated action or, when it is negated, a command to stop doing "
-"something. \" This is a negative command, so it is to stop doing something "
-"that is already occurring. So, what have we found?"
-msgstr ""
+"Definition: Turning to John 20:17, above the word \"Touch\" we see "
+"\"pim680.\" The letters give us a code for the part of speech, and the "
+"number refers to Strong's dictionary reference.  Let's look up the "
+"definition (p. 879). \"680. Haptomai; from hapto (681), touch. Refers to "
+"such handling of an object as to exert a modifying influence upon it... "
+"Distinguished from pselaphao (5584), which actually only means to touch the "
+"surface of something. \" Now look up \"pim.\" The grammar codes in Zodhiates"
+" come right after Revelation; on p. 849 we see that pim stands for \"present"
+" imperative active (80)\". On p.857, \"Present Imperative.  In the active "
+"voice, it may indicate a command to do something in the future which "
+"involves continuous or repeated action or, when it is negated, a command to "
+"stop doing something. \" This is a negative command, so it is to stop doing "
+"something that is already occurring. So, what have we found?"
+msgstr "Определение: обращаясь к Иоанну 20: 17, над словом \"прикосновение\" мы видим \"pim680.\" Буквы дают нам код для части речи, а число относится к словарной ссылке Стронга. Давайте посмотрим определение (стр. 879). \"680. Гаптомай; от гапто (681) - прикосновение. Относится к такому обращению с объектом, которое оказывает на него модифицирующее воздействие... Отличается от pselaphao (5584), что на самом деле означает только прикосновение к поверхности чего-либо. - А теперь посмотри вверх ,Пим.\" Грамматика коды в Zodhiates наступить сразу после откровения; на стр. 849 мы видим, что Пим расшифровывается как \"форма настоящего времени повелительного наклонения активный (80)\". На п.857, \"Форма Настоящего Времени Повелительного Наклонения. В активном голосе это может означать команду сделать что-то в будущем, что включает непрерывное или повторяющееся действие, или, когда оно отрицается, команду прекратить что-то делать. \"Это негативная команда, поэтому она заключается в том, чтобы прекратить делать то, что уже происходит. Итак, что же мы нашли?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:77
 msgid ""
 "<emphasis>Mary is already clinging to Jesus, and he is saying to stop "
 "holding him!</emphasis>"
-msgstr ""
+msgstr "<emphasis>Мария уже держится за Иисуса, а он говорит, чтобы она перестала его держать!</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:82
 msgid "Example 1B"
-msgstr ""
+msgstr "Пример 1B"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:83
 msgid ""
 "In James 5:14, <emphasis>Elders are told to pray and anoint someone who is "
 "sick</emphasis>. What is this anointing?"
-msgstr ""
+msgstr "В Иакова 5: 14 <emphasis>пресвитерам сказано молиться и помазывать больного.</emphasis> Что это за помазание?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:86
 msgid ""
 "Definition of aleipho (218) - \"to oil\" (Strong's); but we also have "
 "another Greek word translated \"anoint\", chrio (5548) - \"to smear or rub "
-"with oil, i.e. to consecrate to an office or religious service\" (Strong's). "
-"Since it's a verb, consider the tense also, \"apta\" aorist participle "
+"with oil, i.e. to consecrate to an office or religious service\" (Strong's)."
+" Since it's a verb, consider the tense also, \"apta\" aorist participle "
 "active. \"The aorist participle expresses simple action, as opposed to "
 "continuous action...When its relationship to the main verb is temporal, it "
 "usually signifies action prior to that of the main verb.\" (Zodhiates p.851)"
-msgstr ""
+msgstr "Определение алейфо (218) - \" смазывать маслом \"(Стронг); но у нас есть и другое греческое слово, переведенное как\" помазывать\", chrio (5548) - \"мазать или натирать маслом, то есть посвящать в должность или религиозную службу\" (Стронг). Поскольку это глагол, рассмотрим также время, активное причастие аориста\" апта\". \"Причастие аориста выражает простое действие, в противоположность непрерывному действию...Когда его отношение к главному глаголу является временным, оно обычно означает действие, предшествующее действию главного глагола\" (Зодиат, С.)"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:100
 msgid "Mt.6:17 But you, when you fast, anoint your head"
-msgstr ""
+msgstr "МФ. 6: 17 а ты, когда постишься, помажь голову твою"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:104
-msgid "Mk.16:1 [the women] brought spices that they might come and anoint Him."
-msgstr ""
+msgid ""
+"Mk.16:1 [the women] brought spices that they might come and anoint Him."
+msgstr "МК. 16: 1 [женщины] принесли благовония, чтобы прийти и помазать Его."
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:108
 msgid ""
-"Mk.6:13 And they were...anointing with oil many sick people and healing them."
-msgstr ""
+"Mk.6:13 And they were...anointing with oil many sick people and healing "
+"them."
+msgstr "МК. 6: 13 и они ... помазывали елеем многих больных и исцеляли их."
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:112
 msgid "Lk.7:38 [...] kissing His feet and anointing them with the perfume"
-msgstr ""
+msgstr "ЛК. 7: 38 [ ... ] целуя ноги его и помазывая их благовониями"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:116
 msgid ""
 "Jn.12:3 Mary [...] anointed the feet of Jesus, and wiped them with her hair"
-msgstr ""
+msgstr "Ин. 12: 3 Мария [ ... ] помазала ноги Иисуса и вытерла их волосами своими"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:97
-msgid ""
-"Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
-"Перекрестные ссылки для aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgid "Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr "Перекрестные ссылки для aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:125
 msgid ""
-"Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me "
-"to preach [...]</quote>"
-msgstr ""
+"Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me"
+" to preach [...]</quote>"
+msgstr "ЛК. 4: 18 <quote>Дух Господень на мне, потому что он помазал меня проповедовать [...]</quote>"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:130
 msgid "Acts 4:27 Jesus, whom Thou hast anointed"
 msgstr "Acts 4:27 \"Иисуса, помазанного Тобою\""
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:133
 msgid "Acts 10:38 God anointed Jesus with the Holy Ghost and power"
 msgstr "Acts 10:38 \"Бог Духом Святым и силою помазал Иисуса\""
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:137
 msgid "2 Cor.1:21 Now He who...anointed us is God"
 msgstr "2 Cor.1:21 \"... помазавший нас есть Бог\""
@@ -1349,19 +1313,16 @@ msgstr "2 Cor.1:21 \"... помазавший нас есть Бог\""
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:122
 msgid "Cross-references of chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
-"Перекрестные ссылки chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr "Перекрестные ссылки chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:142
 msgid ""
-"So what's the difference between aleipho and chrio? Look back over the cross-"
-"references and the definitions, and sum up the difference: <emphasis>"
-"\"aleipho\" is a practical use of oil and \"chrio\" is a spiritual</emphasis>"
-msgstr ""
-"Так какое различие между aleipho и chrio? Просмотрите ещё раз перекрёстные "
-"ссылки и определения, и суммируйте различие: <emphasis>\"aleipho\" говорит о "
-"практическом использовании масла, а  \"chrio\" - о духовном</emphasis>"
+"So what's the difference between aleipho and chrio? Look back over the "
+"cross-references and the definitions, and sum up the difference: "
+"<emphasis>\"aleipho\" is a practical use of oil and \"chrio\" is a "
+"spiritual</emphasis>"
+msgstr "Так какое различие между aleipho и chrio? Просмотрите ещё раз перекрёстные ссылки и определения, и суммируйте различие: <emphasis>\"aleipho\" говорит о практическом использовании масла, а  \"chrio\" - о духовном</emphasis>"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:147
@@ -1370,7 +1331,7 @@ msgid ""
 "oil at that time, when the good Samaritan cared for the man beat up by "
 "robbers he poured oil and wine in the wound. So oil had a medicinal use in "
 "Jesus' day."
-msgstr ""
+msgstr "В качестве иллюстрации (хотя это слово не используется) практического применения масла в то время, когда Добрый Самарянин заботился о человеке, избитом разбойниками, он лил масло и вино в рану. Таким образом, масло имело целебное применение во времена Иисуса."
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:151
@@ -1379,7 +1340,7 @@ msgid ""
 "<emphasis>\"Is any among you sick? Let him call for the elders of the "
 "church; and let them pray over him, anointing him with oil in the name of "
 "the Lord.\"</emphasis>Is \"anointing\" spiritual or practical? Practical!"
-msgstr ""
+msgstr "Теперь давайте применим то, что мы только что узнали из этого исследования слова, к Иакову 5:14: <emphasis>\"болен ли кто из вас? Пусть он призовет пресвитеров Церкви, и пусть они помолятся над ним, помазав его елеем во имя Господа\"</emphasis>. Практично!"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:157
@@ -1388,9 +1349,9 @@ msgid ""
 "\"having anointed,\" so the order is the anointing first, then the prayer "
 "(\"in the name of the Lord\"refers to the prayer, not the anointing). James "
 "5 is saying that the elders should give the sick person medicine and pray "
-"for him in the name of the Lord. Doesn't that express a beautiful balance of "
-"practical and spiritual in our God!"
-msgstr ""
+"for him in the name of the Lord. Doesn't that express a beautiful balance of"
+" practical and spiritual in our God!"
+msgstr "А время в греческом языке, причастие аориста, было бы лучше перевести как \"помазание\", поэтому порядок-это сначала помазание, а затем молитва (\"во имя Господа\"относится к молитве, а не к помазанию). Иаков 5 говорит, что старейшины должны давать больному лекарство и молиться за него во имя Господа. Разве это не выражает прекрасное равновесие практического и духовного в нашем Боге!"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:167
@@ -1403,10 +1364,10 @@ msgid ""
 "Interpret scripture in harmony with other scripture. What do the verses on "
 "each side say? What is the theme of the chapter? The book? Does your "
 "interpretation fit with these? If not, it is flawed. Usually, the context "
-"supplies what we need to correctly interpret the passage. Context is key. If "
-"confusion remains as to the meaning after we have interpreted the text "
+"supplies what we need to correctly interpret the passage. Context is key. If"
+" confusion remains as to the meaning after we have interpreted the text "
 "within its context, we have to look further."
-msgstr ""
+msgstr "Интерпретируйте Писание в гармонии с другими текстами. Что говорят стихи с каждой стороны? Какова тема этой главы? Книга? Согласуется ли с ними ваша интерпретация? Если же нет, то она ошибочна. Обычно контекст дает то,что нам нужно для правильной интерпретации отрывка. Контекст-это ключ. Если после того, как мы интерпретировали текст в его контексте, остается путаница относительно смысла, мы должны смотреть дальше."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:176
@@ -1418,16 +1379,17 @@ msgstr "Пример 2А"
 msgid ""
 "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and the "
 "Spirit.\"</emphasis>In context, what is the water under discussion here?"
-msgstr ""
+msgstr "В предыдущем уроке мы рассмотрели Ин. 3: 5 <emphasis>\"рожденный от воды и Духа\".</emphasis>\nВ контексте, что такое вода, о которой здесь идет речь?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:180
 msgid ""
-"Water baptism is not under discussion here, which would be a big switch from "
-"the subject being discussed by Jesus and Nicodemus. Watch out for a sudden "
+"Water baptism is not under discussion here, which would be a big switch from"
+" the subject being discussed by Jesus and Nicodemus. Watch out for a sudden "
 "change of topic, it may be a clue that your interpretation has been "
-"derailed! The water is the amniotic fluid, \"born of water\" = natural birth."
-msgstr ""
+"derailed! The water is the amniotic fluid, \"born of water\" = natural "
+"birth."
+msgstr "Водное крещение здесь не обсуждается, что было бы большим переходом от темы, обсуждаемой Иисусом и Никодимом. Следите за внезапной сменой темы, это может быть подсказкой, что ваша интерпретация была сорвана! Вода - это амниотическая жидкость,\" рожденная из воды \" = естественное рождение."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:187
@@ -1440,7 +1402,7 @@ msgid ""
 "1 Cor.14:34 <quote>Let the women keep silent in the churches</quote>has to "
 "be taken within the biblical context of 1 Cor.11:5 <quote>every woman [...] "
 "while praying or prophesying [...]</quote>"
-msgstr ""
+msgstr "1 Кор. 14: 34 <quote>пусть женщины молчат в церквях</quote>, должно быть взято в библейском контексте 1 Кор. 11: 5<quote> каждая женщина [...] во время молитвы или пророчества [...]</quote>"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:195
@@ -1457,9 +1419,9 @@ msgid ""
 "light of the clear teaching elsewhere that regeneration happens by faith in "
 "Christ, we have to interpret it otherwise. Peter is urging baptism as a way "
 "for his hearers to respond to the gospel. If baptism were the pathway to "
-"being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did "
-"not send me to baptize, but to preach the gospel\"</emphasis>?"
-msgstr ""
+"being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did"
+" not send me to baptize, but to preach the gospel\"</emphasis>?"
+msgstr "Деяния 2: 38 <quote>и сказал им Петр: Покайтесь, и да крестится каждый из вас во имя Иисуса Христа для прощения грехов ваших. </quote> Это учение о возрождении через крещение? Если бы это был единственный стих из Писания, который у нас был, мы должны были бы сделать такой вывод. Но в свете ясного учения о том, что возрождение происходит по вере во Христа, мы должны истолковать его иначе. Петр призывает к крещению, чтобы его слушатели откликнулись на Евангелие. Если бы крещение было путем к рождению свыше, как мог бы Павел написать 1 кор.1:17: <emphasis>\"ибо Христос послал меня не крестить, но проповедовать Евангелие\"</emphasis>?"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:211
@@ -1473,7 +1435,7 @@ msgid ""
 "<quote>What did it mean to the original readers?</quote>; later we can ask, "
 "<quote>What does it mean to me?</quote>. We have to take into account the "
 "historical and cultural background of the author and the recipients."
-msgstr ""
+msgstr "Сначала мы не спрашиваем, <quote>что это значит для меня?</quote>но <quote>что это значило для первоначальных читателей?</quote>; позже мы можем спросить, <quote>что это значит для меня?</quote>. Мы должны учитывать историко-культурное происхождение автора и адресатов."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:221
@@ -1483,12 +1445,12 @@ msgstr "Пример 3А"
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:223
 msgid ""
-"<quote>3 days &amp; 3 nights</quote>(Mt.12:40) have led some to come up with "
-"a \"Wednesday crucifixion theory,\" esp. the cult of Armstrongism. How could "
-"Jesus die on Friday afternoon and rise Sunday morning yet \"be raised on the "
-"third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't help "
-"explain the apparent contradiction."
-msgstr ""
+"<quote>3 days &amp; 3 nights</quote>(Mt.12:40) have led some to come up with"
+" a \"Wednesday crucifixion theory,\" esp. the cult of Armstrongism. How "
+"could Jesus die on Friday afternoon and rise Sunday morning yet \"be raised "
+"on the third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't"
+" help explain the apparent contradiction."
+msgstr "<quote>3 дня и 3 ночи</quote> (МФ.12:40) привели некоторых к тому, что они придумали \"теорию распятия в среду\", особенно. культ Armstrongism. Как мог Иисус умереть в пятницу днем и воскреснуть утром в воскресенье, но \"воскреснуть в третий день\" (МФ.16:21)? Точные значения слов \"три\" или \" дни \" не помогут объяснить очевидное противоречие."
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:229
@@ -1501,7 +1463,7 @@ msgid ""
 "p.m. = day 1. Friday 6 p.m. to Saturday 6 p.m. = day 2. Saturday 6 p.m. to "
 "Sunday 5 or so a.m. = day 3. Interpreting within the cultural context keeps "
 "us out of trouble."
-msgstr ""
+msgstr "Нам нужен исторический лакомый кусочек: евреи считали любую часть дня полным днем, как мы считали бы ведра воды (если бы было шесть с половиной ведер воды, мы бы сказали, что было 7 ведер воды, даже если одно было только частично полным). Таким образом, для еврейского ума любая часть дня считалась полным днем, а дни начинались в 6 часов вечера и заканчивались в 6 часов вечера пятницы с 3 часов дня до 6 часов вечера = день 1. Пятница 6 вечера в субботу 6 часов = 2 дня. В субботу в 6 часов вечера в воскресенье в 5 утра = день 3. Интерпретация в культурном контексте спасает нас от неприятностей."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:240
@@ -1517,20 +1479,19 @@ msgid ""
 "dismemberment would happen to them if they didn't live up to their part of "
 "the contract. But in this case only God goes thru, making it a unilateral "
 "covenant."
-msgstr ""
+msgstr "Быт. 15: 7-21. Исторический контекст таков, что разрезание животных на две части, а затем хождение между ними было обычным способом заключения союза во времена Авраама. Обе стороны прошли между ними, взяв на себя обязательство, что их расчленят, если они не выполнят свою часть контракта. Но в этом случае действует только Бог, заключая односторонний Завет."
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:251
 msgid "Rule 4 - Interpret according to the normal usage of words in language"
-msgstr ""
-"Правило 4 - Толковать в соответствии с обычным употреблением слов в языке"
+msgstr "Правило 4 - Толковать в соответствии с обычным употреблением слов в языке"
 
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:253
 msgid ""
 "Let literal language be literal and figurative language be figurative. And "
 "watch out for idioms, which have special meanings."
-msgstr ""
+msgstr "Пусть буквальный язык будет буквальным, А образный-образным. И следите за идиомами, которые имеют особое значение."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:257
@@ -1559,7 +1520,7 @@ msgid ""
 "because I am generous [lit. \"good\"]?</emphasis>\" We find that having an "
 "\"evil eye\" is a Hebrew idiom for being stingy or envious. Now go back to "
 "Mt.6 and notice how this understanding ties in so perfectly to the context."
-msgstr ""
+msgstr "То, что мы имеем здесь, - это еврейская идиома, злой глаз. Давайте посмотрим на другие варианты использования этой идиомы: МФ. 20: 15 \" разве не законно мне делать то, что я хочу, с тем, что принадлежит мне? Или твой глаз завистлив [букв.\"злой\"], потому что я щедр [букв. \"добрый\"]?\" Мы находим, что иметь \"дурной глаз\" - это еврейская идиома, означающая быть скупым или завистливым. Теперь вернитесь к МФ. 6 и обратите внимание, как это понимание так идеально связано с контекстом."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:275
@@ -1587,25 +1548,24 @@ msgid ""
 "like these. Dr. Martin then asked the Mormons to read one more scripture: "
 "Ps.91:4 <quote>He will cover you with His feathers; And under His wings "
 "shalt thou trust</quote>. W.M. said, <quote>By the same rules of "
-"interpretation that you just proved God to be a man, you just proved that He "
-"is a bird</quote>. The Mormons had to laugh as they realised the "
+"interpretation that you just proved God to be a man, you just proved that He"
+" is a bird</quote>. The Mormons had to laugh as they realised the "
 "ridiculousness of their position."
-msgstr ""
+msgstr "Ссылки на части тела Бога используются святыми последних дней, чтобы доказать, что Бог когда-то был таким же человеком, как и мы. Как только они убедят людей в этом, они продолжат учить, что мы можем стать Богом таким же, как он! На лекции, которую он читал, группа мормонских старейшин обратилась к Уолтеру Мартину (автору книги <emphasis>Царство культов</emphasis>) с перечислением стихов, подобных этим. затем доктор Мартин попросил мормонов прочитать еще одно место Писания: Пс.90:4 <quote>перьями Своими осенит тебя, и под крыльями Его будешь безопасен</quote>. W.M. сказал: <quote>По тем же правилам толкования, по которым вы только что доказали, что Бог-это человек, вы только что доказали, что Он-птица</quote>. Мормоны не могли удержаться от смеха, осознав всю нелепость своего положения."
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:297
 msgid ""
 "Rule 5 - Understand the purpose of parables and the difference between a "
 "parable and an allegory"
-msgstr ""
-"Правило 5 - Нужно понять цель притч и разницу между притчей и аллегорией"
+msgstr "Правило 5 - Нужно понять цель притч и разницу между притчей и аллегорией"
 
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:299
 msgid ""
-"An allegory is: <emphasis>A story where each element has a meaning.</"
-"emphasis>"
-msgstr ""
+"An allegory is: <emphasis>A story where each element has a "
+"meaning.</emphasis>"
+msgstr "Иносказание - это<emphasis> история, в которой каждый элемент имеет свое значение.</emphasis>"
 
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:302
@@ -1621,7 +1581,7 @@ msgid ""
 "one point. It's dangerous to get our doctrine from parables; they can be "
 "twisted to say all sorts of things. We need to get our doctrine from clear "
 "scriptures that lay it out; then if a parable illustrates that, fine."
-msgstr ""
+msgstr "Некоторые притчи являются иносказаниями, например, притча о сеятеле-это иносказание: семя - это слово Божие, тернии-это заботы и жадность и т. д. Но большинство притч-это не иносказания, а просто истории, иллюстрирующие один момент. Опасно извлекать наше учение из притч; они могут быть искажены, чтобы сказать все виды вещей. Нам нужно получить наше учение из ясных писаний, которые излагают его; тогда, если притча иллюстрирует это, прекрасно."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:311
@@ -1631,19 +1591,17 @@ msgstr "Пример 5А"
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:312
 msgid ""
-"The parable of the widow with the unrighteous judge in Lk.18:1-8. This story "
-"illustrates one lesson: boldness in prayer.  If we draw it into an allegory, "
-"what do we have?"
-msgstr ""
+"The parable of the widow with the unrighteous judge in Lk.18:1-8. This story"
+" illustrates one lesson: boldness in prayer.  If we draw it into an "
+"allegory, what do we have?"
+msgstr "Притча о вдове с неправедным судьей в ЛК.18:1-8. Эта история иллюстрирует один урок: смелость в молитве. Если мы превратим это в иносказание, то что же мы имеем?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:315
 msgid ""
 "All sorts of violence happens to the meanings: God is reluctant to protect "
 "the rights of widows, prayer \"bothers\" Him, etc."
-msgstr ""
-"Её значение подвергается различным искажениям: Бог не желает защищать права "
-"вдов, молитвы \"досаждают\" Ему, и т.д."
+msgstr "Её значение подвергается различным искажениям: Бог не желает защищать права вдов, молитвы \"досаждают\" Ему, и т.д."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:320
@@ -1655,25 +1613,25 @@ msgstr "Пример 5Б"
 msgid ""
 "The parable of the unrighteous steward in Lk.16:1-9. What is the point of "
 "the parable? Is it an allegory?"
-msgstr ""
+msgstr "Притча о неправедном управителе в ЛК.16:1-9. В чем смысл этой притчи? Это иносказание?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:323
 msgid ""
-"The steward is commended for only one thing, his shrewdness in using what he "
-"had to prepare for a time when he wouldn't have it. But he is not commended "
-"for his unethical behavior in cheating his master."
-msgstr ""
+"The steward is commended for only one thing, his shrewdness in using what he"
+" had to prepare for a time when he wouldn't have it. But he is not commended"
+" for his unethical behavior in cheating his master."
+msgstr "Управляющего хвалят только за одно: за то, что он умел использовать то, что у него было, чтобы подготовиться к тому времени, когда у него этой возможности не будет. Но его не хвалят за неэтичное поведение, когда он обманывает своего хозяина."
 
 #. type: Content of the bibletime entity
 #: docs/howto/en/docbook/index.docbook:5
 msgid "<application>BibleTime</application>"
-msgstr ""
+msgstr "<application>BibleTime</application>"
 
 #. type: Content of the kapp entity
 #: docs/howto/en/docbook/index.docbook:6
 msgid "&bibletimehandbook;"
-msgstr ""
+msgstr "&bibletimehandbook;"
 
 #. type: Content of: <book><bookinfo><title>
 #: docs/howto/en/docbook/index.docbook:14
@@ -1683,7 +1641,7 @@ msgstr "Как изучать Библию"
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/howto/en/docbook/index.docbook:17
 msgid "Bob"
-msgstr ""
+msgstr "Боб"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/howto/en/docbook/index.docbook:18
@@ -1693,32 +1651,31 @@ msgstr ""
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/howto/en/docbook/index.docbook:22
 msgid "The BibleTime Team"
-msgstr ""
+msgstr "Команда BibleTime"
 
-#.  TRANS:ROLES_OF_TRANSLATORS 
+#.  TRANS:ROLES_OF_TRANSLATORS
 #. type: Content of: <book><bookinfo>
 #: docs/howto/en/docbook/index.docbook:26
 msgid ""
-"<copyright> <year>1999-2021</year> <holder>The &bibletime; Team (bt-"
+"<copyright> <year>1999-2016</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
-msgstr ""
+msgstr "<copyright><year>1999-2016</year><holder> команда &bibletime; (bt-devel@crosswire.org)</holder></copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:31
 msgid ""
-"This document was originally created by Mr. Bob Harman and is licensed under "
-"the terms of the license <ulink url=\"http://creativecommons.org/licenses/by-"
-"sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</ulink>."
-msgstr ""
+"This document was originally created by Mr. Bob Harman and is licensed under"
+" the terms of the license <ulink "
+"url=\"http://creativecommons.org/licenses/by-sa/3.0/\"> \"Creative Commons "
+"Attribution-Share Alike\"</ulink>."
+msgstr "Этот документ был первоначально создан мистером Бобом Харманом и лицензирован в соответствии с условиями лицензии <ulink url=\"http://creativecommons.org/licenses/by-sa/3.0/\">\"Creative Commons Attribution-Share Alike\"</ulink>."
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:35
 msgid ""
 "Scripture quotes are from the New American Standard Bible unless otherwise "
 "indicated."
-msgstr ""
-"Цитаты из Писания взяты из Синодального перевода Библии, если иное не "
-"указано."
+msgstr "Цитаты из Писания взяты из Синодального перевода Библии, если иное не указано."
 
 #. type: Content of: <book><bookinfo><abstract><title>
 #: docs/howto/en/docbook/index.docbook:39
@@ -1730,9 +1687,7 @@ msgstr "Резюме"
 msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
 "Bible."
-msgstr ""
-"<application>\"Как изучать Библию\"</application> - это помощь в изучении "
-"Библии."
+msgstr "<application>\"Как изучать Библию\"</application> - это помощь в изучении Библии."
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/howto/en/docbook/index.docbook:43
@@ -1741,16 +1696,16 @@ msgid ""
 "readers to study the scriptures to see what they say. This particular study "
 "guide has been chosen as it takes care not to advocate any particular "
 "denominational doctrine. We recommend you to read and study the scriptures "
-"to understand what they say. If you start with the attitude that you want to "
-"have the Lord sow his word in your heart He will not disappoint you."
-msgstr ""
+"to understand what they say. If you start with the attitude that you want to"
+" have the Lord sow his word in your heart He will not disappoint you."
+msgstr "Команда &bibletime; надеется, что это руководство побудит читателей изучать священные писания, чтобы понять, что они говорят. Это конкретное учебное пособие было выбрано, поскольку оно заботится о том, чтобы не пропагандировать какую-либо конкретную деноминационную доктрину. Мы рекомендуем вам читать и изучать священные писания, чтобы понять, что они говорят. Если вы начнете с позиции, что вы хотите, чтобы Господь посеял свое слово в вашем сердце, оно не разочарует вас."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/index.docbook:52
 msgid "Bible"
-msgstr ""
+msgstr "Библия"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/index.docbook:54
 msgid "HowTo"
-msgstr ""
+msgstr "Инструкция"
