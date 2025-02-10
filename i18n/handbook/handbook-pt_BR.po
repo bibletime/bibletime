@@ -2222,7 +2222,7 @@ msgstr "<menuchoice><guimenu>Ver</guimenu><guimenuitem> rolagem automática para
 #. type: Content of:
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
-msgstr "<keycombo action=\"simul\"><keycap>&Espaço; </keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"><keycap>&Space; </keycap></keycombo>"
 
 #. type: Content of:
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
