@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, https://bibletime.info/
 *
-* Copyright 1999-2021 by the BibleTime developers.
+* Copyright 1999-2025 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -195,7 +195,7 @@ void BtAboutDialog::retranslateBtTab() {
     QString content("<p>");
     content += tr("BibleTime is an easy to use but powerful Bible study tool.");
     content += "</p><p>";
-    content += tr("(c)1999-2021, The BibleTime Team");
+    content += tr("(c)1999-2025, The BibleTime Team");
     content += "</p><p>" MAKE_LINK_STATIC("https://bibletime.info", "bibletime.info")
                "</p>";
     m_bibletimeTab->setHtml(MAKE_HTML(m_bibletimeTab, content));
