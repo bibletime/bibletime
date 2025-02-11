@@ -73,7 +73,13 @@ BtFindWidget::BtFindWidget(QWidget * parent)
 
     // Case checkbox:
     m_caseCheckBox = new QCheckBox(this);
-    BT_CONNECT(m_caseCheckBox, &QCheckBox::stateChanged,
+    #if (QT_VERSION < QT_VERSION_CHECK(6, 7, 0))
+    constexpr static auto const stateChangeSignal = &QCheckBox::stateChanged;
+    #else
+    constexpr static auto const stateChangeSignal =
+            &QCheckBox::checkStateChanged;
+    #endif
+    BT_CONNECT(m_caseCheckBox, stateChangeSignal,
                this, &BtFindWidget::queueHighlight);
     widgetLayout->addWidget(m_caseCheckBox);
 
