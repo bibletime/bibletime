@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2021 The Bibletime Team, https://bibletime.info
+Copyright (C) 1999-2025 The Bibletime Team, https://bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -1004,7 +1004,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
-        <source>(c)1999-2021, The BibleTime Team</source>
+        <source>(c)1999-2025, The BibleTime Team</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -24,12 +24,12 @@
   </authorgroup>
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
   <copyright>
-    <year>1999-2021</year>
+    <year>1999-2025</year>
     <holder>The &bibletime; Team (bt-devel@crosswire.org)</holder>
   </copyright>
   <legalnotice>
     <para>This document was originally created by Mr. Bob Harman and is
-      licensed under the terms of the license 
+      licensed under the terms of the license
       <ulink url="http://creativecommons.org/licenses/by-sa/3.0/">
       "Creative Commons Attribution-Share Alike"</ulink>.</para>
     <para>Scripture quotes are from the New American Standard Bible
@@ -37,7 +37,7 @@
   </legalnotice>
   <abstract>
     <title>Abstract</title>
-    <para>The 
+    <para>The
       <application>Biblestudy HowTo</application> is a guide for studying
       the Bible.</para>
     <para>It is the hope of the &bibletime; team that this HowTo

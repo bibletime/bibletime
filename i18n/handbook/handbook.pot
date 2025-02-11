@@ -2213,10 +2213,10 @@ msgstr ""
 msgid "Holmlund"
 msgstr ""
 
-#.  TRANS:ROLES_OF_TRANSLATORS 
+#.  TRANS:ROLES_OF_TRANSLATORS
 #. type: Content of: <book><bookinfo>
 msgid ""
-"<copyright> <year>1999-2021</year> <holder>The &bibletime; Team</holder> "
+"<copyright> <year>1999-2025</year> <holder>The &bibletime; Team</holder> "
 "</copyright>"
 msgstr ""
 
