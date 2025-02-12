@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 1999-2025 The Bibletime Team, https://bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -593,14 +593,14 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>工具組工具列</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="842"/>
-        <source>Scroll</source>
-        <translation>翻</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="859"/>
         <source>Show &quot;What&apos;s this widget&quot; dialog</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="842"/>
+        <source>Scroll</source>
+        <translation>翻</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="307"/>
@@ -903,11 +903,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
-        <source>(c)1999-2021, The BibleTime Team</source>
-        <translation type="unfinished">c)1999-2020, BibleTime團隊 {1999-2021,?}</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="205"/>
         <source>&amp;Contributors</source>
         <translation>貢獻者&amp;C</translation>
@@ -1008,6 +1003,11 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>美工</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
+        <source>(c)1999-2025, The BibleTime Team</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>documentation</source>
@@ -1049,17 +1049,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="133"/>
         <source>Select book</source>
-        <translation type="unfinished">選擇書目</translation>
+        <translation>選擇書目</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="150"/>
         <source>Select chapter</source>
-        <translation type="unfinished">選擇章節</translation>
+        <translation>選擇章節</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="169"/>
         <source>Select verse</source>
-        <translation type="unfinished">選擇節數</translation>
+        <translation>選擇節數</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="195"/>
@@ -1388,7 +1388,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="134"/>
         <source>Default Session</source>
-        <translation type="unfinished">默認階段</translation>
+        <translation>默認階段</translation>
     </message>
 </context>
 <context>
@@ -1574,23 +1574,23 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtFindWidget</name>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="127"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="133"/>
         <source>The text you want to search for</source>
         <comment>findWidget</comment>
         <translation>你想要搜尋的文字</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="129"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="135"/>
         <source>Previous</source>
         <translation>前</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="130"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="136"/>
         <source>Next</source>
         <translation>下</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="131"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="137"/>
         <source>Match case</source>
         <translation>大小寫匹配</translation>
     </message>
@@ -1621,72 +1621,72 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtIndexDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="99"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="105"/>
         <source>Indexed Works</source>
         <translation>以建立索引的書目</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="106"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="112"/>
         <source>Unindexed Works</source>
         <translation>未建立索引書目</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="116"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="122"/>
         <source>%1 KiB</source>
         <translation>%1 KiB</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="122"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="128"/>
         <source>0 KiB</source>
         <translation>0 KiB</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="130"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="136"/>
         <source>Manage Search Indexes</source>
         <translation>管理搜尋索引</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="133"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="139"/>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
         <translation>如果勾選, 沒有相對應書目的索引會在BibleTime啟動時被刪除</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="136"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="142"/>
         <source>Automatically delete orphaned indexes when BibleTime starts</source>
         <translation>當Bible Time啟動時,自動刪除單獨的索引</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="139"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="145"/>
         <source>Delete the selected indexes</source>
         <translation>刪除選擇的索引</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="140"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="146"/>
         <source>Delete</source>
         <translation>刪除</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="142"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="148"/>
         <source>&amp;Close</source>
         <translation>關閉&amp;C</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="144"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="150"/>
         <source>Create new indexes for the selected works</source>
         <translation>為選定的書目建立新的索引</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="145"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="151"/>
         <source>Create...</source>
         <translation>建立...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="147"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="153"/>
         <source>Work</source>
         <translation>著作</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="147"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="153"/>
         <source>Index size</source>
         <translation>索引大小</translation>
     </message>
@@ -1817,13 +1817,13 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="58"/>
         <source>Edit Plain text</source>
         <comment>Personal Commentary Editor</comment>
-        <translation type="unfinished">編輯純文本</translation>
+        <translation>編輯純文本</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="60"/>
         <source>Edit HTML text</source>
         <comment>Personal Commentary Editor</comment>
-        <translation type="unfinished">編輯HTML</translation>
+        <translation>編輯HTML</translation>
     </message>
 </context>
 <context>
@@ -2753,33 +2753,33 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="111"/>
         <source>Copy reference only</source>
-        <translation type="unfinished">僅複製經節</translation>
+        <translation>僅複製經節</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="114"/>
         <source>Save entry as HTML</source>
-        <translation type="unfinished">儲存項目為 HTML</translation>
+        <translation>儲存項目為 HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="117"/>
         <source>Print reference only</source>
-        <translation type="unfinished">僅列印經節</translation>
+        <translation>僅列印經節</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="120"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="126"/>
         <source>Entry with text</source>
-        <translation type="unfinished">項目文字</translation>
+        <translation>項目文字</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="123"/>
         <source>Entry as plain text</source>
-        <translation type="unfinished">項目為純文字</translation>
+        <translation>項目為純文字</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="129"/>
         <source>Strong&apos;s Search</source>
-        <translation type="unfinished">Strong&apos;s 搜尋</translation>
+        <translation>Strong&apos;s 搜尋</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="198"/>
@@ -2795,7 +2795,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="342"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="355"/>
         <source>Saving</source>
-        <translation type="unfinished">正在儲存</translation>
+        <translation>正在儲存</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="404"/>
@@ -2805,17 +2805,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="530"/>
         <source>Copy...</source>
-        <translation type="unfinished">複製...</translation>
+        <translation>複製...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="539"/>
         <source>Save...</source>
-        <translation type="unfinished">儲存...</translation>
+        <translation>儲存...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="548"/>
         <source>Print...</source>
-        <translation type="unfinished">列印...</translation>
+        <translation>列印...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="689"/>
@@ -3064,135 +3064,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="43"/>
         <source>Desk</source>
         <translation>桌面</translation>
-    </message>
-</context>
-<context>
-    <name>CSwordSetupInstallSourcesDialog</name>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="52"/>
-        <source>New Installation Source</source>
-        <translation>新建安裝來源</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="60"/>
-        <source>Caption</source>
-        <translation>標題</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="75"/>
-        <source>Type</source>
-        <translation>類型</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="78"/>
-        <source>Server</source>
-        <translation>伺服器</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="81"/>
-        <source>Path</source>
-        <translation>路徑</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="86"/>
-        <source>Remote FTP</source>
-        <translation type="unfinished">遠程 FTP</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="87"/>
-        <source>Remote SFTP</source>
-        <translation type="unfinished">遠程 SFTP</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="88"/>
-        <source>Remote HTTP</source>
-        <translation type="unfinished">遠程 HTTP</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="89"/>
-        <source>Remote HTTPS</source>
-        <translation type="unfinished">遠程 HTTPS</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="90"/>
-        <source>Local</source>
-        <translation type="unfinished">本機</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="104"/>
-        <source>Get list...</source>
-        <translation>取得清單...</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="105"/>
-        <source>Download a list of sources from CrossWire server and add sources</source>
-        <translation>從CrossWire伺服器下載來源清單並且加入來源</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="191"/>
-        <source>Error</source>
-        <translation>錯誤</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="166"/>
-        <source>Please provide a caption.</source>
-        <translation>請提供標題.</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="170"/>
-        <source>A source with this caption already exists. Please provide a different caption.</source>
-        <translation>有這個標題的來源已經存在.請提供不同的標題.</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="177"/>
-        <source>Please provide a server name.</source>
-        <translation>請提供伺服器名稱.</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="187"/>
-        <source>Please provide a valid, readable path.</source>
-        <translation>請提供有效的, 可讀的路徑.</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="183"/>
-        <source>Please provide a path.</source>
-        <translation>請提供路徑.</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="112"/>
-        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
-
-Do you want to continue?</source>
-        <translation>來源清單將從遠端伺服器下載. 來源將被加入到現有清單內.
-如果有相同標籤,,新的來源會取代舊的.
-你之後可以移除你不想要保留的來源來源.
-
-你要繼續嗎?</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="111"/>
-        <source>Get source list from remote server?</source>
-        <translation>從遠端伺服器取得來源清單?</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="125"/>
-        <source>Cancel</source>
-        <translation>取消</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="130"/>
-        <source>Downloading List</source>
-        <translation>下載清單</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="124"/>
-        <source>Connecting...</source>
-        <translation>連接中...</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="142"/>
-        <source>Refreshing...</source>
-        <translation>刷新資料中...</translation>
     </message>
 </context>
 <context>
@@ -3491,6 +3362,11 @@ Do you want to continue?</source>
         <translation>希臘文, 古代 (至1453)</translation>
     </message>
     <message>
+        <location filename="../../src/backend/language.cpp" line="149"/>
+        <source>Hebrew, Ancient</source>
+        <translation>古希伯來語</translation>
+    </message>
+    <message>
         <location filename="../../src/backend/language.cpp" line="150"/>
         <source>Hebrew</source>
         <translation>希伯來文</translation>
@@ -3569,11 +3445,6 @@ Do you want to continue?</source>
         <location filename="../../src/backend/language.cpp" line="166"/>
         <source>Ixil, San Juan Cotzal</source>
         <translation>Ixil, San Juan Cotzal</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/language.cpp" line="149"/>
-        <source>Hebrew, Ancient</source>
-        <translation>古希伯來語</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="168"/>

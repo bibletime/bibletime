@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 1999-2025 The Bibletime Team, https://bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -593,14 +593,14 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Панель знарядь</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="842"/>
-        <source>Scroll</source>
-        <translation>Гортання</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="859"/>
         <source>Show &quot;What&apos;s this widget&quot; dialog</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="842"/>
+        <source>Scroll</source>
+        <translation>Гортання</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="307"/>
@@ -903,11 +903,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
-        <source>(c)1999-2021, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2020, Команда BibleTime {1999-2021,?}</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="205"/>
         <source>&amp;Contributors</source>
         <translation>&amp;Сприячі</translation>
@@ -1008,6 +1003,11 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>художник</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
+        <source>(c)1999-2025, The BibleTime Team</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>documentation</source>
@@ -1049,17 +1049,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="133"/>
         <source>Select book</source>
-        <translation type="unfinished">Оберіть книгу</translation>
+        <translation>Оберіть книгу</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="150"/>
         <source>Select chapter</source>
-        <translation type="unfinished">Оберіть розділ</translation>
+        <translation>Оберіть розділ</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="169"/>
         <source>Select verse</source>
-        <translation type="unfinished">Оберіть вірш</translation>
+        <translation>Оберіть вірш</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="195"/>
@@ -1388,7 +1388,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="134"/>
         <source>Default Session</source>
-        <translation type="unfinished">Типова сесія</translation>
+        <translation>Типова сесія</translation>
     </message>
 </context>
 <context>
@@ -1574,23 +1574,23 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtFindWidget</name>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="127"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="133"/>
         <source>The text you want to search for</source>
         <comment>findWidget</comment>
         <translation>Текст, який потрібно шукати</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="129"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="135"/>
         <source>Previous</source>
         <translation>Попереднє</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="130"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="136"/>
         <source>Next</source>
         <translation>Наступне</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="131"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="137"/>
         <source>Match case</source>
         <translation>Враховувати регістр</translation>
     </message>
@@ -1621,72 +1621,72 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtIndexDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="99"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="105"/>
         <source>Indexed Works</source>
         <translation>Індексовані Книги</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="106"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="112"/>
         <source>Unindexed Works</source>
         <translation>Неіндексовані Книги</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="116"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="122"/>
         <source>%1 KiB</source>
         <translation>%1 КіБ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="122"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="128"/>
         <source>0 KiB</source>
         <translation>0 КіБ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="130"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="136"/>
         <source>Manage Search Indexes</source>
         <translation>Керування Пошуковими Індексами</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="133"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="139"/>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
         <translation>Якщо вибрано, індекси для відсутніх книг буде вилучено при старті програми</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="136"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="142"/>
         <source>Automatically delete orphaned indexes when BibleTime starts</source>
         <translation>Автоматично вилучати самотні індекси на старті BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="139"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="145"/>
         <source>Delete the selected indexes</source>
         <translation>Вилучити вибрані індекси</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="140"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="146"/>
         <source>Delete</source>
         <translation>Вилучити</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="142"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="148"/>
         <source>&amp;Close</source>
         <translation>&amp;Закрити</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="144"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="150"/>
         <source>Create new indexes for the selected works</source>
         <translation>Створити нові індекси для вибраних книг</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="145"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="151"/>
         <source>Create...</source>
         <translation>Створити...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="147"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="153"/>
         <source>Work</source>
         <translation>Модулі</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="147"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="153"/>
         <source>Index size</source>
         <translation>Розмір індексу</translation>
     </message>
@@ -1817,13 +1817,13 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="58"/>
         <source>Edit Plain text</source>
         <comment>Personal Commentary Editor</comment>
-        <translation type="unfinished">Змінити початковий текст</translation>
+        <translation>Змінити початковий текст</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="60"/>
         <source>Edit HTML text</source>
         <comment>Personal Commentary Editor</comment>
-        <translation type="unfinished">Змінити HTML текст</translation>
+        <translation>Змінити HTML текст</translation>
     </message>
 </context>
 <context>
@@ -1881,12 +1881,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="135"/>
         <source>Action</source>
-        <translation type="unfinished"></translation>
+        <translation>Дія</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="136"/>
         <source>Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Ярлик</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="137"/>
@@ -2583,7 +2583,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="133"/>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Темний</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="135"/>
@@ -2755,33 +2755,33 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="111"/>
         <source>Copy reference only</source>
-        <translation type="unfinished">Копіювати лише посилання</translation>
+        <translation>Копіювати лише посилання</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="114"/>
         <source>Save entry as HTML</source>
-        <translation type="unfinished">Зберегти запис як HTML</translation>
+        <translation>Зберегти запис як HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="117"/>
         <source>Print reference only</source>
-        <translation type="unfinished">Друкувати лише посилання</translation>
+        <translation>Друкувати лише посилання</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="120"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="126"/>
         <source>Entry with text</source>
-        <translation type="unfinished">Запис з текстом</translation>
+        <translation>Запис з текстом</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="123"/>
         <source>Entry as plain text</source>
-        <translation type="unfinished">Запис як простий текст</translation>
+        <translation>Запис як простий текст</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="129"/>
         <source>Strong&apos;s Search</source>
-        <translation type="unfinished">Пошук за номером Стронґа</translation>
+        <translation>Пошук за номером Стронґа</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="198"/>
@@ -2797,7 +2797,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="342"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="355"/>
         <source>Saving</source>
-        <translation type="unfinished">Збереження</translation>
+        <translation>Збереження</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="404"/>
@@ -2807,17 +2807,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="530"/>
         <source>Copy...</source>
-        <translation type="unfinished">Копіювати...</translation>
+        <translation>Копіювати...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="539"/>
         <source>Save...</source>
-        <translation type="unfinished">Зберегти...</translation>
+        <translation>Зберегти...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="548"/>
         <source>Print...</source>
-        <translation type="unfinished">Друк...</translation>
+        <translation>Друк...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="689"/>
@@ -3066,133 +3066,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="43"/>
         <source>Desk</source>
         <translation>Профілі</translation>
-    </message>
-</context>
-<context>
-    <name>CSwordSetupInstallSourcesDialog</name>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="52"/>
-        <source>New Installation Source</source>
-        <translation>Нове джерело встановлення</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="60"/>
-        <source>Caption</source>
-        <translation>Заголовок</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="75"/>
-        <source>Type</source>
-        <translation>Тип</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="78"/>
-        <source>Server</source>
-        <translation>Сервер</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="81"/>
-        <source>Path</source>
-        <translation>Шлях</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="86"/>
-        <source>Remote FTP</source>
-        <translation type="unfinished">Віддалений FTP</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="87"/>
-        <source>Remote SFTP</source>
-        <translation type="unfinished">Віддалений SFTP</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="88"/>
-        <source>Remote HTTP</source>
-        <translation type="unfinished">Віддалений HTTP</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="89"/>
-        <source>Remote HTTPS</source>
-        <translation type="unfinished">Віддалений HTTPS</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="90"/>
-        <source>Local</source>
-        <translation type="unfinished">Локальний</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="104"/>
-        <source>Get list...</source>
-        <translation>Отримати перелік ...</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="105"/>
-        <source>Download a list of sources from CrossWire server and add sources</source>
-        <translation>Завантажити та додати перелік джерел із сервера Crosswire</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="191"/>
-        <source>Error</source>
-        <translation>Помилка</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="166"/>
-        <source>Please provide a caption.</source>
-        <translation>Будь ласка, надайте підпис.</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="170"/>
-        <source>A source with this caption already exists. Please provide a different caption.</source>
-        <translation>Джерело з таким іменем вже існує. Будь ласка, вкажіть інше ім&apos;я.</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="177"/>
-        <source>Please provide a server name.</source>
-        <translation>Будь ласка вкажіть ім&apos;я сервера</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="187"/>
-        <source>Please provide a valid, readable path.</source>
-        <translation>Вкажіть правильний, читабельний шлях</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="183"/>
-        <source>Please provide a path.</source>
-        <translation>Вкажіть шлях</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="112"/>
-        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
-
-Do you want to continue?</source>
-        <translation>Перелік джерел буде завантажено з сервера та додано до поточного переліку. Нові джерела замінять старі з таким самим іменем. За бажання ви зможете їх вилучити..
-
-Ви бажаєте продовжити?</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="111"/>
-        <source>Get source list from remote server?</source>
-        <translation>Завантажити перелік джерел із сервера?</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="125"/>
-        <source>Cancel</source>
-        <translation>Скасувати</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="130"/>
-        <source>Downloading List</source>
-        <translation>Завантажити перелік</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="124"/>
-        <source>Connecting...</source>
-        <translation>З&apos;єднання...</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="142"/>
-        <source>Refreshing...</source>
-        <translation>Оновлення...</translation>
     </message>
 </context>
 <context>
@@ -3491,6 +3364,11 @@ Do you want to continue?</source>
         <translation>Грецька, древня (до 1453)</translation>
     </message>
     <message>
+        <location filename="../../src/backend/language.cpp" line="149"/>
+        <source>Hebrew, Ancient</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/backend/language.cpp" line="150"/>
         <source>Hebrew</source>
         <translation>Єврейська</translation>
@@ -3569,11 +3447,6 @@ Do you want to continue?</source>
         <location filename="../../src/backend/language.cpp" line="166"/>
         <source>Ixil, San Juan Cotzal</source>
         <translation>Іксіл, Сан-Хуан Коцал</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/language.cpp" line="149"/>
-        <source>Hebrew, Ancient</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="168"/>
