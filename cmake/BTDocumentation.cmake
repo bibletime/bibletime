@@ -195,7 +195,7 @@ $lang:${CMAKE_CURRENT_SOURCE_DIR}/i18n/${doc}/${doc}-$lang.po\n")
             SET(stampFile "${docbookDir}/stamp")
             ADD_CUSTOM_COMMAND(OUTPUT "${stampFile}"
                 COMMAND "${PO4A_COMMAND}" --verbose --no-backups --keep 0
-                    --porefs none "${confFile}"
+                    --porefs never "${confFile}"
                 COMMAND "${CMAKE_COMMAND}" -E touch "${stampFile}"
                 DEPENDS "${confFile}" ${inputs})
             AddDocSubTarget("${doc}_translations" "${doc}_translation_${l}"
