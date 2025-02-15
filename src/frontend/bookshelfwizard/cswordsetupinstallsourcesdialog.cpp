@@ -43,6 +43,9 @@
 namespace {
 
 enum class SourceProtocol : int { Local, FTP, SFTP, HTTP, HTTPS };
+#if 0
+{} // Workaround QTBUG-128904
+#endif
 
 } // anonymous namespace
 
