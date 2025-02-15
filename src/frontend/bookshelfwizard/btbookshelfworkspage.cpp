@@ -91,8 +91,10 @@ BtBookshelfWorksPage::BtBookshelfWorksPage(WizardTaskType iType,
                                            QWidget * parent)
     : BtBookshelfWizardPage(parent)
     , m_taskType(iType)
-    , m_groupingOrder(btConfig(), groupingOrderKey)
 {
+    if (!m_groupingOrder.loadFrom(btConfig(), groupingOrderKey))
+        m_groupingOrder = BtBookshelfTreeModel::Grouping::DEFAULT;
+
     // Initialize menus:
     m_groupingMenu = new BtBookshelfGroupingMenu(this);
     m_contextMenu = new QMenu(this);
@@ -296,9 +298,8 @@ void BtBookshelfWorksPage::initializePage() {
     }
 
     // Set grouping:
-    static BtBookshelfTreeModel::Grouping const cat(
-            BtBookshelfTreeModel::GROUP_CATEGORY);
-    static BtBookshelfTreeModel::Grouping const catLang; // No grouping
+    auto const & cat = BtBookshelfTreeModel::Grouping::CAT;
+    auto const & catLang = BtBookshelfTreeModel::Grouping::CAT_LANG;
     if (languages.count() == 1) {
         slotGroupingActionTriggered(cat);
     } else if (languages.count() > 1 && m_groupingOrder == cat) {
@@ -310,7 +311,7 @@ void BtBookshelfWorksPage::slotGroupingActionTriggered(
         BtBookshelfTreeModel::Grouping const & grouping)
 {
     m_installPageModel->setGroupingOrder(grouping);
-    m_bookshelfView->setRootIsDecorated(!grouping.isEmpty());
+    m_bookshelfView->setRootIsDecorated(!grouping.list().isEmpty());
 }
 
 bool BtBookshelfWorksPage::isComplete() const

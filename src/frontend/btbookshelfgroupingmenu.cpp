@@ -16,30 +16,11 @@
 #include <QActionGroup>
 #include <QVariant>
 #include "../backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "../util/cresmgr.h"
 
 
 namespace {
-bool groupsInitialized = false;
-BtBookshelfTreeModel::Grouping groupingNone(true);
-BtBookshelfTreeModel::Grouping groupingCat(true);
-BtBookshelfTreeModel::Grouping groupingCatLang;
-BtBookshelfTreeModel::Grouping groupingLang(true);
-BtBookshelfTreeModel::Grouping groupingLangCat(true);
-
-inline void initializeGroups() {
-    BT_ASSERT(groupingNone.empty());
-    groupingCat.append(BtBookshelfTreeModel::GROUP_CATEGORY);
-    BT_ASSERT(groupingCatLang.size() == 2);
-    BT_ASSERT(groupingCatLang.at(0) == BtBookshelfTreeModel::GROUP_CATEGORY);
-    BT_ASSERT(groupingCatLang.at(1) == BtBookshelfTreeModel::GROUP_LANGUAGE);
-    groupingLang.append(BtBookshelfTreeModel::GROUP_LANGUAGE);
-    groupingLangCat.append(BtBookshelfTreeModel::GROUP_LANGUAGE);
-    groupingLangCat.append(BtBookshelfTreeModel::GROUP_CATEGORY);
-    groupsInitialized = true;
-}
 
 inline void setActionRef(QAction *a, const BtBookshelfTreeModel::Grouping &g) {
     a->setProperty("groupingPointer",
@@ -56,8 +37,6 @@ inline const BtBookshelfTreeModel::Grouping &getActionRef(const QAction *a) {
 
 
 void BtBookshelfGroupingMenu::initMenu(bool showNoGrouping) {
-    if (!groupsInitialized) initializeGroups();
-
     setIcon(CResMgr::mainIndex::grouping::icon());
 
     m_groupingActionGroup = new QActionGroup(this);
@@ -66,34 +45,36 @@ void BtBookshelfGroupingMenu::initMenu(bool showNoGrouping) {
                [this](QAction * const action)
                { Q_EMIT signalGroupingOrderChanged(getActionRef(action)); });
 
+    using G = BtBookshelfTreeModel::Grouping;
+
     m_groupingCatLangAction = new QAction(this);
     m_groupingCatLangAction->setCheckable(true);
-    setActionRef(m_groupingCatLangAction, groupingCatLang);
+    setActionRef(m_groupingCatLangAction, G::CAT_LANG);
     m_groupingActionGroup->addAction(m_groupingCatLangAction);
     addAction(m_groupingCatLangAction);
 
     m_groupingCatAction = new QAction(this);
     m_groupingCatAction->setCheckable(true);
-    setActionRef(m_groupingCatAction, groupingCat);
+    setActionRef(m_groupingCatAction, G::CAT);
     m_groupingActionGroup->addAction(m_groupingCatAction);
     addAction(m_groupingCatAction);
 
     m_groupingLangCatAction = new QAction(this);
     m_groupingLangCatAction->setCheckable(true);
-    setActionRef(m_groupingLangCatAction, groupingLangCat);
+    setActionRef(m_groupingLangCatAction, G::LANG_CAT);
     m_groupingActionGroup->addAction(m_groupingLangCatAction);
     addAction(m_groupingLangCatAction);
 
     m_groupingLangAction = new QAction(this);
     m_groupingLangAction->setCheckable(true);
-    setActionRef(m_groupingLangAction, groupingLang);
+    setActionRef(m_groupingLangAction, G::LANG);
     m_groupingActionGroup->addAction(m_groupingLangAction);
     addAction(m_groupingLangAction);
 
     if (showNoGrouping) {
         m_groupingNoneAction = new QAction(this);
         m_groupingNoneAction->setCheckable(true);
-        setActionRef(m_groupingNoneAction, groupingNone);
+        setActionRef(m_groupingNoneAction, G::NONE);
         m_groupingActionGroup->addAction(m_groupingNoneAction);
         addAction(m_groupingNoneAction);
     } else {

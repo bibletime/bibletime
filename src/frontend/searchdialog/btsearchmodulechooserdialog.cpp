@@ -34,8 +34,8 @@ BtSearchModuleChooserDialog::BtSearchModuleChooserDialog(QWidget *parent,
     : BtModuleChooserDialog(parent, flags)
 {
     // Initialize the tree model:
-    BtBookshelfTreeModel::Grouping grouping(btConfig(), groupingOrderKey);
-    BtBookshelfTreeModel *treeModel = new BtBookshelfTreeModel(grouping, this);
+    auto * const treeModel =
+            new BtBookshelfTreeModel(btConfig(), groupingOrderKey, this);
     treeModel->setCheckable(true);
     BT_CONNECT(treeModel, &BtBookshelfTreeModel::groupingOrderChanged,
                [](BtBookshelfTreeModel::Grouping const & grouping)

@@ -32,6 +32,18 @@
 
 using namespace BookshelfModel;
 
+BtBookshelfTreeModel::Grouping const BtBookshelfTreeModel::Grouping::NONE;
+BtBookshelfTreeModel::Grouping const BtBookshelfTreeModel::Grouping::CAT =
+        { GROUP_CATEGORY };
+BtBookshelfTreeModel::Grouping const BtBookshelfTreeModel::Grouping::CAT_LANG =
+        { GROUP_CATEGORY, GROUP_LANGUAGE };
+BtBookshelfTreeModel::Grouping const BtBookshelfTreeModel::Grouping::LANG =
+        { GROUP_LANGUAGE };
+BtBookshelfTreeModel::Grouping const BtBookshelfTreeModel::Grouping::LANG_CAT =
+        { GROUP_LANGUAGE, GROUP_CATEGORY };
+BtBookshelfTreeModel::Grouping const BtBookshelfTreeModel::Grouping::DEFAULT =
+        CAT_LANG;
+
 bool BtBookshelfTreeModel::Grouping::loadFrom(BtConfigCore const & config,
                                               QString const & key)
 {
@@ -60,11 +72,17 @@ BtBookshelfTreeModel::BtBookshelfTreeModel(QObject * const parent)
 BtBookshelfTreeModel::BtBookshelfTreeModel(BtConfigCore const & config,
                                            QString const & configKey,
                                            QObject * const parent)
-       : QAbstractItemModel(parent)
-       , m_rootItem(std::make_unique<RootItem>())
-       , m_groupingOrder(config, configKey)
-       , m_defaultChecked(MODULE_HIDDEN)
-       , m_checkable(false) {}
+    : QAbstractItemModel(parent)
+    , m_rootItem(std::make_unique<RootItem>())
+    , m_groupingOrder(
+        [](BtConfigCore const & config_, QString const & configKey_){
+            if (Grouping grouping; grouping.loadFrom(config_, configKey_))
+                return grouping;
+            return Grouping::DEFAULT;
+        }(config, configKey))
+    , m_defaultChecked(MODULE_HIDDEN)
+    , m_checkable(false)
+{}
 
 BtBookshelfTreeModel::BtBookshelfTreeModel(Grouping const & grouping,
                                            QObject * const parent)
@@ -379,7 +397,7 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module,
     bool beginInsert = !inReset;
     QModelIndex parentIndex;
     {
-        Grouping intermediateGrouping(m_groupingOrder);
+        auto intermediateGrouping = m_groupingOrder.list();
         while (!intermediateGrouping.empty()) {
             switch (intermediateGrouping.takeFirst()) {
                 case GROUP_CATEGORY:
@@ -600,22 +618,23 @@ void BtBookshelfTreeModel::moduleRemoved(QModelIndex const & parent,
 QDataStream & operator <<(QDataStream & os,
                           BtBookshelfTreeModel::Grouping const & o)
 {
-    os << o.size();
-    for (BtBookshelfTreeModel::Group const g : o)
-        os << static_cast<std::underlying_type<decltype(g)>::type>(g);
+    os << o.list().size();
+    for (auto const g : o.list())
+        os << static_cast<std::underlying_type_t<decltype(g)>>(g);
     return os;
 }
 
 QDataStream & operator >>(QDataStream & is,
                           BtBookshelfTreeModel::Grouping & o)
 {
-    int s;
+    decltype(o.list().size()) s;
     is >> s;
-    o.clear();
-    for (int i = 0; i < s; i++) {
+    decltype(o.m_list) newList;
+    for (decltype(s) i = 0; i < s; i++) {
         std::underlying_type_t<BtBookshelfTreeModel::Group> g;
         is >> g;
-        o.append(static_cast<BtBookshelfTreeModel::Group>(g));
+        newList.append(static_cast<BtBookshelfTreeModel::Group>(g));
     }
+    o.m_list = std::move(newList);
     return is;
 }

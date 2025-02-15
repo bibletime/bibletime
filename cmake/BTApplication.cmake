@@ -57,7 +57,7 @@ IF(WIN32)
     ADD_COMPILE_OPTIONS("/Zi")
 ELSE()
     ADD_COMPILE_OPTIONS(
-        "-O2" "-ggdb" "-Wall" "-Wextra"
+        "-ggdb" "-Wall" "-Wextra"
         "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DNDEBUG>"
         "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DQT_NO_DEBUG>"
     )

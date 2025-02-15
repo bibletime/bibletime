@@ -14,6 +14,7 @@
 
 #include <QAbstractItemModel>
 
+#include <initializer_list>
 #include <memory>
 #include <QList>
 #include <QObject>
@@ -63,34 +64,43 @@ public: // types:
         MODULE_INDEXED  /**< By default, check only added modules that are indexed. */
     };
 
-    class Grouping: public QList<Group> {
+    class Grouping {
 
-        public: // methods:
+    public: // methods:
 
-            /**
-              \warning Be careful using this constructor!
-            */
-            explicit Grouping(bool const empty = false) {
-                if (empty)
-                    return;
-                push_back(GROUP_CATEGORY);
-                push_back(GROUP_LANGUAGE);
-            }
+        Grouping() = default;
+        Grouping(Grouping && copy) = default;
+        Grouping(Grouping const & copy) = default;
+        Grouping(std::initializer_list<Group> values) : m_list(values) {}
 
-            explicit Grouping(Group const group) { push_back(group); }
+        ~Grouping() = default;
 
-            Grouping(BtConfigCore const & config, QString const & key) {
-                if (loadFrom(config, key))
-                    return;
-                push_back(GROUP_CATEGORY);
-                push_back(GROUP_LANGUAGE);
-            }
+        Grouping & operator=(Grouping && copy) = default;
+        Grouping & operator=(Grouping const & copy) = default;
 
-            Grouping(Grouping const & copy) = default;
-            Grouping & operator=(Grouping const & copy) = default;
+        auto const & list() const noexcept { return m_list; }
 
-            bool loadFrom(BtConfigCore const & config, QString const & key);
-            void saveTo(BtConfigCore & config, QString const & key) const;
+        bool loadFrom(BtConfigCore const & config, QString const & key);
+        void saveTo(BtConfigCore & config, QString const & key) const;
+
+        friend bool operator==(Grouping const & lhs, Grouping const & rhs)
+        { return lhs.list() == rhs.list(); }
+
+        friend QDataStream &
+        operator>>(QDataStream & is, BtBookshelfTreeModel::Grouping & o);
+
+    public: // fields:
+
+        static Grouping const NONE;
+        static Grouping const CAT;
+        static Grouping const CAT_LANG;
+        static Grouping const LANG;
+        static Grouping const LANG_CAT;
+        static Grouping const DEFAULT;
+
+    private: // fields:
+
+        QList<Group> m_list;
 
     };
 
@@ -99,7 +109,7 @@ public: // methods:
     BtBookshelfTreeModel(QObject * parent = nullptr);
     BtBookshelfTreeModel(BtConfigCore const & config,
                          QString const & configKey,
-                         QObject * parent = nullptr);
+                         QObject * const parent = nullptr);
     BtBookshelfTreeModel(Grouping const & grouping, QObject * parent = nullptr);
     ~BtBookshelfTreeModel() override;
 

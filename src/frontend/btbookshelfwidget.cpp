@@ -122,7 +122,7 @@ void BtBookshelfWidget::initMenus() {
                &BtBookshelfGroupingMenu::signalGroupingOrderChanged,
                [this](BtBookshelfTreeModel::Grouping const & grouping) {
                    m_treeModel->setGroupingOrder(grouping);
-                   m_treeView->setRootIsDecorated(!grouping.isEmpty());
+                   m_treeView->setRootIsDecorated(!grouping.list().isEmpty());
                });
 
     // Context menu
