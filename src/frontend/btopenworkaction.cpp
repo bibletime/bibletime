@@ -71,7 +71,7 @@ void BtOpenWorkActionMenu::postBuildMenu(QActionGroup * actions) {
     Q_UNUSED(actions)
     addSeparator();
     m_groupingMenu = new BtBookshelfGroupingMenu(false, this);
-
+    m_groupingMenu->setGrouping(m_treeModel->groupingOrder());
     BT_CONNECT(m_groupingMenu,
                &BtBookshelfGroupingMenu::signalGroupingOrderChanged,
                [this](BtBookshelfTreeModel::Grouping const & grouping) {
