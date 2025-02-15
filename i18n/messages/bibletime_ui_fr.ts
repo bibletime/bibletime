@@ -142,57 +142,57 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Manuel d&apos;étude de la &amp;Bible</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="413"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="350"/>
         <source>Error locating handbook!</source>
         <translation>Erreur lors de la localisation du manuel&#x202f;!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="414"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="351"/>
         <source>A suitable installed handbook could not be found!</source>
         <translation>Un manuel installé approprié n&apos;a pas été trouvé&#x202f;!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="420"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="357"/>
         <source>Error opening handbook!</source>
         <translation>Erreur lors de l&apos;ouverture du manuel&#x202f;!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="421"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="358"/>
         <source>The installed handbook could not be opened!</source>
         <translation>Le manuel installé n&apos;a pas pu être ouvert&#x202f;!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="429"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="366"/>
         <source>Error locating howto!</source>
         <translation>Erreur lors de la localisation du tutoriel&#x202f;!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="430"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="367"/>
         <source>A suitable installed howto could not be found!</source>
         <translation>Un tutoriel installé approprié n&apos;a pas été trouvé&#x202f;!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="436"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="373"/>
         <source>Error opening howto!</source>
         <translation>Erreur lors de l&apos;ouverture du tutoriel&#x202f;!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="437"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="374"/>
         <source>The installed howto could not be opened!</source>
         <translation>Le tutoriel installé n&apos;a pas pu être ouvert&#x202f;!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="726"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="663"/>
         <source>Please enter a name for the new session.</source>
         <translation>Veuillez entrer un nom pour la nouvelle session.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="734"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="671"/>
         <source>Session already exists</source>
         <translation>La session existe déjà</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="735"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="672"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
         <translation>Une session avec le nom &quot;%1&quot; existe déjà. Veuillez saisir un nom différent.</translation>
     </message>
@@ -663,7 +663,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Chercher dans la Bible standard</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="725"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="662"/>
         <source>New Session</source>
         <translation>Nouvelle session</translation>
     </message>
@@ -835,32 +835,32 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Supprimer des ouvrages installés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="201"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="204"/>
         <source>Install Works</source>
         <translation>Installer des ouvrages</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="202"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="205"/>
         <source>Choose one or more works to install.</source>
         <translation>Choisir un ou plusieurs ouvrages à installer.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="207"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="210"/>
         <source>Update Works</source>
         <translation>Mettre à jour des ouvrages</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="208"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="211"/>
         <source>Choose one or more works to update.</source>
         <translation>Choisir un ou plusieurs ouvrages à mettre à jour.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="214"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="217"/>
         <source>Remove Works</source>
         <translation>Supprimer des ouvrages</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="215"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="218"/>
         <source>Choose one or more works to remove.</source>
         <translation>Choisir un ou plusieurs ouvrages à supprimer.</translation>
     </message>
@@ -1259,23 +1259,23 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfWidget</name>
     <message>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="170"/>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="173"/>
         <source>Fi&amp;lter:</source>
         <translation>Fi&amp;ltre&#x202f;:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="171"/>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="173"/>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="174"/>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="176"/>
         <source>Grouping</source>
         <translation>Grouper</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="172"/>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="175"/>
         <source>Change the grouping of items in the bookshelf.</source>
         <translation>Modifier le groupement des éléments dans la bibliothèque.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="174"/>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="177"/>
         <source>Show/hide works</source>
         <translation>Montrer/cacher les ouvrages</translation>
     </message>
@@ -1283,62 +1283,62 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfWorksPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="199"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="202"/>
         <source>Fi&amp;lter:</source>
         <translation>Fi&amp;ltre&#x202f;:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="205"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="208"/>
         <source>Install Works &gt;</source>
         <translation>Installer les ouvrages &gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="211"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="214"/>
         <source>Update Works &gt;</source>
         <translation>Mettre à jour les ouvrages &gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="218"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="221"/>
         <source>Remove Works &gt;</source>
         <translation>Supprimer les ouvrages &gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="222"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="225"/>
         <source>Install &amp;folder:</source>
         <translation>Installer le &amp;dossier&#x202f;:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="223"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="226"/>
         <source>The folder where the new works will be installed</source>
         <translation>Le dossier où les nouveaux ouvrages seront installés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="228"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="231"/>
         <source>There are no works to update.</source>
         <translation>Il n&apos;y a pas d&apos;ouvrages à mettre à jour.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="230"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="233"/>
         <source>No works are currently installed so they cannot be removed.</source>
         <translation>Aucun ouvrage n&apos;est actuellement installé, il ne peut donc pas être supprimé.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="235"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="238"/>
         <source>No works can be installed with the current selection of remote libraries and languages. Please go back and make a different selection.</source>
         <translation>Aucun ouvrage ne peut être installé avec la sélection actuelle de bibliothèques et de langues distantes. Veuillez revenir en arrière et faire une sélection différente.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="240"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="243"/>
         <source>Grouping:</source>
         <translation>Rassembler&#x202f;:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="241"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="244"/>
         <source>Grouping</source>
         <translation>Grouper</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="243"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="246"/>
         <source>Change the grouping of items in the bookshelf.</source>
         <translation>Modifier le groupement des éléments dans la bibliothèque.</translation>
     </message>
@@ -1837,12 +1837,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtSearchModuleChooserDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="62"/>
+        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="61"/>
         <source>Works to Search in</source>
         <translation>Ouvrages dans lesquelles rechercher</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="64"/>
+        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="63"/>
         <source>Select the works which should be searched.</source>
         <translation>Sélectionner les ouvrages dans lesquelles il faut rechercher.</translation>
     </message>
@@ -3068,24 +3068,151 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>CSwordSetupInstallSourcesDialog</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="55"/>
+        <source>New Installation Source</source>
+        <translation>Nouvelle source d&apos;installation </translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="63"/>
+        <source>Caption</source>
+        <translation>Légende</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="78"/>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="81"/>
+        <source>Server</source>
+        <translation>Serveur</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="84"/>
+        <source>Path</source>
+        <translation>Chemin</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="89"/>
+        <source>Remote FTP</source>
+        <translation>FTP distant</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="90"/>
+        <source>Remote SFTP</source>
+        <translation>SFTP distant</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="91"/>
+        <source>Remote HTTP</source>
+        <translation>HTTP distant</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="92"/>
+        <source>Remote HTTPS</source>
+        <translation>HTTPS distant</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="93"/>
+        <source>Local</source>
+        <translation>Local</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="107"/>
+        <source>Get list...</source>
+        <translation>Obtenir la liste…</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="108"/>
+        <source>Download a list of sources from CrossWire server and add sources</source>
+        <translation>Télécharger une liste de sources à partir du serveur CrossWire et ajouter des sources</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="114"/>
+        <source>Get source list from remote server?</source>
+        <translation>Obtenir la liste des sources du serveur distant&#x202f;?</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="115"/>
+        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
+
+Do you want to continue?</source>
+        <translation>La liste des sources sera téléchargée à partir d&apos;un serveur distant. Les sources seront ajoutées à la liste actuelle. Une nouvelle source remplacera une ancienne si elle a la même étiquette. Vous pouvez ensuite supprimer les sources que vous ne souhaitez pas conserver.
+
+Voulez-vous continuer&#x202f;?</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="127"/>
+        <source>Connecting...</source>
+        <translation>Connexion…</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="128"/>
+        <source>Cancel</source>
+        <translation>Annuler</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="133"/>
+        <source>Downloading List</source>
+        <translation>Téléchargement de la liste</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="145"/>
+        <source>Refreshing...</source>
+        <translation>Rafraîchissement…</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="169"/>
+        <source>Please provide a caption.</source>
+        <translation>Veuillez fournir une légende.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="173"/>
+        <source>A source with this caption already exists. Please provide a different caption.</source>
+        <translation>Une source avec cette légende existe déjà. Veuillez fournir une légende différente.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="180"/>
+        <source>Please provide a server name.</source>
+        <translation>Veuillez indiquer un nom de serveur.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="186"/>
+        <source>Please provide a path.</source>
+        <translation>Veuillez entrer un chemin.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="190"/>
+        <source>Please provide a valid, readable path.</source>
+        <translation>Veuillez fournir un chemin valide et lisible.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="194"/>
+        <source>Error</source>
+        <translation>Erreur</translation>
+    </message>
+</context>
+<context>
     <name>DebugWindow</name>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="66"/>
+        <location filename="../../src/frontend/debugwindow.cpp" line="30"/>
         <source>What&apos;s this widget?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="84"/>
+        <location filename="../../src/frontend/debugwindow.cpp" line="48"/>
         <source>&lt;b&gt;child of:&lt;/b&gt; %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="88"/>
+        <location filename="../../src/frontend/debugwindow.cpp" line="52"/>
         <source>&lt;b&gt;This widget is:&lt;/b&gt; %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="95"/>
+        <location filename="../../src/frontend/debugwindow.cpp" line="59"/>
         <source>No widget</source>
         <translation type="unfinished"></translation>
     </message>

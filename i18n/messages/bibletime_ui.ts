@@ -2251,7 +2251,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <source>The shortcut &quot;%1&quot; you want to assign to &quot;%2&quot; in the &quot;%3&quot; group conflicts with the following %n shortcut(s):</source>
         <translation type="unfinished">
             <numerusform></numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message>

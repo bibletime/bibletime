@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2025-02-12 22:20+0200\n"
+"POT-Creation-Date: 2025-02-15 17:45+0200\n"
 "PO-Revision-Date: 2011-12-11 21:42+0000\n"
 "Last-Translator: rokmcssu <yaraba@daum.net>, 2017\n"
 "Language-Team: Korean (http://app.transifex.com/bibletime/bibletime/language/"
