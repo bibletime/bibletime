@@ -13,7 +13,6 @@
 #include "bibletime.h"
 
 #include <QAction>
-#include <QApplication>
 #include <QClipboard>
 #include <QCursor>
 #include <QDesktopServices>
@@ -23,7 +22,6 @@
 #include <QMetaObject>
 #include <QProcess>
 #include <QtGlobal>
-#include <QTextEdit>
 #include <QTimerEvent>
 #include <QToolBar>
 #include <QUrl>
@@ -36,6 +34,7 @@
 #include "cinfodisplay.h"
 #include "cmdiarea.h"
 #include "bookshelfwizard/btbookshelfwizard.h"
+#include "debugwindow.h"
 #include "display/btfindwidget.h"
 #include "display/btmodelviewreaddisplay.h"
 #include "displaywindow/btmodulechooserbar.h"
@@ -44,68 +43,6 @@
 #include "settingsdialogs/cconfigurationdialog.h"
 #include "tips/bttipdialog.h"
 
-
-namespace {
-
-class DebugWindow : public QTextEdit {
-
-public: // methods:
-
-    DebugWindow()
-        : QTextEdit(nullptr)
-        , m_updateTimerId(startTimer(100))
-    {
-        setWindowFlags(Qt::Dialog);
-        setAttribute(Qt::WA_DeleteOnClose);
-        setReadOnly(true);
-        retranslateUi();
-        show();
-    }
-
-    void retranslateUi()
-    { setWindowTitle(tr("What's this widget?")); }
-
-    void timerEvent(QTimerEvent * const event) override {
-        if (event->timerId() == m_updateTimerId) {
-            if (QObject const * w = QApplication::widgetAt(QCursor::pos())) {
-                QString objectHierarchy;
-                do {
-                    QMetaObject const * m = w->metaObject();
-                    QString classHierarchy;
-                    do {
-                        if (!classHierarchy.isEmpty())
-                            classHierarchy += QStringLiteral(": ");
-                        classHierarchy += m->className();
-                        m = m->superClass();
-                    } while (m);
-                    if (!objectHierarchy.isEmpty()) {
-                        objectHierarchy
-                                .append(QStringLiteral("<br/>"))
-                                .append(tr("<b>child of:</b> %1").arg(
-                                            classHierarchy));
-                    } else {
-                        objectHierarchy.append(
-                                    tr("<b>This widget is:</b> %1").arg(
-                                        classHierarchy));
-                    }
-                    w = w->parent();
-                } while (w);
-                setHtml(objectHierarchy);
-            } else {
-                setText(tr("No widget"));
-            }
-        } else {
-            QTextEdit::timerEvent(event);
-        }
-    }
-
-private: // fields:
-
-    int const m_updateTimerId;
-
-}; // class DebugWindow
-
-} // anonymous namespace
 
 /** Opens the optionsdialog of BibleTime. */
 void BibleTime::slotSettingsOptions() {
