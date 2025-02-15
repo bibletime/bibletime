@@ -17,7 +17,6 @@
 #include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../../backend/config/btconfig.h"
 #include "../../backend/drivers/btconstmoduleset.h"
-#include "../../backend/drivers/btmoduleset.h"
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/btconnect.h"
 #include "../../util/tool.h"
