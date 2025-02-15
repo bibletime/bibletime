@@ -89,6 +89,9 @@ void BtBookshelfWidget::setTreeModel(BtBookshelfTreeModel *model) {
     BT_ASSERT(model);
     BT_ASSERT(!m_treeModel);
     m_treeModel = model;
+    m_groupingMenu->setGrouping(m_treeModel->groupingOrder());
+    BT_CONNECT(m_treeModel, &BtBookshelfTreeModel::groupingOrderChanged,
+               m_groupingMenu, &BtBookshelfGroupingMenu::setGrouping);
     if (m_sourceModel != nullptr) {
         model->setSourceModel(m_sourceModel);
     }

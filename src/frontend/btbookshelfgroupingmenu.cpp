@@ -36,6 +36,25 @@ inline const BtBookshelfTreeModel::Grouping &getActionRef(const QAction *a) {
 } // anonymous namespace
 
 
+void BtBookshelfGroupingMenu::setGrouping(
+        BtBookshelfTreeModel::Grouping const & grouping)
+{
+    using G = BtBookshelfTreeModel::Grouping;
+    if (grouping == G::CAT_LANG) {
+        m_groupingCatLangAction->setChecked(true);
+    } else if (grouping == G::CAT) {
+        m_groupingCatAction->setChecked(true);
+    } else if (grouping == G::LANG_CAT) {
+        m_groupingLangCatAction->setChecked(true);
+    } else if (grouping == G::LANG) {
+        m_groupingLangAction->setChecked(true);
+    } else {
+        BT_ASSERT(grouping == G::NONE);
+        if (m_groupingNoneAction)
+            m_groupingNoneAction->setChecked(true);
+    }
+}
+
 void BtBookshelfGroupingMenu::initMenu(bool showNoGrouping) {
     setIcon(CResMgr::mainIndex::grouping::icon());
 
