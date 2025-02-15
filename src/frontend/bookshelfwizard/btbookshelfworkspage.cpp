@@ -97,6 +97,7 @@ BtBookshelfWorksPage::BtBookshelfWorksPage(WizardTaskType iType,
 
     // Initialize menus:
     m_groupingMenu = new BtBookshelfGroupingMenu(this);
+    m_groupingMenu->setGrouping(m_groupingOrder);
     m_contextMenu = new QMenu(this);
     m_contextMenu->addMenu(m_groupingMenu);
     m_itemContextMenu = m_contextMenu;
