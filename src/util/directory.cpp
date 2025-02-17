@@ -87,7 +87,7 @@ bool initDirectoryCache() {
         if (!cachedSharedSwordDir->mkdir(SWORD_DIR)
             || !cachedSharedSwordDir->cd(SWORD_DIR))
         {
-            qWarning() << "Cannot find " << programDataDir << " \\Sword";
+            qWarning() << "Cannot find " << cachedSharedSwordDir->absolutePath() << " \\Sword";
             return false;
         }
     }
