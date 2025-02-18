@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2021 The Bibletime Team, https://bibletime.info
+Copyright (C) 1999-2025 The Bibletime Team, https://bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -903,11 +903,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
-        <source>(c)1999-2025, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="205"/>
         <source>&amp;Contributors</source>
         <translation>&amp;Toetajad</translation>
@@ -1006,6 +1001,11 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="209"/>
         <source>artist</source>
         <translation>kunstnik</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
+        <source>(c)1999-2025, The BibleTime Team</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
@@ -3130,9 +3130,38 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Lae alla allikate nimekiri CrossWire serverist ja lisa need allikad</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="194"/>
-        <source>Error</source>
-        <translation>Viga</translation>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="114"/>
+        <source>Get source list from remote server?</source>
+        <translation>Kas laadida allikate nimekiri välisest serverist?</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="115"/>
+        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
+
+Do you want to continue?</source>
+        <translation>Allikate nimekiri laetakse alla välisest serverist. Saadud allikad lisatakse käesolevasse nimekirja. Sama nimega allikad asendatakse. Hiljem on võimalik soovimatud allikad eemalda.
+
+Kas soovite jätkata?</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="127"/>
+        <source>Connecting...</source>
+        <translation>Ühendumine...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="128"/>
+        <source>Cancel</source>
+        <translation>Katkesta</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="133"/>
+        <source>Downloading List</source>
+        <translation>Nimekirja allalaadimine</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="145"/>
+        <source>Refreshing...</source>
+        <translation>Värskendamine...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="169"/>
@@ -3150,48 +3179,19 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Palun sisestage ka serveri nimi.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="190"/>
-        <source>Please provide a valid, readable path.</source>
-        <translation>Palun sisestage kehtiv, lugemisõigustega asukoht.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="186"/>
         <source>Please provide a path.</source>
         <translation>Palun sisestage ka asukoht.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="115"/>
-        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
-
-Do you want to continue?</source>
-        <translation>Allikate nimekiri laetakse alla välisest serverist. Saadud allikad lisatakse käesolevasse nimekirja. Sama nimega allikad asendatakse. Hiljem on võimalik soovimatud allikad eemalda.
-
-Kas soovite jätkata?</translation>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="190"/>
+        <source>Please provide a valid, readable path.</source>
+        <translation>Palun sisestage kehtiv, lugemisõigustega asukoht.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="114"/>
-        <source>Get source list from remote server?</source>
-        <translation>Kas laadida allikate nimekiri välisest serverist?</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="128"/>
-        <source>Cancel</source>
-        <translation>Katkesta</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="133"/>
-        <source>Downloading List</source>
-        <translation>Nimekirja allalaadimine</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="127"/>
-        <source>Connecting...</source>
-        <translation>Ühendumine...</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="145"/>
-        <source>Refreshing...</source>
-        <translation>Värskendamine...</translation>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="194"/>
+        <source>Error</source>
+        <translation>Viga</translation>
     </message>
 </context>
 <context>
@@ -3917,7 +3917,7 @@ Kas soovite jätkata?</translation>
     <message>
         <location filename="../../src/backend/language.cpp" line="298"/>
         <source>Yoruba</source>
-        <translation type="unfinished"></translation>
+        <translation>joruba</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="301"/>
