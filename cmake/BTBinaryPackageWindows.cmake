@@ -18,7 +18,7 @@ IF(WIN32 AND NOT UNIX)
     # We need the libraries, and they're not pulled in automatically
     SET(CMAKE_INSTALL_DEBUG_LIBRARIES TRUE)
 
-    SET(QT_BINARY_DIR "${Qt5Core_DIR}/../../../bin")
+    SET(QT_BINARY_DIR "${QT_DIR}/../../../bin")
     INSTALL(DIRECTORY
         "${QT_BINARY_DIR}/../translations"
         DESTINATION "${BT_BINDIR}"
