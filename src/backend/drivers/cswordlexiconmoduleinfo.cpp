@@ -41,8 +41,12 @@
 #pragma GCC diagnostic pop
 
 
-//Change it once the format changed to make all systems rebuild their caches
-#define CACHE_FORMAT "3"
+namespace {
+
+// Change it once the format changed to make all systems rebuild their caches
+constexpr quint8 const cacheFormat = 4;
+
+} // Anonymous namespace
 
 CSwordLexiconModuleInfo::CSwordLexiconModuleInfo(sword::SWModule & module,
                                                  CSwordBackend & backend)
@@ -81,31 +85,76 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
     QFile cacheFile(QStringLiteral("%1/%2")
                     .arg(DU::getUserCacheDir().absolutePath(), name()));
 
+    QString const moduleVersion = config(CSwordModuleInfo::ModuleVersion);
+
+    auto const writeCache = [this,&cacheFile,&moduleVersion]{
+        qDebug() << "Writing cache file" << cacheFile.fileName();
+        if (cacheFile.open(QIODevice::WriteOnly)) {
+            QDataStream s(&cacheFile);
+            s.setVersion(QDataStream::Qt_5_15);
+            s << moduleVersion
+              << QString::number(cacheFormat)
+              << QString::number(QDataStream::Qt_DefaultCompiledVersion);
+            s.setVersion(QDataStream::Qt_DefaultCompiledVersion);
+            s << m_entries;
+            cacheFile.close();
+
+            if (s.status() == QDataStream::Ok) {
+                qDebug() << "Cache file written successfully!";
+            } else {
+                qDebug() << "Failed to write cache file! Attempting to remove.";
+                if (cacheFile.remove()) {
+                    qDebug() << "Removed potentially corrupt cache.";
+                } else {
+                    qDebug() << "Failed to remove potentially corrupt cache!";
+                }
+            }
+        } else {
+            qDebug() << "Failed to open cache file for writing!";
+        }
+    };
+
     /*
      * Try the module's cache
      */
     if (cacheFile.open(QIODevice::ReadOnly)) {
+        qDebug() << "Reading lexicon cache for module" << name() << "...";
         QDataStream s(&cacheFile);
-        QString ModuleVersion, CacheVersion, QDataStreamVersion;
-        s >> ModuleVersion;
-        s >> CacheVersion;
-        s >> QDataStreamVersion;
+        s.setVersion(QDataStream::Qt_5_15);
+        QString str;
+        s >> str;
+        qDebug() << "  module version:" << str;
+        if (str == moduleVersion) {
+            s >> str;
+            qDebug() << "  cache version:" << str;
+            bool isNumber = false;
+            auto const cacheVersion = str.toInt(&isNumber);
+            if (isNumber && cacheVersion <= cacheFormat) {
+                s >> str;
+                qDebug() << "  QDataStream version:" << str;
+                auto const dataStreamVersion = str.toInt(&isNumber);
+                if (isNumber
+                    && dataStreamVersion
+                        <= QDataStream::Qt_DefaultCompiledVersion)
+                {
+                    auto const resetVersion = cacheVersion >= 4;
+                    qDebug() << "  QDataStream version reset:" << resetVersion;
+                    if (resetVersion)
+                        s.setVersion(dataStreamVersion);
+                    s >> m_entries;
+                    if (s.status() == QDataStream::Ok) {
+                        qDebug() << "  entries read:" << m_entries.size();
+                        cacheFile.close();
 
-        qDebug() << "Lexicon cache metadata"
-        << "Name" << name()
-        << "ModuleVersion" << ModuleVersion
-        << "CacheVersion" << CacheVersion
-        << "QDataStreamVersion" << QDataStreamVersion;
+                        // Update cache format:
+                        if (cacheVersion != cacheFormat)
+                            writeCache();
 
-        // Check if cache is valid
-        if (ModuleVersion == config(CSwordModuleInfo::ModuleVersion)
-                && CacheVersion == CACHE_FORMAT
-                && QDataStreamVersion == QString::number(s.version())) {
-            s >> m_entries;
-
-            cacheFile.close();
-            qDebug() << "Read" << m_entries.count() << "entries from lexicon cache for module" << name();
-            return m_entries;
+                        return m_entries;
+                    }
+                    m_entries.clear();
+                }
+            }
         }
 
         cacheFile.close();
@@ -140,19 +189,7 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
     if (!m_entries.empty() && m_entries.front().simplified().isEmpty())
         m_entries.pop_front();
 
-    qDebug() << "Writing cache file for lexicon module" << name();
-
-    if (m_entries.count()) {
-        //create cache
-        if (cacheFile.open( QIODevice::WriteOnly )) {
-            QDataStream s(&cacheFile);
-            s << config(CSwordModuleInfo::ModuleVersion) //store module version
-            << QString(CACHE_FORMAT) //store BT version -- format may change
-            << QString::number(s.version()) //store QDataStream version -- format may change
-            << m_entries;
-            cacheFile.close();
-        }
-    }
+    writeCache();
 
     return m_entries;
 }
