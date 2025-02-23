@@ -286,20 +286,27 @@ void BibleTimeApp::initBackends() {
     // If this is not done here, the sword locales.d won't be found
 
     #if defined(Q_OS_WIN) || defined(Q_OS_MAC)
-        QFile file(util::directory::getUserHomeSwordDir().filePath(
-                       QStringLiteral("sword.conf")));
-        if (file.exists() || !file.open(QIODevice::WriteOnly | QIODevice::Text))
-            return;
-        QTextStream out(&file);
-        out << "\n";
-        out << "[Install]\n";
-    #if defined(Q_OS_WIN)
-        out << "DataPath="   << QDir::toNativeSeparators(util::directory::getSharedSwordDir().absolutePath()) << "\n";
-        out << "LocalePath=" << QDir::toNativeSeparators(util::directory::getApplicationSwordDir().absolutePath()) << "\n";
-    #elif defined(Q_OS_MAC)
-        out << "DataPath="   << QDir::toNativeSeparators(util::directory::getUserHomeSwordDir().absolutePath()) << "\n";
-    #endif
-        out << "\n";
+    {
+        QFile file(
+                util::directory::getUserHomeSwordDir().filePath(
+                    QStringLiteral("sword.conf")));
+        if (!file.exists() && file.open(QIODevice::WriteOnly | QIODevice::Text))
+        {
+            QTextStream(&file)
+                << QStringLiteral("\n[Install]\nDataPath=")
+            #if defined(Q_OS_WIN)
+                << QDir::toNativeSeparators(
+                       util::directory::getSharedSwordDir().absolutePath())
+                << QStringLiteral("\nLocalePath=")
+                << QDir::toNativeSeparators(
+                       util::directory::getApplicationSwordDir().absolutePath())
+            #elif defined(Q_OS_MAC)
+                << QDir::toNativeSeparators(
+                       util::directory::getUserHomeSwordDir().absolutePath())
+            #endif
+                << '\n';
+        }
+    }
     #endif
 
     sword::SWLog::getSystemLog()->setLogLevel(btApp->debugMode()
