@@ -16,9 +16,9 @@ defaults:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     container:
-      image: debian:11
+      image: debian:12
       env:
         DEBIAN_FRONTEND: noninteractive
     steps:
@@ -27,13 +27,11 @@ jobs:
       run: |
         mkdir -p "${HOME}/info"
         cd "${HOME}/info"
-        echo 2 > num_threads
+        echo 4 > num_threads
     - name: Install required packages
       run: |
         apt-get update
-        apt-get install --no-install-recommends -yyy \
-          ca-certificates \
-          ccache \
+        apt-get install --no-install-recommends --no-install-suggests -Vy \
           cmake \
           docbook-xml \
           docbook-xsl \
@@ -42,15 +40,13 @@ jobs:
           git \
           libclucene-dev \
           libsword-dev \
-          libqt5svg5-dev \
-          libqt5xmlpatterns5-dev \
           make \
           pkg-config \
           po4a \
-          qtbase5-dev \
-          qtdeclarative5-dev \
-          qttools5-dev \
-          qtwebengine5-dev \
+          qt6-base-dev \
+          qt6-declarative-dev \
+          qt6-svg-dev \
+          qt6-tools-dev \
           xsltproc
     - name: Configure the build
       run: |
