@@ -119,7 +119,7 @@ LIST(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 SET(BT_VERSION_MAJOR "3")
 SET(BT_VERSION_MINOR "1")
-SET(BT_VERSION_PATCH "0_rc4")
+SET(BT_VERSION_PATCH "0")
 #SET(BT_VERSION_BUILD "") # Temporarily uncomment this line for release procedures
 
 # Determine build, if needed:
