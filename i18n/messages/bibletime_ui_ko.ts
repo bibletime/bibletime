@@ -1574,23 +1574,23 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtFindWidget</name>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="133"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="132"/>
         <source>The text you want to search for</source>
         <comment>findWidget</comment>
         <translation>찾으려는 내용</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="135"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="134"/>
         <source>Previous</source>
         <translation>이전</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="136"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="135"/>
         <source>Next</source>
         <translation>다음</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="137"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="136"/>
         <source>Match case</source>
         <translation>대소문자 구분</translation>
     </message>

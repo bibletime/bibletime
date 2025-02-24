@@ -1574,23 +1574,23 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtFindWidget</name>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="133"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="132"/>
         <source>The text you want to search for</source>
         <comment>findWidget</comment>
         <translation>Text, ktorý chcete hľadať</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="135"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="134"/>
         <source>Previous</source>
         <translation>Predchádzajúce</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="136"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="135"/>
         <source>Next</source>
         <translation>Ďalšie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="137"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="136"/>
         <source>Match case</source>
         <translation>Rozlišovať veľkosť písmen</translation>
     </message>
