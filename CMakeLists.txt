@@ -15,9 +15,6 @@ CMAKE_POLICY(SET CMP0028 NEW)
 ######################################################
 # Build-time user options:
 #
-SET(USE_QT6 "ON" CACHE BOOL
-    "Whether to build with Qt6 instead of Qt5.")
-
 SET(BUILD_BIBLETIME "ON" CACHE BOOL
     "Whether to build and install the BibleTime application")
 

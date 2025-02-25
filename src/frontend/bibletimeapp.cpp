@@ -124,11 +124,6 @@ BibleTimeApp::BibleTimeApp(int &argc, char **argv)
     setApplicationVersion(BT_VERSION);
     setDesktopFileName(QStringLiteral("info.bibletime.BibleTime"));
 
-    // Support for retina displays
-    #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-    this->setAttribute(Qt::AA_UseHighDpiPixmaps);
-    #endif
-
     #ifdef Q_OS_WIN
     // On Windows, add a path for Qt plugins to be loaded from:
     addLibraryPath(applicationDirPath() + QStringLiteral("/plugins"));

@@ -412,11 +412,7 @@ void BibleTime::saveProfile() {
 void BibleTime::loadProfile(QAction * action) {
     BT_ASSERT(action);
     QVariant keyProperty = action->property("ProfileKey");
-    #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-    BT_ASSERT(keyProperty.type() == QVariant::String);
-    #else
     BT_ASSERT(keyProperty.typeId() == QMetaType::QString);
-    #endif
     BT_ASSERT(btConfig().sessionNames().contains(keyProperty.toString()));
     loadProfile(keyProperty.toString());
 }
@@ -568,11 +564,7 @@ void BibleTime::reloadProfile() {
 void BibleTime::deleteProfile(QAction* action) {
     BT_ASSERT(action);
     QVariant keyProperty = action->property("ProfileKey");
-    #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-    BT_ASSERT(keyProperty.type() == QVariant::String);
-    #else
     BT_ASSERT(keyProperty.typeId() == QMetaType::QString);
-    #endif
     BT_ASSERT(btConfig().sessionNames().contains(keyProperty.toString()));
 
     /// \todo Ask for confirmation

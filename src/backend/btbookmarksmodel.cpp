@@ -31,9 +31,6 @@
 #include <QIODevice>
 #include <QList>
 #include <QString>
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-    #include <QTextCodec>
-#endif
 #include <QTextStream>
 #include <QTime>
 #include <QTimer>
@@ -339,11 +336,7 @@ public: // methods:
 
         QTextStream t;
         t.setAutoDetectUnicode(false);
-        #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-        t.setCodec(QTextCodec::codecForName(QByteArrayLiteral("UTF-8")));
-        #else
         t.setEncoding(QStringConverter::Utf8);
-        #endif
 
         QFile file(fileName);
         if (!file.open(QIODevice::ReadOnly))

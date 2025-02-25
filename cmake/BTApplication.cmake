@@ -2,14 +2,7 @@
 # Find packages:
 #
 FIND_PACKAGE(CLucene REQUIRED)
-
-IF (USE_QT6)
-    FIND_PACKAGE(QT NAMES Qt6 VERSION 6.4 COMPONENTS Core)
-ELSE()
-    FIND_PACKAGE(QT NAMES Qt5 VERSION 5.15 REQUIRED COMPONENTS Core)
-ENDIF()
-MESSAGE(STATUS "Found Qt ${QT_VERSION}")
-FIND_PACKAGE(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS
+FIND_PACKAGE(Qt6 REQUIRED COMPONENTS
     Core
     Gui
     LinguistTools
@@ -22,10 +15,6 @@ FIND_PACKAGE(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS
     Quick
     QuickWidgets
 )
-IF(NOT USE_QT6)
-    FIND_PACKAGE(Qt5 REQUIRED COMPONENTS QuickCompiler)
-ENDIF()
-
 FIND_PACKAGE(Sword 1.8.1 REQUIRED)
 
 ######################################################
@@ -163,11 +152,6 @@ FILE(GLOB_RECURSE bibletime_SOURCES CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.h"
 )
-if (NOT USE_QT6)
-    qtquick_compiler_add_resources(bibletime_RESOURCES
-        "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview/modelviewqml.qrc")
-    LIST(APPEND bibletime_SOURCES ${bibletime_RESOURCES})
-ENDIF()
 IF(APPLE)
     ADD_EXECUTABLE("bibletime" MACOSX_BUNDLE ${bibletime_SOURCES})
     SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "BibleTime")
@@ -178,26 +162,24 @@ ELSE()
 ENDIF()
 PREPARE_CXX_TARGET(bibletime)
 
-if (USE_QT6)
-    SET(bibletime_QML_PATH
-        "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview")
-    FILE(GLOB bibletime_QML_FILES CONFIGURE_DEPENDS
-        "${bibletime_QML_PATH}/*.qml")
-    FOREACH(file IN LISTS bibletime_QML_FILES)
-        STRING(REGEX REPLACE "^.*/([^/]+)$" "\\1" filename "${file}")
-        SET_SOURCE_FILES_PROPERTIES("${file}" PROPERTIES
-            QT_RESOURCE_ALIAS "${filename}")
-    ENDFOREACH()
-    QT_ADD_QML_MODULE("bibletime"
-        URI "BibleTime"
-        RESOURCE_PREFIX "/qt/qml"
-        NO_RESOURCE_TARGET_PATH
-        VERSION 1.0
-        QML_FILES ${bibletime_QML_FILES}
-    )
-    INCLUDE_DIRECTORIES( # work around QTBUG-87221/QTBUG-93443
-        "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview/")
-ENDIF()
+SET(bibletime_QML_PATH
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview")
+FILE(GLOB bibletime_QML_FILES CONFIGURE_DEPENDS
+    "${bibletime_QML_PATH}/*.qml")
+FOREACH(file IN LISTS bibletime_QML_FILES)
+    STRING(REGEX REPLACE "^.*/([^/]+)$" "\\1" filename "${file}")
+    SET_SOURCE_FILES_PROPERTIES("${file}" PROPERTIES
+        QT_RESOURCE_ALIAS "${filename}")
+ENDFOREACH()
+QT_ADD_QML_MODULE("bibletime"
+    URI "BibleTime"
+    RESOURCE_PREFIX "/qt/qml"
+    NO_RESOURCE_TARGET_PATH
+    VERSION 1.0
+    QML_FILES ${bibletime_QML_FILES}
+)
+INCLUDE_DIRECTORIES( # work around QTBUG-87221/QTBUG-93443
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview/")
 
 TARGET_LINK_LIBRARIES("bibletime"
     PRIVATE

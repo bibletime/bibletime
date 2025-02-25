@@ -135,16 +135,6 @@ void registerMetaTypes() {
     qRegisterMetaType<BtBookshelfTreeModel::Grouping>(
         "BtBookshelfTreeModel::Grouping");
 
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-    qRegisterMetaTypeStreamOperators<BtBookshelfTreeModel::Grouping>(
-        "BtBookshelfTreeModel::Grouping");
-    qRegisterMetaTypeStreamOperators<alignmentMode>("alignmentMode");
-    qRegisterMetaTypeStreamOperators<CSwordModuleSearch::SearchType>(
-        "SearchType");
-    qRegisterMetaTypeStreamOperators<BtConfig::StringMap>("StringMap");
-    qRegisterMetaTypeStreamOperators<QList<int> >("QList<int>");
-#endif
-
     BtQmlInterface::typeId =
         qmlRegisterSingletonType<BtQmlInterface>(
             "BibleTime",
@@ -219,12 +209,7 @@ int main(int argc, char* argv[]) {
     if (qtTranslator.load(defaultLocale,
                           QStringLiteral("qt_"),
                           QString(),
-                          #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-                          QLibraryInfo::location(
-                          #else
-                          QLibraryInfo::path(
-                          #endif
-                              QLibraryInfo::TranslationsPath)))
+                          QLibraryInfo::path(QLibraryInfo::TranslationsPath)))
         app.installTranslator(&qtTranslator);
     //then our own
     QTranslator bibleTimeTranslator;

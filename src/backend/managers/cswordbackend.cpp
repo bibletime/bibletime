@@ -17,9 +17,7 @@
 #include <QFileInfo>
 #include <QSet>
 #include <QString>
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 #include <QStringDecoder>
-#endif
 #include <string_view>
 #include "../../util/btconnect.h"
 #include "../../util/directory.h"
@@ -426,9 +424,7 @@ QStringList CSwordBackend::swordDirList() const {
     }
 
     // Search the sword.conf file(s) for sword directories that could contain modules
-    #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
     static constexpr auto const decoderFlags = QStringDecoder::Flag::Stateless;
-    #endif
     for (auto const & fileInfo : configs) {
         /*
           Get all DataPath and AugmentPath entries from the config file and add
@@ -438,9 +434,6 @@ QStringList CSwordBackend::swordDirList() const {
 
         static auto const decodeConfEntry =
                 [](sword::SWBuf const & buf) {
-                    #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-                    return QString::fromUtf8(buf.c_str());
-                    #else
                     QStringDecoder utf8Decoder("UTF-8", decoderFlags);
                     // Do not use auto here due to QTBUG-117705/QTBUG-117902:
                     QString result = utf8Decoder(buf.c_str());
@@ -451,7 +444,6 @@ QStringList CSwordBackend::swordDirList() const {
                     if (!cp1252Decoder.hasError())
                         return result;
                     return QString::fromLatin1(buf.c_str());
-                    #endif
                 };
 
         swordDirSet << QDir(decodeConfEntry(conf["Install"]["DataPath"])).absolutePath();

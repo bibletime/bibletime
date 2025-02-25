@@ -222,11 +222,7 @@ void CSearchResultView::contextMenuEvent(QContextMenuEvent* event) {
 
 
 QMimeData *
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-CSearchResultView::mimeData(QList<QTreeWidgetItem *> const items) const {
-#else
 CSearchResultView::mimeData(QList<QTreeWidgetItem *> const & items) const {
-#endif
     if (items.empty())
         return nullptr;
     BTMimeData::ItemList bookmarks;

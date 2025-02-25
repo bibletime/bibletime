@@ -237,21 +237,12 @@ BtConfig::ShortcutsMap BtConfig::getShortcuts(QString const & shortcutGroup) {
         auto const variant = shortcutsConf.qVariantValue(key);
 
         QList<QKeySequence> shortcuts;
-        #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-        if (variant.type() == QVariant::List) { // For BibleTime before 2.9
-        #else
         auto const typeId = variant.typeId();
         if (typeId == QMetaType::QVariantList) { // For BibleTime before 2.9
-        #endif
             for (QVariant const & shortcut : variant.toList())
                 shortcuts.append(shortcut.toString());
-        #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-        } else if (variant.type() == QVariant::StringList
-                   || variant.type() == QVariant::String)
-        #else
         } else if (typeId == QMetaType::QStringList
                    || typeId == QMetaType::QString)
-        #endif
         { // a StringList with one element is recognized as a QVariant::String
             for (QString const & shortcut : variant.toStringList())
                 shortcuts.append(shortcut);

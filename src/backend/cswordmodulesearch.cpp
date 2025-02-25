@@ -298,30 +298,18 @@ QString highlightSearchedText(QString const & content,
         (fragmentEnd < 0 ? ret.size() : fragmentEnd) - fragmentStart;
     for (QRegularExpressionMatch match;;) {
         if (fragmentSize > 0) {
-            #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-            auto const fragment = ret.mid(fragmentStart, fragmentSize);
-            #else
             QStringView const fragment(ret.constData() + fragmentStart,
                                        fragmentSize);
-            #endif
             decltype(fragmentStart) searchStart = 0;
             for (;;) {
                 auto i = fragment.indexOf(highlightRegex, searchStart, &match);
                 if (i < 0) {
-                    #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-                    r << fragment.mid(searchStart);
-                    #else
                     r << fragment.mid(searchStart).toString();
-                    #endif
                     break;
                 }
 
                 if (auto const noMatchSize = i - searchStart) {
-                    #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-                    r << fragment.mid(searchStart, noMatchSize);
-                    #else
                     r << fragment.mid(searchStart, noMatchSize).toString();
-                    #endif
                 }
                 r << QStringLiteral(R"HTML(<span class="highlightwords">)HTML")
                   << match.captured()

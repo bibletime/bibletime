@@ -374,11 +374,7 @@ void CBookmarkIndex::dragMoveEvent(QDragMoveEvent * event) {
     event->accept();
 
     // Do this to paint the arrow:
-    #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-    m_dragMovementPosition = event->pos();
-    #else
     m_dragMovementPosition = event->position().toPoint();
-    #endif
     viewport()->update();
 }
 
@@ -456,11 +452,7 @@ void CBookmarkIndex::dropEvent(QDropEvent * event) {
                        [this](QModelIndex const & index) { expand(index); });
     auto cleanup = qScopeGuard([&connection]() noexcept
                                { disconnect(connection); });
-    #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-    auto const pos = event->pos();
-    #else
     auto const pos = event->position().toPoint();
-    #endif
     auto const index = indexAt(pos);
     QModelIndex parentIndex;
     int indexUnderParent = 0;

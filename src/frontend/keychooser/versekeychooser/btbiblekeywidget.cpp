@@ -119,9 +119,7 @@ BtBibleKeyWidget::BtBibleKeyWidget(
 
     setTabOrder(m_textbox, nullptr);
 
-    // Using "this" instead of "nullptr" works around a Qt 5.9 bug, QTBUG-61213
     m_dropDownButtons = new QWidget(this);
-
     m_dropDownButtons->setWindowFlags(Qt::Popup);
     m_dropDownButtons->setAttribute(Qt::WA_WindowPropagation);
     m_dropDownButtons->setCursor(Qt::ArrowCursor);
@@ -270,11 +268,7 @@ bool BtBibleKeyWidget::eventFilter(QObject *o, QEvent *e) {
     }
 }
 
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-void BtBibleKeyWidget::enterEvent(QEvent *) {
-#else
 void BtBibleKeyWidget::enterEvent(QEnterEvent *) {
-#endif
     m_dropDownHoverTimer.stop();
 
     resetDropDownButtons();
