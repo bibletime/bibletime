@@ -129,6 +129,11 @@ CDisplayWindow::ActionCollection::ActionCollection(QObject * const parent)
     actn = new QAction(tr("Strong's Search"), this);
     actn->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
     addAction(CResMgr::displaywindows::general::findStrongs::actionName, actn);
+
+#ifdef BUILD_TEXT_TO_SPEECH
+    actn = new QAction(tr("Speak selected text"), this);
+    addAction("speakSelectedText", actn);
+#endif
 }
 
 CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
@@ -275,13 +280,26 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
             initAddAction(QStringLiteral("copySelectedText"),
                           m_displayWidget,
                           &BtModelViewReadDisplay::copySelectedText);
+#ifdef BUILD_TEXT_TO_SPEECH
+    auto & speakSelectedTextAction =
+            initAddAction(QStringLiteral("speakSelectedText"),
+                          m_displayWidget,
+                          &BtModelViewReadDisplay::speakSelectedText);
+#endif
     BT_CONNECT(m_displayWidget->qmlInterface(),
                &BtQmlInterface::selectionChanged,
                this,
-               [&copySelectedTextAction](
+               [&copySelectedTextAction
+#ifdef BUILD_TEXT_TO_SPEECH
+                , &speakSelectedTextAction
+#endif
+               ](
                  std::optional<BtQmlInterface::Selection> const & newSelection)
                {
                 copySelectedTextAction.setEnabled(newSelection.has_value());
+#ifdef BUILD_TEXT_TO_SPEECH
+                speakSelectedTextAction.setEnabled(newSelection.has_value());
+#endif
                });
     initAddAction(QStringLiteral("copyByReferences"),
                   m_displayWidget,
@@ -551,6 +569,11 @@ QMenu * CDisplayWindow::newDisplayWidgetPopupMenu() {
     m_actions.printMenu->addAction(m_actions.print.reference);
     m_actions.printMenu->addAction(m_actions.print.entry);
     popupMenu->addMenu(m_actions.printMenu);
+
+#ifdef BUILD_TEXT_TO_SPEECH
+    popupMenu->addAction((m_actions.speakSelectedText));
+#endif
+
     return popupMenu;
 }
 
