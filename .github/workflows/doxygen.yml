@@ -45,8 +45,8 @@ jobs:
       working-directory: api_docs
       run: |
         EMPTY=""
-        > .nojekyll
-        git add docs .nojekyll
+        > docs/.nojekyll
+        git add docs
         cat << EOF > commitMessage
         Automatic update for ${GITHUB_REF}
         $EMPTY
