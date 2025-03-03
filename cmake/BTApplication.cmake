@@ -15,6 +15,13 @@ FIND_PACKAGE(Qt6 REQUIRED COMPONENTS
     Quick
     QuickWidgets
 )
+IF(BUILD_TEXT_TO_SPEECH)
+    FIND_PACKAGE(Qt6 REQUIRED COMPONENTS
+        TextToSpeech
+    )
+    ADD_DEFINITIONS(-DBUILD_TEXT_TO_SPEECH)
+ENDIF()
+
 FIND_PACKAGE(Sword 1.8.1 REQUIRED)
 
 ######################################################
@@ -192,6 +199,9 @@ TARGET_LINK_LIBRARIES("bibletime"
         Qt::Widgets
         Qt::Xml
 )
+IF(BUILD_TEXT_TO_SPEECH)
+    TARGET_LINK_LIBRARIES("bibletime" PRIVATE Qt::TextToSpeech)
+ENDIF()
 
 
 ######################################################
