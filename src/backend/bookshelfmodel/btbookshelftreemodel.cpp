@@ -12,7 +12,9 @@
 
 #include "btbookshelftreemodel.h"
 
+#include <QByteArray>
 #include <QDataStream>
+#include <QDebug>
 #include <QModelIndexList>
 #include <QPair>
 #include <QtGlobal>
@@ -627,14 +629,138 @@ QDataStream & operator <<(QDataStream & os,
 QDataStream & operator >>(QDataStream & is,
                           BtBookshelfTreeModel::Grouping & o)
 {
-    decltype(o.list().size()) s;
-    is >> s;
-    decltype(o.m_list) newList;
-    for (decltype(s) i = 0; i < s; i++) {
-        std::underlying_type_t<BtBookshelfTreeModel::Group> g;
-        is >> g;
-        newList.append(static_cast<BtBookshelfTreeModel::Group>(g));
+    using Size = decltype(o.list().size());
+    Size size = -1; // -1 stands for invalid
+
+    // Due to a serialization bug in BibleTime the grouping size may have been
+    // serialized as an int on Qt5 or as qsizetype on Qt6. The complex logic
+    // which follows works around this issue by attempting to parse both cases.
+    // This is not entirely future proof, but good enough for the foreseeable
+    // future, assuming that Qt does not change too much and users upgrade
+    // relatively often enough.
+    using U = std::underlying_type_t<BtBookshelfTreeModel::Group>;
+    if constexpr (std::is_same_v<int, Size>) {
+        is >> size;
+    } else {
+        // If other strange platforms need to be supported, please let us know:
+        static_assert(sizeof(int) == 4, "Platform not supported");
+        static_assert(sizeof(Size) == 8, "Platform not supported");
+
+        // The following relies on Qt providing us a datastream which only
+        // contains the serialized value and an optional ')' at the end. See
+        // QSettingsPrivate::stringToVariant() in Qt 6.8.2 for details. Assuming
+        // this, and the facts that the size can only be 0, 1 or 2, and that the
+        // values can only be 0 or 1, makes it possible for us to deduce the
+        // width of the serialized size field.
+        static constexpr Size const maxReadSize =
+                sizeof(Size) + sizeof(U) * 2 + 2;
+        char buf[maxReadSize];
+        auto readSize = is.device()->peek(buf, maxReadSize);
+        if (readSize < maxReadSize) { // Assumptions about Qt must hold
+            if (buf[readSize - 1] == ')')
+                --readSize;
+            if (readSize == 4) { // 4 bytes can only fit an (int) size:
+                int s;
+                is >> s; // Consume (int)
+                if (s == 0) // The (int) size can only be 0.
+                    size = 0;
+            } else if (readSize == 8) {
+                // 8 bytes can be either hold a (Size) size of value 0, or a
+                // (int) size of value 1 followed by an (int) value.
+                int s;
+                is >> s; // Consume (int)
+                if (s == 1) { // (int) size of value 1
+                    size = s;
+                } else if (s == 0) { // (Size) size
+                    is >> s; // Consume other (int) half of (Size) size
+                    if (s == 0) // Both (int) halves must be 0 for (Size) 0
+                        size = 0;
+                }
+            } else if (readSize == 12) {
+                // 12 bytes either holds a (Size) size of value 1 and a value,
+                // or an (int) size of value 2, and two values:
+                int s;
+                is >> s; // Consume (int)
+                if (s == 2) { // (int) size of value 2
+                    size = 2;
+                } else if (s >= 0 && s <= 1) { // First half is either 0 or 1
+                    int s2;
+                    is >> s2; // Consume other (int) half of (Size) size
+                    if ((s2 ^ 0x1) == s) // Other half is the other way around
+                        size = 1;
+                }
+            } else if (readSize == 16) { // must be (Size) 2 + (int) values
+                is >> size; // Consume (Size) size
+                if (size != 2) // The (Size) size can only by 2
+                    size = -1;
+            } // else keep size as -1 (invalid)
+        }
     }
-    o.m_list = std::move(newList);
+
+    if (size >= 0 && size <= 2) {
+        decltype(o.m_list) newList;
+        for (; size; --size) {
+            U v;
+            is >> v;
+            if (v < 0 || v > 1)
+                break;
+            newList.append(static_cast<BtBookshelfTreeModel::Group>(v));
+        }
+        if (!size) {
+            o.m_list = std::move(newList);
+            return is;
+        }
+    }
+
+    qWarning() << "Failed to deserialize BtBookshelfTreeModel::Grouping";
+    is.setStatus(QDataStream::ReadCorruptData);
+    o.m_list.clear();
     return is;
 }
+
+#if 0
+namespace {
+
+template <typename SizeType>
+void testGroupingSerialization_(BtBookshelfTreeModel::Grouping const & expected)
+{
+    using U = std::underlying_type_t<BtBookshelfTreeModel::Group>;
+    auto const & list = expected.list();
+    QByteArray byteArray;
+    {
+        QBuffer buffer(&byteArray);
+        buffer.open(QIODevice::WriteOnly);
+        QDataStream os(&buffer);
+        SizeType s = list.size();
+        os << s;
+        for (auto const g : list)
+            os << static_cast<U>(g);
+    }
+    QBuffer buffer(&byteArray);
+    buffer.open(QIODevice::ReadOnly);
+    QDataStream is(&buffer);
+    BtBookshelfTreeModel::Grouping value;
+    is >> value;
+    if (value == expected) {
+        qInfo() << "SUCCESS" << Q_FUNC_INFO << byteArray << list;
+    } else {
+        qFatal() << "FAILURE" << Q_FUNC_INFO << byteArray << list;
+    }
+}
+
+void testGroupingSerialization(BtBookshelfTreeModel::Grouping const & expected){
+    testGroupingSerialization_<int>(expected);
+    testGroupingSerialization_<decltype(expected.list().size())>(expected);
+}
+
+} // anonymous namespace
+
+void testGroupingSerializations() {
+    using G = BtBookshelfTreeModel::Grouping;
+    testGroupingSerialization(G::NONE);
+    testGroupingSerialization(G::CAT);
+    testGroupingSerialization(G::CAT_LANG);
+    testGroupingSerialization(G::LANG);
+    testGroupingSerialization(G::LANG_CAT);
+}
+#endif
