@@ -51,13 +51,19 @@ inline int calculateIntPercentage(T done, T total) {
 }
 
 template <typename T, class = void>
-struct HasSetTimeoutMillis : std::false_type {};
+struct TrySetTimeoutMillis {
+    template <typename ... Args>
+    static void setTimeoutMillis(Args && ...) noexcept {}
+};
 
 template <typename T>
-struct HasSetTimeoutMillis<T,
+struct TrySetTimeoutMillis<T,
         std::void_t<decltype(std::declval<T &>().setTimeoutMillis(0))>>
-    : std::true_type
-{};
+{
+    template <typename ... Args>
+    static void setTimeoutMillis(T & c, Args && ... args)
+    { c.setTimeoutMillis(std::forward<Args>(args)...); }
+};
 
 } // anonymous namespace
 
@@ -71,8 +77,7 @@ BtInstallMgr::BtInstallMgr(QObject * parent)
         , m_firstCallOfPreStatus(true)
 {
     setFTPPassive(true);
-    if constexpr (HasSetTimeoutMillis<BtInstallMgr>::value)
-        setTimeoutMillis(0);
+    TrySetTimeoutMillis<BtInstallMgr>::setTimeoutMillis(*this, 0);
 }
 
 BtInstallMgr::~BtInstallMgr() {
