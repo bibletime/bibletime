@@ -15,6 +15,7 @@
 #include <QByteArray>
 #include "../../backend/config/btconfig.h"
 #include "btfontsettings.h"
+#include "bttexttospeechsettings.h"
 #include "cacceleratorsettings.h"
 #include "cdisplaysettings.h"
 #include "cswordsettings.h"
@@ -35,6 +36,9 @@ CConfigurationDialog::CConfigurationDialog(QWidget * const parent,
     addPage(new CSwordSettingsPage(this));
     addPage(new BtFontSettingsPage(this));
     addPage(new CAcceleratorSettingsPage(this));
+#ifdef BUILD_TEXT_TO_SPEECH
+    addPage(new BtTextToSpeechSettingsPage(this));
+#endif
 
     restoreGeometry(btConfig().value<QByteArray>(GeometryKey, QByteArray()));
 }
