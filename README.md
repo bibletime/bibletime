@@ -12,41 +12,41 @@ The following requirements are needed only if you want to develop BibleTime.
 
 ### BUILD REQUIREMENTS
  - A C++17 compiler.
- - Qt 6+ (https://www.qt.io)
- - Sword 1.8.1+ (built against ICU, https://crosswire.org/sword)
- - CLucene 2.0+ (https://clucene.sf.net)
- - CMake 3.12+ (https://cmake.org)
+ - [Qt 6+](https://www.qt.io)
+ - [Sword 1.8.1+](https://crosswire.org/sword) (built against ICU)
+ - [CLucene 2.0+](https://clucene.sf.net)
+ - [CMake 3.12+](https://cmake.org)
 
 ### DOCUMENTATION GENERATION REQUIREMENTS (OPTIONAL)
- - po4a
- - xsltproc
- - docbook-xsl
- - docbook-xml
- - fop (for PDF generation)
+ - [docbook-xml](https://docbook.org/)
+ - [docbook-xsl](https://github.com/docbook/wiki/wiki/DocBookXslStylesheets)
+ - [fop](https://xmlgraphics.apache.org/fop/) (for PDF generation)
+ - [po4a](https://po4a.org/)
+ - [xsltproc](https://gitlab.gnome.org/GNOME/libxslt)
 
 These packages are only used by the build system when document generation and
 installation is enabled. By default, all translations of the handbook and howto
 documents are generated and installed. This can be changed using the following
 options to CMake:
 
- * BUILD_HANDBOOK_HTML - whether to generate and install the HTML handbook
+ * `BUILD_HANDBOOK_HTML` - whether to generate and install the HTML handbook
    (default: "ON")
- * BUILD_HANDBOOK_HTML_LANGUAGES
+ * `BUILD_HANDBOOK_HTML_LANGUAGES`
        - list of language codes to use for HTML handbook, or empty for all
          languages (default: "")
- * BUILD_HANDBOOK_PDF - whether to generate and install the PDF handbook
+ * `BUILD_HANDBOOK_PDF` - whether to generate and install the PDF handbook
    (default: "ON")
- * BUILD_HANDBOOK_PDF_LANGUAGES
+ * `BUILD_HANDBOOK_PDF_LANGUAGES`
        - list of language codes to use for PDF handbook, or empty for all
          languages (default: "")
- * BUILD_HOWTO_HTML - whether to generate and install the HTML howto (default:
+ * `BUILD_HOWTO_HTML` - whether to generate and install the HTML howto (default:
    "ON")
- * BUILD_HOWTO_HTML_LANGUAGES
+ * `BUILD_HOWTO_HTML_LANGUAGES`
        - list of language codes to use for HTML howto, or empty for all
          languages (default: "")
- * BUILD_HOWTO_PDF - whether to generate and install the PDF howto (default:
+ * `BUILD_HOWTO_PDF` - whether to generate and install the PDF howto (default:
    "ON")
- * BUILD_HOWTO_PDF_LANGUAGES
+ * `BUILD_HOWTO_PDF_LANGUAGES`
        - list of language codes to use for PDF howto, or empty for all languages
          (default: "")
 
