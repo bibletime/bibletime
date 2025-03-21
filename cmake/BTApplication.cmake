@@ -99,7 +99,7 @@ IF(HAVE_IPO)
     SET_TARGET_PROPERTIES("bibletime" PROPERTIES
         INTERPROCEDURAL_OPTIMIZATION TRUE)
 ENDIF()
-BtAddCxxCompilerFlags(bibletime PUBLIC
+BtAddCxxCompilerFlags(bibletime
     "-Walloca"
     "-Wextra-semi"
     "-Wformat=2"
