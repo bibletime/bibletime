@@ -23,10 +23,6 @@ MESSAGE(STATUS "Found CLucene: ${CLucene_VERSION}")
 ######################################################
 # Build options, definitions, linker flags etc for all targets:
 #
-INCLUDE(CheckIPOSupported)
-CHECK_IPO_SUPPORTED(RESULT HAVE_IPO)
-MESSAGE(STATUS "Interprocedural optimization support: ${HAVE_IPO}")
-
 IF(NOT (DEFINED BT_RUNTIME_DOCDIR))
     IF(MSVC)
         SET(BT_RUNTIME_DOCDIR "${BT_DOCDIR}")
@@ -94,12 +90,16 @@ TARGET_LINK_LIBRARIES("bibletime" PRIVATE
     Qt::Xml
 )
 SET_TARGET_PROPERTIES("bibletime" PROPERTIES CXX_EXTENSIONS NO)
+
+SET(CMAKE_REQUIRED_QUIET TRUE)
+INCLUDE(CheckIPOSupported)
+CHECK_IPO_SUPPORTED(RESULT HAVE_IPO)
+MESSAGE(STATUS "Using interprocedural optimization: ${HAVE_IPO}")
 IF(HAVE_IPO)
     SET_TARGET_PROPERTIES("bibletime" PROPERTIES
         INTERPROCEDURAL_OPTIMIZATION TRUE)
 ENDIF()
 
-SET(CMAKE_REQUIRED_QUIET TRUE)
 INCLUDE(CheckCXXCompilerFlag)
 FOREACH(flag IN ITEMS
     "-Walloca"
