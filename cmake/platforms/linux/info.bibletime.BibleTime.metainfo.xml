@@ -7,9 +7,7 @@
  <name>BibleTime</name>
  <summary>Bible Study Program</summary>
  <description>
-  <p>
-    BibleTime is a completely free Bible study program, built for Linux, Windows, FreeBSD and Mac OS X. BibleTime contains over 400 free Bible texts, commentaries, dictionaries and books, provided by the Crosswire Bible Society.
-  </p>
+  <p>BibleTime is an open-source cross-platform Bible study program.</p>
  </description>
  <content_rating type="oars-1.1" />
  <url type="homepage">https://bibletime.info/</url>

@@ -787,18 +787,11 @@ void BibleTime::initMenubar() {
     BT_CONNECT(m_windowsMenu, &QMenu::aboutToShow,
                this,          &BibleTime::slotWindowMenuAboutToShow);
 
-    #ifndef Q_OS_MAC
     m_settingsMenu = new QMenu(this);
     m_settingsMenu->addAction(m_actions->settings.bookshelfManager);
     m_settingsMenu->addSeparator();
     m_settingsMenu->addAction(m_actions->settings.configureBibleTime);
     menuBar()->addMenu(m_settingsMenu);
-    #else
-    // On MAC OS, the settings actions will be moved to a system menu item.
-    // Therefore the settings menu would be empty, so we do not show it.
-    m_fileMenu->addAction(m_setPreferencesAction);
-    m_fileMenu->addAction(m_bookshelfWizardAction);
-    #endif
 
     // Help menu:
     m_helpMenu = new QMenu(this);
@@ -848,10 +841,7 @@ void BibleTime::retranslateUi() {
     m_windowLoadProfileMenu->setTitle(tr("Sw&itch session"));
     m_windowDeleteProfileMenu->setTitle(tr("&Delete session"));
 
-    #ifndef Q_OS_MAC
-    // This item is not present on Mac OS
     m_settingsMenu->setTitle(tr("Se&ttings"));
-    #endif
 
     m_helpMenu->setTitle(tr("&Help"));
 

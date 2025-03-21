@@ -43,7 +43,7 @@ bool initDirectoryCache();
  */
 ::qint64 getDirSizeRecursive(QString const & dir);
 
-#if defined(Q_OS_WIN) // Windows only directory
+#ifdef Q_OS_WIN
 /** Return the path to the sword dir., Windows only
     C:\Program Files\BibleTime\share\sword
  */
@@ -51,12 +51,6 @@ const QDir &getApplicationSwordDir();
 
 /** Return the path to the shared Sword directory */
 const QDir &getSharedSwordDir();
-
-#elif defined(Q_OS_MAC) // Mac only directories
-/**
- * Path to the Sword locales
- */
-const QDir &getSwordLocalesDir();
 #endif
 
 /** Return the path to the icons. */

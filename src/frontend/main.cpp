@@ -195,14 +195,6 @@ int main(int argc, char* argv[]) {
     dir.setCurrent(homeSwordDir);
 #endif
 
-#ifdef Q_OS_MAC
-    // change to the user's sword dir containing the sword.conf config file, so that
-    // Sword will correctly find it.
-    QString homeSwordDir = util::directory::getUserHomeSwordDir().absolutePath();
-    QDir dir;
-    dir.setCurrent(homeSwordDir);
-#endif
-
     //first install QT's own translations
     QLocale const defaultLocale;
     QTranslator qtTranslator;

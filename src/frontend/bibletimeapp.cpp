@@ -31,7 +31,7 @@
 #include <QString>
 #include <Qt>
 #include <QtGlobal>
-#if defined(Q_OS_WIN) || defined(Q_OS_MAC)
+#ifdef Q_OS_WIN
 #include <QTextStream>
 #endif
 #ifdef Q_OS_WIN
@@ -42,7 +42,7 @@
 #include "../backend/managers/cdisplaytemplatemgr.h"
 #include "../util/btassert.h"
 #include "../util/bticons.h"
-#if defined(Q_OS_WIN) || defined(Q_OS_MAC)
+#ifdef Q_OS_WIN
 #include "../util/directory.h"
 #endif
 #include "messagedialog.h"
@@ -51,9 +51,6 @@
 // Sword includes:
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wextra-semi"
-#ifdef Q_OS_MAC
-    #include "localemgr.h"
-#endif
 #include <swlog.h>
 #pragma GCC diagnostic pop
 
@@ -280,7 +277,7 @@ void BibleTimeApp::initBackends() {
     // It also contains a DataPath to the %ProgramData%\Sword directory
     // If this is not done here, the sword locales.d won't be found
 
-    #if defined(Q_OS_WIN) || defined(Q_OS_MAC)
+    #ifdef Q_OS_WIN
     {
         QFile file(
                 util::directory::getUserHomeSwordDir().filePath(
@@ -289,16 +286,11 @@ void BibleTimeApp::initBackends() {
         {
             QTextStream(&file)
                 << QStringLiteral("\n[Install]\nDataPath=")
-            #if defined(Q_OS_WIN)
                 << QDir::toNativeSeparators(
                        util::directory::getSharedSwordDir().absolutePath())
                 << QStringLiteral("\nLocalePath=")
                 << QDir::toNativeSeparators(
                        util::directory::getApplicationSwordDir().absolutePath())
-            #elif defined(Q_OS_MAC)
-                << QDir::toNativeSeparators(
-                       util::directory::getUserHomeSwordDir().absolutePath())
-            #endif
                 << '\n';
         }
     }
@@ -307,12 +299,6 @@ void BibleTimeApp::initBackends() {
     sword::SWLog::getSystemLog()->setLogLevel(btApp->debugMode()
                                               ? sword::SWLog::LOG_DEBUG
                                               : sword::SWLog::LOG_ERROR);
-
-#ifdef Q_OS_MAC
-    // set a LocaleMgr with a fixed path to the locales.d of the DMG image on MacOS
-    qDebug() << "Using sword locales dir: " << util::directory::getSwordLocalesDir().absolutePath().toUtf8();
-    sword::LocaleMgr::setSystemLocaleMgr(new sword::LocaleMgr(util::directory::getSwordLocalesDir().absolutePath().toUtf8()));
-#endif
 
     /*
       Set book names language if not set. This is a hack. We do this call here,

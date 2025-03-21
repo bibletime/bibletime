@@ -47,17 +47,9 @@ std::optional<QDir> cachedApplicationSwordDir;
 std::optional<QDir> cachedSharedSwordDir;
 #endif
 
-#ifdef Q_OS_MACOS
-std::optional<QDir> cachedSwordLocalesDir;
-#endif
-
-#if defined Q_OS_WIN
+#ifdef Q_OS_WIN
 QString const BIBLETIME = QStringLiteral("Bibletime");
 QString const SWORD_DIR = QStringLiteral("Sword");
-#elif defined(Q_OS_MAC)
-QString const BIBLETIME =
-        QStringLiteral("Library/Application Support/BibleTime");
-QString const SWORD_DIR = QStringLiteral("Library/Application Support/Sword");
 #else
 QString const BIBLETIME = QStringLiteral(".bibletime");
 QString const SWORD_DIR = QStringLiteral(".sword");
@@ -90,16 +82,6 @@ bool initDirectoryCache() {
             qWarning() << "Cannot find " << cachedSharedSwordDir->absolutePath() << " \\Sword";
             return false;
         }
-    }
-#endif
-
-#ifdef Q_OS_MACOS
-    // application sword dir for Windows only:
-    cachedSwordLocalesDir.emplace(wDir);
-    if (!cachedSwordLocalesDir->cd(QStringLiteral("share/sword/locales.d"))) {
-        qWarning() << "Cannot find sword locales directory relative to"
-                   << QCoreApplication::applicationDirPath();
-        return false;
     }
 #endif
 
@@ -248,17 +230,13 @@ bool initDirectoryCache() {
     return size;
 }
 
-#if defined(Q_OS_WIN)
+#ifdef Q_OS_WIN
 const QDir &getApplicationSwordDir() {
     return *cachedApplicationSwordDir;
 }
 
 const QDir &getSharedSwordDir() {
     return *cachedSharedSwordDir;
-}
-#elif defined(Q_OS_MACOS)
-const QDir &getSwordLocalesDir() {
-    return *cachedSwordLocalesDir;
 }
 #endif
 

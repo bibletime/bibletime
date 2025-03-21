@@ -201,14 +201,6 @@ IF(MSVC) # Windows:
     SET(bibletime_PDB "${bibletime_BINARY_DIR}/Debug/bibletime.pdb")
     INSTALL(FILES "${bibletime_PDB}" DESTINATION "${BT_BINDIR}")
   ENDIF()
-ELSEIF(APPLE) # OS X:
-  # sword locale information, needed for DMG image
-  FILE(GLOB INSTALL_SWORD_LOCALE_LIST CONFIGURE_DEPENDS
-          "${Sword_INCLUDE_DIRS}/../../share/sword/locales.d/*")
-  INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
-          DESTINATION "./BibleTime.app/Contents/share/sword/locales.d/")
-  INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/BibleTime.icns"
-        DESTINATION "${BT_RESOURCEDIR}/")
 ENDIF()
 
 
@@ -217,8 +209,6 @@ ENDIF()
 #
 IF(WIN32 AND NOT UNIX)
   INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTBinaryPackageWindows.cmake")
-ELSEIF(APPLE)
-  INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTBinaryPackageMacOS.cmake")
 ENDIF()
 
 
