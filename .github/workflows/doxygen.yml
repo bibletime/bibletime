@@ -1,6 +1,7 @@
 name: Generate and publish API documentation
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'master'

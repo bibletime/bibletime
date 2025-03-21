@@ -1,6 +1,13 @@
 name: GitHub Workflow
 
 on:
+  workflow_dispatch:
+    inputs:
+      container_image:
+        description: 'The container image to use for building'
+        type: string
+        required: true
+        default: "debian:12"
   push:
     branches:
       - 'master'
@@ -18,7 +25,7 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     container:
-      image: debian:12
+      image: "${{ inputs.container_image }}"
       env:
         DEBIAN_FRONTEND: noninteractive
     steps:
