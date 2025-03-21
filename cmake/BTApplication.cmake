@@ -28,85 +28,79 @@ INCLUDE(BTUseCcache)
 INCLUDE(CheckIPOSupported)
 CHECK_IPO_SUPPORTED(RESULT HAVE_IPO)
 MESSAGE(STATUS "Interprocedural optimization support: ${HAVE_IPO}")
-FUNCTION(PREPARE_CXX_TARGET target)
-    TARGET_COMPILE_FEATURES("${target}" PUBLIC cxx_std_17)
-    SET_TARGET_PROPERTIES("${target}" PROPERTIES CXX_EXTENSIONS NO)
-    IF(HAVE_IPO)
-        SET_TARGET_PROPERTIES("${target}" PROPERTIES
-            INTERPROCEDURAL_OPTIMIZATION TRUE)
+
+IF(NOT (DEFINED BT_RUNTIME_DOCDIR))
+    IF(MSVC)
+        SET(BT_RUNTIME_DOCDIR "${BT_DOCDIR}")
+    ELSE()
+        SET(BT_RUNTIME_DOCDIR "${BT_DOCDIR_ABSOLUTE}")
     ENDIF()
-ENDFUNCTION()
+ENDIF()
+
 SET(CMAKE_AUTOMOC ON)
-ADD_DEFINITIONS(
-    "-DBT_VERSION=\"${BT_VERSION_FULL}\""
-    "-DQT_NO_KEYWORDS"
-    "-DQT_DISABLE_DEPRECATED_UP_TO=0x060500"
-)
 IF("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     SET(CMAKE_AUTOMOC_MOC_OPTIONS "-DNDEBUG")
 ENDIF()
-IF(WIN32)
-    ADD_COMPILE_OPTIONS("/Zi")
-ELSE()
-    ADD_COMPILE_OPTIONS(
-        "-ggdb" "-Wall" "-Wextra"
-        "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DNDEBUG>"
-        "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DQT_NO_DEBUG>"
-    )
-ENDIF()
-UNSET(BibleTime_CXXFLAGS)
-UNSET(BibleTime_LDFLAGS)
+
+FILE(GLOB_RECURSE bibletime_SOURCES CONFIGURE_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h"
+)
+FILE(GLOB bibletime_QML_FILES CONFIGURE_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.qml"
+)
 IF(MSVC)
-  SET(CMAKE_CXX_FLAGS_RELEASE "-DSWUSINGDLL /MD  /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t")
-  SET(CMAKE_CXX_FLAGS_DEBUG   "-DSWUSINGDLL /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t /Od")
+    ADD_EXECUTABLE("bibletime" WIN32 ${bibletime_SOURCES} "cmake/BTWinIcon.rc")
 ELSE()
-  ADD_COMPILE_OPTIONS("-fPIE" "-fexceptions")
-  SET(CMAKE_CXX_FLAGS_RELEASE "")
-  SET(CMAKE_CXX_FLAGS_DEBUG "")
-  IF(APPLE)
-    SET(T "/Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/")
-    LIST(APPEND BibleTime_CXXFLAGS
-        "-mmacosx-version-min=10.12"
-        "-stdlib=libc++"
-        "-isysroot" "${T}")
-    LIST(APPEND BibleTime_LDFLAGS
-        "-mmacosx-version-min=10.12"
-        "-stdlib=libc++"
-    )
-    UNSET(T)
-  ENDIF()
+    ADD_EXECUTABLE("bibletime" ${bibletime_SOURCES})
 ENDIF()
-
-
-######################################################
-# bibletime_backend object library. This mostly exists for the purpose of
-# keeping the backend and frontend as separate modules with no GUI dependencies
-# or frontend code in the backend.
-#
-FILE(GLOB_RECURSE bibletime_BACKEND_SOURCES CONFIGURE_DEPENDS
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/backend/*.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/backend/*.h"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/util/*.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/util/*.h"
+TARGET_COMPILE_FEATURES("bibletime" PRIVATE cxx_std_17)
+TARGET_COMPILE_DEFINITIONS("bibletime" PRIVATE
+    "BT_RUNTIME_DOCDIR=\"${BT_RUNTIME_DOCDIR}\""
+    "BT_VERSION=\"${BT_VERSION_FULL}\""
+    "QT_NO_KEYWORDS"
+    "QT_DISABLE_DEPRECATED_UP_TO=0x060500"
+    "$<$<CXX_COMPILER_ID:MSVC>:SWUSINGDLL>"
+    "$<$<CXX_COMPILER_ID:MSVC>:_UNICODE>"
+    "$<$<CXX_COMPILER_ID:MSVC>:UNICODE>"
+    "$<$<CONFIG:Release>:NDEBUG>"
+    "$<$<CONFIG:Release>:QT_NO_DEBUG>"
 )
-ADD_LIBRARY(bibletime_backend OBJECT ${bibletime_BACKEND_SOURCES})
-GET_SOURCE_FILE_PROPERTY(d
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/util/directory.cpp" COMPILE_DEFINITIONS)
-IF(DEFINED BT_RUNTIME_DOCDIR)
-    LIST(APPEND d "BT_RUNTIME_DOCDIR=\"${BT_RUNTIME_DOCDIR}\"")
-ELSEIF(APPLE OR MSVC)
-    LIST(APPEND d "BT_RUNTIME_DOCDIR=\"${BT_DOCDIR}\"")
-ELSE()
-    LIST(APPEND d "BT_RUNTIME_DOCDIR=\"${BT_DOCDIR_ABSOLUTE}\"")
+TARGET_COMPILE_OPTIONS("bibletime" PRIVATE
+    "$<$<CXX_COMPILER_ID:MSVC>:/W1>"
+    "$<$<CXX_COMPILER_ID:MSVC>:/Zi>"
+    "$<$<CXX_COMPILER_ID:MSVC>:/Zc:wchar_t>"
+    "$<$<AND:$<CXX_COMPILER_ID:MSVC>,$<CONFIG:Release>>:/MD>"
+    "$<$<AND:$<CXX_COMPILER_ID:MSVC>,$<CONFIG:Debug>>:/MDd>"
+    "$<$<AND:$<CXX_COMPILER_ID:MSVC>,$<CONFIG:Debug>>:/Od>"
+    "$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall>"
+    "$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wextra>"
+    "$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-fPIE>"
+    "$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-fexceptions>"
+)
+TARGET_INCLUDE_DIRECTORIES("bibletime" PRIVATE
+    ${CMAKE_CURRENT_BINARY_DIR}
+
+    # work around QTBUG-87221/QTBUG-93443:
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview/"
+)
+TARGET_LINK_LIBRARIES("bibletime" PRIVATE
+    PkgConfig::CLucene
+    PkgConfig::Sword
+    Qt::Network
+    Qt::PrintSupport
+    Qt::Quick
+    Qt::QuickWidgets
+    Qt::Svg
+    Qt::Widgets
+    Qt::Xml
+)
+SET_TARGET_PROPERTIES("bibletime" PROPERTIES CXX_EXTENSIONS NO)
+IF(HAVE_IPO)
+    SET_TARGET_PROPERTIES("bibletime" PROPERTIES
+        INTERPROCEDURAL_OPTIMIZATION TRUE)
 ENDIF()
-SET_SOURCE_FILES_PROPERTIES("${CMAKE_CURRENT_SOURCE_DIR}/src/util/directory.cpp"
-    PROPERTIES COMPILE_DEFINITIONS "${d}")
-PREPARE_CXX_TARGET(bibletime_backend)
-TARGET_COMPILE_OPTIONS(bibletime_backend
-    PUBLIC
-        ${BibleTime_CXXFLAGS}
-)
-BtAddCxxCompilerFlags(bibletime_backend PUBLIC
+BtAddCxxCompilerFlags(bibletime PUBLIC
     "-Walloca"
     "-Wextra-semi"
     "-Wformat=2"
@@ -128,40 +122,6 @@ BtAddCxxCompilerFlags(bibletime_backend PUBLIC
     "-fstack-protector-strong"
     "-pipe"
 )
-TARGET_INCLUDE_DIRECTORIES(bibletime_backend
-    PUBLIC
-        ${CMAKE_CURRENT_BINARY_DIR}        #for .h files generated from .ui
-)
-TARGET_LINK_LIBRARIES(bibletime_backend
-    PUBLIC
-        PkgConfig::CLucene
-        PkgConfig::Sword
-        Qt::Widgets
-        Qt::Xml
-)
-
-
-######################################################
-# The bibletime application:
-#
-FILE(GLOB_RECURSE bibletime_SOURCES CONFIGURE_DEPENDS
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.h"
-)
-IF(APPLE)
-    ADD_EXECUTABLE("bibletime" MACOSX_BUNDLE ${bibletime_SOURCES})
-    SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "BibleTime")
-ELSEIF(MSVC)
-    ADD_EXECUTABLE("bibletime" WIN32 ${bibletime_SOURCES} "cmake/BTWinIcon.rc")
-ELSE()
-    ADD_EXECUTABLE("bibletime" ${bibletime_SOURCES})
-ENDIF()
-PREPARE_CXX_TARGET(bibletime)
-
-SET(bibletime_QML_PATH
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview")
-FILE(GLOB bibletime_QML_FILES CONFIGURE_DEPENDS
-    "${bibletime_QML_PATH}/*.qml")
 FOREACH(file IN LISTS bibletime_QML_FILES)
     STRING(REGEX REPLACE "^.*/([^/]+)$" "\\1" filename "${file}")
     SET_SOURCE_FILES_PROPERTIES("${file}" PROPERTIES
@@ -173,20 +133,6 @@ QT_ADD_QML_MODULE("bibletime"
     NO_RESOURCE_TARGET_PATH
     VERSION 1.0
     QML_FILES ${bibletime_QML_FILES}
-)
-INCLUDE_DIRECTORIES( # work around QTBUG-87221/QTBUG-93443
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview/")
-
-TARGET_LINK_LIBRARIES("bibletime"
-    PRIVATE
-        bibletime_backend
-        Qt::Network
-        Qt::PrintSupport
-        Qt::Quick
-        Qt::QuickWidgets
-        Qt::Svg
-        Qt::Widgets
-        Qt::Xml
 )
 
 
