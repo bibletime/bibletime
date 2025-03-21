@@ -23,7 +23,6 @@ MESSAGE(STATUS "Found CLucene: ${CLucene_VERSION}")
 ######################################################
 # Build options, definitions, linker flags etc for all targets:
 #
-INCLUDE(BTCompileFlags)
 INCLUDE(CheckIPOSupported)
 CHECK_IPO_SUPPORTED(RESULT HAVE_IPO)
 MESSAGE(STATUS "Interprocedural optimization support: ${HAVE_IPO}")
@@ -99,7 +98,10 @@ IF(HAVE_IPO)
     SET_TARGET_PROPERTIES("bibletime" PROPERTIES
         INTERPROCEDURAL_OPTIMIZATION TRUE)
 ENDIF()
-BtAddCxxCompilerFlags(bibletime
+
+SET(CMAKE_REQUIRED_QUIET TRUE)
+INCLUDE(CheckCXXCompilerFlag)
+FOREACH(flag IN ITEMS
     "-Walloca"
     "-Wextra-semi"
     "-Wformat=2"
@@ -121,6 +123,16 @@ BtAddCxxCompilerFlags(bibletime
     "-fstack-protector-strong"
     "-pipe"
 )
+    STRING(SHA512 flag_id "${flag}")
+    CHECK_CXX_COMPILER_FLAG("${flag}" "cxx_compiler_has_flag_${flag_id}")
+    IF("${cxx_compiler_has_flag_${flag_id}}")
+        TARGET_COMPILE_OPTIONS("bibletime" PUBLIC "${flag}")
+        MESSAGE(STATUS "Using C++ compiler flag: ${flag}")
+    ELSE()
+        MESSAGE(STATUS "Flag not supported by C++ compiler: ${flag}")
+    ENDIF()
+ENDFOREACH()
+
 FOREACH(file IN LISTS bibletime_QML_FILES)
     STRING(REGEX REPLACE "^.*/([^/]+)$" "\\1" filename "${file}")
     SET_SOURCE_FILES_PROPERTIES("${file}" PROPERTIES
