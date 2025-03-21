@@ -1,7 +1,6 @@
 ######################################################
 # Find packages:
 #
-FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Qt6 REQUIRED COMPONENTS
     Core
     Gui
@@ -15,7 +14,11 @@ FIND_PACKAGE(Qt6 REQUIRED COMPONENTS
     Quick
     QuickWidgets
 )
-FIND_PACKAGE(Sword 1.8.1 REQUIRED)
+FIND_PACKAGE(PkgConfig REQUIRED)
+pkg_search_module(Sword REQUIRED IMPORTED_TARGET sword>=1.8.1)
+MESSAGE(STATUS "Found Sword: ${Sword_VERSION}")
+pkg_search_module(CLucene REQUIRED IMPORTED_TARGET libclucene-core>=2.3.3.4)
+MESSAGE(STATUS "Found CLucene: ${CLucene_VERSION}")
 
 ######################################################
 # Build options, definitions, linker flags etc for all targets:
@@ -99,11 +102,9 @@ ENDIF()
 SET_SOURCE_FILES_PROPERTIES("${CMAKE_CURRENT_SOURCE_DIR}/src/util/directory.cpp"
     PROPERTIES COMPILE_DEFINITIONS "${d}")
 PREPARE_CXX_TARGET(bibletime_backend)
-TARGET_COMPILE_DEFINITIONS(bibletime_backend PRIVATE ${CLucene_DEFINITIONS})
 TARGET_COMPILE_OPTIONS(bibletime_backend
     PUBLIC
         ${BibleTime_CXXFLAGS}
-        ${Sword_CFLAGS_OTHER}
 )
 BtAddCxxCompilerFlags(bibletime_backend PUBLIC
     "-Walloca"
@@ -128,20 +129,15 @@ BtAddCxxCompilerFlags(bibletime_backend PUBLIC
     "-pipe"
 )
 TARGET_INCLUDE_DIRECTORIES(bibletime_backend
-    PRIVATE
-        ${CLucene_INCLUDE_DIR}            #CLucene headers
-        ${CLucene_LIBRARY_DIR}            #CLucene/clucene-config.h
     PUBLIC
         ${CMAKE_CURRENT_BINARY_DIR}        #for .h files generated from .ui
-        ${Sword_INCLUDE_DIRS}
 )
 TARGET_LINK_LIBRARIES(bibletime_backend
     PUBLIC
+        PkgConfig::CLucene
+        PkgConfig::Sword
         Qt::Widgets
         Qt::Xml
-        -L${CLucene_LIBRARY_DIR} ${CLucene_LIBRARY}
-        ${Sword_LDFLAGS}
-        ${BibleTime_LDFLAGS}
 )
 
 
