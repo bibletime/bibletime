@@ -51,7 +51,7 @@ jobs:
         repository: bibletime/generated_docs
         path: generated_docs
         fetch-depth: 0
-        token: ${{ secrets.PAT }}
+        token: ${{ secrets.GENERATED_DOCS_RW }}
     - name: Configure generated documentation repository copy
       if: steps.isValidTag.outcome == 'success'
       working-directory: generated_docs

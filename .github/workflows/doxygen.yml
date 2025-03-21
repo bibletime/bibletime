@@ -28,7 +28,7 @@ jobs:
       with:
         repository: bibletime/api_docs
         path: api_docs
-        token: ${{ secrets.PAT }}
+        token: ${{ secrets.API_DOCS_RW }}
     - name: Configure API documentation repository checkout, clear local copy
       working-directory: api_docs
       run: |
