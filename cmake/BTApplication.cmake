@@ -24,7 +24,6 @@ MESSAGE(STATUS "Found CLucene: ${CLucene_VERSION}")
 # Build options, definitions, linker flags etc for all targets:
 #
 INCLUDE(BTCompileFlags)
-INCLUDE(BTUseCcache)
 INCLUDE(CheckIPOSupported)
 CHECK_IPO_SUPPORTED(RESULT HAVE_IPO)
 MESSAGE(STATUS "Interprocedural optimization support: ${HAVE_IPO}")
