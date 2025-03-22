@@ -84,13 +84,7 @@ BtIndexDialog::BtIndexDialog(QWidget * parent, Qt::WindowFlags f)
                this,          &BtIndexDialog::close);
     BT_CONNECT(&CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
                this,  &BtIndexDialog::slotSwordSetupChanged);
-    #if (QT_VERSION < QT_VERSION_CHECK(6, 7, 0))
-    constexpr static auto const stateChangeSignal = &QCheckBox::stateChanged;
-    #else
-    constexpr static auto const stateChangeSignal =
-            &QCheckBox::checkStateChanged;
-    #endif
-    BT_CONNECT(m_autoDeleteOrphanedIndicesBox, stateChangeSignal,
+    BT_CONNECT(m_autoDeleteOrphanedIndicesBox, &QCheckBox::checkStateChanged,
                this, &BtIndexDialog::autoDeleteOrphanedIndicesChanged);
 
     retranslateUi(); // also calls populateModuleList();
