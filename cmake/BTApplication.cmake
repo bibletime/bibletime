@@ -150,7 +150,17 @@ QT_ADD_QML_MODULE("bibletime"
 ######################################################
 # Define rules to generate and install translation files:
 #
-INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
+FILE(GLOB BT_TS_FILES CONFIGURE_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/bibletime_ui_*.ts"
+)
+qt_add_translations("bibletime"
+  SOURCE_TARGETS "bibletime"
+  TS_FILES ${BT_TS_FILES}
+  QM_FILES_OUTPUT_VARIABLE BT_QM_FILES
+  LUPDATE_TARGET "lupdate"
+  LRELEASE_TARGET "lrelease"
+)
+INSTALL(FILES ${BT_QM_FILES} DESTINATION "${BT_LOCALEDIR}/")
 
 
 ######################################################
