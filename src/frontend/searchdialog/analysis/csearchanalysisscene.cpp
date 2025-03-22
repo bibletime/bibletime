@@ -279,7 +279,7 @@ void CSearchAnalysisScene::saveAsHTML(QTextStream & out) const {
 
     out << QStringLiteral("</tr></table><p style=\"text-align:center;"
                           "font-size:x-small\">")
-        << tr("Created by <a href=\"https://bibletime.info/\">BibleTime</a>")
+        << tr("Created by <a href=\"%1\">BibleTime</a>").arg(BT_HOMEPAGE)
         << QStringLiteral("</p></body></html>");
 }
 

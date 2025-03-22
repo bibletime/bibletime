@@ -151,7 +151,7 @@ void BtTipDialog::retranslateUi() {
         + "<br><center>" + iconToHtml(CResMgr::modules::commentary::icon_add()) + "</center>";
 
     m_tips << tr("To learn more about the BibleTime project please go to our web site.")
-        + "<br><center><a href=\"https://bibletime.info\">bibletime.info</a></center>";
+        + "<br><center><a href=\"" BT_HOMEPAGE "\">" BT_HOMEPAGE "</a></center>";
 
     m_tips << tr("To synchronize a commentary window with the active Bible window, activate the"
         " commentary window and select this icon.") + "<br><center>"

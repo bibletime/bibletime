@@ -196,8 +196,7 @@ void BtAboutDialog::retranslateBtTab() {
     content += tr("BibleTime is an easy to use but powerful Bible study tool.");
     content += "</p><p>";
     content += tr("(c)1999-2025, The BibleTime Team");
-    content += "</p><p>" MAKE_LINK_STATIC("https://bibletime.info", "bibletime.info")
-               "</p>";
+    content += "</p><p>" MAKE_LINK_STATIC(BT_HOMEPAGE, BT_HOMEPAGE) "</p>";
     m_bibletimeTab->setHtml(MAKE_HTML(m_bibletimeTab, content));
 }
 
