@@ -1,6 +1,35 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.25)
-PROJECT(bibletime CXX)
 MESSAGE(STATUS "Using CMake ${CMAKE_VERSION}: ${CMAKE_COMMAND}")
+PROJECT(BibleTime
+  VERSION 3.1.0
+  LANGUAGES NONE # Defer compiler detection (logs) to AFTER versioning logic
+)
+SET(PROJECT_VERSION_TWEAK "") # e.g. _alpha1, _beta2, _rc3
+SET(PROJECT_VERSION "${PROJECT_VERSION}${PROJECT_VERSION_TWEAK}")
+MESSAGE(STATUS "BibleTime version in CMakeLists.txt: ${PROJECT_VERSION}")
+BLOCK(PROPAGATE PROJECT_VERSION)
+  IF(IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/.git")
+    FIND_PACKAGE(Git REQUIRED)
+    EXECUTE_PROCESS(
+      COMMAND ${GIT_EXECUTABLE} describe --match "v*.*.*" --dirty --abbrev=12
+      WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+      ERROR_QUIET
+      OUTPUT_VARIABLE GIT_DESCRIBE
+      ENCODING "UTF-8"
+      OUTPUT_STRIP_TRAILING_WHITESPACE
+      COMMAND_ERROR_IS_FATAL ANY
+    )
+    IF(NOT ("${GIT_DESCRIBE}" MATCHES "^v${PROJECT_VERSION}"))
+      MESSAGE(FATAL_ERROR "Project version doesn't match `git describe`!")
+    ENDIF()
+    STRING(SUBSTRING "${GIT_DESCRIBE}" 1 -1 PROJECT_VERSION)
+  ENDIF()
+ENDBLOCK()
+IF(PROJECT_IS_TOP_LEVEL)
+  SET(CMAKE_PROJECT_VERSION "${PROJECT_VERSION}")
+ENDIF()
+MESSAGE(STATUS "Configuring BibleTime version ${PROJECT_VERSION}")
+ENABLE_LANGUAGE(CXX) # This logs compiler detection messages AFTER the above
 
 
 ######################################################
@@ -86,66 +115,6 @@ ENDIF()
 # Set CMake module path:
 #
 LIST(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-
-
-
-######################################################
-# BibleTime version:
-#
-# NOTICE! The version number must only be changed during the release procedures
-#  A N D   N O T  during development or bug-fixing. This guarantees that all
-# versions of BibleTime between OLDVERSION and NEXTVERSION have version strings
-# in the form of OLDVERSION+githash where githash is the git commit hash ID.
-#
-# Note: for pre-#.#.0 versions, use the following suffixes:
-#   _dev      if pre-beta1
-#   _beta1    if post-beta1
-#   _beta2    if post-beta2
-#   _rc1    if post-rc1
-#   _rc2    if post-rc2
-# For post-full-release versions, no suffix is used.
-
-SET(BT_VERSION_MAJOR "3")
-SET(BT_VERSION_MINOR "1")
-SET(BT_VERSION_PATCH "0")
-#SET(BT_VERSION_BUILD "") # Temporarily uncomment this line for release procedures
-
-# Determine build, if needed:
-IF(NOT (DEFINED BT_VERSION_BUILD))
-  FIND_PACKAGE(Git)
-  IF(NOT GIT_FOUND)
-    FIND_PROGRAM(GIT_EXECUTABLE NAMES git)
-    IF(GIT_EXECUTABLE)
-      SET(GIT_FOUND TRUE)
-    ENDIF()
-  ENDIF()
-  IF(GIT_FOUND)
-    FUNCTION(BtGitRevision out)
-      EXECUTE_PROCESS(COMMAND ${GIT_EXECUTABLE} rev-parse HEAD
-                      WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-                      ERROR_QUIET
-                      RESULT_VARIABLE resVar
-                      OUTPUT_VARIABLE outVar
-                      OUTPUT_STRIP_TRAILING_WHITESPACE)
-      IF(${resVar} EQUAL 0)
-        STRING(TOLOWER "${outVar}" hashCandidate)
-        STRING(REGEX MATCH "^[0123456789abcdef]+$" hasHash "${hashCandidate}")
-        IF(hasHash)
-          STRING(LENGTH "${hashCandidate}" hashLength)
-          IF(hashLength EQUAL 40)
-            SET(${out} "${hashCandidate}" PARENT_SCOPE)
-          ENDIF()
-        ENDIF()
-      ENDIF()
-    ENDFUNCTION()
-    BtGitRevision(BibleTimeGitRevision)
-    IF(DEFINED BibleTimeGitRevision)
-      SET(BT_VERSION_BUILD "+${BibleTimeGitRevision}")
-    ENDIF()
-  ENDIF()
-ENDIF()
-SET(BT_VERSION_FULL "${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}.${BT_VERSION_PATCH}${BT_VERSION_BUILD}")
-MESSAGE(STATUS "Setting up build environment for BibleTime version ${BT_VERSION_FULL}")
 
 
 ######################################################

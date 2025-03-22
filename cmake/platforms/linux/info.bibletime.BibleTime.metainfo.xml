@@ -23,7 +23,7 @@
   </screenshot>
  </screenshots>
  <releases>
-  <release version="@BT_VERSION_FULL@">
+  <release version="@PROJECT_VERSION@">
    <description>
     <p>See the website https://bibletime.info for more information.</p>
    </description>
