@@ -126,7 +126,7 @@ FOREACH(flag IN ITEMS
     STRING(SHA512 flag_id "${flag}")
     CHECK_CXX_COMPILER_FLAG("${flag}" "cxx_compiler_has_flag_${flag_id}")
     IF("${cxx_compiler_has_flag_${flag_id}}")
-        TARGET_COMPILE_OPTIONS("bibletime" PUBLIC "${flag}")
+        TARGET_COMPILE_OPTIONS("bibletime" PRIVATE "${flag}")
         MESSAGE(STATUS "Using C++ compiler flag: ${flag}")
     ELSE()
         MESSAGE(STATUS "Flag not supported by C++ compiler: ${flag}")
