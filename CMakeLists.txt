@@ -33,6 +33,26 @@ ENABLE_LANGUAGE(CXX) # This logs compiler detection messages AFTER the above
 
 
 ######################################################
+# Retrieve and log more information about build environment:
+#
+BLOCK()
+  FOREACH(KEY IN ITEMS OS_NAME OS_RELEASE OS_VERSION OS_PLATFORM)
+    CMAKE_HOST_SYSTEM_INFORMATION(RESULT VALUE QUERY "${KEY}")
+    MESSAGE(STATUS "${KEY}: ${VALUE}")
+  ENDFOREACH()
+  CMAKE_HOST_SYSTEM_INFORMATION(RESULT OS_RELEASE_FILE QUERY DISTRIB_INFO)
+  IF("(${OS_RELEASE_FILE})" STREQUAL "()")
+    MESSAGE(STATUS "No /etc/os-release information found.")
+  ELSE()
+    MESSAGE(STATUS "Information from /etc/os-release:")
+    FOREACH(OS_RELEASE_KEY IN LISTS OS_RELEASE_FILE)
+      MESSAGE(STATUS "  ${OS_RELEASE_KEY}: ${${OS_RELEASE_KEY}}")
+    ENDFOREACH()
+  ENDIF()
+ENDBLOCK()
+
+
+######################################################
 # Build-time user options:
 #
 SET(BUILD_BIBLETIME "ON" CACHE BOOL
