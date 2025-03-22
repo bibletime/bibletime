@@ -7,7 +7,7 @@ on:
         description: 'The container image to use for building'
         type: string
         required: true
-        default: "debian:12"
+        default: "debian:trixie"
   push:
     branches:
       - 'master'
