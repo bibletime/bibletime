@@ -2,6 +2,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.25)
 MESSAGE(STATUS "Using CMake ${CMAKE_VERSION}: ${CMAKE_COMMAND}")
 PROJECT(BibleTime
   VERSION 3.1.0
+  DESCRIPTION "A Bible study application"
   HOMEPAGE_URL "https://bibletime.info/"
   LANGUAGES NONE # Defer compiler detection (logs) to AFTER versioning logic
 )
