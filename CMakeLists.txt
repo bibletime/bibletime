@@ -1,15 +1,6 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.12)
 PROJECT(bibletime CXX)
-
-
-######################################################
-# Set CMake policies:
-#
 MESSAGE(STATUS "Using CMake ${CMAKE_VERSION}: ${CMAKE_COMMAND}")
-IF(MSVC) # Automatically link Qt executables to qtmain target on Windows
-    CMAKE_POLICY(SET CMP0020 NEW)
-ENDIF()
-CMAKE_POLICY(SET CMP0028 NEW)
 
 
 ######################################################
