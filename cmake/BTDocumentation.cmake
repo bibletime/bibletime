@@ -324,13 +324,9 @@ ${BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL}")
                     "${dx}/${doc}.fo")
 
                 FOREACH(image IN LISTS "${udoc}_IMAGES")
-                    IF(CMAKE_VERSION VERSION_LESS 3.14)
-                        FILE(COPY "${image}" DESTINATION "${dx}/")
-                    ELSE()
-                        GET_FILENAME_COMPONENT(imageName "${image}" NAME)
-                        FILE(CREATE_LINK "${image}" "${dx}/${imageName}"
-                            COPY_ON_ERROR)
-                    ENDIF()
+                    GET_FILENAME_COMPONENT(imageName "${image}" NAME)
+                    FILE(CREATE_LINK "${image}" "${dx}/${imageName}"
+                        COPY_ON_ERROR)
                 ENDFOREACH()
 
                 SET(dp "${DOCS_BINARY_DIR}/${doc}/pdf/${l}")
