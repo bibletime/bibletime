@@ -25,7 +25,7 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     container:
-      image: "${{ inputs.container_image || 'debian:12' }}"
+      image: "${{ inputs.container_image || 'debian:trixie' }}"
       env:
         DEBIAN_FRONTEND: noninteractive
     steps:
