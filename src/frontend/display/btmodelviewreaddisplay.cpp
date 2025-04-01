@@ -23,6 +23,9 @@
 #include <QQuickItem>
 #include <QScrollBar>
 #include <QString>
+#ifdef BUILD_TEXT_TO_SPEECH
+#include <QTextToSpeech>
+#endif
 #include <QTimer>
 #include <QToolBar>
 #include <utility>
@@ -247,6 +250,20 @@ void BtModelViewReadDisplay::print(TextPart const type,
         break;
     }
 }
+
+#ifdef BUILD_TEXT_TO_SPEECH
+void BtModelViewReadDisplay::speakSelectedText() {
+    BtQmlInterface const * qml = qmlInterface();
+    if (!qml)
+        return;
+
+    std::optional<BtQmlInterface::Selection> const & selection = qml->selection();
+    if (!selection)
+        return;
+
+    BibleTime::instance()->speakText(qml->getSelectedText());
+}
+#endif
 
 void BtModelViewReadDisplay::reloadModules() {
     qmlInterface()->textModel()->reloadModules();
