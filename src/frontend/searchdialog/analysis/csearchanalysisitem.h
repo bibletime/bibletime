@@ -15,9 +15,9 @@
 #include <QGraphicsRectItem>
 
 #include <cstddef>
+#include <QList>
 #include <QPixmap>
 #include <QString>
-#include <QVector>
 #include <memory>
 
 
@@ -45,7 +45,7 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
     private: // fields:
         double m_scaleFactor = 0.0;
         QString const m_bookName;
-        QVector<std::size_t> m_counts;
+        QList<std::size_t> m_counts;
         std::unique_ptr<QPixmap> m_bufferPixmap;
 
 };

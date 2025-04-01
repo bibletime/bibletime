@@ -18,7 +18,6 @@
 #include <QMap>
 #include <QTextStream>
 #include <QTextDocument>
-#include <QVector>
 #include <type_traits>
 #include <utility>
 #include "../../../backend/drivers/cswordmoduleinfo.h"
