@@ -14,9 +14,9 @@
 
 #include "btconfigdialog.h"
 
+#include <QList>
 #include <QObject>
 #include <QString>
-#include <QVector>
 
 
 class CConfigurationDialog;
@@ -46,7 +46,7 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
 
     private: // methods:
 
-        static QVector<QString> bookNameAbbreviationsTryVector();
+        static QList<QString> bookNameAbbreviationsTryVector();
         void initSwordLocaleCombo();
 
     private: // fields:

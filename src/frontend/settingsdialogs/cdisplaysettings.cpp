@@ -147,7 +147,7 @@ void CDisplaySettingsPage::retranslateUi() {
 }
 
 void CDisplaySettingsPage::resetLanguage() {
-    QVector<QString> atv = bookNameAbbreviationsTryVector();
+    QList<QString> atv = bookNameAbbreviationsTryVector();
 
     BT_ASSERT(!atv.isEmpty());
     QString best = atv.takeLast();
@@ -167,8 +167,8 @@ void CDisplaySettingsPage::resetLanguage() {
     btConfig().setValue(QStringLiteral("GUI/booknameLanguage"), best);
 }
 
-QVector<QString> CDisplaySettingsPage::bookNameAbbreviationsTryVector() {
-    QVector<QString> atv;
+QList<QString> CDisplaySettingsPage::bookNameAbbreviationsTryVector() {
+    QList<QString> atv;
     atv.reserve(4);
     {
         QString settingsLanguage = btConfig().booknameLanguage();
@@ -209,7 +209,7 @@ void CDisplaySettingsPage::initSwordLocaleCombo() {
     }
 
     int index = 0;
-    QVector<QString> atv = bookNameAbbreviationsTryVector();
+    QList<QString> atv = bookNameAbbreviationsTryVector();
     for (auto it = languageNames.constBegin(); it != languageNames.constEnd(); ++it) {
         if (!atv.isEmpty()) {
             int i = atv.indexOf(it.value());
