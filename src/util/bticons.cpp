@@ -101,6 +101,7 @@ BtIcons * BtIcons::m_instance = nullptr;
 BtIcons::BtIcons()
     /* Regular icons: */
     : icon_add(QStringLiteral("add.svg"))
+    , icon_audio(QStringLiteral("audio.svg"))
     , icon_automatically(QStringLiteral("automatically.svg"))
     , icon_back(QStringLiteral("back.svg"))
     , icon_bible(QStringLiteral("bible.svg"))
