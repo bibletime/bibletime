@@ -187,7 +187,6 @@ BT_GETICON2(icon_next, forward)
 namespace searchdialog {
 BT_GETICON(find)
 BT_GETICON2(icon_close, stop)
-BT_GETICON2(icon_help, questionmark)
 BT_GETICON2(icon_chooseWorks, checkbox)
 BT_GETICON2(icon_setupScope, configure)
 
@@ -352,27 +351,10 @@ namespace grouping { BT_GETICON(view_tree) }
 }
 
 namespace bookshelfmgr {
-namespace installpage {
-BT_GETICON(bible_install)
-BT_GETICON2(icon_refresh, refresh)
-BT_GETICON2(icon_addSource, plus)
-BT_GETICON2(icon_deleteSource, delete)
-BT_GETICON2(icon_install, plus)
-BT_GETICON2(icon_path, configure)
-}
-namespace removepage {
-BT_GETICON(bible_uninstall)
-BT_GETICON2(icon_remove, delete)
-}
 namespace indexpage {
 BT_GETICON(document_magnifier)
 BT_GETICON2(icon_create, plus)
 BT_GETICON2(icon_delete, delete)
-}
-namespace paths {
-BT_GETICON2(icon_add, add)
-BT_GETICON2(icon_edit, pencil)
-BT_GETICON2(icon_remove, remove)
 }
 }
 }

@@ -94,14 +94,11 @@ public: // fields:
     RegularIcon const icon_lock;
     RegularIcon const icon_manual;
     RegularIcon const icon_map;
-    RegularIcon const icon_pencil;
     RegularIcon const icon_plus;
     RegularIcon const icon_pointing_arrow;
     RegularIcon const icon_print;
     RegularIcon const icon_remove;
     RegularIcon const icon_questionable;
-    RegularIcon const icon_questionmark;
-    RegularIcon const icon_refresh;
     RegularIcon const icon_startconfig;
     RegularIcon const icon_stop;
     RegularIcon const icon_swordconfig;
@@ -126,10 +123,8 @@ public: // fields:
 
     /* Overlayed icons: */
     OverlayedIcon const icon_bible_add;
-    OverlayedIcon const icon_bible_install;
     OverlayedIcon const icon_bible_locked;
     OverlayedIcon const icon_bible_remove;
-    OverlayedIcon const icon_bible_uninstall;
     OverlayedIcon const icon_book_add;
     OverlayedIcon const icon_book_locked;
     OverlayedIcon const icon_cascade_auto;
