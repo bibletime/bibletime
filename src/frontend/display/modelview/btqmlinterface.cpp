@@ -136,7 +136,10 @@ void BtQmlInterface::setSelection(int const column,
     }
 }
 
-void BtQmlInterface::clearSelection() noexcept { m_selection.reset(); }
+void BtQmlInterface::clearSelection() noexcept {
+    m_selection.reset();
+    Q_EMIT selectionChanged({});
+}
 
 QString BtQmlInterface::getSelectedText() const
 { return m_selection.has_value() ? m_selection->selectedText : QString(); }
