@@ -275,6 +275,8 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
             initAddAction(QStringLiteral("copySelectedText"),
                           m_displayWidget,
                           &BtModelViewReadDisplay::copySelectedText);
+    copySelectedTextAction.setEnabled(
+        m_displayWidget->qmlInterface()->selection().has_value());
     BT_CONNECT(m_displayWidget->qmlInterface(),
                &BtQmlInterface::selectionChanged,
                this,
