@@ -99,6 +99,7 @@ public: // fields:
     RegularIcon const icon_print;
     RegularIcon const icon_remove;
     RegularIcon const icon_questionable;
+    RegularIcon const icon_speaker;
     RegularIcon const icon_startconfig;
     RegularIcon const icon_stop;
     RegularIcon const icon_swordconfig;
