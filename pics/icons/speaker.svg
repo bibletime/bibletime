@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.0"
+   width="500"
+   height="500"
+   viewBox="0 0 75 75"
+   id="svg6"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10" />
+  <circle
+     style="fill:#375493;fill-opacity:1;stroke-width:0.149011;stroke-linecap:round;stroke-linejoin:round"
+     id="path68"
+     cx="37.5"
+     cy="37.5"
+     r="37.5" />
+  <path
+     id="circle2447"
+     style="fill:#608ab4;fill-opacity:1;stroke-width:0.993407;stroke-linecap:round;stroke-linejoin:round"
+     d="M 250 0 A 250 250 0 0 0 49.863281 100.21289 L 450.15234 100.21289 A 250 250 0 0 0 250 0 z "
+     transform="scale(0.15)" />
+  <path
+     d="M 39.26382,16.097846 23.741025,29.523969 H 9.0498392 V 46.801381 H 23.518417 L 39.26382,60.421154 Z"
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:4.52455;stroke-linejoin:round;stroke-opacity:1"
+     id="path2" />
+  <path
+     d="m 47.055983,28.613631 a 17.64571,17.64571 0 0 1 0,19.365035 m 6.424849,-25.789883 a 27.147246,27.147246 0 0 1 0,32.214732 m 5.881903,-38.096636 a 35.110438,35.110438 0 0 1 0,43.978538"
+     style="fill:none;stroke:#7bbce5;stroke-width:4.52455;stroke-linecap:round;stroke-opacity:1"
+     id="path4" />
+</svg>
