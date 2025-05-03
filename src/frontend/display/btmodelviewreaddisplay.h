@@ -116,6 +116,11 @@ public: // methods:
                              FilterOptions const & filterOptions)
     { print(AnchorWithText, displayOptions, filterOptions); }
 
+    #ifdef BUILD_TEXT_TO_SPEECH
+    /** \brief Speaks the currently selected text (text-to-speech). */
+    void speakSelectedText();
+    #endif
+
     /**
         \brief Installs the popup which should be opened when the right mouse
                button was pressed.

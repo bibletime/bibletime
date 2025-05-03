@@ -184,6 +184,10 @@ void CBibleReadWindow::initActions() {
                            this,
                            &CBibleReadWindow::printAll);
 
+    #ifdef BUILD_TEXT_TO_SPEECH
+    m_actions.speakSelectedText = &ac->action("speakSelectedText");
+    #endif
+
     BT_CONNECT(displayWidget(), &BtModelViewReadDisplay::activeAnchorChanged,
                this,
                [this](QString const & newActiveAnchor) {
@@ -229,6 +233,11 @@ QMenu * CBibleReadWindow::newDisplayWidgetPopupMenu() {
     m_actions.printMenu->addAction(m_actions.print.reference);
     m_actions.printMenu->addAction(m_actions.print.chapter);
     popupMenu->addMenu(m_actions.printMenu);
+
+    #ifdef BUILD_TEXT_TO_SPEECH
+    popupMenu->addAction(m_actions.speakSelectedText);
+    #endif
+
     return popupMenu;
 }
 

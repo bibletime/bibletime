@@ -321,6 +321,7 @@ extern const QKeySequence accel;
 }
 
 namespace settings {
+namespace speaker { BT_GETICON(speaker) }
 namespace startup { BT_GETICON(startconfig) }
 namespace fonts { BT_GETICON(fonts) }
 namespace profiles { BT_GETICON(view_profile) }
