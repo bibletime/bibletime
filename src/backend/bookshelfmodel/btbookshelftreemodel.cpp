@@ -638,14 +638,16 @@ QDataStream & operator >>(QDataStream & is,
     // This is not entirely future proof, but good enough for the foreseeable
     // future, assuming that Qt does not change too much and users upgrade
     // relatively often enough.
+    static constexpr bool const isIntSize = std::is_same_v<int, Size>;
+
+    // If other strange platforms need to be supported, please let us know:
+    static_assert(isIntSize || sizeof(int) == 4, "Platform not supported");
+    static_assert(isIntSize || sizeof(Size) == 8, "Platform not supported");
+
     using U = std::underlying_type_t<BtBookshelfTreeModel::Group>;
-    if constexpr (std::is_same_v<int, Size>) {
+    if constexpr (isIntSize) {
         is >> size;
     } else {
-        // If other strange platforms need to be supported, please let us know:
-        static_assert(sizeof(int) == 4, "Platform not supported");
-        static_assert(sizeof(Size) == 8, "Platform not supported");
-
         // The following relies on Qt providing us a datastream which only
         // contains the serialized value and an optional ')' at the end. See
         // QSettingsPrivate::stringToVariant() in Qt 6.8.2 for details. Assuming
