@@ -431,9 +431,11 @@ void BibleTime::initView() {
     createCentralWidget();
 
     m_bookshelfDock = new BtBookshelfDockWidget(this);
+    m_bookshelfDock->setObjectName("bookshelfDock");
     addDockWidget(Qt::LeftDockWidgetArea, m_bookshelfDock);
 
     m_bookmarksDock = new QDockWidget(this);
+    m_bookmarksDock->setObjectName("bookmarksDock");
     m_bookmarksPage = new CBookmarkIndex(this);
     m_bookmarksDock->setWidget(m_bookmarksPage);
     addDockWidget(Qt::LeftDockWidgetArea, m_bookmarksDock);
@@ -441,6 +443,7 @@ void BibleTime::initView() {
     m_bookshelfDock->loadBookshelfState();
 
     m_magDock = new QDockWidget(this);
+    m_magDock->setObjectName("magDock");
     m_infoDisplay = new CInfoDisplay(this);
     m_infoDisplay->resize(150, 150);
     m_magDock->setWidget(m_infoDisplay);
