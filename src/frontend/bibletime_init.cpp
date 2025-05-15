@@ -491,6 +491,7 @@ void BibleTime::createMenuAndToolBar()
     menuBar();
 
     m_mainToolBar = createToolBar(this, true);
+    m_mainToolBar->setObjectName("mainToolBar");
     addToolBar(m_mainToolBar);
 
     // Set visibility of main window toolbars based on config
@@ -500,13 +501,16 @@ void BibleTime::createMenuAndToolBar()
                 true);
 
     m_navToolBar = createToolBar(this, visible);
+    m_navToolBar->setObjectName("navToolBar");
     addToolBar(m_navToolBar);
 
     m_worksToolBar = new BtModuleChooserBar(this);
+    m_worksToolBar->setObjectName("worksToolBar");
     m_worksToolBar->setVisible(visible);
     addToolBar(m_worksToolBar);
 
     m_toolsToolBar = createToolBar(this, visible);
+    m_toolsToolBar->setObjectName("toolsToolBar");
     addToolBar(m_toolsToolBar);
 }
 
