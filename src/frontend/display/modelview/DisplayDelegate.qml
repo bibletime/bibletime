@@ -116,7 +116,7 @@ Item {
         anchors.left: delegate.left
         font: BtQmlInterface.font0
         width: delegate.textWidth
-        onHovered: BtQmlInterface.setHoveredLink(link)
+        onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
 
     ColumnItem {

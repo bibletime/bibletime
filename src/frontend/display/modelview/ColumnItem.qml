@@ -103,6 +103,6 @@ Item {
         visible: listView.columns > 0
         width: columnView.width
         wrapMode: Text.WordWrap
-        onLinkHovered: columnView.hovered(link)
+        onLinkHovered: function(link) { columnView.hovered(link) }
     }
 }
