@@ -52,6 +52,7 @@ jobs:
           po4a \
           qt6-base-dev \
           qt6-declarative-dev \
+          qt6-speech-dev \
           qt6-svg-dev \
           qt6-tools-dev \
           xsltproc
