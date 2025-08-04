@@ -1,7 +1,7 @@
 ######################################################
 # Find packages:
 #
-FIND_PACKAGE(Qt6 6.7 REQUIRED COMPONENTS
+FIND_PACKAGE(Qt6 6.4 REQUIRED COMPONENTS
     Core
     Gui
     LinguistTools
