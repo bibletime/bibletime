@@ -30,6 +30,7 @@
 #include "../../../util/cresmgr.h"
 #include "../cscrollerwidgetset.h"
 #include "btdropdownchooserbutton.h"
+#include "btbookchooserbutton.h"
 
 
 class BtLineEdit : public QLineEdit {
@@ -125,21 +126,18 @@ BtBibleKeyWidget::BtBibleKeyWidget(
     m_dropDownButtons->setCursor(Qt::ArrowCursor);
     QHBoxLayout *dropDownButtonsLayout(new QHBoxLayout(m_dropDownButtons));
 
-    auto * const bookChooser =
-            new BtDropdownChooserButton(&BtBibleKeyWidget::populateBookMenu,
-                                        *this);
+    auto * const bookChooser = new BtBookChooserButton(*this);
     bookChooser->setToolTip(tr("Select book"));
-    BT_CONNECT(bookChooser->menu(), &QMenu::triggered,
-               [this](QAction * const action) {
-                    auto bookname = action->property("bookname").toString();
+    BT_CONNECT(bookChooser, &BtBookChooserButton::bookSelected,
+               [this](const QString & bookname) {
                     if (m_key->bookName() != bookname) {
-                        m_key->setBookName(std::move(bookname));
+                        m_key->setBookName(bookname);
                         updateText();
                     }
                     if (!updatelock)
                         Q_EMIT changed(m_key);
                });
-    BT_CONNECT(bookChooser, &BtDropdownChooserButton::stepItem, slotStepBook);
+    BT_CONNECT(bookChooser, &BtBookChooserButton::stepItem, slotStepBook);
     dropDownButtonsLayout->addWidget(bookChooser, 2);
 
     auto * const chapterChooser =
