@@ -100,7 +100,7 @@ private:
         
         // Set reasonable size
         setMinimumSize(300, 400);
-        setMaximumSize(500, 600);
+        setMaximumSize(600, 800);
     }
 };
 
