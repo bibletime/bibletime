@@ -127,12 +127,16 @@ public: // fields:
     OverlayedIcon const icon_bible_remove;
     OverlayedIcon const icon_book_add;
     OverlayedIcon const icon_book_locked;
+    OverlayedIcon const icon_calendar_locked;
     OverlayedIcon const icon_cascade_auto;
     OverlayedIcon const icon_commentary_add;
     OverlayedIcon const icon_commentary_locked;
+    OverlayedIcon const icon_dictionary_locked;
     OverlayedIcon const icon_folder_add;
     OverlayedIcon const icon_lexicon_add;
     OverlayedIcon const icon_lexicon_locked;
+    OverlayedIcon const icon_map_locked;
+    OverlayedIcon const icon_questionable_locked;
     OverlayedIcon const icon_tile_auto;
     OverlayedIcon const icon_tile_horiz_auto;
     OverlayedIcon const icon_tile_vert_auto;

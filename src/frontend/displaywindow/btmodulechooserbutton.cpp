@@ -40,22 +40,22 @@ QIcon const & BtModuleChooserButton::icon() {
     switch (m_popup->moduleType()) {
         case CSwordModuleInfo::Bible:
             return m_popup->selectedModule()
-                    ? CResMgr::modules::bible::icon_unlocked()
-                    : CResMgr::modules::bible::icon_add();
+                    ? CResMgr::categories::bibles::icon()
+                    : CResMgr::categories::bibles::icon_add();
         case CSwordModuleInfo::Commentary:
             return m_popup->selectedModule()
-                   ? CResMgr::modules::commentary::icon_unlocked()
-                   : CResMgr::modules::commentary::icon_add();
+                   ? CResMgr::categories::commentaries::icon()
+                   : CResMgr::categories::commentaries::icon_add();
         case CSwordModuleInfo::Lexicon:
             return m_popup->selectedModule()
-                   ? CResMgr::modules::lexicon::icon_unlocked()
-                   : CResMgr::modules::lexicon::icon_add();
+                   ? CResMgr::categories::lexicons::icon()
+                   : CResMgr::categories::lexicons::icon_add();
         case CSwordModuleInfo::GenericBook:
             return m_popup->selectedModule()
-                   ? CResMgr::modules::book::icon_unlocked()
-                   : CResMgr::modules::book::icon_add();
+                   ? CResMgr::categories::books::icon()
+                   : CResMgr::categories::books::icon_add();
         default: //return as default the bible icon
-            return CResMgr::modules::bible::icon_unlocked();
+            return CResMgr::categories::bibles::icon();
     }
 }
 

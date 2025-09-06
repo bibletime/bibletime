@@ -144,11 +144,11 @@ void BtTipDialog::retranslateUi() {
 
     m_tips << tr("To add multiple Bible works in parallel in your active Bible or commentary window"
         " select this icon and choose another Bible or commentary work.")
-        + "<br><center>" + iconToHtml(CResMgr::modules::bible::icon_add()) + "</center>";
+        + "<br><center>" + iconToHtml(CResMgr::categories::bibles::icon_add()) + "</center>";
 
     m_tips << tr("To add multiple commentary works in parallel in your active commentary window"
         " select this icon and choose another commentary work.")
-        + "<br><center>" + iconToHtml(CResMgr::modules::commentary::icon_add()) + "</center>";
+        + "<br><center>" + iconToHtml(CResMgr::categories::commentaries::icon_add()) + "</center>";
 
     m_tips << tr("To learn more about the BibleTime project please go to our web site.")
         + "<br><center><a href=\"" BT_HOMEPAGE "\">" BT_HOMEPAGE "</a></center>";

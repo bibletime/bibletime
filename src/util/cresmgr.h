@@ -36,40 +36,45 @@ BT_GETICON2(icon_moduleLanguage, flag)
 
 BT_GETICON2(icon_cult, stop)
 
-namespace bible {
-BT_GETICON2(icon_unlocked, bible)
-BT_GETICON2(icon_locked, bible_locked)
-BT_GETICON2(icon_add, bible_add)
-} /* namespace bible { */
-
-namespace commentary {
-BT_GETICON2(icon_unlocked, commentary)
-BT_GETICON2(icon_locked, commentary_locked)
-BT_GETICON2(icon_add, commentary_add)
-} /* namespace commentary { */
-
-namespace lexicon {
-BT_GETICON2(icon_unlocked, lexicon)
-BT_GETICON2(icon_locked, lexicon_locked)
-BT_GETICON2(icon_add, lexicon_add)
-} /* namespace lexicon { */
-
-namespace book {
-BT_GETICON2(icon_unlocked, book)
-BT_GETICON2(icon_locked, book_locked)
-BT_GETICON2(icon_add, book_add)
-} /* namespace book { */
 } /* namespace modules { */
 
 namespace categories {
-namespace bibles { BT_GETICON(bible) }
-namespace commentaries { BT_GETICON(commentary) }
-namespace lexicons { BT_GETICON(lexicon) }
-namespace dailyDevotionals { BT_GETICON(calendar) }
-namespace books { BT_GETICON(books) }
-namespace glossaries { BT_GETICON(dictionary) }
-namespace mapsAndImages { BT_GETICON(map) }
-namespace questionable { BT_GETICON(questionable) }
+namespace bibles {
+BT_GETICON(bible)
+BT_GETICON2(icon_locked, bible_locked)
+BT_GETICON2(icon_add, bible_add)
+}
+namespace commentaries {
+BT_GETICON(commentary)
+BT_GETICON2(icon_locked, commentary_locked)
+BT_GETICON2(icon_add, commentary_add)
+}
+namespace books {
+BT_GETICON(book)
+BT_GETICON2(icon_locked, book_locked)
+BT_GETICON2(icon_add, book_add)
+}
+namespace lexicons {
+BT_GETICON(lexicon)
+BT_GETICON2(icon_locked, lexicon_locked)
+BT_GETICON2(icon_add, lexicon_add)
+}
+namespace glossaries {
+BT_GETICON(dictionary)
+BT_GETICON2(icon_locked, dictionary_locked)
+}
+namespace dailyDevotionals {
+BT_GETICON(calendar)
+BT_GETICON2(icon_locked, calendar_locked)
+}
+namespace mapsAndImages {
+BT_GETICON(map)
+BT_GETICON2(icon_locked, map_locked)
+}
+namespace questionable {
+BT_GETICON(questionable)
+BT_GETICON2(icon_locked, questionable_locked)
+}
 } /* namespace categories { */
 
 namespace mainMenu { // Main menu

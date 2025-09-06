@@ -1018,28 +1018,24 @@ bool CSwordModuleInfo::isUnicode() const noexcept
 QIcon const & CSwordModuleInfo::moduleIcon(const CSwordModuleInfo & module) {
     CSwordModuleInfo::Category const cat(module.m_cachedCategory);
     switch (cat) {
-        case CSwordModuleInfo::Category::Bibles:
-            return module.isLocked()
-                   ? CResMgr::modules::bible::icon_locked()
-                   : CResMgr::modules::bible::icon_unlocked();
-
-        case CSwordModuleInfo::Category::Commentaries:
-            return module.isLocked()
-                   ? CResMgr::modules::commentary::icon_locked()
-                   : CResMgr::modules::commentary::icon_unlocked();
-
-        case CSwordModuleInfo::Category::Lexicons:
-            return module.isLocked()
-                   ? CResMgr::modules::lexicon::icon_locked()
-                   : CResMgr::modules::lexicon::icon_unlocked();
-
-        case CSwordModuleInfo::Category::Books:
-            return module.isLocked()
-                   ? CResMgr::modules::book::icon_locked()
-                   : CResMgr::modules::book::icon_unlocked();
-
+        #define BT_MODULE_ICON_(name) \
+            return module.isLocked() \
+                   ? CResMgr::categories::name::icon_locked() \
+                   : CResMgr::categories::name::icon();
+        #define BT_MODULE_ICON(Name,name) \
+            case CSwordModuleInfo::Category::Name: BT_MODULE_ICON_(name)
+        BT_MODULE_ICON(Bibles, bibles);
+        BT_MODULE_ICON(Commentaries, commentaries);
+        BT_MODULE_ICON(Books, books);
+        BT_MODULE_ICON(Lexicons, lexicons);
+        BT_MODULE_ICON(Glossaries, glossaries);
+        BT_MODULE_ICON(DailyDevotionals, dailyDevotionals);
+        BT_MODULE_ICON(MapsAndImages, mapsAndImages);
         default:
-            return categoryIcon(cat);
+            BT_ASSERT(cat == CSwordModuleInfo::Category::Questionable);
+            BT_MODULE_ICON_(questionable);
+        #undef BT_MODULE_ICON
+        #undef BT_MODULE_ICON_
     }
 }
 
