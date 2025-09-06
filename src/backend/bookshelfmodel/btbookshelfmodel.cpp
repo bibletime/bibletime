@@ -15,10 +15,10 @@
 #include <QIcon>
 #include <QSet>
 #include <QtAlgorithms>
+#include <QtCompilerDetection>
 #include <QtGlobal>
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
-#include "../../util/macros.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../drivers/btconstmoduleset.h"
 
@@ -186,7 +186,7 @@ void BtBookshelfModel::removeModules(BtConstModuleSet const & modules,
 
 CSwordModuleInfo * BtBookshelfModel::getModule(QString const & name) const {
     for (auto * const module : m_data)
-        if (UNLIKELY(module->name() == name))
+        if (Q_UNLIKELY(module->name() == name))
             return module;
     return nullptr;
 }

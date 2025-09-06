@@ -17,12 +17,12 @@
 #include <QDebug>
 #include <QModelIndexList>
 #include <QPair>
+#include <QtCompilerDetection>
 #include <QtGlobal>
 #include <type_traits>
 #include <utility>
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
-#include "../../util/macros.h"
 #include "../config/btconfigcore.h"
 #include "../drivers/btconstmoduleset.h"
 #include "../drivers/btmoduleset.h"
@@ -189,12 +189,12 @@ bool BtBookshelfTreeModel::setData(QModelIndex const & itemIndex,
     BT_ASSERT(itemIndex.isValid());
     using IP = QPair<Item *, QModelIndex>;
 
-    if (UNLIKELY(role != Qt::CheckStateRole))
+    if (Q_UNLIKELY(role != Qt::CheckStateRole))
         return false;
 
     bool ok;
     Qt::CheckState newState = static_cast<Qt::CheckState>(value.toInt(&ok));
-    if (UNLIKELY(!ok))
+    if (Q_UNLIKELY(!ok))
         return false;
 
     // Handle partially checked as checked here in setData():
@@ -472,7 +472,7 @@ void BtBookshelfTreeModel::removeModule(CSwordModuleInfo & module) {
 }
 
 Item & BtBookshelfTreeModel::getItem(QModelIndex const & index) const {
-    if (UNLIKELY(!index.isValid()))
+    if (Q_UNLIKELY(!index.isValid()))
         return *m_rootItem;
 
     Item * const item = static_cast<Item *>(index.internalPointer());
