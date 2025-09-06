@@ -17,8 +17,11 @@
 #include <QCoreApplication>
 #include <QDebug>
 #include <QDir>
-#include <QFileInfo>
-#include <QFileInfoList>
+#if (QT_VERSION < QT_VERSION_CHECK(6, 8, 0))
+#include <QDirIterator>
+#else
+#include <QDirListing>
+#endif
 #include <QFlags>
 #include <QLocale>
 #include <QStringList>
@@ -203,30 +206,17 @@ bool initDirectoryCache() {
     return true;
 } // bool initDirectoryCache();
 
-/** \returns the size of the directory including the size of all it's files and
-             it's subdirs. */
 ::qint64 getDirSizeRecursive(QString const & dir) {
-    //Check for validity of argument
-    QDir d(dir);
-    if (!d.exists())
-        return 0u;
-
     ::qint64 size = 0u;
-
-    //First get the size of all files int this folder
-    d.setFilter(QDir::Files);
-    for (auto const & fileInfo : d.entryInfoList()) {
-        BT_ASSERT(fileInfo.size() > 0);
-        size += fileInfo.size();
-    }
-
-    //Then add the sizes of all subdirectories
-    d.setFilter(QDir::Dirs);
-    for (auto const & dirInfo : d.entryInfoList())
-        if (dirInfo.isDir()
-            && dirInfo.fileName() != QStringLiteral(".")
-            && dirInfo.fileName() != QStringLiteral(".."))
-            size += getDirSizeRecursive(dirInfo.absoluteFilePath());
+    #if (QT_VERSION < QT_VERSION_CHECK(6, 8, 0))
+    QDirIterator it(dir, QDir::Files, QDirIterator::Subdirectories);
+    while (it.hasNext())
+        size += it.nextFileInfo().size();
+    #else
+    using F = QDirListing::IteratorFlag;
+    for (auto const & fileEntry : QDirListing(dir, F::FilesOnly | F::Recursive))
+        size += fileEntry.size();
+    #endif
     return size;
 }
 

@@ -32,15 +32,7 @@ namespace directory {
 */
 bool initDirectoryCache();
 
-/** Returns the size of the directory including the size of all its files
- * and its subdirs.
- *
- * \todo Check if it's suitable for huge dir trees, as it holds a QDir object
- * for each of it at the same time in the deepest recursion.
- * For really deep dir tree this may lead to a stack overflow.
- *
- * @return The size of the dir in bytes
- */
+/** \returns the total size of all files in the given directory, recursively. */
 ::qint64 getDirSizeRecursive(QString const & dir);
 
 #ifdef Q_OS_WIN
