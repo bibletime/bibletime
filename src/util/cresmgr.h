@@ -65,11 +65,11 @@ namespace categories {
 namespace bibles { BT_GETICON(bible) }
 namespace commentaries { BT_GETICON(commentary) }
 namespace lexicons { BT_GETICON(lexicon) }
-namespace dailydevotional { BT_GETICON(calendar) }
+namespace dailyDevotionals { BT_GETICON(calendar) }
 namespace books { BT_GETICON(books) }
-namespace glossary { BT_GETICON(dictionary) }
-namespace images { BT_GETICON(map) }
-namespace cults { BT_GETICON(questionable) }
+namespace glossaries { BT_GETICON(dictionary) }
+namespace mapsAndImages { BT_GETICON(map) }
+namespace questionable { BT_GETICON(questionable) }
 } /* namespace categories { */
 
 namespace mainMenu { // Main menu

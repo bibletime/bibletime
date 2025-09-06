@@ -142,15 +142,15 @@ public: // types:
     };
     Q_DECLARE_FLAGS(Features, Feature)
 
-    enum Category {
-        Bibles          = 0x01,
-        Commentaries    = 0x02,
-        Books           = 0x04,
-        Lexicons        = 0x08,
-        Glossary        = 0x10,
-        DailyDevotional = 0x20,
-        Images          = 0x40,
-        Cult            = 0x80, /**< Cult / sect / questionable module. */
+    enum class Category {
+        Bibles           = 0x01,
+        Commentaries     = 0x02,
+        Books            = 0x04,
+        Lexicons         = 0x08,
+        Glossaries       = 0x10,
+        DailyDevotionals = 0x20,
+        MapsAndImages    = 0x40,
+        Questionable     = 0x80,
     };
     Q_DECLARE_FLAGS(Categories, Category)
 

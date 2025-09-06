@@ -83,34 +83,35 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
     STANDARD_WORKS_TAB_ADD_ROW(standardBible, Bible);
     STANDARD_WORKS_TAB_ADD_ROW(standardCommentary, Commentary);
     STANDARD_WORKS_TAB_ADD_ROW(
-                standardLexicon,
-                Lexicon
-                && !(m->category() == CSwordModuleInfo::DailyDevotional)
-                && !(m->has(CSwordModuleInfo::FeatureHebrewDef)
-                     && toLexModule(m)->hasStrongsKeys())
-                && !(m->has(CSwordModuleInfo::FeatureGreekDef)
-                     && toLexModule(m)->hasStrongsKeys())
-                && !m->has(CSwordModuleInfo::FeatureHebrewParse)
-                && !m->has(CSwordModuleInfo::FeatureGreekParse));
+            standardLexicon,
+            Lexicon
+            && !(m->category() == CSwordModuleInfo::Category::DailyDevotionals)
+            && !(m->has(CSwordModuleInfo::FeatureHebrewDef)
+                 && toLexModule(m)->hasStrongsKeys())
+            && !(m->has(CSwordModuleInfo::FeatureGreekDef)
+                 && toLexModule(m)->hasStrongsKeys())
+            && !m->has(CSwordModuleInfo::FeatureHebrewParse)
+            && !m->has(CSwordModuleInfo::FeatureGreekParse));
     STANDARD_WORKS_TAB_ADD_ROW(
-                standardDailyDevotional,
-                Lexicon && m->category() == CSwordModuleInfo::DailyDevotional);
+            standardDailyDevotional,
+            Lexicon
+            && m->category() == CSwordModuleInfo::Category::DailyDevotionals);
     STANDARD_WORKS_TAB_ADD_ROW(
-                standardHebrewStrongsLexicon,
-                Lexicon
-                && m->has(CSwordModuleInfo::FeatureHebrewDef)
-                && toLexModule(m)->hasStrongsKeys());
+            standardHebrewStrongsLexicon,
+            Lexicon
+            && m->has(CSwordModuleInfo::FeatureHebrewDef)
+            && toLexModule(m)->hasStrongsKeys());
     STANDARD_WORKS_TAB_ADD_ROW(
-                standardGreekStrongsLexicon,
-                Lexicon
-                && m->has(CSwordModuleInfo::FeatureGreekDef)
-                && toLexModule(m)->hasStrongsKeys());
+            standardGreekStrongsLexicon,
+            Lexicon
+            && m->has(CSwordModuleInfo::FeatureGreekDef)
+            && toLexModule(m)->hasStrongsKeys());
     STANDARD_WORKS_TAB_ADD_ROW(
-                standardHebrewMorphLexicon,
-                Lexicon && m->has(CSwordModuleInfo::FeatureHebrewParse));
+            standardHebrewMorphLexicon,
+            Lexicon && m->has(CSwordModuleInfo::FeatureHebrewParse));
     STANDARD_WORKS_TAB_ADD_ROW(
-                standardGreekMorphLexicon,
-                Lexicon && m->has(CSwordModuleInfo::FeatureGreekParse));
+            standardGreekMorphLexicon,
+            Lexicon && m->has(CSwordModuleInfo::FeatureGreekParse));
 #undef STANDARD_WORKS_TAB_ADD_ROW
 
     mainLayout->addLayout(formLayout);

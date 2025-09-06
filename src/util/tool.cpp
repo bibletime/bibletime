@@ -78,7 +78,7 @@ bool savePlainFile(QString const & filename, QString const & text)
 }
 
 QIcon const & getIconForModule(CSwordModuleInfo const & module) {
-    if (module.category() == CSwordModuleInfo::Cult)
+    if (module.category() == CSwordModuleInfo::Category::Questionable)
         return CResMgr::modules::icon_cult();
 
     switch (module.type()) {

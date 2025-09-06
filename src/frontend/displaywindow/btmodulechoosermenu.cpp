@@ -173,7 +173,7 @@ QAction * BtModuleChooserMenu::newAction(QMenu * parentMenu,
     if ((m_flags & DisableNonBiblesOnFirstButton)
         && m_buttonIndex <= 0
         && sortedModel.m_moduleType == CSwordModuleInfo::Bible
-        && module->category() != CSwordModuleInfo::Bibles)
+        && module->category() != CSwordModuleInfo::Category::Bibles)
         action->setDisabled(true);
 
     return action;

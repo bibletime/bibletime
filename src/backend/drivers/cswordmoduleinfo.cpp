@@ -74,30 +74,30 @@ inline CSwordModuleInfo::Category retrieveCategory(
 
     // Category has to be checked before type:
     if (cat == QStringLiteral("Cults / Unorthodox / Questionable Material")) {
-        return CSwordModuleInfo::Cult;
+        return CSwordModuleInfo::Category::Questionable;
     } else if (cat == QStringLiteral("Daily Devotional")
                || features.testFlag(CSwordModuleInfo::FeatureDailyDevotion))
     {
-        return CSwordModuleInfo::DailyDevotional;
+        return CSwordModuleInfo::Category::DailyDevotionals;
     } else if (cat == QStringLiteral("Glossaries")
                || features.testFlag(CSwordModuleInfo::FeatureGlossary))
     {
-        return CSwordModuleInfo::Glossary;
+        return CSwordModuleInfo::Category::Glossaries;
     } else if (cat == QStringLiteral("Images")
                || cat == QStringLiteral("Maps"))
     {
-        return CSwordModuleInfo::Images;
+        return CSwordModuleInfo::Category::MapsAndImages;
     } else {
         switch (type) {
             case CSwordModuleInfo::Bible:
-                return CSwordModuleInfo::Bibles;
+                return CSwordModuleInfo::Category::Bibles;
             case CSwordModuleInfo::Commentary:
-                return CSwordModuleInfo::Commentaries;
+                return CSwordModuleInfo::Category::Commentaries;
             case CSwordModuleInfo::Lexicon:
-                return CSwordModuleInfo::Lexicons;
+                return CSwordModuleInfo::Category::Lexicons;
             default:
                 BT_ASSERT(type == CSwordModuleInfo::GenericBook);
-                return CSwordModuleInfo::Books;
+                return CSwordModuleInfo::Category::Books;
         }
     }
 }
@@ -228,13 +228,13 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule & module,
     , m_cachedLanguage(
         Language::fromAbbrev(
               util::tool::fixSwordBcp47(
-                  m_cachedCategory == Glossary
+                  m_cachedCategory == Category::Glossaries
                   /* Special handling for glossaries, we use the "from language" as
                      language for the module: */
                   ? config(GlossaryFrom)
                   : module.getLanguage())))
     , m_cachedGlossaryTargetLanguage(
-        m_cachedCategory == Glossary
+        m_cachedCategory == Category::Glossaries
         ? Language::fromAbbrev(
               util::tool::fixSwordBcp47(module.getLanguage()))
         : std::shared_ptr<Language const>())
@@ -795,14 +795,14 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
         }
 
         case GlossaryFrom: {
-            if (m_cachedCategory != Glossary)
+            if (m_cachedCategory != Category::Glossaries)
                 return {};
 
             return getSimpleConfigEntry(QStringLiteral("GlossaryFrom"));
         }
 
         case GlossaryTo: {
-            if (m_cachedCategory != Glossary)
+            if (m_cachedCategory != Category::Glossaries)
                 return {};
 
             return getSimpleConfigEntry(QStringLiteral("GlossaryTo"));
@@ -978,7 +978,7 @@ QString CSwordModuleInfo::aboutText() const {
     text += QStringLiteral("</table><hr>");
 
     // Clearly say the module contains cult/questionable materials
-    if (m_cachedCategory == Cult)
+    if (m_cachedCategory == Category::Questionable)
         text += QStringLiteral("<br/><b>%1</b><br/><br/>")
                 .arg(tr("Take care, this work contains cult / questionable "
                         "material!"));
@@ -1018,22 +1018,22 @@ bool CSwordModuleInfo::isUnicode() const noexcept
 QIcon const & CSwordModuleInfo::moduleIcon(const CSwordModuleInfo & module) {
     CSwordModuleInfo::Category const cat(module.m_cachedCategory);
     switch (cat) {
-        case CSwordModuleInfo::Bibles:
+        case CSwordModuleInfo::Category::Bibles:
             return module.isLocked()
                    ? CResMgr::modules::bible::icon_locked()
                    : CResMgr::modules::bible::icon_unlocked();
 
-        case CSwordModuleInfo::Commentaries:
+        case CSwordModuleInfo::Category::Commentaries:
             return module.isLocked()
                    ? CResMgr::modules::commentary::icon_locked()
                    : CResMgr::modules::commentary::icon_unlocked();
 
-        case CSwordModuleInfo::Lexicons:
+        case CSwordModuleInfo::Category::Lexicons:
             return module.isLocked()
                    ? CResMgr::modules::lexicon::icon_locked()
                    : CResMgr::modules::lexicon::icon_unlocked();
 
-        case CSwordModuleInfo::Books:
+        case CSwordModuleInfo::Category::Books:
             return module.isLocked()
                    ? CResMgr::modules::book::icon_locked()
                    : CResMgr::modules::book::icon_unlocked();
@@ -1045,43 +1045,43 @@ QIcon const & CSwordModuleInfo::moduleIcon(const CSwordModuleInfo & module) {
 
 QIcon const & CSwordModuleInfo::categoryIcon(CSwordModuleInfo::Category category) {
     switch (category) {
-        case CSwordModuleInfo::Bibles:
+        case CSwordModuleInfo::Category::Bibles:
             return CResMgr::categories::bibles::icon();
-        case CSwordModuleInfo::Commentaries:
+        case CSwordModuleInfo::Category::Commentaries:
             return CResMgr::categories::commentaries::icon();
-        case CSwordModuleInfo::Books:
+        case CSwordModuleInfo::Category::Books:
             return CResMgr::categories::books::icon();
-        case CSwordModuleInfo::Cult:
-            return CResMgr::categories::cults::icon();
-        case CSwordModuleInfo::Images:
-            return CResMgr::categories::images::icon();
-        case CSwordModuleInfo::DailyDevotional:
-            return CResMgr::categories::dailydevotional::icon();
-        case CSwordModuleInfo::Lexicons:
+        case CSwordModuleInfo::Category::Questionable:
+            return CResMgr::categories::questionable::icon();
+        case CSwordModuleInfo::Category::MapsAndImages:
+            return CResMgr::categories::mapsAndImages::icon();
+        case CSwordModuleInfo::Category::DailyDevotionals:
+            return CResMgr::categories::dailyDevotionals::icon();
+        case CSwordModuleInfo::Category::Lexicons:
             return CResMgr::categories::lexicons::icon();
         default:
-            BT_ASSERT(category == CSwordModuleInfo::Glossary);
-            return CResMgr::categories::glossary::icon();
+            BT_ASSERT(category == CSwordModuleInfo::Category::Glossaries);
+            return CResMgr::categories::glossaries::icon();
     }
 }
 
 QString CSwordModuleInfo::categoryName(const CSwordModuleInfo::Category & category) {
     switch (category) {
-        case CSwordModuleInfo::Bibles:
+        case CSwordModuleInfo::Category::Bibles:
             return tr("Bibles");
-        case CSwordModuleInfo::Commentaries:
+        case CSwordModuleInfo::Category::Commentaries:
             return tr("Commentaries");
-        case CSwordModuleInfo::Books:
+        case CSwordModuleInfo::Category::Books:
             return tr("Books");
-        case CSwordModuleInfo::Cult:
-            return tr("Cults/Unorthodox");
-        case CSwordModuleInfo::Images:
+        case CSwordModuleInfo::Category::Questionable:
+            return tr("Questionable");
+        case CSwordModuleInfo::Category::MapsAndImages:
             return tr("Maps and Images");
-        case CSwordModuleInfo::DailyDevotional:
+        case CSwordModuleInfo::Category::DailyDevotionals:
             return tr("Daily Devotionals");
-        case CSwordModuleInfo::Lexicons:
+        case CSwordModuleInfo::Category::Lexicons:
             return  tr("Lexicons and Dictionaries");
-        case CSwordModuleInfo::Glossary:
+        case CSwordModuleInfo::Category::Glossaries:
             return tr("Glossaries");
         default:
             return tr("Unknown");
