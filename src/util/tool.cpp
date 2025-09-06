@@ -105,7 +105,6 @@ QIcon const & getIconForModule(const CSwordModuleInfo * const module) {
                 return CResMgr::modules::book::icon_locked();
             return CResMgr::modules::book::icon_unlocked();
 
-        case CSwordModuleInfo::Unknown: //fallback
         default:
             if (module->isLocked())
                 return CResMgr::modules::book::icon_locked();

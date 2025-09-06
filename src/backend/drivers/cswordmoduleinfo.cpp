@@ -97,7 +97,6 @@ inline CSwordModuleInfo::Category retrieveCategory(
                 return CSwordModuleInfo::Lexicons;
             case CSwordModuleInfo::GenericBook:
                 return CSwordModuleInfo::Books;
-            case CSwordModuleInfo::Unknown: // Fall thru
             default:
                 return CSwordModuleInfo::UnknownCategory;
         }

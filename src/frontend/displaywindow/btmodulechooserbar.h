@@ -15,6 +15,7 @@
 #include <QToolBar>
 
 #include <QList>
+#include <optional>
 #include "../../backend/drivers/btmodulelist.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
 
@@ -59,6 +60,6 @@ private: /* Methods: */
 private: /* Fields: */
 
     QList<BtModuleChooserButton *> m_buttonList;
-    CSwordModuleInfo::ModuleType m_moduleType = CSwordModuleInfo::Unknown;
+    std::optional<CSwordModuleInfo::ModuleType> m_moduleType;
 
 };

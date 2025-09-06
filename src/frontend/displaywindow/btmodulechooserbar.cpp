@@ -53,7 +53,7 @@ void BtModuleChooserBar::adjustButtonCount(int const numButtons,
 
 BtModuleChooserButton *
 BtModuleChooserBar::addButton(CDisplayWindow * const window) {
-    BtModuleChooserButton* b = new BtModuleChooserButton(m_moduleType, this);
+    BtModuleChooserButton* b = new BtModuleChooserButton(*m_moduleType, this);
     QAction* a = addWidget(b);
     m_buttonList.append(b);
 
@@ -91,7 +91,7 @@ void BtModuleChooserBar::associateWithWindow(CDisplayWindow * const window) {
     for (int i = 0; i < modules.size(); i++) {
         addButton(window);
     }
-    if (!(m_moduleType == CSwordModuleInfo::GenericBook)) {
+    if (!(*m_moduleType == CSwordModuleInfo::GenericBook)) {
         addButton(window); // for ADD button
     } else {
         BT_ASSERT(modules.size() == 1);
