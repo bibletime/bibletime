@@ -352,22 +352,21 @@ wrong, or if the config file was write protected return false.
     */
     bool isUnicode() const noexcept;
 
-    /**
-      Returns an icon for this module.
-    */
-    QIcon moduleIcon() const { return CSwordModuleInfo::moduleIcon(*this); }
+    /** \returns an icon for this module based on it's isLocked() status. */
+    QIcon moduleIcon() const;
 
     /**
-      Returns an icon for the given module.
-      \param[in] module The module whose icon to return.
-    */
-    static QIcon const & moduleIcon(CSwordModuleInfo const & module);
-
-    /**
-      Returns an icon for the category of given module.
-      \param[in] module The module whose category icon to return.
+      \param[in] category The category whose icon to return.
+      \returns an ("unlocked") icon for the given category.
     */
     static QIcon const & categoryIcon(CSwordModuleInfo::Category category);
+
+    /**
+      \param[in] category The category whose icon to return.
+      \returns a "locked" icon for the given category.
+    */
+    static QIcon const & categoryIconLocked(
+            CSwordModuleInfo::Category category);
 
     /**
       Returns a translated name for the given category.

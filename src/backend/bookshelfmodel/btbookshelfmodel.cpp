@@ -46,7 +46,7 @@ QVariant BtBookshelfModel::data(CSwordModuleInfo * module, int const role) const
             return module->name();
         case Qt::DecorationRole:
         case ModuleIconRole:
-            return CSwordModuleInfo::moduleIcon(*module);
+            return module->moduleIcon();
         case ModulePointerRole:
             return QVariant::fromValue(static_cast<void *>(module));
         case ModuleCategoryRole:

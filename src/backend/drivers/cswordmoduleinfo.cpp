@@ -1015,51 +1015,41 @@ QString CSwordModuleInfo::aboutText() const {
 bool CSwordModuleInfo::isUnicode() const noexcept
 { return m_swordModule.isUnicode(); }
 
-QIcon const & CSwordModuleInfo::moduleIcon(const CSwordModuleInfo & module) {
-    CSwordModuleInfo::Category const cat(module.m_cachedCategory);
-    switch (cat) {
-        #define BT_MODULE_ICON_(name) \
-            return module.isLocked() \
-                   ? CResMgr::categories::name::icon_locked() \
-                   : CResMgr::categories::name::icon();
-        #define BT_MODULE_ICON(Name,name) \
-            case CSwordModuleInfo::Category::Name: BT_MODULE_ICON_(name)
-        BT_MODULE_ICON(Bibles, bibles);
-        BT_MODULE_ICON(Commentaries, commentaries);
-        BT_MODULE_ICON(Books, books);
-        BT_MODULE_ICON(Lexicons, lexicons);
-        BT_MODULE_ICON(Glossaries, glossaries);
-        BT_MODULE_ICON(DailyDevotionals, dailyDevotionals);
-        BT_MODULE_ICON(MapsAndImages, mapsAndImages);
-        default:
-            BT_ASSERT(cat == CSwordModuleInfo::Category::Questionable);
-            BT_MODULE_ICON_(questionable);
-        #undef BT_MODULE_ICON
-        #undef BT_MODULE_ICON_
-    }
+QIcon CSwordModuleInfo::moduleIcon() const {
+    if (isLocked())
+        return categoryIconLocked(m_cachedCategory);
+    return categoryIcon(m_cachedCategory);
 }
 
-QIcon const & CSwordModuleInfo::categoryIcon(CSwordModuleInfo::Category category) {
-    switch (category) {
-        case CSwordModuleInfo::Category::Bibles:
-            return CResMgr::categories::bibles::icon();
-        case CSwordModuleInfo::Category::Commentaries:
-            return CResMgr::categories::commentaries::icon();
-        case CSwordModuleInfo::Category::Books:
-            return CResMgr::categories::books::icon();
-        case CSwordModuleInfo::Category::Questionable:
-            return CResMgr::categories::questionable::icon();
-        case CSwordModuleInfo::Category::MapsAndImages:
-            return CResMgr::categories::mapsAndImages::icon();
-        case CSwordModuleInfo::Category::DailyDevotionals:
-            return CResMgr::categories::dailyDevotionals::icon();
-        case CSwordModuleInfo::Category::Lexicons:
-            return CResMgr::categories::lexicons::icon();
-        default:
-            BT_ASSERT(category == CSwordModuleInfo::Category::Glossaries);
-            return CResMgr::categories::glossaries::icon();
+#define BT_CAT_ICON(Icon,icon) \
+    QIcon const & \
+    CSwordModuleInfo::category ## Icon( \
+            CSwordModuleInfo::Category const category) \
+    { \
+        switch (category) { \
+            case CSwordModuleInfo::Category::Bibles: \
+                return CResMgr::categories::bibles::icon(); \
+            case CSwordModuleInfo::Category::Commentaries: \
+                return CResMgr::categories::commentaries::icon(); \
+            case CSwordModuleInfo::Category::Books: \
+                return CResMgr::categories::books::icon(); \
+            case CSwordModuleInfo::Category::Lexicons: \
+                return CResMgr::categories::lexicons::icon(); \
+            case CSwordModuleInfo::Category::Glossaries: \
+                return CResMgr::categories::glossaries::icon(); \
+            case CSwordModuleInfo::Category::DailyDevotionals: \
+                return CResMgr::categories::dailyDevotionals::icon(); \
+            case CSwordModuleInfo::Category::MapsAndImages: \
+                return CResMgr::categories::mapsAndImages::icon(); \
+            default: \
+                BT_ASSERT(category == \
+                          CSwordModuleInfo::Category::Questionable); \
+                return CResMgr::categories::questionable::icon(); \
+        } \
     }
-}
+BT_CAT_ICON(Icon, icon)
+BT_CAT_ICON(IconLocked, icon_locked)
+#undef BT_CAT_ICON
 
 QString CSwordModuleInfo::categoryName(const CSwordModuleInfo::Category & category) {
     switch (category) {
