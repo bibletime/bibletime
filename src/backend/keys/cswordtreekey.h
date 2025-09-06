@@ -15,7 +15,7 @@
 #include "cswordkey.h"
 
 #include <QString>
-#include <type_traits>
+#include <utility>
 
 // Sword includes:
 #pragma GCC diagnostic push

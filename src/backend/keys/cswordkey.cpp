@@ -15,7 +15,6 @@
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #include <QString>
-#include <string>
 #include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
 

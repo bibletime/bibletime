@@ -15,7 +15,6 @@
 #include <QAbstractItemModel>
 #include <QVariant>
 #include "../../util/btassert.h"
-#include "../drivers/cswordmoduleinfo.h"
 #include "btbookshelfmodel.h"
 
 

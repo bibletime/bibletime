@@ -13,7 +13,6 @@
 #include "cdisplaytemplatemgr.h"
 
 #include <algorithm>
-#include <memory>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
@@ -22,13 +21,11 @@
 #include <QObject>
 #include <QStringList>
 #include <QTextStream>
-#include <set>
 #include "../../util/btassert.h"
 #include "../../util/directory.h"
 #include "../config/btconfig.h"
 #include "../drivers/btmodulelist.h"
 #include "../drivers/cswordmoduleinfo.h"
-#include "../language.h"
 #include "cswordbackend.h"
 
 

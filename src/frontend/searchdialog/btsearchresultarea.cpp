@@ -26,7 +26,6 @@
 #include "../../backend/managers/colormanager.h"
 #include "../../backend/keys/cswordversekey.h"
 #include "../../backend/rendering/cdisplayrendering.h"
-#include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/tool.h"
 #include "cmoduleresultview.h"

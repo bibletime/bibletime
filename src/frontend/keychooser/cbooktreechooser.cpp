@@ -12,7 +12,6 @@
 
 #include "cbooktreechooser.h"
 
-#include <memory>
 #include <QApplication>
 #include <QCursor>
 #include <QHBoxLayout>

@@ -12,7 +12,6 @@
 
 #include "btfontsettings.h"
 
-#include <algorithm>
 #include <cstddef>
 #include <memory>
 #include <QCheckBox>

@@ -12,7 +12,6 @@
 
 #pragma once
 
-#include <cstddef>
 #include <QtGlobal>
 #include <QString>
 

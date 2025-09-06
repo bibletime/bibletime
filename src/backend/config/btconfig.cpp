@@ -22,7 +22,6 @@
 #include <QSettings>
 #include <QVariant>
 #include <memory>
-#include <type_traits>
 #include <utility>
 #include "../../util/btassert.h"
 #include "../../util/directory.h"

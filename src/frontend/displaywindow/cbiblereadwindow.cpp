@@ -28,7 +28,7 @@
 #include "../cmdiarea.h"
 #include "../display/btmodelviewreaddisplay.h"
 #include "../keychooser/ckeychooser.h"
-#include "btactioncollection.h"
+
 
 CBibleReadWindow::ActionCollection::ActionCollection(QObject * const parent)
     : CDisplayWindow::ActionCollection(parent)

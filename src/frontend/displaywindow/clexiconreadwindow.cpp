@@ -18,7 +18,6 @@
 #include "../../backend/keys/cswordldkey.h"
 #include "../../util/cresmgr.h"
 #include "../keychooser/ckeychooser.h"
-#include "btactioncollection.h"
 
 
 CLexiconReadWindow::ActionCollection::ActionCollection(QObject * const parent)

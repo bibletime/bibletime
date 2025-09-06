@@ -17,7 +17,6 @@
 #include <QObject>
 #include <QString>
 #include <Qt>
-#include "../drivers/cswordmoduleinfo.h"
 
 
 class QModelIndex;

@@ -24,9 +24,7 @@
 #include <QObject>
 #include <QTextStream>
 #include <QWidget>
-#include "../backend/drivers/cswordmoduleinfo.h"
 #include "btassert.h"
-#include "cresmgr.h"
 
 
 namespace util {

@@ -41,7 +41,6 @@
 #include "../../backend/config/btconfig.h"
 #include "../../backend/drivers/btmoduleset.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
-#include "../../backend/language.h"
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"

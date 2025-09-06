@@ -13,7 +13,6 @@
 #include "cbookkeychooser.h"
 
 #include <algorithm>
-#include <memory>
 #include <QComboBox>
 #include <QHBoxLayout>
 #include <QStringList>

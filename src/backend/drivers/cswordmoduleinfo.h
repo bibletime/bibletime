@@ -20,7 +20,6 @@
 #include <QMetaType>
 #include <QString>
 #include <QtGlobal>
-#include <vector>
 #include "../cswordmodulesearch.h"
 #include "../language.h"
 

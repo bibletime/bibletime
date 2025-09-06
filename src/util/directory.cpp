@@ -26,7 +26,6 @@
 #include <QLocale>
 #include <QStringList>
 #include <QtGlobal>
-#include "btassert.h"
 
 
 namespace util {

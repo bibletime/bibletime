@@ -25,7 +25,6 @@
 #include "../../backend/btinstallbackend.h"
 #include "../../backend/config/btconfig.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
-#include "../../backend/language.h"
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/btconnect.h"
 #include "btbookshelfwizard.h"

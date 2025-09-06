@@ -20,7 +20,6 @@
 #include <QtAlgorithms>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
-#include <vector>
 #include "../../backend/config/btconfig.h"
 #include "../../backend/cswordmodulesearch.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"

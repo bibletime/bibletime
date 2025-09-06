@@ -25,7 +25,6 @@
 #include "../backend/keys/cswordkey.h"
 #include "../backend/managers/colormanager.h"
 #include "../backend/managers/referencemanager.h"
-#include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "bibletime.h"
 #include "bttextbrowser.h"

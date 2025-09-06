@@ -30,7 +30,6 @@
 #include "../drivers/cswordlexiconmoduleinfo.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../keys/cswordkey.h"
-#include "../language.h"
 #include "../managers/cdisplaytemplatemgr.h"
 #include "../managers/cswordbackend.h"
 #include "crossrefrendering.h"

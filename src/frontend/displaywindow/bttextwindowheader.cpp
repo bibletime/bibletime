@@ -16,7 +16,6 @@
 #include <QLayout>
 #include <QSizePolicy>
 #include <Qt>
-#include <utility>
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/btmodules.h"

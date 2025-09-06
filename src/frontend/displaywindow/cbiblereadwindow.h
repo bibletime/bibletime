@@ -16,7 +16,6 @@
 
 #include <QAction>
 #include "../cexportmanager.h"
-#include "btactioncollection.h"
 
 
 class CSwordKey;

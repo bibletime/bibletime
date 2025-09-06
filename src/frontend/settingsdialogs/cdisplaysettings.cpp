@@ -12,8 +12,6 @@
 
 #include "cdisplaysettings.h"
 
-#include <map>
-#include <memory>
 #include <QCheckBox>
 #include <QComboBox>
 #include <QFont>

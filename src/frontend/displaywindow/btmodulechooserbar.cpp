@@ -14,7 +14,6 @@
 
 #include <QAction>
 #include <Qt>
-#include <utility>
 #include "../../util/btconnect.h"
 #include "../../util/btmodules.h"
 #include "../displaywindow/cdisplaywindow.h"

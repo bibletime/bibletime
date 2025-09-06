@@ -38,7 +38,6 @@
 #include <windows.h>
 #endif
 #include "../backend/config/btconfig.h"
-#include "../backend/managers/cswordbackend.h"
 #include "../backend/managers/cdisplaytemplatemgr.h"
 #include "../util/btassert.h"
 #include "../util/bticons.h"

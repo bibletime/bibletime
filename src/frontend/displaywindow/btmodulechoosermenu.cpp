@@ -18,7 +18,6 @@
 #include <QModelIndex>
 #include <QSortFilterProxyModel>
 #include <QVariant>
-#include <utility>
 #include "../../backend/bookshelfmodel/btbookshelfmodel.h"
 #include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../../backend/config/btconfig.h"
