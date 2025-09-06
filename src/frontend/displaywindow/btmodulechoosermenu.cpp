@@ -191,6 +191,12 @@ void BtModuleChooserMenu::update(BtModuleList newModulesToUse,
     rebuildMenu();
 }
 
+QIcon BtModuleChooserMenu::buttonIcon() const {
+    if (m_selectedModule)
+        return CSwordModuleInfo::categoryIcon(m_selectedModule->category());
+    return CSwordModuleInfo::categoryIconAdd(m_moduleType);
+}
+
 void BtModuleChooserMenu::setSelectedModule(
         CSwordModuleInfo * const newSelectedModule) noexcept
 {

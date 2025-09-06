@@ -1048,8 +1048,24 @@ QIcon CSwordModuleInfo::moduleIcon() const {
         } \
     }
 BT_CAT_ICON(Icon, icon)
+BT_CAT_ICON(IconAdd, icon_add)
 BT_CAT_ICON(IconLocked, icon_locked)
 #undef BT_CAT_ICON
+
+QIcon const &
+CSwordModuleInfo::categoryIconAdd(CSwordModuleInfo::ModuleType const type) {
+    switch (type) {
+    case CSwordModuleInfo::Bible:
+        return categoryIconAdd(Category::Bibles);
+    case CSwordModuleInfo::Commentary:
+        return categoryIconAdd(Category::Commentaries);
+    case CSwordModuleInfo::Lexicon:
+        return categoryIconAdd(Category::Lexicons);
+    default:
+        BT_ASSERT(type == CSwordModuleInfo::GenericBook);
+        return categoryIconAdd(Category::Books);
+    }
+}
 
 QString CSwordModuleInfo::categoryName(const CSwordModuleInfo::Category & category) {
     switch (category) {

@@ -52,11 +52,10 @@ public: // methods:
                 int newButtonIndexIndex,
                 int newLeftLikeModules);
 
-    CSwordModuleInfo::ModuleType moduleType() const noexcept
-    { return m_moduleType; }
-
     CSwordModuleInfo * selectedModule() const noexcept
     { return m_selectedModule; }
+
+    QIcon buttonIcon() const;
 
     void setSelectedModule(CSwordModuleInfo * const newSelectedModule) noexcept;
 

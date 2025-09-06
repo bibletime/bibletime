@@ -64,10 +64,5 @@ class BtModuleChooserButton: public QToolButton {
 
     private:
 
-        /** Returns the icon used for the current status. */
-        QIcon const & icon();
-
-    private:
-
         BtModuleChooserMenu * m_popup;
 };

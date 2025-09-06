@@ -62,18 +62,22 @@ BT_GETICON2(icon_add, lexicon_add)
 namespace glossaries {
 BT_GETICON(dictionary)
 BT_GETICON2(icon_locked, dictionary_locked)
+BT_GETICON2(icon_add, dictionary_add)
 }
 namespace dailyDevotionals {
 BT_GETICON(calendar)
 BT_GETICON2(icon_locked, calendar_locked)
+BT_GETICON2(icon_add, calendar_add)
 }
 namespace mapsAndImages {
 BT_GETICON(map)
 BT_GETICON2(icon_locked, map_locked)
+BT_GETICON2(icon_add, map_add)
 }
 namespace questionable {
 BT_GETICON(questionable)
 BT_GETICON2(icon_locked, questionable_locked)
+BT_GETICON2(icon_add, questionable_add)
 }
 } /* namespace categories { */
 

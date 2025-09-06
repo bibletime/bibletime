@@ -14,7 +14,6 @@
 
 #include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../util/btconnect.h"
-#include "../../util/cresmgr.h"
 #include "btmodulechoosermenu.h"
 
 
@@ -29,34 +28,11 @@ BtModuleChooserButton::BtModuleChooserButton(CSwordModuleInfo::ModuleType mtype,
               | BtModuleChooserMenu::AddNoneButton,
               this))
 {
-    setIcon(icon());
+    setIcon(m_popup->buttonIcon());
     setMenu(m_popup);
     setPopupMode(QToolButton::InstantPopup);
     BT_CONNECT(m_popup, &BtModuleChooserMenu::sigModuleChosen,
                this,    &BtModuleChooserButton::moduleChosen);
-}
-
-QIcon const & BtModuleChooserButton::icon() {
-    switch (m_popup->moduleType()) {
-        case CSwordModuleInfo::Bible:
-            return m_popup->selectedModule()
-                    ? CResMgr::categories::bibles::icon()
-                    : CResMgr::categories::bibles::icon_add();
-        case CSwordModuleInfo::Commentary:
-            return m_popup->selectedModule()
-                   ? CResMgr::categories::commentaries::icon()
-                   : CResMgr::categories::commentaries::icon_add();
-        case CSwordModuleInfo::Lexicon:
-            return m_popup->selectedModule()
-                   ? CResMgr::categories::lexicons::icon()
-                   : CResMgr::categories::lexicons::icon_add();
-        case CSwordModuleInfo::GenericBook:
-            return m_popup->selectedModule()
-                   ? CResMgr::categories::books::icon()
-                   : CResMgr::categories::books::icon_add();
-        default: //return as default the bible icon
-            return CResMgr::categories::bibles::icon();
-    }
 }
 
 void BtModuleChooserButton::updateMenu(BtModuleList newModulesToUse,
@@ -73,11 +49,7 @@ void BtModuleChooserButton::updateMenu(BtModuleList newModulesToUse,
                     newSelectedModule,
                     newButtonIndex,
                     newLeftLikeModules);
-    if (newSelectedModule) {
-        setIcon(newSelectedModule->moduleIcon());
-    } else {
-        setIcon(icon());
-    }
+    setIcon(m_popup->buttonIcon());
 }
 
 /** Is called after a module was selected in the popup */
@@ -87,16 +59,16 @@ void BtModuleChooserButton::moduleChosen(
     if (m_popup->selectedModule()) { // If module was previously selected:
         if (newModule) {
             m_popup->setSelectedModule(newModule);
-            setIcon(newModule->moduleIcon());
+            setIcon(m_popup->buttonIcon());
             Q_EMIT sigModuleReplace(m_popup->buttonIndex(), newModule);
         } else {
             m_popup->setSelectedModule(nullptr);
-            setIcon(icon());
+            setIcon(m_popup->buttonIcon());
             Q_EMIT sigModuleRemove(m_popup->buttonIndex());
         }
     } else if (newModule) {
         m_popup->setSelectedModule(newModule);
-        setIcon(newModule->moduleIcon());
+        setIcon(m_popup->buttonIcon());
         Q_EMIT sigModuleAdd(m_popup->buttonIndex(), newModule);
     }
 }

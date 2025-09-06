@@ -363,10 +363,23 @@ wrong, or if the config file was write protected return false.
 
     /**
       \param[in] category The category whose icon to return.
+      \returns an "add" icon for the given category.
+    */
+    static QIcon const & categoryIconAdd(
+            CSwordModuleInfo::Category category);
+
+    /**
+      \param[in] category The category whose icon to return.
       \returns a "locked" icon for the given category.
     */
     static QIcon const & categoryIconLocked(
             CSwordModuleInfo::Category category);
+
+    /**
+      Returns an "add" category icon based on a module type.
+      \param[in] module The module whose category icon to return.
+    */
+    static QIcon const & categoryIconAdd(CSwordModuleInfo::ModuleType type);
 
     /**
       Returns a translated name for the given category.
