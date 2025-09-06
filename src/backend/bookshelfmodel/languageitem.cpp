@@ -26,7 +26,7 @@ QVariant LanguageItem::data(int const role) const {
             return m_language->translatedName();
 
         case Qt::DecorationRole:
-            return CResMgr::modules::icon_moduleLanguage();
+            return CResMgr::icon_moduleLanguage();
 
         default:
             return Item::data(role);

@@ -25,16 +25,12 @@ class QIcon;
 namespace CResMgr {
 
 BT_GETICON2(icon_clearEdit, edit_clear_locationbar)
+BT_GETICON2(icon_moduleLanguage, flag)
 
 namespace mainWindow {
 BT_GETICON(bibletime)
 BT_GETICON2(icon_openAction, folder_open)
 }
-namespace modules {
-
-BT_GETICON2(icon_moduleLanguage, flag)
-
-} /* namespace modules { */
 
 namespace categories {
 namespace bibles {
