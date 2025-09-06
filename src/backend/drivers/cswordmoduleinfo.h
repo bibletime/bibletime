@@ -143,8 +143,6 @@ public: // types:
     Q_DECLARE_FLAGS(Features, Feature)
 
     enum Category {
-        UnknownCategory = 0x0,  /**< Unknown or unset category. */
-        NoCategory      = 0x0,
         Bibles          = 0x01,
         Commentaries    = 0x02,
         Books           = 0x04,
@@ -153,7 +151,6 @@ public: // types:
         DailyDevotional = 0x20,
         Images          = 0x40,
         Cult            = 0x80, /**< Cult / sect / questionable module. */
-        AllCategories   = 0xff
     };
     Q_DECLARE_FLAGS(Categories, Category)
 

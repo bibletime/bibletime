@@ -95,10 +95,9 @@ inline CSwordModuleInfo::Category retrieveCategory(
                 return CSwordModuleInfo::Commentaries;
             case CSwordModuleInfo::Lexicon:
                 return CSwordModuleInfo::Lexicons;
-            case CSwordModuleInfo::GenericBook:
-                return CSwordModuleInfo::Books;
             default:
-                return CSwordModuleInfo::UnknownCategory;
+                BT_ASSERT(type == CSwordModuleInfo::GenericBook);
+                return CSwordModuleInfo::Books;
         }
     }
 }
@@ -1039,11 +1038,6 @@ QIcon const & CSwordModuleInfo::moduleIcon(const CSwordModuleInfo & module) {
                    ? CResMgr::modules::book::icon_locked()
                    : CResMgr::modules::book::icon_unlocked();
 
-        case CSwordModuleInfo::Cult:
-        case CSwordModuleInfo::Images:
-        case CSwordModuleInfo::DailyDevotional:
-        case CSwordModuleInfo::Glossary:
-        case CSwordModuleInfo::UnknownCategory:
         default:
             return categoryIcon(cat);
     }
@@ -1065,11 +1059,9 @@ QIcon const & CSwordModuleInfo::categoryIcon(CSwordModuleInfo::Category category
             return CResMgr::categories::dailydevotional::icon();
         case CSwordModuleInfo::Lexicons:
             return CResMgr::categories::lexicons::icon();
-        case CSwordModuleInfo::Glossary:
-            return CResMgr::categories::glossary::icon();
-        case CSwordModuleInfo::UnknownCategory:
         default:
-            return BtIcons::instance().icon_null;
+            BT_ASSERT(category == CSwordModuleInfo::Glossary);
+            return CResMgr::categories::glossary::icon();
     }
 }
 

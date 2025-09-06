@@ -37,13 +37,7 @@ QVariant CategoryItem::data(int const role) const {
 bool CategoryItem::operator<(Item const & other) const {
     if (other.type() != ITEM_CATEGORY)
         return ITEM_CATEGORY < other.type();
-
-    auto & o = static_cast<CategoryItem const &>(other);
-    if (m_category == CSwordModuleInfo::UnknownCategory)
-        return false;
-    if (o.m_category == CSwordModuleInfo::UnknownCategory)
-        return true;
-    return m_category < o.m_category;
+    return m_category < static_cast<CategoryItem const &>(other).m_category;
 }
 
 } // namespace BookshelfModel
