@@ -14,7 +14,6 @@
 
 #include <QIcon>
 #include "../../util/cresmgr.h"
-#include "../language.h"
 
 
 namespace BookshelfModel {
