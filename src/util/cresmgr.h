@@ -34,8 +34,6 @@ namespace modules {
 
 BT_GETICON2(icon_moduleLanguage, flag)
 
-BT_GETICON2(icon_cult, stop)
-
 } /* namespace modules { */
 
 namespace categories {
