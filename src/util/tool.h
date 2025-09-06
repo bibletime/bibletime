@@ -53,7 +53,7 @@ bool savePlainFile(QString const & filename, QString const & text);
   \param[in] module the module whose icon to return.
   \returns the icon used for the a module.
 */
-QIcon const & getIconForModule(const CSwordModuleInfo * module);
+QIcon const & getIconForModule(CSwordModuleInfo const & module);
 
 /**
   \brief Initializes a QLabel to explain difficult things of dialogs.

@@ -77,36 +77,33 @@ bool savePlainFile(QString const & filename, QString const & text)
     return savePlainFile(filename, *writer, &userData);
 }
 
-QIcon const & getIconForModule(const CSwordModuleInfo * const module) {
-    if (!module)
-        return CResMgr::modules::book::icon_locked();
-
-    if (module->category() == CSwordModuleInfo::Cult)
+QIcon const & getIconForModule(CSwordModuleInfo const & module) {
+    if (module.category() == CSwordModuleInfo::Cult)
         return CResMgr::modules::icon_cult();
 
-    switch (module->type()) {
+    switch (module.type()) {
         case CSwordModuleInfo::Bible:
-            if (module->isLocked())
+            if (module.isLocked())
                 return CResMgr::modules::bible::icon_locked();
             return CResMgr::modules::bible::icon_unlocked();
 
         case CSwordModuleInfo::Lexicon:
-            if (module->isLocked())
+            if (module.isLocked())
                 return CResMgr::modules::lexicon::icon_locked();
             return CResMgr::modules::lexicon::icon_unlocked();
 
         case CSwordModuleInfo::Commentary:
-            if (module->isLocked())
+            if (module.isLocked())
                 return CResMgr::modules::commentary::icon_locked();
             return CResMgr::modules::commentary::icon_unlocked();
 
         case CSwordModuleInfo::GenericBook:
-            if (module->isLocked())
+            if (module.isLocked())
                 return CResMgr::modules::book::icon_locked();
             return CResMgr::modules::book::icon_unlocked();
 
         default:
-            if (module->isLocked())
+            if (module.isLocked())
                 return CResMgr::modules::book::icon_locked();
             return CResMgr::modules::book::icon_unlocked();
     }

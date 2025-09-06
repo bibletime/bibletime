@@ -253,7 +253,7 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
                                     QStringList(m->name())
                                     << QString::number(result.results.size()));
 
-        item->setIcon(0, util::tool::getIconForModule(m));
+        item->setIcon(0, util::tool::getIconForModule(*m));
         /*
           We need to make a decision here.  Either don't show any Strong's
           number translations, or show the first one in the search text, or
