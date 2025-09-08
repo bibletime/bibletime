@@ -47,6 +47,8 @@ public Q_SLOTS:
 
     void updateKey(CSwordKey * key) final override;
 
+    void focusLocation() final override;
+
 private: // fields:
 
     BtBibleKeyWidget * m_widget = nullptr;
