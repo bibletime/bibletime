@@ -52,6 +52,8 @@ public Q_SLOTS:
 
     void updateKey(CSwordKey* key) final override;
 
+    void focusLocation() final override;
+
 private: // fields:
 
     CKeyChooserWidget * m_widget;

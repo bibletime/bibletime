@@ -260,9 +260,9 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
                             QStringLiteral("GUI/showToolbarsInEachWindow"),
                             true))
                     {
-                        m_keyChooser->setFocus();
+                        m_keyChooser->focusLocation();
                     } else if (auto * const kc = btMainWindow()->keyChooser()) {
-                        kc->setFocus();
+                        kc->focusLocation();
                     }
                 });
     initAddAction(QStringLiteral("pageDown"),

@@ -32,23 +32,6 @@
 #include "btdropdownchooserbutton.h"
 
 
-class BtLineEdit : public QLineEdit {
-    public:
-        BtLineEdit(QWidget* parent)
-                : QLineEdit(parent) {
-        }
-    protected:
-        void focusInEvent(QFocusEvent* event) override {
-            Qt::FocusReason reason = event->reason();
-            if (reason == Qt::OtherFocusReason) {
-                selectAll();
-            }
-
-            QWidget::focusInEvent(event);
-        }
-};
-
-
 BtBibleKeyWidget::BtBibleKeyWidget(
         CSwordBibleModuleInfo const * mod,
         CSwordVerseKey * key,
@@ -100,7 +83,7 @@ BtBibleKeyWidget::BtBibleKeyWidget(
 
     auto * const bookScroller = new CScrollerWidgetSet(this);
 
-    m_textbox = new BtLineEdit( this );
+    m_textbox = new QLineEdit( this );
     setFocusProxy(m_textbox);
     m_textbox->setContentsMargins(0, 0, 0, 0);
 
@@ -266,6 +249,10 @@ bool BtBibleKeyWidget::eventFilter(QObject *o, QEvent *e) {
         default:
             return false;
     }
+}
+
+void BtBibleKeyWidget::selectAll() {
+    m_textbox->selectAll();
 }
 
 void BtBibleKeyWidget::enterEvent(QEnterEvent *) {

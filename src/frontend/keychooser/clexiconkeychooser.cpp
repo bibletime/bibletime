@@ -18,6 +18,7 @@
 #include <QBoxLayout>
 #include <QComboBox>
 #include <QHBoxLayout>
+#include <QLineEdit>
 #include <QLayout>
 #include <QStringList>
 #include <Qt>
@@ -95,6 +96,11 @@ void CLexiconKeyChooser::updateKey(CSwordKey* key) {
     QString newKey = m_key->key();
     const int index = m_widget->comboBox().findText(newKey);
     m_widget->comboBox().setCurrentIndex(index);
+}
+
+void CLexiconKeyChooser::focusLocation() {
+    m_widget->setFocus();
+    m_widget->comboBox().lineEdit()->selectAll();
 }
 
 void CLexiconKeyChooser::setKey(CSwordKey* key) {

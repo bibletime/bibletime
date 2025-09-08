@@ -96,3 +96,8 @@ void CBibleKeyChooser::refreshContent() {
 void CBibleKeyChooser::updateKey(CSwordKey* /*key*/) {
     m_widget->updateText();
 }
+
+void CBibleKeyChooser::focusLocation() {
+    m_widget->setFocus();
+    m_widget->selectAll();
+}

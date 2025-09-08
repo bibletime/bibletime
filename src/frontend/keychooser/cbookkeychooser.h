@@ -53,6 +53,9 @@ public Q_SLOTS:
     /** \brief Updates the keychoosers for the given key but emit no signal. */
     void updateKey(CSwordKey * key) final override;
 
+    /** \brief Handles the focusLocation action.*/
+    void focusLocation() final override;
+
 protected: // methods:
 
     /**

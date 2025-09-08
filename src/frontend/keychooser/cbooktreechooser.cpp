@@ -142,6 +142,10 @@ void CBookTreeChooser::updateKey( CSwordKey* key ) {
     setKey(key);
 }
 
+void CBookTreeChooser::focusLocation() {
+    m_treeView->setFocus();
+}
+
 /** Reimplementation to handle tree creation on show. */
 void CBookTreeChooser::showEvent(QShowEvent * const showEvent) {
     if (!m_treeView->topLevelItemCount()) {

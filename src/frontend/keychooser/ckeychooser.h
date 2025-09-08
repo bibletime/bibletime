@@ -74,6 +74,11 @@ public Q_SLOTS:
     */
     virtual void updateKey(CSwordKey * key) = 0;
 
+    /**
+      Sets keyboard focus to the location field.
+     */
+    virtual void focusLocation() = 0;
+
     void handleHistoryMoved(QString const & newKey);
 
 Q_SIGNALS:
