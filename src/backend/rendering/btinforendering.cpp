@@ -344,7 +344,7 @@ QString decodeMorph(QString const & data) {
 
 QString decodeSwordReference(QString const & data) {
     static QRegularExpression const rx(
-        QStringLiteral(R"PCRE(sword://(bible|lexicon)/(.*?)/(.*?))PCRE"),
+        QStringLiteral(R"PCRE(sword://(bible|lexicon)/(.*)/(.*))PCRE"),
         QRegularExpression::CaseInsensitiveOption);
     if (auto const match = rx.match(data); match.hasMatch()) {
         if (auto * const module =
