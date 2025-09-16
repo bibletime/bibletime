@@ -14,6 +14,7 @@ FIND_PACKAGE(Qt6 6.7 REQUIRED COMPONENTS
     Quick
     QuickWidgets
 )
+MESSAGE(STATUS "Found Qt6: ${Qt6_VERSION}")
 FIND_PACKAGE(PkgConfig REQUIRED)
 pkg_search_module(Sword REQUIRED IMPORTED_TARGET sword>=1.8.1)
 MESSAGE(STATUS "Found Sword: ${Sword_VERSION}")
