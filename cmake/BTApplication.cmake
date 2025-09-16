@@ -15,6 +15,13 @@ FIND_PACKAGE(Qt6 6.7 REQUIRED COMPONENTS
     QuickWidgets
 )
 MESSAGE(STATUS "Found Qt6: ${Qt6_VERSION}")
+GET_TARGET_PROPERTY(QT_ENABLED_PRIVATE_FEATURES Qt6::Core
+    QT_ENABLED_PRIVATE_FEATURES)
+IF("icu" IN_LIST QT_ENABLED_PRIVATE_FEATURES)
+    MESSAGE(STATUS "Qt6 found seems to have required ICU support.")
+ELSE()
+    MESSAGE(FATAL_ERROR "Qt6 found seems to lack required ICU support!")
+ENDIF()
 FIND_PACKAGE(PkgConfig REQUIRED)
 pkg_search_module(Sword REQUIRED IMPORTED_TARGET sword>=1.8.1)
 MESSAGE(STATUS "Found Sword: ${Sword_VERSION}")
