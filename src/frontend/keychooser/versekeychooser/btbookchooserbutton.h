@@ -1,0 +1,44 @@
+/*********
+*
+* In the name of the Father, and of the Son, and of the Holy Spirit.
+*
+* This file is part of BibleTime's source code, https://bibletime.info/
+*
+* Copyright 1999-2025 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License
+* version 2.0.
+*
+**********/
+
+#pragma once
+
+#include <QToolButton>
+#include <QObject>
+
+class BtBibleKeyWidget;
+class QMenu;
+
+/**
+* Specialized dropdown button for book selection with two-column layout using native QMenu.
+*/
+class BtBookChooserButton : public QToolButton {
+    Q_OBJECT
+
+public:
+    BtBookChooserButton(BtBibleKeyWidget& parent);
+
+protected:
+    void wheelEvent(QWheelEvent* event) override;
+
+Q_SIGNALS:
+    void stepItem(int step);
+    void bookSelected(const QString& bookName);
+
+private Q_SLOTS:
+    void populateMenu();
+    void onBookSelected(const QString& bookName);
+
+private:
+    BtBibleKeyWidget& m_parent;
+    QMenu* m_menu;
+};
