@@ -1,0 +1,49 @@
+---
+name: Technical debt
+description: A technical debt description
+title: '[TECHDEBT] '
+labels:
+  - 'type: TECHDEBT'
+assignees: []
+body:
+
+- type: markdown
+  id: notice
+  attributes:
+    value: |
+      :information_source: This form is for submitting technical debt descriptions, which are meant for use for BibleTime developers and not for end-users.
+
+      Recommended reading:
+      * _"Managing Technical Debt: Reducing Friction in Software Development"_ by Philippe Kruchten, Robert Nord and Ipek Ozkaya
+
+- type: textarea
+  id: summary
+  attributes:
+    label: Summary
+    description: >
+      A brief summary of the technical debt.
+  validations:
+    required: true
+
+- type: textarea
+  id: consequences
+  attributes:
+    label: Consequences
+    description: >
+      Who is affected? When? Why is it important to address this? Will this affect us in the future?
+  validations:
+    required: true
+
+- type: textarea
+  id: remediation_approach
+  attributes:
+    label: Remediation approach
+    description: >
+      When and how should this technical debt be eliminated?
+  validations:
+    required: true
+
+- type: textarea
+  id: notes
+  attributes:
+    label: Additional context, notes or comments.

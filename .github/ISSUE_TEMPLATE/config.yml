@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Issues related to the BibleTime website
+    url: https://github.com/bibletime/bibletime.github.io/issues/new
+    about: Tracker for issues related to the bibletime.info website

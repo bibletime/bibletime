@@ -1,0 +1,107 @@
+name: Bug report
+description: Create a report to help us improve BibleTime
+title: '[BUG] '
+labels:
+  - 'type: BUG'
+assignees: []
+body:
+
+- type: checkboxes
+  id: i_have_read_and_i_agree
+  attributes:
+    label: Acknowledgments
+    options:
+      - label: I understand this form is for software feedback only, not for issues related to specific works like Bibles, commentaries, or books, nor for content provider-related concerns.
+        required: true
+  validations:
+    required: true
+
+- type: textarea
+  id: bug_description
+  attributes:
+    label: Bug description
+    description: >
+      A clear and concise description of what the bug is. Please only describe
+      one issue per bug report.
+  validations:
+    required: true
+
+- type: textarea
+  id: steps_to_reproduce
+  attributes:
+    label: Steps to reproduce
+    description: >
+      A list steps which caused the issue to occur. Please try to provide
+      sufficient detail to help us reproduce the issue.
+  validations:
+    required: true
+
+- type: textarea
+  id: expected_behavior
+  attributes:
+    label: Expected behavior
+    description: >
+      A clear and concise description of what you expected to happen.
+  validations:
+    required: true
+
+- type: textarea
+  id: actual_behavior
+  attributes:
+    label: Actual behavior
+    description: >
+      A detailed description of what actually occurred. If applicable, please
+      add screenshots to help explain your problem.
+  validations:
+    required: true
+
+- type: input
+  id: bibletime_version
+  attributes:
+    label: BibleTime version
+    description: >
+      The version of BibleTime the which manifested the issue.
+    placeholder: e.g. 3.1.0
+  validations:
+    required: true
+
+- type: dropdown
+  id: installation_type
+  attributes:
+    label: How did you install BibleTime?
+    options:
+      - Package provided by operating system
+      - Binary installer or package downloaded from GitHub
+      - Snap package
+      - Manually built from source
+      - Other
+  validations:
+    required: true
+
+- type: input
+  id: os_version
+  attributes:
+    label: OS version
+    description: >
+      The name and version of the operating system on which the issue was
+      encountered.
+    placeholder: e.g. Debian 13, Ubuntu 24.04, Windows 11
+  validations:
+    required: true
+
+- type: textarea
+  id: notes
+  attributes:
+    label: Additional context, notes or comments
+    description: >
+      Add any other context about the problem here. If you compiled BibleTime
+      from source, please include the versions of dependencies such as Qt or
+      Sword, if relevant.
+
+- type: textarea
+  id: debug_output
+  attributes:
+    label: Output of `bibletime --debug` and/or backtraces in case of crashes.
+    description: >
+      If possible, please include the entire output of running `bibletime
+      --debug`, especially when reporting crashes.

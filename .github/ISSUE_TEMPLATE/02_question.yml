@@ -1,0 +1,31 @@
+name: Question
+description: Request help solving a problem or information about BibleTime
+title: '[QUESTION] '
+labels:
+  - 'type: QUESTION'
+assignees: []
+body:
+
+
+- type: checkboxes
+  id: i_have_read_and_i_agree
+  attributes:
+    label: Acknowledgments
+    options:
+      - label: I understand this form is for software feedback only, not for issues related to specific works like Bibles, commentaries, or books, nor for content provider-related concerns.
+        required: true
+  validations:
+    required: true
+
+- type: textarea
+  id: question
+  attributes:
+    label: Question
+    description: >
+      Please include context relevant to the question, e.g. what are you attempting to achieve or what have you done so far?
+    placeholder: |
+      How to ... ?
+      What is the ... ?
+      Is it possible to ... ?
+  validations:
+    required: true

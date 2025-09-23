@@ -1,0 +1,24 @@
+name: Feedback
+description: For giving thanks, general discussion etc.
+title: '[FEEDBACK] '
+labels:
+  - 'type: Feedback'
+assignees: []
+body:
+
+- type: checkboxes
+  id: i_have_read_and_i_agree
+  attributes:
+    label: Acknowledgments
+    options:
+      - label: I understand this form is for software feedback only, not for issues related to specific works like Bibles, commentaries, or books, nor for content provider-related concerns.
+        required: true
+  validations:
+    required: true
+
+- type: textarea
+  id: feedback
+  attributes:
+    label: Feedback
+  validations:
+    required: true

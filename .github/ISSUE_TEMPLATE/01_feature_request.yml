@@ -1,0 +1,59 @@
+name: Enhancement proposal
+description: Suggest an idea or new feature for BibleTime
+title: '[ENHANCEMENT] '
+labels:
+  - 'type: ENHANCEMENT'
+assignees: []
+body:
+
+- type: markdown
+  id: notice
+  attributes:
+    value: |
+      :information_source: Thank you for suggesting new features! However, please note that BibleTime's development is currently limited by our small team size, which makes it challenging to implement major new features in the near future.
+
+      We appreciate all feature suggestions and will consider them for future planning when resources allow. In the meantime, we encourage users to contribute code to help make desired features a reality. 
+
+      Thank you for your understanding!
+
+- type: checkboxes
+  id: i_have_read_and_i_agree
+  attributes:
+    label: Acknowledgments
+    options:
+      - label: I understand this form is for software feedback only, not for issues related to specific works like Bibles, commentaries, or books, nor for content provider-related concerns.
+        required: true
+  validations:
+    required: true
+
+- type: textarea
+  id: problem_statement
+  attributes:
+    label: Is your feature request related to a problem?
+    description: >
+      A clear and concise description of what the problem is, if any
+    placeholder: I find it difficult to ...
+
+- type: textarea
+  id: enhancement_proposal
+  attributes:
+    label: Enhancement proposal
+    description: >
+      Please provide a clear description of what you want to happen.
+  validations:
+    required: true
+
+- type: textarea
+  id: alternatives_considered
+  attributes:
+    label: Alternatives considered
+    description: >
+      Please describe any alternative solutions or features you've considered.
+
+- type: textarea
+  id: notes
+  attributes:
+    label: Additional comments
+    description: >
+      Please provide any other comments, sketches or screenshots about the
+      enhancement here.
