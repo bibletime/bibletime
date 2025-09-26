@@ -52,6 +52,8 @@ public Q_SLOTS:
 
     void updateKey(CSwordKey *) final override;
 
+    void focusLocation() final override;
+
 private: // methods:
 
     /** \brief Creates the first level of the tree structure. */

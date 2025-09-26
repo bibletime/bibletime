@@ -15,6 +15,7 @@
 #include <algorithm>
 #include <QComboBox>
 #include <QHBoxLayout>
+#include <QLineEdit>
 #include <QStringList>
 #include <Qt>
 #include <QtAlgorithms>
@@ -260,4 +261,12 @@ void CBookKeyChooser::keyChooserChanged(int newIndex) {
 /** Updates the keychoosers for the given key but emit no signal. */
 void CBookKeyChooser::updateKey(CSwordKey * key) {
     setKey(key, false);
+}
+
+void CBookKeyChooser::focusLocation() {
+    BT_ASSERT(!m_chooserWidgets.isEmpty());
+    CKeyChooserWidget * const chooser = m_chooserWidgets.first();
+    BT_ASSERT(chooser);
+    chooser->setFocus();
+    chooser->comboBox().lineEdit()->selectAll();
 }
