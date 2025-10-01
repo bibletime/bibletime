@@ -35,6 +35,8 @@ class BtBibleKeyWidget : public QWidget  {
         void setModule(const CSwordBibleModuleInfo *m = nullptr);
         bool eventFilter(QObject *o, QEvent *e) override;
 
+        const CSwordBibleModuleInfo* module() const { return m_module; }
+
     Q_SIGNALS:
         void changed(CSwordVerseKey* key);
 
