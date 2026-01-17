@@ -14,9 +14,7 @@
 
 #include <QSortFilterProxyModel>
 
-#include <QObject>
 #include <QString>
-#include <Qt>
 
 
 class QModelIndex;

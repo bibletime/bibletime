@@ -12,8 +12,6 @@
 
 #include "btbookshelffiltermodel.h"
 
-#include <QAbstractItemModel>
-#include <QVariant>
 #include "../../util/btassert.h"
 #include "btbookshelfmodel.h"
 
