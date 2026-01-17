@@ -20,17 +20,9 @@
 
 BtBookshelfFilterModel::BtBookshelfFilterModel(QObject * const parent)
     : QSortFilterProxyModel(parent)
-    , m_enabled(true)
     , m_showHidden(false)
     , m_showShown(true)
 { setDynamicSortFilter(true); }
-
-void BtBookshelfFilterModel::setEnabled(bool const enable) {
-    if (enable == m_enabled)
-        return;
-    m_enabled = enable;
-    invalidateFilter();
-}
 
 // Name filter:
 
@@ -62,9 +54,6 @@ void BtBookshelfFilterModel::setShowShown(bool const show) {
 bool BtBookshelfFilterModel::filterAcceptsRow(int row,
                                               QModelIndex const & parent) const
 {
-    if (!m_enabled)
-        return true;
-
     auto const * const m = sourceModel();
     BT_ASSERT(m);
 

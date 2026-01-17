@@ -29,8 +29,6 @@ public: // methods:
 
     BtBookshelfFilterModel(QObject * parent = nullptr);
 
-    bool enabled() const noexcept { return m_enabled; }
-
     bool filterAcceptsRow(int row, QModelIndex const & parent) const override;
 
     QString const & nameFilter() const noexcept { return m_nameFilter; }
@@ -40,8 +38,6 @@ public: // methods:
 
 public Q_SLOTS:
 
-    void setEnabled(bool enable);
-
     // Name filter:
     void setNameFilterFixedString(QString const & nameFilter);
 
@@ -50,8 +46,6 @@ public Q_SLOTS:
     void setShowShown(bool show);
 
 private: // fields:
-
-    bool m_enabled;
 
     // Name filter:
     QString m_nameFilter;
