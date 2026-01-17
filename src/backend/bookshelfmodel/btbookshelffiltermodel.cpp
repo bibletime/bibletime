@@ -22,6 +22,13 @@ BtBookshelfFilterModel::BtBookshelfFilterModel(QObject * const parent)
     , m_showHidden(false)
 { setDynamicSortFilter(true); }
 
+CSwordModuleInfo *
+BtBookshelfFilterModel::module(QModelIndex const & index) const noexcept {
+    return static_cast<CSwordModuleInfo *>(
+                data(index,
+                     BtBookshelfModel::ModulePointerRole).value<void *>());
+}
+
 template <typename Field, typename Value>
 void BtBookshelfFilterModel::changeFilter(Field & field, Value && value) {
     if (field == value)
@@ -47,6 +54,11 @@ void BtBookshelfFilterModel::setNameFilterFixedString(QString const & filter)
 void BtBookshelfFilterModel::setShowHidden(bool const show)
 { changeFilter(m_showHidden, show); }
 
+// Module chooser type filter:
+void BtBookshelfFilterModel::setModuleChooserType(
+        std::optional<CSwordModuleInfo::ModuleType> type)
+{ changeFilter(m_moduleChooserType, type); }
+
 // Filtering:
 
 bool BtBookshelfFilterModel::filterAcceptsRow(int row,
@@ -70,6 +82,19 @@ bool BtBookshelfFilterModel::filterAcceptsRow(int row,
                         m->data(itemIndex,
                                 BtBookshelfModel::ModuleHiddenRole).toBool());
             if (isHidden)
+                return false;
+        }
+        if (m_moduleChooserType.has_value()) {
+            static constexpr auto const MPR =
+                    BtBookshelfModel::ModulePointerRole;
+            auto * const module =
+                     static_cast<CSwordModuleInfo *>(
+                             m->data(itemIndex, MPR).value<void *>());
+            BT_ASSERT(module);
+            auto const moduleType = module->type();
+            if ((moduleType != *m_moduleChooserType)
+                && ((*m_moduleChooserType != CSwordModuleInfo::Bible)
+                    || (moduleType != CSwordModuleInfo::Commentary)))
                 return false;
         }
         return true;

@@ -14,7 +14,9 @@
 
 #include <QSortFilterProxyModel>
 
+#include <optional>
 #include <QString>
+#include "../drivers/cswordmoduleinfo.h"
 
 
 class QModelIndex;
@@ -33,6 +35,11 @@ public: // methods:
 
     bool showHidden() const noexcept { return m_showHidden; }
 
+    std::optional<CSwordModuleInfo::ModuleType> const &
+    moduleChooserType() const noexcept { return m_moduleChooserType; }
+
+    CSwordModuleInfo * module(QModelIndex const & index) const noexcept;
+
 public Q_SLOTS:
 
     // Name filter:
@@ -40,6 +47,9 @@ public Q_SLOTS:
 
     // Hidden filter:
     void setShowHidden(bool show);
+
+    // Module chooser type filter:
+    void setModuleChooserType(std::optional<CSwordModuleInfo::ModuleType> type);
 
 private: // methods:
 
@@ -53,5 +63,8 @@ private: // fields:
 
     // Hidden filter:
     bool m_showHidden;
+
+    // Module chooser type filter:
+    std::optional<CSwordModuleInfo::ModuleType> m_moduleChooserType;
 
 };

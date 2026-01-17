@@ -12,90 +12,14 @@
 
 #include "btmodulechoosermenu.h"
 
-#include <QAbstractItemModel>
 #include <QAction>
 #include <QActionGroup>
-#include <QModelIndex>
-#include <QSortFilterProxyModel>
-#include <QVariant>
-#include "../../backend/bookshelfmodel/btbookshelfmodel.h"
-#include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "../../backend/config/btconfig.h"
+#include "../../backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
-#include "../../backend/managers/cswordbackend.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
+#include "../btbookshelfdockwidget.h"
 #include "../btmenuview.h"
-
-
-namespace {
-
-struct SortModel final: public QSortFilterProxyModel {
-
-// Methods:
-
-    SortModel(CSwordModuleInfo::ModuleType moduleType,
-              QObject * parent = nullptr)
-        : QSortFilterProxyModel(parent)
-        , m_moduleType(moduleType)
-        , m_showHidden(btConfig().value<bool>(
-                           QStringLiteral("GUI/bookshelfShowHidden"),
-                           false))
-        , m_sourceModel(new BtBookshelfTreeModel(this))
-    {
-        m_sourceModel->setSourceModel(CSwordBackend::instance().model());
-        setSourceModel(m_sourceModel);
-    }
-
-    bool filterAcceptsRow(int sourceRow,
-                          QModelIndex const & sourceParentIndex)
-            const final override
-    {
-        auto const & model = *sourceModel();
-        auto const itemIndex = model.index(sourceRow, 0, sourceParentIndex);
-
-        // Do recursive hidden check, if configured:
-        if (!m_showHidden
-            && model.data(itemIndex,
-                          BtBookshelfModel::ModuleHiddenRole).toBool())
-            return false;
-
-        // Do other recursive checks:
-        return filterAcceptsRowNoHiddenCheck(sourceRow, sourceParentIndex);
-    }
-
-    bool filterAcceptsRowNoHiddenCheck(int sourceRow,
-                                       QModelIndex const & sourceParentIndex)
-            const
-    {
-        auto const & model =
-                *static_cast<BtBookshelfTreeModel *>(sourceModel());
-        auto const itemIndex = model.index(sourceRow, 0, sourceParentIndex);
-
-        // Accept subtrees if it has any accepted children:
-        if (auto const numRows = model.rowCount(itemIndex)) {
-            for (int i = 0; i < numRows; ++i)
-                if (filterAcceptsRowNoHiddenCheck(i, itemIndex))
-                    return true;
-            return false;
-        }
-
-        auto const * const module = model.module(itemIndex);
-        BT_ASSERT(module);
-        return (module->type() == m_moduleType)
-               || ((m_moduleType == CSwordModuleInfo::Bible)
-                   && (module->type() == CSwordModuleInfo::Commentary));
-    }
-
-// Fields:
-
-    CSwordModuleInfo::ModuleType const m_moduleType;
-    bool const m_showHidden;
-    BtBookshelfTreeModel * const m_sourceModel;
-
-};
-
-} // anonymous namespace
 
 
 BtModuleChooserMenu::BtModuleChooserMenu(
@@ -104,22 +28,17 @@ BtModuleChooserMenu::BtModuleChooserMenu(
         Flags flags,
         QWidget * parent)
     : BtMenuView(title, parent)
-    , m_moduleType(moduleType_)
-    , m_sortedModel(new SortModel(moduleType_, this))
+    , m_filterModel(new BtBookshelfFilterModel(this))
     , m_flags(flags)
 {
-    setModel(static_cast<SortModel *>(m_sortedModel));
+    m_filterModel->setModuleChooserType(moduleType_);
+    m_filterModel->setSourceModel(
+                BtBookshelfDockWidget::getInstance()->treeModel());
+    setModel(m_filterModel);
+
     BT_CONNECT(this, &BtMenuView::triggered,
                [this](QModelIndex const itemIndex) {
-                    if (itemIndex.isValid()) {
-                        auto const & sortedModel =
-                                *static_cast<SortModel *>(m_sortedModel);
-                        Q_EMIT sigModuleChosen(
-                                    sortedModel.m_sourceModel->module(
-                                        sortedModel.mapToSource(itemIndex)));
-                    } else {
-                        Q_EMIT sigModuleChosen(nullptr);
-                    }
+                    Q_EMIT sigModuleChosen(m_filterModel->module(itemIndex));
                });
 }
 
@@ -148,12 +67,7 @@ QAction * BtModuleChooserMenu::newAction(QMenu * parentMenu,
                                          QModelIndex const & itemIndex)
 {
     auto * const action = BtMenuView::newAction(parentMenu, itemIndex);
-
-    auto const & sortedModel = *static_cast<SortModel *>(m_sortedModel);
-
-    auto const sourceItemIndex = sortedModel.mapToSource(itemIndex);
-    auto * const module =
-            sortedModel.m_sourceModel->module(sourceItemIndex);
+    auto * const module = m_filterModel->module(itemIndex);
     BT_ASSERT(module);
     action->setCheckable(true);
     action->setChecked(module == m_selectedModule);
@@ -171,7 +85,7 @@ QAction * BtModuleChooserMenu::newAction(QMenu * parentMenu,
     // Disable non-Bible modules on first button:
     if ((m_flags & DisableNonBiblesOnFirstButton)
         && m_buttonIndex <= 0
-        && sortedModel.m_moduleType == CSwordModuleInfo::Bible
+        && *m_filterModel->moduleChooserType() == CSwordModuleInfo::Bible
         && module->category() != CSwordModuleInfo::Category::Bibles)
         action->setDisabled(true);
 
@@ -193,7 +107,8 @@ void BtModuleChooserMenu::update(BtModuleList newModulesToUse,
 QIcon BtModuleChooserMenu::buttonIcon() const {
     if (m_selectedModule)
         return CSwordModuleInfo::categoryIcon(m_selectedModule->category());
-    return CSwordModuleInfo::categoryIconAdd(m_moduleType);
+    return CSwordModuleInfo::categoryIconAdd(
+                *m_filterModel->moduleChooserType());
 }
 
 void BtModuleChooserMenu::setSelectedModule(

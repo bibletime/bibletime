@@ -36,6 +36,8 @@ class BtBookshelfDockWidget: public QDockWidget {
 
         static BtBookshelfDockWidget * getInstance() { return m_instance; }
 
+        BtBookshelfTreeModel * treeModel() noexcept { return m_treeModel; }
+
         BtBookshelfTreeModel::Grouping const & groupingOrder() const
         { return m_treeModel->groupingOrder(); }
 

@@ -21,6 +21,7 @@
 #include "../../backend/drivers/btmodulelist.h"
 
 
+class BtBookshelfFilterModel;
 class QAction;
 class QActionGroup;
 class QMenu;
@@ -74,8 +75,7 @@ private: // methods:
 
 public: // fields:
 
-    CSwordModuleInfo::ModuleType const m_moduleType;
-    void * const m_sortedModel;
+    BtBookshelfFilterModel * const m_filterModel;
     Flags const m_flags;
     BtModuleList m_newModulesToUse;
     CSwordModuleInfo * m_selectedModule = nullptr;
