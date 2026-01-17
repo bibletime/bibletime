@@ -21,7 +21,6 @@
 BtBookshelfFilterModel::BtBookshelfFilterModel(QObject * const parent)
     : QSortFilterProxyModel(parent)
     , m_showHidden(false)
-    , m_showShown(true)
 { setDynamicSortFilter(true); }
 
 // Name filter:
@@ -42,13 +41,6 @@ void BtBookshelfFilterModel::setShowHidden(bool const show) {
     invalidateFilter();
 }
 
-void BtBookshelfFilterModel::setShowShown(bool const show) {
-    if (m_showShown == show)
-        return;
-    m_showShown = show;
-    invalidateFilter();
-}
-
 // Filtering:
 
 bool BtBookshelfFilterModel::filterAcceptsRow(int row,
@@ -66,12 +58,12 @@ bool BtBookshelfFilterModel::filterAcceptsRow(int row,
             if (!data.toString().contains(m_nameFilter, Qt::CaseInsensitive))
                 return false;
         }
-        if (!m_showHidden || !m_showShown) {
+        if (!m_showHidden) {
             auto const isHidden =
                     static_cast<Qt::CheckState>(
                         m->data(itemIndex,
                                 BtBookshelfModel::ModuleHiddenRole).toBool());
-            if ((isHidden && !m_showHidden) || (!isHidden && !m_showShown))
+            if (isHidden)
                 return false;
         }
         return true;

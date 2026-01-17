@@ -34,7 +34,6 @@ public: // methods:
     QString const & nameFilter() const noexcept { return m_nameFilter; }
 
     bool showHidden() const noexcept { return m_showHidden; }
-    bool showShown() const noexcept { return m_showShown; }
 
 public Q_SLOTS:
 
@@ -43,7 +42,6 @@ public Q_SLOTS:
 
     // Hidden filter:
     void setShowHidden(bool show);
-    void setShowShown(bool show);
 
 private: // fields:
 
@@ -52,6 +50,5 @@ private: // fields:
 
     // Hidden filter:
     bool m_showHidden;
-    bool m_showShown;
 
 };
