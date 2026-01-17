@@ -140,13 +140,19 @@ BibleTimeApp::BibleTimeApp(int &argc, char **argv)
                 std::make_unique<QFile>(
                     QDir::home().filePath(
                         QStringLiteral("/BibleTime Debug.txt")));
-        debugStream->open(QIODevice::WriteOnly | QIODevice::Text);
-        qInstallMessageHandler(myMessageOutput);
+        if (debugStream->open(QIODevice::WriteOnly | QIODevice::Text)) {
+            qInstallMessageHandler(myMessageOutput);
+        } else {
+            qFatal() << "Failed to change message handler";
+        }
     }
     #else
     debugStream = std::make_unique<QFile>();
-    debugStream->open(stderr, QIODevice::WriteOnly | QIODevice::Text);
-    qInstallMessageHandler(myMessageOutput);
+    if (debugStream->open(stderr, QIODevice::WriteOnly | QIODevice::Text)) {
+        qInstallMessageHandler(myMessageOutput);
+    } else {
+        qFatal() << "Failed to change message handler";
+    }
     #endif
 }
 
