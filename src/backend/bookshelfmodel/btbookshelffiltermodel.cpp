@@ -21,9 +21,7 @@
 BtBookshelfFilterModel::BtBookshelfFilterModel(QObject * const parent)
     : QSortFilterProxyModel(parent)
     , m_enabled(true)
-    , m_nameFilterRole(BtBookshelfModel::ModuleNameRole)
     , m_nameFilterCase(Qt::CaseInsensitive)
-    , m_hiddenFilterRole(BtBookshelfModel::ModuleHiddenRole)
     , m_showHidden(false)
     , m_showShown(true)
 { setDynamicSortFilter(true); }
@@ -36,13 +34,6 @@ void BtBookshelfFilterModel::setEnabled(bool const enable) {
 }
 
 // Name filter:
-
-void BtBookshelfFilterModel::setNameFilterRole(int const role) {
-    if (m_nameFilterRole == role)
-        return;
-    m_nameFilterRole = role;
-    invalidateFilter();
-}
 
 void BtBookshelfFilterModel::setNameFilterFixedString(QString const & filter) {
     if (m_nameFilter == filter)
@@ -59,13 +50,6 @@ void BtBookshelfFilterModel::setNameFilterCase(Qt::CaseSensitivity const value){
 }
 
 // Hidden filter:
-
-void BtBookshelfFilterModel::setHiddenFilterRole(int const role) {
-    if (m_hiddenFilterRole == role)
-        return;
-    m_hiddenFilterRole = role;
-    invalidateFilter();
-}
 
 void BtBookshelfFilterModel::setShowHidden(bool const show) {
     if (m_showHidden == show)
@@ -96,14 +80,16 @@ bool BtBookshelfFilterModel::filterAcceptsRow(int row,
     auto const numChildren = m->rowCount(itemIndex);
     if (numChildren == 0) {
         if (!m_nameFilter.isEmpty()) {
-            auto const data = m->data(itemIndex, m_nameFilterRole);
+            auto const data =
+                    m->data(itemIndex, BtBookshelfModel::ModuleNameRole);
             if (!data.toString().contains(m_nameFilter, m_nameFilterCase))
                 return false;
         }
         if (!m_showHidden || !m_showShown) {
             auto const isHidden =
                     static_cast<Qt::CheckState>(
-                        m->data(itemIndex, m_hiddenFilterRole).toBool());
+                        m->data(itemIndex,
+                                BtBookshelfModel::ModuleHiddenRole).toBool());
             if ((isHidden && !m_showHidden) || (!isHidden && !m_showShown))
                 return false;
         }
