@@ -15,7 +15,6 @@
 #include <QApplication>
 #include <QDebug>
 #include <QEvent>
-#include <QFocusEvent>
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QMenu>
@@ -28,25 +27,9 @@
 #include "../../../backend/keys/cswordversekey.h"
 #include "../../../util/btconnect.h"
 #include "../../../util/cresmgr.h"
+#include "../btlocationedit.h"
 #include "../cscrollerwidgetset.h"
 #include "btdropdownchooserbutton.h"
-
-
-class BtLineEdit : public QLineEdit {
-    public:
-        BtLineEdit(QWidget* parent)
-                : QLineEdit(parent) {
-        }
-    protected:
-        void focusInEvent(QFocusEvent* event) override {
-            Qt::FocusReason reason = event->reason();
-            if (reason == Qt::OtherFocusReason) {
-                selectAll();
-            }
-
-            QWidget::focusInEvent(event);
-        }
-};
 
 
 BtBibleKeyWidget::BtBibleKeyWidget(
@@ -100,7 +83,7 @@ BtBibleKeyWidget::BtBibleKeyWidget(
 
     auto * const bookScroller = new CScrollerWidgetSet(this);
 
-    m_textbox = new BtLineEdit( this );
+    m_textbox = new BtLocationEdit(this);
     setFocusProxy(m_textbox);
     m_textbox->setContentsMargins(0, 0, 0, 0);
 

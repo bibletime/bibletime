@@ -22,33 +22,15 @@
 #include <Qt>
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
+#include "btlocationedit.h"
 #include "cscrollerwidgetset.h"
-
-
-class BtKeyLineEdit : public QLineEdit {
-
-public: // methods:
-
-    BtKeyLineEdit(QWidget * parent)
-        : QLineEdit(parent) {}
-
-protected: // methods:
-
-    void focusInEvent(QFocusEvent * event) override {
-        const Qt::FocusReason reason = event->reason();
-        if (reason == Qt::OtherFocusReason)
-            selectAll();
-        QWidget::focusInEvent(event);
-    }
-
-};
 
 
 CKCComboBox::CKCComboBox(QWidget * parent)
     : QComboBox(parent)
 {
     setFocusPolicy(Qt::WheelFocus);
-    setLineEdit(new BtKeyLineEdit(this));
+    setLineEdit(new BtLocationEdit(this));
     if (lineEdit())
         installEventFilter(lineEdit());
 }
