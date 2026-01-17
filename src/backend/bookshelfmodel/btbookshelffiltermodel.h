@@ -41,6 +41,11 @@ public Q_SLOTS:
     // Hidden filter:
     void setShowHidden(bool show);
 
+private: // methods:
+
+    template <typename Field, typename Value>
+    void changeFilter(Field & field, Value && value);
+
 private: // fields:
 
     // Name filter:

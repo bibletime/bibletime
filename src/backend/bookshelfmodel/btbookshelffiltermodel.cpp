@@ -12,6 +12,7 @@
 
 #include "btbookshelffiltermodel.h"
 
+#include <utility>
 #include "../../util/btassert.h"
 #include "btbookshelfmodel.h"
 
@@ -21,23 +22,30 @@ BtBookshelfFilterModel::BtBookshelfFilterModel(QObject * const parent)
     , m_showHidden(false)
 { setDynamicSortFilter(true); }
 
+template <typename Field, typename Value>
+void BtBookshelfFilterModel::changeFilter(Field & field, Value && value) {
+    if (field == value)
+        return;
+    #if (QT_VERSION >= QT_VERSION_CHECK(6, 9, 0))
+    beginFilterChange();
+    #endif
+    field = std::forward<Value>(value);
+    #if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
+    #else
+    invalidateFilter(); // together with beginFilterChange() in Qt 6.9
+    #endif
+}
+
 // Name filter:
 
-void BtBookshelfFilterModel::setNameFilterFixedString(QString const & filter) {
-    if (m_nameFilter == filter)
-        return;
-    m_nameFilter = filter;
-    invalidateFilter();
-}
+void BtBookshelfFilterModel::setNameFilterFixedString(QString const & filter)
+{ changeFilter(m_nameFilter, filter); }
 
 // Hidden filter:
 
-void BtBookshelfFilterModel::setShowHidden(bool const show) {
-    if (m_showHidden == show)
-        return;
-    m_showHidden = show;
-    invalidateFilter();
-}
+void BtBookshelfFilterModel::setShowHidden(bool const show)
+{ changeFilter(m_showHidden, show); }
 
 // Filtering:
 
