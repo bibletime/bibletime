@@ -42,13 +42,8 @@ public: // methods:
 
 public Q_SLOTS:
 
-    // Name filter:
     void setNameFilterFixedString(QString const & nameFilter);
-
-    // Hidden filter:
     void setShowHidden(bool show);
-
-    // Module chooser type filter:
     void setModuleChooserType(std::optional<CSwordModuleInfo::ModuleType> type);
 
 private: // methods:
@@ -58,13 +53,8 @@ private: // methods:
 
 private: // fields:
 
-    // Name filter:
     QString m_nameFilter;
-
-    // Hidden filter:
     bool m_showHidden;
-
-    // Module chooser type filter:
     std::optional<CSwordModuleInfo::ModuleType> m_moduleChooserType;
 
 };

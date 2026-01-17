@@ -44,22 +44,15 @@ void BtBookshelfFilterModel::changeFilter(Field & field, Value && value) {
     #endif
 }
 
-// Name filter:
-
 void BtBookshelfFilterModel::setNameFilterFixedString(QString const & filter)
 { changeFilter(m_nameFilter, filter); }
-
-// Hidden filter:
 
 void BtBookshelfFilterModel::setShowHidden(bool const show)
 { changeFilter(m_showHidden, show); }
 
-// Module chooser type filter:
 void BtBookshelfFilterModel::setModuleChooserType(
         std::optional<CSwordModuleInfo::ModuleType> type)
 { changeFilter(m_moduleChooserType, type); }
-
-// Filtering:
 
 bool BtBookshelfFilterModel::filterAcceptsRow(int row,
                                               QModelIndex const & parent) const
