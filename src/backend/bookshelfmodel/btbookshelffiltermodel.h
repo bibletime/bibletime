@@ -34,8 +34,6 @@ public: // methods:
     bool filterAcceptsRow(int row, QModelIndex const & parent) const override;
 
     QString const & nameFilter() const noexcept { return m_nameFilter; }
-    Qt::CaseSensitivity nameFilterCase() const noexcept
-    { return m_nameFilterCase; }
 
     bool showHidden() const noexcept { return m_showHidden; }
     bool showShown() const noexcept { return m_showShown; }
@@ -46,7 +44,6 @@ public Q_SLOTS:
 
     // Name filter:
     void setNameFilterFixedString(QString const & nameFilter);
-    void setNameFilterCase(Qt::CaseSensitivity value);
 
     // Hidden filter:
     void setShowHidden(bool show);
@@ -58,7 +55,6 @@ private: // fields:
 
     // Name filter:
     QString m_nameFilter;
-    Qt::CaseSensitivity  m_nameFilterCase;
 
     // Hidden filter:
     bool m_showHidden;

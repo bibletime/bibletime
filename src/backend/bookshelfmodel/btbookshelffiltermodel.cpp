@@ -21,7 +21,6 @@
 BtBookshelfFilterModel::BtBookshelfFilterModel(QObject * const parent)
     : QSortFilterProxyModel(parent)
     , m_enabled(true)
-    , m_nameFilterCase(Qt::CaseInsensitive)
     , m_showHidden(false)
     , m_showShown(true)
 { setDynamicSortFilter(true); }
@@ -39,13 +38,6 @@ void BtBookshelfFilterModel::setNameFilterFixedString(QString const & filter) {
     if (m_nameFilter == filter)
         return;
     m_nameFilter = filter;
-    invalidateFilter();
-}
-
-void BtBookshelfFilterModel::setNameFilterCase(Qt::CaseSensitivity const value){
-    if (m_nameFilterCase == value)
-        return;
-    m_nameFilterCase = value;
     invalidateFilter();
 }
 
@@ -82,7 +74,7 @@ bool BtBookshelfFilterModel::filterAcceptsRow(int row,
         if (!m_nameFilter.isEmpty()) {
             auto const data =
                     m->data(itemIndex, BtBookshelfModel::ModuleNameRole);
-            if (!data.toString().contains(m_nameFilter, m_nameFilterCase))
+            if (!data.toString().contains(m_nameFilter, Qt::CaseInsensitive))
                 return false;
         }
         if (!m_showHidden || !m_showShown) {
