@@ -89,53 +89,25 @@ bool BtBookshelfFilterModel::filterAcceptsRow(int row,
     if (!m_enabled)
         return true;
 
-    if (!hiddenFilterAcceptsRow(row, parent))
-        return false;
-    if (!nameFilterAcceptsRow(row, parent))
-        return false;
-    return true;
-}
-
-bool BtBookshelfFilterModel::nameFilterAcceptsRow(
-        int const row,
-        QModelIndex const & parent) const
-{
-    if (m_nameFilter.isEmpty())
-        return true;
-
     auto const * const m = sourceModel();
     BT_ASSERT(m);
 
     auto const itemIndex = m->index(row, 0, parent);
     auto const numChildren = m->rowCount(itemIndex);
     if (numChildren == 0) {
-        auto const data = m->data(itemIndex, m_nameFilterRole);
-        return data.toString().contains(m_nameFilter, m_nameFilterCase);
-    }
-
-    for (int i = 0; i < numChildren; ++i)
-        if (filterAcceptsRow(i, itemIndex))
-            return true;
-    return false;
-}
-
-bool BtBookshelfFilterModel::hiddenFilterAcceptsRow(
-        int const row,
-        QModelIndex const & parent) const
-{
-    if (m_showHidden && m_showShown)
+        if (!m_nameFilter.isEmpty()) {
+            auto const data = m->data(itemIndex, m_nameFilterRole);
+            if (!data.toString().contains(m_nameFilter, m_nameFilterCase))
+                return false;
+        }
+        if (!m_showHidden || !m_showShown) {
+            auto const isHidden =
+                    static_cast<Qt::CheckState>(
+                        m->data(itemIndex, m_hiddenFilterRole).toBool());
+            if ((isHidden && !m_showHidden) || (!isHidden && !m_showShown))
+                return false;
+        }
         return true;
-
-    auto const * const m = sourceModel();
-    BT_ASSERT(m);
-
-    auto const itemIndex = m->index(row, 0, parent);
-    auto const numChildren = m->rowCount(itemIndex);
-    if (numChildren == 0) {
-        if (static_cast<Qt::CheckState>(m->data(itemIndex,
-                                                m_hiddenFilterRole).toBool()))
-            return m_showHidden;
-        return m_showShown;
     }
 
     for (int i = 0; i < numChildren; ++i)

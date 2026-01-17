@@ -56,11 +56,6 @@ public Q_SLOTS:
     void setShowHidden(bool show);
     void setShowShown(bool show);
 
-private: // methods:
-
-    bool nameFilterAcceptsRow(int row, QModelIndex const & parent) const;
-    bool hiddenFilterAcceptsRow(int row, QModelIndex const & parent) const;
-
 private: // fields:
 
     bool m_enabled;
