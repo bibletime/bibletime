@@ -24,5 +24,6 @@ public: // Methods:
 protected: // Methods:
 
     void focusInEvent(QFocusEvent * event) override;
+    void keyPressEvent(QKeyEvent * event) override;
 
 }; // class BtLocationEdit

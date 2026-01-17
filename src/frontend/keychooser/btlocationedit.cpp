@@ -13,6 +13,10 @@
 #include "btlocationedit.h"
 
 #include <QFocusEvent>
+#include <QKeyCombination>
+#include <QKeyEvent>
+#include <QKeySequence>
+#include "../../backend/config/btconfig.h"
 
 
 void BtLocationEdit::focusInEvent(QFocusEvent * const event) {
@@ -21,4 +25,25 @@ void BtLocationEdit::focusInEvent(QFocusEvent * const event) {
         selectAll();
 
     QWidget::focusInEvent(event);
+}
+
+void BtLocationEdit::keyPressEvent(QKeyEvent * const event) {
+    auto const shortcuts =
+            btConfig().getShortcuts(QStringLiteral("Displaywindow shortcuts"));
+    if (auto const it = shortcuts.find("openLocation"); it != shortcuts.end()) {
+        for (auto const & keySequence : it.value()) {
+            if (keySequence.count() == 1) {
+                if (event->keyCombination() == keySequence[0]) {
+                    selectAll();
+                    return;
+                }
+            }
+        }
+    } else if (event->keyCombination()
+               == QKeyCombination(Qt::ControlModifier, Qt::Key_L))
+    {
+        selectAll();
+        return;
+    }
+    QLineEdit::keyPressEvent(event);
 }
