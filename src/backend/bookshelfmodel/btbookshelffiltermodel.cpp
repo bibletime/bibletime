@@ -22,10 +22,8 @@ BtBookshelfFilterModel::BtBookshelfFilterModel(QObject * const parent)
     : QSortFilterProxyModel(parent)
     , m_enabled(true)
     , m_nameFilterRole(BtBookshelfModel::ModuleNameRole)
-    , m_nameFilterColumn(0)
     , m_nameFilterCase(Qt::CaseInsensitive)
     , m_hiddenFilterRole(BtBookshelfModel::ModuleHiddenRole)
-    , m_hiddenFilterColumn(0)
     , m_showHidden(false)
     , m_showShown(true)
 { setDynamicSortFilter(true); }
@@ -43,13 +41,6 @@ void BtBookshelfFilterModel::setNameFilterRole(int const role) {
     if (m_nameFilterRole == role)
         return;
     m_nameFilterRole = role;
-    invalidateFilter();
-}
-
-void BtBookshelfFilterModel::setNameFilterKeyColumn(int const column) {
-    if (m_nameFilterColumn == column)
-        return;
-    m_nameFilterColumn = column;
     invalidateFilter();
 }
 
@@ -73,13 +64,6 @@ void BtBookshelfFilterModel::setHiddenFilterRole(int const role) {
     if (m_hiddenFilterRole == role)
         return;
     m_hiddenFilterRole = role;
-    invalidateFilter();
-}
-
-void BtBookshelfFilterModel::setHiddenFilterKeyColumn(int const column) {
-    if (m_hiddenFilterColumn == column)
-        return;
-    m_hiddenFilterColumn = column;
     invalidateFilter();
 }
 
@@ -122,7 +106,7 @@ bool BtBookshelfFilterModel::nameFilterAcceptsRow(
     auto const * const m = sourceModel();
     BT_ASSERT(m);
 
-    auto const itemIndex = m->index(row, m_nameFilterColumn, parent);
+    auto const itemIndex = m->index(row, 0, parent);
     auto const numChildren = m->rowCount(itemIndex);
     if (numChildren == 0) {
         auto const data = m->data(itemIndex, m_nameFilterRole);
@@ -145,7 +129,7 @@ bool BtBookshelfFilterModel::hiddenFilterAcceptsRow(
     auto const * const m = sourceModel();
     BT_ASSERT(m);
 
-    auto const itemIndex = m->index(row, m_hiddenFilterColumn, parent);
+    auto const itemIndex = m->index(row, 0, parent);
     auto const numChildren = m->rowCount(itemIndex);
     if (numChildren == 0) {
         if (static_cast<Qt::CheckState>(m->data(itemIndex,
