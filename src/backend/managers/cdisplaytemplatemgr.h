@@ -112,7 +112,6 @@ class CDisplayTemplateMgr {
 
     private: // fields:
 
-        bool m_multiModuleHeaders;
         QHash<QString, QString> m_templateMap;
         QHash<QString, QString> m_cssMap;
         static CDisplayTemplateMgr * m_instance;
