@@ -12,20 +12,16 @@
 
 #pragma once
 
-#include <QObject>
 #include "../backend/rendering/cdisplayrendering.h"
 
 
 /** \brief Manages the print item queue and printing. */
-class BtPrinter final: public QObject, public Rendering::CDisplayRendering {
-
-    Q_OBJECT
+class BtPrinter final: public Rendering::CDisplayRendering {
 
 public: // methods:
 
     BtPrinter(DisplayOptions const & displayOptions,
-              FilterOptions const & filterOptions,
-              QObject * const parent = nullptr);
+              FilterOptions const & filterOptions);
 
     void printKeyTree(KeyTree const &);
 

@@ -221,8 +221,8 @@ CBookmarkIndex::CBookmarkIndex(QWidget * const parent)
                       BT_ASSERT(!tree.empty());
 
                       BtPrinter{btConfig().getDisplayOptions(),
-                                btConfig().getFilterOptions(),
-                                this}.printKeyTree(tree);
+                                btConfig().getFilterOptions()}
+                          .printKeyTree(tree);
                   });
     m_popup->addSeparator();
     addMenuAction(DeleteEntries, tr("Remove selected items..."),

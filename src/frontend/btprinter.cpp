@@ -34,10 +34,8 @@ inline FilterOptions mangleFilterOptions(FilterOptions fo) {
 } // anonymous namespace
 
 BtPrinter::BtPrinter(DisplayOptions const & displayOptions,
-                     FilterOptions const & filterOptions,
-                     QObject * const parent)
-        : QObject{parent}
-        , CDisplayRendering{displayOptions, mangleFilterOptions(filterOptions)}
+                     FilterOptions const & filterOptions)
+        : CDisplayRendering{displayOptions, mangleFilterOptions(filterOptions)}
 {}
 
 void BtPrinter::printKeyTree(KeyTree const & tree) {
