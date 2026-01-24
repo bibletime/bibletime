@@ -29,9 +29,10 @@
 #include "cswordbackend.h"
 
 
-#define CSSTEMPLATEBASE "Basic.tmpl"
 
 namespace {
+
+auto const cssTemplateBase = QStringLiteral("Basic.tmpl");
 
 inline QString readFileToString(const QString & filename) {
     QFile f(filename);
@@ -65,7 +66,7 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
                 loadTemplate(utd.canonicalPath() + '/' + file);
         }
 
-        if (!m_templateMap.contains(CSSTEMPLATEBASE)) {
+        if (!m_templateMap.contains(cssTemplateBase)) {
             errorMessage = QObject::tr("CSS base template not found!");
             return;
         }
@@ -90,7 +91,7 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
 
     // Create template names cache:
     m_availableTemplateNamesCache = m_templateMap.keys();
-    const bool b = m_availableTemplateNamesCache.removeOne(CSSTEMPLATEBASE);
+    const bool b = m_availableTemplateNamesCache.removeOne(cssTemplateBase);
     BT_ASSERT(b);
     m_availableTemplateNamesCache.append(m_cssMap.keys());
     std::sort(m_availableTemplateNamesCache.begin(),
@@ -103,7 +104,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
                                           const QString & content,
                                           const Settings & settings) const
 {
-    BT_ASSERT(name != CSSTEMPLATEBASE);
+    BT_ASSERT(name != cssTemplateBase);
     BT_ASSERT(name.endsWith(QStringLiteral(".css"))
               || name.endsWith(QStringLiteral(".tmpl")));
     BT_ASSERT(!name.endsWith(QStringLiteral(".css"))
@@ -233,9 +234,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
     }
 
     namespace DU = util::directory;
-    QString output(m_templateMap[templateIsCss
-                                 ? QString(CSSTEMPLATEBASE)
-                                 : name]); // don't change the map's content directly, use a copy
+    auto output = m_templateMap[templateIsCss ? cssTemplateBase : name];
     output.replace(QStringLiteral("#TITLE#"), settings.title)
           .replace(QStringLiteral("#LANG_ABBREV#"), settings.langAbbrev)
           .replace(QStringLiteral("#DISPLAYTYPE#"), displayTypeString)
