@@ -97,12 +97,6 @@ class CDisplayTemplateMgr {
             BT_ASSERT(m_instance);
             return m_instance;
         }
-        /**
-          \brief Turn on or off displaying module names during parallel text rendering
-
-          \param visible display module names
-        */
-        void setMultiModuleHeadersVisible(bool visible);
 
     private: // methods:
 
