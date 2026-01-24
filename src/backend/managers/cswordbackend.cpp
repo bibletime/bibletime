@@ -379,8 +379,6 @@ void CSwordBackend::Private::reloadConfig() {
 
 // Return a list of used Sword dirs. Useful for the installer.
 QStringList CSwordBackend::swordDirList() const {
-    namespace DU = util::directory;
-
     // Get the set of sword directories that could contain modules:
     QSet<QString> swordDirSet;
     QList<QFileInfo> configs;
