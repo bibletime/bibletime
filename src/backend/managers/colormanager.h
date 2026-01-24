@@ -25,7 +25,5 @@ QString getBackgroundHighlightColor();
 QString getBackgroundHighlightColor(QString const & templateName);
 QString getForegroundColor();
 QString getForegroundColor(QString const & templateName);
-QString getCrossRefColor();
-QString getCrossRefColor(QString const & templateName);
 
 } /* namespace ColorManager */

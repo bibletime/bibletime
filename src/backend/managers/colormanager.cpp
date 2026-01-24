@@ -166,10 +166,4 @@ QString getForegroundColor()
 QString getForegroundColor(QString const & templateName)
 { return getColorByPattern(QStringLiteral("FOREGROUND_COLOR"), templateName); }
 
-QString getCrossRefColor()
-{ return getCrossRefColor(CDisplayTemplateMgr::activeTemplateName()); }
-
-QString getCrossRefColor(QString const & templateName)
-{ return getColorByPattern(QStringLiteral("CROSSREF_COLOR"), templateName); }
-
 } // namespace ColorManager
