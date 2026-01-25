@@ -240,7 +240,9 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
           .replace(QStringLiteral("#DISPLAYTYPE#"), displayTypeString)
           .replace(QStringLiteral("#LANG_CSS#"), langCSS)
           .replace(QStringLiteral("#PAGE_DIRECTION#"),
-                   settings.textDirectionAsHtmlDirAttr())
+                   settings.textDirection == CSwordModuleInfo::LeftToRight
+                   ? QStringLiteral("ltr")
+                   : QStringLiteral("rtl"))
           .replace(QStringLiteral("#CONTENT#"), newContent)
           .replace(QStringLiteral("#BODY_CLASSES#"),
                    QStringLiteral("%1 %1_%2").arg(displayTypeString,

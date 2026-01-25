@@ -33,10 +33,6 @@ class CDisplayTemplateMgr {
         */
         struct Settings {
 
-            char const * textDirectionAsHtmlDirAttr() const noexcept {
-                return textDirection == CSwordModuleInfo::LeftToRight ? "ltr" : "rtl";
-            }
-
             /** The list of modules */
             BtConstModuleList modules;
 
