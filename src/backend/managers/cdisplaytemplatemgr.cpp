@@ -113,13 +113,9 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
               || m_templateMap.contains(name));
     const bool templateIsCss = name.endsWith(QStringLiteral(".css"));
 
-    QString displayTypeString;
     QString moduleName;
-
-    if (!settings.pageCSS_ID.isEmpty()) {
-        displayTypeString = settings.pageCSS_ID;
-    }
-    else {
+    auto displayTypeString = settings.pageCSS_ID;
+    if (displayTypeString.isEmpty()) {
         if (settings.modules.count()) {
             switch (settings.modules.first()->type()) {
 
