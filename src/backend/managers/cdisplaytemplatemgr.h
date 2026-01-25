@@ -78,7 +78,7 @@ class CDisplayTemplateMgr {
           \returns The full HTML template HTML code including the CSS data.
         */
         QString fillTemplate(const QString & name,
-                             const QString & content,
+                             QString content,
                              const Settings & settings) const;
 
         /**

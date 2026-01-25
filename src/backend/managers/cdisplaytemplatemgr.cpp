@@ -101,7 +101,7 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
 }
 
 QString CDisplayTemplateMgr::fillTemplate(const QString & name,
-                                          const QString & content,
+                                          QString content,
                                           const Settings & settings) const
 {
     BT_ASSERT(name != cssTemplateBase);
@@ -140,7 +140,6 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
         }
     }
 
-    QString newContent = content;
     const int moduleCount = settings.modules.count();
 
     if (moduleCount >= 2) {
@@ -154,7 +153,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
                         .arg(QString::number(static_cast<int>(100.0 / moduleCount)),
                              mi->name()));
 
-        newContent = QStringLiteral("<table><tr>%1</tr>%2</table>")
+        content = QStringLiteral("<table><tr>%1</tr>%2</table>")
                      .arg(header, content);
     }
 
@@ -239,7 +238,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
                    settings.textDirection == CSwordModuleInfo::LeftToRight
                    ? QStringLiteral("ltr")
                    : QStringLiteral("rtl"))
-          .replace(QStringLiteral("#CONTENT#"), newContent)
+          .replace(QStringLiteral("#CONTENT#"), content)
           .replace(QStringLiteral("#BODY_CLASSES#"),
                    QStringLiteral("%1 %1_%2").arg(displayTypeString,
                                                   moduleName))
