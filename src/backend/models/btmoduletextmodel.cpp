@@ -354,7 +354,7 @@ QString BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
                 : Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
         text.replace(QStringLiteral("#CHAPTERTITLE#"), QString());
         text.replace(QStringLiteral("#TEXT_ALIGN#"), QStringLiteral("left"));
-        return text;
+        return ColorManager::replaceColors(std::move(text));
     }
     return QString();
 }
