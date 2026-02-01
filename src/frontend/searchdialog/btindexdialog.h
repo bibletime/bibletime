@@ -46,7 +46,7 @@ private: // methods:
 
 private Q_SLOTS:
 
-    void autoDeleteOrphanedIndicesChanged(int newState);
+    void autoDeleteOrphanedIndicesChanged(Qt::CheckState newState);
     void slotSwordSetupChanged();
     void createIndices();
     void deleteIndices();

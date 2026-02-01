@@ -149,7 +149,8 @@ void BtIndexDialog::retranslateUi() {
     populateModuleList();
 }
 
-void BtIndexDialog::autoDeleteOrphanedIndicesChanged(int newState) {
+void
+BtIndexDialog::autoDeleteOrphanedIndicesChanged(Qt::CheckState const newState) {
     btConfig().setValue(
                 QStringLiteral("settings/behaviour/autoDeleteOrphanedIndices"),
                 newState == Qt::Checked);
