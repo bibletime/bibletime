@@ -376,7 +376,6 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
     if (role >= ModuleEntry::TextRole && role <= ModuleEntry::Edit9Role) {
         if (verse == 0)
             return QString();
-        QString text;
 
         QString chapterTitle;
         if (verse == 1)
@@ -425,6 +424,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
             }
         }
 
+        QString text;
         if (!key.key().isEmpty())
             text +=
                 m_displayRendering.renderDisplayEntry(
