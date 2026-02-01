@@ -325,8 +325,7 @@ QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) cons
         auto text = m_displayRendering.renderDisplayEntry(moduleList, keyName);
         text.replace(QStringLiteral("#CHAPTERTITLE#"), QString());
         text.replace(QStringLiteral("#TEXT_ALIGN#"), QStringLiteral("left"));
-        text = ColorManager::replaceColors(text);
-        return text;
+        return ColorManager::replaceColors(std::move(text));
     }
     else if (role == ModuleEntry::ReferenceRole){
         return keyName;
@@ -437,8 +436,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
 
         text.replace(QStringLiteral("#CHAPTERTITLE#"), chapterTitle);
         text.replace(QStringLiteral("#TEXT_ALIGN#"), QStringLiteral("left"));
-        text = ColorManager::replaceColors(text);
-        return text;
+        return ColorManager::replaceColors(std::move(text));
     }
     return QString();
 }
