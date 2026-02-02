@@ -20,6 +20,7 @@
 #include <QPalette>
 #include <QSettings>
 #include <QStringList>
+#include <QStyleHints>
 #include <QVariant>
 #include <utility>
 #include "../../util/btassert.h"
@@ -31,9 +32,15 @@ namespace ColorManager {
 namespace {
 
 bool darkMode() {
-    auto const & palette = qApp->palette();
-    return palette.color(QPalette::WindowText).value()
-            > palette.color(QPalette::Window).value();
+    switch (QApplication::styleHints()->colorScheme()) {
+        case Qt::ColorScheme::Dark: return true;
+        case Qt::ColorScheme::Light: return false;
+        case Qt::ColorScheme::Unknown: break;
+        default: break;
+    }
+    auto const & palette = QApplication::palette();
+    return palette.color(QPalette::WindowText).lightness()
+            > palette.color(QPalette::Window).lightness();
 }
 
 using ColorMaps = std::map<QString, std::map<QString, QString> >;
