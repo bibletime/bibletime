@@ -32,23 +32,6 @@ QString classHierarchy(QObject const * const object) {
     return result;
 }
 
-QQuickItem const * quickItemInFocus(QQuickWidget const * quickWidget,
-                                    QPointF cursorPosition)
-{
-    auto const * item = quickWidget->rootObject();
-    auto quickPosition = item->mapFromGlobal(std::move(cursorPosition));
-    for (;;) {
-        if (auto const * const child =
-                item->childAt(quickPosition.x(), quickPosition.y()))
-        {
-            quickPosition = item->mapToItem(child, quickPosition);
-            item = child;
-        } else {
-            return item;
-        }
-    }
-}
-
 void writeObjectHierarchy(QString & objectHierarchy,
                           QObject const * object,
                           QString const & firstLine,
@@ -114,3 +97,20 @@ void DebugWindow::timerEvent(QTimerEvent * const event) {
     }
 }
 
+QQuickItem const *
+DebugWindow::quickItemInFocus(QQuickWidget const * quickWidget,
+                              QPointF cursorPosition)
+{
+    auto const * item = quickWidget->rootObject();
+    auto quickPosition = item->mapFromGlobal(std::move(cursorPosition));
+    for (;;) {
+        if (auto const * const child =
+                item->childAt(quickPosition.x(), quickPosition.y()))
+        {
+            quickPosition = item->mapToItem(child, quickPosition);
+            item = child;
+        } else {
+            return item;
+        }
+    }
+}

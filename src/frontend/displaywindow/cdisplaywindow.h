@@ -226,6 +226,8 @@ protected:
 
     virtual QMenu * newDisplayWidgetPopupMenu();
 
+    QMenu * addDebugActions(QMenu * menu);
+
     /** Called to add actions to mainWindow toolbars */
     virtual void setupMainWindowToolBars();
 

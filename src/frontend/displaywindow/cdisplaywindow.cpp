@@ -25,6 +25,7 @@
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/cresmgr.h"
 #include "../bibletime.h"
+#include "../bibletimeapp.h"
 #include "../cexportmanager.h"
 #include "../cmdiarea.h"
 #include "../display/btmodelviewreaddisplay.h"
@@ -582,7 +583,17 @@ QMenu * CDisplayWindow::newDisplayWidgetPopupMenu() {
     popupMenu->addAction((m_actions.speakSelectedText));
     #endif
 
-    return popupMenu;
+    return addDebugActions(popupMenu);
+}
+
+QMenu * CDisplayWindow::addDebugActions(QMenu * const menu) {
+    if (btApp->debugMode()) {
+        auto * const debugAction =
+                new QAction(tr("DEBUG: Show raw text"), this);
+        debugAction->setProperty("bibletime_show_raw_text", true);
+        menu->addAction(debugAction);
+    }
+    return menu;
 }
 
 void CDisplayWindow::setupMainWindowToolBars() {

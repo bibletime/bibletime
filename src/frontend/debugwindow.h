@@ -14,6 +14,11 @@
 
 #include <QTextEdit>
 
+#include <QPointF>
+
+
+class QQuickItem;
+class QQuickWidget;
 
 class DebugWindow : public QTextEdit {
 
@@ -26,6 +31,9 @@ public: // methods:
     void retranslateUi();
 
     void timerEvent(QTimerEvent * const event) override;
+
+    static QQuickItem const *
+    quickItemInFocus(QQuickWidget const * quickWidget, QPointF cursorPosition);
 
 private: // fields:
 

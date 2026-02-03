@@ -238,7 +238,7 @@ QMenu * CBibleReadWindow::newDisplayWidgetPopupMenu() {
     popupMenu->addAction(m_actions.speakSelectedText);
     #endif
 
-    return popupMenu;
+    return addDebugActions(popupMenu);
 }
 
 /** Moves to the next book. */

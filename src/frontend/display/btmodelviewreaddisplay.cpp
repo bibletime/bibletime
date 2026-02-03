@@ -13,6 +13,7 @@
 #include "btmodelviewreaddisplay.h"
 
 #include <memory>
+#include <QApplication>
 #include <QClipboard>
 #include <QDebug>
 #include <QDrag>
@@ -20,14 +21,17 @@
 #include <QGuiApplication>
 #include <QHBoxLayout>
 #include <QMenu>
+#include <QQmlProperty>
 #include <QQuickItem>
 #include <QScrollBar>
 #include <QString>
+#include <QTextEdit>
 #ifdef BUILD_TEXT_TO_SPEECH
 #include <QTextToSpeech>
 #endif
 #include <QTimer>
 #include <QToolBar>
+#include <QVariant>
 #include <utility>
 #include "../../backend/keys/cswordkey.h"
 #include "../../backend/drivers/cswordbiblemoduleinfo.h"
@@ -40,6 +44,7 @@
 #include "../btcopybyreferencesdialog.h"
 #include "../BtMimeData.h"
 #include "../cexportmanager.h"
+#include "../debugwindow.h"
 #include "../displaywindow/cdisplaywindow.h"
 #include "../keychooser/ckeychooser.h"
 #include "modelview/btqmlinterface.h"
@@ -150,8 +155,29 @@ void BtModelViewReadDisplay::copyAsPlainText(TextPart const part)
 { QGuiApplication::clipboard()->setText(text(part)); }
 
 void BtModelViewReadDisplay::contextMenuEvent(QContextMenuEvent * event) {
-    if (m_popup)
-        m_popup->exec(event->globalPos());
+    auto const position = event->globalPos();
+    if (m_popup) {
+        if (auto const * const action = m_popup->exec(position);
+            action && action->property("bibletime_show_raw_text").toBool())
+        {
+            if (QApplication::widgetAt(position) == m_quickWidget) {
+                auto const * const item =
+                        DebugWindow::quickItemInFocus(m_quickWidget, position);
+                auto const textProperty =
+                        QQmlProperty::read(item, QStringLiteral("text"));
+                if (textProperty.isValid()) {
+                    auto * const window = new QTextEdit();
+                    window->setPlainText(textProperty.toString());
+                    window->setReadOnly(true);
+                    window->show();
+                } else {
+                    qDebug() << Q_FUNC_INFO << "text property is not valid";
+                }
+            } else {
+                qDebug() << Q_FUNC_INFO << "m_quickWidget not in focus";
+            }
+        }
+    }
 }
 
 void BtModelViewReadDisplay::copySelectedText()
