@@ -591,6 +591,7 @@ QMenu * CDisplayWindow::addDebugActions(QMenu * const menu) {
         auto * const debugAction =
                 new QAction(tr("DEBUG: Show raw text"), this);
         debugAction->setProperty("bibletime_show_raw_text", true);
+        menu->addSeparator();
         menu->addAction(debugAction);
     }
     return menu;
