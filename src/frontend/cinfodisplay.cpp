@@ -114,7 +114,7 @@ void CInfoDisplay::setInfo(const QString & renderedData, const QString & lang) {
     text.replace(QStringLiteral("#CHAPTERTITLE#"), QString());
     text.replace(QStringLiteral("#TEXT_ALIGN#"), QStringLiteral("left"));
     text = ColorManager::replaceColors(text);
-    m_textBrowser->setText(text);
+    m_textBrowser->setHtml(text);
 }
 
 void CInfoDisplay::setInfo(const Rendering::InfoType type, const QString & data) {
