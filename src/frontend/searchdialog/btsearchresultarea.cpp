@@ -120,7 +120,8 @@ BtSearchResultArea::BtSearchResultArea(QWidget * parent)
     BT_CONNECT(m_moduleListBox,  &CModuleResultView::moduleChanged,
                m_previewDisplay, &QTextBrowser::clear);
     BT_CONNECT(m_previewDisplay, &QTextBrowser::customContextMenuRequested,
-               [this](QPoint const & loc) { m_contextMenu->exec(loc); });
+               [this](QPoint const & loc)
+               { m_contextMenu->exec(m_previewDisplay->mapToGlobal(loc)); });
     frameLayout->addWidget(m_previewDisplay);
 
     loadDialogSettings();
