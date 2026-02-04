@@ -24,7 +24,7 @@
 
 BtTextBrowser::BtTextBrowser(QWidget * parent)
     : QTextBrowser(parent)
-{ setTextInteractionFlags(Qt::TextSelectableByMouse); }
+{}
 
 void BtTextBrowser::keyPressEvent(QKeyEvent * event) {
     QTextBrowser::keyPressEvent(event);
