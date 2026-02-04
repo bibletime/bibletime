@@ -90,7 +90,7 @@ ReferenceManager::decodeHyperlink(QString const & hyperlink) {
     static auto const removeCaseInsensitivePrefix =
             [](QStringView & ref, QString const & prefix) {
                 if (ref.startsWith(prefix, Qt::CaseInsensitive)) {
-                    ref = ref.mid(prefix.size() - 1);
+                    ref = ref.mid(prefix.size());
                     return true;
                 }
                 return false;
