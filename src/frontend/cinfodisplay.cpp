@@ -44,6 +44,7 @@ CInfoDisplay::CInfoDisplay(BibleTime * parent)
     layout->setContentsMargins(2, 2, 2, 2); // Leave small border
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
     m_textBrowser = new BtTextBrowser(this);
+    m_textBrowser->setOpenLinks(false);
     m_textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
     BT_CONNECT(m_textBrowser, &QTextBrowser::customContextMenuRequested,
                [this]{
