@@ -81,7 +81,7 @@ CInfoDisplay::CInfoDisplay(BibleTime * parent)
                    auto const decodedLink(
                                ReferenceManager::decodeHyperlink(
                                    url.toString()));
-                   if (!decodedLink && !decodedLink->module)
+                   if (!decodedLink || !decodedLink->module)
                        return;
 
                    auto const * const m = decodedLink->module;
