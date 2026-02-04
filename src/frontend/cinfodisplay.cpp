@@ -20,6 +20,7 @@
 #include <QVBoxLayout>
 #include <QtAlgorithms>
 #include <QMenu>
+#include <QTextEdit>
 #include "../backend/config/btconfig.h"
 #include "../backend/drivers/cswordmoduleinfo.h"
 #include "../backend/keys/cswordkey.h"
@@ -27,6 +28,7 @@
 #include "../backend/managers/referencemanager.h"
 #include "../util/btconnect.h"
 #include "bibletime.h"
+#include "bibletimeapp.h"
 #include "bttextbrowser.h"
 
 using namespace Rendering;
@@ -58,6 +60,20 @@ CInfoDisplay::CInfoDisplay(BibleTime * parent)
                    QMenu menu;
                    menu.addAction(&selectAllAction);
                    menu.addAction(&copyAction);
+                   if (btApp->debugMode()) {
+                       menu.addSeparator();
+                       auto * const debugAction =
+                               new QAction(tr("DEBUG: Show raw text"), this);
+                       BT_CONNECT(debugAction, &QAction::triggered, this,
+                                  [this] {
+                                      auto * const window = new QTextEdit();
+                                      window->setReadOnly(true);
+                                      window->setPlainText(
+                                                  m_textBrowser->toHtml());
+                                      window->show();
+                                  });
+                       menu.addAction(debugAction);
+                   }
                    menu.exec(QCursor::pos());
                });
     BT_CONNECT(m_textBrowser, &QTextBrowser::anchorClicked,
