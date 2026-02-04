@@ -127,7 +127,7 @@ void CInfoDisplay::setInfo(const Rendering::ListInfoData & list) {
         return;
 
     if (list.isEmpty()) {
-        m_textBrowser->setText(QString());
+        m_textBrowser->clear();
         return;
     }
 
