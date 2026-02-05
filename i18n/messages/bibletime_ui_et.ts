@@ -345,157 +345,157 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/bibletime_init.cpp" line="64"/>
         <source>Ctrl+Q</source>
         <comment>File|Quit</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="72"/>
         <source>F11</source>
         <comment>View|Full screen</comment>
-        <translation type="unfinished"></translation>
+        <translation>F11</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="85"/>
         <source>F8</source>
         <comment>View|Show mag</comment>
-        <translation type="unfinished"></translation>
+        <translation>F8</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="96"/>
         <source>F6</source>
         <comment>View|Show main toolbar</comment>
-        <translation type="unfinished"></translation>
+        <translation>F6</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="119"/>
         <source>Shift+Up</source>
         <comment>View|Scroll|Auto scroll up</comment>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Up</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="124"/>
         <source>Shift+Down</source>
         <comment>View|Scroll|Auto scroll down</comment>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Down</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="130"/>
         <source>Space</source>
         <comment>View|Scroll|Auto scroll pause</comment>
-        <translation type="unfinished"></translation>
+        <translation>Space</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="139"/>
         <source>Ctrl+O</source>
         <comment>Search|Search in open works</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="146"/>
         <source>Ctrl+Alt+F</source>
         <comment>Search|Search in the default Bible</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+F</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="153"/>
         <source>Ctrl+W</source>
         <comment>Windows|Close window</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="160"/>
         <source>Ctrl+Alt+W</source>
         <comment>Windows|Close all windows</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+W</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="167"/>
         <source>Ctrl+G</source>
         <comment>Windows|Tile vertically</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="174"/>
         <source>Ctrl+H</source>
         <comment>Windows|Tile horizontally</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+H</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="179"/>
         <source>Ctrl+I</source>
         <comment>Windows|Tile</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+I</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="184"/>
         <source>Ctrl+J</source>
         <comment>Windows|Cascade</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+J</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="193"/>
         <source>Ctrl+Alt+M</source>
         <comment>Windows|Arrangement mode|Manual</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+M</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="201"/>
         <source>Ctrl+Alt+T</source>
         <comment>Windows|Arrangement mode|Tabbed</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+T</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="209"/>
         <source>Ctrl+Alt+G</source>
         <comment>Windows|Arrangement mode|Auto tile vertically</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+G</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="219"/>
         <source>Ctrl+Alt+H</source>
         <comment>Windows|Arrangement mode|Auto tile horizontally</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+H</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="228"/>
         <source>Ctrl+Alt+I</source>
         <comment>Windows|Arrangement mode|Auto tile</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+I</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="235"/>
         <source>Ctrl+Alt+J</source>
         <comment>Windows|Arrangement mode|Auto cascade</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+J</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="243"/>
         <source>Ctrl+Alt+S</source>
         <comment>Windows|Save as new session...</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+S</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="250"/>
         <source>F4</source>
         <comment>Settings|Bookshelf Manager...</comment>
-        <translation type="unfinished"></translation>
+        <translation>F4</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="262"/>
         <source>F1</source>
         <comment>Help|Handbook</comment>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="268"/>
         <source>F2</source>
         <comment>Help|Bible Study Howto</comment>
-        <translation type="unfinished"></translation>
+        <translation>F2</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="273"/>
         <source>F3</source>
         <comment>Help|Tip of the day...</comment>
-        <translation type="unfinished"></translation>
+        <translation>F3</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="289"/>
@@ -905,7 +905,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
         <source>(c)1999-2026, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
+        <translation>(c)1999-2026, BibleTime meeskond</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="204"/>
@@ -2095,27 +2095,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="116"/>
         <source>Text-to-speech</source>
-        <translation type="unfinished"></translation>
+        <translation>Kõnesüntees</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="119"/>
         <source>No Qt text-to-speech plug-ins were found. Please install a plugin and restart the application.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt kõnesünteesi lisasid ei leitud. Palun paigaldage vastavad Qt lisad ja taaskäivitage rakendus.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="121"/>
         <source>Text-to-speech engine:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kõnesünteesi mootor:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="122"/>
         <source>Text-to-speech language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kõnesünteesi keel:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="123"/>
         <source>Text-to-speech voice:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kõnesünteesi hääl:</translation>
     </message>
 </context>
 <context>
@@ -2813,7 +2813,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="135"/>
         <source>Speak selected text</source>
-        <translation type="unfinished"></translation>
+        <translation>Kõnele valitud tekst</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="204"/>
@@ -2854,7 +2854,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="592"/>
         <source>DEBUG: Show raw text</source>
-        <translation type="unfinished"></translation>
+        <translation>SILUMINE: Näita toorteksti</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="732"/>
@@ -3059,7 +3059,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1079"/>
         <source>Questionable</source>
-        <translation type="unfinished"></translation>
+        <translation>Küsitav</translation>
     </message>
     <message>
         <source>Cults/Unorthodox</source>
@@ -3251,7 +3251,7 @@ Kas soovite jätkata?</translation>
     <message>
         <location filename="../../src/frontend/debugwindow.cpp" line="84"/>
         <source>&lt;b&gt;This Quick item is:&lt;/b&gt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;See Quick element on:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/debugwindow.cpp" line="89"/>
@@ -3284,7 +3284,7 @@ Kas soovite jätkata?</translation>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="67"/>
         <source>DEBUG: Show raw text</source>
-        <translation type="unfinished"></translation>
+        <translation>SILUMINE: Näita toorteksti</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="99"/>
@@ -4289,7 +4289,7 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="31"/>
         <source>%1 (%2)</source>
         <comment>Locale language and territory</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 (%2)</translation>
     </message>
 </context>
 <context>
@@ -4971,7 +4971,7 @@ Kas soovite jätkata?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="281"/>
         <source>Created by &lt;a href=&quot;%1&quot;&gt;BibleTime&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Genereeritud&lt;a href=&quot;%1&quot;&gt;BibleTime&lt;/a&gt; poolt</translation>
     </message>
     <message>
         <source>Created by &lt;a href=&quot;https://bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
