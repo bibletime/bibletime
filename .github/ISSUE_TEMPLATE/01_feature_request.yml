@@ -12,7 +12,7 @@ body:
     value: |
       :information_source: Thank you for suggesting new features! However, please note that BibleTime's development is currently limited by our small team size, which makes it challenging to implement major new features in the near future.
 
-      We appreciate all feature suggestions and will consider them for future planning when resources allow. In the meantime, we encourage users to contribute code to help make desired features a reality. 
+      We appreciate all feature suggestions and will consider them for future planning when resources allow. In the meantime, we encourage users to contribute code to help make desired features a reality.
 
       Thank you for your understanding!
 
@@ -22,6 +22,8 @@ body:
     label: Acknowledgments
     options:
       - label: I understand this form is for software feedback only, not for issues related to specific works like Bibles, commentaries, or books, nor for content provider-related concerns.
+        required: true
+      - label: I have searched the issue tracker and confirm this feature or enhancement has not already been requested, or that reopening an existing request would not be appropriate.
         required: true
   validations:
     required: true

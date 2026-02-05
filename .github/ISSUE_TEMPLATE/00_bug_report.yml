@@ -13,6 +13,8 @@ body:
     options:
       - label: I understand this form is for software feedback only, not for issues related to specific works like Bibles, commentaries, or books, nor for content provider-related concerns.
         required: true
+      - label: I have searched the issue tracker and confirm this issue has not already been reported, or that reopening an existing issue would not be appropriate.
+        required: true
   validations:
     required: true
 

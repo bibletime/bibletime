@@ -14,6 +14,8 @@ body:
     options:
       - label: I understand this form is for software feedback only, not for issues related to specific works like Bibles, commentaries, or books, nor for content provider-related concerns.
         required: true
+      - label: I have searched the internet and the issue tracker and did not find an answer that fully addresses my question.
+        required: true
   validations:
     required: true
 
