@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2025 The Bibletime Team, https://bibletime.info
+Copyright (C) 1999-2026 The Bibletime Team, https://bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -42,12 +42,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>세션 변경(&amp;i)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="853"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="851"/>
         <source>Se&amp;ttings</source>
         <translation>설정(&amp;t)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="856"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="853"/>
         <source>&amp;Help</source>
         <translation>도움말(&amp;H)</translation>
     </message>
@@ -142,57 +142,57 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;B성경공부 Howto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="350"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="356"/>
         <source>Error locating handbook!</source>
         <translation>핸드북을 찾을 수 없습니다!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="351"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="357"/>
         <source>A suitable installed handbook could not be found!</source>
         <translation>설치된 핸드북을 찾을 수 없습니다!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="357"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="363"/>
         <source>Error opening handbook!</source>
         <translation>핸드북 열기 에러!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="358"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="364"/>
         <source>The installed handbook could not be opened!</source>
         <translation>설치된 핸드북을 열 수 없습니다!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="366"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="372"/>
         <source>Error locating howto!</source>
         <translation>Howto를 찾을 수 없음!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="367"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="373"/>
         <source>A suitable installed howto could not be found!</source>
         <translation>설치된 howto를 찾을 수 없습니다!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="373"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="379"/>
         <source>Error opening howto!</source>
         <translation>Howto 열기 에러</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="374"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="380"/>
         <source>The installed howto could not be opened!</source>
         <translation>설치된 howto를 열 수 없습니다!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="663"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="661"/>
         <source>Please enter a name for the new session.</source>
         <translation>새로운 세션 이름을 입력하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="671"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="669"/>
         <source>Session already exists</source>
         <translation>세션이 이미 존재합니다</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="672"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="670"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
         <translation>&quot;%1&quot; 이름을 가진 세션이 이미 존재합니다. 다른 이름을 입력하세요.</translation>
     </message>
@@ -593,7 +593,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>일반 도구 모음</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="859"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="856"/>
         <source>Show &quot;What&apos;s this widget&quot; dialog</source>
         <translation type="unfinished"></translation>
     </message>
@@ -663,42 +663,42 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>책꽂이에서 찾기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="662"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="660"/>
         <source>New Session</source>
         <translation>새로운 세션</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="97"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="100"/>
         <source>Initializing the SWORD engine...</source>
         <translation>SWORD 엔진을 초기화합니다...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="110"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="113"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation>바이블타임 화면을 생성합니다...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="118"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="121"/>
         <source>Initializing menu- and toolbars...</source>
         <translation>메뉴와 도구 모음을 초기화합니다...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="192"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="195"/>
         <source>Unlock Work</source>
         <translation>책 잠금 해제</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="193"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="196"/>
         <source>Enter the unlock key for %1.</source>
         <translation>%1 잠금 해제 키를 입력하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="221"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="224"/>
         <source>Warning: Invalid unlock key!</source>
         <translation>경고: 잘못된 잠금 해제 키!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="222"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="225"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
         <translation>입력하신 잠금 해제 키로는 이 모듈을 잠금 해제 할 수 없습니다. 다시 시도하세요.</translation>
     </message>
@@ -721,27 +721,27 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTimeApp</name>
     <message>
-        <location filename="../../src/frontend/bibletimeapp.cpp" line="189"/>
+        <location filename="../../src/frontend/bibletimeapp.cpp" line="186"/>
         <source>Warning!</source>
         <translation>주의!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletimeapp.cpp" line="190"/>
+        <location filename="../../src/frontend/bibletimeapp.cpp" line="187"/>
         <source>Migration to the new configuration system is not yet implemented. Proceeding might result in &lt;b&gt;loss of data&lt;/b&gt;. Please backup your configuration files before you continue!&lt;br/&gt;&lt;br/&gt;Do you want to continue? Press &quot;No&quot; to quit BibleTime immediately.</source>
         <translation>새로운 환경으로의 이전은 아직 지원하지 않습니다. 그냥 진행하시면 &lt;b&gt;데이터 손실&lt;/b&gt;이 발생할 수 있습니다. 계속하기 전에 환경 파일들을 백업해 주세요!&lt;br/&gt;&lt;br/&gt;계속 하시겠습니까?  &quot;아니오&quot;를 누르시면 바이블타임을 바로 종료합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletimeapp.cpp" line="202"/>
+        <location filename="../../src/frontend/bibletimeapp.cpp" line="199"/>
         <source>Error loading configuration!</source>
         <translation>환경 파일 들여오기 실패!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletimeapp.cpp" line="203"/>
+        <location filename="../../src/frontend/bibletimeapp.cpp" line="200"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
         <translation>바이블타임 신버전에 해당하는 설정 때문에 환경 파일 들여오기에 실패했습니다. 바이블타임 버전을 내리셨을 가능성이 있습니다. 새로운 환경 파일 들여오기는 &lt;b&gt;데이터 손실&lt;/b&gt;을 초래할 수 있습니다.&lt;br/&gt;&lt;br/&gt;새로운 환경 파일 들여오기를 시도하시겠습니까? &quot;아니오&quot;를 누르시면 바이블타임을 바로 종료합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletimeapp.cpp" line="276"/>
+        <location filename="../../src/frontend/bibletimeapp.cpp" line="273"/>
         <source>Fatal error!</source>
         <translation>치명적 오류!</translation>
     </message>
@@ -769,12 +769,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>선택한 책들을 설치하고 있습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="61"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="60"/>
         <source>Choose Languages</source>
         <translation>언어 선택</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="62"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="61"/>
         <source>Choose one or more languages to install works from.</source>
         <translation>설치할 책의 언어를 하나 이상 선택하세요.</translation>
     </message>
@@ -835,32 +835,32 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>설치한 책 삭제</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="204"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="203"/>
         <source>Install Works</source>
         <translation>책 설치</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="205"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="204"/>
         <source>Choose one or more works to install.</source>
         <translation>설치할 책을 하나 이상 선택하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="210"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="209"/>
         <source>Update Works</source>
         <translation>책 갱신</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="211"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="210"/>
         <source>Choose one or more works to update.</source>
         <translation>갱신할 책을 하나 이상 선택하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="217"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="216"/>
         <source>Remove Works</source>
         <translation>책 삭제</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="218"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="217"/>
         <source>Choose one or more works to remove.</source>
         <translation>삭제할 책을 하나 이상 선택하세요.</translation>
     </message>
@@ -883,12 +883,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>바이블타임은 사용하기 싶고 매우 유용한 성경 공부 도구입니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="346"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="345"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>바이블타임은 GPL 라이선스로 배포됩니다. 개인적이거나 일반 대중을 대상으로 하거나 심지어 상업적인 목적으로도 제한없이 다운로드 받아 사용할 수 있습니다. 그렇지만 프로그램을 배포하려면 반드시 연관 소스코드도 같이 배포해야만 합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="352"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="351"/>
         <source>The complete legally binding license is below.</source>
         <translation>법적 구속력이 있는 라이선스 전문은 아래와 같습니다.</translation>
     </message>
@@ -903,143 +903,143 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>바이블타임(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="205"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
+        <source>(c)1999-2026, The BibleTime Team</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="204"/>
         <source>&amp;Contributors</source>
         <translation>기여자(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="216"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="215"/>
         <source>The following people contributed to BibleTime:</source>
         <translation>다음과 같은 분들이 바이블타임에 기여해주셨습니다:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="218"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="217"/>
         <source>documentation and translation manager</source>
         <translation>문서화 및 번역 관리자</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="239"/>
         <source>project manager</source>
         <translation>프로젝트 관리자</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="244"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>tester</source>
         <translation>테스터</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="244"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>usability expert</source>
         <translation>사용성 전문가</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="309"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="308"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>바이블타임은 SWORD 프로젝트를 사용합니다. SWORD 프로젝트는 CrossWire Bible Society의 무료 성경 소프트웨어 프로젝트로 목적은 크로스 플랫폼이며 GPL 라이선스를 지원하는 오픈 소스 도구를 만들어 개발자나 성경 단체에서 빠르고 쉽게 새로운 성경 프로그램을 제작할 수 있도록 하는데 있습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="315"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="314"/>
         <source>The SWORD Project: </source>
         <translation>SWORD 프로젝트: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="323"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="322"/>
         <source>&amp;Qt</source>
         <translation>Qt(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="326"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="325"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt 툴킷 버전 %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="333"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="332"/>
         <source>More info...</source>
         <translation>추가 정보...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="342"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="341"/>
         <source>&amp;License</source>
         <translation>라이선스(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="208"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="207"/>
         <source>designer</source>
         <translation>디자이너</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="207"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="206"/>
         <source>developer</source>
         <translation>개발자</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="218"/>
         <source>project founder</source>
         <translation>프로젝트 설립자</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="225"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="224"/>
         <source>packager</source>
         <translation>패키지 제작자</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="226"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="225"/>
         <source>creator of The Sword Project</source>
         <translation>Sword 프로젝트 설립자</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="228"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="227"/>
         <source>domain sponsor</source>
         <translation>도메인 스폰서</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="229"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="228"/>
         <source>howto</source>
         <translation>성경공부요령</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="209"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="208"/>
         <source>artist</source>
         <translation>예술가</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
-        <source>(c)1999-2025, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>documentation</source>
         <translation>문서화</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>다음 분들이 바이블타임을 다른 언어로 번역해 주셨습니다:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="292"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="291"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
         <translation>몇몇 이름을 누락했을 수 있습니다, 오류나 누락이 있으면 %1 에 등록해 주세요.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="303"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="302"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="307"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="306"/>
         <source>SWORD library version %1</source>
         <translation>SWORD 라이브러리 버전 %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="328"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="327"/>
         <source>This program uses Qt version %1.</source>
         <translation>이 프로그램은 Qt 버전 %1 을 사용합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="330"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="329"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt는 C++ 언어로 만들어진 크로스 플랫폼 응용 및 사용자 인터페이스 프레임워크입니다. LGPL 라이선스로 배포되고 있습니다.</translation>
     </message>
@@ -1047,52 +1047,52 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBibleKeyWidget</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="133"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="114"/>
         <source>Select book</source>
         <translation>권 선택</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="150"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="131"/>
         <source>Select chapter</source>
         <translation>장 선택</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="169"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="150"/>
         <source>Select verse</source>
         <translation>절 선택</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="195"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="176"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
         <translation>현상태에서 마우스 스크롤로 이동할 수 있습니다. 마우스 클릭 상태에서 위/아래로 드래그해도 이동할 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="197"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="178"/>
         <source>Next book</source>
         <translation>다음권</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="199"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="180"/>
         <source>Previous book</source>
         <translation>이전권</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="202"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="183"/>
         <source>Next chapter</source>
         <translation>다음장</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="204"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="185"/>
         <source>Previous chapter</source>
         <translation>이전장</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="207"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="188"/>
         <source>Next verse</source>
         <translation>다음절</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="209"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="190"/>
         <source>Previous verse</source>
         <translation>이전절</translation>
     </message>
@@ -1199,7 +1199,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfLanguagesPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="77"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="76"/>
         <source>English</source>
         <translation>English</translation>
     </message>
@@ -1283,62 +1283,62 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfWorksPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="202"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="201"/>
         <source>Fi&amp;lter:</source>
         <translation>필터(&amp;l)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="208"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="207"/>
         <source>Install Works &gt;</source>
         <translation>책 설치 &gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="214"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="213"/>
         <source>Update Works &gt;</source>
         <translation>책 갱신 &gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="221"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="220"/>
         <source>Remove Works &gt;</source>
         <translation>책 삭제 &gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="225"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="224"/>
         <source>Install &amp;folder:</source>
         <translation>폴더(&amp;f) 설치:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="226"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="225"/>
         <source>The folder where the new works will be installed</source>
         <translation>새로운 책들이 설치될 폴더</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="231"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="230"/>
         <source>There are no works to update.</source>
         <translation>갱신할 책이 없습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="233"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="232"/>
         <source>No works are currently installed so they cannot be removed.</source>
         <translation>설치된 책이 없습니다 - 기존 책 삭제 불가.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="238"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="237"/>
         <source>No works can be installed with the current selection of remote libraries and languages. Please go back and make a different selection.</source>
         <translation>현재 선택한 원격 라이브러리와 언어로 설치된 책이 없습니다. 뒤로 돌아가서 다시 선택하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="243"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="242"/>
         <source>Grouping:</source>
         <translation>묶기:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="244"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="243"/>
         <source>Grouping</source>
         <translation>묶기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="246"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="245"/>
         <source>Change the grouping of items in the bookshelf.</source>
         <translation>책꽂이 항목들의 묶기 방식을 변경합니다.</translation>
     </message>
@@ -1346,47 +1346,47 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfig</name>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="80"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="79"/>
         <source>Old testament</source>
         <translation>구약</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="82"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="81"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>모세/모세오경/토라</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="84"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="83"/>
         <source>History</source>
         <translation>역사서</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="86"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="85"/>
         <source>Prophets</source>
         <translation>선지서</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="88"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
         <source>New testament</source>
         <translation>신약</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="90"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="89"/>
         <source>Gospels</source>
         <translation>복음서</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="92"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="91"/>
         <source>Letters/Epistles</source>
         <translation>편지/서신서</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="94"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="93"/>
         <source>Paul&apos;s Epistles</source>
         <translation>바울 서신서</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="134"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="133"/>
         <source>Default Session</source>
         <translation>기본 세션</translation>
     </message>
@@ -1574,23 +1574,23 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtFindWidget</name>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="132"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="127"/>
         <source>The text you want to search for</source>
         <comment>findWidget</comment>
         <translation>찾으려는 내용</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="134"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="129"/>
         <source>Previous</source>
         <translation>이전</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="135"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="130"/>
         <source>Next</source>
         <translation>다음</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="136"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="131"/>
         <source>Match case</source>
         <translation>대소문자 구분</translation>
     </message>
@@ -1598,22 +1598,22 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtFontSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="159"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="158"/>
         <source>&amp;Language:</source>
         <translation>언어(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="160"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="159"/>
         <source>The font selection below will apply to all texts in this language</source>
         <translation>아래의 글꼴 선택은 이 언어의 모든 글자에 적용됩니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="161"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="160"/>
         <source>Use custom font</source>
         <translation>사용자 정의 글꼴 사용</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="158"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="157"/>
         <source>Fonts</source>
         <translation>글꼴</translation>
     </message>
@@ -1621,72 +1621,72 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtIndexDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="105"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="99"/>
         <source>Indexed Works</source>
         <translation>색인된 책들</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="112"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="106"/>
         <source>Unindexed Works</source>
         <translation>색인되지 않은 책들</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="122"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="116"/>
         <source>%1 KiB</source>
         <translation>%1 KiB</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="128"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="122"/>
         <source>0 KiB</source>
         <translation>0 KiB</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="136"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="130"/>
         <source>Manage Search Indexes</source>
         <translation>검색 색인 관리</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="139"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="133"/>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
         <translation>선택하면, 해당되는 책이 없는 색인은 BibleTime이 시작될 때 삭제됩니다</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="142"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="136"/>
         <source>Automatically delete orphaned indexes when BibleTime starts</source>
         <translation>BibleTime이 시작될 때 필요없는 색인을 자동으로 삭제</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="145"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="139"/>
         <source>Delete the selected indexes</source>
         <translation>선택한 색인 삭제</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="146"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="140"/>
         <source>Delete</source>
         <translation>삭제</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="148"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="142"/>
         <source>&amp;Close</source>
         <translation>닫기(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="150"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="144"/>
         <source>Create new indexes for the selected works</source>
         <translation>선택한 책의 색인 만들기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="151"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="145"/>
         <source>Create...</source>
         <translation>만들기...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="153"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="147"/>
         <source>Work</source>
         <translation>책</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="153"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="147"/>
         <source>Index size</source>
         <translation>색인 크기</translation>
     </message>
@@ -1726,12 +1726,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtModuleChooserButton</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="68"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="44"/>
         <source>Select a work [%1]</source>
         <translation>책 [%1] 선택</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="70"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="46"/>
         <source>Select an additional work</source>
         <translation>추가 책 선택</translation>
     </message>
@@ -1739,7 +1739,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtModuleChooserMenu</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/btmodulechoosermenu.cpp" line="134"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechoosermenu.cpp" line="52"/>
         <source>NONE</source>
         <translation>없음</translation>
     </message>
@@ -1785,7 +1785,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtModuleTextModel</name>
     <message>
-        <location filename="../../src/backend/models/btmoduletextmodel.cpp" line="421"/>
+        <location filename="../../src/backend/models/btmoduletextmodel.cpp" line="419"/>
         <source>Click to edit</source>
         <translation>클릭하여 편집</translation>
     </message>
@@ -1829,7 +1829,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtQmlInterface</name>
     <message>
-        <location filename="../../src/frontend/display/modelview/btqmlinterface.cpp" line="146"/>
+        <location filename="../../src/frontend/display/modelview/btqmlinterface.cpp" line="149"/>
         <source>Edit %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1957,87 +1957,87 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="142"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="143"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
         <translation>표준 책들은 특별한 책이 지정되지 않았을때 사용됩니다, 예를 들면 성경이나 사전 링크가 클릭되었을 때입니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="145"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="146"/>
         <source>Bible:</source>
         <translation>성경:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="147"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="148"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
         <translation>표준 성경은 성경 링크가 클릭되었을때 사용됩니다</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="150"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="151"/>
         <source>Commentary:</source>
         <translation>주석:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="152"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="153"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
         <translation>표준 주석은 주석 링크가 클릭되었을때 사용됩니다</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="155"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="156"/>
         <source>Lexicon:</source>
         <translation>사전:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="157"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="158"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
         <translation>표준 사전은 사전 링크가 클릭되었을때 사용됩니다</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="160"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="161"/>
         <source>Daily devotional:</source>
         <translation>매일 성경 읽기:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="162"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="163"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
         <translation>표준 매일 성경 읽기는 매일 성경 읽기의 빠른 표시를 위하여 사용됩니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="166"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="167"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
         <translation>히브리어 스트롱 사전</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="168"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
         <translation>표준 히브리어 사전은 히브리어 사전 링크가 클릭되었을때 사용됩니다</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="171"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Greek Strong&apos;s lexicon:</source>
         <translation>헬라어 스트롱 사전</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="173"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
         <translation>표준 헬라어 사전은 헬라어 사전 링크가 클릭되었을때 사용됩니다</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="177"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>Hebrew morphological lexicon:</source>
         <translation>히브리어 형태소 사전:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="179"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
         <translation>히브리어 낱말을 위한 표준 형태소 사전은 히브리어 낱말에 있는 형태소 태그 링크가 클릭되었을때 사용됩니다</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="185"/>
         <source>Greek morphological lexicon:</source>
         <translation>헬라어 형태소 사전</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="187"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation>헬라어 낱말을 위한 표준 형태소 사전은 헬라어 낱말에 있는 형태소 태그 링크가 클릭되었을때 사용됩니다</translation>
     </message>
@@ -2088,6 +2088,34 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="90"/>
         <source>Use textual variants</source>
         <translation>원문 변형 사용</translation>
+    </message>
+</context>
+<context>
+    <name>BtTextToSpeechSettingsPage</name>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="116"/>
+        <source>Text-to-speech</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="119"/>
+        <source>No Qt text-to-speech plug-ins were found. Please install a plugin and restart the application.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="121"/>
+        <source>Text-to-speech engine:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="122"/>
+        <source>Text-to-speech language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="123"/>
+        <source>Text-to-speech voice:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2364,27 +2392,27 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>절 참조를 포함한 본문</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="208"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="212"/>
         <source>Copy</source>
         <translation>복사</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="222"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="226"/>
         <source>Save...</source>
         <translation>저장...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="228"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="232"/>
         <source>Print...</source>
         <translation>인쇄...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="298"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="307"/>
         <source>Copying</source>
         <translation>복사하기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="333"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="342"/>
         <source>Saving</source>
         <translation>저장하기</translation>
     </message>
@@ -2410,7 +2438,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>북마크가 가리키는 책이 설치되지 않았습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="551"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="543"/>
         <source>Can drop only bookmarks or one folder</source>
         <translation>북마크나 한개의 폴더만 놓을 수 있습니다</translation>
     </message>
@@ -2465,22 +2493,22 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>선택 항목 삭제...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="555"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="547"/>
         <source>Can&apos;t drop folder into the folder itself or into its subfolder</source>
         <translation>폴더 스스로나 자식 폴더에는 폴더를 놓을 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="562"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="554"/>
         <source>Copy</source>
         <translation>복사</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="563"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="555"/>
         <source>Move</source>
         <translation>이동</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="616"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="608"/>
         <source>Drag references from text views to this view</source>
         <translation>성경 읽기에서 절참조(절번호)를 이곳에 끌어다 놓으세요</translation>
     </message>
@@ -2536,7 +2564,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>CConfigurationDialog</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="31"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="32"/>
         <source>Configure BibleTime</source>
         <translation>바이블타임 설정</translation>
     </message>
@@ -2544,62 +2572,62 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>CDisplaySettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="122"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="120"/>
         <source>Language for names of Bible books:</source>
         <translation>성경 이름에 사용할 언어:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="123"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="121"/>
         <source>The languages which can be used for the biblical book names. Translations are provided by the Sword library.</source>
         <translation>성경 권별 이름에 사용할 언어로 번역은 Sword에서 제공되었습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="127"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="125"/>
         <source>Show startup logo:</source>
         <translation>시작 로고 보기:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="128"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="126"/>
         <source>Show the BibleTime logo on startup.</source>
         <translation>시작할 때 바이블타임 로고를 보입니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="130"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="128"/>
         <source>Light / dark Mode (Requires restart)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="131"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="129"/>
         <source>System default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="132"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="130"/>
         <source>Light</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="133"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="131"/>
         <source>Dark</source>
         <translation>어둡게</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="135"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="133"/>
         <source>Available display styles:</source>
         <translation>가능한 화면 스타일:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="136"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="134"/>
         <source>Style preview</source>
         <translation>스타일 미리보기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="142"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="140"/>
         <source>Did you know? You can help translating the GUI of BibleTime to your language at &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt;.</source>
         <translation>알고 계셨나요? BibleTime의 GUI를 당신의 언어로 번역하는 것을  &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt;에서 도울 수 있습니다 .</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="238"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="236"/>
         <source>&lt;div class=&quot;sectiontitle&quot;&gt;CHAPTER 3&lt;/div&gt;
 
 &lt;div xml:lang=&quot;en&quot; lang=&quot;en&quot; class=&quot;sectiontitle&quot;&gt;The New Birth&lt;/div&gt;
@@ -2698,7 +2726,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="120"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="118"/>
         <source>Display</source>
         <translation>화면</translation>
     </message>
@@ -2706,134 +2734,144 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="96"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="97"/>
         <source>Back in history</source>
         <translation>기록에서 뒤로</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="104"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="105"/>
         <source>Forward in history</source>
         <translation>기록에서 앞으로</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="64"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="65"/>
         <source>Copy</source>
         <translation>복사</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="68"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="69"/>
         <source>Copy by references...</source>
         <translation>참조로 복사</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="72"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="73"/>
         <source>Find...</source>
         <translation>찾기...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="76"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="77"/>
         <source>Change location</source>
         <translation>위치 변경</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="80"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="81"/>
         <source>Page down</source>
         <translation>페이지 아래로</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="84"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="85"/>
         <source>Page up</source>
         <translation>페이지 위로</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="89"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="90"/>
         <source>Search with works of this window</source>
         <translation>이 창의 책에서 검색</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="111"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="112"/>
         <source>Copy reference only</source>
         <translation>참조만 복사</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="114"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="115"/>
         <source>Save entry as HTML</source>
         <translation>항목을 HTML로 저장</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="117"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="118"/>
         <source>Print reference only</source>
         <translation>참조만 인쇄</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="120"/>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="126"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="121"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="127"/>
         <source>Entry with text</source>
         <translation>내용 포함</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="123"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="124"/>
         <source>Entry as plain text</source>
         <translation>항목을 단순 텍스트로</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="129"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="130"/>
         <source>Strong&apos;s Search</source>
         <translation>스트롱 번호 검색</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="198"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="135"/>
+        <source>Speak selected text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="204"/>
         <source>Work chooser buttons</source>
         <translation>책 선택 버튼</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="226"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="232"/>
         <source>Text area header</source>
         <translation>성경 제목줄</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="342"/>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="355"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="364"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="377"/>
         <source>Saving</source>
         <translation>저장하기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="404"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="431"/>
         <source>&lt;NO WORKS&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="530"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="557"/>
         <source>Copy...</source>
         <translation>복사...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="539"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="566"/>
         <source>Save...</source>
         <translation>저장...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="548"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="575"/>
         <source>Print...</source>
         <translation>인쇄...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="689"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="592"/>
+        <source>DEBUG: Show raw text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="732"/>
         <source>Choose Standard Bible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="690"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="733"/>
         <source>Please choose a Bible in the Settings &gt; Configure dialog.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="179"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="185"/>
         <source>Navigation</source>
         <translation>검색 도구</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="213"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="219"/>
         <source>Tool</source>
         <translation>일반도구</translation>
     </message>
@@ -2864,12 +2902,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>CLexiconReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="27"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="26"/>
         <source>Next entry</source>
         <translation>다음 항목</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="31"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="30"/>
         <source>Previous entry</source>
         <translation>이전 항목</translation>
     </message>
@@ -2877,173 +2915,177 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="910"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="908"/>
         <source>Version</source>
         <translation>버전</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="913"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="921"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="911"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="919"/>
         <source>unknown</source>
         <translation>알수 없음</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="918"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="916"/>
         <source>Markup</source>
         <translation>마크업</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="925"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="923"/>
         <source>Location</source>
         <translation>위치</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="929"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="927"/>
         <source>Language</source>
         <translation>언어</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="933"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="931"/>
         <source>Category</source>
         <translation>분류</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="937"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="935"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="941"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="939"/>
         <source>Writable</source>
         <translation>쓰기가능여부</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="942"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="940"/>
         <source>yes</source>
         <translation>예</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="942"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="940"/>
         <source>no</source>
         <translation>아니오</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="946"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="944"/>
         <source>Unlock key</source>
         <translation>잠금 해제 키</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="949"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="947"/>
         <source>Unlock info</source>
         <translation>언락 정보</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="977"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="975"/>
         <source>Features</source>
         <translation>포함 기능</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="985"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="983"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>조심하세요, 이 책은 광신도/이단 자료를 포함하고 있습니다!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="989"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="987"/>
         <source>About</source>
         <translation>소개</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="996"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="994"/>
         <source>Distribution license</source>
         <translation>배포 라이선스</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="997"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="995"/>
         <source>Distribution source</source>
         <translation>배포처</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="998"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="996"/>
         <source>Distribution notes</source>
         <translation>배포 주의사항</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="999"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="997"/>
         <source>Text source</source>
         <translation>자료 제공처</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1000"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="998"/>
         <source>Copyright notes</source>
         <translation>저작권 주의사항</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1001"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="999"/>
         <source>Copyright holder</source>
         <translation>저작권 소유자</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1002"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1000"/>
         <source>Copyright date</source>
         <translation>저작권 일자</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1003"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1001"/>
         <source>Copyright contact name</source>
         <translation>저작권 담당자</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1004"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1002"/>
         <source>Copyright contact address</source>
         <translation>저작권 연락 주소</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1005"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1003"/>
         <source>Copyright contact email</source>
         <translation>저작권 연락 이메일</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1080"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1073"/>
         <source>Bibles</source>
         <translation>성경</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1082"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1075"/>
         <source>Commentaries</source>
         <translation>주석</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1084"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1077"/>
         <source>Books</source>
         <translation>도서</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1086"/>
-        <source>Cults/Unorthodox</source>
-        <translation>광신도/이단</translation>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1079"/>
+        <source>Questionable</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1088"/>
+        <source>Cults/Unorthodox</source>
+        <translation type="vanished">광신도/이단</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1081"/>
         <source>Maps and Images</source>
         <translation>지도와 그림</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1090"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1083"/>
         <source>Daily Devotionals</source>
         <translation>매일 성경 읽기</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1092"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1085"/>
         <source>Lexicons and Dictionaries</source>
         <translation>사전</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1094"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1087"/>
         <source>Glossaries</source>
         <translation>용어집</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1096"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1089"/>
         <source>Unknown</source>
         <translation>기타</translation>
     </message>
@@ -3196,22 +3238,27 @@ Do you want to continue?</source>
 <context>
     <name>DebugWindow</name>
     <message>
-        <location filename="../../src/frontend/debugwindow.cpp" line="30"/>
+        <location filename="../../src/frontend/debugwindow.cpp" line="70"/>
         <source>What&apos;s this widget?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/debugwindow.cpp" line="48"/>
+        <location filename="../../src/frontend/debugwindow.cpp" line="76"/>
         <source>&lt;b&gt;child of:&lt;/b&gt; %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/debugwindow.cpp" line="52"/>
+        <location filename="../../src/frontend/debugwindow.cpp" line="84"/>
+        <source>&lt;b&gt;This Quick item is:&lt;/b&gt; %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/debugwindow.cpp" line="89"/>
         <source>&lt;b&gt;This widget is:&lt;/b&gt; %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/debugwindow.cpp" line="59"/>
+        <location filename="../../src/frontend/debugwindow.cpp" line="93"/>
         <source>No widget</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3219,22 +3266,27 @@ Do you want to continue?</source>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="129"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="145"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
         <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="54"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="56"/>
         <source>Copy</source>
         <translation>복사</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="49"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="51"/>
         <source>Select all</source>
         <translation>전체 선택</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="83"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="67"/>
+        <source>DEBUG: Show raw text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="99"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation>&lt;small&gt;여기는 돋보기창 영역입니다. 링크나 어떤 정보를 담고 있는 항목에 마우스를 올리면 잠시후 돋보기 창에서 그 내용을 확인할 수 있습니다. 돋보기 창으로 이동하려면 해당 정보를 본 다음 빠르게 마우스를 이동시키거나 Shift키를 누른 상태에서 마우스를 움직이면 됩니다.&lt;/small&gt;</translation>
     </message>
@@ -3549,9 +3601,8 @@ Do you want to continue?</source>
         <translation>Italian</translation>
     </message>
     <message>
-        <location filename="../../src/backend/language.cpp" line="300"/>
         <source>Zapotec, San Juan Guelav໚</source>
-        <translation>Zapotec, San Juan Guelav໚</translation>
+        <translation type="vanished">Zapotec, San Juan Guelav໚</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="303"/>
@@ -3919,6 +3970,11 @@ Do you want to continue?</source>
         <translation>Yoruba</translation>
     </message>
     <message>
+        <location filename="../../src/backend/language.cpp" line="300"/>
+        <source>Zapotec, San Juan Guelavía</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/backend/language.cpp" line="301"/>
         <source>Zapotec, Mitla</source>
         <translation>Zapotec, Mitla</translation>
@@ -3954,82 +4010,82 @@ Do you want to continue?</source>
         <translation>Zulu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="162"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="160"/>
         <source>Footnotes</source>
         <translation>각주</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="167"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="165"/>
         <source>Strong&apos;s numbers</source>
         <translation>스트롱 번호</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="172"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="170"/>
         <source>Headings</source>
         <translation>중간 제목</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="177"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="175"/>
         <source>Morphological tags</source>
         <translation>형태소 태그</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="182"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="180"/>
         <source>Lemmas</source>
         <translation>주제</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="187"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="185"/>
         <source>Hebrew vowel points</source>
         <translation>히브리어 모음 기호</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="192"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="190"/>
         <source>Hebrew cantillation marks</source>
         <translation>히브리어 낭송 구두점</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="197"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="195"/>
         <source>Greek accents</source>
         <translation>헬라어 억양</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="207"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="205"/>
         <source>Red letter words</source>
         <translation>적색 표시 단어</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="212"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="210"/>
         <source>Textual variants</source>
         <translation>원문 변형</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="202"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="200"/>
         <source>Scripture cross-references</source>
         <translation>관주</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="218"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="216"/>
         <source>Morph segmentation</source>
         <translation>형태소 분할</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="383"/>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="209"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="208"/>
         <source>HTML files</source>
         <translation>HTML 파일</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="50"/>
         <location filename="../../src/frontend/cexportmanager.cpp" line="389"/>
-        <location filename="../../src/frontend/display/btmodelviewreaddisplay.cpp" line="185"/>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="210"/>
+        <location filename="../../src/frontend/display/btmodelviewreaddisplay.cpp" line="214"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="209"/>
         <source>All files</source>
         <translation>모든 파일</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="386"/>
-        <location filename="../../src/frontend/display/btmodelviewreaddisplay.cpp" line="184"/>
+        <location filename="../../src/frontend/display/btmodelviewreaddisplay.cpp" line="213"/>
         <source>Text files</source>
         <translation>텍스트 파일</translation>
     </message>
@@ -4039,7 +4095,7 @@ Do you want to continue?</source>
         <translation>파일 저장</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btmodelviewreaddisplay.cpp" line="182"/>
+        <location filename="../../src/frontend/display/btmodelviewreaddisplay.cpp" line="211"/>
         <source>Save document ...</source>
         <translation>문서 저장 ...</translation>
     </message>
@@ -4049,40 +4105,40 @@ Do you want to continue?</source>
         <translation>바이블타임 북마크 파일</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btbookmarksmodel.cpp" line="493"/>
-        <location filename="../../src/backend/btbookmarksmodel.cpp" line="502"/>
+        <location filename="../../src/backend/btbookmarksmodel.cpp" line="486"/>
+        <location filename="../../src/backend/btbookmarksmodel.cpp" line="495"/>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="139"/>
         <source>unknown</source>
         <translation>알 수 없음</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btbookmarksmodel.cpp" line="862"/>
+        <location filename="../../src/backend/btbookmarksmodel.cpp" line="855"/>
         <source>New folder</source>
         <translation>새 폴더</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="54"/>
-        <location filename="../../src/util/tool.cpp" line="60"/>
+        <location filename="../../src/util/tool.cpp" line="52"/>
+        <location filename="../../src/util/tool.cpp" line="58"/>
         <source>Error</source>
         <translation>에러</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="63"/>
+        <location filename="../../src/util/tool.cpp" line="61"/>
         <source>Please check permissions etc.</source>
         <translation>권한 등을 확인하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="56"/>
+        <location filename="../../src/util/tool.cpp" line="54"/>
         <source>Error while writing to file.</source>
         <translation>파일 저장중 에러</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="57"/>
+        <location filename="../../src/util/tool.cpp" line="55"/>
         <source>Please check that enough disk space is available.</source>
         <translation>충분한 디스크 공간이 있는지 확인하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="62"/>
+        <location filename="../../src/util/tool.cpp" line="60"/>
         <source>The file couldn&apos;t be opened for saving.</source>
         <translation>파일을 저장할 수 없습니다.</translation>
     </message>
@@ -4147,7 +4203,7 @@ Do you want to continue?</source>
         <translation>북마크 가져오기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="97"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="96"/>
         <source>Parsing Strong&apos;s Numbers</source>
         <translation>스트링 번호 분석하기</translation>
     </message>
@@ -4197,40 +4253,46 @@ Do you want to continue?</source>
         <translation>에러: 잘못된 인수입니다: %1</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="73"/>
+        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="70"/>
         <source>CSS base template not found!</source>
         <translation>CSS 기반 템플릿을 찾을 수 없습니다!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="90"/>
+        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="87"/>
         <source>Default template &quot;%1&quot; not found!</source>
         <translation>기본 템플릿 &quot;%1&quot;을 찾을 수 없습니다!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="71"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="70"/>
         <source>Abbreviation</source>
         <translation>약자</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="79"/>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="159"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="78"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="158"/>
         <source>Cross references</source>
         <translation>상호 참조</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="200"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="199"/>
         <source>Footnote</source>
         <translation>각주</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="248"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="247"/>
         <source>Strongs</source>
         <translation>스트롱 번호</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="338"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="337"/>
         <source>Morphology</source>
         <translation>어형론</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="31"/>
+        <source>%1 (%2)</source>
+        <comment>Locale language and territory</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4470,17 +4532,17 @@ Do you want to continue?</source>
 <context>
     <name>Search::BtSearchResultArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="115"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="114"/>
         <source>Text of the selected search result item</source>
         <translation>검색 결과</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="103"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="102"/>
         <source>Select all</source>
         <translation>전체 선택</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="107"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="106"/>
         <source>Copy</source>
         <translation>복사</translation>
     </message>
@@ -4736,62 +4798,62 @@ Do you want to continue?</source>
 <context>
     <name>Search::CModuleResultView</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="147"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="146"/>
         <source>Work</source>
         <translation>책</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="147"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="146"/>
         <source>Hits</source>
         <translation>건수</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="161"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="160"/>
         <source>Copy...</source>
         <translation>복사...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="163"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="189"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="162"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="188"/>
         <source>Reference only</source>
         <translation>참조만</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="174"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="200"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="215"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="173"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="199"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="214"/>
         <source>Reference with text</source>
         <translation>참조와 내용</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="187"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="186"/>
         <source>Save...</source>
         <translation>저장...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="213"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="212"/>
         <source>Print...</source>
         <translation>인쇄...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="167"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="178"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="166"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="177"/>
         <source>Copying search result</source>
         <translation>검색 결과 복사하기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="193"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="204"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="192"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="203"/>
         <source>Saving search result</source>
         <translation>검색 결과 저장하기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="219"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="218"/>
         <source>Printing search result</source>
         <translation>검색 결과 인쇄하기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="146"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="145"/>
         <source>Works chosen for the search and the number of the hits in each work</source>
         <translation>검색에 선택된 책들과 각 책별 건수</translation>
     </message>
@@ -4880,105 +4942,105 @@ Do you want to continue?</source>
 <context>
     <name>Search::CSearchAnalysisScene</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="207"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="206"/>
         <source>Save Search Analysis</source>
         <translation>검색 분석결과 저장</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="222"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="221"/>
         <source>BibleTime Search Analysis</source>
         <translation>바이블타임 검색 분석</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="244"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="243"/>
         <source>Search text:</source>
         <translation>검색어:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="248"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="247"/>
         <source>Results by work and book</source>
         <translation>책/권별 결과</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="250"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="249"/>
         <source>Book</source>
         <translation>권</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="271"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="270"/>
         <source>Total hits</source>
         <translation>전체 건수</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="282"/>
-        <source>Created by &lt;a href=&quot;https://bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="281"/>
+        <source>Created by &lt;a href=&quot;%1&quot;&gt;BibleTime&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Search::CSearchDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="142"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="141"/>
         <source>Missing indices</source>
         <translation>색인 없습니다</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="48"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="47"/>
         <source>Search</source>
         <translation>검색</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="144"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="143"/>
         <source>The following modules need to be indexed before they can be searched in:</source>
         <translation>다음의 책들에서 검색하려면 색인이 되어야 합니다:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="147"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="146"/>
         <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
         <translation>색인 작업은 시간이 걸릴 수 있습니다. 색인 작업후 검색을 하시려면 &quot;예&quot;를 클릭하고 취소하려면 &quot;아니오&quot;를 클릭하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="183"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="182"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
         <translation>&lt;UNKNOWN EXCEPTION&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="187"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="186"/>
         <source>Search aborted</source>
         <translation>검색 중단됨</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="188"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="187"/>
         <source>An internal error occurred while executing your search:&lt;br/&gt;&lt;br/&gt;%1</source>
         <translation>다음 검색 실행 중 내부 에러 발생:&lt;br/&gt;&lt;br/&gt;%1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="62"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="61"/>
         <source>Drag any verse reference onto an open Bible window</source>
         <translation>절 참조를 열린 성경 읽기창에 끌어다 놓으세요</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="70"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="69"/>
         <source>&amp;Analyze results...</source>
         <translation>결과 분석(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="71"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="70"/>
         <source>Show a graphical analysis of the search result</source>
         <translation>검색 결과를 도표 분석 자료로 보여줍니다</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="74"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="73"/>
         <source>&amp;Manage Indexes...</source>
         <translation>색인 관리... &amp;M</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="75"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="74"/>
         <source>Recreate search indexes</source>
         <translation>검색 색인 재생성</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="79"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="78"/>
         <source>&amp;Close</source>
         <translation>닫기(&amp;C)</translation>
     </message>

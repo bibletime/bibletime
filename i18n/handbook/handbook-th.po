@@ -2309,7 +2309,7 @@ msgstr ""
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 msgid ""
-"<copyright> <year>1999-2025</year> <holder>The &bibletime; Team</holder> </"
+"<copyright> <year>1999-2026</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
 

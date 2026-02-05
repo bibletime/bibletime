@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2025 The Bibletime Team, https://bibletime.info
+Copyright (C) 1999-2026 The Bibletime Team, https://bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -39,17 +39,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="848"/>
         <source>Sw&amp;itch session</source>
-        <translation type="unfinished"></translation>
+        <translation>Mun&amp;kamenet váltása</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="851"/>
+        <source>Se&amp;ttings</source>
+        <translation>&amp;Beállítások</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="853"/>
-        <source>Se&amp;ttings</source>
-        <translation>Beállí&amp;tások</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="856"/>
         <source>&amp;Help</source>
-        <translation>&amp;Segítség</translation>
+        <translation>&amp;Súgó</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="286"/>
@@ -59,7 +59,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="413"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation>Nyissa meg a BibleTime Bibliatanulmányozó segédletét. &lt;br/&gt; Ez a segédlet bevezeti a Biblia tanulmánsozásának alapelveibe.</translation>
+        <translation>Nyissa meg a BibleTime Bibliatanulmányozó segédletét. &lt;br/&gt; Ez a segédlet bemutatja a Biblia hatékony tanulmányozásának alapelveit.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="422"/>
@@ -69,12 +69,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="845"/>
         <source>&amp;Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ablakok</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="849"/>
         <source>&amp;Delete session</source>
-        <translation>&amp;Munkafolyamat törlése</translation>
+        <translation>&amp;Munkamenet törlése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="847"/>
@@ -129,7 +129,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="400"/>
         <source>Bookshelf Manager...</source>
-        <translation type="unfinished"></translation>
+        <translation>Könyvespolc-kezelő...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="408"/>
@@ -142,59 +142,59 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Hogyan tanulmányozza a &amp;Bibliát</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="350"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="356"/>
         <source>Error locating handbook!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="351"/>
-        <source>A suitable installed handbook could not be found!</source>
-        <translation type="unfinished"></translation>
+        <translation>A kézikönyv betöltése nem sikerült.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="357"/>
+        <source>A suitable installed handbook could not be found!</source>
+        <translation>Nincs telepítve megfelelő kézikönyv.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="363"/>
         <source>Error opening handbook!</source>
-        <translation type="unfinished"></translation>
+        <translation>A kézikönyv megnyitása nem sikerült.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="358"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="364"/>
         <source>The installed handbook could not be opened!</source>
-        <translation type="unfinished"></translation>
+        <translation>A telepített kézikönyv nem nyitható meg.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="366"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="372"/>
         <source>Error locating howto!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="367"/>
-        <source>A suitable installed howto could not be found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiba történt a tanulmányozási segédlet keresésekor.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="373"/>
+        <source>A suitable installed howto could not be found!</source>
+        <translation>Nincs telepítve megfelelő tanulmányozási segédlet.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="379"/>
         <source>Error opening howto!</source>
-        <translation type="unfinished"></translation>
+        <translation>A tanulmányozási segédlet megnyitása nem sikerült.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="374"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="380"/>
         <source>The installed howto could not be opened!</source>
-        <translation type="unfinished"></translation>
+        <translation>A telepített tanulmányozási segédlet nem nyitható meg.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="663"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="661"/>
         <source>Please enter a name for the new session.</source>
-        <translation>Adjon nevet az új folyamatnak.</translation>
+        <translation>Adjon nevet az új munkamenetnek.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="671"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="669"/>
         <source>Session already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Már létezik munkamenet ilyen néven.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="672"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="670"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Már létezik munkamenet &quot;%1&quot; néven. Válasszon egy másik nevet.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="287"/>
@@ -204,17 +204,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="329"/>
         <source>Auto scroll up</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus görgetés felfelé</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="333"/>
         <source>Auto scroll down</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus görgetés lefelé</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="340"/>
         <source>Search in &amp;open works...</source>
-        <translation>Keresés a megnyit&amp;ott munkákban...</translation>
+        <translation>Keresés a megnyit&amp;ott művekben...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="344"/>
@@ -224,27 +224,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="397"/>
         <source>Save as &amp;new session...</source>
-        <translation>Me&amp;ntés új folyamatként...</translation>
+        <translation>Me&amp;ntés új munkamenetként...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="398"/>
         <source>Create and save a new session</source>
-        <translation>Új folyamat létrehozása és mentése</translation>
+        <translation>Új munkamenet létrehozása és mentése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="371"/>
         <source>Manually arrange the open windows</source>
-        <translation>Megnyitott ablakok kézi igazítása</translation>
+        <translation>A megnyitott ablakok kézi igazítása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="380"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
-        <translation>A megnyitott ablakok automatikus függőleges elrendezése (egymás alá rendezése)</translation>
+        <translation>A megnyitott ablakok automatikus függőleges elrendezése (egymás mellé rendezése)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="386"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
-        <translation>A megnyitott ablakok automatikus vízszintes elrendezése (egymás mellé rendezése)</translation>
+        <translation>A megnyitott ablakok automatikus vízszintes elrendezése (egymás alá rendezése)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="389"/>
@@ -289,12 +289,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="356"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
-        <translation>A megnyitott ablakok automatikus (egymás alá rendezése) függőleges elrendezése </translation>
+        <translation>A megnyitott ablakok automatikus (egymás mellé rendezése) függőleges elrendezése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="360"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
-        <translation>A megnyitott ablakok automatikus (egymás mellé rendezése) vízszintes elrendezése </translation>
+        <translation>A megnyitott ablakok automatikus (egymás alá rendezése) vízszintes elrendezése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="347"/>
@@ -304,22 +304,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="348"/>
         <source>Close the current open window</source>
-        <translation>Jelenlegi nyitott ablak bezárása</translation>
+        <translation>Jelenlegi ablak bezárása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="405"/>
         <source>&amp;Configure BibleTime...</source>
-        <translation>Bibletime beá&amp;llítása...</translation>
+        <translation>BibleTime beá&amp;llítása...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="406"/>
         <source>Set BibleTime&apos;s preferences</source>
-        <translation>BibleTime alapértelmezéseinek beállítása</translation>
+        <translation>A BibleTime alapértelmezéseinek beállítása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="402"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
-        <translation>A &quot;könyvespolc&quot; beállítása, dokumentumok telepítése/frissítése/törlése/indexelése</translation>
+        <translation>A könyvespolc beállítása, művek telepítése, frissítése, törlése és indexelése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="409"/>
@@ -334,243 +334,243 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="418"/>
         <source>Show tips about BibleTime</source>
-        <translation>Ötletek mutatása a Bibletime használatához</translation>
+        <translation>Ötletek megjelenítése a BibleTime használatához</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="294"/>
         <source>Toggle visibility of the bookshelf window</source>
-        <translation>A könyvespolc ablak láthatóságának kapcsolója</translation>
+        <translation>A könyvespolc ablak láthatóságának váltása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="64"/>
         <source>Ctrl+Q</source>
         <comment>File|Quit</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="72"/>
         <source>F11</source>
         <comment>View|Full screen</comment>
-        <translation type="unfinished"></translation>
+        <translation>F11</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="85"/>
         <source>F8</source>
         <comment>View|Show mag</comment>
-        <translation type="unfinished"></translation>
+        <translation>F8</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="96"/>
         <source>F6</source>
         <comment>View|Show main toolbar</comment>
-        <translation type="unfinished"></translation>
+        <translation>F6</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="119"/>
         <source>Shift+Up</source>
         <comment>View|Scroll|Auto scroll up</comment>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Fel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="124"/>
         <source>Shift+Down</source>
         <comment>View|Scroll|Auto scroll down</comment>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Le</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="130"/>
         <source>Space</source>
         <comment>View|Scroll|Auto scroll pause</comment>
-        <translation type="unfinished"></translation>
+        <translation>Szóköz</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="139"/>
         <source>Ctrl+O</source>
         <comment>Search|Search in open works</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="146"/>
         <source>Ctrl+Alt+F</source>
         <comment>Search|Search in the default Bible</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+F</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="153"/>
         <source>Ctrl+W</source>
         <comment>Windows|Close window</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="160"/>
         <source>Ctrl+Alt+W</source>
         <comment>Windows|Close all windows</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+W</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="167"/>
         <source>Ctrl+G</source>
         <comment>Windows|Tile vertically</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="174"/>
         <source>Ctrl+H</source>
         <comment>Windows|Tile horizontally</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+H</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="179"/>
         <source>Ctrl+I</source>
         <comment>Windows|Tile</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+I</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="184"/>
         <source>Ctrl+J</source>
         <comment>Windows|Cascade</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+J</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="193"/>
         <source>Ctrl+Alt+M</source>
         <comment>Windows|Arrangement mode|Manual</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+M</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="201"/>
         <source>Ctrl+Alt+T</source>
         <comment>Windows|Arrangement mode|Tabbed</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+T</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="209"/>
         <source>Ctrl+Alt+G</source>
         <comment>Windows|Arrangement mode|Auto tile vertically</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+G</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="219"/>
         <source>Ctrl+Alt+H</source>
         <comment>Windows|Arrangement mode|Auto tile horizontally</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+H</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="228"/>
         <source>Ctrl+Alt+I</source>
         <comment>Windows|Arrangement mode|Auto tile</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+I</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="235"/>
         <source>Ctrl+Alt+J</source>
         <comment>Windows|Arrangement mode|Auto cascade</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+J</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="243"/>
         <source>Ctrl+Alt+S</source>
         <comment>Windows|Save as new session...</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+S</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="250"/>
         <source>F4</source>
         <comment>Settings|Bookshelf Manager...</comment>
-        <translation type="unfinished"></translation>
+        <translation>F4</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="262"/>
         <source>F1</source>
         <comment>Help|Handbook</comment>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="268"/>
         <source>F2</source>
         <comment>Help|Bible Study Howto</comment>
-        <translation type="unfinished"></translation>
+        <translation>F2</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="273"/>
         <source>F3</source>
         <comment>Help|Tip of the day...</comment>
-        <translation type="unfinished"></translation>
+        <translation>F3</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="289"/>
         <source>&amp;Full screen</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Teljes képernyő</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="290"/>
         <source>Display BibleTime in full screen</source>
-        <translation type="unfinished"></translation>
+        <translation>A BibleTime megjelenítése a teljes képernyőn</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="298"/>
         <source>Toggle visibility of the bookmarks window</source>
-        <translation>A könyvjelző ablak láthatóságának kapcsolója</translation>
+        <translation>A könyvjelző ablak láthatóságának váltása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="301"/>
         <source>Toggle visibility of the mag window</source>
-        <translation>A nagyító ablak láthatóságának kapcsolója</translation>
+        <translation>A nagyító ablak láthatóságának váltása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="305"/>
         <source>Toggle the works header row visibility in windows</source>
-        <translation type="unfinished"></translation>
+        <translation>A művek fejlécsorának láthatóságának váltása az ablakokban</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="309"/>
         <source>Toggle the main toolbar visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>A fő eszköztár láthatóságának váltása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="311"/>
         <source>Show navigation toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigációs eszköztár megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="313"/>
         <source>Toggle the navigation toolbar visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigációs eszköztár láthatóságának váltása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="317"/>
         <source>Toggle the works toolbar visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>A művek eszköztár láthatóságának váltása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="321"/>
         <source>Toggle the window tools toolbar visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Az ablakeszközök eszköztár láthatóságának váltása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="326"/>
         <source>Toggle the location of subwindow-specific toolbars between the main window and subwindows</source>
-        <translation type="unfinished"></translation>
+        <translation>A belső ablakok saját eszköztárának helyzetének váltása a főablak és a belső ablakok közt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="331"/>
         <source>Adjust automatic scrolling speed in the up direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Az automatikus felfelé görgetés sebességének megadása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="335"/>
         <source>Adjust automatic scrolling speed in the down direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Az automatikus lefelé görgetés sebességének megadása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="337"/>
         <source>Pause auto scroll</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus görgetés felfüggesztése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="338"/>
         <source>Pause/resume auto scrolling</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus görgetés felfüggesztése vagy folytatása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="834"/>
@@ -585,7 +585,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="836"/>
         <source>Works toolbar</source>
-        <translation>Munkák eszköztár</translation>
+        <translation>Művek eszköztár</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="837"/>
@@ -593,29 +593,29 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Eszközök eszköztár</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="859"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="856"/>
         <source>Show &quot;What&apos;s this widget&quot; dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>A &quot;Mi ez az elem&quot; ablak megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="842"/>
         <source>Scroll</source>
-        <translation type="unfinished"></translation>
+        <translation>Görgetés</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="307"/>
         <source>Show main toolbar</source>
-        <translation>Fő eszköztár mutatása</translation>
+        <translation>Fő eszköztár megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="315"/>
         <source>Show works toolbar</source>
-        <translation>Munkák eszköztár mutatása</translation>
+        <translation>Művek eszköztár megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="319"/>
         <source>Show tools toolbar</source>
-        <translation>Eszközök eszköztár mutatása</translation>
+        <translation>Eszközök eszköztár megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="292"/>
@@ -640,22 +640,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="324"/>
         <source>Show toolbars in text windows</source>
-        <translation>Eszköztárak megjelenítése a szöveg ablakban</translation>
+        <translation>Eszköztárak megjelenítése a szövegablakokban</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="303"/>
         <source>Show parallel text headers</source>
-        <translation>Párhuzamos szöveg fejlécek megjelenítése</translation>
+        <translation>Párhuzamos szövegfejlécek megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="846"/>
         <source>O&amp;pen windows</source>
-        <translation>A&amp;blak megnyitása</translation>
+        <translation>Megnyitott a&amp;blakok</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="342"/>
         <source>Search in all works that are currently open</source>
-        <translation>Keresés minden megnyitott dokumentumban</translation>
+        <translation>Keresés minden megnyitott műben</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="345"/>
@@ -663,44 +663,44 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Keresés az alapértelmezett Bibliában</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="662"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="660"/>
         <source>New Session</source>
-        <translation>Új folyamat</translation>
+        <translation>Új munkamenet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="97"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="100"/>
         <source>Initializing the SWORD engine...</source>
         <translation>A SWORD indítása...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="110"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="113"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation>BibleTime felhasználói felület létrehozása...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="118"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="121"/>
         <source>Initializing menu- and toolbars...</source>
         <translation>Menük és eszköztárak indítása...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="192"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="195"/>
         <source>Unlock Work</source>
-        <translation>Dokumentum feloldása</translation>
+        <translation>Mű feloldása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="193"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="196"/>
         <source>Enter the unlock key for %1.</source>
         <translation>Gépelje be a(z) %1 feloldó kódját.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="221"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="224"/>
         <source>Warning: Invalid unlock key!</source>
         <translation>Hiba: Hibás feloldó kód!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="222"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="225"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
-        <translation>A feloldókulcs amit használt nem oldotta fel ezt a modult. Kérjük próbálja újra.</translation>
+        <translation>A megadott feloldókulcs nem oldotta fel ezt a modult. Próbálja meg újra.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="420"/>
@@ -721,27 +721,27 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTimeApp</name>
     <message>
-        <location filename="../../src/frontend/bibletimeapp.cpp" line="189"/>
+        <location filename="../../src/frontend/bibletimeapp.cpp" line="186"/>
         <source>Warning!</source>
-        <translation type="unfinished"></translation>
+        <translation>Figyelem!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletimeapp.cpp" line="190"/>
+        <location filename="../../src/frontend/bibletimeapp.cpp" line="187"/>
         <source>Migration to the new configuration system is not yet implemented. Proceeding might result in &lt;b&gt;loss of data&lt;/b&gt;. Please backup your configuration files before you continue!&lt;br/&gt;&lt;br/&gt;Do you want to continue? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation>Az új beállítási rendszerre való áttérés még nem készült el. A folytatás &lt;b&gt;adatvesztéshez vezethet&lt;/b&gt;. A folytatás előtt készítsen biztonsági mentést a beállítási fájlokról.&lt;br/&gt;&lt;br/&gt;Szeretné folytatni? Nyomja meg a &quot;Nem&quot; gombot a BibleTime bezárásához.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletimeapp.cpp" line="202"/>
+        <location filename="../../src/frontend/bibletimeapp.cpp" line="199"/>
         <source>Error loading configuration!</source>
-        <translation type="unfinished"></translation>
+        <translation>A beállítások betöltése nem sikerült!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletimeapp.cpp" line="203"/>
+        <location filename="../../src/frontend/bibletimeapp.cpp" line="200"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation>A BibleTime beállításainak betöltése nem sikerült, mert úgy tűnik, hogy a beállításfájl egy újabb BibleTime verzióhoz tartozik. Ez valószínűleg a BibleTime visszaállításának következménye. Az új beállításfájl betöltése &lt;b&gt;adatvesztéshez vezethet&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Kívánja megpróbálni betölteni az új beállításfájlt? Nyomja meg a &quot;Nem&quot; gombot a BibleTime bezárásához.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletimeapp.cpp" line="276"/>
+        <location filename="../../src/frontend/bibletimeapp.cpp" line="273"/>
         <source>Fatal error!</source>
         <translation>Végzetes hiba!</translation>
     </message>
@@ -751,128 +751,128 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="99"/>
         <source>Updating Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Művek frissítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="101"/>
         <source>The selected works are being updated.</source>
-        <translation type="unfinished"></translation>
+        <translation>A kijelölt művek frissítése folyamatban.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="105"/>
         <source>Installing Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Művek telepítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="107"/>
         <source>The selected works are being installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>A kijelölt művek telepítése folyamatban.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="60"/>
+        <source>Choose Languages</source>
+        <translation>Nyelvek kiválasztása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="61"/>
-        <source>Choose Languages</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="62"/>
         <source>Choose one or more languages to install works from.</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassza ki, milyen nyelvű műveket szeretne telepíteni.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="75"/>
         <source>Choose Remote Libraries</source>
-        <translation type="unfinished"></translation>
+        <translation>Távoli könyvtárak kiválasztása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="77"/>
         <source>Choose one or more remote libraries to install works from.</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassza ki, melyik távoli könyvtárakból szeretne műveket telepíteni.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="84"/>
         <source>Updating Remote Libraries</source>
-        <translation type="unfinished"></translation>
+        <translation>Távoli könyvtárak frissítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="86"/>
         <source>Updating information from remote libraries.</source>
-        <translation type="unfinished"></translation>
+        <translation>Adatok frissítése a távoli könyvtárakból.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="75"/>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="98"/>
         <source>Bookshelf Manager</source>
-        <translation>Könyvespolc menedzser</translation>
+        <translation>Könyvespolc-kezelő</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="77"/>
         <source>Install, update, or remove works on your bookshelf.</source>
-        <translation type="unfinished"></translation>
+        <translation>Művek telepítése, frissítése vagy eltávolítása a könyvespolcról.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="80"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;WARNING&lt;/span&gt;: Installing or updating works uses the internet. If you live in a persecuted country you may not want to do this.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;FIGYELEM&lt;/span&gt;: A művek telepítése vagy frissítése internetkapcsolatot igényel. Ha korlátozásokat alkalmazó országban él, akkor alaposan gondolja meg ezt a lépést.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="86"/>
         <source>Bookshelf task</source>
-        <translation type="unfinished"></translation>
+        <translation>Könyvespolc feladat</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="89"/>
         <source>Install additional works (uses internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>További művek telepítése (internetkapcsolatot használ)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="93"/>
         <source>Update installed works (uses internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Telepített művek frissítése (internetkapcsolatot használ)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="96"/>
         <source>Remove installed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Telepített művek eltávolítása</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="203"/>
+        <source>Install Works</source>
+        <translation>Művek telepítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="204"/>
-        <source>Install Works</source>
-        <translation type="unfinished"></translation>
+        <source>Choose one or more works to install.</source>
+        <translation>Válassza ki a telepíteni kívánt műveket.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="205"/>
-        <source>Choose one or more works to install.</source>
-        <translation type="unfinished"></translation>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="209"/>
+        <source>Update Works</source>
+        <translation>Művek frissítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="210"/>
-        <source>Update Works</source>
-        <translation type="unfinished"></translation>
+        <source>Choose one or more works to update.</source>
+        <translation>Válassza ki a frissíteni kívánt műveket.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="211"/>
-        <source>Choose one or more works to update.</source>
-        <translation type="unfinished"></translation>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="216"/>
+        <source>Remove Works</source>
+        <translation>Művek eltávolítása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="217"/>
-        <source>Remove Works</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="218"/>
         <source>Choose one or more works to remove.</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassza ki a eltávolítani kívánt műveket.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="100"/>
         <source>Canceling Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Letöltések megszakítása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="103"/>
         <source>The Bookshelf Manager will close when the current download finishes.</source>
-        <translation type="unfinished"></translation>
+        <translation>A könyvespolc-kezelő bezáródik a letöltés befejezésekor.</translation>
     </message>
 </context>
 <context>
@@ -880,22 +880,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="196"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
-        <translation>BibleTime egy könnyen használható Bibliatanulmányozó eszköz.</translation>
+        <translation>A BibleTime egy könnyen használható Bibliatanulmányozó eszköz.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="346"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="345"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
-        <translation>A BibleTime GPL licensz alatt lett kiadva. Letöltheti, használhatja a programot magán, nyilvános vagy akár üzleti célra is korlátozások nélkül, de csak akkor adhatja el, vagy terjesztheti a programot, ha a hozzá tartozó forráskódot is közzéteszi.</translation>
+        <translation>A BibleTime a GPL licenc alatt jelenik meg. A programot személyes, magán, nyilvános vagy kereskedelmi célokra korlátozás nélkül letöltheti és használhatja, de csak akkor adhatja tovább vagy terjesztheti, ha a hozzá tartozó forráskódot is mellékeli.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="352"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="351"/>
         <source>The complete legally binding license is below.</source>
-        <translation>A teljes jogilag érvényes licensz lentebb található. </translation>
+        <translation>A teljes, jogilag érvényes licenc lentebb található.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="181"/>
         <source>About BibleTime</source>
-        <translation>Információk a BibleTimeról</translation>
+        <translation>Információk a BibleTime-ról</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="193"/>
@@ -903,196 +903,200 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="205"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
+        <source>(c)1999-2026, The BibleTime Team</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="204"/>
         <source>&amp;Contributors</source>
         <translation>&amp;Közreműködők</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="216"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="215"/>
         <source>The following people contributed to BibleTime:</source>
-        <translation>A következő emberek működtek közre a BibleTime létrehozásában:</translation>
+        <translation>A következő emberek vettek részt a BibleTime elkészítésében:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="218"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="217"/>
         <source>documentation and translation manager</source>
         <translation>dokumentációs és fordítási menedzser</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="239"/>
         <source>project manager</source>
         <translation>projekt menedzser</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="244"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>tester</source>
         <translation>tesztelő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="244"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>usability expert</source>
-        <translation>hasznáhatósági szakértő</translation>
+        <translation>használhatósági szakértő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="309"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="308"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation>A BibleTime a SWORD Projekt használatára készült. A SWORD Projekt a Crosswire Bible Society ingyenes Biblia szoftver projektje. Célja, hogy olyan keresztplatformos, nyílt forrású &amp;mdash; GNU General Public License által kiadott &amp;mdash; szoftvereket hozzon létre, amelyek lehetővé teszik a programozóknak és a Bibliatársaságoknak, hogy sokkal könnyebben és gyorsabban írhassanak Bibliaszoftvereket.</translation>
+        <translation>A BibleTime a SWORD projektet használja. A SWORD Project a CrossWire Bible Society szabad Biblia-szoftverprojektje. Célja olyan több platformos, nyílt forráskódú eszközök létrehozása &amp;mdash; amelyekre a GNU General Public License vonatkozik &amp;mdash;, amelyek segítségével a programozók és a Biblia-társaságok gyorsabban és könnyebben írhatnak új Biblia-szoftvereket.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="315"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="314"/>
         <source>The SWORD Project: </source>
-        <translation>A SWORD Projekt:</translation>
+        <translation>A SWORD projekt:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="323"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="322"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="326"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="325"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt eszközkészlet verziója: %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="333"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="332"/>
         <source>More info...</source>
         <translation>További információk...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="342"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="341"/>
         <source>&amp;License</source>
-        <translation>&amp;Licensz</translation>
+        <translation>&amp;Licenc</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="208"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="207"/>
         <source>designer</source>
         <translation>tervező</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="207"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="206"/>
         <source>developer</source>
         <translation>fejlesztő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="218"/>
         <source>project founder</source>
         <translation>projekt alapító</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="225"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="224"/>
         <source>packager</source>
         <translation>csomagkészítő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="226"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="225"/>
         <source>creator of The Sword Project</source>
         <translation>a Sword Projekt alapítója</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="228"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="227"/>
         <source>domain sponsor</source>
         <translation>domain szponzor</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="229"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="228"/>
         <source>howto</source>
-        <translation>hogyan</translation>
+        <translation>tanulmányozási segédlet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="209"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="208"/>
         <source>artist</source>
         <translation>művész</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
-        <source>(c)1999-2025, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
+        <source>(c)1999-2026, The BibleTime Team</source>
+        <translation type="vanished">(c)1999-2026, A BibleTime Csapat</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>documentation</source>
         <translation>dokumentáció</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>A következő emberek vettek részt a BibleTime fordításában:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="292"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="291"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Néhány név hiányozhat. Ha hibát vagy hiányosságot észlel, kérjük, jelentse be a %1 oldalon.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="303"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="302"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="307"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="306"/>
         <source>SWORD library version %1</source>
         <translation>Sword verzió: %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="328"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="327"/>
         <source>This program uses Qt version %1.</source>
         <translation>Ez a program a Qt %1 verzióját használja.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="330"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="329"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
-        <translation>A Qt egy keresztplatformos alkalmazás és keretrendszer, C++ nyelven megírva, LGPL licensz alatt kiadva.</translation>
+        <translation>A Qt egy keresztplatformos alkalmazás és keretrendszer, C++ nyelven megírva, LGPL licenc alatt kiadva.</translation>
     </message>
 </context>
 <context>
     <name>BtBibleKeyWidget</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="133"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="114"/>
         <source>Select book</source>
-        <translation>Válasszon könyvet</translation>
+        <translation>Könyv kiválasztása</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="131"/>
+        <source>Select chapter</source>
+        <translation>Fejezet kiválasztása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="150"/>
-        <source>Select chapter</source>
-        <translation>Válasszon fejezetet</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="169"/>
         <source>Select verse</source>
-        <translation>Vers választása</translation>
+        <translation>Vers kiválasztása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="195"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="176"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation>Keresztülgörgetés a lista elemein. Nyomja le a gombot, és mozgassa az egeret a tétel növeléséhez vagy csökkentéséhez.</translation>
+        <translation>Pörgetés a lista elemein. Nyomja le a gombot, és mozgassa az egeret az előre- vagy visszapörgetéshez.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="197"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="178"/>
         <source>Next book</source>
         <translation>Következő könyv</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="199"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="180"/>
         <source>Previous book</source>
         <translation>Előző könyv</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="202"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="183"/>
         <source>Next chapter</source>
         <translation>Következő fejezet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="204"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="185"/>
         <source>Previous chapter</source>
         <translation>Előző fejezet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="207"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="188"/>
         <source>Next verse</source>
         <translation>Következő vers</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="209"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="190"/>
         <source>Previous verse</source>
         <translation>Előző vers</translation>
     </message>
@@ -1122,12 +1126,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="207"/>
         <source>There are currently no works installed. Please click the button below to install new works.</source>
-        <translation>Még nincs telepített dokumentum. Kérem kattintson az alábbi gombra, hogy új dokumentumot telepítsen.</translation>
+        <translation>Még nincs telepített mű. Kattintson az alábbi gombra, új művek telepítéséhez.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="209"/>
         <source>&amp;Install works...</source>
-        <translation>&amp;Dokumentumok telepítése...</translation>
+        <translation>&amp;Művek telepítése...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="104"/>
@@ -1137,7 +1141,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="105"/>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
-        <translation>Megpróbált egy zárt modult megnyitni. Kérjük használja a feloldó kulcsot a következő ablakban a modul megnyitásához.</translation>
+        <translation>Megpróbált egy zárt modult megnyitni. Adja meg a feloldó kulcsot a következő ablakban a modul megnyitásához.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="194"/>
@@ -1178,28 +1182,28 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="96"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Leállítás</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="154"/>
         <source>Installing &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;%1&quot; telepítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="188"/>
         <source>Some of the selected works were not installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem mindegyik kijelölt mű telepítése sikerült.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="191"/>
         <source>The selected works have been installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>A kijelölt művek telepítése befejezve.</translation>
     </message>
 </context>
 <context>
     <name>BtBookshelfLanguagesPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="77"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="76"/>
         <source>English</source>
         <translation>Angol</translation>
     </message>
@@ -1217,7 +1221,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfremovefinalpage.cpp" line="53"/>
         <source>The selected works have been removed.</source>
-        <translation type="unfinished"></translation>
+        <translation>A kijelölt művek eltávolítása befejezve.</translation>
     </message>
 </context>
 <context>
@@ -1230,7 +1234,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="141"/>
         <source>&lt; Add new remote library &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt; Új távoli könyvtár hozzáadása &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="143"/>
@@ -1240,12 +1244,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="185"/>
         <source>Delete Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Forrás törlése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="186"/>
         <source>Do you really want to delete this source?</source>
-        <translation>Tényleg törli a forrást?</translation>
+        <translation>Biztos, hogy törli a forrást?</translation>
     </message>
 </context>
 <context>
@@ -1253,7 +1257,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="82"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Leállítás</translation>
     </message>
 </context>
 <context>
@@ -1277,68 +1281,68 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="177"/>
         <source>Show/hide works</source>
-        <translation>Munkák megjelenítése/elrejtése</translation>
+        <translation>Művek megjelenítése vagy elrejtése</translation>
     </message>
 </context>
 <context>
     <name>BtBookshelfWorksPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="202"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="201"/>
         <source>Fi&amp;lter:</source>
         <translation>Szű&amp;rő:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="208"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="207"/>
         <source>Install Works &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Művek telepítése &gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="214"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="213"/>
         <source>Update Works &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Művek frissítése &gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="221"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="220"/>
         <source>Remove Works &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Művek eltávolítása &gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="225"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="224"/>
         <source>Install &amp;folder:</source>
         <translation>Telepítési &amp;könyvtár:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="226"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="225"/>
         <source>The folder where the new works will be installed</source>
-        <translation>Az új munkák ide lesznek telepítve</translation>
+        <translation>Az új művek telepítésnek mappája</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="231"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="230"/>
         <source>There are no works to update.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nincsenek frissítendő művek.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="233"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="232"/>
         <source>No works are currently installed so they cannot be removed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelenleg egyetlen mű sincs telepítve, így az eltávolítás nem lehetséges.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="238"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="237"/>
         <source>No works can be installed with the current selection of remote libraries and languages. Please go back and make a different selection.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nincs telepíthető mű a jelenleg kijelölt nyelveken a kijelölt távoli könyvtárakból. Lépjen vissza és változtasson a kijelölésen.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="242"/>
+        <source>Grouping:</source>
+        <translation>Csoportosítás:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="243"/>
-        <source>Grouping:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="244"/>
         <source>Grouping</source>
         <translation>Csoportosítás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="246"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="245"/>
         <source>Change the grouping of items in the bookshelf.</source>
         <translation>A könyvespolc eleminek újracsoportosítása.</translation>
     </message>
@@ -1346,49 +1350,49 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfig</name>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="80"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="79"/>
         <source>Old testament</source>
-        <translation type="unfinished"></translation>
+        <translation>Ószövetség</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="82"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="81"/>
         <source>Moses/Pentateuch/Torah</source>
-        <translation type="unfinished"></translation>
+        <translation>Mózes öt könyve/Tóra</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="84"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="83"/>
         <source>History</source>
-        <translation type="unfinished"></translation>
+        <translation>Történeti könyvek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="86"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="85"/>
         <source>Prophets</source>
-        <translation type="unfinished"></translation>
+        <translation>Próféták</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="88"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
         <source>New testament</source>
-        <translation type="unfinished"></translation>
+        <translation>Újszövetség</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="90"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="89"/>
         <source>Gospels</source>
-        <translation type="unfinished"></translation>
+        <translation>Evangéliumok</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="92"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="91"/>
         <source>Letters/Epistles</source>
-        <translation type="unfinished"></translation>
+        <translation>Levelek/Episztolák</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="94"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="93"/>
         <source>Paul&apos;s Epistles</source>
-        <translation type="unfinished"></translation>
+        <translation>Pál apostol levelei</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="134"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="133"/>
         <source>Default Session</source>
-        <translation type="unfinished"></translation>
+        <translation>Alapértelmezett munkamenet</translation>
     </message>
 </context>
 <context>
@@ -1396,27 +1400,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="131"/>
         <source>Copy by References</source>
-        <translation type="unfinished"></translation>
+        <translation>Másolás hivatkozás szerint</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="132"/>
         <source>&amp;Work:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Mű:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="133"/>
         <source>&amp;First:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Első:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="134"/>
         <source>&amp;Last:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Utolsó:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="135"/>
         <source>Copy size is too large!</source>
-        <translation type="unfinished"></translation>
+        <translation>A másolandó méret túl nagy!</translation>
     </message>
 </context>
 <context>
@@ -1424,12 +1428,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="147"/>
         <source>Show verse numbers</source>
-        <translation>Vers számok mutatása</translation>
+        <translation>Versszámok megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="148"/>
         <source>Show headings</source>
-        <translation>Fejléc mutatása</translation>
+        <translation>Fejléc megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="149"/>
@@ -1439,7 +1443,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="150"/>
         <source>Show Hebrew vowel points</source>
-        <translation>Héber magánhangzó pontok mutatása</translation>
+        <translation>Héber magánhangzópontok megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="151"/>
@@ -1449,7 +1453,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="152"/>
         <source>Show Greek accents</source>
-        <translation>Görög kiejtés mutatása</translation>
+        <translation>Görög kiejtés megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="153"/>
@@ -1459,27 +1463,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="154"/>
         <source>Show scripture cross-references</source>
-        <translation>Kereszthivatkozások mutatása</translation>
+        <translation>Kereszthivatkozások megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="155"/>
         <source>Show footnotes</source>
-        <translation>Lábjegyzetek mutatása</translation>
+        <translation>Lábjegyzetek megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="156"/>
         <source>Show morph segmentation</source>
-        <translation>Szótő elválasztás mutatása</translation>
+        <translation>Szótő elválasztás megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="163"/>
         <source>Display settings</source>
-        <translation>Megjelenítés beállítása</translation>
+        <translation>Megjelenítés beállításai</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="166"/>
         <source>Display settings: No options available</source>
-        <translation>Megjelenítés beállításai: Nincs elérhető opció</translation>
+        <translation>Megjelenítés beállításai: Nincs elérhető lehetőség</translation>
     </message>
 </context>
 <context>
@@ -1528,7 +1532,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="149"/>
         <source>Left</source>
-        <translation>Balra igazított</translation>
+        <translation>Balra</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="150"/>
@@ -1538,17 +1542,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="151"/>
         <source>Center</source>
-        <translation>Középre igazított</translation>
+        <translation>Középre</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="152"/>
         <source>Align center</source>
-        <translation type="unfinished"></translation>
+        <translation>Középre igazított</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="153"/>
         <source>Right</source>
-        <translation>Jobbra igazított</translation>
+        <translation>Jobbra</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="154"/>
@@ -1574,46 +1578,46 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtFindWidget</name>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="132"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="127"/>
         <source>The text you want to search for</source>
         <comment>findWidget</comment>
-        <translation>A szöveg, amir keres</translation>
+        <translation>A keresendő szöveg</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="134"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="129"/>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Előző</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="135"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="130"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Következő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btfindwidget.cpp" line="136"/>
+        <location filename="../../src/frontend/display/btfindwidget.cpp" line="131"/>
         <source>Match case</source>
-        <translation type="unfinished"></translation>
+        <translation>Kis- és nagybetűk</translation>
     </message>
 </context>
 <context>
     <name>BtFontSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="159"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="158"/>
         <source>&amp;Language:</source>
         <translation>&amp;Nyelv:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="160"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="159"/>
         <source>The font selection below will apply to all texts in this language</source>
-        <translation>Az alábbi betűkiválasztás az adott nyelv összes szövegére érvényes lesz</translation>
+        <translation>Az alábbi beállítások az adott nyelven írt összes szövegre érvényesek lesznek</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="161"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="160"/>
         <source>Use custom font</source>
         <translation>Egyedi betűkészlet használata</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="158"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="157"/>
         <source>Fonts</source>
         <translation>Betűkészletek</translation>
     </message>
@@ -1621,74 +1625,74 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtIndexDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="105"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="99"/>
         <source>Indexed Works</source>
-        <translation>Indexelt munkák</translation>
+        <translation>Indexelt művek</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="112"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="106"/>
         <source>Unindexed Works</source>
-        <translation>Nem indexelt munkák</translation>
+        <translation>Nem indexelt művek</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="122"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="116"/>
         <source>%1 KiB</source>
         <translation>%1 KiB</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="128"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="122"/>
         <source>0 KiB</source>
         <translation>0 KiB</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="136"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="130"/>
         <source>Manage Search Indexes</source>
-        <translation type="unfinished"></translation>
+        <translation>Keresési indexek kezelése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="139"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="133"/>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
-        <translation>Ha kiválasztja, azok az indexek, melyekhez nincs egyező dokumentum, törlésre kerülnek a BibleTime indításakor</translation>
+        <translation>Bekapcsolásakor, a BibleTime indításakor, automatikusan törlődnek azok az indexek, amelyekhez tartozó művek már nincsenek telepítve</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="142"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="136"/>
         <source>Automatically delete orphaned indexes when BibleTime starts</source>
         <translation>Elárvult indexek automatikus törlése a BibleTime indulásakor</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="145"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="139"/>
         <source>Delete the selected indexes</source>
-        <translation>A kiválasztott indexek törlése</translation>
+        <translation>A kijelölt indexek törlése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="146"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="140"/>
         <source>Delete</source>
         <translation>Törlés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="148"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="142"/>
         <source>&amp;Close</source>
         <translation>&amp;Bezárás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="150"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="144"/>
         <source>Create new indexes for the selected works</source>
-        <translation>A választott dokumentumok indexelése</translation>
+        <translation>A választott művek indexelése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="151"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="145"/>
         <source>Create...</source>
-        <translation>Készítés...</translation>
+        <translation>Létrehozás...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="153"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="147"/>
         <source>Work</source>
-        <translation>Irat</translation>
+        <translation>Mű</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="153"/>
+        <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="147"/>
         <source>Index size</source>
-        <translation>Index méret</translation>
+        <translation>Index mérete</translation>
     </message>
 </context>
 <context>
@@ -1696,7 +1700,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btinstallpagemodel.cpp" line="79"/>
         <source>Work</source>
-        <translation>Dokumentum</translation>
+        <translation>Mű</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btinstallpagemodel.cpp" line="80"/>
@@ -1715,33 +1719,33 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="64"/>
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="75"/>
         <source>Show password</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelszó megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="71"/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelszó elrejtése</translation>
     </message>
 </context>
 <context>
     <name>BtModuleChooserButton</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="68"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="44"/>
         <source>Select a work [%1]</source>
-        <translation>Válasszon egy munkát [%1]</translation>
+        <translation>Válasszon egy művet [%1]</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="70"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="46"/>
         <source>Select an additional work</source>
-        <translation>További dokumentum kiválasztása</translation>
+        <translation>Válasszon egy további művet</translation>
     </message>
 </context>
 <context>
     <name>BtModuleChooserMenu</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/btmodulechoosermenu.cpp" line="134"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechoosermenu.cpp" line="52"/>
         <source>NONE</source>
-        <translation>SEMMI</translation>
+        <translation>NINCS</translation>
     </message>
 </context>
 <context>
@@ -1754,12 +1758,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="36"/>
         <source>Cancel</source>
-        <translation>Mégsem</translation>
+        <translation>Mégse</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="40"/>
         <source>Creating indices</source>
-        <translation>Mutatók készítése</translation>
+        <translation>Indexek készítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="75"/>
@@ -1769,7 +1773,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="86"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;UNKNOWN EXCEPTION&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="90"/>
@@ -1779,15 +1783,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="91"/>
         <source>An internal error occurred while building the index:&lt;br/&gt;&lt;br/&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiba történt az index elkészítésekor:&lt;br/&gt;&lt;br/&gt;%1</translation>
     </message>
 </context>
 <context>
     <name>BtModuleTextModel</name>
     <message>
-        <location filename="../../src/backend/models/btmoduletextmodel.cpp" line="421"/>
+        <location filename="../../src/backend/models/btmoduletextmodel.cpp" line="419"/>
         <source>Click to edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Kattintson a szerlesztéshez</translation>
     </message>
 </context>
 <context>
@@ -1795,7 +1799,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btopenworkaction.cpp" line="122"/>
         <source>&amp;Open work</source>
-        <translation>&amp;Munka megnyitása</translation>
+        <translation>&amp;Mű megnyitása</translation>
     </message>
 </context>
 <context>
@@ -1817,21 +1821,21 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="58"/>
         <source>Edit Plain text</source>
         <comment>Personal Commentary Editor</comment>
-        <translation type="unfinished"></translation>
+        <translation>Szerkesztés egyszerű szövegként</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="60"/>
         <source>Edit HTML text</source>
         <comment>Personal Commentary Editor</comment>
-        <translation type="unfinished"></translation>
+        <translation>Szerkesztés HTML szövegként</translation>
     </message>
 </context>
 <context>
     <name>BtQmlInterface</name>
     <message>
-        <location filename="../../src/frontend/display/modelview/btqmlinterface.cpp" line="146"/>
+        <location filename="../../src/frontend/display/modelview/btqmlinterface.cpp" line="149"/>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 szerkesztése</translation>
     </message>
 </context>
 <context>
@@ -1839,12 +1843,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="61"/>
         <source>Works to Search in</source>
-        <translation>Ezekben a dokumentumokban keressen</translation>
+        <translation>Művek kiválasztása a kereséshez</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="63"/>
         <source>Select the works which should be searched.</source>
-        <translation>Válassza ki a dokumentumokat, amelyekben keresni akar.</translation>
+        <translation>Válassza ki a műveket, amelyekben keresni szeretne.</translation>
     </message>
 </context>
 <context>
@@ -1852,22 +1856,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="127"/>
         <source>Configure shortcuts</source>
-        <translation>Billentyűkombinációk beállítása</translation>
+        <translation>Gyorsbillentyűk beállítása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="128"/>
         <source>Select first or second shortcut and type the shortcut with keyboard</source>
-        <translation>Válassza ki az első, illetve a második billentyűkombinációt, majd adja meg a billentyűzete segítségével</translation>
+        <translation>Kattintson az első vagy a második gyorsbillentyű helyre, majd állítsa be a billentyűzet segítségével</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="131"/>
         <source>First shortcut</source>
-        <translation>Első kombináció</translation>
+        <translation>Első gyorsbillentyű</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="134"/>
         <source>Second shortcut</source>
-        <translation>Második kombináció</translation>
+        <translation>Második gyorsbillentyű</translation>
     </message>
 </context>
 <context>
@@ -1876,32 +1880,32 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="240"/>
         <source>Select to change key</source>
-        <translation>Válasszon a kulcscseréhez</translation>
+        <translation>Kattintson a billentyű megadásához</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="135"/>
         <source>Action</source>
-        <translation>Cselekedet</translation>
+        <translation>Művelet</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="136"/>
         <source>Shortcut</source>
-        <translation>Billentyűkombináció</translation>
+        <translation>Gyorsbillentyű</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="137"/>
         <source>Alternate</source>
-        <translation type="unfinished"></translation>
+        <translation>Alternatív</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="150"/>
         <source>Shortcut for selected action name</source>
-        <translation>KOmbináció a kiválasztott akcióhoz</translation>
+        <translation>A választott művelet gyorsbillentyűje</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="158"/>
         <source>None</source>
-        <translation>Semmi</translation>
+        <translation>Nincs</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="164"/>
@@ -1916,7 +1920,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="190"/>
         <source>Default key:</source>
-        <translation>Alapértelmezett kulcs:</translation>
+        <translation>Alapértelmezett billentyű:</translation>
     </message>
 </context>
 <context>
@@ -1924,28 +1928,28 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="31"/>
         <source>Getting Library List</source>
-        <translation type="unfinished"></translation>
+        <translation>Könyvtárlista betöltése</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="37"/>
         <location filename="../../src/backend/btsourcesthread.cpp" line="49"/>
         <source>Updating stopped</source>
-        <translation type="unfinished"></translation>
+        <translation>Frissítés megszakítva</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="54"/>
         <source>Updating remote library &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Távoli könyvtár frissítése: &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="67"/>
         <source>Remote libraries have been updated.</source>
-        <translation type="unfinished"></translation>
+        <translation>A távoli könyvtárak frissítve.</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="70"/>
         <source>The following remote libraries failed to update: </source>
-        <translation type="unfinished"></translation>
+        <translation>A következő távoli könyvtárak frissítése nem sikerült:</translation>
     </message>
 </context>
 <context>
@@ -1954,92 +1958,92 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="64"/>
         <source>%1: %2</source>
         <comment>module name: module description</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1: %2</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="142"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="143"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alapértelmezett művek, arra az esetre amikor nincs konkrét mű megadva, például amikor egy bibliai vagy lexikon címszóra mutató hivatkozásra kattint.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="145"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="146"/>
         <source>Bible:</source>
-        <translation type="unfinished"></translation>
+        <translation>Biblia:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="147"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="148"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Az alapértelmezett Biblia akkor nyílik meg, amikor egy bibliai hivatkozásra kattint</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="150"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="151"/>
         <source>Commentary:</source>
-        <translation type="unfinished"></translation>
+        <translation>Feljegyzések:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="152"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="153"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Az alapértelmezett feljegyzések akkor nyílnak meg, amikor egy feljegyzéshivatkozásra kattint</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="155"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="156"/>
         <source>Lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lexikon:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="157"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="158"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Az alapértelmezett lexikon akkor nyílik meg, amikor egy lexikonhivatkozásra kattint</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="160"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="161"/>
         <source>Daily devotional:</source>
-        <translation type="unfinished"></translation>
+        <translation>Napi ima:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="162"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="163"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation type="unfinished"></translation>
+        <translation>Az alapértelmezett napi ima műből egy ima jelenik meg az induláskor</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="166"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="167"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Héber Strong lexikon:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="168"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Az alapértelmezett héber lexikon akkor nyílik meg, amikor egy héber lexikonhivatkozásra kattint</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="171"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Görög Strong lexikon:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="173"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Az alapértelmezett görög lexikon akkor nyílik meg, amikor egy görög lexikonhivatkozásra kattint</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="177"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Héber morfológiai lexikon:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="179"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Az alapértelmezett héber morfológiai lexikon akkor nyílik meg, amikor héber szövegben egy morfológiai jel hivatkozására kattint</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="185"/>
         <source>Greek morphological lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Görög morfológiai lexikon:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="187"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Az alapértelmezett görög morfológiai lexikon akkor nyílik meg, amikor görög szövegben egy morfológiai jel hivatkozására kattint</translation>
     </message>
 </context>
 <context>
@@ -2047,46 +2051,74 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="78"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. These settings apply to newly opened display windows only. You can override these settings in each display window.</source>
-        <translation type="unfinished"></translation>
+        <translation>A szűrők szabályozzák a szöveg megjelenését. Itt megadhatja a szűrők alapértelmezett beállításait. Ezek a beállítások csak az újonnan megnyitott megjelenítő ablakokra vonatkoznak. Ezeket a beállításokat minden megjelenítő ablakban felülbírálhatja.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="83"/>
         <source>Show verse numbers</source>
-        <translation>Vers számok mutatása</translation>
+        <translation>Vers számok megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="84"/>
         <source>Show section headings</source>
-        <translation type="unfinished"></translation>
+        <translation>Szakaszcímek megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="85"/>
         <source>Show scripture cross-references</source>
-        <translation>Kereszthivatkozások mutatása</translation>
+        <translation>Kereszthivatkozások megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="86"/>
         <source>Show Greek accents</source>
-        <translation>Görög kiejtés mutatása</translation>
+        <translation>Görög kiejtés megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="87"/>
         <source>Show Hebrew vowel points</source>
-        <translation>Héber magánhangzó pontok mutatása</translation>
+        <translation>Héber magánhangzó pontok megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="88"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation>Héber hangsúlyozás jelzése</translation>
+        <translation>Héber hangsúlyozás jelek megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="89"/>
         <source>Show morph segmentation</source>
-        <translation>Szótő elválasztás mutatása</translation>
+        <translation>Szótő elválasztás megjelenítése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="90"/>
         <source>Use textual variants</source>
+        <translation>Szöveges változatok megjelenítése</translation>
+    </message>
+</context>
+<context>
+    <name>BtTextToSpeechSettingsPage</name>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="116"/>
+        <source>Text-to-speech</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="119"/>
+        <source>No Qt text-to-speech plug-ins were found. Please install a plugin and restart the application.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="121"/>
+        <source>Text-to-speech engine:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="122"/>
+        <source>Text-to-speech language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="123"/>
+        <source>Text-to-speech voice:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2095,7 +2127,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="57"/>
         <source>Add/remove/replace</source>
-        <translation>Hozzáadás/eltávolítás/áthelyezés</translation>
+        <translation>Hozzáadás/eltávolítás/lecserélés</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="60"/>
@@ -2105,7 +2137,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="70"/>
         <source>Replace</source>
-        <translation>Áthelyezés</translation>
+        <translation>Lecserélés</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="85"/>
@@ -2123,7 +2155,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="98"/>
         <source>Show tips at startup</source>
-        <translation>Tippek mutatása indításkor</translation>
+        <translation>Tippek megjelenítése indításkor</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="110"/>
@@ -2133,27 +2165,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="137"/>
         <source>The currently active window can be auto scrolled up or down. Start scrolling by pressing Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
-        <translation type="unfinished"></translation>
+        <translation>Az aktív ablak automatikusan felfelé vagy lefelé görgethető. A görgetést a Shift+Le billentyűkombinációval indíthatja el. A görgetés sebességét a Shift+Le többszöri lenyomásával növelheti. A görgetés szüneteltetéséhez nyomja meg a Szóközt. A görgetés ugyanolyan sebességű folytatásához nyomja meg újra a Szóköz billentyűt. A görgetés lassításához vagy a másik irányba történő görgetéshez nyomja meg egy vagy több alkalommal a Shift+Fel billentyűket. Bármely más billentyű lenyomására vagy az aktív ablak megváltoztatására a görgetés leáll.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="145"/>
         <source>To add multiple Bible works in parallel in your active Bible or commentary window select this icon and choose another Bible or commentary work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha több Bibliát szeretne párhuzamosan hozzáadni az aktív Biblia vagy feljegyzési ablakhoz, válassza ki ezt az ikont, majd válasszon ki egy másik Bibliát vagy feljegyzési művet.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="149"/>
         <source>To add multiple commentary works in parallel in your active commentary window select this icon and choose another commentary work.</source>
-        <translation>További kommentárok hozzáadásához párhuzamosan az aktív ablakban válassza ki ezt az ikont, és jelöljön ki egy másik kommentárt.</translation>
+        <translation>Ha több feljegyzési művet szeretne párhuzamosan hozzáadni az aktív feljegyzési ablakhoz, válassza ki ezt az ikont, majd válasszon ki egy másik feljegyzési művet.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="153"/>
         <source>To learn more about the BibleTime project please go to our web site.</source>
-        <translation>Hogy többet megtudjon a BibleTime projektről, kérem látogassa meg a weboldalunkat.</translation>
+        <translation>A BibleTime projektről a weboldalunkon talál további információkat.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="156"/>
         <source>To synchronize a commentary window with the active Bible window, activate the commentary window and select this icon.</source>
-        <translation>A kommentár bibliával szinkronizálásához aktiválja a kommentár ablakot, majd válassza ki ezt az ikont.</translation>
+        <translation>A feljegyzések ablak a Bibliával való szinkronizálásához aktiválja a feljegyzések ablakot, majd válassza ki ezt az ikont.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="159"/>
@@ -2163,42 +2195,42 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="161"/>
         <source>To create a bookmark drag any verse reference from a Bible or commentary work into the Bookmarks window. An arrow will indicate the position that the bookmark will go when you release the cursor. Other works will have a reference in the upper left corner that can be used to create a bookmark.</source>
-        <translation>Könyvjelző készítéséhez húzza a vers hivatkozását a Bibliából, vagy a kommentárból a könyvjelző ablakba. Nyíl fogja jelölni azt a pozíciót, ahova a könyvjelző kerül. Egyéb dokumentumtípus bal felső sarkában található a könyvjelzőzhető hivatkozás.</translation>
+        <translation>Könyvjelző készítéséhez húzza a vers hivatkozását a Bibliából, vagy a feljegyzésekből a könyvjelző ablakba. Nyíl fogja mutatni, hogy hová kerül a könyvjelző. Más művek esetén a bal felső sarkukban található a könyvjelzőzhető hivatkozás.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="166"/>
         <source>To change a bookmark title or description, right click on the bookmark and select the Edit Bookmark menu. After finishing the edit the description can be seen by hovering over the bookmark.</source>
-        <translation>Könyvjelző címének vagy leírásának megváltoztatásához jobb egérgombbal kattintson a könyvjelzőre, válassza ki a könyvjelző szerkesztése menüpontot. A szerkesztés befejezése után láthatóvá válik a megjegyzés az egérmutató könyvjelző fölé vitelével.</translation>
+        <translation>Könyvjelző címének vagy leírásának megváltoztatásához jobb egérgombbal kattintson a könyvjelzőre, válassza ki a könyvjelző szerkesztése menüpontot. A szerkesztés befejezése után a megjegyzés az egérmutató a könyvjelző fölé mozgatásával jeleníthető meg.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="170"/>
         <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
-        <translation>Ha több információt szeretne megtudni egy dokumentumról, használja a Könyvespolc ablakot, jobb egérgombbal kattintson a dokumentumra, majd válassza a névjegy menüt.</translation>
+        <translation>Az egyes művekről további információkat olvashat, ha megnyitja a Könyvespolc ablakot, majd jobb egérgombbal rákattint egy műre és kiválasztja a névjegy menüt.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="173"/>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
-        <translation>A Könyvespolc, Könyvjelző és Nagyító ablakok áthelyezhetők az ablakok címsorának elhúzásával. Az új helyeik lehetnek balra, jobbra felette vagy alatta a munkaablaknak. Lehet egyszerre mind felül vagy alul, ekkor fülekkel lehet választani az éppen használandót. Az ablakok átméretezése a keretük mozgatásával lehetséges.</translation>
+        <translation>A Könyvespolc, Könyvjelző és a Nagyító ablakok áthelyezhetők az ablakok címsorának elhúzásával. Elhelyezhetők a művek ablakaitól balra vagy jobbra illetve, felettük vagy alattuk. Lehetnek mind egyszerre felül vagy alul, ekkor laponként lehet őket megjeleníteni. Az ablakok átméretezése a keretük mozgatásával lehetséges.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="179"/>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
-        <translation>Lehetséges Strong számokra is keresni. Válasszon egy olyan dokumentumot, ami rendelkezik Strong számokkal, vigye az egérmutatót a kívánt szó fölé, majd jobb egérgombbal kattintva válassza a Strong keresés menüt. A párbeszédablak ekkor előhozza az azonos Strong számokkal jelzett előfordulásokat a dokumentumból.</translation>
+        <translation>Lehetséges Strong számokra is keresni. Válasszon egy olyan művet, ami rendelkezik Strong számokkal, vigye az egérmutatót a kívánt szó fölé, majd jobb egérgombbal kattintva válassza a Strong számos keresés menüt. Ekkor megnyílik a keresés ablak és megjeleníti az azonos Strong számokkal jelzett előfordulásokat a műből.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="184"/>
         <source>You can save personal notes for specific verse references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source, English as the language,  and look under Commentary. Once installed, open it like any other window, or in  parallel with a bible. Click a verse to edit it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Saját jegyzeteket is menthet el az egyes versekhez. Ehhez telepítenie kell a Személyes feljegyzések lehetőséget. Nyissa meg a Könyvespolc-kezelőt, válassza ki a Crosswire-t forrásként, az angolt nyelvként, és keresse meg a Feljegyzések rész alatt a Personal Commentary elemet. A telepítés után nyissa meg úgy, mint bármelyik más ablakot, vagy párhuzamosan a Bibliával. Kattintson egy versre a szerkesztéshez.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="193"/>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
-        <translation>Elmentheti a megnyitott ablakai állapotás munkafolyamatként is. Az állapot így később bármikor helyreállítható. Annyi folyamatot menthet így el, amennyit kíván. Ez a lehetőség az Ablak menüből érhető el.</translation>
+        <translation>Elmentheti a megnyitott ablakok állapotát egy munkamenetként. Az állapot így később bármikor helyreállítható. Több munkamenetet is menthet így el. Ez a lehetőség az Ablak menüből érhető el.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="189"/>
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
-        <translation>Megtekintheti A Strong szótári információját egy szónak a Nagyító ablakban az egérmutató szó fölé vitelével egy Strong&apos;s képes dokumentumban. A funkcióhoz telepíteni kell a Strong&apos;s héber és görög szótárat a Crosswire forrásból.</translation>
+        <translation>A Nagyító ablakban megtekintheti a Strong számokkal kapcsolatos információkat, ha az egérmutatót egy szó fölé viszi egy Strong számokkal ellátott Bibliai műben. A funkcióhoz telepíteni kell a StrongsGreek és a StrongsHebrew nevű lexikonokat a Crosswire forrásból.</translation>
     </message>
 </context>
 <context>
@@ -2206,7 +2238,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="67"/>
         <source>Welcome to BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>Üdvözli a BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="71"/>
@@ -2216,22 +2248,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="73"/>
         <source>Before you can use this application some works must be installed. Various works such as Bibles, books, commentaries, and lexicons are available from remote libraries.</source>
-        <translation type="unfinished"></translation>
+        <translation>Az alkalmazás használata előtt, telepítenie kell néhány művet. Különböző művek, például Bibliák, könyvek, feljegyzések és lexikonok érhetők el a távoli könyvtárakból.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="77"/>
         <source>Choose the &quot;Install works&quot; button to download works. The menu &quot;Settings &gt; Bookshelf Manager&quot; also installs works and can be used later.</source>
-        <translation type="unfinished"></translation>
+        <translation>A művek letöltéséhez válassza a &quot;Művek telepítése&quot; gombot. A &quot;Beállítások &gt; Könyvespolc-kezelő&quot; menüből is telepíthet műveket, és az később is használható.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="81"/>
         <source>Install later</source>
-        <translation type="unfinished"></translation>
+        <translation>Telepítés később</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="84"/>
         <source>Install works...</source>
-        <translation type="unfinished"></translation>
+        <translation>Művek telepítése...</translation>
     </message>
 </context>
 <context>
@@ -2239,29 +2271,29 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="99"/>
         <source>&quot;%1&quot; in the &quot;%2&quot; group</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;%1&quot; a(z) &quot;%2&quot; csoportban</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="112"/>
         <source>Shortcut conflict detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Gyorsbillentyű ütközés észlelve</translation>
     </message>
     <message numerus="yes">
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="115"/>
         <source>The shortcut &quot;%1&quot; you want to assign to &quot;%2&quot; in the &quot;%3&quot; group conflicts with the following %n shortcut(s):</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>A(z) &quot;%1&quot; gyorsbillentyű, melyet a(z) &quot;%2&quot; funkcióhoz a(z) &quot;%3&quot; csoportól be szeretne állítani, a következő %n gyorsbillentyűvel ütközik:</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="125"/>
         <source>Do you want to clear these conflicting shortcuts and continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kívánja törölni az ütköző gyorsbillentyűt és folytatni?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="176"/>
         <source>Choose action group:</source>
-        <translation>Válassza ki a hatóterületet:</translation>
+        <translation>Műveletcsoport kiválasztása:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="178"/>
@@ -2281,7 +2313,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="181"/>
         <source>Commentary windows</source>
-        <translation>Kommentár ablakok</translation>
+        <translation>Feljegyzés ablakok</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="182"/>
@@ -2296,7 +2328,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="174"/>
         <source>Shortcuts</source>
-        <translation>Billentyűkombinációk</translation>
+        <translation>Gyorsbillentyűk</translation>
     </message>
 </context>
 <context>
@@ -2364,27 +2396,27 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Hivatkozást szöveggel</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="208"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="212"/>
         <source>Copy</source>
         <translation>Másolás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="222"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="226"/>
         <source>Save...</source>
         <translation>Mentés...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="228"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="232"/>
         <source>Print...</source>
         <translation>Nyomtatás...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="298"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="307"/>
         <source>Copying</source>
         <translation>Másolás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="333"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="342"/>
         <source>Saving</source>
         <translation>Mentés</translation>
     </message>
@@ -2402,17 +2434,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="233"/>
         <source>Delete Items</source>
-        <translation>Cikkek törlése</translation>
+        <translation>Elemek törlése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="316"/>
         <source>The work to which the bookmark points to is not installed.</source>
-        <translation>A dokumentum, amire a könyvjelző mutat, nem lett telepítve.</translation>
+        <translation>A mű, amelyre a könyvjelző mutat, nincs telepítve.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="551"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="543"/>
         <source>Can drop only bookmarks or one folder</source>
-        <translation>Csak a könyvjelzők, vagy egy könyvtár mozgatása lehetséges</translation>
+        <translation>Csak könyvjelzők vagy egy könyvtár ejthető ide</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="92"/>
@@ -2437,7 +2469,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="149"/>
         <source>Sort folder bookmarks...</source>
-        <translation>Könyjelző mappa rendezése...</translation>
+        <translation>Könyvjelzők rendezése a mappában...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="155"/>
@@ -2447,12 +2479,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="168"/>
         <source>Import to folder...</source>
-        <translation>Mappába importálás...</translation>
+        <translation>Importálás mappába...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="181"/>
         <source>Export from folder...</source>
-        <translation>Mappából exportálás...</translation>
+        <translation>Exportálás mappából...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="194"/>
@@ -2462,32 +2494,32 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="228"/>
         <source>Remove selected items...</source>
-        <translation>Kiválasztott cikkek törlése...</translation>
+        <translation>Kijelölt elemek törlése...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="555"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="547"/>
         <source>Can&apos;t drop folder into the folder itself or into its subfolder</source>
-        <translation>A mappa önmagába, vagy almappájába mozgatása nem lehetséges</translation>
+        <translation>A mappa önmagába, vagy saját almappájába áthelyezése nem lehetséges</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="562"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="554"/>
         <source>Copy</source>
         <translation>Másolás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="563"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="555"/>
         <source>Move</source>
         <translation>Mozgatás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="616"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="608"/>
         <source>Drag references from text views to this view</source>
-        <translation>Hivatkozások mozgatása a szöveges nézetből ebbe a nézetbe</translation>
+        <translation>Húzzon hivatkozásokat a szöveges nézetből ebbe a nézetbe</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="234"/>
         <source>Do you really want to delete the selected items and folders?</source>
-        <translation type="unfinished"></translation>
+        <translation>Biztos, hogy törli a kijelölt elemeket és mappákat?</translation>
     </message>
 </context>
 <context>
@@ -2530,76 +2562,76 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="60"/>
         <source>Synchronize the displayed entry of this work with the active Bible window</source>
-        <translation>A kijelzett bejegyzés szinkronizálása az aktív Biblia ablakkal</translation>
+        <translation>A kijelzett bejegyzés szinkronizálása az aktív Biblia ablakával</translation>
     </message>
 </context>
 <context>
     <name>CConfigurationDialog</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="31"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="32"/>
         <source>Configure BibleTime</source>
-        <translation>Bibletime beállítása</translation>
+        <translation>BibleTime beállítása</translation>
     </message>
 </context>
 <context>
     <name>CDisplaySettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="122"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="120"/>
         <source>Language for names of Bible books:</source>
         <translation>A Biblia könyvcímeinek nyelve:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="123"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="121"/>
         <source>The languages which can be used for the biblical book names. Translations are provided by the Sword library.</source>
-        <translation type="unfinished"></translation>
+        <translation>A nyelv amelyen a Biblia könyvcímei megjelennek. A fordításokat a Sword programkönyvtár biztosítja.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="127"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="125"/>
         <source>Show startup logo:</source>
-        <translation type="unfinished"></translation>
+        <translation>Indítási logó megjelenítése:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="126"/>
+        <source>Show the BibleTime logo on startup.</source>
+        <translation>A BibleTime logójának megjelenítése indításkor.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="128"/>
-        <source>Show the BibleTime logo on startup.</source>
-        <translation type="unfinished"></translation>
+        <source>Light / dark Mode (Requires restart)</source>
+        <translation>Világos vagy sötét mód (újraindítást igényel)</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="129"/>
+        <source>System default</source>
+        <translation>Rendszerrel megegyező</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="130"/>
-        <source>Light / dark Mode (Requires restart)</source>
-        <translation type="unfinished"></translation>
+        <source>Light</source>
+        <translation>Világos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="131"/>
-        <source>System default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="132"/>
-        <source>Light</source>
-        <translation type="unfinished"></translation>
+        <source>Dark</source>
+        <translation>Sötét</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="133"/>
-        <source>Dark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="135"/>
         <source>Available display styles:</source>
-        <translation>Lehetséges megjelenítési stílusok:</translation>
+        <translation>Elérhető megjelenítési stílusok:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="136"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="134"/>
         <source>Style preview</source>
         <translation>Előnézet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="142"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="140"/>
         <source>Did you know? You can help translating the GUI of BibleTime to your language at &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tudta? Részt vehet a BibleTime felületének a saját nyelvére fordításában, a &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt; weblapon.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="238"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="236"/>
         <source>&lt;div class=&quot;sectiontitle&quot;&gt;CHAPTER 3&lt;/div&gt;
 
 &lt;div xml:lang=&quot;en&quot; lang=&quot;en&quot; class=&quot;sectiontitle&quot;&gt;The New Birth&lt;/div&gt;
@@ -2695,10 +2727,52 @@ This file is distributed under the same license as the Bibetime package.</transl
     &lt;span lemma=&quot;G2316&quot;&gt;of God&lt;/span&gt;.&quot;
 &lt;/span&gt;</source>
         <comment>This markup is used to render the preview text in the settings dialog. It contains a lot of markup because we want to showcase multiple textual features to the user comparing different display templates to choose from. For English we have chosen to use John 3:1-3 but translations are free to use other Bible passages as well as markup specific to the Bible translations of the language as long as the text continues to serve the intended purpose. At runtime, the translated text is automatically split into multiple verses when empty lines (two consecutive newline characters) are encountered.</comment>
-        <translation type="unfinished"></translation>
+        <translation>&lt;div class=&quot;sectiontitle&quot;&gt;János 3&lt;/div&gt;
+
+&lt;div xml:lang=&quot;en&quot; lang=&quot;en&quot; class=&quot;sectiontitle&quot;&gt;Nikodémus Jézusnál &lt;/div&gt;
+
+&lt;span class=&quot;entryname&quot;&gt;
+    &lt;a name=&quot;crossref&quot; href=&quot;sword://Bible/WEB/John 3:1&quot;&gt;1&lt;/a&gt;
+&lt;/span&gt;
+Volt a farizeusok között egy
+&lt;span lemma=&quot;G3530&quot;&gt;Nikodémus&lt;/span&gt;, a
+&lt;span class=&quot;crossreference&quot;&gt;
+    &lt;a href=&quot;sword://Bible/NASB/Luke 23:13;&quot; name=&quot;crossref&quot;&gt;Lk 23:13&lt;/a&gt;;
+    &lt;a href=&quot;sword://Bible/NASB/John 7:26;&quot; name=&quot;crossref&quot;&gt;Jn 7:26&lt;/a&gt;,&lt;a href=&quot;sword://Bible/NASB/John 7:48;&quot; name=&quot;crossref&quot;&gt;48&lt;/a&gt;
+&lt;/span&gt;
+nevű ember, a zsidók egyik vezető embere. 
+
+&lt;span class=&quot;entryname&quot;&gt;
+    &lt;a name=&quot;crossref&quot; href=&quot;sword://Bible/WEB/John 3:2&quot;&gt;2&lt;/a&gt;
+&lt;/span&gt;
+Ő egy éjjel elment Jézushoz, és így szólt hozzá: „Mester, tudjuk, hogy Istentől jöttél tanítóul, mert senki sem képes megtenni azokat a jeleket, amelyeket te teszel, hacsak nincs vele az Isten.”
+
+&lt;span class=&quot;entryname&quot;&gt;
+    &lt;a name=&quot;crossref&quot; href=&quot;sword://Bible/WEB/John 3:3&quot;&gt;3&lt;/a&gt;
+&lt;/span&gt;
+Jézus így válaszolt: 
+&lt;span class=&quot;jesuswords&quot;&gt;
+    „Bizony, bizony, mondom néked: ha valaki nem születik újonnan,
+    &lt;span class=&quot;crossreference&quot;&gt;
+        &lt;a href=&quot;sword://Bible/NASB/II Corinthians 5:17;&quot; name=&quot;crossref&quot;&gt;
+            2 Kor 5:17&lt;/a&gt;;
+        &lt;a href=&quot;sword://Bible/NASB/I Peter 1:23;&quot; name=&quot;crossref&quot;&gt;
+            1 Pt 1:23&lt;/a&gt;
+    &lt;/span&gt;
+ nem láthatja meg az Isten országát.”
+    &lt;span class=&quot;crossreference&quot;&gt;
+        &lt;a href=&quot;sword://Bible/NASB/Matthew 19:24;&quot; name=&quot;crossref&quot;&gt;
+            Mt 19:24&lt;/a&gt;;
+        &lt;a href=&quot;sword://Bible/NASB/Matthew 21:31;&quot; name=&quot;crossref&quot;&gt;21:31&lt;/a&gt;;
+        &lt;a href=&quot;sword://Bible/NASB/Mark 9:47;&quot; name=&quot;crossref&quot;&gt;Mk 9:47&lt;/a&gt;;
+        &lt;a href=&quot;sword://Bible/NASB/Mark 10:14-Mark 10:15;&quot; name=&quot;crossref&quot;&gt;
+            10:14f&lt;/a&gt;;
+        &lt;a href=&quot;sword://Bible/NASB/John 3:5;&quot; name=&quot;crossref&quot;&gt;Jn 3:5&lt;/a&gt;
+    &lt;/span&gt;
+ &lt;/span&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="120"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="118"/>
         <source>Display</source>
         <translation>Megjelenítés</translation>
     </message>
@@ -2706,134 +2780,144 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="96"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="97"/>
         <source>Back in history</source>
         <translation>Vissza az előzményekben</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="104"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="105"/>
         <source>Forward in history</source>
-        <translation>előre az előzményekben</translation>
+        <translation>Előre az előzményekben</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="64"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="65"/>
         <source>Copy</source>
         <translation>Másolás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="68"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="69"/>
         <source>Copy by references...</source>
-        <translation type="unfinished"></translation>
+        <translation>Másolás hivatkozás szerint...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="72"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="73"/>
         <source>Find...</source>
         <translation>Keresés...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="76"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="77"/>
         <source>Change location</source>
         <translation>Hely változtatása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="80"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="81"/>
         <source>Page down</source>
-        <translation type="unfinished"></translation>
+        <translation>Lapozás lefelé</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="84"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="85"/>
         <source>Page up</source>
-        <translation type="unfinished"></translation>
+        <translation>Lapozás felfelé</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="89"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="90"/>
         <source>Search with works of this window</source>
-        <translation>Keresés ennek az ablaknak a dokumentumaiban</translation>
+        <translation>Keresés az ebben az ablakban megnyitott művekben</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="111"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="112"/>
         <source>Copy reference only</source>
-        <translation>Csak a hivatkozást másolja</translation>
+        <translation>Csak a hivatkozás másolása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="114"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="115"/>
         <source>Save entry as HTML</source>
         <translation>Bejegyzés mentése HTML formátumban</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="117"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="118"/>
         <source>Print reference only</source>
         <translation>Csak a hivatkozás nyomtatása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="120"/>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="126"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="121"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="127"/>
         <source>Entry with text</source>
         <translation>Bejegyzés szöveggel</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="123"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="124"/>
         <source>Entry as plain text</source>
         <translation>Bejegyzés egyszerű szövegként</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="129"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="130"/>
         <source>Strong&apos;s Search</source>
-        <translation>Strong&apos;s keresés</translation>
+        <translation>Strong számos keresés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="198"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="135"/>
+        <source>Speak selected text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="204"/>
         <source>Work chooser buttons</source>
-        <translation>Dokumentumválasztó gombok</translation>
+        <translation>Műválasztó gombok</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="226"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="232"/>
         <source>Text area header</source>
         <translation>Szövegterület fejrésze</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="342"/>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="355"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="364"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="377"/>
         <source>Saving</source>
         <translation>Mentés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="404"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="431"/>
         <source>&lt;NO WORKS&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;NINCS MŰ&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="530"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="557"/>
         <source>Copy...</source>
         <translation>Másolás...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="539"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="566"/>
         <source>Save...</source>
         <translation>Mentés...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="548"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="575"/>
         <source>Print...</source>
         <translation>Nyomtatás...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="689"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="592"/>
+        <source>DEBUG: Show raw text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="732"/>
         <source>Choose Standard Bible</source>
-        <translation type="unfinished"></translation>
+        <translation>Válasszon alapértelmezett Bibliát</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="690"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="733"/>
         <source>Please choose a Bible in the Settings &gt; Configure dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Válasszon egy alapértelmezett Bibliát a Beállítások &gt; BibleTime beállítása menüben.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="179"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="185"/>
         <source>Navigation</source>
         <translation>Navigáció</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="213"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="219"/>
         <source>Tool</source>
         <translation>Eszköz</translation>
     </message>
@@ -2843,12 +2927,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="59"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation>Kersesztülgörgetés a lista elemein. Nyomja le a gombot, és mozgassa az egeret a tétel növeléséhez vagy csökkentéséhez.</translation>
+        <translation>Pörgetés a lista elemein. Nyomja le a gombot, és mozgassa az egeret az előre- vagy visszapörgetéshez.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="57"/>
         <source>Entries of the current work</source>
-        <translation>Az aktuális dokumentum bejegyzései</translation>
+        <translation>Az aktuális mű bejegyzései</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="58"/>
@@ -2864,12 +2948,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>CLexiconReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="27"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="26"/>
         <source>Next entry</source>
         <translation>Következő bejegyzés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="31"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="30"/>
         <source>Previous entry</source>
         <translation>Előző bejegyzés</translation>
     </message>
@@ -2877,175 +2961,179 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="910"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="908"/>
         <source>Version</source>
         <translation>Verzió</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="913"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="921"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="911"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="919"/>
         <source>unknown</source>
         <translation>ismeretlen</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="918"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="916"/>
         <source>Markup</source>
-        <translation>Jelzés</translation>
+        <translation>Formátum</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="925"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="923"/>
         <source>Location</source>
         <translation>Hely</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="929"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="927"/>
         <source>Language</source>
         <translation>Nyelv</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="933"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="931"/>
         <source>Category</source>
         <translation>Kategória</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="937"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="935"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="941"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="939"/>
         <source>Writable</source>
         <translation>Írható</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="942"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="940"/>
         <source>yes</source>
         <translation>igen</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="942"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="940"/>
         <source>no</source>
         <translation>nem</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="946"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="944"/>
         <source>Unlock key</source>
         <translation>Feloldó kulcs</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="949"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="947"/>
         <source>Unlock info</source>
-        <translation type="unfinished"></translation>
+        <translation>Információ feloldása</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="977"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="975"/>
         <source>Features</source>
-        <translation>Lehetőségek</translation>
+        <translation>Jellemzők</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="985"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="983"/>
         <source>Take care, this work contains cult / questionable material!</source>
-        <translation>Legyen óvatos, a dokumentum kultikus / megkérdőjelezhető anyagot tartalmaz!</translation>
+        <translation>Legyen óvatos, a mű kultikus vagy megkérdőjelezhető anyagot tartalmaz!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="989"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="987"/>
         <source>About</source>
         <translation>Leírás</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="996"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="994"/>
         <source>Distribution license</source>
-        <translation>Disztribúciós Licensz</translation>
+        <translation>Terjesztési licenc</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="995"/>
+        <source>Distribution source</source>
+        <translation>Terjesztési forrása</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="996"/>
+        <source>Distribution notes</source>
+        <translation>Terjesztési megjegyzések</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="997"/>
-        <source>Distribution source</source>
-        <translation>Disztribúció forrása</translation>
+        <source>Text source</source>
+        <translation>Szöveg forrása</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="998"/>
-        <source>Distribution notes</source>
-        <translation>Disztribúció megjegyzései</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="999"/>
-        <source>Text source</source>
-        <translation>Szöveg forrás</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1000"/>
         <source>Copyright notes</source>
         <translation>Szerzői jogi megjegyzések</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1001"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="999"/>
         <source>Copyright holder</source>
         <translation>Szerzői jog tulajdonosa</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1002"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1000"/>
         <source>Copyright date</source>
         <translation>Szerzői jogvédelem dátuma</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1003"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1001"/>
         <source>Copyright contact name</source>
         <translation>Szerzői jogi kapcsolattartó neve</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1004"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1002"/>
         <source>Copyright contact address</source>
         <translation>Szerzői jogi kapcsolattartó címe</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1005"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1003"/>
         <source>Copyright contact email</source>
-        <translation>Szerzői jogi kapcsolattartó emailcíme</translation>
+        <translation>Szerzői jogi kapcsolattartó e-mail-címe</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1080"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1073"/>
         <source>Bibles</source>
         <translation>Bibliák</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1082"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1075"/>
         <source>Commentaries</source>
-        <translation>Kommentárok</translation>
+        <translation>Feljegyzések</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1084"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1077"/>
         <source>Books</source>
         <translation>Könyvek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1086"/>
-        <source>Cults/Unorthodox</source>
-        <translation>Kultikus/Unortodox</translation>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1079"/>
+        <source>Questionable</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1088"/>
+        <source>Cults/Unorthodox</source>
+        <translation type="vanished">Kultikus/Unortodox</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1081"/>
         <source>Maps and Images</source>
         <translation>Térképek és képek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1090"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1083"/>
         <source>Daily Devotionals</source>
-        <translation>Napi áhitatok</translation>
+        <translation>Napi imák</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1092"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1085"/>
         <source>Lexicons and Dictionaries</source>
         <translation>Lexikonok és szótárak</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1094"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1087"/>
         <source>Glossaries</source>
         <translation>Szójegyzékek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1096"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1089"/>
         <source>Unknown</source>
-        <translation>IsmeretlenEgyéb</translation>
+        <translation>Ismeretlen</translation>
     </message>
 </context>
 <context>
@@ -3053,17 +3141,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="45"/>
         <source>Standard works</source>
-        <translation>Alap dokumentumok</translation>
+        <translation>Alapértelmezett művek</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="46"/>
         <source>Text filters</source>
-        <translation>Szöveg szűrők</translation>
+        <translation>Szövegszűrők</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="43"/>
         <source>Desk</source>
-        <translation>Asztal</translation>
+        <translation>Munkaterület</translation>
     </message>
 </context>
 <context>
@@ -3071,7 +3159,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="55"/>
         <source>New Installation Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Új telepítési forrás</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="63"/>
@@ -3096,22 +3184,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="89"/>
         <source>Remote FTP</source>
-        <translation type="unfinished"></translation>
+        <translation>Távoli FTP</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="90"/>
         <source>Remote SFTP</source>
-        <translation type="unfinished"></translation>
+        <translation>Távoli SFTP</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="91"/>
         <source>Remote HTTP</source>
-        <translation type="unfinished"></translation>
+        <translation>Távoli HTTP</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="92"/>
         <source>Remote HTTPS</source>
-        <translation type="unfinished"></translation>
+        <translation>Távoli HTTPS</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="93"/>
@@ -3121,7 +3209,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="107"/>
         <source>Get list...</source>
-        <translation>Lista megszerzése...</translation>
+        <translation>Lista beszerzése...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="108"/>
@@ -3131,16 +3219,16 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="114"/>
         <source>Get source list from remote server?</source>
-        <translation>Letöltsük a források listáját?</translation>
+        <translation>Szeretné letölteni a források listáját a szerverről?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="115"/>
         <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
 
 Do you want to continue?</source>
-        <translation>A források listáját egy távoli szerverről töltődik le. A források a jelenlegi listához hozzá lesznek adva. Az új források felülírják az azonos nevű régieket. A későbbiekben módjában áll törölni a nem kívánt forrásokat.
+        <translation>A források listája egy távoli szerverről kerül letöltésre. A források hozzáadódnak a jelenlegi listához. Az új forrás felülírja a régit, ha ugyanaz a címkéje. Később eltávolíthatja azokat a forrásokat, amelyeket nem szeretne megtartani.
 
-Folytatja?</translation>
+Folytatni szeretné?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="127"/>
@@ -3150,12 +3238,12 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="128"/>
         <source>Cancel</source>
-        <translation>Mégsem</translation>
+        <translation>Mégse</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="133"/>
         <source>Downloading List</source>
-        <translation>Lista letöltése folyamatban</translation>
+        <translation>Lista letöltése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="145"/>
@@ -3165,27 +3253,27 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="169"/>
         <source>Please provide a caption.</source>
-        <translation>Kérem adjon meg egy megnevezést.</translation>
+        <translation>Adjon meg egy megnevezést.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="173"/>
         <source>A source with this caption already exists. Please provide a different caption.</source>
-        <translation>Egy azonos nevű forrás már létezik. Kérjük adjon egy másik elnevezést.</translation>
+        <translation>Egy azonos nevű forrás már létezik. Adjon egy másik elnevezést.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="180"/>
         <source>Please provide a server name.</source>
-        <translation>Kérem adja meg a kiszolgáló nevét.</translation>
+        <translation>Adja meg a szerver nevét.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="186"/>
         <source>Please provide a path.</source>
-        <translation>Kérem adjon meg egy útvonalat.</translation>
+        <translation>Adjon meg egy útvonalat.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="190"/>
         <source>Please provide a valid, readable path.</source>
-        <translation>Kérem adjon meg egy valós, olvasható útvonalat.</translation>
+        <translation>Adjon meg egy valós, olvasható útvonalat.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="194"/>
@@ -3196,47 +3284,57 @@ Folytatja?</translation>
 <context>
     <name>DebugWindow</name>
     <message>
-        <location filename="../../src/frontend/debugwindow.cpp" line="30"/>
+        <location filename="../../src/frontend/debugwindow.cpp" line="70"/>
         <source>What&apos;s this widget?</source>
-        <translation type="unfinished"></translation>
+        <translation>Mi ez az elem?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/debugwindow.cpp" line="48"/>
+        <location filename="../../src/frontend/debugwindow.cpp" line="76"/>
         <source>&lt;b&gt;child of:&lt;/b&gt; %1</source>
+        <translation>&lt;b&gt;gyermeke ennek:&lt;/b&gt; %1</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/debugwindow.cpp" line="84"/>
+        <source>&lt;b&gt;This Quick item is:&lt;/b&gt; %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/debugwindow.cpp" line="52"/>
+        <location filename="../../src/frontend/debugwindow.cpp" line="89"/>
         <source>&lt;b&gt;This widget is:&lt;/b&gt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Ez az elem:&lt;/b&gt; %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/debugwindow.cpp" line="59"/>
+        <location filename="../../src/frontend/debugwindow.cpp" line="93"/>
         <source>No widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Nincs elem</translation>
     </message>
 </context>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="129"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="145"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
         <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Verzió: %3&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="54"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="56"/>
         <source>Copy</source>
         <translation>Másolás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="49"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="51"/>
         <source>Select all</source>
         <translation>Összes kijelölése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="83"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="67"/>
+        <source>DEBUG: Show raw text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="99"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
-        <translation>&lt;small&gt;Ez a &quot;Nagyító&quot; ablak. Ha az egeret elhúzza hivatkozások, vagy más adatot tartalmazó elemek fölött, azok tartalma kis késleltetéssel megjelenik itt. Mozgassa az egeret ide gyorsan, vagy rögzítse a tartalmát a Shift gomb nyomvatartásával.&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Ez a &quot;Nagyító&quot; ablak. Ha az egeret hivatkozások, vagy más adatot tartalmazó elemek fölé mozgatja, azok tartalma kis késleltetéssel megjelenik itt. Mozgassa az egeret ide gyorsan, vagy rögzítse a tartalmát a Shift gomb nyomva tartásával.&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -3426,7 +3524,7 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/backend/language.cpp" line="129"/>
         <source>Spanish</source>
-        <translation>panyol</translation>
+        <translation>Spanyol</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="130"/>
@@ -3491,7 +3589,7 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/backend/language.cpp" line="149"/>
         <source>Hebrew, Ancient</source>
-        <translation type="unfinished"></translation>
+        <translation>Héber, régies</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="150"/>
@@ -3549,24 +3647,23 @@ Folytatja?</translation>
         <translation>Olasz</translation>
     </message>
     <message>
-        <location filename="../../src/backend/language.cpp" line="300"/>
         <source>Zapotec, San Juan Guelav໚</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Zapoték, San Juan Guelav</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="303"/>
         <source>Zapotec, Amatlán</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapoték, Amatlán</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="305"/>
         <source>Zapotec, Yalálag</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapoték, Yalálag</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="308"/>
         <source>Zapotec, Quioquitani-Quierí</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapoték, Quioquitani-Quierí</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="166"/>
@@ -3661,7 +3758,7 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/backend/language.cpp" line="203"/>
         <source>More</source>
-        <translation>több</translation>
+        <translation>Mooré</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="205"/>
@@ -3681,7 +3778,7 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/backend/language.cpp" line="214"/>
         <source>Norwegian Bokmål</source>
-        <translation type="unfinished"></translation>
+        <translation>Norvég Bokmål</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="215"/>
@@ -3919,6 +4016,11 @@ Folytatja?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../src/backend/language.cpp" line="300"/>
+        <source>Zapotec, San Juan Guelavía</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/backend/language.cpp" line="301"/>
         <source>Zapotec, Mitla</source>
         <translation>Zapotec, Mitla</translation>
@@ -3931,22 +4033,22 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/backend/language.cpp" line="304"/>
         <source>Zapotec, Zoogocho</source>
-        <translation>Zapotec, Zoogocho</translation>
+        <translation>Zapoték, Zoogocho</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="306"/>
         <source>Zapotec, Chichicapan</source>
-        <translation>Zapotec, Chichicapan</translation>
+        <translation>Zapoték, Chichicapan</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="307"/>
         <source>Zapotec, Southern Rincon</source>
-        <translation>Zapotec, Dél Rincon</translation>
+        <translation>Zapoték, Dél Rincon</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="309"/>
         <source>Zapotec, Yatee</source>
-        <translation>Zapotec, Yatee</translation>
+        <translation>Zapoték, Yatee</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="310"/>
@@ -3954,82 +4056,82 @@ Folytatja?</translation>
         <translation>Zulu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="162"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="160"/>
         <source>Footnotes</source>
         <translation>Lábjegyzetek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="167"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="165"/>
         <source>Strong&apos;s numbers</source>
         <translation>Strong számok</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="172"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="170"/>
         <source>Headings</source>
         <translation>Fejlécek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="177"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="175"/>
         <source>Morphological tags</source>
         <translation>Morfológiai jelek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="182"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="180"/>
         <source>Lemmas</source>
-        <translation>Kiegészítések</translation>
+        <translation>Címszavak</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="187"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="185"/>
         <source>Hebrew vowel points</source>
         <translation>Héber magánhangzó pontok</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="192"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="190"/>
         <source>Hebrew cantillation marks</source>
         <translation>Héber hangsúlyozás</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="197"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="195"/>
         <source>Greek accents</source>
         <translation>Görög kiejtés</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="207"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="205"/>
         <source>Red letter words</source>
         <translation>Piros betűs szavak</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="212"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="210"/>
         <source>Textual variants</source>
         <translation>Alternatív szöveges változat</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="202"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="200"/>
         <source>Scripture cross-references</source>
         <translation>Kereszthivatkozások</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="218"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="216"/>
         <source>Morph segmentation</source>
         <translation>Szótő elválasztás</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="383"/>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="209"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="208"/>
         <source>HTML files</source>
         <translation>HTML fájlok</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="50"/>
         <location filename="../../src/frontend/cexportmanager.cpp" line="389"/>
-        <location filename="../../src/frontend/display/btmodelviewreaddisplay.cpp" line="185"/>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="210"/>
+        <location filename="../../src/frontend/display/btmodelviewreaddisplay.cpp" line="214"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="209"/>
         <source>All files</source>
         <translation>Összes fájl</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="386"/>
-        <location filename="../../src/frontend/display/btmodelviewreaddisplay.cpp" line="184"/>
+        <location filename="../../src/frontend/display/btmodelviewreaddisplay.cpp" line="213"/>
         <source>Text files</source>
         <translation>Szövegfájlok</translation>
     </message>
@@ -4039,9 +4141,9 @@ Folytatja?</translation>
         <translation>Fájl mentése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/btmodelviewreaddisplay.cpp" line="182"/>
+        <location filename="../../src/frontend/display/btmodelviewreaddisplay.cpp" line="211"/>
         <source>Save document ...</source>
-        <translation>okumentum mentése...</translation>
+        <translation>Dokumentum mentése...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="49"/>
@@ -4049,42 +4151,42 @@ Folytatja?</translation>
         <translation>BibleTime könyvjelzők</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btbookmarksmodel.cpp" line="493"/>
-        <location filename="../../src/backend/btbookmarksmodel.cpp" line="502"/>
+        <location filename="../../src/backend/btbookmarksmodel.cpp" line="486"/>
+        <location filename="../../src/backend/btbookmarksmodel.cpp" line="495"/>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="139"/>
         <source>unknown</source>
         <translation>ismeretlen</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btbookmarksmodel.cpp" line="862"/>
+        <location filename="../../src/backend/btbookmarksmodel.cpp" line="855"/>
         <source>New folder</source>
         <translation>Új mappa</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="54"/>
-        <location filename="../../src/util/tool.cpp" line="60"/>
+        <location filename="../../src/util/tool.cpp" line="52"/>
+        <location filename="../../src/util/tool.cpp" line="58"/>
         <source>Error</source>
         <translation>Hiba</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="63"/>
+        <location filename="../../src/util/tool.cpp" line="61"/>
         <source>Please check permissions etc.</source>
-        <translation>Kérem ellenőrizze a jogosultságokat.</translation>
+        <translation>Ellenőrizze a jogosultságokat.</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="56"/>
+        <location filename="../../src/util/tool.cpp" line="54"/>
         <source>Error while writing to file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiba történt a fájlba íráskor.</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="57"/>
+        <location filename="../../src/util/tool.cpp" line="55"/>
         <source>Please check that enough disk space is available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ellenőrizze, hogy van-e elég szabad hely a lemezen.</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="62"/>
+        <location filename="../../src/util/tool.cpp" line="60"/>
         <source>The file couldn&apos;t be opened for saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>A fájl megnyitása mentésre nem sikerült.</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="154"/>
@@ -4147,34 +4249,34 @@ Folytatja?</translation>
         <translation>Könyvjelzők importálása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="97"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="96"/>
         <source>Parsing Strong&apos;s Numbers</source>
-        <translation>Strong&apos;s számok követése</translation>
+        <translation>Strong számok követése</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="26"/>
         <source>Indexed works</source>
-        <translation>Indexelt dokumentumok</translation>
+        <translation>Indexelt művek</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="27"/>
         <source>Unindexed works</source>
-        <translation>Nem indexelt dokumentumok</translation>
+        <translation>Nem indexelt művek</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="46"/>
         <source>Show this help message and exit</source>
-        <translation>Mutassa ezt a súgóüzenetet és lépjen ki</translation>
+        <translation>Súgó megjelenítése és kilépés</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="49"/>
         <source>Output BibleTime version and exit</source>
-        <translation>Jelezze ki a BibleTime verziót és lépjen ki</translation>
+        <translation>BibleTime verziójának kiírása és kilépés</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="52"/>
         <source>Open a clean session</source>
-        <translation>Új folyamat indítása</translation>
+        <translation>Üres munkamenet indítása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="55"/>
@@ -4184,53 +4286,59 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/main.cpp" line="58"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
-        <translation>A Qt eszközkészlet parancssori beállításaival kapcsolatban tekintse meg ezt: %1.</translation>
+        <translation>A Qt eszközkészlet parancssori kapcsolóiról további információk: %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="108"/>
         <source>Error: %1 expects an argument. See --help for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiba: A(z) %1 kapcsolóhoz argumentum szükséges. Lásd --help a részletekért.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="115"/>
         <source>Error: Invalid command-line argument: %1</source>
-        <translation>Hiba: nem megfelelő parancssori paraméter: %1</translation>
+        <translation>Hiba: érvénytelen parancssori kapcsoló: %1</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="73"/>
+        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="70"/>
         <source>CSS base template not found!</source>
-        <translation type="unfinished"></translation>
+        <translation>A CSS alapsablon nem található.</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="90"/>
+        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="87"/>
         <source>Default template &quot;%1&quot; not found!</source>
         <translation>Alapértelmezett &quot;%1&quot; sablon nem található!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="71"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="70"/>
         <source>Abbreviation</source>
         <translation>Rövidítés</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="79"/>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="159"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="78"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="158"/>
         <source>Cross references</source>
-        <translation>Kereszthivatkozás</translation>
+        <translation>Kereszthivatkozások</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="200"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="199"/>
         <source>Footnote</source>
         <translation>Lábjegyzet</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="248"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="247"/>
         <source>Strongs</source>
         <translation>Strong számok</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="338"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="337"/>
         <source>Morphology</source>
         <translation>Morfológia</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="31"/>
+        <source>%1 (%2)</source>
+        <comment>Locale language and territory</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4239,7 +4347,7 @@ Folytatja?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="65"/>
         <source>OK</source>
         <comment>Dialog Button</comment>
-        <translation>Rendben</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="66"/>
@@ -4257,32 +4365,32 @@ Folytatja?</translation>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="88"/>
         <source>Back</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Vissza</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="89"/>
         <source>Next</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Következő</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="90"/>
         <source>Commit</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Végrehajtás</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="91"/>
         <source>Finish</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Befejezés</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="92"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="68"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
-        <translation>Mégsem</translation>
+        <translation>Mégse</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="69"/>
@@ -4294,19 +4402,19 @@ Folytatja?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="70"/>
         <source>Discard</source>
         <comment>Dialog Button</comment>
-        <translation>Visszavonás</translation>
+        <translation>Elvetés</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="71"/>
         <source>Apply</source>
         <comment>Dialog Button</comment>
-        <translation>Alkalmaz</translation>
+        <translation>Alkalmazás</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="72"/>
         <source>Reset</source>
         <comment>Dialog Button</comment>
-        <translation>Visszaállít</translation>
+        <translation>Visszaállítás</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="73"/>
@@ -4319,13 +4427,13 @@ Folytatja?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="74"/>
         <source>Help</source>
         <comment>Dialog Button</comment>
-        <translation>Segítség</translation>
+        <translation>Súgó</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="75"/>
         <source>Save All</source>
         <comment>Dialog Button</comment>
-        <translation>Minden mentése</translation>
+        <translation>Összes mentése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="76"/>
@@ -4337,7 +4445,7 @@ Folytatja?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="77"/>
         <source>Yes to all</source>
         <comment>Dialog Button</comment>
-        <translation>Igen mindenre</translation>
+        <translation>Igen, mindenre</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="78"/>
@@ -4349,7 +4457,7 @@ Folytatja?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="79"/>
         <source>No to all</source>
         <comment>Dialog Button</comment>
-        <translation>Nem mindenre</translation>
+        <translation>Nem, mindenre</translation>
     </message>
 </context>
 <context>
@@ -4357,7 +4465,7 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="99"/>
         <source>Search for:</source>
-        <translation>Ezt keresse:</translation>
+        <translation>Keresés:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="106"/>
@@ -4367,17 +4475,17 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="108"/>
         <source>Start to search the text in the chosen works</source>
-        <translation>szöveg keresésének megkezdése a választott dokumentumban</translation>
+        <translation>Szöveg keresésének megkezdése a kiválasztott művekben</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="111"/>
         <source>Ch&amp;oose...</source>
-        <translation>V&amp;álasztás...</translation>
+        <translation>&amp;Választás...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="113"/>
         <source>Choose works for the search</source>
-        <translation>Dokumentumok kijelölése a kereséshez</translation>
+        <translation>Művek kiválasztása a kereséshez</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="116"/>
@@ -4388,12 +4496,12 @@ Folytatja?</translation>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="140"/>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="412"/>
         <source>All of the words (AND is added between the words)</source>
-        <translation>Az összes szót (ÉS kifejezés a szavak közé lesz adva)</translation>
+        <translation>Az összes szó keresése (ÉS kifejezés kerül a szavak közé)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="144"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
-        <translation> (&lt;a href=&apos;syntax_help&apos;&gt;egyéni meghatározás&lt;/a&gt;)</translation>
+        <translation> (&lt;a href=&apos;syntax_help&apos;&gt;speciális formátum&lt;/a&gt;)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="155"/>
@@ -4403,28 +4511,28 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="176"/>
         <source>The text you want to search for</source>
-        <translation>A szöveg, amir keres</translation>
+        <translation>A keresendő szöveg</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="180"/>
         <source>Works:</source>
-        <translation>Dokumentumok:</translation>
+        <translation>Művek:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="368"/>
         <source>[No search scope]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Nincs keresési hatókör]</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="413"/>
         <source>Some of the words</source>
-        <translation type="unfinished"></translation>
+        <translation>Némelyik szó</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="421"/>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="423"/>
         <source>Full syntax is used because text includes AND or OR</source>
-        <translation type="unfinished"></translation>
+        <translation>A speciális formátum lépett érvénybe, mert a szövegben AND vagy OR szerepel.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
@@ -4449,38 +4557,38 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="141"/>
         <source>Some of the words (OR is added between the words)</source>
-        <translation>Bármelyik szót (OR kifejezés a szavak közé lesz adva)</translation>
+        <translation>Bármelyik szó keresése (VAGY kifejezés kerül a szavak közé)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="142"/>
         <source>Full lucene syntax</source>
-        <translation>Teljes lucene kifejezés</translation>
+        <translation>Speciális Lucene formátum</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="145"/>
         <source>Click the link to get help for search syntax</source>
-        <translation>A keresési kifejezésekhez segítségért kattintson a hivatkozásra </translation>
+        <translation>A formátum leírásának megnyitásához kattintson a hivatkozásra</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="166"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
-        <translation>Adja meg a hatókört (Könyvek/fejezetek/versek, amiben keressen) &lt;br /&gt; A bibliák és a kommentároknál használható.</translation>
+        <translation>Adja meg a keresési hatókört (könyvek, fejezetek, versek) &lt;br /&gt; Bibliák és feljegyzések esetén alkalmazható.</translation>
     </message>
 </context>
 <context>
     <name>Search::BtSearchResultArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="115"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="114"/>
         <source>Text of the selected search result item</source>
         <translation>A választott keresési eredmény szövege</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="103"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="102"/>
         <source>Select all</source>
         <translation>Összes kijelölése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="107"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="106"/>
         <source>Copy</source>
         <translation>Másolás</translation>
     </message>
@@ -4520,7 +4628,7 @@ Folytatja?</translation>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="168"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="225"/>
         <source>Other syntax features</source>
-        <translation>Egyéb keresési lehetőségek</translation>
+        <translation>További keresési lehetőségek</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="178"/>
@@ -4554,7 +4662,7 @@ Folytatja?</translation>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="183"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="185"/>
         <source>Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;</source>
-        <translation>Eredménye a &apos;Jézus&apos; tartalmú versek, &apos;Isten&apos; szó nélkül</translation>
+        <translation>Eredménye azok a &apos;Jézus&apos; nevét tartalmazó versek, melyekben nem szerepel az &apos;Isten&apos; szó</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="184"/>
@@ -4564,7 +4672,7 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="187"/>
         <source>Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.</source>
-        <translation>Szavakat lehet csoportosítani &lt;strong&gt; zárójellel &lt;/strong&gt;. Szigorú szórendet lehet meghatározni &lt;strong&gt; idézőjelekkel &lt;/strong&gt;.</translation>
+        <translation>Szavakat lehet csoportosítani &lt;strong&gt;zárójellel&lt;/strong&gt;. Szigorú szórendet lehet meghatározni &lt;strong&gt;idézőjelekkel&lt;/strong&gt;.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="189"/>
@@ -4580,7 +4688,7 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="191"/>
         <source>&quot;says lord&quot;</source>
-        <translation>&quot;mondja uram&quot;</translation>
+        <translation>&quot;mondta Isten&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="194"/>
@@ -4590,28 +4698,28 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="195"/>
         <source>Finds all verses with &apos;says the LORD&apos;</source>
-        <translation>Megtalálja az összes verset a &apos;mondta az Úr&apos; kifejezzéssel</translation>
+        <translation>Megtalálja az összes verset a „mondta az Úr” kifejezéssel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="158"/>
         <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&quot;#%1&quot;&gt;wildcards&lt;/a&gt; and &lt;a href=&quot;#%2&quot;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez a súgó főként a &quot;Speciális formátum&quot; opcióra vonatkozik. Az &quot;Összes szó&quot; és &quot;Bármely szó&quot; lehetőségek formátuma korlátozottabb; ezek esetében &lt;a href=&quot;#%1&quot;&gt;helyettesítő karakterek&lt;/a&gt; és &lt;a href=&quot;#%2&quot;&gt;szövegmezők&lt;/a&gt; használhatók. Más keresési kulcsszavak ezeknél furcsa vagy hibás eredményeket adhatnak.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="170"/>
         <source>Search terms are separated by spaces. &lt;code&gt;AND&lt;/code&gt; (all words), &lt;code&gt;OR&lt;/code&gt; (some words) and &lt;code&gt;NOT&lt;/code&gt; (not the following word) can be added between the words. If none is added explicitly &lt;code&gt;OR&lt;/code&gt; is used automatically. &lt;code&gt;+word&lt;/code&gt; means the word must be in the results, &lt;code&gt;-word&lt;/code&gt; means it must not be in the results.</source>
         <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>A keresési kifejezéseket szóközzel kell elválasztani egymástól. A szavak közé &lt;code&gt;AND&lt;/code&gt; (összes szó), &lt;code&gt;OR&lt;/code&gt; (bármely szó) és &lt;code&gt;NOT&lt;/code&gt; (a következő szó nem) kifejezések írhatók. Ha egyik sem szerepel, akkor automatikusan &lt;code&gt;OR&lt;/code&gt; kifejezésként értékelődik ki. A &lt;code&gt;+szó&lt;/code&gt; azt jelenti, hogy a szónak szerepelnie kell a találatban, a &lt;code&gt;-szó&lt;/code&gt; pedig azt, hogy a szó nem szerepelhet.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="192"/>
         <source>Finds e.g. &apos;...Isaiah says, &quot;Lord...&apos; but not &apos;...says the LORD&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Megtalálja például a „hiszen azt mondta: Isten Fia...” szöveget, de nem a „mondta az Isten” kifejezést</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="197"/>
         <source>&lt;code&gt;*&lt;/code&gt; matches any sequence of 0 or more characters, while &lt;code&gt;?&lt;/code&gt; matches any single character. A wildcard can not be used in the beginning of a word.</source>
-        <translation type="unfinished"></translation>
+        <translation>A &lt;code&gt;*&lt;/code&gt; bármely 0 vagy több karakterből álló sorozatnak megfelel, míg a &lt;code&gt;?&lt;/code&gt; bármely egyetlen karakternek. Helyettesítő karakter nem állhat egy szó elején.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="201"/>
@@ -4698,7 +4806,7 @@ Folytatja?</translation>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="218"/>
         <source>footnote:Jesus AND footnote:said</source>
         <comment>Do not translate &quot;footnote:&quot; or &quot;AND&quot;.</comment>
-        <translation>footnote:Jesus AND footnite:said</translation>
+        <translation>footnote:Jesus AND footnote:said</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="220"/>
@@ -4714,7 +4822,7 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="222"/>
         <source>Finds verses with Strong&apos;s Greek number 846</source>
-        <translation>Megtalálja a Strong görög szótár 846 -os szavát tartalmazó verseket</translation>
+        <translation>Megtalálja a Strong görög szótár 846-os szavát tartalmazó verseket</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="223"/>
@@ -4730,70 +4838,70 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="226"/>
         <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&quot;%1&quot;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
-        <translation type="unfinished"></translation>
+        <translation>A BibleTime a CLucene keresőmotort használja. További információkat a &lt;a href=&quot;%1&quot;&gt;Lucene szintaxis weboldalán&lt;/a&gt; talál (külső böngészőben).</translation>
     </message>
 </context>
 <context>
     <name>Search::CModuleResultView</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="147"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="146"/>
         <source>Work</source>
-        <translation>Dokumentum</translation>
+        <translation>Mű</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="147"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="146"/>
         <source>Hits</source>
         <translation>Találatok</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="161"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="160"/>
         <source>Copy...</source>
         <translation>Másolás...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="163"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="189"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="162"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="188"/>
         <source>Reference only</source>
         <translation>Csak a hivatkozást</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="174"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="200"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="215"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="173"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="199"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="214"/>
         <source>Reference with text</source>
         <translation>Hivatkozást szöveggel</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="187"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="186"/>
         <source>Save...</source>
         <translation>Mentés...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="213"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="212"/>
         <source>Print...</source>
         <translation>Nyomtatás...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="167"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="178"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="166"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="177"/>
         <source>Copying search result</source>
-        <translation>Keresési eredmény másolása folyamatban</translation>
+        <translation>Keresési eredmény másolása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="193"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="204"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="192"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="203"/>
         <source>Saving search result</source>
-        <translation>Keresési eredmény mentése folyamatban</translation>
+        <translation>Keresési eredmény mentése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="219"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="218"/>
         <source>Printing search result</source>
-        <translation>Keresési eredmény nyomtatása folyamatban</translation>
+        <translation>Keresési eredmény nyomtatása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="146"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="145"/>
         <source>Works chosen for the search and the number of the hits in each work</source>
-        <translation>A keresésre kiválasztott dokumentumok, és találatok dokumentumonként</translation>
+        <translation>A keresésre kiválasztott művek és a bennük lévő találatok száma</translation>
     </message>
 </context>
 <context>
@@ -4801,12 +4909,12 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="222"/>
         <source>S&amp;earch range:</source>
-        <translation>K&amp;eresési kör:</translation>
+        <translation>K&amp;eresési hatókör:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="223"/>
         <source>Select a scope from the list to edit the searchranges</source>
-        <translation>Válasszon hatókört a listából, hogy módosíthassa a keresési kört</translation>
+        <translation>Válasszon hatókört a listából, a keresési tartomány szerkesztéséhez</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="234"/>
@@ -4816,32 +4924,32 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="237"/>
         <source>Edi&amp;t current range:</source>
-        <translation>A keresési kör szerkesz&amp;tése:</translation>
+        <translation>A keresési tartomány szerkesz&amp;tése:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="238"/>
         <source>Change the search ranges of the selected searchscope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation>A kiválasztott keresési kör megváltoztatása. Vessen egy pillantást az előre definiált hatókörökről, hogy lássa, hogyan épülnek fel a keresési körök.</translation>
+        <translation>A kiválasztott keresési hatókör tartományainak szerkesztése. A tartományok megadási módjának megértéséhez, vessen egy pillantást az előre definiált hatókörökre.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="243"/>
         <source>Parsed search range:</source>
-        <translation>Ellenőrzött keresési kör:</translation>
+        <translation>Feldolgozott keresési tartomány:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="189"/>
         <source>New range</source>
-        <translation>Új kör megadása</translation>
+        <translation>Új tartomány</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="226"/>
         <source>&amp;Add new scope</source>
-        <translation>Új h&amp;atókör hozzásadása</translation>
+        <translation>Új h&amp;atókör hozzáadása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="227"/>
         <source>Add a new search scope. First enter an appropriate name, then edit the search ranges.</source>
-        <translation>Új keresési hatókör megadása. Először adja meg a nevet, majd egészítse ki a hatókört.</translation>
+        <translation>Új keresési hatókör megadása. Először adja meg a nevet, majd adja meg a keresési tartományokat.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="231"/>
@@ -4851,17 +4959,17 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="232"/>
         <source>Delete the selected search scope</source>
-        <translation>A kiválasztott hatókörök törlése</translation>
+        <translation>A kijelölt hatókör törlése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="235"/>
         <source>Change the name of the selected search scope</source>
-        <translation>A kiválasztott keresési kör nevének megváltoztatása</translation>
+        <translation>A kijelölt keresési hatókör nevének szerkesztése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="244"/>
         <source>The search ranges which will be used for the search, parsed to the canonical form</source>
-        <translation>A keresésben résztvevő jatókörök egyszerűsített formában lettek jelölve</translation>
+        <translation>A keresésben majd résztvevő pontos tartományok, a fent megadott szöveges formából értelmezve</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="220"/>
@@ -4874,111 +4982,115 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisdialog.cpp" line="83"/>
         <source>Analysis of search results</source>
-        <translation type="unfinished"></translation>
+        <translation>A keresési eredmények részletei</translation>
     </message>
 </context>
 <context>
     <name>Search::CSearchAnalysisScene</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="207"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="206"/>
         <source>Save Search Analysis</source>
-        <translation>Keresési analízis mentése</translation>
+        <translation>Keresési elemzés mentése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="222"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="221"/>
         <source>BibleTime Search Analysis</source>
-        <translation>Bibletime keresés elemzése</translation>
+        <translation>BibleTime keresés elemzése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="244"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="243"/>
         <source>Search text:</source>
-        <translation type="unfinished"></translation>
+        <translation>Szöveg keresése:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="248"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="247"/>
         <source>Results by work and book</source>
-        <translation type="unfinished"></translation>
+        <translation>Találatok mű és könyv szerint</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="250"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="249"/>
         <source>Book</source>
         <translation>Könyv</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="271"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="270"/>
         <source>Total hits</source>
         <translation>Összes találat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="282"/>
-        <source>Created by &lt;a href=&quot;https://bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="281"/>
+        <source>Created by &lt;a href=&quot;%1&quot;&gt;BibleTime&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Created by &lt;a href=&quot;https://bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
+        <translation type="vanished">A &lt;a href=&quot;https://bibletime.info/&quot;&gt;BibleTime&lt;/a&gt; hozta létre</translation>
     </message>
 </context>
 <context>
     <name>Search::CSearchDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="142"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="141"/>
         <source>Missing indices</source>
-        <translation>Hiányzó mutatók</translation>
+        <translation>Hiányzó indexek</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="48"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="47"/>
         <source>Search</source>
         <translation>Keresés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="144"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="143"/>
         <source>The following modules need to be indexed before they can be searched in:</source>
         <translation>A keresés megkezdése előtt a következő modulokat indexelni kell:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="147"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="146"/>
         <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
-        <translation>Az indexelés jelentős időt vehet igénybe. Válassza az &quot;Igent&quot; a modulok indexeléséhez és a keresés megkezdéséhez, vagy a &quot;Nem&quot; gombot a keresésé felfüggesztéséhez.</translation>
+        <translation>Az indexelés jelentős időt vehet igénybe. Válassza az &quot;Igent&quot; a modulok indexeléséhez és a keresés megkezdéséhez, vagy a &quot;Nem&quot; gombot a keresés felfüggesztéséhez.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="183"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="182"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;UNKNOWN EXCEPTION&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="186"/>
+        <source>Search aborted</source>
+        <translation>Keresés megszakítva</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="187"/>
-        <source>Search aborted</source>
-        <translation>Keresésé megszakítva</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="188"/>
         <source>An internal error occurred while executing your search:&lt;br/&gt;&lt;br/&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiba történt a keresés végrehajtása közben: &lt;br/&gt;&lt;br/&gt;%1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="62"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="61"/>
         <source>Drag any verse reference onto an open Bible window</source>
-        <translation>Húzzon bármely vershivatkozást a megnyitott Biblia ablakba</translation>
+        <translation>Húzzon bármely vershivatkozást egy megnyitott Biblia ablakba</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="70"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="69"/>
         <source>&amp;Analyze results...</source>
         <translation>T&amp;alálatok elemzése...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="71"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="70"/>
         <source>Show a graphical analysis of the search result</source>
-        <translation>A találatok grafikus elemzésének mutatása</translation>
+        <translation>A találatok grafikus elemzésének megjelenítése</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="73"/>
+        <source>&amp;Manage Indexes...</source>
+        <translation>&amp;Indexek kezelése...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="74"/>
-        <source>&amp;Manage Indexes...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="75"/>
         <source>Recreate search indexes</source>
-        <translation type="unfinished"></translation>
+        <translation>Keresési indexek újra létrehozása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="79"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="78"/>
         <source>&amp;Close</source>
         <translation>&amp;Bezárás</translation>
     </message>
@@ -5021,24 +5133,24 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="122"/>
         <source>Printing search result</source>
-        <translation>Keresési eredmény nyomtatása folyamatban</translation>
+        <translation>Keresési eredmény nyomtatása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="98"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="108"/>
         <source>Saving search result</source>
-        <translation>Keresési eredmény mentése folyamatban</translation>
+        <translation>Keresési eredmény mentése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="75"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="84"/>
         <source>Copying search result</source>
-        <translation>Keresési eredmény másolása folyamatban</translation>
+        <translation>Keresési eredmény másolása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="41"/>
         <source>Search result of the selected work</source>
-        <translation>Találatok a választott dokumentumban</translation>
+        <translation>Találatok a kijelölt műben</translation>
     </message>
 </context>
 </TS>

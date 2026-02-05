@@ -1761,7 +1761,7 @@ msgstr "Команда BibleTime"
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 msgid ""
-"<copyright> <year>1999-2025</year> <holder>The &bibletime; Team (bt-"
+"<copyright> <year>1999-2026</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
 msgstr ""
 
