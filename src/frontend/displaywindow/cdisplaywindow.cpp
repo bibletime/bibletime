@@ -161,6 +161,8 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
     BT_ASSERT(m_swordKey);
     if (!key.isEmpty())
         m_swordKey->setKey(key);
+    m_history->add(m_swordKey.get());
+
     setMinimumSize(100, 100);
     setFocusPolicy(Qt::ClickFocus);
 
