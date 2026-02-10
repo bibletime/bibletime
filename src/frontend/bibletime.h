@@ -168,6 +168,7 @@ public: // Types:
         } view;
 
         struct { // Search menu:
+            QAction * searchActiveWindow;
             QAction * searchOpenWorks;
             QAction * searchStandardBible;
         } search;
@@ -436,6 +437,8 @@ private Q_SLOTS:
 
     void autoScrollPause();
     bool autoScrollAnyKey();
+
+    void slotSearchActiveWindow();
 
     /** Called when search button is pressed. */
     void slotSearchModules();

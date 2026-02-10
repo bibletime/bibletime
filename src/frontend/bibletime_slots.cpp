@@ -316,6 +316,16 @@ void BibleTime::slotSetActiveSubWindow(QWidget* window) {
     m_mdi->setActiveSubWindow(dynamic_cast<QMdiSubWindow*>(window));
 }
 
+void BibleTime::slotSearchActiveWindow() {
+    if (auto const * const window = m_mdi->activeSubWindow()) {
+        BT_ASSERT(dynamic_cast<CDisplayWindow *>(window->widget()));
+        auto & widget = *static_cast<CDisplayWindow const *>(window->widget());
+        openSearchDialog(widget.constModules());
+    } else {
+        openSearchDialog(BtConstModuleList());
+    }
+}
+
 void BibleTime::slotSearchModules() {
     //get the modules of the open windows
     BtConstModuleList modules;

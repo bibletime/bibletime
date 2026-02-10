@@ -132,11 +132,19 @@ BibleTime::ActionCollection::ActionCollection(
 
     // Search menu:
 
+    search.searchActiveWindow = new QAction(this);
+    search.searchActiveWindow->setIcon(
+                CResMgr::mainMenu::mainIndex::search::icon());
+    search.searchActiveWindow->setShortcut(
+                tr("Ctrl+O", "Search|Search works in active window/tab"));
+    addAction(QStringLiteral("searchActiveWindow"),
+              search.searchActiveWindow);
+
     search.searchOpenWorks = new QAction(this);
     search.searchOpenWorks->setIcon(
                 CResMgr::mainMenu::mainIndex::search::icon());
     search.searchOpenWorks->setShortcut(
-                tr("Ctrl+O", "Search|Search in open works"));
+                tr("Ctrl+Shift+O", "Search|Search in all open works"));
     addAction(QStringLiteral("searchOpenWorks"), search.searchOpenWorks);
 
     search.searchStandardBible = new QAction(this);
@@ -337,7 +345,12 @@ void BibleTime::ActionCollection::retranslateUi() {
     view.scroll.pauseAutoScroll->setText(tr("Pause auto scroll"));
     view.scroll.pauseAutoScroll->setToolTip(tr("Pause/resume auto scrolling"));
 
-    search.searchOpenWorks->setText(tr("Search in &open works..."));
+    search.searchActiveWindow->setText(
+                tr("&Search works in active window/tab..."));
+    search.searchActiveWindow->setToolTip(
+                tr("Search in all works in the active open window or tab"));
+
+    search.searchOpenWorks->setText(tr("Search in all &open works..."));
     search.searchOpenWorks->setToolTip(
                 tr("Search in all works that are currently open"));
 
@@ -613,6 +626,8 @@ void BibleTime::initActions() {
                this, &BibleTime::autoScrollPause);
 
     // Search menu actions:
+    BT_CONNECT(m_actions->search.searchActiveWindow, &QAction::triggered,
+               this, &BibleTime::slotSearchActiveWindow);
     BT_CONNECT(m_actions->search.searchOpenWorks, &QAction::triggered,
                this, &BibleTime::slotSearchModules);
     BT_CONNECT(m_actions->search.searchStandardBible,
@@ -746,6 +761,7 @@ void BibleTime::initMenubar() {
 
     // Search menu:
     m_searchMenu = new QMenu(this);
+    m_searchMenu->addAction(m_actions->search.searchActiveWindow);
     m_searchMenu->addAction(m_actions->search.searchOpenWorks);
     m_searchMenu->addAction(m_actions->search.searchStandardBible);
     menuBar()->addMenu(m_searchMenu);
