@@ -96,6 +96,7 @@ CDisplayWindow::ActionCollection::ActionCollection(QObject * const parent)
                 CResMgr::displaywindows::general::backInHistory::icon(),
                 tr("Back in history"),
                 this);
+    action->setEnabled(false);
     action->setShortcut(CResMgr::displaywindows::general::backInHistory::accel);
     addAction(CResMgr::displaywindows::general::backInHistory::actionName,
               action);
@@ -104,6 +105,7 @@ CDisplayWindow::ActionCollection::ActionCollection(QObject * const parent)
                 CResMgr::displaywindows::general::forwardInHistory::icon(),
                 tr("Forward in history"),
                 this);
+    action->setEnabled(false);
     action->setShortcut(
                 CResMgr::displaywindows::general::forwardInHistory::accel);
     addAction(CResMgr::displaywindows::general::forwardInHistory::actionName,
