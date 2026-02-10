@@ -22,322 +22,334 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="839"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="855"/>
         <source>&amp;File</source>
         <translation>&amp;Fájl</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="840"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="856"/>
         <source>&amp;View</source>
         <translation>&amp;Nézet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="844"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="860"/>
         <source>&amp;Search</source>
         <translation>&amp;Keresés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="848"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="864"/>
         <source>Sw&amp;itch session</source>
         <translation>Mun&amp;kamenet váltása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="851"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="867"/>
         <source>Se&amp;ttings</source>
         <translation>&amp;Beállítások</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="853"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="869"/>
         <source>&amp;Help</source>
         <translation>&amp;Súgó</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="286"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="294"/>
         <source>&amp;Quit</source>
         <translation>&amp;Kilépés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="413"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="139"/>
+        <source>Ctrl+O</source>
+        <comment>Search|Search works in active window/tab</comment>
+        <translation type="unfinished">Ctrl+O</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="147"/>
+        <source>Ctrl+Shift+O</source>
+        <comment>Search|Search in all open works</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="426"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>Nyissa meg a BibleTime Bibliatanulmányozó segédletét. &lt;br/&gt; Ez a segédlet bemutatja a Biblia hatékony tanulmányozásának alapelveit.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="422"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="435"/>
         <source>Information about the BibleTime program</source>
         <translation>A BibleTime program</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="845"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="861"/>
         <source>&amp;Windows</source>
         <translation>&amp;Ablakok</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="849"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="865"/>
         <source>&amp;Delete session</source>
         <translation>&amp;Munkamenet törlése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="847"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="863"/>
         <source>&amp;Arrangement mode</source>
         <translation>&amp;Ablakok automatikus igazítása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="369"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="382"/>
         <source>&amp;Manual mode</source>
         <translation>&amp;Kézi elrendezés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="378"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="391"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>&amp;Függőleges mozaik elrendezés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="384"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="397"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>&amp;Vízszintes mozaik elrendezés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="393"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="406"/>
         <source>Auto-&amp;cascade</source>
         <translation>Átla&amp;poló elrendezés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="366"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="379"/>
         <source>&amp;Cascade</source>
         <translation>Átla&amp;polás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="354"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="367"/>
         <source>Tile &amp;vertically</source>
         <translation>&amp;Függőleges mozaik</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="358"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="371"/>
         <source>Tile &amp;horizontally</source>
         <translation>&amp;Vízszintes mozaik</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="350"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="363"/>
         <source>Cl&amp;ose all windows</source>
         <translation>Öss&amp;zes ablak bezárása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="352"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="365"/>
         <source>Close all open windows inside BibleTime</source>
         <translation>Az összes BibleTime ablak bezárása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="400"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="413"/>
         <source>Bookshelf Manager...</source>
         <translation>Könyvespolc-kezelő...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="408"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="421"/>
         <source>&amp;Handbook</source>
         <translation>&amp;Kézikönyv</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="411"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="424"/>
         <source>&amp;Bible Study Howto</source>
         <translation>Hogyan tanulmányozza a &amp;Bibliát</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="356"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="366"/>
         <source>Error locating handbook!</source>
         <translation>A kézikönyv betöltése nem sikerült.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="357"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="367"/>
         <source>A suitable installed handbook could not be found!</source>
         <translation>Nincs telepítve megfelelő kézikönyv.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="363"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="373"/>
         <source>Error opening handbook!</source>
         <translation>A kézikönyv megnyitása nem sikerült.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="364"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="374"/>
         <source>The installed handbook could not be opened!</source>
         <translation>A telepített kézikönyv nem nyitható meg.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="372"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="382"/>
         <source>Error locating howto!</source>
         <translation>Hiba történt a tanulmányozási segédlet keresésekor.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="373"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="383"/>
         <source>A suitable installed howto could not be found!</source>
         <translation>Nincs telepítve megfelelő tanulmányozási segédlet.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="379"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="389"/>
         <source>Error opening howto!</source>
         <translation>A tanulmányozási segédlet megnyitása nem sikerült.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="380"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="390"/>
         <source>The installed howto could not be opened!</source>
         <translation>A telepített tanulmányozási segédlet nem nyitható meg.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="661"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="671"/>
         <source>Please enter a name for the new session.</source>
         <translation>Adjon nevet az új munkamenetnek.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="669"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="679"/>
         <source>Session already exists</source>
         <translation>Már létezik munkamenet ilyen néven.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="670"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="680"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
         <translation>Már létezik munkamenet &quot;%1&quot; néven. Válasszon egy másik nevet.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="287"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="295"/>
         <source>Quit BibleTime</source>
         <translation>BibleTime bezárása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="329"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="337"/>
         <source>Auto scroll up</source>
         <translation>Automatikus görgetés felfelé</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="333"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="341"/>
         <source>Auto scroll down</source>
         <translation>Automatikus görgetés lefelé</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="340"/>
-        <source>Search in &amp;open works...</source>
-        <translation>Keresés a megnyit&amp;ott művekben...</translation>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="353"/>
+        <source>Search in all &amp;open works...</source>
+        <translation type="unfinished">Keresés a megnyit&amp;ott művekben...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="344"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="357"/>
         <source>Search in standard &amp;Bible...</source>
         <translation>Keresés az alapértelmezett &amp;Bibliában...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="397"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="410"/>
         <source>Save as &amp;new session...</source>
         <translation>Me&amp;ntés új munkamenetként...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="398"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="411"/>
         <source>Create and save a new session</source>
         <translation>Új munkamenet létrehozása és mentése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="371"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="384"/>
         <source>Manually arrange the open windows</source>
         <translation>A megnyitott ablakok kézi igazítása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="380"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="393"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation>A megnyitott ablakok automatikus függőleges elrendezése (egymás mellé rendezése)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="386"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="399"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation>A megnyitott ablakok automatikus vízszintes elrendezése (egymás alá rendezése)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="389"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="402"/>
         <source>Auto-&amp;tile</source>
         <translation>Automatikus &amp;mozaik elrendezés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="391"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="404"/>
         <source>Automatically tile the open windows</source>
         <translation>Automatikusan mozaik elrendezésre váltja a megnyitott ablakokat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="373"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="386"/>
         <source>Ta&amp;bbed</source>
         <translation>La&amp;ponként</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="375"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="388"/>
         <source>Automatically tab the open windows</source>
         <translation>Automatikusan laponkénti nézetbe helyezi a megnyitott ablakokat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="395"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="408"/>
         <source>Automatically cascade the open windows</source>
         <translation>A megnyitott ablakok automatikus átfedő elrendezése (egymásra lapolva)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="367"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="380"/>
         <source>Cascade the open windows</source>
         <translation>Megnyitott ablakok egymásra lapolása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="363"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="376"/>
         <source>&amp;Tile</source>
         <translation>&amp;Mozaik</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="364"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="377"/>
         <source>Tile the open windows</source>
         <translation>Mozaik elrendezésre váltja a megnyitott ablakokat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="356"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="369"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>A megnyitott ablakok automatikus (egymás mellé rendezése) függőleges elrendezése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="360"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="373"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>A megnyitott ablakok automatikus (egymás alá rendezése) vízszintes elrendezése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="347"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="360"/>
         <source>Close &amp;window</source>
         <translation>Ablakok be&amp;zárása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="348"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="361"/>
         <source>Close the current open window</source>
         <translation>Jelenlegi ablak bezárása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="405"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="418"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>BibleTime beá&amp;llítása...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="406"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="419"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>A BibleTime alapértelmezéseinek beállítása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="402"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="415"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>A könyvespolc beállítása, művek telepítése, frissítése, törlése és indexelése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="409"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="422"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation>BibleTime kézikönyv megnyitása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="417"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="430"/>
         <source>&amp;Tip of the day...</source>
         <translation>A nap &amp;tippje...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="418"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="431"/>
         <source>Show tips about BibleTime</source>
         <translation>Ötletek megjelenítése a BibleTime használatához</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="294"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="302"/>
         <source>Toggle visibility of the bookshelf window</source>
         <translation>A könyvespolc ablak láthatóságának váltása</translation>
     </message>
@@ -384,286 +396,290 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Szóköz</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="139"/>
-        <source>Ctrl+O</source>
-        <comment>Search|Search in open works</comment>
-        <translation>Ctrl+O</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="146"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="154"/>
         <source>Ctrl+Alt+F</source>
         <comment>Search|Search in the default Bible</comment>
         <translation>Ctrl+Alt+F</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="153"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="161"/>
         <source>Ctrl+W</source>
         <comment>Windows|Close window</comment>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="160"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="168"/>
         <source>Ctrl+Alt+W</source>
         <comment>Windows|Close all windows</comment>
         <translation>Ctrl+Alt+W</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="167"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="175"/>
         <source>Ctrl+G</source>
         <comment>Windows|Tile vertically</comment>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="174"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="182"/>
         <source>Ctrl+H</source>
         <comment>Windows|Tile horizontally</comment>
         <translation>Ctrl+H</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="179"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="187"/>
         <source>Ctrl+I</source>
         <comment>Windows|Tile</comment>
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="184"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="192"/>
         <source>Ctrl+J</source>
         <comment>Windows|Cascade</comment>
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="193"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="201"/>
         <source>Ctrl+Alt+M</source>
         <comment>Windows|Arrangement mode|Manual</comment>
         <translation>Ctrl+Alt+M</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="201"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="209"/>
         <source>Ctrl+Alt+T</source>
         <comment>Windows|Arrangement mode|Tabbed</comment>
         <translation>Ctrl+Alt+T</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="209"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="217"/>
         <source>Ctrl+Alt+G</source>
         <comment>Windows|Arrangement mode|Auto tile vertically</comment>
         <translation>Ctrl+Alt+G</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="219"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="227"/>
         <source>Ctrl+Alt+H</source>
         <comment>Windows|Arrangement mode|Auto tile horizontally</comment>
         <translation>Ctrl+Alt+H</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="228"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="236"/>
         <source>Ctrl+Alt+I</source>
         <comment>Windows|Arrangement mode|Auto tile</comment>
         <translation>Ctrl+Alt+I</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="235"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="243"/>
         <source>Ctrl+Alt+J</source>
         <comment>Windows|Arrangement mode|Auto cascade</comment>
         <translation>Ctrl+Alt+J</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="243"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="251"/>
         <source>Ctrl+Alt+S</source>
         <comment>Windows|Save as new session...</comment>
         <translation>Ctrl+Alt+S</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="250"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="258"/>
         <source>F4</source>
         <comment>Settings|Bookshelf Manager...</comment>
         <translation>F4</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="262"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="270"/>
         <source>F1</source>
         <comment>Help|Handbook</comment>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="268"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="276"/>
         <source>F2</source>
         <comment>Help|Bible Study Howto</comment>
         <translation>F2</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="273"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="281"/>
         <source>F3</source>
         <comment>Help|Tip of the day...</comment>
         <translation>F3</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="289"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="297"/>
         <source>&amp;Full screen</source>
         <translation>&amp;Teljes képernyő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="290"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="298"/>
         <source>Display BibleTime in full screen</source>
         <translation>A BibleTime megjelenítése a teljes képernyőn</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="298"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="306"/>
         <source>Toggle visibility of the bookmarks window</source>
         <translation>A könyvjelző ablak láthatóságának váltása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="301"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="309"/>
         <source>Toggle visibility of the mag window</source>
         <translation>A nagyító ablak láthatóságának váltása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="305"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="313"/>
         <source>Toggle the works header row visibility in windows</source>
         <translation>A művek fejlécsorának láthatóságának váltása az ablakokban</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="309"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="317"/>
         <source>Toggle the main toolbar visibility</source>
         <translation>A fő eszköztár láthatóságának váltása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="311"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="319"/>
         <source>Show navigation toolbar</source>
         <translation>Navigációs eszköztár megjelenítése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="313"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="321"/>
         <source>Toggle the navigation toolbar visibility</source>
         <translation>Navigációs eszköztár láthatóságának váltása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="317"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="325"/>
         <source>Toggle the works toolbar visibility</source>
         <translation>A művek eszköztár láthatóságának váltása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="321"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="329"/>
         <source>Toggle the window tools toolbar visibility</source>
         <translation>Az ablakeszközök eszköztár láthatóságának váltása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="326"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="334"/>
         <source>Toggle the location of subwindow-specific toolbars between the main window and subwindows</source>
         <translation>A belső ablakok saját eszköztárának helyzetének váltása a főablak és a belső ablakok közt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="331"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="339"/>
         <source>Adjust automatic scrolling speed in the up direction</source>
         <translation>Az automatikus felfelé görgetés sebességének megadása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="335"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="343"/>
         <source>Adjust automatic scrolling speed in the down direction</source>
         <translation>Az automatikus lefelé görgetés sebességének megadása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="337"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="345"/>
         <source>Pause auto scroll</source>
         <translation>Automatikus görgetés felfüggesztése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="338"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="346"/>
         <source>Pause/resume auto scrolling</source>
         <translation>Automatikus görgetés felfüggesztése vagy folytatása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="834"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="349"/>
+        <source>&amp;Search works in active window/tab...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="351"/>
+        <source>Search in all works in the active open window or tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="850"/>
         <source>Main toolbar</source>
         <translation>Fő eszköztár</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="835"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="851"/>
         <source>Navigation toolbar</source>
         <translation>Navigációs eszköztár</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="836"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="852"/>
         <source>Works toolbar</source>
         <translation>Művek eszköztár</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="837"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="853"/>
         <source>Tools toolbar</source>
         <translation>Eszközök eszköztár</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="856"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="872"/>
         <source>Show &quot;What&apos;s this widget&quot; dialog</source>
         <translation>A &quot;Mi ez az elem&quot; ablak megjelenítése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="842"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="858"/>
         <source>Scroll</source>
         <translation>Görgetés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="307"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="315"/>
         <source>Show main toolbar</source>
         <translation>Fő eszköztár megjelenítése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="315"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="323"/>
         <source>Show works toolbar</source>
         <translation>Művek eszköztár megjelenítése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="319"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="327"/>
         <source>Show tools toolbar</source>
         <translation>Eszközök eszköztár megjelenítése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="292"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="300"/>
         <source>Show bookshelf</source>
         <translation>Könyvespolc megjelenítése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="296"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="304"/>
         <source>Show bookmarks</source>
         <translation>Könyvjelzők megjelenítése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="300"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="308"/>
         <source>Show mag</source>
         <translation>Nagyító ablak megjelenítése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="841"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="857"/>
         <source>Toolbars</source>
         <translation>Eszköztárak</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="324"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="332"/>
         <source>Show toolbars in text windows</source>
         <translation>Eszköztárak megjelenítése a szövegablakokban</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="303"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="311"/>
         <source>Show parallel text headers</source>
         <translation>Párhuzamos szövegfejlécek megjelenítése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="846"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="862"/>
         <source>O&amp;pen windows</source>
         <translation>Megnyitott a&amp;blakok</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="342"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="355"/>
         <source>Search in all works that are currently open</source>
         <translation>Keresés minden megnyitott műben</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="345"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="358"/>
         <source>Search in the standard Bible</source>
         <translation>Keresés az alapértelmezett Bibliában</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="660"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="670"/>
         <source>New Session</source>
         <translation>Új munkamenet</translation>
     </message>
@@ -703,17 +719,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>A megadott feloldókulcs nem oldotta fel ezt a modult. Próbálja meg újra.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="420"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="433"/>
         <source>&amp;About BibleTime</source>
         <translation>&amp;Névjegy</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="832"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="848"/>
         <source>Bookmarks</source>
         <translation>Könyvjelzők</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="833"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="849"/>
         <source>Mag</source>
         <translation>Nagyító</translation>
     </message>
@@ -903,11 +919,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
-        <source>(c)1999-2026, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="204"/>
         <source>&amp;Contributors</source>
         <translation>&amp;Közreműködők</translation>
@@ -1008,8 +1019,9 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>művész</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
         <source>(c)1999-2026, The BibleTime Team</source>
-        <translation type="vanished">(c)1999-2026, A BibleTime Csapat</translation>
+        <translation>(c)1999-2026, A BibleTime Csapat</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
@@ -2785,7 +2797,7 @@ Jézus így válaszolt:
         <translation>Vissza az előzményekben</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="105"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="106"/>
         <source>Forward in history</source>
         <translation>Előre az előzményekben</translation>
     </message>
@@ -2825,99 +2837,99 @@ Jézus így válaszolt:
         <translation>Keresés az ebben az ablakban megnyitott művekben</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="112"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="114"/>
         <source>Copy reference only</source>
         <translation>Csak a hivatkozás másolása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="115"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="117"/>
         <source>Save entry as HTML</source>
         <translation>Bejegyzés mentése HTML formátumban</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="118"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="120"/>
         <source>Print reference only</source>
         <translation>Csak a hivatkozás nyomtatása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="121"/>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="127"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="123"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="129"/>
         <source>Entry with text</source>
         <translation>Bejegyzés szöveggel</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="124"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="126"/>
         <source>Entry as plain text</source>
         <translation>Bejegyzés egyszerű szövegként</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="130"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="132"/>
         <source>Strong&apos;s Search</source>
         <translation>Strong számos keresés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="135"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="137"/>
         <source>Speak selected text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="204"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="208"/>
         <source>Work chooser buttons</source>
         <translation>Műválasztó gombok</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="232"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="236"/>
         <source>Text area header</source>
         <translation>Szövegterület fejrésze</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="364"/>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="377"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="368"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="381"/>
         <source>Saving</source>
         <translation>Mentés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="431"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="435"/>
         <source>&lt;NO WORKS&gt;</source>
         <translation>&lt;NINCS MŰ&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="557"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="561"/>
         <source>Copy...</source>
         <translation>Másolás...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="566"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="570"/>
         <source>Save...</source>
         <translation>Mentés...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="575"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="579"/>
         <source>Print...</source>
         <translation>Nyomtatás...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="592"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="596"/>
         <source>DEBUG: Show raw text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="732"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="736"/>
         <source>Choose Standard Bible</source>
         <translation>Válasszon alapértelmezett Bibliát</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="733"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="737"/>
         <source>Please choose a Bible in the Settings &gt; Configure dialog.</source>
         <translation>Válasszon egy alapértelmezett Bibliát a Beállítások &gt; BibleTime beállítása menüben.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="185"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="189"/>
         <source>Navigation</source>
         <translation>Navigáció</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="219"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="223"/>
         <source>Tool</source>
         <translation>Eszköz</translation>
     </message>
