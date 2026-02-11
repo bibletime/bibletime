@@ -2,7 +2,7 @@ name: Feedback
 description: For giving thanks, general discussion etc.
 title: '[FEEDBACK] '
 labels:
-  - 'type: Feedback'
+  - 'type: Feedback 💬'
 assignees: []
 body:
 

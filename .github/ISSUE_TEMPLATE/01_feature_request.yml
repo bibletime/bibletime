@@ -2,7 +2,7 @@ name: Enhancement proposal
 description: Suggest an idea or new feature for BibleTime
 title: '[ENHANCEMENT] '
 labels:
-  - 'type: ENHANCEMENT'
+  - 'type: ENHANCEMENT 💡'
 assignees: []
 body:
 

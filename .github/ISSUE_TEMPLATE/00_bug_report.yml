@@ -2,7 +2,7 @@ name: Bug report
 description: Create a report to help us improve BibleTime
 title: '[BUG] '
 labels:
-  - 'type: BUG'
+  - 'type: BUG 🪰'
 assignees: []
 body:
 

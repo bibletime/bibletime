@@ -3,7 +3,7 @@ name: Technical debt
 description: A technical debt description
 title: '[TECHDEBT] '
 labels:
-  - 'type: TECHDEBT'
+  - 'type: TECHDEBT 🔧'
 assignees: []
 body:
 

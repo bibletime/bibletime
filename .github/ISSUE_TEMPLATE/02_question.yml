@@ -2,7 +2,7 @@ name: Question
 description: Request help solving a problem or information about BibleTime
 title: '[QUESTION] '
 labels:
-  - 'type: QUESTION'
+  - 'type: QUESTION ❔'
 assignees: []
 body:
 
