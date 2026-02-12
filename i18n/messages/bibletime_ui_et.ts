@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="et">
+<TS version="2.1" language="et_EE">
 <context>
     <name></name>
     <message>
@@ -60,13 +60,13 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/bibletime_init.cpp" line="139"/>
         <source>Ctrl+O</source>
         <comment>Search|Search works in active window/tab</comment>
-        <translation type="unfinished">Ctrl+O</translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="147"/>
         <source>Ctrl+Shift+O</source>
         <comment>Search|Search in all open works</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+O</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="426"/>
@@ -222,11 +222,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/bibletime_init.cpp" line="341"/>
         <source>Auto scroll down</source>
         <translation>Automaatne alla kerimine</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="353"/>
-        <source>Search in all &amp;open works...</source>
-        <translation>Otsi &amp;kõigist avatud teostest...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="357"/>
@@ -581,12 +576,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="349"/>
         <source>&amp;Search works in active window/tab...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Otsi aktiivse akna/saki teostest...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="351"/>
         <source>Search in all works in the active open window or tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsib kõikist aktiivses aknas või sakis olevatest teostest</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="353"/>
+        <source>Search in all &amp;open works...</source>
+        <translation>Otsi &amp;kõigist avatud teostest...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="850"/>
@@ -2641,7 +2641,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="140"/>
         <source>Did you know? You can help translating the GUI of BibleTime to your language at &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt;.</source>
-        <translation>Kas teadsid, et võid aidata tõlkida BibleTime-i oma keelde &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifexis&lt;/a&gt;?</translation>
+        <translation>Kas teadsid, et võid aidata tõlkida BibleTime oma keelde &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifexis&lt;/a&gt;?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="236"/>
