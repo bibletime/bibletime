@@ -1,12 +1,12 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.25)
 MESSAGE(STATUS "Using CMake ${CMAKE_VERSION}: ${CMAKE_COMMAND}")
 PROJECT(BibleTime
-  VERSION 3.1.0
+  VERSION 3.2.0
   DESCRIPTION "A Bible study application"
   HOMEPAGE_URL "https://bibletime.info/"
   LANGUAGES NONE # Defer compiler detection (logs) to AFTER versioning logic
 )
-SET(PROJECT_VERSION_TWEAK "") # e.g. _alpha1, _beta2, _rc3
+SET(PROJECT_VERSION_TWEAK "_rc1") # e.g. _alpha1, _beta2, _rc3
 SET(PROJECT_VERSION "${PROJECT_VERSION}${PROJECT_VERSION_TWEAK}")
 MESSAGE(STATUS "BibleTime version in CMakeLists.txt: ${PROJECT_VERSION}")
 BLOCK(PROPAGATE PROJECT_VERSION)
