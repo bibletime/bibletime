@@ -29,7 +29,7 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v6
     - name: Gather system information
       run: |
         mkdir -p "${HOME}/info"

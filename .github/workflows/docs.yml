@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v6
       with:
         path: code
     - name: Check if the reference was a valid tag for a valid repository
@@ -45,7 +45,7 @@ jobs:
         cmake -DBUILD_BIBLETIME=NO -DCMAKE_INSTALL_PREFIX=../install/ ../code
         make "-j$(cat "${HOME}/info/num_threads")"
         make "-j$(cat "${HOME}/info/num_threads")" install
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v6
       if: steps.isValidTag.outcome == 'success'
       with:
         repository: bibletime/generated_docs
