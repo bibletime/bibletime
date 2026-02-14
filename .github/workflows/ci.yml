@@ -30,6 +30,9 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
     steps:
     - uses: actions/checkout@v6
+      with:
+        fetch-depth: 2000
+        fetch-tags: true
     - name: Gather system information
       run: |
         mkdir -p "${HOME}/info"
