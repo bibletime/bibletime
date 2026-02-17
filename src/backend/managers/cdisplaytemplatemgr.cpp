@@ -188,7 +188,9 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
                    requires a real number in the range [1, 1000]. No extra
                    checks are needed for floating point precision in the result
                    range. */
-                auto const fontWeight = 1.0 + (f.weight() * 999.0) / 99.0;
+                using U = std::underlying_type_t<decltype(f.weight())>;
+                auto const fontWeight =
+                        1.0 + (static_cast<U>(f.weight()) * 999.0) / 99.0;
 
                 auto const fontStyleString =
                         [&f]() {
