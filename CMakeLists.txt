@@ -6,7 +6,7 @@ PROJECT(BibleTime
   HOMEPAGE_URL "https://bibletime.info/"
   LANGUAGES NONE # Defer compiler detection (logs) to AFTER versioning logic
 )
-SET(PROJECT_VERSION_TWEAK "_rc1") # e.g. _alpha1, _beta2, _rc3
+SET(PROJECT_VERSION_TWEAK "") # e.g. _alpha1, _beta2, _rc3
 SET(PROJECT_VERSION "${PROJECT_VERSION}${PROJECT_VERSION_TWEAK}")
 MESSAGE(STATUS "BibleTime version in CMakeLists.txt: ${PROJECT_VERSION}")
 BLOCK(PROPAGATE PROJECT_VERSION)
