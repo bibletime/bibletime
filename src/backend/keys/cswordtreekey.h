@@ -50,11 +50,12 @@ class CSwordTreeKey final : public CSwordKey {
     public:
 
         #define BibleTime_CSwordTreeKey_DEFINE_COMP(op) \
-            friend bool operator op(CSwordTreeKey const & lhs, \
+            friend auto operator op(CSwordTreeKey const & lhs, \
                                     CSwordTreeKey const & rhs) \
             { return lhs.offset() op rhs.offset(); }
         #if __cpp_impl_three_way_comparison >= 201907L
         BibleTime_CSwordTreeKey_DEFINE_COMP(<=>)
+        BibleTime_CSwordTreeKey_DEFINE_COMP(==)
         #else
         BibleTime_CSwordTreeKey_DEFINE_COMP(<)
         BibleTime_CSwordTreeKey_DEFINE_COMP(<=)

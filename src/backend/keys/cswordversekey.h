@@ -71,7 +71,7 @@ class CSwordVerseKey final : public CSwordKey {
     public: // methods:
 
         #define BibleTime_CSwordVerseKey_DEFINE_COMP(op) \
-            friend bool operator op(CSwordVerseKey const & lhs, \
+            friend auto operator op(CSwordVerseKey const & lhs, \
                                     CSwordVerseKey const & rhs) \
             { \
                 return std::tuple(lhs.testament(), lhs.book(), lhs.chapter(), \
@@ -81,6 +81,7 @@ class CSwordVerseKey final : public CSwordKey {
             }
         #if __cpp_impl_three_way_comparison >= 201907L
         BibleTime_CSwordVerseKey_DEFINE_COMP(<=>)
+        BibleTime_CSwordVerseKey_DEFINE_COMP(==)
         #else
         BibleTime_CSwordVerseKey_DEFINE_COMP(<)
         BibleTime_CSwordVerseKey_DEFINE_COMP(<=)
