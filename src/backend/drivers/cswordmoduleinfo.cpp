@@ -32,6 +32,7 @@
 #include "../../util/cresmgr.h"
 #include "../../util/directory.h"
 #include "../../util/tool.h"
+#include "../../util/to_underlying.h"
 #include "../config/btconfig.h"
 #include "../keys/cswordkey.h"
 #include "../managers/cswordbackend.h"
@@ -512,13 +513,19 @@ void CSwordModuleInfo::buildIndex() {
 
             lucene::document::Document doc;
 
+            #define U(C) \
+                static constexpr auto LUCENE_ ## C = \
+                    util::to_underlying(lucene::document::Field::C)
+            U(STORE_YES); U(STORE_NO); U(INDEX_NO); U(INDEX_TOKENIZED);
+            #undef U
+
             //index the key
             lucene_utf8towcs(wcharBuffer, key->getText(), BT_MAX_LUCENE_FIELD_LENGTH);
 
             doc.add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("key")),
                                                   static_cast<const TCHAR *>(wcharBuffer),
-                                                  lucene::document::Field::STORE_YES
-                                                  | lucene::document::Field::INDEX_NO)));
+                                                  LUCENE_STORE_YES
+                                                  | LUCENE_INDEX_NO)));
 
             if (importantFilterOption) {
                 // Index text including strongs, morph, footnotes, and headings.
@@ -529,8 +536,8 @@ void CSwordModuleInfo::buildIndex() {
                                  BT_MAX_LUCENE_FIELD_LENGTH);
                 doc.add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("content")),
                                                       static_cast<const TCHAR *>(wcharBuffer),
-                                                      lucene::document::Field::STORE_NO
-                                                      | lucene::document::Field::INDEX_TOKENIZED)));
+                                                      LUCENE_STORE_NO
+                                                      | LUCENE_INDEX_TOKENIZED)));
                 textBuffer.clear();
             }
 
@@ -542,16 +549,16 @@ void CSwordModuleInfo::buildIndex() {
                              BT_MAX_LUCENE_FIELD_LENGTH);
             doc.add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("content")),
                                                   static_cast<const TCHAR *>(wcharBuffer),
-                                                  lucene::document::Field::STORE_NO
-                                                  | lucene::document::Field::INDEX_TOKENIZED)));
+                                                  LUCENE_STORE_NO
+                                                  | LUCENE_INDEX_TOKENIZED)));
             textBuffer.clear();
 
             for (auto & vp : m_swordModule.getEntryAttributes()["Footnote"]) {
                 lucene_utf8towcs(wcharBuffer, vp.second["body"], BT_MAX_LUCENE_FIELD_LENGTH);
                 doc.add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("footnote")),
                                                       static_cast<const TCHAR *>(wcharBuffer),
-                                                      lucene::document::Field::STORE_NO
-                                                      | lucene::document::Field::INDEX_TOKENIZED)));
+                                                      LUCENE_STORE_NO
+                                                      | LUCENE_INDEX_TOKENIZED)));
             }
 
             // Headings
@@ -561,8 +568,8 @@ void CSwordModuleInfo::buildIndex() {
                 lucene_utf8towcs(wcharBuffer, vp.second, BT_MAX_LUCENE_FIELD_LENGTH);
                 doc.add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("heading")),
                                                       static_cast<const TCHAR *>(wcharBuffer),
-                                                      lucene::document::Field::STORE_NO
-                                                      | lucene::document::Field::INDEX_TOKENIZED)));
+                                                      LUCENE_STORE_NO
+                                                      | LUCENE_INDEX_TOKENIZED)));
             }
 
             // Strongs/Morphs
@@ -582,8 +589,8 @@ void CSwordModuleInfo::buildIndex() {
                         lucene_utf8towcs(wcharBuffer, lemmaIter->second, BT_MAX_LUCENE_FIELD_LENGTH);
                         doc.add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("strong")),
                                                               static_cast<const TCHAR *>(wcharBuffer),
-                                                              lucene::document::Field::STORE_NO
-                                                              | lucene::document::Field::INDEX_TOKENIZED)));
+                                                              LUCENE_STORE_NO
+                                                              | LUCENE_INDEX_TOKENIZED)));
                     }
 
                 }
@@ -593,8 +600,8 @@ void CSwordModuleInfo::buildIndex() {
                     lucene_utf8towcs(wcharBuffer, morphIter->second, BT_MAX_LUCENE_FIELD_LENGTH);
                     doc.add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("morph")),
                                                           static_cast<const TCHAR *>(wcharBuffer),
-                                                          lucene::document::Field::STORE_NO
-                                                          | lucene::document::Field::INDEX_TOKENIZED)));
+                                                          LUCENE_STORE_NO
+                                                          | LUCENE_INDEX_TOKENIZED)));
                 }
             }
 
