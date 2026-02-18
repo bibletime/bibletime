@@ -12,6 +12,9 @@
 
 #pragma once
 
+#if __cplusplus >= 202002L
+#include <atomic>
+#endif
 #include <memory>
 #include <QObject>
 #include <QString>
@@ -237,7 +240,11 @@ private: // fields:
     } m_manager;
 
     std::shared_ptr<BtBookshelfModel> const m_dataModel;
+#if __cplusplus >= 202002L
+    std::atomic<std::shared_ptr<AvailableLanguagesCacheContainer const>>
+#else
     std::shared_ptr<AvailableLanguagesCacheContainer const>
+#endif
             m_availableLanguagesCache;
 
     static CSwordBackend * m_instance;

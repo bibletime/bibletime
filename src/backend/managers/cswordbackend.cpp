@@ -60,8 +60,12 @@ CSwordBackend::CSwordBackend()
 {
     auto const clearCache =
             [this]() noexcept {
+                #if __cplusplus >= 202002L
+                m_availableLanguagesCache.store(
+                #else
                 std::atomic_store_explicit(
                             &m_availableLanguagesCache,
+                #endif
                             decltype(m_availableLanguagesCache)(),
                             std::memory_order_relaxed);
             };
@@ -99,10 +103,13 @@ CSwordModuleInfo * CSwordBackend::findFirstAvailableModule(CSwordModuleInfo::Mod
 }
 
 std::shared_ptr<CSwordBackend::AvailableLanguagesCacheContainer const>
-CSwordBackend::availableLanguages() noexcept
-{
+CSwordBackend::availableLanguages() noexcept {
+    #if __cplusplus >= 202002L
+    auto oldCache = m_availableLanguagesCache.load(std::memory_order_acquire);
+    #else
     auto oldCache = std::atomic_load_explicit(&m_availableLanguagesCache,
                                               std::memory_order_acquire);
+    #endif
     if (oldCache)
         return oldCache;
 
@@ -120,9 +127,14 @@ CSwordBackend::availableLanguages() noexcept
             };
 
     for (auto newCache = generateCache();; newCache = generateCache())
+        #if __cplusplus >= 202002L
+        if (m_availableLanguagesCache.compare_exchange_strong(
+                oldCache,
+        #else
         if (std::atomic_compare_exchange_strong_explicit(
                 &m_availableLanguagesCache,
                 &oldCache,
+        #endif
                 newCache,
                 std::memory_order_acq_rel,
                 std::memory_order_relaxed))
