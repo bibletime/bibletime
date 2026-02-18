@@ -28,11 +28,11 @@
 #include <string>
 #include <string_view>
 #include <type_traits>
+#include <utility>
 #include "../../util/btassert.h"
 #include "../../util/cresmgr.h"
 #include "../../util/directory.h"
 #include "../../util/tool.h"
-#include "../../util/to_underlying.h"
 #include "../config/btconfig.h"
 #include "../keys/cswordkey.h"
 #include "../managers/cswordbackend.h"
@@ -515,7 +515,7 @@ void CSwordModuleInfo::buildIndex() {
 
             #define U(C) \
                 static constexpr auto LUCENE_ ## C = \
-                    util::to_underlying(lucene::document::Field::C)
+                    std::to_underlying(lucene::document::Field::C)
             U(STORE_YES); U(STORE_NO); U(INDEX_NO); U(INDEX_TOKENIZED);
             #undef U
 

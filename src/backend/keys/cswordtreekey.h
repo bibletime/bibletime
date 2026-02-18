@@ -49,22 +49,13 @@ class CSwordTreeKey final : public CSwordKey {
 
     public:
 
-        #define BibleTime_CSwordTreeKey_DEFINE_COMP(op) \
-            friend auto operator op(CSwordTreeKey const & lhs, \
-                                    CSwordTreeKey const & rhs) \
-            { return lhs.offset() op rhs.offset(); }
-        #if __cpp_impl_three_way_comparison >= 201907L
-        BibleTime_CSwordTreeKey_DEFINE_COMP(<=>)
-        BibleTime_CSwordTreeKey_DEFINE_COMP(==)
-        #else
-        BibleTime_CSwordTreeKey_DEFINE_COMP(<)
-        BibleTime_CSwordTreeKey_DEFINE_COMP(<=)
-        BibleTime_CSwordTreeKey_DEFINE_COMP(==)
-        BibleTime_CSwordTreeKey_DEFINE_COMP(!=)
-        BibleTime_CSwordTreeKey_DEFINE_COMP(>=)
-        BibleTime_CSwordTreeKey_DEFINE_COMP(>)
-        #endif
-        #undef BibleTime_CSwordTreeKey_DEFINE_COMP
+        friend auto
+        operator<=>(CSwordTreeKey const & lhs, CSwordTreeKey const & rhs)
+        { return lhs.offset() <=> rhs.offset(); }
+
+        friend auto
+        operator==(CSwordTreeKey const & lhs, CSwordTreeKey const & rhs)
+        { return lhs.offset() == rhs.offset(); }
 
         CSwordTreeKey & operator=(CSwordTreeKey const &) = delete;
 

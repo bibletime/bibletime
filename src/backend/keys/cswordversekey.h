@@ -79,17 +79,8 @@ class CSwordVerseKey final : public CSwordKey {
                        std::tuple(rhs.testament(), rhs.book(), rhs.chapter(), \
                                   rhs.verse(), rhs.suffix()); \
             }
-        #if __cpp_impl_three_way_comparison >= 201907L
         BibleTime_CSwordVerseKey_DEFINE_COMP(<=>)
         BibleTime_CSwordVerseKey_DEFINE_COMP(==)
-        #else
-        BibleTime_CSwordVerseKey_DEFINE_COMP(<)
-        BibleTime_CSwordVerseKey_DEFINE_COMP(<=)
-        BibleTime_CSwordVerseKey_DEFINE_COMP(==)
-        BibleTime_CSwordVerseKey_DEFINE_COMP(!=)
-        BibleTime_CSwordVerseKey_DEFINE_COMP(>=)
-        BibleTime_CSwordVerseKey_DEFINE_COMP(>)
-        #endif
         #undef BibleTime_CSwordVerseKey_DEFINE_COMP
 
         CSwordVerseKey & operator=(CSwordVerseKey const &) = delete;
