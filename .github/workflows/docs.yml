@@ -4,6 +4,12 @@ on:
   push:
     tags:
       - v[0-9]+.**
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'The tag for which to (re-)generate the documentation for.'
+        type: string
+        required: false
 
 defaults:
   run:
@@ -15,9 +21,13 @@ jobs:
     steps:
     - uses: actions/checkout@v6
       with:
-        fetch-depth: 2000
-        fetch-tags: true
+        ref: refs/tags/${{ inputs.tag || github.ref_name }}
         path: code
+    - uses: actions/checkout@v6
+      with:
+        path: ci
+        sparse-checkout: |
+          .github/workflows
     - name: Gather system information
       run: |
         mkdir -p "${HOME}/info"
@@ -47,18 +57,18 @@ jobs:
         git config --worktree user.email 'invalid@invalid'
     - name: Add, commit and push the generated documentation
       working-directory: generated_docs
+      environment:
+        SHORTREF: ${{ inputs.tag || github.ref_name }}
       run: |
-        SHORTREF="${GITHUB_REF#refs/tags/}"
-        SHORTREF="${SHORTREF%_generate_docs_only}"
         EMPTY=""
         git rm -rf --ignore-unmatch "docs/${SHORTREF}"
         mkdir -p "docs/${SHORTREF}"
         mv ../install/share/doc/BibleTime/{handbook,howto} "docs/${SHORTREF}/"
         git add "docs/${SHORTREF}"
-        ../code/.github/workflows/generate_docs_index.sh > docs/index.html
+        ../ci/.github/workflows/generate_docs_index.sh > docs/index.html
         git add docs/index.html
         cat << EOF > commitMessage
-        Automatic update for ${GITHUB_REF}
+        Automatic GitHub ${GITHUB_EVENT_NAME:-workflow} update for ${SHORTREF}
         $EMPTY
         GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}
         GITHUB_REF: ${GITHUB_REF}
