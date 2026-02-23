@@ -57,7 +57,7 @@ jobs:
         git config --worktree user.email 'invalid@invalid'
     - name: Add, commit and push the generated documentation
       working-directory: generated_docs
-      environment:
+      env:
         SHORTREF: ${{ inputs.tag || github.ref_name }}
       run: |
         EMPTY=""
