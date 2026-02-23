@@ -69,7 +69,7 @@ jobs:
         EMPTY=""
         git rm -rf --ignore-unmatch "docs/${SHORTREF}"
         mkdir -p "docs/${SHORTREF}"
-        mv ../install/share/doc/bibletime/{handbook,howto} "docs/${SHORTREF}/"
+        mv ../install/share/doc/BibleTime/{handbook,howto} "docs/${SHORTREF}/"
         git add "docs/${SHORTREF}"
         ../code/.github/workflows/generate_docs_index.sh > docs/index.html
         git add docs/index.html
