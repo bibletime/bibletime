@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright © 2018-2026 BibleTime Development Team <bt-devel@crosswire.org> -->
-<component type="desktop">
- <id>info.bibletime.BibleTime.desktop</id>
+<component type="desktop-application">
+ <id>info.bibletime.BibleTime</id>
+ <provides><id>info.bibletime.BibleTime.desktop</id></provides>
+ <replaces><id>info.bibletime.BibleTime.desktop</id></replaces>
  <metadata_license>CC0-1.0</metadata_license>
  <project_license>GPL-2.0+</project_license>
  <name>BibleTime</name>
@@ -11,6 +13,12 @@
  </description>
  <content_rating type="oars-1.1" />
  <url type="homepage">https://bibletime.info/</url>
+ <url type="bugtracker">https://github.com/bibletime/bibletime/issues</url>
+ <url type="vcs-browser">https://github.com/bibletime/bibletime</url>
+ <launchable type="desktop-id">info.bibletime.BibleTime.desktop</launchable>
+ <developer id="info.bibletime">
+  <name>The BibleTime Project</name>
+ </developer>
  <update_contact>bt-devel@crosswire.org</update_contact>
  <screenshots>
   <screenshot type="default">
@@ -23,7 +31,7 @@
   </screenshot>
  </screenshots>
  <releases>
-  <release version="@PROJECT_VERSION@">
+  <release version="@PROJECT_VERSION@" date="2026-01-01">
    <description>
     <p>See the website https://bibletime.info for more information.</p>
    </description>
