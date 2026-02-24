@@ -17,7 +17,7 @@
  <url type="vcs-browser">https://github.com/bibletime/bibletime</url>
  <launchable type="desktop-id">info.bibletime.BibleTime.desktop</launchable>
  <developer id="info.bibletime">
-  <name>The BibleTime Project</name>
+  <name>The BibleTime developers</name>
  </developer>
  <update_contact>bt-devel@crosswire.org</update_contact>
  <screenshots>
