@@ -13,6 +13,9 @@
 #include "directory.h"
 
 #include <optional>
+#ifdef Q_OS_MAC
+#include <CoreFoundation/CoreFoundation.h>
+#endif
 #include <QByteArray>
 #include <QCoreApplication>
 #include <QDebug>
@@ -59,6 +62,26 @@ QString const SWORD_DIR = QStringLiteral(".sword");
 } // anonymous namespace
 
 bool initDirectoryCache() {
+#ifdef Q_OS_MAC
+    CFBundleRef mainBundle = CFBundleGetMainBundle();
+    if (mainBundle) {
+        CFURLRef resourcesURL = CFBundleCopyResourcesDirectoryURL(mainBundle);
+        if (resourcesURL) {
+            char path[PATH_MAX];
+            if (CFURLGetFileSystemRepresentation(resourcesURL, true, (UInt8 *)path, PATH_MAX)) {
+                cachedPrefix.emplace(QString::fromUtf8(path));
+            }
+            CFRelease(resourcesURL);
+        }
+    }
+    if (!cachedPrefix) {
+        QDir wDir(QCoreApplication::applicationDirPath());
+        wDir.makeAbsolute();
+        if (wDir.cdUp()) {
+            cachedPrefix.emplace(wDir);
+        }
+    }
+#else
     QDir wDir(QCoreApplication::applicationDirPath());
     wDir.makeAbsolute();
     if (!wDir.cdUp()) { // Installation prefix
@@ -66,6 +89,14 @@ bool initDirectoryCache() {
         return false;
     }
     cachedPrefix.emplace(wDir);
+#endif
+
+    if (!cachedPrefix) {
+        qWarning() << "Unable to determine installation prefix or Resources directory";
+        return false;
+    }
+
+    QDir const wDir = *cachedPrefix;
 
 #ifdef Q_OS_WIN
     // application sword dir for Windows only:
@@ -91,22 +122,35 @@ bool initDirectoryCache() {
     ::qunsetenv("SWORD_PATH");
 
     cachedPicsDir.emplace(wDir);
+#ifdef Q_OS_MAC
+    if (!cachedPicsDir->cd(QStringLiteral("pics"))) {
+#else
     if (!cachedPicsDir->cd(QStringLiteral("share/bibletime/pics"))) {
+#endif
         qWarning() << "Cannot find pics directory relative to"
                    << wDir.absolutePath();
         return false;
     }
 
     cachedLocaleDir.emplace(wDir);
+#ifdef Q_OS_MAC
+    if (!cachedLocaleDir->cd(QStringLiteral("locale"))) {
+#else
     if (!cachedLocaleDir->cd(QStringLiteral("share/bibletime/locale"))) {
+#endif
         qWarning() << "Cannot find locale directory relative to"
                    << wDir.absolutePath();
         return false;
     }
 
     cachedDisplayTemplatesDir.emplace(wDir); //display templates dir
+#ifdef Q_OS_MAC
+    if (!cachedDisplayTemplatesDir->cd(
+            QStringLiteral("display-templates/")))
+#else
     if (!cachedDisplayTemplatesDir->cd(
             QStringLiteral("share/bibletime/display-templates/")))
+#endif
     {
         qWarning() << "Cannot find display template directory relative to"
                    << wDir.absolutePath();
@@ -230,16 +274,24 @@ const QDir &getSharedSwordDir() {
 #endif
 
 QDir const & getIconDir() {
+#ifdef Q_OS_MAC
+    static const QDir cachedIconDir(cachedPrefix->filePath(QStringLiteral("icons")));
+#else
     static const QDir cachedIconDir(
                 cachedPrefix->filePath(
                     QStringLiteral("share/bibletime/icons")));
+#endif
     return cachedIconDir;
 }
 
 QString const & getLicensePath() {
+#ifdef Q_OS_MAC
+    static auto const cachedLicensePath(cachedPrefix->filePath(QStringLiteral("license/LICENSE")));
+#else
     static auto const cachedLicensePath(
                 cachedPrefix->filePath(
                     QStringLiteral("share/bibletime/license/LICENSE")));
+#endif
     return cachedLicensePath;
 }
 

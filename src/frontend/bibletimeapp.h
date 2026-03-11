@@ -57,3 +57,4 @@ private: // fields:
 };
 
 #define btApp (static_cast<BibleTimeApp *>(BibleTimeApp::instance()))
+Q_DECLARE_METATYPE(BibleTimeApp*)

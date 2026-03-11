@@ -12,8 +12,8 @@
 
 #pragma once
 
-#include <atomic>
 #include <memory>
+#include <QMutex>
 #include <QObject>
 #include <QString>
 #include <QStringList>
@@ -238,8 +238,9 @@ private: // fields:
     } m_manager;
 
     std::shared_ptr<BtBookshelfModel> const m_dataModel;
-    std::atomic<std::shared_ptr<AvailableLanguagesCacheContainer const>>
+    std::shared_ptr<AvailableLanguagesCacheContainer const>
             m_availableLanguagesCache;
+    QMutex m_availableLanguagesCacheMutex;
 
     static CSwordBackend * m_instance;
 
