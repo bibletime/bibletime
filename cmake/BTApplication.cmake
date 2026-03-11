@@ -30,6 +30,7 @@ FIND_PACKAGE(PkgConfig REQUIRED)
 pkg_search_module(Sword REQUIRED IMPORTED_TARGET sword>=1.8.1)
 MESSAGE(STATUS "Found Sword: ${Sword_VERSION}")
 pkg_search_module(CLucene REQUIRED IMPORTED_TARGET libclucene-core>=2.3.3.4)
+pkg_search_module(CLuceneShared REQUIRED IMPORTED_TARGET libclucene-shared>=2.3.3.4)
 MESSAGE(STATUS "Found CLucene: ${CLucene_VERSION}")
 
 ######################################################
@@ -58,7 +59,11 @@ FILE(GLOB_RECURSE bibletime_QML_FILES CONFIGURE_DEPENDS
 IF(MSVC)
     ADD_EXECUTABLE("bibletime" WIN32 ${bibletime_SOURCES} "cmake/BTWinIcon.rc")
 ELSE()
+IF(APPLE)
+    ADD_EXECUTABLE("bibletime" MACOSX_BUNDLE ${bibletime_SOURCES})
+ELSE()
     ADD_EXECUTABLE("bibletime" ${bibletime_SOURCES})
+ENDIF()
 ENDIF()
 TARGET_COMPILE_FEATURES("bibletime" PRIVATE cxx_std_23)
 TARGET_COMPILE_DEFINITIONS("bibletime" PRIVATE
@@ -96,6 +101,7 @@ TARGET_INCLUDE_DIRECTORIES("bibletime" PRIVATE
 )
 TARGET_LINK_LIBRARIES("bibletime" PRIVATE
     PkgConfig::CLucene
+    PkgConfig::CLuceneShared
     PkgConfig::Sword
     Qt::Network
     Qt::PrintSupport
@@ -179,35 +185,65 @@ qt_add_translations("bibletime"
   LUPDATE_TARGET "lupdate"
   LRELEASE_TARGET "lrelease"
 )
-INSTALL(FILES ${BT_QM_FILES} DESTINATION "${BT_LOCALEDIR}/")
+IF(APPLE)
+    FILE(GLOB INSTALL_ICONS_LIST CONFIGURE_DEPENDS
+            "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg")
+    FILE(GLOB INSTALL_ICONS_LIST_PNG CONFIGURE_DEPENDS
+        "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.png")
+    FILE(GLOB INSTALL_TMPL_LIST CONFIGURE_DEPENDS
+            "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.css"
+            "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.cmap"
+            "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/Basic.tmpl"
+            "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/basic_template.txt")
 
+    SET_SOURCE_FILES_PROPERTIES(${INSTALL_ICONS_LIST} ${INSTALL_ICONS_LIST_PNG}
+        PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/icons")
+    SET_SOURCE_FILES_PROPERTIES(${BT_QM_FILES}
+        PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/locale")
+    SET_SOURCE_FILES_PROPERTIES(${INSTALL_TMPL_LIST}
+        PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/display-templates")
+    SET_SOURCE_FILES_PROPERTIES("LICENSE"
+        PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/license")
+    SET_SOURCE_FILES_PROPERTIES("pics/startuplogo.png" "pics/startuplogo_christmas.png" "pics/startuplogo_easter.jpg"
+        PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/pics")
 
-######################################################
-# Installation:
-#
-INSTALL(TARGETS "bibletime" DESTINATION "${BT_BINDIR}")
-FILE(GLOB INSTALL_ICONS_LIST CONFIGURE_DEPENDS
-        "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg")
-INSTALL(FILES ${INSTALL_ICONS_LIST}
-        DESTINATION "${BT_DATADIR}/bibletime/icons/")
-FILE(GLOB INSTALL_ICONS_LIST_PNG CONFIGURE_DEPENDS
-    "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.png")
-INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
-        DESTINATION "${BT_DATADIR}/bibletime/icons/")
+    TARGET_SOURCES("bibletime" PRIVATE
+        ${INSTALL_ICONS_LIST}
+        ${INSTALL_ICONS_LIST_PNG}
+        ${BT_QM_FILES}
+        ${INSTALL_TMPL_LIST}
+        "LICENSE"
+        "pics/startuplogo.png" "pics/startuplogo_christmas.png" "pics/startuplogo_easter.jpg"
+    )
+    # CoreFoundation is needed for directory.cpp
+    TARGET_LINK_LIBRARIES("bibletime" PRIVATE "-framework CoreFoundation")
+ELSE()
+    INSTALL(FILES ${BT_QM_FILES} DESTINATION "${BT_LOCALEDIR}/")
 
-INSTALL(FILES "LICENSE"
-        DESTINATION "${BT_DATADIR}/bibletime/license/")
+    INSTALL(TARGETS "bibletime" DESTINATION "${BT_BINDIR}")
+    FILE(GLOB INSTALL_ICONS_LIST CONFIGURE_DEPENDS
+            "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg")
+    INSTALL(FILES ${INSTALL_ICONS_LIST}
+            DESTINATION "${BT_DATADIR}/bibletime/icons/")
+    FILE(GLOB INSTALL_ICONS_LIST_PNG CONFIGURE_DEPENDS
+        "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.png")
+    INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
+            DESTINATION "${BT_DATADIR}/bibletime/icons/")
 
-FILE(GLOB INSTALL_TMPL_LIST CONFIGURE_DEPENDS
-        "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.css"
-        "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.cmap"
-        "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/Basic.tmpl"
-        "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/basic_template.txt")
-INSTALL(FILES ${INSTALL_TMPL_LIST}
-        DESTINATION "${BT_DATADIR}/bibletime/display-templates/")
-INSTALL(FILES "pics/startuplogo.png" "pics/startuplogo_christmas.png"
-              "pics/startuplogo_easter.jpg"
-        DESTINATION "${BT_DATADIR}/bibletime/pics/")
+    INSTALL(FILES "LICENSE"
+            DESTINATION "${BT_DATADIR}/bibletime/license/")
+
+    FILE(GLOB INSTALL_TMPL_LIST CONFIGURE_DEPENDS
+            "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.css"
+            "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.cmap"
+            "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/Basic.tmpl"
+            "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/basic_template.txt")
+    INSTALL(FILES ${INSTALL_TMPL_LIST}
+            DESTINATION "${BT_DATADIR}/bibletime/display-templates/")
+    INSTALL(FILES "pics/startuplogo.png" "pics/startuplogo_christmas.png"
+                  "pics/startuplogo_easter.jpg"
+            DESTINATION "${BT_DATADIR}/bibletime/pics/")
+ENDIF()
 
 # Platform specific installation
 

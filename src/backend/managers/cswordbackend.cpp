@@ -60,9 +60,8 @@ CSwordBackend::CSwordBackend()
 {
     auto const clearCache =
             [this]() noexcept {
-                m_availableLanguagesCache.store(
-                            decltype(m_availableLanguagesCache)(),
-                            std::memory_order_relaxed);
+                QMutexLocker locker(&m_availableLanguagesCacheMutex);
+                m_availableLanguagesCache.reset();
             };
     BT_CONNECT(m_dataModel.get(), &BtBookshelfModel::rowsAboutToBeInserted,
                clearCache);
@@ -99,11 +98,13 @@ CSwordModuleInfo * CSwordBackend::findFirstAvailableModule(CSwordModuleInfo::Mod
 
 std::shared_ptr<CSwordBackend::AvailableLanguagesCacheContainer const>
 CSwordBackend::availableLanguages() noexcept {
-    auto oldCache = m_availableLanguagesCache.load(std::memory_order_acquire);
-    if (oldCache)
-        return oldCache;
+    {
+        QMutexLocker locker(&m_availableLanguagesCacheMutex);
+        if (m_availableLanguagesCache)
+            return m_availableLanguagesCache;
+    }
 
-    auto const generateCache =
+    auto const newCache =
             [&model = *m_dataModel] {
                 AvailableLanguagesCacheContainer newCache;
                 for (auto const * const mod : model.moduleList()) {
@@ -114,15 +115,12 @@ CSwordBackend::availableLanguages() noexcept {
 
                 return std::make_shared<AvailableLanguagesCacheContainer const>(
                             std::move(newCache)); // also makes container const
-            };
+            }();
 
-    for (auto newCache = generateCache();; newCache = generateCache())
-        if (m_availableLanguagesCache.compare_exchange_strong(
-                oldCache,
-                newCache,
-                std::memory_order_acq_rel,
-                std::memory_order_relaxed))
-            return newCache;
+    QMutexLocker locker(&m_availableLanguagesCacheMutex);
+    if (!m_availableLanguagesCache)
+        m_availableLanguagesCache = newCache;
+    return m_availableLanguagesCache;
 }
 
 void CSwordBackend::uninstallModules(BtConstModuleSet const & toBeDeleted) {
