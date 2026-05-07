@@ -203,6 +203,47 @@
           the text of the verse will be inserted.</para>
         </tip>
       </sect3>
+
+      <sect3 id="hdbk-op-parts-desk-texteditor">
+        <title>Editing rich text notes</title>
+
+        <para>&bibletime; also includes a simple rich text editor for
+        notes which are not tied to a particular Bible verse. Open it
+        from
+        <menuchoice>
+          <guimenu>File</guimenu>
+          <guimenuitem>Text Editor</guimenuitem>
+        </menuchoice>
+        or by pressing
+        <keycombo action="simul">
+          <keycap>&Ctrl;+&Shift;+E</keycap>
+        </keycombo>.</para>
+
+        <para>The text editor can format text as bold, italic, underline,
+        headings, bullet and numbered lists, links, and aligned paragraphs.
+        It can also apply font colors, page background colors, and different
+        highlight colors. Use the editor's
+        <guimenu>Format</guimenu> menu or keyboard shortcuts to apply these
+        formats.</para>
+
+        <para>Text editor documents are saved as HTML by default so rich
+        formatting is preserved. If you save as plain text, formatting such
+        as colors, highlights, links, and headings will not be stored. The
+        editor remembers the last file it had open and restores the cursor
+        location the next time it is opened, if the file still exists.</para>
+
+        <para>To insert a link, select the link text and choose
+        <menuchoice>
+          <guimenu>Format</guimenu>
+          <guimenuitem>Link</guimenuitem>
+        </menuchoice>
+        or press
+        <keycombo action="simul">
+          <keycap>&Ctrl;+K</keycap>
+        </keycombo>.
+        Enter the link text and URL in the dialog. To open a link while
+        editing, hold &Ctrl; and click the link.</para>
+      </sect3>
     </sect2>
   </sect1>
   <sect1 id="hdbk-op-search">

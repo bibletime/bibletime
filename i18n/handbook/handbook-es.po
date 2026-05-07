@@ -17,7 +17,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2025-02-15 17:45+0200\n"
+"POT-Creation-Date: 2026-05-07 15:37-0400\n"
 "PO-Revision-Date: 2011-12-11 21:42+0000\n"
 "Last-Translator: Renato G, 2025\n"
 "Language-Team: Spanish (http://app.transifex.com/bibletime/bibletime/"
@@ -253,11 +253,11 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 msgid ""
-"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;"
-"cat_id=FontDownloads\"> SIL unicode fonts</ulink>"
+"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?"
+"site_id=nrsi&amp;cat_id=FontDownloads\"> SIL unicode fonts</ulink>"
 msgstr ""
-"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;"
-"cat_id=FontDownloads\"> Fuentes SIL Unicode</ulink>"
+"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?"
+"site_id=nrsi&amp;cat_id=FontDownloads\"> Fuentes SIL Unicode</ulink>"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 msgid "Excellent Unicode fonts from the Summer Institute of Linguistics."
@@ -439,9 +439,9 @@ msgid ""
 "Books available include \"Imitation of Christ\", \"Enuma Elish\", and "
 "\"Josephus: The Complete Works\""
 msgstr ""
-"Los libros disponibles incluyen \"Imitation of Christ (Imitación de "
-"Cristo)\", \"Enuma Elish\", y \"Josephus: The Complete Works (Josefo: Las "
-"Obras Completas)\""
+"Los libros disponibles incluyen \"Imitation of Christ (Imitación de Cristo)"
+"\", \"Enuma Elish\", y \"Josephus: The Complete Works (Josefo: Las Obras "
+"Completas)\""
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 msgid "Commentaries"
@@ -854,8 +854,9 @@ msgstr "Editando su propio comentario"
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
 "To be able to store your own comments about parts of the Bible, you have "
-"install a certain work from the library of the <ulink url=\"http://www."
-"crosswire.org\">&cbs;</ulink>.  This work is called \"Personal commentary\"."
+"install a certain work from the library of the <ulink url=\"http://"
+"www.crosswire.org\">&cbs;</ulink>.  This work is called \"Personal "
+"commentary\"."
 msgstr ""
 "Para ser capaz de almacenar sus propios comentarios acerca de las partes de "
 "la Biblia, tiene que instalar una obra de la biblioteca de la <ulink "
@@ -891,6 +892,45 @@ msgid ""
 msgstr ""
 "Drag &amp; drop (Arrastrar y soltar) funciona aquí. Suelte una referencia al "
 "verso y el texto del verso será insertado."
+
+#. type: Content of: <chapter><sect1><sect2><sect3><title>
+msgid "Editing rich text notes"
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"&bibletime; also includes a simple rich text editor for notes which are not "
+"tied to a particular Bible verse. Open it from <menuchoice> <guimenu>File</"
+"guimenu> <guimenuitem>Text Editor</guimenuitem> </menuchoice> or by pressing "
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap> </keycombo>."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"The text editor can format text as bold, italic, underline, headings, bullet "
+"and numbered lists, links, and aligned paragraphs.  It can also apply font "
+"colors, page background colors, and different highlight colors. Use the "
+"editor's <guimenu>Format</guimenu> menu or keyboard shortcuts to apply these "
+"formats."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"Text editor documents are saved as HTML by default so rich formatting is "
+"preserved. If you save as plain text, formatting such as colors, highlights, "
+"links, and headings will not be stored. The editor remembers the last file "
+"it had open and restores the cursor location the next time it is opened, if "
+"the file still exists."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"To insert a link, select the link text and choose <menuchoice> "
+"<guimenu>Format</guimenu> <guimenuitem>Link</guimenuitem> </menuchoice> or "
+"press <keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap> </keycombo>.  "
+"Enter the link text and URL in the dialog. To open a link while editing, "
+"hold &Ctrl; and click the link."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Searching text in an open read window"
@@ -1133,13 +1173,13 @@ msgstr ""
 msgid ""
 "&bibletime; uses the Lucene search engine to perform your searches. It has "
 "many advanced features, and you can read more about it here: <ulink "
-"url=\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache."
-"org/java/docs/index.html</ulink>."
+"url=\"http://lucene.apache.org/java/docs/index.html\"> http://"
+"lucene.apache.org/java/docs/index.html</ulink>."
 msgstr ""
 "&bibletime; usa el motor de búsqueda de Lucene para buscar. Tiene muchas "
 "características avanzadas, y puede leer mas sobre esto aquí: <ulink "
-"url=\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache."
-"org/java/docs/index.html</ulink>."
+"url=\"http://lucene.apache.org/java/docs/index.html\"> http://"
+"lucene.apache.org/java/docs/index.html</ulink>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Search results"
@@ -1389,6 +1429,28 @@ msgid ""
 msgstr ""
 "<action>Abrir obra.</action> Esto le dará un menú que le permitirá abrir los "
 "libros instalados."
+
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#, fuzzy
+#| msgid ""
+#| "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;"
+#| "+S</keycap></keycombo> </shortcut> <guimenu>Window</guimenu> "
+#| "<guimenuitem>Save as new session</guimenuitem> </menuchoice>"
+msgid ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;"
+"+E</keycap></keycombo> </shortcut> <guimenu>File</guimenu> <guimenuitem>Text "
+"Editor</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</"
+"keycap></keycombo> </shortcut> <guimenu>Ventana</guimenu> "
+"<guimenuitem>Grabar como nueva sesión</guimenuitem> </menuchoice>"
+
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+msgid ""
+"<action>Open the rich text editor.</action> This opens a simple editor for "
+"notes which are not tied to a particular Bible verse. It supports rich "
+"formatting and saves HTML documents by default."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 msgid ""
@@ -1881,9 +1943,9 @@ msgid ""
 msgstr ""
 "<action>Controla el comportamiento básico del arreglo de las ventanas</"
 "action>. En el menú contextual de apertura, puede especificar que desea "
-"hacerse cargo de la organización de las ventanas por si mismo (modo manual),"
-"con pestañas, Auto-Mosaico vertical, Auto-mosaico horizontal, Auto-mosaico o "
-"cascada automática. Sólo tienes que probarlo!"
+"hacerse cargo de la organización de las ventanas por si mismo (modo "
+"manual),con pestañas, Auto-Mosaico vertical, Auto-mosaico horizontal, Auto-"
+"mosaico o cascada automática. Sólo tienes que probarlo!"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
@@ -2470,6 +2532,29 @@ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+C</keycap></keycombo>"
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "Copy. This copies the selected text to the clipboard."
 msgstr "Copiar. Esto copia el texto seleccionado al portapapeles."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
+#| "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
+#| "link> equivalent; closes &bibletime;."
+msgid ""
+"<link linkend=\"hdbk-reference-menus-file-text-editor\"> <menuchoice> "
+"<guimenu>File</guimenu> <guimenuitem>Text Editor</guimenuitem> </menuchoice> "
+"</link> equivalent; opens the rich text editor."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
+"<guimenu>Archivo</guimenu> <guimenuitem>Salir</guimenuitem> </menuchoice> </"
+"link> equivalente; cerrar &bibletime;."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"

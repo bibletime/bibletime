@@ -186,6 +186,11 @@ void BtTipDialog::retranslateUi() {
         " source, English as the language,  and look under Commentary. Once installed, open it"
         " like any other window, or in  parallel with a bible. Click a verse to edit it.");
 
+    m_tips << tr("You can write rich text notes that are not tied to a verse with the Text"
+        " Editor under the File menu. It supports headings, lists, links, font colors,"
+        " background colors, and different highlight colors. Save as HTML to preserve"
+        " formatting.");
+
     m_tips << tr("You can view Strong's number information in the MAG window by hovering over"
         " a word in a Bible work that has Strong's numbers. You should have the StrongsGreek"
         " and StrongsHebrew lexicons from Crosswire installed.");

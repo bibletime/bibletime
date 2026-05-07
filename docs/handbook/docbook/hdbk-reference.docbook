@@ -34,6 +34,25 @@
             </listitem>
           </varlistentry>
 
+          <varlistentry id="hdbk-reference-menus-file-text-editor">
+            <term>
+              <menuchoice>
+                <shortcut>
+                  <keycombo action="simul">
+                  <keycap>&Ctrl;+&Shift;+E</keycap></keycombo>
+                </shortcut>
+                <guimenu>File</guimenu>
+                <guimenuitem>Text Editor</guimenuitem>
+              </menuchoice>
+            </term>
+            <listitem>
+              <para><action>Open the rich text editor.</action> This opens a
+              simple editor for notes which are not tied to a particular
+              Bible verse. It supports rich formatting and saves HTML
+              documents by default.</para>
+            </listitem>
+          </varlistentry>
+
           <varlistentry id="hdbk-reference-menus-file-quit">
             <term>
               <menuchoice>
@@ -1197,6 +1216,20 @@
             </entry>
             <entry>Copy. This copies the selected text to the
             clipboard.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+&Shift;+E</keycap></keycombo>
+            </entry>
+            <entry>
+            <link linkend="hdbk-reference-menus-file-text-editor">
+              <menuchoice>
+                <guimenu>File</guimenu>
+                <guimenuitem>Text Editor</guimenuitem>
+              </menuchoice>
+            </link> equivalent; opens the rich text editor.</entry>
           </row>
 
           <row>

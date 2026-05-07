@@ -495,14 +495,18 @@ void BtTextEditorWindow::showEditorHelp() {
                    "<tr><td><b>Ctrl+I</b></td><td>Italic</td></tr>"
                    "<tr><td><b>Ctrl+U</b></td><td>Underline</td></tr>"
                    "<tr><td><b>Ctrl+Shift+H</b></td><td>Highlight</td></tr>"
+                   "<tr><td><b>Ctrl+Alt+H</b></td><td>Choose highlight color</td></tr>"
+                   "<tr><td><b>Ctrl+Shift+C</b></td><td>Choose font color</td></tr>"
+                   "<tr><td><b>Ctrl+Shift+B</b></td><td>Choose page background color</td></tr>"
                    "<tr><td><b>Ctrl+Alt+1</b></td><td>Heading 1</td></tr>"
                    "<tr><td><b>Ctrl+Alt+2</b></td><td>Heading 2</td></tr>"
                    "<tr><td><b>Ctrl+Shift+8</b></td><td>Bullet list</td></tr>"
                    "<tr><td><b>Ctrl+Shift+7</b></td><td>Numbered list</td></tr>"
-                   "<tr><td><b>Ctrl+K</b></td><td>Insert link styling</td></tr>"
+                   "<tr><td><b>Ctrl+K</b></td><td>Insert link</td></tr>"
                    "</table>"
                    "<p>Documents are saved as HTML by default so formatting is "
-                   "preserved.</p>"));
+                   "preserved. Plain text files do not preserve formatting.</p>"
+                   "<p>Hold Ctrl and click a link to open it in your browser.</p>"));
 }
 
 void BtTextEditorWindow::mergeCurrentCharFormat(

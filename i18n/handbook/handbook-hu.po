@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2025-02-15 17:45+0200\n"
+"POT-Creation-Date: 2026-05-07 15:37-0400\n"
 "PO-Revision-Date: 2011-12-11 21:42+0000\n"
 "Last-Translator: G�za Nov�k, 2009\n"
 "Language-Team: Hungarian (http://app.transifex.com/bibletime/bibletime/"
@@ -238,17 +238,17 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 msgid ""
-"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;"
-"cat_id=FontDownloads\"> SIL unicode fonts</ulink>"
+"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?"
+"site_id=nrsi&amp;cat_id=FontDownloads\"> SIL unicode fonts</ulink>"
 msgstr ""
-"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;"
-"cat_id=FontDownloads\"> SIL unicode betűkészlet</ulink>"
+"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?"
+"site_id=nrsi&amp;cat_id=FontDownloads\"> SIL unicode betűkészlet</ulink>"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 msgid "Excellent Unicode fonts from the Summer Institute of Linguistics."
 msgstr ""
-"Kiváló UNICODE készletek szerezhetőek be a Summer Institute of Linguistics -"
-"tól."
+"Kiváló UNICODE készletek szerezhetőek be a Summer Institute of Linguistics "
+"-tól."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 msgid "<ulink url=\"http://www.nongnu.org/freefont/\"> FreeFont</ulink>"
@@ -318,11 +318,11 @@ msgid ""
 "ranges and the Unicode fonts that support them</ulink>)."
 msgstr ""
 "Jó UNICODE betűkészlet listákat találhat a neten, például egyet Christoph "
-"Singer összeállításában ( <ulink url=\"http://www.slovo.info/unifonts."
-"htm\">Többnyelvű Unicode TrueType betűkészletek az Interneten</ulink>), vagy "
-"egy másik Alan Woodtól ( <ulink url=\"http://www.alanwood.net/unicode/"
-"fontsbyrange.html\"> Unicode karakter összetevők és az Unicode készletek, "
-"amelyek tartalmazzák</ulink>)."
+"Singer összeállításában ( <ulink url=\"http://www.slovo.info/"
+"unifonts.htm\">Többnyelvű Unicode TrueType betűkészletek az Interneten</"
+"ulink>), vagy egy másik Alan Woodtól ( <ulink url=\"http://www.alanwood.net/"
+"unicode/fontsbyrange.html\"> Unicode karakter összetevők és az Unicode "
+"készletek, amelyek tartalmazzák</ulink>)."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "<guimenu>Shortcuts</guimenu>"
@@ -376,10 +376,10 @@ msgid ""
 msgstr ""
 "A &bibletime; egy könnyen telepíthető és kezelhető Biblia tanulmányozó "
 "eszköz, különféle szövegtípussal, nyelvvel, továbbá rengeteg telepíthető "
-"dokumentummal, modullal. Ez a program a <ulink url=\"http://www.crosswire."
-"org/sword\">&sword;</ulink> keretrendszerre épül, mely lehetővé teszi a "
-"szövegek megjelenítését, keresését stb. A &sword; a <ulink url=\"http://www."
-"crosswire.org\">&cbs;</ulink> zászlóshajója."
+"dokumentummal, modullal. Ez a program a <ulink url=\"http://"
+"www.crosswire.org/sword\">&sword;</ulink> keretrendszerre épül, mely "
+"lehetővé teszi a szövegek megjelenítését, keresését stb. A &sword; a <ulink "
+"url=\"http://www.crosswire.org\">&cbs;</ulink> zászlóshajója."
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -634,9 +634,9 @@ msgstr ""
 "nyit meg, a dokumentumra vonatkozó információkkal. A "
 "<guimenuitem>\"Feloldás\"</guimenuitem> egy kis párbeszédablakot nyit meg, "
 "ahol megadhatja a zárolt dokumentumok feloldó kulcsát. A zárolt "
-"dokumentumokról kiegészítő információt olvashat <ulink url=\"http://www."
-"crosswire.org/sword/modules/aboutlocked.jsp\"> ezen az oldalon</ulink>, a "
-"&cbs; honlapján. "
+"dokumentumokról kiegészítő információt olvashat <ulink url=\"http://"
+"www.crosswire.org/sword/modules/aboutlocked.jsp\"> ezen az oldalon</ulink>, "
+"a &cbs; honlapján. "
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Searching in works"
@@ -804,8 +804,9 @@ msgstr "Saját kommentár szerkesztése"
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
 "To be able to store your own comments about parts of the Bible, you have "
-"install a certain work from the library of the <ulink url=\"http://www."
-"crosswire.org\">&cbs;</ulink>.  This work is called \"Personal commentary\"."
+"install a certain work from the library of the <ulink url=\"http://"
+"www.crosswire.org\">&cbs;</ulink>.  This work is called \"Personal "
+"commentary\"."
 msgstr ""
 "Ahhoz, hogy a saját kommentárját a Biblia részeként tárolja, szükséges "
 "telepíteni a <ulink url=\"http://www.crosswire.org\">&cbs;</ulink> egyik "
@@ -836,6 +837,45 @@ msgid ""
 msgstr ""
 "A fogd &amp; vidd működik itt is, csak ejtse egy vers hivatkozását a "
 "dokumentumra, és a vers szövege beszúrásra kerül. "
+
+#. type: Content of: <chapter><sect1><sect2><sect3><title>
+msgid "Editing rich text notes"
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"&bibletime; also includes a simple rich text editor for notes which are not "
+"tied to a particular Bible verse. Open it from <menuchoice> <guimenu>File</"
+"guimenu> <guimenuitem>Text Editor</guimenuitem> </menuchoice> or by pressing "
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap> </keycombo>."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"The text editor can format text as bold, italic, underline, headings, bullet "
+"and numbered lists, links, and aligned paragraphs.  It can also apply font "
+"colors, page background colors, and different highlight colors. Use the "
+"editor's <guimenu>Format</guimenu> menu or keyboard shortcuts to apply these "
+"formats."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"Text editor documents are saved as HTML by default so rich formatting is "
+"preserved. If you save as plain text, formatting such as colors, highlights, "
+"links, and headings will not be stored. The editor remembers the last file "
+"it had open and restores the cursor location the next time it is opened, if "
+"the file still exists."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"To insert a link, select the link text and choose <menuchoice> "
+"<guimenu>Format</guimenu> <guimenuitem>Link</guimenuitem> </menuchoice> or "
+"press <keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap> </keycombo>.  "
+"Enter the link text and URL in the dialog. To open a link while editing, "
+"hold &Ctrl; and click the link."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Searching text in an open read window"
@@ -954,10 +994,11 @@ msgid ""
 msgstr ""
 "Szűkítheti a keresés hatókörét a Biblia egyes részeire, amennyiben választ "
 "egyet a <guimenu>Hatósugár</guimenu> által felajánlott listából. Ön is "
-"meghatározhat hatókört a <guibutton>Telepítés</guibutton> gombra kattintva."
-"Szűkítheti a keresés hatókörét a Biblia egyes részeire, amennyiben választ "
-"egyet a <guimenu>Hatósugár</guimenu> által felajánlott listából. Ön is "
-"meghatározhat hatókört a <guibutton>Telepítés</guibutton> gombra kattintva."
+"meghatározhat hatókört a <guibutton>Telepítés</guibutton> gombra "
+"kattintva.Szűkítheti a keresés hatókörét a Biblia egyes részeire, amennyiben "
+"választ egyet a <guimenu>Hatósugár</guimenu> által felajánlott listából. Ön "
+"is meghatározhat hatókört a <guibutton>Telepítés</guibutton> gombra "
+"kattintva."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Basic Search Syntax Introduction"
@@ -1078,8 +1119,8 @@ msgstr ""
 msgid ""
 "&bibletime; uses the Lucene search engine to perform your searches. It has "
 "many advanced features, and you can read more about it here: <ulink "
-"url=\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache."
-"org/java/docs/index.html</ulink>."
+"url=\"http://lucene.apache.org/java/docs/index.html\"> http://"
+"lucene.apache.org/java/docs/index.html</ulink>."
 msgstr ""
 "A &bibletime; a Lucene keresőmotorját alkalmazza, mely további fejlettebb "
 "keresési lehetőséget ajánl. Többet megtudhat erről a <ulink url=\"http://"
@@ -1318,6 +1359,28 @@ msgid ""
 msgstr ""
 "<action>Dokumentum megnyitása.</action> Ez egy menüt nyit meg, ahol "
 "lehetősége nyílik telepített dokumentumok megnyitására."
+
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#, fuzzy
+#| msgid ""
+#| "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;"
+#| "+S</keycap></keycombo> </shortcut> <guimenu>Window</guimenu> "
+#| "<guimenuitem>Save as new session</guimenuitem> </menuchoice>"
+msgid ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;"
+"+E</keycap></keycombo> </shortcut> <guimenu>File</guimenu> <guimenuitem>Text "
+"Editor</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</"
+"keycap></keycombo> </shortcut> <guimenu>Ablak</guimenu> <guimenuitem>Mentés "
+"új munkafolyamatként</guimenuitem> </menuchoice>"
+
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+msgid ""
+"<action>Open the rich text editor.</action> This opens a simple editor for "
+"notes which are not tied to a particular Bible verse. It supports rich "
+"formatting and saves HTML documents by default."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 msgid ""
@@ -2383,8 +2446,9 @@ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "Select all. This selects all text in read windows."
 msgstr ""
-"Összes kiválasztása. Az összes szöveget kiválasztja az aktuális ablakban."
-"Összes kiválasztása. Az összes szöveget kiválasztja az aktuális ablakban."
+"Összes kiválasztása. Az összes szöveget kiválasztja az aktuális "
+"ablakban.Összes kiválasztása. Az összes szöveget kiválasztja az aktuális "
+"ablakban."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+C</keycap></keycombo>"
@@ -2393,6 +2457,29 @@ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+C</keycap></keycombo>"
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "Copy. This copies the selected text to the clipboard."
 msgstr "Másolás. A kijelölt szöveget a vágólapra másolja."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
+#| "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
+#| "link> equivalent; closes &bibletime;."
+msgid ""
+"<link linkend=\"hdbk-reference-menus-file-text-editor\"> <menuchoice> "
+"<guimenu>File</guimenu> <guimenuitem>Text Editor</guimenuitem> </menuchoice> "
+"</link> equivalent; opens the rich text editor."
+msgstr ""
+"Megegyezik a <link linkend=\"hdbk-reference-menus-file-"
+"quit\"><menuchoice><guimenu>Fájl</guimenu> <guimenuitem>Kilépés</"
+"guimenuitem> </menuchoice></link> ponttal, a &bibletime; bezárása."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"

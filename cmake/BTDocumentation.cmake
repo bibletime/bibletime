@@ -319,7 +319,7 @@ ${BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL}")
                     COMMAND "${XSLTPROC_COMMAND}" --nonet
                         --output "${dx}/${doc}.fo"
                         "${BT_DOCBOOK_PDF_XSL}" "${i}/index.docbook"
-                    DEPENDS "${doc}_translation_${l}")
+                    DEPENDS "${doc}_translation_${l}" "${BT_DOCBOOK_PDF_XSL}")
                 AddDocSubTarget("${doc}_xslfo" "${doc}_xslfo_${l}"
                     "${dx}/${doc}.fo")
 
