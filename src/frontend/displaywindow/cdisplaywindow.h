@@ -244,6 +244,8 @@ protected Q_SLOTS:
     void printAll();
     void printAnchorOnly();
     void printAnchorWithText();
+    void sendSelectedTextToEditor();
+    void sendEntryToEditor();
 
 private: // methods:
 
@@ -278,6 +280,11 @@ protected: // fields:
             QAction * reference;
             QAction * entry;
         } print;
+        QMenu * sendMenu;
+        struct {
+            QAction * selectedText;
+            QAction * entry;
+        } send;
         #ifdef BUILD_TEXT_TO_SPEECH
         QAction * speakSelectedText;
         #endif

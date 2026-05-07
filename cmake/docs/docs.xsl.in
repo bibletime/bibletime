@@ -6,4 +6,5 @@
     <!--<xsl:param name="ignore.image.scaling" select="1"/>-->
     <xsl:param name="use.id.as.filename" select="1"/>
     <xsl:param name="generate.consistent.ids" select="1"/>
+    <xsl:param name="toc.section.depth" select="4"/>
 </xsl:stylesheet>

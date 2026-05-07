@@ -86,6 +86,14 @@ protected: // methods:
         }
         print;
 
+        QMenu* sendMenu;
+        struct {
+            QAction* selectedText;
+            QAction* referenceAndText;
+            QAction* chapter;
+        }
+        send;
+
         #ifdef BUILD_TEXT_TO_SPEECH
         QAction * speakSelectedText;
         #endif
@@ -118,6 +126,9 @@ protected Q_SLOTS:
         * Saves the chapter as valid HTML page.
         */
     void saveChapterPlain();
+    void sendSelectedTextToEditor();
+    void sendReferenceToEditor();
+    void sendChapterToEditor();
     void lookupSwordKey(CSwordKey * newKey) override;
     void syncWindows();
 

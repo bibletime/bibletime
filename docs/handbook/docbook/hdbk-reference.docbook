@@ -49,7 +49,10 @@
               <para><action>Open the rich text editor.</action> This opens a
               simple editor for notes which are not tied to a particular
               Bible verse. It supports rich formatting and saves HTML
-              documents by default.</para>
+              documents by default. It also supports printing, search,
+              spell check, thesaurus lookup, tables, pictures, autosave
+              recovery, and backup files when saving over an existing
+              document.</para>
             </listitem>
           </varlistentry>
 
@@ -1230,6 +1233,155 @@
                 <guimenuitem>Text Editor</guimenuitem>
               </menuchoice>
             </link> equivalent; opens the rich text editor.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+P</keycap></keycombo>
+            </entry>
+            <entry>Print. In the rich text editor, prints the current
+            document.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+K</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, inserts or edits a link.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+1</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, applies single spacing to the
+            current paragraph.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+2</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, applies double spacing to the
+            current paragraph.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+&Shift;+F</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, opens the font chooser.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+&Shift;+H</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, applies the current highlight
+            color.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, chooses the highlight color.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+&Shift;+C</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, chooses the font color.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+&Shift;+B</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, chooses the page background
+            color.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+&Alt;+0</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, applies normal text
+            formatting.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+&Alt;+1</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, applies heading 1
+            formatting.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+&Alt;+2</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, applies heading 2
+            formatting.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+&Shift;+8</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, starts a bullet list.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+&Shift;+7</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, starts a numbered list.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+&Shift;+T</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, inserts a table.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+&Shift;+P</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, inserts a picture.</entry>
+          </row>
+
+          <row>
+            <entry><keycap>F7</keycap></entry>
+            <entry>In the rich text editor, starts spell check.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Shift;+F7</keycap></keycombo>
+            </entry>
+            <entry>In the rich text editor, opens the thesaurus.</entry>
           </row>
 
           <row>

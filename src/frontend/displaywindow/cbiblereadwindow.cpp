@@ -13,7 +13,10 @@
 #include "cbiblereadwindow.h"
 
 #include <QAction>
+#include <QClipboard>
 #include <QEvent>
+#include <QGuiApplication>
+#include <QMessageBox>
 #include <QMdiSubWindow>
 #include <QMenu>
 #include <QTimer>
@@ -26,7 +29,9 @@
 #include "../../util/cresmgr.h"
 #include "../cexportmanager.h"
 #include "../cmdiarea.h"
+#include "../bttexteditorwindow.h"
 #include "../display/btmodelviewreaddisplay.h"
+#include "../display/modelview/btqmlinterface.h"
 #include "../keychooser/ckeychooser.h"
 
 
@@ -84,6 +89,15 @@ CBibleReadWindow::ActionCollection::ActionCollection(QObject * const parent)
 
     qaction = new QAction(tr("Reference with text"), this);
     addAction(QStringLiteral("saveReferenceWithText"), qaction);
+
+    qaction = new QAction(tr("Selected text"), this);
+    addAction(QStringLiteral("sendBibleSelectedTextToEditor"), qaction);
+
+    qaction = new QAction(tr("Reference with text"), this);
+    addAction(QStringLiteral("sendReferenceWithTextToEditor"), qaction);
+
+    qaction = new QAction(tr("Chapter"), this);
+    addAction(QStringLiteral("sendChapterToEditor"), qaction);
 }
 
 CBibleReadWindow::CBibleReadWindow(QList<CSwordModuleInfo *> const & modules,
@@ -184,6 +198,23 @@ void CBibleReadWindow::initActions() {
                            this,
                            &CBibleReadWindow::printAll);
 
+    m_actions.send.selectedText =
+            &initAddAction(QStringLiteral("sendBibleSelectedTextToEditor"),
+                           this,
+                           &CBibleReadWindow::sendSelectedTextToEditor);
+    m_actions.send.selectedText->setEnabled(
+                displayWidget()->qmlInterface()->selection().has_value());
+
+    m_actions.send.referenceAndText =
+            &initAddAction(QStringLiteral("sendReferenceWithTextToEditor"),
+                           this,
+                           &CBibleReadWindow::sendReferenceToEditor);
+
+    m_actions.send.chapter =
+            &initAddAction(QStringLiteral("sendChapterToEditor"),
+                           this,
+                           &CBibleReadWindow::sendChapterToEditor);
+
     #ifdef BUILD_TEXT_TO_SPEECH
     m_actions.speakSelectedText = &ac->action("speakSelectedText");
     #endif
@@ -199,6 +230,13 @@ void CBibleReadWindow::initActions() {
                 m_actions.save.referenceAndText->setEnabled(
                             hasActiveAnchor);
                });
+
+    BT_CONNECT(displayWidget()->qmlInterface(),
+               &BtQmlInterface::selectionChanged,
+               this,
+               [this](
+                 std::optional<BtQmlInterface::Selection> const & newSelection)
+               { m_actions.send.selectedText->setEnabled(newSelection.has_value()); });
 
     ac->readShortcuts(QStringLiteral("Bible shortcuts"));
 }
@@ -233,6 +271,12 @@ QMenu * CBibleReadWindow::newDisplayWidgetPopupMenu() {
     m_actions.printMenu->addAction(m_actions.print.reference);
     m_actions.printMenu->addAction(m_actions.print.chapter);
     popupMenu->addMenu(m_actions.printMenu);
+
+    m_actions.sendMenu = new QMenu(tr("Send to Text Editor..."), popupMenu);
+    m_actions.sendMenu->addAction(m_actions.send.selectedText);
+    m_actions.sendMenu->addAction(m_actions.send.referenceAndText);
+    m_actions.sendMenu->addAction(m_actions.send.chapter);
+    popupMenu->addMenu(m_actions.sendMenu);
 
     #ifdef BUILD_TEXT_TO_SPEECH
     popupMenu->addAction(m_actions.speakSelectedText);
@@ -316,6 +360,65 @@ void CBibleReadWindow::saveChapterHTML() {
 /** Saves the chapter as valid HTML page. */
 void CBibleReadWindow::saveChapterPlain() {
     saveChapter(CExportManager::Text);
+}
+
+void CBibleReadWindow::sendSelectedTextToEditor() {
+    auto const text = displayWidget()->qmlInterface()->getSelectedText();
+    if (text.isEmpty())
+        return;
+
+    if (!BtTextEditorWindow::appendToActiveDocument(
+            text,
+            tr("Selected Bible text from %1").arg(firstModule()->name())))
+    {
+        QMessageBox::information(
+                    this,
+                    tr("Text Editor"),
+                    tr("Open the Text Editor first, then try sending text again."));
+    }
+}
+
+void CBibleReadWindow::sendReferenceToEditor() {
+    std::unique_ptr<CSwordKey> key(getMouseClickedKey());
+    if (!key)
+        return;
+
+    auto const text =
+            QStringLiteral("%1\n(%2, %3)")
+            .arg(key->strippedText(), key->key(), key->module()->name());
+    if (text.isEmpty())
+        return;
+
+    if (!BtTextEditorWindow::appendToActiveDocument(
+            text,
+            tr("Bible reference from %1").arg(firstModule()->name())))
+    {
+        QMessageBox::information(
+                    this,
+                    tr("Text Editor"),
+                    tr("Open the Text Editor first, then try sending text again."));
+    }
+}
+
+void CBibleReadWindow::sendChapterToEditor() {
+    auto * const clipboard = QGuiApplication::clipboard();
+    auto const previousText = clipboard->text();
+    copyDisplayedText();
+    auto const text = clipboard->text();
+    clipboard->setText(previousText);
+
+    if (text.isEmpty())
+        return;
+
+    if (!BtTextEditorWindow::appendToActiveDocument(
+            text,
+            tr("Bible chapter from %1").arg(firstModule()->name())))
+    {
+        QMessageBox::information(
+                    this,
+                    tr("Text Editor"),
+                    tr("Open the Text Editor first, then try sending text again."));
+    }
 }
 
 void CBibleReadWindow::saveChapter(CExportManager::Format const format) {

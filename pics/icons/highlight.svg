@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff6a0"/>
+      <stop offset="0.55" stop-color="#f4d942"/>
+      <stop offset="1" stop-color="#c5a800"/>
+    </linearGradient>
+    <linearGradient id="capGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6f6f6f"/>
+      <stop offset="1" stop-color="#202020"/>
+    </linearGradient>
+    <linearGradient id="inkGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff176"/>
+      <stop offset="1" stop-color="#ffd400"/>
+    </linearGradient>
+  </defs>
+
+  <!-- highlight stroke -->
+  <path d="M1.2 12.0h9.6c.7 0 1.2.4 1.2.9s-.5.9-1.2.9H1.2z"
+        fill="url(#inkGrad)" opacity=".9"/>
+  <path d="M1.1 13.8h11.0" stroke="#b89b00" stroke-width=".6" opacity=".65"/>
+
+  <!-- highlighter marker -->
+  <g transform="rotate(-35 8 8)">
+    <rect x="4.2" y="2.0" width="4.9" height="9.0" rx=".8"
+          fill="url(#bodyGrad)" stroke="#7c6a00" stroke-width=".7"/>
+    <path d="M4.7 3.0h3.9" stroke="#fff8b8" stroke-width=".7" opacity=".85"/>
+    <rect x="4.6" y="1.1" width="4.1" height="1.9" rx=".35"
+          fill="url(#capGrad)" stroke="#111" stroke-width=".55"/>
+    <path d="M4.9 11.0h3.5l-.8 2.4H5.7z"
+          fill="#2b2b2b" stroke="#111" stroke-width=".55" stroke-linejoin="round"/>
+    <path d="M5.9 13.1h1.5" stroke="#ffd400" stroke-width=".75" stroke-linecap="round"/>
+  </g>
+
+  <!-- small bevel/shadow matching old toolbar icons -->
+  <path d="M4.0 2.2 2.4 3.4" stroke="#ffffff" stroke-width=".6" opacity=".65" stroke-linecap="round"/>
+</svg>

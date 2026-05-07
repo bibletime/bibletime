@@ -16,11 +16,13 @@
 #include <QClipboard>
 #include <QCursor>
 #include <QDesktopServices>
+#include <QGuiApplication>
 #include <QInputDialog>
 #include <QMdiSubWindow>
 #include <QMenu>
 #include <QMetaObject>
 #include <QProcess>
+#include <QScreen>
 #include <QtGlobal>
 #include <QTimerEvent>
 #include <QToolBar>
@@ -43,6 +45,35 @@
 #include "messagedialog.h"
 #include "settingsdialogs/cconfigurationdialog.h"
 #include "tips/bttipdialog.h"
+
+namespace {
+
+bool intersectsAvailableScreen(QRect const & windowGeometry) {
+    for (auto const * const screen : QGuiApplication::screens())
+        if (screen->availableGeometry().intersects(windowGeometry))
+            return true;
+    return false;
+}
+
+void restoreMainWindowGeometry(QMainWindow & window,
+                               QByteArray const & savedGeometry)
+{
+    if (savedGeometry.isEmpty())
+        return;
+
+    auto const fallbackGeometry = window.geometry();
+    auto const fallbackState = window.windowState();
+    if (window.restoreGeometry(savedGeometry)
+        && intersectsAvailableScreen(window.frameGeometry()))
+    {
+        return;
+    }
+
+    window.setWindowState(fallbackState);
+    window.setGeometry(fallbackGeometry);
+}
+
+} // anonymous namespace
 
 
 /** Opens the optionsdialog of BibleTime. */
@@ -473,7 +504,9 @@ void BibleTime::reloadProfile() {
     // Reload main window settings:
     auto const sessionConf = btConfig().session();
     auto const mwConf = sessionConf.group(QStringLiteral("MainWindow"));
-    restoreGeometry(mwConf.value<QByteArray>(QStringLiteral("geometry")));
+    restoreMainWindowGeometry(
+                *this,
+                mwConf.value<QByteArray>(QStringLiteral("geometry")));
     restoreState(mwConf.value<QByteArray>(QStringLiteral("state")));
 
     /*

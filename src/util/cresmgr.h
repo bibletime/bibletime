@@ -25,7 +25,17 @@ class QIcon;
 namespace CResMgr {
 
 BT_GETICON2(icon_clearEdit, edit_clear_locationbar)
+BT_GETICON2(icon_bulletedList, bulleted_list)
+BT_GETICON2(icon_editCut, edit_cut)
+BT_GETICON2(icon_editPaste, edit_paste)
+BT_GETICON2(icon_highlight, highlight)
+BT_GETICON2(icon_insertPicture, insert_picture)
+BT_GETICON2(icon_insertTable, insert_table)
+BT_GETICON2(icon_link, link)
 BT_GETICON2(icon_moduleLanguage, flag)
+BT_GETICON2(icon_numberedList, numbered_list)
+BT_GETICON2(icon_openRichTextEditor, open_rich_text_editor)
+BT_GETICON2(icon_spellCheck, spell_check)
 
 namespace mainWindow {
 BT_GETICON(bibletime)

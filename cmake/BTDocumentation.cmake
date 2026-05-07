@@ -257,7 +257,7 @@ ${BT_DOCBOOK_XSL_HTML_CHUNK_XSL}")
                         --stringparam l10n.gentext.default.language "${l}"
                         "${BT_DOCBOOK_XSL}" "${i}/index.docbook"
                     COMMAND "${CMAKE_COMMAND}" -E touch "${stampFile}"
-                    DEPENDS "${doc}_translation_${l}")
+                    DEPENDS "${doc}_translation_${l}" "${BT_DOCBOOK_XSL}")
                 AddDocSubTarget("${doc}_html" "${doc}_html_${l}" "${stampFile}")
                 INSTALL(DIRECTORY "${d}/"
                         DESTINATION "${BT_DOCDIR}/${doc}/html/${l}/"

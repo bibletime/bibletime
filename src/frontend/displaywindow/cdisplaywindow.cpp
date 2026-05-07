@@ -18,6 +18,7 @@
 #include <QFileDialog>
 #include <QMdiSubWindow>
 #include <QMenu>
+#include <QMessageBox>
 #include <QStringList>
 #include <QWidget>
 #include "../../backend/config/btconfig.h"
@@ -26,6 +27,7 @@
 #include "../../util/cresmgr.h"
 #include "../bibletime.h"
 #include "../bibletimeapp.h"
+#include "../bttexteditorwindow.h"
 #include "../cexportmanager.h"
 #include "../cmdiarea.h"
 #include "../display/btmodelviewreaddisplay.h"
@@ -128,6 +130,12 @@ CDisplayWindow::ActionCollection::ActionCollection(QObject * const parent)
 
     actn = new QAction(tr("Entry with text"), this);
     addAction(QStringLiteral("printEntryWithText"), actn);
+
+    actn = new QAction(tr("Selected text"), this);
+    addAction(QStringLiteral("sendSelectedTextToEditor"), actn);
+
+    actn = new QAction(tr("Entry with text"), this);
+    addAction(QStringLiteral("sendEntryToEditor"), actn);
 
     actn = new QAction(tr("Strong's Search"), this);
     actn->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
@@ -298,6 +306,7 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
                &BtQmlInterface::selectionChanged,
                this,
                [&copySelectedTextAction
+                , this
                 #ifdef BUILD_TEXT_TO_SPEECH
                 , &speakSelectedTextAction
                 #endif
@@ -305,6 +314,7 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
                  std::optional<BtQmlInterface::Selection> const & newSelection)
                {
                 copySelectedTextAction.setEnabled(newSelection.has_value());
+                m_actions.send.selectedText->setEnabled(newSelection.has_value());
                 #ifdef BUILD_TEXT_TO_SPEECH
                 speakSelectedTextAction.setEnabled(newSelection.has_value());
                 #endif
@@ -394,6 +404,15 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
     m_actions.print.entry = &initAddAction(QStringLiteral("printEntryWithText"),
                                            this,
                                            &CDisplayWindow::printAll);
+    m_actions.send.selectedText =
+            &initAddAction(QStringLiteral("sendSelectedTextToEditor"),
+                           this,
+                           &CDisplayWindow::sendSelectedTextToEditor);
+    m_actions.send.selectedText->setEnabled(hasSelection);
+    m_actions.send.entry =
+            &initAddAction(QStringLiteral("sendEntryToEditor"),
+                           this,
+                           &CDisplayWindow::sendEntryToEditor);
     BT_CONNECT(m_displayWidget, &BtModelViewReadDisplay::activeAnchorChanged,
                this,
                [this](QString const & newActiveAnchor) {
@@ -582,6 +601,11 @@ QMenu * CDisplayWindow::newDisplayWidgetPopupMenu() {
     m_actions.printMenu->addAction(m_actions.print.reference);
     m_actions.printMenu->addAction(m_actions.print.entry);
     popupMenu->addMenu(m_actions.printMenu);
+
+    m_actions.sendMenu = new QMenu(tr("Send to Text Editor..."), popupMenu);
+    m_actions.sendMenu->addAction(m_actions.send.selectedText);
+    m_actions.sendMenu->addAction(m_actions.send.entry);
+    popupMenu->addMenu(m_actions.sendMenu);
 
     #ifdef BUILD_TEXT_TO_SPEECH
     popupMenu->addAction((m_actions.speakSelectedText));
@@ -874,3 +898,35 @@ void CDisplayWindow::printAnchorOnly()
 
 void CDisplayWindow::printAnchorWithText()
 { m_displayWidget->printAnchorWithText(m_displayOptions, m_filterOptions); }
+
+void CDisplayWindow::sendSelectedTextToEditor() {
+    auto const text = m_displayWidget->qmlInterface()->getSelectedText();
+    if (text.isEmpty())
+        return;
+
+    if (!BtTextEditorWindow::appendToActiveDocument(
+            text,
+            tr("Selected text from %1").arg(firstModule()->name())))
+    {
+        QMessageBox::information(
+                    this,
+                    tr("Text Editor"),
+                    tr("Open the Text Editor first, then try sending text again."));
+    }
+}
+
+void CDisplayWindow::sendEntryToEditor() {
+    auto const text = m_displayWidget->text(BtModelViewReadDisplay::Document);
+    if (text.isEmpty())
+        return;
+
+    if (!BtTextEditorWindow::appendToActiveDocument(
+            text,
+            tr("Entry from %1").arg(firstModule()->name())))
+    {
+        QMessageBox::information(
+                    this,
+                    tr("Text Editor"),
+                    tr("Open the Text Editor first, then try sending text again."));
+    }
+}

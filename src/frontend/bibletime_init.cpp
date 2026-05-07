@@ -15,10 +15,12 @@
 #include <QActionGroup>
 #include <QDebug>
 #include <QDockWidget>
+#include <QGuiApplication>
 #include <QMdiSubWindow>
 #include <QMenu>
 #include <QMenuBar>
 #include <QPointer>
+#include <QScreen>
 #include <QSplitter>
 #include <QToolBar>
 #include <QToolButton>
@@ -60,6 +62,7 @@ BibleTime::ActionCollection::ActionCollection(
                 this);
 
     file.textEditor = new QAction(this);
+    file.textEditor->setIcon(CResMgr::icon_openRichTextEditor());
     file.textEditor->setShortcut(tr("Ctrl+Shift+E",
                                     "File|Text editor"));
     addAction(QStringLiteral("textEditor"), file.textEditor);
@@ -484,6 +487,15 @@ void BibleTime::initView() {
 
     BT_CONNECT(&m_autoScrollTimer, &QTimer::timeout,
                this, &BibleTime::slotAutoScroll);
+
+    if (auto const * const screen = QGuiApplication::primaryScreen()) {
+        auto const available = screen->availableGeometry();
+        resize(qMin(1000, available.width() * 4 / 5),
+               qMin(700, available.height() * 4 / 5));
+        move(available.center() - rect().center());
+    } else {
+        resize(1000, 700);
+    }
 }
 
 static QToolBar* createToolBar(QWidget* parent, bool visible) {
@@ -853,6 +865,7 @@ void BibleTime::initToolbars() {
     m_mainToolBar->addAction(m_actions->view.showBookmarks);
     m_mainToolBar->addAction(m_actions->view.showMag);
     m_mainToolBar->addAction(m_actions->search.searchOpenWorks);
+    m_mainToolBar->addAction(m_actions->file.textEditor);
     m_mainToolBar->addAction(m_actions->help.handbook);
 }
 

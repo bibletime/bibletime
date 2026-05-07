@@ -135,6 +135,10 @@ void BtQuickWidget::mousePressEvent(QMouseEvent *event) {
         event->accept();
         return;
     }
+    if (event->button() == Qt::RightButton) {
+        auto const position = event->position().toPoint();
+        callQml("setContextMenuPosition", position.x(), position.y());
+    }
     QQuickWidget::mousePressEvent(event);
 }
 

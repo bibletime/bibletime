@@ -16,12 +16,15 @@
 #include <QList>
 #include <QMainWindow>
 #include <QString>
+#include <QStringList>
 
 class QAction;
 class QCloseEvent;
 class QEvent;
+class QLabel;
 class QTextCharFormat;
 class QTextEdit;
+class QTimer;
 
 class BtTextEditorWindow final: public QMainWindow {
 
@@ -30,6 +33,13 @@ class BtTextEditorWindow final: public QMainWindow {
 public:
 
     explicit BtTextEditorWindow(QWidget * parent = nullptr);
+    ~BtTextEditorWindow() override;
+
+    static BtTextEditorWindow * activeWindow();
+    static bool appendToActiveDocument(QString const & text,
+                                       QString const & title = QString());
+
+    void appendText(QString const & text, QString const & title = QString());
 
 protected:
 
@@ -42,6 +52,15 @@ private Q_SLOTS:
     void openDocument();
     bool saveDocument();
     bool saveDocumentAs();
+    void printDocument();
+    void findText();
+    void findNext();
+    void findPrevious();
+    void insertTable();
+    void insertPicture();
+    void chooseFont();
+    void checkSpelling();
+    void showThesaurus();
     void formatBold();
     void formatItalic();
     void formatUnderline();
@@ -52,6 +71,8 @@ private Q_SLOTS:
     void formatBulletList();
     void formatNumberedList();
     void formatLink();
+    void formatSingleSpacing();
+    void formatDoubleSpacing();
     void formatHeading1();
     void formatHeading2();
     void formatNormalText();
@@ -59,26 +80,51 @@ private Q_SLOTS:
     void alignCenter();
     void alignRight();
     void showEditorHelp();
+    void saveAutoSave();
+    void updateEditorStatus();
     void updateWindowTitle();
 
 private:
 
     void createActions();
     void createMenus();
+    void createStatusBar();
+    void createToolBars();
+    void restoreAutoSave();
+    void removeAutoSave();
+    bool createBackupFile(QString const & fileName);
     void restoreEditorState();
     void saveEditorState();
     bool maybeSave();
     bool loadFile(QString const & fileName);
     bool saveFile(QString const & fileName);
     void mergeCurrentCharFormat(QTextCharFormat const & format);
+    void mergeCurrentBlockFormat(int proportionalLineHeight,
+                                 double topMargin,
+                                 double bottomMargin);
     void setBlockHeading(int pointSize, int weight);
     void resetCurrentFormat();
+    QString wordAtCursor() const;
+    QStringList spellingSuggestions(QString const & word) const;
+    bool isWordSpelledCorrectly(QString const & word) const;
+    QStringList thesaurusSuggestions(QString const & word) const;
 
     QTextEdit * m_editor;
     QString m_fileName;
+    QString m_lastSearchText;
     QColor m_highlightColor;
+    QLabel * m_formatStatus;
+    QLabel * m_dateTimeStatus;
+    QLabel * m_positionStatus;
+    QLabel * m_saveStatus;
+    QTimer * m_autoSaveTimer;
+    QTimer * m_clockTimer;
     QList<QAction *> m_fileActions;
+    QList<QAction *> m_editActions;
+    QList<QAction *> m_searchActions;
     QList<QAction *> m_formatActions;
+    QList<QAction *> m_insertActions;
+    QList<QAction *> m_toolsActions;
     QList<QAction *> m_helpActions;
 
 };

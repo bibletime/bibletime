@@ -220,17 +220,42 @@
         </keycombo>.</para>
 
         <para>The text editor can format text as bold, italic, underline,
-        headings, bullet and numbered lists, links, and aligned paragraphs.
-        It can also apply font colors, page background colors, and different
-        highlight colors. Use the editor's
+        headings, bullet and numbered lists, links, single or double spaced
+        paragraphs, and aligned paragraphs. It can also apply font choices,
+        font colors, page background colors, and different highlight colors.
+        Use the editor's
         <guimenu>Format</guimenu> menu or keyboard shortcuts to apply these
         formats.</para>
+
+        <para>The
+        <guimenu>Insert</guimenu> menu can add simple tables and pictures.
+        The
+        <guimenu>Search</guimenu> menu can find text in the current document.
+        The
+        <guimenu>Tools</guimenu> menu provides spell checking and a thesaurus
+        when the required open source dictionary tools are installed on your
+        system.</para>
+
+        <para>The editor has a small toolbar for common actions such as new,
+        open, save, print, undo, redo, cut, copy, paste, find, spell check,
+        thesaurus, formatting, lists, links, tables, and pictures. The status
+        bar shows the current text format, cursor line, column, document
+        position, date and time, and whether the document has unsaved
+        changes.</para>
 
         <para>Text editor documents are saved as HTML by default so rich
         formatting is preserved. If you save as plain text, formatting such
         as colors, highlights, links, and headings will not be stored. The
         editor remembers the last file it had open and restores the cursor
-        location the next time it is opened, if the file still exists.</para>
+        location the next time it is opened, if the file still exists. When
+        saving over an existing document, the editor first writes a
+        <filename>.bak</filename> backup beside the original file.</para>
+
+        <para>While you are editing, the text editor periodically writes an
+        autosaved recovery copy. If &bibletime; or the editor closes
+        unexpectedly, the editor offers to restore that recovery copy the next
+        time it is opened. A normal save or clean close removes the recovery
+        copy.</para>
 
         <para>To insert a link, select the link text and choose
         <menuchoice>
@@ -243,6 +268,16 @@
         </keycombo>.
         Enter the link text and URL in the dialog. To open a link while
         editing, hold &Ctrl; and click the link.</para>
+
+        <para>You can also send text from an open read window to the text
+        editor. Open the text editor first, then use the read window's
+        <mousebutton>right</mousebutton> mouse button context menu and choose
+        <menuchoice>
+          <guimenu>Send to Text Editor</guimenu>
+        </menuchoice>.
+        Bible windows can send the selected text, the current reference with
+        text, or the chapter. Other read windows can send the selected text or
+        the current entry.</para>
       </sect3>
     </sect2>
   </sect1>
@@ -486,7 +521,8 @@
     <guimenuitem>Select</guimenuitem>, 
     <guimenuitem>Copy</guimenuitem> (to clipboard), 
     <guimenuitem>Save</guimenuitem> or 
-    <guimenuitem>Print</guimenuitem> text. This works for example in the
+    <guimenuitem>Print</guimenuitem> text, or
+    <guimenuitem>Send to Text Editor</guimenuitem>. This works for example in the
     read windows, when you click on the normal text or the verse
     reference, or in the search result page when you click on a work or
     one or more verse references. It is pretty straightforward, so just

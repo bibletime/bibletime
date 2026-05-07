@@ -72,6 +72,14 @@ Rectangle {
         }
     }
 
+    function setContextMenuPosition(x, y) {
+        const column = Math.floor(x / (listView.width / listView.columns));
+        const index = listView.indexAt(x + listView.contentX,
+                                       y + listView.contentY);
+        BtQmlInterface.contextMenuColumn = column;
+        BtQmlInterface.contextMenuIndex = index;
+    }
+
     function leftMouseMove(x, y) {
         // Do nothing unless mouse moved some distance from pressed location
         if (!mousePressedAndMoving) {
