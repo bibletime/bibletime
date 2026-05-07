@@ -35,6 +35,7 @@
 #include "cmdiarea.h"
 #include "bookshelfwizard/btbookshelfwizard.h"
 #include "debugwindow.h"
+#include "bttexteditorwindow.h"
 #include "display/btfindwidget.h"
 #include "display/btmodelviewreaddisplay.h"
 #include "displaywindow/btmodulechooserbar.h"
@@ -81,6 +82,13 @@ void BibleTime::saveConfigSettings()
 /** Opens the bookshelf wizard. */
 void BibleTime::slotBookshelfWizard()
 { BtBookshelfWizard(this).exec(); }
+
+/** Opens a standalone text editor window. */
+void BibleTime::slotOpenTextEditor() {
+    auto * const editor = new BtTextEditorWindow();
+    editor->setAttribute(Qt::WA_DeleteOnClose);
+    editor->show();
+}
 
 /** Is called just before the window menu is shown. */
 void BibleTime::slotWindowMenuAboutToShow() {

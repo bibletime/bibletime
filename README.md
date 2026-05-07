@@ -52,8 +52,8 @@ options to CMake:
        - list of language codes to use for PDF howto, or empty for all languages
          (default: "")
 
-For example, passing `-DGENERATE-HOWTO_HTML_LANGUAGES=en;et` to the cmake
-command to restricts generation and installation of howto HTML versions to the
+For example, passing `-DBUILD_HOWTO_HTML_LANGUAGES='en;et'` to the cmake
+command restricts generation and installation of howto HTML versions to the
 English and Estonian translations only, and `-DBUILD_HOWTO_PDF=OFF` disables
 generation of the howto in PDF format.
 

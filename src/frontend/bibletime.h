@@ -144,6 +144,7 @@ public: // Types:
 
         struct { // File menu:
             BtOpenWorkAction * openWork;
+            QAction * textEditor;
             QAction * quit;
         } file;
 
@@ -296,6 +297,9 @@ public Q_SLOTS:
 
     /** Opens the bookshelf wizard. */
     void slotBookshelfWizard();
+
+    /** Opens a standalone text editor window. */
+    void slotOpenTextEditor();
 
     /** Opens the handbook. */
     void openOnlineHelp_Handbook();

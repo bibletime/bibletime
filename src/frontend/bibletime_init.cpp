@@ -30,6 +30,7 @@
 #include "bibletimeapp.h"
 #include "btbookshelfdockwidget.h"
 #include "btopenworkaction.h"
+#include "bttexteditorwindow.h"
 #include "cinfodisplay.h"
 #include "cmdiarea.h"
 #include "display/btfindwidget.h"
@@ -57,6 +58,11 @@ BibleTime::ActionCollection::ActionCollection(
                 btConfig(),
                 QStringLiteral("GUI/mainWindow/openWorkAction/grouping"),
                 this);
+
+    file.textEditor = new QAction(this);
+    file.textEditor->setShortcut(tr("Ctrl+Shift+E",
+                                    "File|Text editor"));
+    addAction(QStringLiteral("textEditor"), file.textEditor);
 
     file.quit = new QAction(this);
     file.quit->setIcon(CResMgr::mainMenu::file::quit::icon());
@@ -291,6 +297,9 @@ BibleTime::ActionCollection::ActionCollection(
 }
 
 void BibleTime::ActionCollection::retranslateUi() {
+    file.textEditor->setText(tr("&Text Editor..."));
+    file.textEditor->setToolTip(tr("Open a rich text editor"));
+
     file.quit->setText(tr("&Quit"));
     file.quit->setToolTip(tr("Quit BibleTime"));
 
@@ -566,6 +575,8 @@ void BibleTime::initActions() {
     BT_CONNECT(m_actions->file.openWork, &BtOpenWorkAction::triggered,
                [this](CSwordModuleInfo * const module)
                { createReadDisplayWindow(module); });
+    BT_CONNECT(m_actions->file.textEditor, &QAction::triggered,
+               this, &BibleTime::slotOpenTextEditor);
     BT_CONNECT(m_actions->file.quit, &QAction::triggered,
                this, &BibleTime::close);
 
@@ -727,6 +738,7 @@ void BibleTime::initMenubar() {
     // File menu:
     m_fileMenu = new QMenu(this);
     m_fileMenu->addAction(m_actions->file.openWork);
+    m_fileMenu->addAction(m_actions->file.textEditor);
     m_fileMenu->addSeparator();
     m_fileMenu->addAction(m_actions->file.quit);
     menuBar()->addMenu(m_fileMenu);
