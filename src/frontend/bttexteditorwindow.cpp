@@ -39,6 +39,7 @@
 #include <QMenuBar>
 #include <QMessageBox>
 #include <QMouseEvent>
+#include <QPalette>
 #include <QPointer>
 #include <QPrintDialog>
 #include <QPrinter>
@@ -54,6 +55,8 @@
 #include <QTextCursor>
 #include <QTextDocument>
 #include <QTextEdit>
+#include <QTextFrame>
+#include <QTextFrameFormat>
 #include <QTextImageFormat>
 #include <QTextListFormat>
 #include <QTextStream>
@@ -94,6 +97,110 @@ bool isHtmlDocument(QString const & fileName, QString const & text) {
            || trimmed.startsWith(QStringLiteral("<html"), Qt::CaseInsensitive)
            || trimmed.contains(QStringLiteral("<meta name=\"qrichtext\""),
                                Qt::CaseInsensitive);
+}
+
+std::optional<QColor> colorFromCssValue(QString value) {
+    value = value.trimmed();
+    if (value.endsWith(';'))
+        value.chop(1);
+
+    auto const color = QColor(value.trimmed());
+    if (color.isValid())
+        return color;
+
+    return std::nullopt;
+}
+
+std::optional<QColor> bodyBackgroundColor(QString const & html) {
+    auto const bodyMatch =
+            QRegularExpression(
+                QStringLiteral("<body\\b([^>]*)>"),
+                QRegularExpression::CaseInsensitiveOption)
+            .match(html);
+    if (!bodyMatch.hasMatch())
+        return std::nullopt;
+
+    auto const bodyAttributes = bodyMatch.captured(1);
+    auto const bgcolorMatch =
+            QRegularExpression(
+                QStringLiteral(
+                    "\\bbgcolor\\s*=\\s*(?:\"([^\"]*)\"|'([^']*)'|([^\\s>]*))"),
+                QRegularExpression::CaseInsensitiveOption)
+            .match(bodyAttributes);
+    if (bgcolorMatch.hasMatch()) {
+        for (int i = 1; i <= 3; i++) {
+            auto const captured = bgcolorMatch.captured(i);
+            if (captured.isEmpty())
+                continue;
+            auto const color = QColor(captured.trimmed());
+            if (color.isValid())
+                return color;
+        }
+    }
+
+    auto const styleMatch =
+            QRegularExpression(
+                QStringLiteral(
+                    "\\bstyle\\s*=\\s*(?:\"([^\"]*)\"|'([^']*)')"),
+                QRegularExpression::CaseInsensitiveOption)
+            .match(bodyAttributes);
+    if (!styleMatch.hasMatch())
+        return std::nullopt;
+
+    auto const style =
+            !styleMatch.captured(1).isEmpty()
+            ? styleMatch.captured(1)
+            : styleMatch.captured(2);
+    auto const backgroundMatch =
+            QRegularExpression(
+                QStringLiteral(
+                    "(?:^|;)\\s*background(?:-color)?\\s*:\\s*([^;]+)"),
+                QRegularExpression::CaseInsensitiveOption)
+            .match(style);
+    if (!backgroundMatch.hasMatch())
+        return std::nullopt;
+
+    return colorFromCssValue(backgroundMatch.captured(1));
+}
+
+QString bodyTagWithBackground(QString bodyTag, QColor const & color) {
+    auto const colorName = color.name(QColor::HexRgb);
+
+    bodyTag.remove(
+                QRegularExpression(
+                    QStringLiteral(
+                        "\\s+bgcolor\\s*=\\s*(?:\"[^\"]*\"|'[^']*'|[^\\s>]*)"),
+                    QRegularExpression::CaseInsensitiveOption));
+
+    auto const styleExpression =
+            QRegularExpression(
+                QStringLiteral("\\bstyle\\s*=\\s*(\"([^\"]*)\"|'([^']*)')"),
+                QRegularExpression::CaseInsensitiveOption);
+    auto const styleMatch = styleExpression.match(bodyTag);
+    if (styleMatch.hasMatch()) {
+        auto style =
+                !styleMatch.captured(2).isEmpty()
+                ? styleMatch.captured(2)
+                : styleMatch.captured(3);
+        style.remove(
+                    QRegularExpression(
+                        QStringLiteral(
+                            "(?:^|;)\\s*background(?:-color)?\\s*:[^;]*;?"),
+                        QRegularExpression::CaseInsensitiveOption));
+        style = QStringLiteral("background-color:%1; %2")
+                .arg(colorName, style.trimmed());
+        bodyTag.replace(styleMatch.capturedStart(1),
+                        styleMatch.capturedLength(1),
+                        QStringLiteral("\"%1\"").arg(style.trimmed()));
+    } else {
+        bodyTag.insert(bodyTag.size() - 1,
+                       QStringLiteral(" style=\"background-color:%1;\"")
+                       .arg(colorName));
+    }
+
+    bodyTag.insert(bodyTag.size() - 1,
+                   QStringLiteral(" bgcolor=\"%1\"").arg(colorName));
+    return bodyTag;
 }
 
 QString aspellPath() {
@@ -185,6 +292,7 @@ BtTextEditorWindow::BtTextEditorWindow(QWidget * const parent)
     : QMainWindow(parent)
     , m_editor(new QTextEdit(this))
     , m_highlightColor(QColor(255, 242, 128))
+    , m_pageBackgroundColor(Qt::white)
     , m_formatStatus(new QLabel(this))
     , m_dateTimeStatus(new QLabel(this))
     , m_positionStatus(new QLabel(this))
@@ -196,6 +304,7 @@ BtTextEditorWindow::BtTextEditorWindow(QWidget * const parent)
     setCentralWidget(m_editor);
     m_editor->setAcceptRichText(true);
     m_editor->viewport()->installEventFilter(this);
+    setPageBackgroundColor(m_pageBackgroundColor, false);
 
     createActions();
     createMenus();
@@ -305,6 +414,7 @@ void BtTextEditorWindow::newDocument() {
     removeAutoSave();
     m_fileName.clear();
     m_editor->clear();
+    setPageBackgroundColor(Qt::white, false);
     resetCurrentFormat();
     m_editor->document()->setModified(false);
     updateWindowTitle();
@@ -984,7 +1094,10 @@ void BtTextEditorWindow::restoreAutoSave() {
         return;
 
     QTextStream stream(&file);
-    m_editor->setHtml(stream.readAll());
+    auto const text = stream.readAll();
+    m_editor->setHtml(text);
+    setPageBackgroundColor(bodyBackgroundColor(text).value_or(Qt::white),
+                           false);
     m_editor->document()->setModified(true);
     updateWindowTitle();
     updateEditorStatus();
@@ -1093,16 +1206,13 @@ void BtTextEditorWindow::chooseFontColor() {
 void BtTextEditorWindow::chooseBackgroundColor() {
     auto const color =
             QColorDialog::getColor(
-                m_editor->palette().base().color(),
+                m_pageBackgroundColor,
                 this,
                 tr("Select Background Color"));
     if (!color.isValid())
         return;
 
-    auto palette = m_editor->palette();
-    palette.setColor(QPalette::Base, color);
-    m_editor->setPalette(palette);
-    m_editor->document()->setModified(true);
+    setPageBackgroundColor(color);
 }
 
 void BtTextEditorWindow::formatBulletList() {
@@ -1239,7 +1349,7 @@ void BtTextEditorWindow::saveAutoSave() {
         return;
 
     QTextStream stream(&file);
-    stream << m_editor->toHtml();
+    stream << htmlWithPageBackground();
     statusBar()->showMessage(tr("Autosaved recovery copy."), 3000);
 }
 
@@ -1416,10 +1526,13 @@ bool BtTextEditorWindow::loadFile(QString const & fileName) {
 
     QTextStream stream(&file);
     auto const text = stream.readAll();
-    if (isHtmlDocument(fileName, text))
+    if (isHtmlDocument(fileName, text)) {
         m_editor->setHtml(text);
-    else {
+        setPageBackgroundColor(bodyBackgroundColor(text).value_or(Qt::white),
+                               false);
+    } else {
         m_editor->setPlainText(text);
+        setPageBackgroundColor(Qt::white, false);
         resetCurrentFormat();
     }
     m_fileName = fileName;
@@ -1445,11 +1558,56 @@ bool BtTextEditorWindow::saveFile(QString const & fileName) {
     auto const suffix = QFileInfo(fileName).suffix().toLower();
     stream << ((suffix == QStringLiteral("txt"))
                ? m_editor->toPlainText()
-               : m_editor->toHtml());
+               : htmlWithPageBackground());
     m_fileName = fileName;
     m_editor->document()->setModified(false);
     removeAutoSave();
     updateWindowTitle();
     updateEditorStatus();
     return true;
+}
+
+void BtTextEditorWindow::setPageBackgroundColor(QColor const & color,
+                                                bool const markModified)
+{
+    if (!color.isValid())
+        return;
+
+    m_pageBackgroundColor = color;
+
+    auto palette = m_editor->palette();
+    palette.setColor(QPalette::Base, color);
+    palette.setColor(QPalette::Window, color);
+    m_editor->setPalette(palette);
+    m_editor->setAutoFillBackground(true);
+    m_editor->viewport()->setPalette(palette);
+    m_editor->viewport()->setAutoFillBackground(true);
+
+    auto * const rootFrame = m_editor->document()->rootFrame();
+    auto frameFormat = rootFrame->frameFormat();
+    frameFormat.setBackground(color);
+    rootFrame->setFrameFormat(frameFormat);
+
+    if (markModified)
+        m_editor->document()->setModified(true);
+}
+
+QString BtTextEditorWindow::htmlWithPageBackground() const {
+    auto html = m_editor->toHtml();
+    if (!m_pageBackgroundColor.isValid())
+        return html;
+
+    auto const bodyExpression =
+            QRegularExpression(
+                QStringLiteral("<body\\b[^>]*>"),
+                QRegularExpression::CaseInsensitiveOption);
+    auto const bodyMatch = bodyExpression.match(html);
+    if (!bodyMatch.hasMatch())
+        return html;
+
+    html.replace(bodyMatch.capturedStart(),
+                 bodyMatch.capturedLength(),
+                 bodyTagWithBackground(bodyMatch.captured(0),
+                                       m_pageBackgroundColor));
+    return html;
 }

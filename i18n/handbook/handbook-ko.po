@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2026-05-07 15:37-0400\n"
+"POT-Creation-Date: 2026-05-08 12:47-0400\n"
 "PO-Revision-Date: 2011-12-11 21:42+0000\n"
 "Last-Translator: rokmcssu <yaraba@daum.net>, 2017\n"
 "Language-Team: Korean (http://app.transifex.com/bibletime/bibletime/language/"
@@ -827,7 +827,7 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Editing rich text notes"
-msgstr ""
+msgstr "서식 있는 텍스트 노트 편집"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -835,16 +835,33 @@ msgid ""
 "tied to a particular Bible verse. Open it from <menuchoice> <guimenu>File</"
 "guimenu> <guimenuitem>Text Editor</guimenuitem> </menuchoice> or by pressing "
 "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap> </keycombo>."
-msgstr ""
+msgstr "&bibletime;에는 특정 성경 구절에 연결되지 않은 노트를 위한 간단한 서식 있는 텍스트 편집기도 포함되어 있습니다. <menuchoice> <guimenu>파일</guimenu> <guimenuitem>텍스트 편집기</guimenuitem> </menuchoice>에서 열거나 <keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap> </keycombo>를 눌러 열 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
 "The text editor can format text as bold, italic, underline, headings, bullet "
-"and numbered lists, links, and aligned paragraphs.  It can also apply font "
-"colors, page background colors, and different highlight colors. Use the "
-"editor's <guimenu>Format</guimenu> menu or keyboard shortcuts to apply these "
-"formats."
-msgstr ""
+"and numbered lists, links, single or double spaced paragraphs, and aligned "
+"paragraphs. It can also apply font choices, font colors, page background "
+"colors, and different highlight colors.  Use the editor's <guimenu>Format</"
+"guimenu> menu or keyboard shortcuts to apply these formats."
+msgstr "텍스트 편집기는 굵게, 기울임꼴, 밑줄, 제목, 글머리 기호 목록과 번호 매기기 목록, 링크, 한 줄 또는 두 줄 간격 문단, 정렬된 문단으로 텍스트를 서식 지정할 수 있습니다. 또한 글꼴 선택, 글꼴 색, 페이지 배경색, 여러 강조 색을 적용할 수 있습니다. 이러한 서식을 적용하려면 편집기의 <guimenu>서식</guimenu> 메뉴나 키보드 단축키를 사용하십시오."
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"The <guimenu>Insert</guimenu> menu can add simple tables and pictures.  The "
+"<guimenu>Search</guimenu> menu can find text in the current document.  The "
+"<guimenu>Tools</guimenu> menu provides spell checking and a thesaurus when "
+"the required open source dictionary tools are installed on your system."
+msgstr "<guimenu>삽입</guimenu> 메뉴에서는 간단한 표와 그림을 추가할 수 있습니다. <guimenu>검색</guimenu> 메뉴에서는 현재 문서의 텍스트를 찾을 수 있습니다. 필요한 오픈 소스 사전 도구가 시스템에 설치되어 있으면 <guimenu>도구</guimenu> 메뉴에서 맞춤법 검사와 시소러스를 사용할 수 있습니다."
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"The editor has a small toolbar for common actions such as new, open, save, "
+"print, undo, redo, cut, copy, paste, find, spell check, thesaurus, "
+"formatting, lists, links, tables, and pictures. The status bar shows the "
+"current text format, cursor line, column, document position, date and time, "
+"and whether the document has unsaved changes."
+msgstr "편집기에는 새 문서, 열기, 저장, 인쇄, 실행 취소, 다시 실행, 잘라내기, 복사, 붙여넣기, 찾기, 맞춤법 검사, 시소러스, 서식, 목록, 링크, 표, 그림 같은 일반 작업을 위한 작은 도구 모음이 있습니다. 상태 표시줄에는 현재 텍스트 서식, 커서 줄, 열, 문서 위치, 날짜와 시간, 저장하지 않은 변경 사항이 있는지가 표시됩니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -852,8 +869,17 @@ msgid ""
 "preserved. If you save as plain text, formatting such as colors, highlights, "
 "links, and headings will not be stored. The editor remembers the last file "
 "it had open and restores the cursor location the next time it is opened, if "
-"the file still exists."
-msgstr ""
+"the file still exists. When saving over an existing document, the editor "
+"first writes a <filename>.bak</filename> backup beside the original file."
+msgstr "텍스트 편집기 문서는 서식 있는 내용을 보존하기 위해 기본적으로 HTML로 저장됩니다. 일반 텍스트로 저장하면 색, 강조, 링크, 제목 같은 서식은 저장되지 않습니다. 편집기는 마지막으로 열었던 파일을 기억하며, 파일이 아직 있으면 다음에 열 때 커서 위치를 복원합니다. 기존 문서 위에 저장할 때는 먼저 원본 파일 옆에 <filename>.bak</filename> 백업을 씁니다."
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"While you are editing, the text editor periodically writes an autosaved "
+"recovery copy. If &bibletime; or the editor closes unexpectedly, the editor "
+"offers to restore that recovery copy the next time it is opened. A normal "
+"save or clean close removes the recovery copy."
+msgstr "편집하는 동안 텍스트 편집기는 자동 저장 복구 사본을 주기적으로 씁니다. &bibletime;이나 편집기가 예기치 않게 닫히면 다음에 편집기를 열 때 그 복구 사본을 복원할지 묻습니다. 정상 저장이나 정상 종료를 하면 복구 사본은 삭제됩니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -862,7 +888,17 @@ msgid ""
 "press <keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap> </keycombo>.  "
 "Enter the link text and URL in the dialog. To open a link while editing, "
 "hold &Ctrl; and click the link."
-msgstr ""
+msgstr "링크를 삽입하려면 링크 텍스트를 선택하고 <menuchoice> <guimenu>서식</guimenu> <guimenuitem>링크</guimenuitem> </menuchoice>를 선택하거나 <keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap> </keycombo>를 누르십시오. 대화 상자에 링크 텍스트와 URL을 입력합니다. 편집 중에 링크를 열려면 &Ctrl; 키를 누른 채 링크를 클릭하십시오."
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"You can also send text from an open read window to the text editor. Open the "
+"text editor first, then use the read window's <mousebutton>right</"
+"mousebutton> mouse button context menu and choose <menuchoice> <guimenu>Send "
+"to Text Editor</guimenu> </menuchoice>.  Bible windows can send the selected "
+"text, the current reference with text, or the chapter. Other read windows "
+"can send the selected text or the current entry."
+msgstr "열려 있는 읽기 창에서 텍스트 편집기로 텍스트를 보낼 수도 있습니다. 먼저 텍스트 편집기를 연 다음, 읽기 창에서 <mousebutton>오른쪽</mousebutton> 마우스 버튼 컨텍스트 메뉴를 사용하고 <menuchoice> <guimenu>텍스트 편집기로 보내기</guimenu> </menuchoice>를 선택하십시오. 성경 창에서는 선택한 텍스트, 현재 참조와 텍스트, 또는 장 전체를 보낼 수 있습니다. 다른 읽기 창에서는 선택한 텍스트나 현재 항목을 보낼 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Searching text in an open read window"
@@ -1256,17 +1292,12 @@ msgid ""
 "<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
 "allow you to <guimenuitem>Select</guimenuitem>, <guimenuitem>Copy</"
 "guimenuitem> (to clipboard), <guimenuitem>Save</guimenuitem> or "
-"<guimenuitem>Print</guimenuitem> text. This works for example in the read "
-"windows, when you click on the normal text or the verse reference, or in the "
-"search result page when you click on a work or one or more verse references. "
-"It is pretty straightforward, so just try it out."
-msgstr ""
-"다양한 곳에서 <mousebutton>우측</mousebutton> 마우스 버튼을 클릭해서 컨텍스"
-"트 메뉴를 열 수 있습니다. 장소에 따라서 <guimenuitem>복사</guimenuitem> (클립"
-"보드로), <guimenuitem>저장</guimenuitem> 또는 <guimenuitem>인쇄</"
-"guimenuitem> 메뉴를 만날 수 있습니다. 예를 들면 읽기창에서는 일반 텍스트나 절"
-"참조를 클릭할 때 동작하고 검색 결과 창에서는 특정 책이나 하나 이상의 절참조"
-"를 클릭할 때 동작합니다. 아주 간단하므로 그냥 시도해 보세요."
+"<guimenuitem>Print</guimenuitem> text, or <guimenuitem>Send to Text Editor</"
+"guimenuitem>. This works for example in the read windows, when you click on "
+"the normal text or the verse reference, or in the search result page when "
+"you click on a work or one or more verse references. It is pretty "
+"straightforward, so just try it out."
+msgstr "여러 곳에서 <mousebutton>오른쪽</mousebutton> 마우스 버튼을 클릭하여 컨텍스트 메뉴를 열 수 있습니다. 상황에 따라 텍스트를 <guimenuitem>선택</guimenuitem>, <guimenuitem>복사</guimenuitem>(클립보드로), <guimenuitem>저장</guimenuitem>, <guimenuitem>인쇄</guimenuitem>하거나 <guimenuitem>텍스트 편집기로 보내기</guimenuitem>를 할 수 있습니다. 예를 들어 읽기 창에서 일반 텍스트나 절 참조를 클릭할 때, 또는 검색 결과 페이지에서 작품이나 하나 이상의 절 참조를 클릭할 때 사용할 수 있습니다. 아주 간단하므로 직접 시도해 보십시오."
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -1330,26 +1361,20 @@ msgid ""
 msgstr "<action>책 열기.</action> 설치된 책을 열수 있는 메뉴가 나타납니다."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;"
-#| "+S</keycap></keycombo> </shortcut> <guimenu>Window</guimenu> "
-#| "<guimenuitem>Save as new session</guimenuitem> </menuchoice>"
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;"
 "+E</keycap></keycombo> </shortcut> <guimenu>File</guimenu> <guimenuitem>Text "
 "Editor</guimenuitem> </menuchoice>"
-msgstr ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</"
-"keycap></keycombo> </shortcut> <guimenu>창관리</guimenu> <guimenuitem>새로운 "
-"세션으로 저장</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap></keycombo> </shortcut> <guimenu>파일</guimenu> <guimenuitem>텍스트 편집기</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid ""
 "<action>Open the rich text editor.</action> This opens a simple editor for "
 "notes which are not tied to a particular Bible verse. It supports rich "
-"formatting and saves HTML documents by default."
-msgstr ""
+"formatting and saves HTML documents by default. It also supports printing, "
+"search, spell check, thesaurus lookup, tables, pictures, autosave recovery, "
+"and backup files when saving over an existing document."
+msgstr "<action>서식 있는 텍스트 편집기를 엽니다.</action> 특정 성경 구절에 연결되지 않은 노트를 위한 간단한 편집기를 엽니다. 서식 있는 편집을 지원하며 기본적으로 HTML 문서로 저장합니다. 또한 인쇄, 검색, 맞춤법 검사, 시소러스 찾기, 표, 그림, 자동 저장 복구, 기존 문서 위에 저장할 때 백업 파일 생성을 지원합니다."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 msgid ""
@@ -2403,27 +2428,166 @@ msgid "Copy. This copies the selected text to the clipboard."
 msgstr "복사. 선택한 텍스트를 클립보드로 복사합니다."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
-#| msgid ""
-#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
 msgid ""
 "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
-#| msgid ""
-#| "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
-#| "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
-#| "link> equivalent; closes &bibletime;."
 msgid ""
 "<link linkend=\"hdbk-reference-menus-file-text-editor\"> <menuchoice> "
 "<guimenu>File</guimenu> <guimenuitem>Text Editor</guimenuitem> </menuchoice> "
 "</link> equivalent; opens the rich text editor."
-msgstr ""
-"<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> <guimenu>파일"
-"</guimenu> <guimenuitem>나가기</guimenuitem> </menuchoice> </link>와 동일; 바"
-"이블타임을 닫습니다."
+msgstr "<link linkend=\"hdbk-reference-menus-file-text-editor\"> <menuchoice> <guimenu>파일</guimenu> <guimenuitem>텍스트 편집기</guimenuitem> </menuchoice> </link>와 동일하며, 서식 있는 텍스트 편집기를 엽니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+P</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+P</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "Print. In the rich text editor, prints the current document."
+msgstr "인쇄. 서식 있는 텍스트 편집기에서 현재 문서를 인쇄합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, inserts or edits a link."
+msgstr "서식 있는 텍스트 편집기에서 링크를 삽입하거나 편집합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+1</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+1</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid ""
+"In the rich text editor, applies single spacing to the current paragraph."
+msgstr "서식 있는 텍스트 편집기에서 현재 문단에 한 줄 간격을 적용합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+2</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+2</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid ""
+"In the rich text editor, applies double spacing to the current paragraph."
+msgstr "서식 있는 텍스트 편집기에서 현재 문단에 두 줄 간격을 적용합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+F</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, opens the font chooser."
+msgstr "서식 있는 텍스트 편집기에서 글꼴 선택기를 엽니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+H</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+H</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, applies the current highlight color."
+msgstr "서식 있는 텍스트 편집기에서 현재 강조 색을 적용합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, chooses the highlight color."
+msgstr "서식 있는 텍스트 편집기에서 강조 색을 선택합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+C</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+C</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, chooses the font color."
+msgstr "서식 있는 텍스트 편집기에서 글꼴 색을 선택합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+B</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+B</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, chooses the page background color."
+msgstr "서식 있는 텍스트 편집기에서 페이지 배경색을 선택합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+0</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+0</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, applies normal text formatting."
+msgstr "서식 있는 텍스트 편집기에서 일반 텍스트 서식을 적용합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+1</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+1</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, applies heading 1 formatting."
+msgstr "서식 있는 텍스트 편집기에서 제목 1 서식을 적용합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+2</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+2</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, applies heading 2 formatting."
+msgstr "서식 있는 텍스트 편집기에서 제목 2 서식을 적용합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+8</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+8</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, starts a bullet list."
+msgstr "서식 있는 텍스트 편집기에서 글머리 기호 목록을 시작합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+7</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+7</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, starts a numbered list."
+msgstr "서식 있는 텍스트 편집기에서 번호 매기기 목록을 시작합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+T</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+T</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, inserts a table."
+msgstr "서식 있는 텍스트 편집기에서 표를 삽입합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+P</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+P</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, inserts a picture."
+msgstr "서식 있는 텍스트 편집기에서 그림을 삽입합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "<keycap>F7</keycap>"
+msgstr "<keycap>F7</keycap>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, starts spell check."
+msgstr "서식 있는 텍스트 편집기에서 맞춤법 검사를 시작합니다."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "<keycombo action=\"simul\"> <keycap>&Shift;+F7</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+F7</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, opens the thesaurus."
+msgstr "서식 있는 텍스트 편집기에서 시소러스를 엽니다."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
@@ -2858,7 +3022,7 @@ msgstr "Holmlund"
 msgid ""
 "<copyright> <year>1999-2026</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
-msgstr ""
+msgstr "<copyright> <year>1999-2026</year> <holder>&bibletime; 팀</holder> </copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 msgid ""

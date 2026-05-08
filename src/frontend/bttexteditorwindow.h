@@ -98,6 +98,9 @@ private:
     bool maybeSave();
     bool loadFile(QString const & fileName);
     bool saveFile(QString const & fileName);
+    void setPageBackgroundColor(QColor const & color,
+                                bool markModified = true);
+    QString htmlWithPageBackground() const;
     void mergeCurrentCharFormat(QTextCharFormat const & format);
     void mergeCurrentBlockFormat(int proportionalLineHeight,
                                  double topMargin,
@@ -113,6 +116,7 @@ private:
     QString m_fileName;
     QString m_lastSearchText;
     QColor m_highlightColor;
+    QColor m_pageBackgroundColor;
     QLabel * m_formatStatus;
     QLabel * m_dateTimeStatus;
     QLabel * m_positionStatus;
