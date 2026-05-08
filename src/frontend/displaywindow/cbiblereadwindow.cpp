@@ -19,6 +19,8 @@
 #include <QMessageBox>
 #include <QMdiSubWindow>
 #include <QMenu>
+#include <QRegularExpression>
+#include <QTextDocumentFragment>
 #include <QTimer>
 #include <QWidget>
 #include "../../backend/drivers/cswordbiblemoduleinfo.h"
@@ -33,6 +35,38 @@
 #include "../display/btmodelviewreaddisplay.h"
 #include "../display/modelview/btqmlinterface.h"
 #include "../keychooser/ckeychooser.h"
+
+namespace {
+
+QString bibleTextForEditor(QString text) {
+    text.remove(
+                QRegularExpression(
+                    QStringLiteral("\\s*\\[[^\\]]*(?:crossrefs\\s*=|sword://Bible/)[^\\]]*\\]"),
+                    QRegularExpression::CaseInsensitiveOption));
+    text.remove(
+                QRegularExpression(
+                    QStringLiteral("\\s*\\[[^\\]]*\\]")));
+    text.remove(
+                QRegularExpression(
+                    QStringLiteral("\\s*<[GH][0-9]+>"),
+                    QRegularExpression::CaseInsensitiveOption));
+
+    auto plainText = QTextDocumentFragment::fromHtml(text).toPlainText();
+    plainText.remove(
+                QRegularExpression(
+                    QStringLiteral("\\s*<[GH][0-9]+>"),
+                    QRegularExpression::CaseInsensitiveOption));
+    plainText.remove(QRegularExpression(QStringLiteral("\\s*\\[[^\\]]*\\]")));
+    plainText.replace(QRegularExpression(QStringLiteral("[ \\t]+\\n")),
+                      QStringLiteral("\n"));
+    plainText.replace(QRegularExpression(QStringLiteral("\\n[ \\t]+")),
+                      QStringLiteral("\n"));
+    plainText.replace(QRegularExpression(QStringLiteral("[ \\t]{2,}")),
+                      QStringLiteral(" "));
+    return plainText.trimmed();
+}
+
+} // anonymous namespace
 
 
 CBibleReadWindow::ActionCollection::ActionCollection(QObject * const parent)
@@ -363,7 +397,8 @@ void CBibleReadWindow::saveChapterPlain() {
 }
 
 void CBibleReadWindow::sendSelectedTextToEditor() {
-    auto const text = displayWidget()->qmlInterface()->getSelectedText();
+    auto const text =
+            bibleTextForEditor(displayWidget()->qmlInterface()->getSelectedText());
     if (text.isEmpty())
         return;
 
@@ -385,7 +420,9 @@ void CBibleReadWindow::sendReferenceToEditor() {
 
     auto const text =
             QStringLiteral("%1\n(%2, %3)")
-            .arg(key->strippedText(), key->key(), key->module()->name());
+            .arg(bibleTextForEditor(key->strippedText()),
+                 key->key(),
+                 key->module()->name());
     if (text.isEmpty())
         return;
 
@@ -404,7 +441,7 @@ void CBibleReadWindow::sendChapterToEditor() {
     auto * const clipboard = QGuiApplication::clipboard();
     auto const previousText = clipboard->text();
     copyDisplayedText();
-    auto const text = clipboard->text();
+    auto const text = bibleTextForEditor(clipboard->text());
     clipboard->setText(previousText);
 
     if (text.isEmpty())

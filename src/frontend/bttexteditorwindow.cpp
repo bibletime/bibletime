@@ -357,15 +357,15 @@ void BtTextEditorWindow::appendText(QString const & text,
                                     QString const & title)
 {
     auto cursor = m_editor->textCursor();
-    cursor.movePosition(QTextCursor::End);
-    if (!m_editor->document()->isEmpty())
-        cursor.insertBlock();
+    auto const startedWithSelection = cursor.hasSelection();
 
     if (!title.isEmpty()) {
         QTextCharFormat titleFormat;
         titleFormat.setFontWeight(QFont::Bold);
         cursor.insertText(title, titleFormat);
         cursor.insertBlock();
+    } else if (startedWithSelection) {
+        cursor.removeSelectedText();
     }
 
     cursor.insertText(text);
