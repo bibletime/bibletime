@@ -22,7 +22,7 @@
 #include "../../backend/config/btconfig.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
-#include "../bibletime.h"
+#include "../texttospeech.h"
 #include "cconfigurationdialog.h"
 
 namespace {
@@ -64,7 +64,7 @@ BtTextToSpeechSettingsPage::BtTextToSpeechSettingsPage(CConfigurationDialog * pa
     m_ttsVoiceLabel->setBuddy(m_ttsVoiceComboBox);
     formLayout->addRow(m_ttsVoiceLabel, m_ttsVoiceComboBox);
 
-    m_tts = BibleTime::createTextToSpeechInstance();
+    m_tts = BtTextToSpeech::newInstance();
 
     m_ttsEngineComboBox->addItems(availableEngines);
     m_ttsEngineComboBox->setCurrentText(m_tts->engine());
@@ -145,6 +145,8 @@ void BtTextToSpeechSettingsPage::save() const {
                         m_ttsLocaleComboBox->currentData().toLocale());
     btConfig().setValue(QStringLiteral("GUI/ttsVoice"),
                         m_ttsVoiceComboBox->currentText());
+
+    BtTextToSpeech::reset();
 }
 
 #endif
