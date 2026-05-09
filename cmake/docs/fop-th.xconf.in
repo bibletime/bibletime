@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<fop version="1.0">
+  <renderers>
+    <renderer mime="application/pdf">
+      <fonts>
+        <font embed-url="@BT_FOP_TH_WAREE_FONT@">
+          <font-triplet name="serif" style="normal" weight="normal"/>
+          <font-triplet name="serif" style="italic" weight="normal"/>
+          <font-triplet name="Times-Roman" style="normal" weight="normal"/>
+          <font-triplet name="Times-Italic" style="italic" weight="normal"/>
+        </font>
+        <font embed-url="@BT_FOP_TH_WAREE_BOLD_FONT@">
+          <font-triplet name="serif" style="normal" weight="bold"/>
+          <font-triplet name="serif" style="italic" weight="bold"/>
+          <font-triplet name="Times-Bold" style="normal" weight="bold"/>
+          <font-triplet name="Times-BoldItalic" style="italic" weight="bold"/>
+        </font>
+        <font embed-url="@BT_FOP_TH_WAREE_FONT@">
+          <font-triplet name="sans-serif" style="normal" weight="normal"/>
+          <font-triplet name="sans-serif" style="italic" weight="normal"/>
+          <font-triplet name="Helvetica" style="normal" weight="normal"/>
+          <font-triplet name="Helvetica-Oblique" style="italic" weight="normal"/>
+        </font>
+        <font embed-url="@BT_FOP_TH_WAREE_BOLD_FONT@">
+          <font-triplet name="sans-serif" style="normal" weight="bold"/>
+          <font-triplet name="sans-serif" style="italic" weight="bold"/>
+          <font-triplet name="Helvetica-Bold" style="normal" weight="bold"/>
+          <font-triplet name="Helvetica-BoldOblique" style="italic" weight="bold"/>
+        </font>
+        <font embed-url="@BT_FOP_TH_WAREE_FONT@">
+          <font-triplet name="monospace" style="normal" weight="normal"/>
+          <font-triplet name="monospace" style="italic" weight="normal"/>
+          <font-triplet name="Courier" style="normal" weight="normal"/>
+          <font-triplet name="Courier-Oblique" style="italic" weight="normal"/>
+        </font>
+        <font embed-url="@BT_FOP_TH_WAREE_BOLD_FONT@">
+          <font-triplet name="monospace" style="normal" weight="bold"/>
+          <font-triplet name="monospace" style="italic" weight="bold"/>
+          <font-triplet name="Courier-Bold" style="normal" weight="bold"/>
+          <font-triplet name="Courier-BoldOblique" style="italic" weight="bold"/>
+        </font>
+      </fonts>
+    </renderer>
+  </renderers>
+</fop>

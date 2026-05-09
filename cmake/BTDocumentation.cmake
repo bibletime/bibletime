@@ -342,6 +342,127 @@ ${BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL}")
         MESSAGE(STATUS "Using user-specified FOP font configuration: \
 ${BT_FOP_CONFIG}")
     ENDIF()
+    IF(NOT DEFINED BT_FOP_DEJAVU_CONFIG)
+        FIND_FILE(BT_FOP_DEJAVU_FONT
+            NAMES "DejaVuSans.ttf"
+            HINTS
+                "/usr/share/fonts/truetype/dejavu/"
+                "/usr/share/fonts/dejavu/"
+            NO_DEFAULT_PATH)
+        FIND_FILE(BT_FOP_DEJAVU_BOLD_FONT
+            NAMES "DejaVuSans-Bold.ttf"
+            HINTS
+                "/usr/share/fonts/truetype/dejavu/"
+                "/usr/share/fonts/dejavu/"
+            NO_DEFAULT_PATH)
+        FIND_FILE(BT_FOP_DEJAVU_MONO_FONT
+            NAMES "DejaVuSansMono.ttf"
+            HINTS
+                "/usr/share/fonts/truetype/dejavu/"
+                "/usr/share/fonts/dejavu/"
+            NO_DEFAULT_PATH)
+        FIND_FILE(BT_FOP_DEJAVU_MONO_BOLD_FONT
+            NAMES "DejaVuSansMono-Bold.ttf"
+            HINTS
+                "/usr/share/fonts/truetype/dejavu/"
+                "/usr/share/fonts/dejavu/"
+            NO_DEFAULT_PATH)
+        IF(BT_FOP_DEJAVU_FONT AND BT_FOP_DEJAVU_BOLD_FONT AND
+           BT_FOP_DEJAVU_MONO_FONT AND BT_FOP_DEJAVU_MONO_BOLD_FONT)
+            SET(BT_FOP_DEJAVU_CONFIG "${DOCS_BINARY_DIR}/fop-dejavu.xconf")
+            CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/fop-dejavu.xconf.in"
+                           "${BT_FOP_DEJAVU_CONFIG}" @ONLY)
+            MESSAGE(STATUS "Using DejaVu FOP font configuration: \
+${BT_FOP_DEJAVU_CONFIG}")
+        ELSE()
+            MESSAGE(WARNING
+                    "Arabic-capable DejaVu fonts were not found. PDF output "
+                    "for Arabic and Cyrillic languages may contain missing "
+                    "glyph markers. Install fonts-dejavu-core, or set "
+                    "-DBT_FOP_DEJAVU_CONFIG=path/to/fop-dejavu.xconf.")
+        ENDIF()
+    ELSE()
+        MESSAGE(STATUS "Using user-specified DejaVu FOP font configuration: \
+${BT_FOP_DEJAVU_CONFIG}")
+    ENDIF()
+    IF(NOT DEFINED BT_FOP_KO_CONFIG)
+        FIND_FILE(BT_FOP_KO_SERIF_FONT
+            NAMES "NanumMyeongjo.ttf"
+            HINTS
+                "/usr/share/fonts/truetype/nanum/"
+            NO_DEFAULT_PATH)
+        FIND_FILE(BT_FOP_KO_SERIF_BOLD_FONT
+            NAMES "NanumMyeongjoBold.ttf" "NanumMyeongjo.ttf"
+            HINTS
+                "/usr/share/fonts/truetype/nanum/"
+            NO_DEFAULT_PATH)
+        FIND_FILE(BT_FOP_KO_SANS_FONT
+            NAMES "NanumGothic.ttf"
+            HINTS
+                "/usr/share/fonts/truetype/nanum/"
+            NO_DEFAULT_PATH)
+        FIND_FILE(BT_FOP_KO_SANS_BOLD_FONT
+            NAMES "NanumGothicBold.ttf" "NanumGothic.ttf"
+            HINTS
+                "/usr/share/fonts/truetype/nanum/"
+            NO_DEFAULT_PATH)
+        FIND_FILE(BT_FOP_KO_MONO_FONT
+            NAMES "NanumGothicCoding.ttf" "NanumGothic.ttf"
+            HINTS
+                "/usr/share/fonts/truetype/nanum/"
+            NO_DEFAULT_PATH)
+        FIND_FILE(BT_FOP_KO_MONO_BOLD_FONT
+            NAMES "NanumGothicCodingBold.ttf" "NanumGothicBold.ttf"
+            HINTS
+                "/usr/share/fonts/truetype/nanum/"
+            NO_DEFAULT_PATH)
+        IF(BT_FOP_KO_SERIF_FONT AND BT_FOP_KO_SERIF_BOLD_FONT AND
+           BT_FOP_KO_SANS_FONT AND BT_FOP_KO_SANS_BOLD_FONT AND
+           BT_FOP_KO_MONO_FONT AND BT_FOP_KO_MONO_BOLD_FONT)
+            SET(BT_FOP_KO_CONFIG "${DOCS_BINARY_DIR}/fop-ko.xconf")
+            CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/fop-ko.xconf.in"
+                           "${BT_FOP_KO_CONFIG}" @ONLY)
+            MESSAGE(STATUS "Using Korean FOP font configuration: \
+${BT_FOP_KO_CONFIG}")
+        ELSE()
+            MESSAGE(WARNING
+                    "Korean-capable Nanum fonts were not found. PDF output "
+                    "for Korean may contain missing glyph markers. Install "
+                    "fonts-nanum, or set "
+                    "-DBT_FOP_KO_CONFIG=path/to/fop-ko.xconf.")
+        ENDIF()
+    ELSE()
+        MESSAGE(STATUS "Using user-specified Korean FOP font configuration: \
+${BT_FOP_KO_CONFIG}")
+    ENDIF()
+    IF(NOT DEFINED BT_FOP_TH_CONFIG)
+        FIND_FILE(BT_FOP_TH_WAREE_FONT
+            NAMES "Waree.ttf"
+            HINTS
+                "/usr/share/fonts/truetype/tlwg/"
+            NO_DEFAULT_PATH)
+        FIND_FILE(BT_FOP_TH_WAREE_BOLD_FONT
+            NAMES "Waree-Bold.ttf" "Waree.ttf"
+            HINTS
+                "/usr/share/fonts/truetype/tlwg/"
+            NO_DEFAULT_PATH)
+        IF(BT_FOP_TH_WAREE_FONT AND BT_FOP_TH_WAREE_BOLD_FONT)
+            SET(BT_FOP_TH_CONFIG "${DOCS_BINARY_DIR}/fop-th.xconf")
+            CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/fop-th.xconf.in"
+                           "${BT_FOP_TH_CONFIG}" @ONLY)
+            MESSAGE(STATUS "Using Thai FOP font configuration: \
+${BT_FOP_TH_CONFIG}")
+        ELSE()
+            MESSAGE(WARNING
+                    "Thai-capable Waree fonts were not found. PDF output "
+                    "for Thai may contain missing glyph markers. Install "
+                    "fonts-tlwg-waree, or set "
+                    "-DBT_FOP_TH_CONFIG=path/to/fop-th.xconf.")
+        ENDIF()
+    ELSE()
+        MESSAGE(STATUS "Using user-specified Thai FOP font configuration: \
+${BT_FOP_TH_CONFIG}")
+    ENDIF()
     FUNCTION(GeneratePdfDoc doc)
         STRING(TOUPPER "${doc}" udoc)
         IF(${BUILD_${udoc}_PDF})
@@ -375,6 +496,15 @@ ${BT_FOP_CONFIG}")
                 FILE(MAKE_DIRECTORY "${dp}")
                 IF("${l}" STREQUAL "ja" AND BT_FOP_CONFIG)
                     SET(fopConfigArgs "-c" "${BT_FOP_CONFIG}")
+                ELSEIF(("${l}" STREQUAL "ar" OR
+                        "${l}" STREQUAL "bg" OR
+                        "${l}" STREQUAL "ru" OR
+                        "${l}" STREQUAL "uk") AND BT_FOP_DEJAVU_CONFIG)
+                    SET(fopConfigArgs "-c" "${BT_FOP_DEJAVU_CONFIG}")
+                ELSEIF("${l}" STREQUAL "ko" AND BT_FOP_KO_CONFIG)
+                    SET(fopConfigArgs "-c" "${BT_FOP_KO_CONFIG}")
+                ELSEIF("${l}" STREQUAL "th" AND BT_FOP_TH_CONFIG)
+                    SET(fopConfigArgs "-c" "${BT_FOP_TH_CONFIG}")
                 ELSE()
                     SET(fopConfigArgs)
                 ENDIF()
