@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2026-05-08 12:47-0400\n"
+"POT-Creation-Date: 2026-05-07 15:37-0400\n"
 "PO-Revision-Date: 2011-12-11 21:42+0000\n"
 "Last-Translator: Vítor Pereira Barros <vitor895@gmail.com>, 2017\n"
 "Language-Team: Portuguese (Brazil) (http://app.transifex.com/bibletime/"
@@ -598,7 +598,7 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Opening works"
-msgstr "Abrindo obras"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -875,7 +875,7 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Editing rich text notes"
-msgstr "Editando notas em texto rico"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -884,54 +884,15 @@ msgid ""
 "guimenu> <guimenuitem>Text Editor</guimenuitem> </menuchoice> or by pressing "
 "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap> </keycombo>."
 msgstr ""
-"&bibletime; também inclui um editor simples de texto rico para notas que não"
-"estão ligadas a um versículo bíblico específico. Abra-o em <menuchoice>"
-"<guimenu>Arquivo</guimenu> <guimenuitem>Editor de texto</guimenuitem>"
-"</menuchoice> ou pressionando <keycombo action=\"simul\">"
-"<keycap>&Ctrl;+&Shift;+E</keycap> </keycombo>."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
 "The text editor can format text as bold, italic, underline, headings, bullet "
-"and numbered lists, links, single or double spaced paragraphs, and aligned "
-"paragraphs. It can also apply font choices, font colors, page background "
-"colors, and different highlight colors.  Use the editor's <guimenu>Format</"
-"guimenu> menu or keyboard shortcuts to apply these formats."
+"and numbered lists, links, and aligned paragraphs.  It can also apply font "
+"colors, page background colors, and different highlight colors. Use the "
+"editor's <guimenu>Format</guimenu> menu or keyboard shortcuts to apply these "
+"formats."
 msgstr ""
-"O editor de texto pode formatar o texto como negrito, itálico, sublinhado,"
-"títulos, listas com marcadores e numeradas, links, parágrafos com"
-"espaçamento simples ou duplo e parágrafos alinhados. Ele também pode aplicar"
-"opções de fonte, cores de fonte, cores de fundo da página e diferentes cores"
-"de realce. Use o menu <guimenu>Formatar</guimenu> do editor ou os atalhos de"
-"teclado para aplicar esses formatos."
-
-#. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"The <guimenu>Insert</guimenu> menu can add simple tables and pictures.  The "
-"<guimenu>Search</guimenu> menu can find text in the current document.  The "
-"<guimenu>Tools</guimenu> menu provides spell checking and a thesaurus when "
-"the required open source dictionary tools are installed on your system."
-msgstr ""
-"O menu <guimenu>Inserir</guimenu> pode adicionar tabelas simples e figuras."
-"O menu <guimenu>Pesquisar</guimenu> pode localizar texto no documento atual."
-"O menu <guimenu>Ferramentas</guimenu> fornece verificação ortográfica e um"
-"dicionário de sinônimos quando as ferramentas de dicionário de código aberto"
-"necessárias estiverem instaladas no seu sistema."
-
-#. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"The editor has a small toolbar for common actions such as new, open, save, "
-"print, undo, redo, cut, copy, paste, find, spell check, thesaurus, "
-"formatting, lists, links, tables, and pictures. The status bar shows the "
-"current text format, cursor line, column, document position, date and time, "
-"and whether the document has unsaved changes."
-msgstr ""
-"O editor tem uma pequena barra de ferramentas para ações comuns como novo,"
-"abrir, salvar, imprimir, desfazer, refazer, recortar, copiar, colar,"
-"localizar, verificação ortográfica, dicionário de sinônimos, formatação,"
-"listas, links, tabelas e figuras. A barra de status mostra o formato de"
-"texto atual, linha e coluna do cursor, posição no documento, data e hora, e"
-"se o documento tem alterações não salvas."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -939,29 +900,8 @@ msgid ""
 "preserved. If you save as plain text, formatting such as colors, highlights, "
 "links, and headings will not be stored. The editor remembers the last file "
 "it had open and restores the cursor location the next time it is opened, if "
-"the file still exists. When saving over an existing document, the editor "
-"first writes a <filename>.bak</filename> backup beside the original file."
+"the file still exists."
 msgstr ""
-"Os documentos do editor de texto são salvos como HTML por padrão para"
-"preservar a formatação rica. Se você salvar como texto simples, formatações"
-"como cores, realces, links e títulos não serão armazenadas. O editor lembra"
-"o último arquivo aberto e restaura a posição do cursor na próxima vez que"
-"for aberto, se o arquivo ainda existir. Ao salvar sobre um documento"
-"existente, o editor primeiro grava uma cópia de segurança"
-"<filename>.bak</filename> ao lado do arquivo original."
-
-#. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"While you are editing, the text editor periodically writes an autosaved "
-"recovery copy. If &bibletime; or the editor closes unexpectedly, the editor "
-"offers to restore that recovery copy the next time it is opened. A normal "
-"save or clean close removes the recovery copy."
-msgstr ""
-"Enquanto você edita, o editor de texto grava periodicamente uma cópia de"
-"recuperação salva automaticamente. Se &bibletime; ou o editor fechar"
-"inesperadamente, o editor oferecerá restaurar essa cópia de recuperação na"
-"próxima vez que for aberto. Um salvamento normal ou um fechamento limpo"
-"remove a cópia de recuperação."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -971,28 +911,6 @@ msgid ""
 "Enter the link text and URL in the dialog. To open a link while editing, "
 "hold &Ctrl; and click the link."
 msgstr ""
-"Para inserir um link, selecione o texto do link e escolha <menuchoice>"
-"<guimenu>Formatar</guimenu> <guimenuitem>Link</guimenuitem> </menuchoice> ou"
-"pressione <keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap> </keycombo>."
-"Digite o texto do link e a URL na caixa de diálogo. Para abrir um link"
-"durante a edição, mantenha &Ctrl; pressionado e clique no link."
-
-#. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"You can also send text from an open read window to the text editor. Open the "
-"text editor first, then use the read window's <mousebutton>right</"
-"mousebutton> mouse button context menu and choose <menuchoice> <guimenu>Send "
-"to Text Editor</guimenu> </menuchoice>.  Bible windows can send the selected "
-"text, the current reference with text, or the chapter. Other read windows "
-"can send the selected text or the current entry."
-msgstr ""
-"Você também pode enviar texto de uma janela de leitura aberta para o editor"
-"de texto. Abra primeiro o editor de texto, depois use o menu de contexto da"
-"janela de leitura com o <mousebutton>botão direito</mousebutton> do mouse e"
-"escolha <menuchoice> <guimenu>Enviar para o editor de texto</guimenu>"
-"</menuchoice>. Janelas da Bíblia podem enviar o texto selecionado, a"
-"referência atual com texto ou o capítulo. Outras janelas de leitura podem"
-"enviar o texto selecionado ou a entrada atual."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Searching text in an open read window"
@@ -1408,22 +1326,20 @@ msgid ""
 "<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
 "allow you to <guimenuitem>Select</guimenuitem>, <guimenuitem>Copy</"
 "guimenuitem> (to clipboard), <guimenuitem>Save</guimenuitem> or "
-"<guimenuitem>Print</guimenuitem> text, or <guimenuitem>Send to Text Editor</"
-"guimenuitem>. This works for example in the read windows, when you click on "
-"the normal text or the verse reference, or in the search result page when "
-"you click on a work or one or more verse references. It is pretty "
-"straightforward, so just try it out."
+"<guimenuitem>Print</guimenuitem> text. This works for example in the read "
+"windows, when you click on the normal text or the verse reference, or in the "
+"search result page when you click on a work or one or more verse references. "
+"It is pretty straightforward, so just try it out."
 msgstr ""
-"Em muitos lugares, você pode abrir um menu de contexto clicando com o"
-"<mousebutton>botão direito</mousebutton> do mouse. Dependendo do contexto,"
-"ele permitirá <guimenuitem>Selecionar</guimenuitem>,"
-"<guimenuitem>Copiar</guimenuitem> (para a área de transferência),"
-"<guimenuitem>Salvar</guimenuitem> ou <guimenuitem>Imprimir</guimenuitem>"
-"texto, ou <guimenuitem>Enviar para o editor de texto</guimenuitem>. Isso"
-"funciona, por exemplo, nas janelas de leitura, quando você clica no texto"
-"normal ou na referência do versículo, ou na página de resultados da pesquisa"
-"quando clica em uma obra ou em uma ou mais referências de versículos. É"
-"bastante simples, então experimente."
+"Em muitos lugares, você pode abrir um menu de contexto clicando com o botão "
+"<mousebutton>direito</mousebutton> do mouse. Dependendo do contexto, ele "
+"permitir a você <guimenuitem>Selecionar</guimenuitem>, <guimenuitem>Copiar</"
+"guimenuitem> (para a rea de transferência), <guimenuitem>Salvar</"
+"guimenuitem> ou <guimenuitem>Imprimir</guimenuitem> texto. Isso funciona por "
+"exemplo, em janelas de leitura, quando você clica no texto normal ou na "
+"referência de versículo, ou na página de resultado de pesquisa quando você "
+"clica sobre uma obra ou uma ou mais referências de versículo. É bem simples, "
+"experimente."
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -1492,30 +1408,26 @@ msgstr ""
 "os livros instalados."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#, fuzzy
+#| msgid ""
+#| "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;"
+#| "+S</keycap></keycombo> </shortcut> <guimenu>Window</guimenu> "
+#| "<guimenuitem>Save as new session</guimenuitem> </menuchoice>"
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;"
 "+E</keycap></keycombo> </shortcut> <guimenu>File</guimenu> <guimenuitem>Text "
 "Editor</guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\">"
-"<keycap>&Ctrl;+&Shift;+E</keycap></keycombo> </shortcut>"
-"<guimenu>Arquivo</guimenu> <guimenuitem>Editor de texto</guimenuitem>"
-"</menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</"
+"keycap></keycombo> </shortcut> <guimenu>Janela</guimenu> <guimenuitem>Salvar "
+"como nova sessão</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid ""
 "<action>Open the rich text editor.</action> This opens a simple editor for "
 "notes which are not tied to a particular Bible verse. It supports rich "
-"formatting and saves HTML documents by default. It also supports printing, "
-"search, spell check, thesaurus lookup, tables, pictures, autosave recovery, "
-"and backup files when saving over an existing document."
+"formatting and saves HTML documents by default."
 msgstr ""
-"<action>Abrir o editor de texto rico.</action> Isto abre um editor simples"
-"para notas que não estão ligadas a um versículo bíblico específico. Ele"
-"suporta formatação rica e salva documentos HTML por padrão. Também suporta"
-"impressão, pesquisa, verificação ortográfica, consulta ao dicionário de"
-"sinônimos, tabelas, figuras, recuperação por salvamento automático e"
-"arquivos de backup ao salvar sobre um documento existente."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 msgid ""
@@ -2598,169 +2510,27 @@ msgid "Copy. This copies the selected text to the clipboard."
 msgstr "Copiar. Copia o texto selecionado para a rea de transferência."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
 msgid ""
 "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
+#| "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
+#| "link> equivalent; closes &bibletime;."
 msgid ""
 "<link linkend=\"hdbk-reference-menus-file-text-editor\"> <menuchoice> "
 "<guimenu>File</guimenu> <guimenuitem>Text Editor</guimenuitem> </menuchoice> "
 "</link> equivalent; opens the rich text editor."
 msgstr ""
-"<link linkend=\"hdbk-reference-menus-file-text-editor\"> <menuchoice>"
-"<guimenu>Arquivo</guimenu> <guimenuitem>Editor de texto</guimenuitem>"
-"</menuchoice> </link> equivalente; abre o editor de texto rico."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+P</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+P</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "Print. In the rich text editor, prints the current document."
-msgstr "Imprimir. No editor de texto rico, imprime o documento atual."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, inserts or edits a link."
-msgstr "No editor de texto rico, insere ou edita um link."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+1</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+1</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"In the rich text editor, applies single spacing to the current paragraph."
-msgstr "No editor de texto rico, aplica espaçamento simples ao parágrafo atual."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+2</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+2</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"In the rich text editor, applies double spacing to the current paragraph."
-msgstr "No editor de texto rico, aplica espaçamento duplo ao parágrafo atual."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+F</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+F</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, opens the font chooser."
-msgstr "No editor de texto rico, abre o seletor de fonte."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+H</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+H</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, applies the current highlight color."
-msgstr "No editor de texto rico, aplica a cor de realce atual."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, chooses the highlight color."
-msgstr "No editor de texto rico, escolhe a cor de realce."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+C</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+C</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, chooses the font color."
-msgstr "No editor de texto rico, escolhe a cor da fonte."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+B</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+B</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, chooses the page background color."
-msgstr "No editor de texto rico, escolhe a cor de fundo da página."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+0</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+0</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, applies normal text formatting."
-msgstr "No editor de texto rico, aplica formatação de texto normal."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+1</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+1</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, applies heading 1 formatting."
-msgstr "No editor de texto rico, aplica formatação de título 1."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+2</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+2</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, applies heading 2 formatting."
-msgstr "No editor de texto rico, aplica formatação de título 2."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+8</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+8</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, starts a bullet list."
-msgstr "No editor de texto rico, inicia uma lista com marcadores."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+7</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+7</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, starts a numbered list."
-msgstr "No editor de texto rico, inicia uma lista numerada."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+T</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+T</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, inserts a table."
-msgstr "No editor de texto rico, insere uma tabela."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+P</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+P</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, inserts a picture."
-msgstr "No editor de texto rico, insere uma figura."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycap>F7</keycap>"
-msgstr "<keycap>F7</keycap>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, starts spell check."
-msgstr "No editor de texto rico, inicia a verificação ortográfica."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Shift;+F7</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+F7</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, opens the thesaurus."
-msgstr "No editor de texto rico, abre o dicionário de sinônimos."
+"<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
+"<guimenu>Arquivo</guimenu> <guimenuitem>Sair</guimenuitem> </menuchoice> </"
+"link> equivalente; fecha o &bibletime;."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
@@ -2964,7 +2734,7 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Down</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+Down</keycap></keycombo>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid ""
@@ -2976,7 +2746,7 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Up</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+Up</keycap></keycombo>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid ""
@@ -3195,7 +2965,7 @@ msgstr "Gary"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 msgid "Holmlund"
-msgstr "Holmlund"
+msgstr ""
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
@@ -3203,8 +2973,6 @@ msgid ""
 "<copyright> <year>1999-2026</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
-"<copyright> <year>1999-2026</year> <holder>Equipe do &bibletime;</holder>"
-"</copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 msgid ""
@@ -3218,7 +2986,7 @@ msgstr "Dezembro 2019"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 msgid "3.0.0+"
-msgstr "3.0.0+"
+msgstr ""
 
 #. type: Content of: <book><bookinfo><abstract><para>
 msgid ""
@@ -3239,7 +3007,7 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 msgid "Qt5"
-msgstr "Qt5"
+msgstr ""
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 msgid "BibleTime"

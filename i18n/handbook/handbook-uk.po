@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2026-05-08 12:47-0400\n"
+"POT-Creation-Date: 2026-05-07 15:37-0400\n"
 "PO-Revision-Date: 2011-12-11 21:42+0000\n"
 "Last-Translator: Микола Ткач <chistomov@gmail.com>, 2021\n"
 "Language-Team: Ukrainian (http://app.transifex.com/bibletime/bibletime/"
@@ -797,7 +797,7 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Read window placement"
-msgstr "Розміщення вікон читання"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -809,7 +809,7 @@ msgid ""
 "this, you have to select one of the automatic placement modes available at "
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> </menuchoice>. Just try it out, it's simple and works."
-msgstr "Звичайно, ви можете відкрити кілька творів одночасно. Є кілька способів розташувати вікна читання на робочій області. Перегляньте пункт <guimenu>Вікно</guimenu> у головному меню. Там можна або повністю керувати розміщенням вікон читання самостійно, або доручити &bibletime; розміщувати їх автоматично. Для цього виберіть один з автоматичних режимів розміщення, доступних у <menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Режим розташування</guimenuitem> </menuchoice>. Просто спробуйте, це просто і працює."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Editing your own commentary"
@@ -821,7 +821,7 @@ msgid ""
 "install a certain work from the library of the <ulink url=\"http://"
 "www.crosswire.org\">&cbs;</ulink>.  This work is called \"Personal "
 "commentary\"."
-msgstr "Щоб зберігати власні коментарі до частин Біблії, потрібно встановити певний твір із бібліотеки <ulink url=\"http://www.crosswire.org\">&cbs;</ulink>. Цей твір називається «Особистий коментар»."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -829,24 +829,24 @@ msgid ""
 "a <mousebutton>left</mousebutton> mouse button.  You can edit this "
 "commentary by just clicking on any verse.  A dialog opens which allows you "
 "to add or edit text for that verse."
-msgstr "Відкрийте особистий коментар, клацнувши його символ на книжковій полиці <mousebutton>лівою</mousebutton> кнопкою миші. Ви можете редагувати цей коментар, просто клацнувши будь-який вірш. Відкриється діалог, у якому можна додати або змінити текст для цього вірша."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
 msgid ""
 "If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice> is "
 "deactivated, please check if you have write permission for the files of the "
 "personal commentary."
-msgstr "Якщо <menuchoice> <guimenu>Редагувати цей твір</guimenu> </menuchoice> вимкнено, перевірте, чи маєте ви дозвіл на запис до файлів особистого коментаря."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
 msgid ""
 "Drag &amp; drop works here. Drop a verse reference and the text of the verse "
 "will be inserted."
-msgstr "Перетягуйте твори сюди. Якщо скинути посилання на вірш, буде вставлено текст цього вірша."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Editing rich text notes"
-msgstr "Редагування нотаток у форматованому тексті"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -854,33 +854,16 @@ msgid ""
 "tied to a particular Bible verse. Open it from <menuchoice> <guimenu>File</"
 "guimenu> <guimenuitem>Text Editor</guimenuitem> </menuchoice> or by pressing "
 "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap> </keycombo>."
-msgstr "&bibletime; також містить простий редактор форматованого тексту для нотаток, які не прив’язані до певного біблійного вірша. Відкрийте його через <menuchoice> <guimenu>Файл</guimenu> <guimenuitem>Текстовий редактор</guimenuitem> </menuchoice> або натисніть <keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap> </keycombo>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
 "The text editor can format text as bold, italic, underline, headings, bullet "
-"and numbered lists, links, single or double spaced paragraphs, and aligned "
-"paragraphs. It can also apply font choices, font colors, page background "
-"colors, and different highlight colors.  Use the editor's <guimenu>Format</"
-"guimenu> menu or keyboard shortcuts to apply these formats."
-msgstr "Текстовий редактор може форматувати текст як напівжирний, курсивний, підкреслений, заголовки, марковані й нумеровані списки, посилання, абзаци з одинарним або подвійним інтервалом та вирівняні абзаци. Він також може застосовувати вибір шрифту, кольори шрифту, кольори тла сторінки та різні кольори виділення. Щоб застосувати ці формати, використовуйте меню редактора <guimenu>Формат</guimenu> або клавіатурні скорочення."
-
-#. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"The <guimenu>Insert</guimenu> menu can add simple tables and pictures.  The "
-"<guimenu>Search</guimenu> menu can find text in the current document.  The "
-"<guimenu>Tools</guimenu> menu provides spell checking and a thesaurus when "
-"the required open source dictionary tools are installed on your system."
-msgstr "Меню <guimenu>Вставити</guimenu> може додавати прості таблиці та зображення. Меню <guimenu>Пошук</guimenu> може знаходити текст у поточному документі. Меню <guimenu>Інструменти</guimenu> надає перевірку правопису та тезаурус, якщо у вашій системі встановлено потрібні інструменти словників з відкритим кодом."
-
-#. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"The editor has a small toolbar for common actions such as new, open, save, "
-"print, undo, redo, cut, copy, paste, find, spell check, thesaurus, "
-"formatting, lists, links, tables, and pictures. The status bar shows the "
-"current text format, cursor line, column, document position, date and time, "
-"and whether the document has unsaved changes."
-msgstr "Редактор має невелику панель інструментів для поширених дій, як-от створити, відкрити, зберегти, надрукувати, скасувати, повторити, вирізати, копіювати, вставити, знайти, перевірити правопис, тезаурус, форматування, списки, посилання, таблиці та зображення. Рядок стану показує поточний формат тексту, рядок і стовпець курсора, позицію в документі, дату й час, а також чи має документ незбережені зміни."
+"and numbered lists, links, and aligned paragraphs.  It can also apply font "
+"colors, page background colors, and different highlight colors. Use the "
+"editor's <guimenu>Format</guimenu> menu or keyboard shortcuts to apply these "
+"formats."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -888,17 +871,8 @@ msgid ""
 "preserved. If you save as plain text, formatting such as colors, highlights, "
 "links, and headings will not be stored. The editor remembers the last file "
 "it had open and restores the cursor location the next time it is opened, if "
-"the file still exists. When saving over an existing document, the editor "
-"first writes a <filename>.bak</filename> backup beside the original file."
-msgstr "Документи текстового редактора за замовчуванням зберігаються як HTML, щоб зберегти форматування. Якщо зберегти як звичайний текст, форматування, таке як кольори, виділення, посилання та заголовки, не буде збережено. Редактор запам’ятовує останній відкритий файл і відновлює розташування курсора під час наступного відкриття, якщо файл ще існує. Під час збереження поверх наявного документа редактор спочатку записує резервну копію <filename>.bak</filename> поруч з оригінальним файлом."
-
-#. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"While you are editing, the text editor periodically writes an autosaved "
-"recovery copy. If &bibletime; or the editor closes unexpectedly, the editor "
-"offers to restore that recovery copy the next time it is opened. A normal "
-"save or clean close removes the recovery copy."
-msgstr "Під час редагування текстовий редактор періодично записує автоматично збережену копію для відновлення. Якщо &bibletime; або редактор несподівано закриється, під час наступного відкриття редактор запропонує відновити цю копію. Звичайне збереження або коректне закриття видаляє копію для відновлення."
+"the file still exists."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -907,17 +881,7 @@ msgid ""
 "press <keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap> </keycombo>.  "
 "Enter the link text and URL in the dialog. To open a link while editing, "
 "hold &Ctrl; and click the link."
-msgstr "Щоб вставити посилання, виберіть текст посилання і виберіть <menuchoice> <guimenu>Формат</guimenu> <guimenuitem>Посилання</guimenuitem> </menuchoice> або натисніть <keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap> </keycombo>. У діалозі введіть текст посилання та URL. Щоб відкрити посилання під час редагування, утримуйте &Ctrl; і клацніть посилання."
-
-#. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"You can also send text from an open read window to the text editor. Open the "
-"text editor first, then use the read window's <mousebutton>right</"
-"mousebutton> mouse button context menu and choose <menuchoice> <guimenu>Send "
-"to Text Editor</guimenu> </menuchoice>.  Bible windows can send the selected "
-"text, the current reference with text, or the chapter. Other read windows "
-"can send the selected text or the current entry."
-msgstr "Ви також можете надіслати текст із відкритого вікна читання до текстового редактора. Спочатку відкрийте текстовий редактор, потім скористайтеся контекстним меню <mousebutton>правої</mousebutton> кнопки миші у вікні читання і виберіть <menuchoice> <guimenu>Надіслати до текстового редактора</guimenu> </menuchoice>. Вікна Біблії можуть надсилати вибраний текст, поточне посилання з текстом або розділ. Інші вікна читання можуть надсилати вибраний текст або поточний запис."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Searching text in an open read window"
@@ -932,7 +896,7 @@ msgid ""
 "<guimenuitem>Find...</guimenuitem>, or by using the shortcut <keycombo "
 "action=\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how "
 "you can search in entire works."
-msgstr "Ви можете шукати слово або фразу у відкритому вікні читання (наприклад, у розділі Біблії, який читаєте) так само, як звикли в інших програмах. Ця функція доступна або через клацання <mousebutton>правою</mousebutton> кнопкою миші і вибір <guimenuitem>Знайти...</guimenuitem>, або за допомогою скорочення <keycombo action=\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>. Читайте далі, щоб дізнатися, як шукати в цілих творах."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Accessing the search dialog"
@@ -946,14 +910,14 @@ msgid ""
 "&Shift; or &Ctrl; and clicking on other work's names you can select more "
 "than one. Then follow the same procedure to open the search dialog. You will "
 "be searching in all of these works at the same time."
-msgstr "Ви можете шукати у творі, клацнувши <mousebutton>правою</mousebutton> кнопкою миші його символ на <guimenu>Книжковій полиці</guimenu> і вибравши <guimenuitem>Шукати у творі(ах)</guimenuitem>. Утримуючи &Shift; або &Ctrl; і клацаючи назви інших творів, можна вибрати більше одного. Потім виконайте ту саму дію, щоб відкрити діалог пошуку. Пошук виконуватиметься в усіх цих творах одночасно."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 msgid ""
 "You can also access the search dialog by clicking on <menuchoice> "
 "<guimenu>Search</guimenu> </menuchoice> from the main menu, and selecting "
 "the appropriate entry."
-msgstr "Діалог пошуку також можна відкрити, клацнувши <menuchoice> <guimenu>Пошук</guimenu> </menuchoice> у головному меню і вибравши відповідний пункт."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 msgid ""
@@ -997,7 +961,7 @@ msgid ""
 "guibutton>(works). If you would like to search in multiple works, click on "
 "this button and you will be offered a menu where you can select the works "
 "you want to search in."
-msgstr "Угорі вкладки параметрів ви знайдете кнопку <guibutton>Вибрати</guibutton> (твори). Якщо ви хочете шукати в кількох творах, натисніть цю кнопку, і вам буде запропоновано меню, де можна вибрати твори для пошуку."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Using Search Scopes"
@@ -1009,7 +973,7 @@ msgid ""
 "selecting one of the predefined scopes from the list in <guimenu>Search "
 "scope</guimenu>. You can define your own search ranges by clicking the "
 "<guibutton>Setup ranges</guibutton> button."
-msgstr "Ви можете звузити область пошуку до певних частин Біблії, вибравши одну з попередньо визначених областей у списку <guimenu>Область пошуку</guimenu>. Власні діапазони пошуку можна визначити, натиснувши кнопку <guibutton>Налаштувати діапазони</guibutton>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Basic Search Syntax Introduction"
@@ -1023,20 +987,20 @@ msgid ""
 "want to perform a more complex search, select the <guimenu>Free</guimenu> "
 "button.  You can see examples of searches by clicking on <guimenu>full "
 "syntax</guimenu>."
-msgstr "Введіть пошукову фразу, розділяючи слова пробілами. За замовчуванням функція пошуку повертає результати, що відповідають усім словам. Якщо потрібно знайти будь-яке з введених слів, виберіть кнопку <guimenu>Деякі слова</guimenu>. Якщо потрібно виконати складніший пошук, виберіть кнопку <guimenu>Вільний</guimenu>. Приклади пошуку можна побачити, клацнувши <guimenu>повний синтаксис</guimenu>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
 "You can use wildcards: '*' matches any number of characters, while '?' will "
 "match any single character. The use of parenthesis allows you to group your "
 "search terms, e.g. '(Jesus OR spirit) AND God'."
-msgstr "Можна використовувати шаблонні символи: «*» відповідає будь-якій кількості символів, а «?» відповідає одному символу. Дужки дозволяють групувати пошукові терміни, наприклад «(Ісус OR дух) AND Бог»."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
 "To search text other than the main text, enter the text type followed by "
 "':', and then the search term.  Refer to the table below for examples."
-msgstr "Щоб шукати текст, відмінний від основного тексту, введіть тип тексту, після нього «:», а потім пошуковий термін. Приклади наведено в таблиці нижче."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><title>
 msgid "Search Types"
@@ -1111,7 +1075,7 @@ msgid ""
 "You can right click on an installed work and select <guimenu>About</guimenu> "
 "to find which of the above search criteria may work for you.  Not all works "
 "have the built in features for performing this type of search."
-msgstr "Можна клацнути встановлений твір правою кнопкою миші і вибрати <guimenu>Про</guimenu>, щоб з’ясувати, які з наведених вище критеріїв пошуку можуть працювати для нього. Не всі твори мають вбудовані можливості для такого типу пошуку."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -1137,13 +1101,13 @@ msgid ""
 "certain work at once. This also works when you click on one or more of the "
 "references to copy, save or print them. Clicking on a particular reference "
 "opens that verse up in context in the preview window below."
-msgstr "Тут можна побачити, скільки входжень пошукового рядка знайдено, відсортованих за творами. Клацання твору <mousebutton>правою</mousebutton> кнопкою миші дозволяє одразу скопіювати, зберегти або надрукувати всі вірші, знайдені в певному творі. Це також працює, коли ви клацаєте одне або кілька посилань, щоб скопіювати, зберегти або надрукувати їх. Клацання конкретного посилання відкриває цей вірш у контексті у вікні попереднього перегляду нижче."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><tip><para>
 msgid ""
 "Drag a reference and drop it on a work symbol on the Bookshelf to open the "
 "work at that verse in a new read window."
-msgstr "Перетягніть посилання і скиньте його на символ твору на книжковій полиці, щоб відкрити твір на цьому вірші в новому вікні читання."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><tip><para>
 msgid ""
@@ -1169,7 +1133,7 @@ msgid ""
 "display. This gives a simple graphic analysis of the number of instances the "
 "search string was found in each book of the Bible, and you can also save the "
 "analysis."
-msgstr "Натисніть <guibutton>Аналіз пошуку</guibutton>, щоб відкрити відображення аналізу пошуку. Воно показує простий графічний аналіз кількості входжень пошукового рядка в кожній книзі Біблії, і цей аналіз також можна зберегти."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><screenshot><screeninfo>
 msgid "Search Analysis Dialog Box"
@@ -1194,7 +1158,7 @@ msgid ""
 "existing works from your Bookshelf. Access it by clicking <menuchoice> "
 "<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </"
 "menuchoice> in the main menu."
-msgstr "<guimenuitem>Менеджер книжкової полиці</guimenuitem> — це інструмент для керування вашою книжковою полицею. Ви можете встановлювати нові твори на книжкову полицю, а також оновлювати або вилучати наявні твори. Доступ до нього відкривається через <menuchoice> <guimenu>Налаштування</guimenu> <guimenuitem>Менеджер книжкової полиці</guimenuitem> </menuchoice> у головному меню."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Install works"
@@ -1226,7 +1190,7 @@ msgid ""
 "category to see works for that category. Select one or more works and then "
 "click on the <guibutton>Install Works</guibutton>. After the works are "
 "installed, click on the <guibutton>Finish</guibutton>."
-msgstr "Щоб почати встановлення, виберіть одну або кілька бібліотек, з яких хочете встановити твори. Потім натисніть кнопку <guibutton>Далі</guibutton>. Далі виберіть одну або кілька мов і натисніть кнопку <guibutton>Далі</guibutton>. Ви побачите список категорій. Двічі клацніть категорію, щоб побачити твори в цій категорії. Виберіть один або кілька творів і натисніть <guibutton>Встановити твори</guibutton>. Після встановлення творів натисніть <guibutton>Завершити</guibutton>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Update works"
@@ -1237,7 +1201,7 @@ msgid ""
 "If there are any works that can be updated, they will be shown. Select one "
 "or more work and click the <guibutton>Update Works</guibutton>. After the "
 "works are updated, click on the <guibutton>Finish</guibutton>."
-msgstr "Якщо є твори, які можна оновити, вони будуть показані. Виберіть один або кілька творів і натисніть <guibutton>Оновити твори</guibutton>. Після оновлення творів натисніть <guibutton>Завершити</guibutton>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Remove works"
@@ -1248,7 +1212,7 @@ msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply choose the works` and click on the "
 "<guibutton>Remove works</guibutton> button."
-msgstr "Ця функція дозволяє вилучити один або кілька творів із книжкової полиці, щоб звільнити місце на диску. Просто виберіть твори і натисніть кнопку <guibutton>Вилучити твори</guibutton>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Exporting and Printing"
@@ -1260,12 +1224,11 @@ msgid ""
 "<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
 "allow you to <guimenuitem>Select</guimenuitem>, <guimenuitem>Copy</"
 "guimenuitem> (to clipboard), <guimenuitem>Save</guimenuitem> or "
-"<guimenuitem>Print</guimenuitem> text, or <guimenuitem>Send to Text Editor</"
-"guimenuitem>. This works for example in the read windows, when you click on "
-"the normal text or the verse reference, or in the search result page when "
-"you click on a work or one or more verse references. It is pretty "
-"straightforward, so just try it out."
-msgstr "У багатьох місцях можна відкрити контекстне меню, клацнувши <mousebutton>правою</mousebutton> кнопкою миші. Залежно від контексту воно дозволить <guimenuitem>Вибрати</guimenuitem>, <guimenuitem>Копіювати</guimenuitem> (до буфера обміну), <guimenuitem>Зберегти</guimenuitem> або <guimenuitem>Надрукувати</guimenuitem> текст, або <guimenuitem>Надіслати до текстового редактора</guimenuitem>. Це працює, наприклад, у вікнах читання, коли ви клацаєте звичайний текст або посилання на вірш, або на сторінці результатів пошуку, коли клацаєте твір чи одне або кілька посилань на вірші. Це досить просто, тож просто спробуйте."
+"<guimenuitem>Print</guimenuitem> text. This works for example in the read "
+"windows, when you click on the normal text or the verse reference, or in the "
+"search result page when you click on a work or one or more verse references. "
+"It is pretty straightforward, so just try it out."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -1329,23 +1292,29 @@ msgstr ""
 msgid ""
 "<action>Open work.</action> This will give you a menu that will allow you to "
 "open installed books."
-msgstr "<action>Відкрити твір.</action> Це відкриє меню, яке дозволить відкривати встановлені книги."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#, fuzzy
+#| msgid ""
+#| "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;"
+#| "+S</keycap></keycombo> </shortcut> <guimenu>Window</guimenu> "
+#| "<guimenuitem>Save as new session</guimenuitem> </menuchoice>"
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;"
 "+E</keycap></keycombo> </shortcut> <guimenu>File</guimenu> <guimenuitem>Text "
 "Editor</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap></keycombo> </shortcut> <guimenu>Файл</guimenu> <guimenuitem>Текстовий редактор</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</"
+"keycap></keycombo> </shortcut> <guimenu>Вікно</guimenu> "
+"<guimenuitem>Зберегти як новий сеанс</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid ""
 "<action>Open the rich text editor.</action> This opens a simple editor for "
 "notes which are not tied to a particular Bible verse. It supports rich "
-"formatting and saves HTML documents by default. It also supports printing, "
-"search, spell check, thesaurus lookup, tables, pictures, autosave recovery, "
-"and backup files when saving over an existing document."
-msgstr "<action>Відкрити редактор форматованого тексту.</action> Відкриває простий редактор для нотаток, не прив’язаних до певного біблійного вірша. Він підтримує форматування і за замовчуванням зберігає HTML-документи. Також підтримує друк, пошук, перевірку правопису, пошук у тезаурусі, таблиці, зображення, відновлення з автозбереження та резервні файли під час збереження поверх наявного документа."
+"formatting and saves HTML documents by default."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 msgid ""
@@ -1371,7 +1340,7 @@ msgstr ""
 msgid ""
 "<action>Closes &bibletime;.</action> &bibletime; will ask you if you want to "
 "write unsaved changes to disk."
-msgstr "<action>Закриває &bibletime;.</action> &bibletime; запитає, чи потрібно записати незбережені зміни на диск."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 msgid "<placeholder type=\"variablelist\" id=\"0\"/>"
@@ -1430,7 +1399,7 @@ msgid ""
 "<action>Toggles display of the Bookshelf.</action> Toggle this setting to "
 "turn the Bookshelf on the left pane on or off. This can be handy if you need "
 "more space for the Mag."
-msgstr "<action>Перемикає показ книжкової полиці.</action> Перемкніть цей параметр, щоб увімкнути або вимкнути книжкову полицю на лівій панелі. Це може бути зручно, якщо потрібно більше місця для лупи."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 msgid ""
@@ -1453,7 +1422,7 @@ msgid ""
 "<action>Toggles display of the Bookmarks.</action> Toggle this setting to "
 "turn the Bookmarks on the left pane on or off. This can be handy if you need "
 "more space for the Mag."
-msgstr "<action>Перемикає показ закладок.</action> Перемкніть цей параметр, щоб увімкнути або вимкнути закладки на лівій панелі. Це може бути зручно, якщо потрібно більше місця для лупи."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 msgid ""
@@ -1475,7 +1444,7 @@ msgstr ""
 msgid ""
 "<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
 "setting to turn the Mag on the left pane on or off."
-msgstr "<action>Перемикає показ лупи.</action> Перемкніть цей параметр, щоб увімкнути або вимкнути лупу на лівій панелі."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 msgid ""
@@ -1499,7 +1468,7 @@ msgstr ""
 msgid ""
 "<action>Toggles viewing of additional works</action> Toggle this setting to "
 "allow you to view additional works in parallel to your current open books."
-msgstr "<action>Перемикає перегляд додаткових творів</action>. Перемкніть цей параметр, щоб дозволити перегляд додаткових творів паралельно з поточними відкритими книгами."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
@@ -1516,7 +1485,7 @@ msgstr ""
 msgid ""
 "<action>Toggles Main Toolbar display.</action> Toggle this setting to turn "
 "the main toolbar on or off."
-msgstr "<action>Перемикає показ головної панелі інструментів.</action> Перемкніть цей параметр, щоб увімкнути або вимкнути головну панель інструментів."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
@@ -1531,7 +1500,7 @@ msgid ""
 "<action>Toggles Navigation in works.</action> Toggle this setting to add or "
 "remove the navigation combo box in works.  This can be handy to view the "
 "full toolbar in the open works"
-msgstr "<action>Перемикає навігацію у творах.</action> Перемкніть цей параметр, щоб додати або прибрати комбінований список навігації у творах. Це може бути зручно для перегляду повної панелі інструментів у відкритих творах"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
@@ -1545,7 +1514,7 @@ msgstr ""
 msgid ""
 "<action>Toggles Toolbars in works.</action> Toggle this setting to add or "
 "remove the works icons in the open works."
-msgstr "<action>Перемикає панелі інструментів у творах.</action> Перемкніть цей параметр, щоб додати або прибрати піктограми творів у відкритих творах."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
@@ -1559,7 +1528,7 @@ msgstr ""
 msgid ""
 "<action>Toggles tools in works.</action> Toggle this setting to add or "
 "remove the tools icons in the open works."
-msgstr "<action>Перемикає інструменти у творах.</action> Перемкніть цей параметр, щоб додати або прибрати піктограми інструментів у відкритих творах."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
@@ -1573,7 +1542,7 @@ msgstr ""
 msgid ""
 "<action>Toggles format.</action> Toggle this setting when editing HTML in "
 "Personal Commentaries. It will add or remove the formatting toolbar."
-msgstr "<action>Перемикає форматування.</action> Перемикайте цей параметр під час редагування HTML в особистих коментарях. Він додає або прибирає панель форматування."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
@@ -1588,7 +1557,7 @@ msgstr ""
 msgid ""
 "<action>Toggles toolbars in works.</action> Toggle this setting to add or "
 "remove the complete toolbar in open works."
-msgstr "<action>Перемикає панелі інструментів у творах.</action> Перемкніть цей параметр, щоб додати або прибрати повну панель інструментів у відкритих творах."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "<guimenu>Search</guimenu>"
@@ -1620,7 +1589,7 @@ msgid ""
 "action>. More works can be added in the Search Dialog. A more detailed "
 "search description can be found in the <link linkend=\"hdbk-op-"
 "search\">Searching in works</link> section."
-msgstr "<action>Відкриває діалог пошуку лише у стандартній Біблії</action>. У діалозі пошуку можна додати більше творів. Докладніший опис пошуку наведено в розділі <link linkend=\"hdbk-op-search\">Пошук у творах</link>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
@@ -1640,7 +1609,7 @@ msgid ""
 "can be added or removed in the Search Dialog. A more detailed search "
 "description can be found in the <link linkend=\"hdbk-op-search\">Searching "
 "in works</link> section."
-msgstr "<action>Відкриває діалог пошуку в усіх відкритих творах</action>. У діалозі пошуку твори можна додавати або вилучати. Докладніший опис пошуку наведено в розділі <link linkend=\"hdbk-op-search\">Пошук у творах</link>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "<guimenu>Window</guimenu>"
@@ -1797,7 +1766,7 @@ msgid ""
 "opening context menu, you can either specify that you want to take care of "
 "the window arrangement yourself (Manual mode), Tabbed, Auto-tile vertically, "
 "Auto-tile horizontally, Auto-tile or Auto-cascade.  Just try them out!"
-msgstr "<action>Керує базовою поведінкою розташування вікон</action>. У контекстному меню, що відкривається, можна вказати, що ви хочете самостійно керувати розташуванням вікон (ручний режим), або вибрати вкладки, автоматичне вертикальне мозаїчне розташування, автоматичне горизонтальне мозаїчне розташування, автоматичну мозаїку чи автоматичний каскад. Просто спробуйте їх!"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
@@ -1813,7 +1782,7 @@ msgid ""
 "context menu where you can select an existing session to save to. It will be "
 "overwritten with your current session. See the next item on how to save to a "
 "new session."
-msgstr "<action>Безпосередньо зберігає поточний сеанс</action>. Відкриється контекстне меню, де можна вибрати наявний сеанс для збереження. Його буде перезаписано вашим поточним сеансом. Про збереження в новий сеанс дивіться наступний пункт."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
@@ -1829,7 +1798,7 @@ msgstr ""
 msgid ""
 "<action>Saves the current session under a new name</action>. This will ask "
 "for a new name to save the session to."
-msgstr "<action>Зберігає поточний сеанс під новою назвою</action>. Програма попросить ввести нову назву для збереження сеансу."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
@@ -1843,7 +1812,7 @@ msgstr ""
 msgid ""
 "<action>Loads an existing session</action>. This will open a context menu "
 "where you can select an existing session to load."
-msgstr "<action>Завантажує наявний сеанс</action>. Відкриється контекстне меню, де можна вибрати наявний сеанс для завантаження."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
@@ -1857,7 +1826,7 @@ msgstr ""
 msgid ""
 "<action>Deletes an existing session</action>. This will open a context menu "
 "where you can select an existing session that should be deleted."
-msgstr "<action>Видаляє наявний сеанс</action>. Відкриється контекстне меню, де можна вибрати наявний сеанс, який слід видалити."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "<guimenu>Settings</guimenu>"
@@ -1887,7 +1856,7 @@ msgid ""
 "configure all kinds of nice settings there to adapt &bibletime; to your "
 "needs.  Please see the <link linkend=\"hdbk-config-bt\">Configuring "
 "&bibletime; section</link> for details."
-msgstr "<action>Відкриває головний діалог налаштування &bibletime;</action>. Там можна налаштувати різні корисні параметри, щоб пристосувати &bibletime; до ваших потреб. Докладніше дивіться в розділі <link linkend=\"hdbk-config-bt\">Налаштування &bibletime;</link>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 msgid ""
@@ -1914,7 +1883,7 @@ msgid ""
 "<action>Opens a dialog where you can change your &sword; configuration and "
 "manage your bookshelf</action>. Please see the <link linkend=\"hdbk-op-"
 "bookshelfmanager\">Bookshelf Manager section</link> for details."
-msgstr "<action>Відкриває діалог, у якому можна змінити конфігурацію &sword; і керувати книжковою полицею</action>. Докладніше дивіться в розділі <link linkend=\"hdbk-op-bookshelfmanager\">Менеджер книжкової полиці</link>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "<guimenu>Help</guimenu>"
@@ -1965,7 +1934,7 @@ msgid ""
 "expect you to read and study the scriptures to understand what they say. If "
 "you start with the attitude that you want to have the Lord sow his word in "
 "your heart He will not disappoint you."
-msgstr "<action>Відкриває посібник про те, як вивчати Біблію</action>. Команда &bibletime; сподівається, що цей посібник спонукає читачів вивчати Писання, щоб побачити, що вони говорять. Саме цей навчальний посібник вибрано тому, що він обережно уникає просування будь-якої конкретної конфесійної доктрини. Ми очікуємо, що ви читатимете і вивчатимете Писання, щоб зрозуміти, що вони говорять. Якщо ви почнете з бажання, щоб Господь посіяв своє слово у вашому серці, Він вас не розчарує."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 msgid ""
@@ -1991,7 +1960,7 @@ msgstr ""
 msgid ""
 "<action>Opens a helpful tip</action> The Tip of the Day provides a useful "
 "tip that will assist in the use of &bibletime;."
-msgstr "<action>Відкриває корисну пораду</action>. Порада дня надає корисну пораду, що допоможе користуватися &bibletime;."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
@@ -2007,7 +1976,7 @@ msgid ""
 "contains information about &bibletime; software version, project "
 "contributors, &sword; software version, &qt; software version and the "
 "license agreement."
-msgstr "<action>Відкриває вікно з інформацією про проєкт &bibletime;</action>, яке містить відомості про версію &bibletime;, учасників проєкту, версію &sword;, версію &qt; та ліцензійну угоду."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Works reference"
@@ -2176,7 +2145,7 @@ msgid ""
 "look at the entry itself in &bibletime; (as it always shows the shortcut), "
 "or you can look it in the <link linkend=\"hdbk-reference-menus\">Main Menu "
 "reference</link>."
-msgstr "Це покажчик усіх клавіатурних скорочень і відповідних описів у довіднику. Скорочення відсортовано приблизно за абеткою. Якщо потрібно одразу дізнатися, які скорочення має певний пункт меню, можна подивитися сам пункт у &bibletime; (там скорочення завжди показується) або переглянути його в розділі <link linkend=\"hdbk-reference-menus\">Довідник головного меню</link>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 msgid "Shortcut"
@@ -2188,19 +2157,19 @@ msgstr "Опис"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Alt;+Left</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Alt;+Left</keycap></keycombo>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "Moves back in the history of read windows."
-msgstr "Переходить назад в історії вікон читання."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Alt;+Right</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Alt;+Right</keycap></keycombo>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "Moves forward in the history of read windows."
-msgstr "Переходить уперед в історії вікон читання."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
@@ -2212,7 +2181,7 @@ msgid ""
 "<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> "
 "</menuchoice> </link> equivalent; opens the search dialog to search in the "
 "default bible."
-msgstr "Еквівалент <link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> <guimenu>Пошук</guimenu> <guimenuitem>Шукати у типовій Біблії</guimenuitem> </menuchoice> </link>; відкриває діалог пошуку у типовій Біблії."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>"
@@ -2223,7 +2192,7 @@ msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </menuchoice> "
 "equivalent; toggle automatic window tiling."
-msgstr "Еквівалент <menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Режим розташування</guimenuitem> <guimenuitem>Автоматична вертикальна мозаїка</guimenuitem> </menuchoice>; перемикає автоматичне мозаїчне розташування вікон."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>"
@@ -2234,18 +2203,18 @@ msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </menuchoice> "
 "equivalent; toggle automatic window tiling."
-msgstr "Еквівалент <menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Режим розташування</guimenuitem> <guimenuitem>Автоматична горизонтальна мозаїка</guimenuitem> </menuchoice>; перемикає автоматичне мозаїчне розташування вікон."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> equivalent; "
 "toggle automatic window tiling."
-msgstr "Еквівалент <menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Режим розташування</guimenuitem> <guimenuitem>Автоматична мозаїка</guimenuitem> </menuchoice>; перемикає автоматичне мозаїчне розташування вікон."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>"
@@ -2256,7 +2225,7 @@ msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
 "equivalent; toggle automatic window cascading."
-msgstr "Еквівалент <menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Режим розташування</guimenuitem> <guimenuitem>Автоматичний каскад</guimenuitem> </menuchoice>; перемикає автоматичне каскадне розташування вікон."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>"
@@ -2267,7 +2236,7 @@ msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
 "equivalent; toggle manual window placement."
-msgstr "Еквівалент <menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Режим розташування</guimenuitem> <guimenuitem>Ручний режим</guimenuitem> </menuchoice>; перемикає ручне розміщення вікон."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>"
@@ -2278,7 +2247,7 @@ msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> equivalent; "
 "organizes windows with tabs across the top."
-msgstr "Еквівалент <menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Режим розташування</guimenuitem> <guimenuitem>Вкладки</guimenuitem> </menuchoice>; організовує вікна у вкладках угорі."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>"
@@ -2289,7 +2258,7 @@ msgid ""
 "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
 "menuchoice> </link> equivalent; saves current layout as new session."
-msgstr "Еквівалент <link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Зберегти як новий сеанс</guimenuitem> </menuchoice> </link>; зберігає поточне розташування як новий сеанс."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>"
@@ -2300,7 +2269,7 @@ msgid ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
 "</link> equivalent; closes all open windows."
-msgstr "Еквівалент <link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Закрити все</guimenuitem> </menuchoice> </link>; закриває всі відкриті вікна."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
@@ -2319,166 +2288,19 @@ msgid "Copy. This copies the selected text to the clipboard."
 msgstr "Копіювати. Це копіює вибраний текст у буфер обміну."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
 msgid ""
 "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid ""
 "<link linkend=\"hdbk-reference-menus-file-text-editor\"> <menuchoice> "
 "<guimenu>File</guimenu> <guimenuitem>Text Editor</guimenuitem> </menuchoice> "
 "</link> equivalent; opens the rich text editor."
-msgstr "Еквівалент <link linkend=\"hdbk-reference-menus-file-text-editor\"> <menuchoice> <guimenu>Файл</guimenu> <guimenuitem>Текстовий редактор</guimenuitem> </menuchoice> </link>; відкриває редактор форматованого тексту."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+P</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+P</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "Print. In the rich text editor, prints the current document."
-msgstr "Друк. У редакторі форматованого тексту друкує поточний документ."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, inserts or edits a link."
-msgstr "У редакторі форматованого тексту вставляє або редагує посилання."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+1</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+1</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"In the rich text editor, applies single spacing to the current paragraph."
-msgstr "У редакторі форматованого тексту застосовує одинарний інтервал до поточного абзацу."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+2</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+2</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"In the rich text editor, applies double spacing to the current paragraph."
-msgstr "У редакторі форматованого тексту застосовує подвійний інтервал до поточного абзацу."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+F</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+F</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, opens the font chooser."
-msgstr "У редакторі форматованого тексту відкриває вибір шрифту."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+H</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+H</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, applies the current highlight color."
-msgstr "У редакторі форматованого тексту застосовує поточний колір виділення."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, chooses the highlight color."
-msgstr "У редакторі форматованого тексту вибирає колір виділення."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+C</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+C</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, chooses the font color."
-msgstr "У редакторі форматованого тексту вибирає колір шрифту."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+B</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+B</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, chooses the page background color."
-msgstr "У редакторі форматованого тексту вибирає колір тла сторінки."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+0</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+0</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, applies normal text formatting."
-msgstr "У редакторі форматованого тексту застосовує форматування звичайного тексту."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+1</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+1</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, applies heading 1 formatting."
-msgstr "У редакторі форматованого тексту застосовує форматування заголовка 1."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+2</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+2</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, applies heading 2 formatting."
-msgstr "У редакторі форматованого тексту застосовує форматування заголовка 2."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+8</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+8</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, starts a bullet list."
-msgstr "У редакторі форматованого тексту починає маркований список."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+7</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+7</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, starts a numbered list."
-msgstr "У редакторі форматованого тексту починає нумерований список."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+T</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+T</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, inserts a table."
-msgstr "У редакторі форматованого тексту вставляє таблицю."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+P</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+P</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, inserts a picture."
-msgstr "У редакторі форматованого тексту вставляє зображення."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycap>F7</keycap>"
-msgstr "<keycap>F7</keycap>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, starts spell check."
-msgstr "У редакторі форматованого тексту запускає перевірку правопису."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Shift;+F7</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+F7</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, opens the thesaurus."
-msgstr "У редакторі форматованого тексту відкриває тезаурус."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
@@ -2497,7 +2319,7 @@ msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </"
 "menuchoice> </link> equivalent."
-msgstr "Еквівалент <link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Розташувати вертикально</guimenuitem> </menuchoice> </link>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+H</keycap></keycombo>"
@@ -2508,7 +2330,7 @@ msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </"
 "menuchoice> </link> equivalent."
-msgstr "Еквівалент <link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Розташувати горизонтально</guimenuitem> </menuchoice> </link>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+I</keycap></keycombo>"
@@ -2519,7 +2341,7 @@ msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tile\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> </"
 "link> windows equivalent."
-msgstr "Еквівалент розташування вікон <link linkend=\"hdbk-reference-menus-window-tile\"> <menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Мозаїка</guimenuitem> </menuchoice> </link>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+J</keycap></keycombo>"
@@ -2530,7 +2352,7 @@ msgid ""
 "<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </"
 "link> windows equivalent."
-msgstr "Еквівалент каскадного розташування вікон <link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Каскадом</guimenuitem> </menuchoice> </link>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+L</keycap></keycombo>"
@@ -2548,7 +2370,7 @@ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+N</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "Search with works of this window."
-msgstr "Шукати у творах цього вікна."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo>"
@@ -2560,7 +2382,7 @@ msgid ""
 "<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> "
 "</menuchoice> </link> equivalent; opens the search dialog to search in all "
 "currently opened works."
-msgstr "Еквівалент <link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> <guimenu>Пошук</guimenu> <guimenuitem>Шукати у відкритому творі(ах)</guimenuitem> </menuchoice> </link>; відкриває діалог пошуку в усіх поточних відкритих творах."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo>"
@@ -2571,7 +2393,7 @@ msgid ""
 "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
 "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
 "link> equivalent; closes &bibletime;."
-msgstr "Еквівалент <link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> <guimenu>Файл</guimenu> <guimenuitem>Вийти</guimenuitem> </menuchoice> </link>; закриває &bibletime;."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo>"
@@ -2589,7 +2411,7 @@ msgstr "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
 "menuchoice> equivalent; opens the handbook."
-msgstr "Еквівалент <menuchoice> <guimenu>Довідка</guimenu> <guimenuitem>Довідник</guimenuitem> </menuchoice>; відкриває довідник."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
@@ -2599,7 +2421,7 @@ msgstr "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy HowTo</"
 "guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo."
-msgstr "Еквівалент <menuchoice> <guimenu>Довідка</guimenu> <guimenuitem>Як вивчати Біблію</guimenuitem> </menuchoice>; відкриває посібник із вивчення Біблії."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo>"
@@ -2609,7 +2431,7 @@ msgstr "<keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo>"
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the Day</"
 "guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;."
-msgstr "<menuchoice> <guimenu>Довідка</guimenu> <guimenuitem>Порада дня</guimenuitem> </menuchoice> відкриває корисну пораду щодо користування &bibletime;."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
@@ -2620,7 +2442,7 @@ msgid ""
 "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
 "<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
 "guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf Manager."
-msgstr "Еквівалент <link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> <menuchoice> <guimenu>Налаштування</guimenu> <guimenuitem>Менеджер книжкової полиці</guimenuitem> </menuchoice> </link>; відкриває менеджер книжкової полиці."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
@@ -2631,7 +2453,7 @@ msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
 "menuchoice> </link> equivalent; toggles display of the Bookshelf."
-msgstr "Еквівалент <link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> <guimenu>Вигляд</guimenu> <guimenuitem>Показати книжкову полицю</guimenuitem> </menuchoice> </link>; перемикає показ книжкової полиці."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
@@ -2642,7 +2464,7 @@ msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"
 "link> equivalent; toggles display of the mag(nifying glass)."
-msgstr "Еквівалент <link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> <guimenu>Вигляд</guimenu> <guimenuitem>Показати лупу</guimenuitem> </menuchoice> </link>; перемикає показ лупи."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Down</keycap></keycombo>"
@@ -2652,7 +2474,7 @@ msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+Down</keycap></keycombo>"
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll down</"
 "guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu>Вигляд</guimenu> <guimenuitem>Автоматично прокручувати вниз</guimenuitem> </menuchoice>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Up</keycap></keycombo>"
@@ -2662,25 +2484,25 @@ msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+Up</keycap></keycombo>"
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll up</"
 "guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu>Вигляд</guimenu> <guimenuitem>Автоматично прокручувати вгору</guimenuitem> </menuchoice>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll pause</"
 "guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu>Вигляд</guimenu> <guimenuitem>Призупинити автоматичне прокручування</guimenuitem> </menuchoice>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Starting &bibletime;"
-msgstr "Запуск &bibletime;"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
 msgid "How to start &bibletime;"
-msgstr "Як запустити &bibletime;"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><mediaobject>
 msgid ""
@@ -2692,7 +2514,7 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject><phrase>
 msgid "&bibletime; start icon"
-msgstr "Піктограма запуску &bibletime;"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 msgid ""
@@ -2726,12 +2548,12 @@ msgstr "Налаштування запуску"
 #. type: Content of: <chapter><sect1><sect2><para><screen>
 #, no-wrap
 msgid "bibletime --open-default-bible \"&lt;random&gt;\""
-msgstr "bibletime --open-default-bible \"&lt;random&gt;\""
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><screen>
 #, no-wrap
 msgid "bibletime --open-default-bible \"John 3:16\""
-msgstr "bibletime --open-default-bible \"John 3:16\""
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 msgid ""
@@ -2739,18 +2561,18 @@ msgid ""
 "default bible: <placeholder type=\"screen\" id=\"0\"/> To open at a given "
 "passage like John 3:16, use: <placeholder type=\"screen\" id=\"1\"/> You can "
 "also use booknames in your current bookname language."
-msgstr "З термінала можна використати &bibletime;, щоб відкрити випадковий вірш у типовій Біблії: <placeholder type=\"screen\" id=\"0\"/> Щоб відкрити певне місце, наприклад Івана 3:16, використайте: <placeholder type=\"screen\" id=\"1\"/> Також можна використовувати назви книг мовою поточних назв книг."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Starting &bibletime; for the first time"
-msgstr "Перший запуск &bibletime;"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
 "If you are starting &bibletime; for the first time, you will want to "
 "configure the following options, available under the <link linkend=\"hdbk-"
 "reference-menus-settings\">Settings menu bar</link>."
-msgstr "Якщо ви запускаєте &bibletime; вперше, варто налаштувати такі параметри, доступні в <link linkend=\"hdbk-reference-menus-settings\">меню Налаштування</link>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 msgid "<interface>Bookshelf Manager</interface>"
@@ -2766,18 +2588,18 @@ msgid ""
 "least one Bible, Commentary, Lexicon and one Book to get to know "
 "&bibletime;'s basic features quickly.  You will be presented with a list of "
 "works that are available from the &cbs; and other repositories;"
-msgstr "<action>Змінює вашу книжкову полицю</action>. Цей діалог дозволяє змінювати книжкову полицю, додавати або видаляти твори з вашої системи. Його буде показано лише тоді, коли не знайдено типової книжкової полиці. Докладніше дивіться в розділі <link linkend=\"hdbk-op-bookshelfmanager\">Менеджер книжкової полиці</link>. Якщо ви починаєте з порожньою книжковою полицею, корисно встановити принаймні одну Біблію, коментар, лексикон і одну книгу, щоб швидко ознайомитися з основними можливостями &bibletime;. Вам буде показано список творів, доступних з &cbs; та інших репозиторіїв;"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 msgid "<interface>Configure &bibletime; dialog</interface>"
-msgstr "<interface>Діалог налаштування &bibletime;</interface>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 msgid ""
 "<action>Customizes &bibletime;.</action>This dialog lets you adapt "
 "&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "
 "detailed description</link> of this dialog."
-msgstr "<action>Налаштовує &bibletime;.</action> Цей діалог дозволяє пристосувати &bibletime; до ваших потреб. Дивіться <link linkend=\"hdbk-config-bt\">докладний опис</link> цього діалогу."
+msgstr ""
 
 #. type: Content of the bibletime entity
 msgid "<application>BibleTime</application>"
@@ -2789,7 +2611,7 @@ msgstr "<application>SWORD</application>"
 
 #. type: Content of the cbs entity
 msgid "<application>Crosswire Bible Society</application>"
-msgstr "<application>Crosswire Bible Society</application>"
+msgstr ""
 
 #. type: Content of the qt entity
 msgid "<application>Qt</application>"
@@ -2809,11 +2631,11 @@ msgstr "Alt"
 
 #. type: Content of the Space entity
 msgid "Space"
-msgstr "Пробіл"
+msgstr ""
 
 #. type: Content of: <book><bookinfo><title>
 msgid "The &bibletime; Handbook"
-msgstr "Довідник &bibletime;"
+msgstr ""
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 msgid "Fred"
@@ -2849,23 +2671,23 @@ msgstr "Abthorpe"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 msgid "Gary"
-msgstr "Gary"
+msgstr ""
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 msgid "Holmlund"
-msgstr "Holmlund"
+msgstr ""
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 msgid ""
 "<copyright> <year>1999-2026</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
-msgstr "<copyright> <year>1999-2026</year> <holder>Команда &bibletime;</holder> </copyright>"
+msgstr ""
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 msgid ""
 "The &bibletime; Handbook is distributed with the &bibletime; study program."
-msgstr "Довідник &bibletime; поширюється разом із програмою для вивчення Біблії &bibletime;."
+msgstr ""
 
 #. type: Content of: <book><bookinfo>
 msgid "<date>December 2019</date>"

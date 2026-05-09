@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2026-05-08 12:47-0400\n"
+"POT-Creation-Date: 2026-05-07 15:37-0400\n"
 "PO-Revision-Date: 2011-12-11 21:42+0000\n"
 "Last-Translator: Ilpo Kantonen, 2005,2009,2016\n"
 "Language-Team: Finnish (http://app.transifex.com/bibletime/bibletime/"
@@ -857,7 +857,7 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Editing rich text notes"
-msgstr "Muotoiltujen tekstimuistiinpanojen muokkaaminen"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -865,33 +865,16 @@ msgid ""
 "tied to a particular Bible verse. Open it from <menuchoice> <guimenu>File</"
 "guimenu> <guimenuitem>Text Editor</guimenuitem> </menuchoice> or by pressing "
 "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap> </keycombo>."
-msgstr "&bibletime; sisältää myös yksinkertaisen muotoillun tekstin editorin muistiinpanoille, joita ei ole sidottu tiettyyn raamatunjakeeseen. Avaa se valitsemalla <menuchoice> <guimenu>Tiedosto</guimenu> <guimenuitem>Tekstieditori</guimenuitem> </menuchoice> tai painamalla <keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap> </keycombo>."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
 "The text editor can format text as bold, italic, underline, headings, bullet "
-"and numbered lists, links, single or double spaced paragraphs, and aligned "
-"paragraphs. It can also apply font choices, font colors, page background "
-"colors, and different highlight colors.  Use the editor's <guimenu>Format</"
-"guimenu> menu or keyboard shortcuts to apply these formats."
-msgstr "Tekstieditori voi muotoilla tekstin lihavoiduksi, kursivoiduksi, alleviivatuksi, otsikoiksi, luettelomerkeillä varustetuiksi ja numeroiduiksi luetteloiksi, linkeiksi, yhden tai kahden rivivälin kappaleiksi sekä tasatuiksi kappaleiksi. Se voi myös käyttää fonttivalintoja, fonttivärejä, sivun taustavärejä ja eri korostusvärejä. Käytä näitä muotoiluja editorin <guimenu>Muotoilu</guimenu>-valikosta tai näppäinoikoteillä."
-
-#. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"The <guimenu>Insert</guimenu> menu can add simple tables and pictures.  The "
-"<guimenu>Search</guimenu> menu can find text in the current document.  The "
-"<guimenu>Tools</guimenu> menu provides spell checking and a thesaurus when "
-"the required open source dictionary tools are installed on your system."
-msgstr "<guimenu>Lisää</guimenu>-valikosta voi lisätä yksinkertaisia taulukoita ja kuvia. <guimenu>Haku</guimenu>-valikosta voi etsiä tekstiä nykyisestä asiakirjasta. <guimenu>Työkalut</guimenu>-valikko tarjoaa oikeinkirjoituksen tarkistuksen ja synonyymisanaston, kun tarvittavat avoimen lähdekoodin sanakirjatyökalut on asennettu järjestelmään."
-
-#. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"The editor has a small toolbar for common actions such as new, open, save, "
-"print, undo, redo, cut, copy, paste, find, spell check, thesaurus, "
-"formatting, lists, links, tables, and pictures. The status bar shows the "
-"current text format, cursor line, column, document position, date and time, "
-"and whether the document has unsaved changes."
-msgstr "Editorissa on pieni työkalurivi yleisille toiminnoille, kuten uusi, avaa, tallenna, tulosta, kumoa, tee uudelleen, leikkaa, kopioi, liitä, etsi, oikeinkirjoituksen tarkistus, synonyymisanasto, muotoilu, luettelot, linkit, taulukot ja kuvat. Tilarivi näyttää nykyisen tekstimuotoilun, kohdistimen rivin ja sarakkeen, sijainnin asiakirjassa, päivämäärän ja ajan sekä sen, onko asiakirjassa tallentamattomia muutoksia."
+"and numbered lists, links, and aligned paragraphs.  It can also apply font "
+"colors, page background colors, and different highlight colors. Use the "
+"editor's <guimenu>Format</guimenu> menu or keyboard shortcuts to apply these "
+"formats."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -899,17 +882,8 @@ msgid ""
 "preserved. If you save as plain text, formatting such as colors, highlights, "
 "links, and headings will not be stored. The editor remembers the last file "
 "it had open and restores the cursor location the next time it is opened, if "
-"the file still exists. When saving over an existing document, the editor "
-"first writes a <filename>.bak</filename> backup beside the original file."
-msgstr "Tekstieditorin asiakirjat tallennetaan oletuksena HTML-muodossa, jotta rikas muotoilu säilyy. Jos tallennat pelkkänä tekstinä, muotoilut kuten värit, korostukset, linkit ja otsikot eivät tallennu. Editori muistaa viimeksi avatun tiedoston ja palauttaa kohdistimen sijainnin seuraavalla avauskerralla, jos tiedosto on yhä olemassa. Kun tallennetaan olemassa olevan asiakirjan päälle, editori kirjoittaa ensin <filename>.bak</filename>-varmuuskopion alkuperäisen tiedoston viereen."
-
-#. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"While you are editing, the text editor periodically writes an autosaved "
-"recovery copy. If &bibletime; or the editor closes unexpectedly, the editor "
-"offers to restore that recovery copy the next time it is opened. A normal "
-"save or clean close removes the recovery copy."
-msgstr "Muokkauksen aikana tekstieditori kirjoittaa ajoittain automaattisesti tallennetun palautuskopion. Jos &bibletime; tai editori sulkeutuu odottamatta, editori tarjoaa palautuskopion palauttamista seuraavalla avauskerralla. Tavallinen tallennus tai siisti sulkeminen poistaa palautuskopion."
+"the file still exists."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -918,17 +892,7 @@ msgid ""
 "press <keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap> </keycombo>.  "
 "Enter the link text and URL in the dialog. To open a link while editing, "
 "hold &Ctrl; and click the link."
-msgstr "Lisää linkki valitsemalla linkin teksti ja valitsemalla <menuchoice> <guimenu>Muotoilu</guimenu> <guimenuitem>Linkki</guimenuitem> </menuchoice> tai painamalla <keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap> </keycombo>. Kirjoita linkin teksti ja URL-osoite valintaikkunaan. Avaa linkki muokkauksen aikana pitämällä &Ctrl;-näppäintä painettuna ja napsauttamalla linkkiä."
-
-#. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"You can also send text from an open read window to the text editor. Open the "
-"text editor first, then use the read window's <mousebutton>right</"
-"mousebutton> mouse button context menu and choose <menuchoice> <guimenu>Send "
-"to Text Editor</guimenu> </menuchoice>.  Bible windows can send the selected "
-"text, the current reference with text, or the chapter. Other read windows "
-"can send the selected text or the current entry."
-msgstr "Voit myös lähettää tekstiä avoimesta lukuikkunasta tekstieditoriin. Avaa ensin tekstieditori, käytä sitten lukuikkunan <mousebutton>oikean</mousebutton> hiiren painikkeen kontekstivalikkoa ja valitse <menuchoice> <guimenu>Lähetä tekstieditoriin</guimenu> </menuchoice>. Raamattuikkunat voivat lähettää valitun tekstin, nykyisen viitteen tekstin kanssa tai luvun. Muut lukuikkunat voivat lähettää valitun tekstin tai nykyisen kohdan."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Searching text in an open read window"
@@ -1339,12 +1303,19 @@ msgid ""
 "<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
 "allow you to <guimenuitem>Select</guimenuitem>, <guimenuitem>Copy</"
 "guimenuitem> (to clipboard), <guimenuitem>Save</guimenuitem> or "
-"<guimenuitem>Print</guimenuitem> text, or <guimenuitem>Send to Text Editor</"
-"guimenuitem>. This works for example in the read windows, when you click on "
-"the normal text or the verse reference, or in the search result page when "
-"you click on a work or one or more verse references. It is pretty "
-"straightforward, so just try it out."
-msgstr "Monissa paikoissa voit avata kontekstivalikon napsauttamalla hiiren <mousebutton>oikeaa</mousebutton> painiketta. Asiayhteydestä riippuen voit <guimenuitem>Valita</guimenuitem>, <guimenuitem>Kopioida</guimenuitem> (leikepöydälle), <guimenuitem>Tallentaa</guimenuitem> tai <guimenuitem>Tulostaa</guimenuitem> tekstiä tai <guimenuitem>Lähettää tekstieditoriin</guimenuitem>. Tämä toimii esimerkiksi lukuikkunoissa, kun napsautat tavallista tekstiä tai jaeviittausta, tai hakutulossivulla, kun napsautat teosta tai yhtä tai useampaa jaeviittausta. Se on melko suoraviivaista, joten kokeile sitä."
+"<guimenuitem>Print</guimenuitem> text. This works for example in the read "
+"windows, when you click on the normal text or the verse reference, or in the "
+"search result page when you click on a work or one or more verse references. "
+"It is pretty straightforward, so just try it out."
+msgstr ""
+"Monissa paikoissa voit avata kontekstivalikon napsauttamalla hiiren "
+"<mousebutton>oikeaa</mousebutton> painiketta. Asiayhteydestä riippuen "
+"ohjelma antaa mahdollisuuden <guimenuitem>Valita</guimenuitem>, "
+"<guimenuitem>Kopioida</guimenuitem> (leikepöydälle), <guimenuitem>Tallentaa</"
+"guimenuitem> tai <guimenuitem>Tulostaa</guimenuitem> tekstin. Tämä toimii "
+"esimerkiksi lukuikkunoissa, kun napsautat normaalia tekstiä tai "
+"jaeviittausta, tai hakutulossivulla, kun napsautat teosta tai yhtä tai "
+"useampaa jaeviittausta. Se on melko suoraviivaista, joten kokeile sitä."
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -1413,20 +1384,26 @@ msgstr ""
 "asennetut teokset."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#, fuzzy
+#| msgid ""
+#| "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;"
+#| "+S</keycap></keycombo> </shortcut> <guimenu>Window</guimenu> "
+#| "<guimenuitem>Save as new session</guimenuitem> </menuchoice>"
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;"
 "+E</keycap></keycombo> </shortcut> <guimenu>File</guimenu> <guimenuitem>Text "
 "Editor</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap></keycombo> </shortcut> <guimenu>Tiedosto</guimenu> <guimenuitem>Tekstieditori</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</"
+"keycap></keycombo> </shortcut> <guimenu>Ikkuna</guimenu> "
+"<guimenuitem>Talleta uudeksi käyttökerraksi</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid ""
 "<action>Open the rich text editor.</action> This opens a simple editor for "
 "notes which are not tied to a particular Bible verse. It supports rich "
-"formatting and saves HTML documents by default. It also supports printing, "
-"search, spell check, thesaurus lookup, tables, pictures, autosave recovery, "
-"and backup files when saving over an existing document."
-msgstr "<action>Avaa muotoillun tekstin editori.</action> Tämä avaa yksinkertaisen editorin muistiinpanoille, joita ei ole sidottu tiettyyn raamatunjakeeseen. Se tukee rikasta muotoilua ja tallentaa HTML-asiakirjat oletuksena. Se tukee myös tulostusta, hakua, oikeinkirjoituksen tarkistusta, synonyymisanaston käyttöä, taulukoita, kuvia, automaattisen tallennuksen palautusta ja varmuuskopiotiedostoja, kun tallennetaan olemassa olevan asiakirjan päälle."
+"formatting and saves HTML documents by default."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 msgid ""
@@ -2501,166 +2478,27 @@ msgid "Copy. This copies the selected text to the clipboard."
 msgstr "Kopioi. Tämä kopioi valitun tekstin leikepöydälle."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
 msgid ""
 "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"><keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
+#| "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
+#| "link> equivalent; closes &bibletime;."
 msgid ""
 "<link linkend=\"hdbk-reference-menus-file-text-editor\"> <menuchoice> "
 "<guimenu>File</guimenu> <guimenuitem>Text Editor</guimenuitem> </menuchoice> "
 "</link> equivalent; opens the rich text editor."
-msgstr "<link linkend=\"hdbk-reference-menus-file-text-editor\"> <menuchoice> <guimenu>Tiedosto</guimenu> <guimenuitem>Tekstieditori</guimenuitem> </menuchoice> </link> sama kuin; avaa muotoillun tekstin editorin."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+P</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+P</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "Print. In the rich text editor, prints the current document."
-msgstr "Tulosta. Muotoillun tekstin editorissa tulostaa nykyisen asiakirjan."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, inserts or edits a link."
-msgstr "Muotoillun tekstin editorissa lisää tai muokkaa linkkiä."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+1</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+1</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"In the rich text editor, applies single spacing to the current paragraph."
-msgstr "Muotoillun tekstin editorissa käyttää yhden rivivälin nykyiseen kappaleeseen."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+2</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+2</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"In the rich text editor, applies double spacing to the current paragraph."
-msgstr "Muotoillun tekstin editorissa käyttää kaksinkertaisen rivivälin nykyiseen kappaleeseen."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+F</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+F</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, opens the font chooser."
-msgstr "Muotoillun tekstin editorissa avaa fontin valitsimen."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+H</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+H</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, applies the current highlight color."
-msgstr "Muotoillun tekstin editorissa käyttää nykyistä korostusväriä."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, chooses the highlight color."
-msgstr "Muotoillun tekstin editorissa valitsee korostusvärin."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+C</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+C</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, chooses the font color."
-msgstr "Muotoillun tekstin editorissa valitsee fontin värin."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+B</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+B</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, chooses the page background color."
-msgstr "Muotoillun tekstin editorissa valitsee sivun taustavärin."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+0</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+0</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, applies normal text formatting."
-msgstr "Muotoillun tekstin editorissa käyttää normaalin tekstin muotoilua."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+1</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+1</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, applies heading 1 formatting."
-msgstr "Muotoillun tekstin editorissa käyttää otsikko 1 -muotoilua."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+2</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+2</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, applies heading 2 formatting."
-msgstr "Muotoillun tekstin editorissa käyttää otsikko 2 -muotoilua."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+8</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+8</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, starts a bullet list."
-msgstr "Muotoillun tekstin editorissa aloittaa luettelomerkkiluettelon."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+7</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+7</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, starts a numbered list."
-msgstr "Muotoillun tekstin editorissa aloittaa numeroidun luettelon."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+T</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+T</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, inserts a table."
-msgstr "Muotoillun tekstin editorissa lisää taulukon."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+P</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+P</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, inserts a picture."
-msgstr "Muotoillun tekstin editorissa lisää kuvan."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycap>F7</keycap>"
-msgstr "<keycap>F7</keycap>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, starts spell check."
-msgstr "Muotoillun tekstin editorissa aloittaa oikeinkirjoituksen tarkistuksen."
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "<keycombo action=\"simul\"> <keycap>&Shift;+F7</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+F7</keycap></keycombo>"
-
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid "In the rich text editor, opens the thesaurus."
-msgstr "Muotoillun tekstin editorissa avaa synonyymisanaston."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
+"<guimenu>Tiedosto</guimenu> <guimenuitem>Poistu</guimenuitem> </menuchoice> "
+"</link> sama kuin; sulkee &bibletime;-ohjelman."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
@@ -3102,7 +2940,7 @@ msgstr "Holmlund"
 msgid ""
 "<copyright> <year>1999-2026</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
-msgstr "<copyright> <year>1999-2026</year> <holder>&bibletime;-tiimi</holder> </copyright>"
+msgstr ""
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 msgid ""

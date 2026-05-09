@@ -70,7 +70,7 @@ msgid ""
 "himself words of Torah has gotten to himself the life of the world to come."
 "\" Their study was an end in itself. In this they were grievously deceived. "
 "[...]"
-msgstr "Die Juden, zu denen Jesus sprach [...], stellten sich vor, der Besitz der Schrift sei gleichbedeutend mit dem Besitz des Lebens. Hillel pflegte zu sagen: »Wer sich Worte der Tora erworben hat, hat sich das Leben der kommenden Welt erworben.« Ihr Studium war ein Selbstzweck. Darin waren sie schwer getäuscht. [...]"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -94,7 +94,7 @@ msgid ""
 "and memorization provide a microscopic view of scripture. Meditating on the "
 "scriptures brings hearing, reading, studying and memorization together and "
 "cements the word in our minds."
-msgstr "Hören und Lesen geben einen weiten Überblick über die Schrift, während Studium und Auswendiglernen einen genaueren Blick auf die Schrift ermöglichen. Das Nachsinnen über die Schrift führt Hören, Lesen, Studieren und Auswendiglernen zusammen und verankert das Wort in unserem Denken."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Hear"
@@ -191,7 +191,7 @@ msgid ""
 "Meditation is a key to revelation. A new Christian needs to hear and read "
 "the Bible more than they need to study and memorize it. This is so that they "
 "become familiar with the overall message of the Bible."
-msgstr "Die Navigators veranschaulichen dies so: Wie der Daumen alle Finger berühren kann, so können wir über das Wort nachsinnen, während wir eine der ersten vier Tätigkeiten ausüben. Nachsinnen ist ein Schlüssel zur Offenbarung. Ein neuer Christ muss die Bibel zunächst mehr hören und lesen, als sie studieren und auswendig lernen, damit er mit der Gesamtbotschaft der Bibel vertraut wird."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Types of Bible Studies"
@@ -253,7 +253,7 @@ msgstr "Kontext"
 msgid ""
 "What do the verses around it say? \"Context is king\" is the rule -- the "
 "passage must make sense within the structure of the entire passage and book."
-msgstr "Was sagen die Verse darum herum? Die Regel lautet: »Der Kontext ist König« -- der Abschnitt muss innerhalb der Struktur des ganzen Abschnitts und des ganzen Buches Sinn ergeben."
+msgstr ""
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 msgid "Cross-reference"
@@ -280,7 +280,7 @@ msgid ""
 "it by picking different places in the passage and asking yourself if they "
 "relate to the thought of the key verse. Once you find it, write it as Roman "
 "numeral One of your outline:"
-msgstr "Lasst uns gemeinsam Mt. 6,1-18 studieren. Lesen Sie den Abschnitt zunächst für sich und suchen Sie den Schlüsselvers, also den Vers, der den ganzen Abschnitt zusammenfasst. Meinen Sie, ihn gefunden zu haben? Prüfen Sie es, indem Sie verschiedene Stellen im Abschnitt auswählen und fragen, ob sie mit dem Gedanken des Schlüsselverses zusammenhängen. Wenn Sie ihn gefunden haben, schreiben Sie ihn als römische Ziffer I Ihrer Gliederung auf:"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 msgid "Beware of practicing your righteousness before men to be noticed"
@@ -291,7 +291,7 @@ msgid ""
 "What does <quote>practicing your righteousness</quote>mean? Does the passage "
 "give any examples? What area of our lives is being addressed? <emphasis>Our "
 "motives!</emphasis> What sub-headings develop this thought?"
-msgstr "Was bedeutet <quote>eure Gerechtigkeit üben</quote>? Gibt der Abschnitt Beispiele? Welcher Bereich unseres Lebens wird angesprochen? <emphasis>Unsere Motive!</emphasis> Welche Unterüberschriften entwickeln diesen Gedanken?"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 msgid "When you give"
@@ -317,7 +317,7 @@ msgstr ""
 msgid ""
 "don't sound a trumpet. (how might someone <quote>sound a trumpet</"
 "quote>today?)"
-msgstr "Lass keine Posaune vor dir her blasen. (Wie könnte jemand heute <quote>eine Posaune blasen</quote>?)"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 msgid "do it secretly."
@@ -379,7 +379,7 @@ msgid ""
 "would look up that word in the concordance and look up references listed for "
 "it. Then you could look up related words and references listed for them, e."
 "g.  \"redeem, redeemed, ransom,\" even \"buy\" or \"bought.\""
-msgstr "Nehmen wir an, Sie möchten eine Wortstudie zu »Erlösung« machen. Zuerst würden Sie dieses Wort in der Konkordanz nachschlagen und die dort aufgeführten Stellen ansehen. Dann könnten Sie verwandte Wörter und deren Stellen nachschlagen, z. B. »erlösen, erlöst, Lösegeld«, sogar »kaufen« oder »gekauft«."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "To Clarify Word Meanings in the Greek and Hebrew"
@@ -392,21 +392,21 @@ msgid ""
 "judgeth all things.</quote>Maybe there are two different Greek words here, "
 "both being translated \"judge\" in English? (We're using Strong's from here "
 "out.)"
-msgstr "Was wäre, wenn Ihnen in der KJV ein Widerspruch zwischen Mt. 7,1 <quote>Richtet nicht, damit ihr nicht gerichtet werdet</quote> und 1. Kor. 2,15 <quote>Der Geistliche aber beurteilt alles</quote> auffällt? Vielleicht stehen hier zwei verschiedene griechische Wörter, die beide im Englischen mit »judge« übersetzt werden? (Ab hier verwenden wir Strong's.)"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 msgid "Look up \"judge\"."
-msgstr "Schlagen Sie »judge« nach."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 msgid ""
 "Go down the column of entries to Mt.7:1. To the right is a number, 2919. "
 "This refers to the Greek word used. Write it down."
-msgstr "Gehen Sie in der Eintragsspalte zu Mt. 7,1. Rechts steht eine Zahl, 2919. Sie verweist auf das verwendete griechische Wort. Schreiben Sie sie auf."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 msgid "Now look up \"judgeth\"."
-msgstr "Schlagen Sie nun »judgeth« nach."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 msgid "Go down the column to 1 Cor.2:15 . . . . . 350."
@@ -417,7 +417,7 @@ msgid ""
 "Turn in the back to the Greek dictionary. (Remember, you're in the NT so the "
 "language is Greek, while the OT is Hebrew.) Compare the meaning of 2919 with "
 "the meaning of 350 and you have your answer!"
-msgstr "Schlagen Sie hinten im griechischen Wörterbuch nach. (Denken Sie daran: Sie sind im NT, die Sprache ist also Griechisch, während das AT Hebräisch ist.) Vergleichen Sie die Bedeutung von 2919 mit der von 350, und Sie haben Ihre Antwort!"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "To Find Meanings of Names"
@@ -460,7 +460,7 @@ msgid ""
 "Understanding God's word is of great importance to all who call on God's "
 "name. Study of the Bible is one of the primary ways that we learn to "
 "communicate with God."
-msgstr "Gottes Wort zu verstehen ist für alle von großer Bedeutung, die den Namen Gottes anrufen. Das Studium der Bibel ist einer der wichtigsten Wege, auf denen wir lernen, mit Gott zu kommunizieren."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
 msgid "A Book that is Unique"
@@ -468,25 +468,25 @@ msgstr "Ein Buch, das einzigartig ist"
 
 #. type: Content of: <chapter><sect1><para>
 msgid "The Bible stands alone in many ways. It is unique in:"
-msgstr "Die Bibel steht in vieler Hinsicht einzigartig da. Sie ist einzigartig in Bezug auf:"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 msgid ""
 "popularity. Bible sales in North America: more than $500 million per year. "
 "The Bible is both the all-time and year-to-year best seller!"
-msgstr "Beliebtheit. Bibelverkäufe in Nordamerika: mehr als 500 Millionen Dollar pro Jahr. Die Bibel ist sowohl der Bestseller aller Zeiten als auch Jahr für Jahr ein Bestseller!"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 msgid ""
 "authorship. It was written over a period of 1600 years by 40 different "
 "authors from different backgrounds, yet reads as if written by one."
-msgstr "Autorschaft. Sie wurde über einen Zeitraum von 1600 Jahren von 40 verschiedenen Autoren mit unterschiedlichen Hintergründen geschrieben und liest sich doch, als sei sie von einem einzigen Autor verfasst."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 msgid ""
 "preservation. F. F. Bruce in <emphasis>Are New Testament Documents Reliable?"
 "</emphasis> compares New Testament manuscripts with other ancient texts:"
-msgstr "Überlieferung. F. F. Bruce vergleicht in <emphasis>Are New Testament Documents Reliable?</emphasis> neutestamentliche Handschriften mit anderen antiken Texten:"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><table><title>
 msgid "Comparison of New Testament manuscripts with other ancient texts."
@@ -608,14 +608,14 @@ msgid ""
 "containing most of the New Testament from the 200s, and a fragment of John's "
 "gospel from 130 A. D. How many manuscripts do we have to compare to each "
 "other? 5,000 in Greek and 10,000 in Latin!"
-msgstr "Von Caesars <emphasis>Gallischem Krieg</emphasis> existieren zehn Abschriften, deren früheste 900 Jahre nach dem Original angefertigt wurde usw. Für das Neue Testament haben wir vollständige Handschriften aus der Zeit um 350 n. Chr., Papyri mit dem größten Teil des Neuen Testaments aus dem 3. Jahrhundert und ein Fragment des Johannesevangeliums von etwa 130 n. Chr. Wie viele Handschriften haben wir zum Vergleich? 5.000 auf Griechisch und 10.000 auf Latein!"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 msgid ""
 "Textual critic F. J. A. Hort, \"The New Testament in the Original Greek\", "
 "vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of Life</"
 "emphasis>p. 25-26"
-msgstr "Textkritiker F. J. A. Hort, »The New Testament in the Original Greek«, Bd. 1, S. 561, Macmillan Co., zitiert in <emphasis>Questions of Life</emphasis>, S. 25-26"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -639,14 +639,14 @@ msgid ""
 "word that proceeds [lit., is proceeding] from the mouth of God.</emphasis>\" "
 "As we read the Bible, God's Spirit is there to speak it to our hearts in a "
 "continually-fresh way."
-msgstr "<emphasis>Hebr. 4,12</emphasis> »<emphasis>Denn das Wort Gottes ist lebendig und wirksam...</emphasis>« Jesus sagte <emphasis>(Mt. 4,4):</emphasis> »<emphasis>Es steht geschrieben: Der Mensch lebt nicht vom Brot allein, sondern von jedem Wort, das aus dem Mund Gottes hervorgeht [wörtlich: hervorgeht].</emphasis>« Wenn wir die Bibel lesen, ist Gottes Geist da, um es immer wieder frisch zu unseren Herzen zu sprechen."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
 "2 Tim.3:16 declares, \" <emphasis>All scripture is inspired by God [lit., "
 "God-breathed].</emphasis>\" Do you believe this? Before you answer, consider "
 "Jesus' attitude toward the Scriptures."
-msgstr "2. Tim. 3,16 erklärt: »<emphasis>Alle Schrift ist von Gott eingegeben [wörtlich: gottgehaucht].</emphasis>« Glauben Sie das? Bevor Sie antworten, betrachten Sie Jesu Haltung gegenüber den Schriften."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 msgid ""
@@ -672,7 +672,7 @@ msgid ""
 "of the human authors, nor did men speak in such a way as to corrupt the Word "
 "of the divine Author. God spoke. Men spoke.  Neither truth must be allowed "
 "to detract from the other.  ..."
-msgstr "Er verwies auf die menschlichen Autoren, setzte aber voraus, dass hinter ihnen allen ein einziger göttlicher Autor stand. Er konnte gleichermaßen sagen: »Mose sagte« oder »Gott sagte« (Mk. 7,10). Er konnte eine Bemerkung des Erzählers in 1. Mose 2,24 als Ausspruch des Schöpfers selbst zitieren (Mt. 19,4-5). Ebenso sagte er: »Treffend hat Jesaja über euch Heuchler geweissagt, wie geschrieben steht«, obwohl das, was er anschließend zitierte, direkte Rede des Herrn, Gottes, ist (Mk. 7,6 und Jes. 29,13). Von Jesus selbst haben die Autoren des Neuen Testaments ihre Überzeugung von der doppelten Autorschaft der Schrift gewonnen. Für sie war es ebenso wahr zu sagen, dass »Gott vorzeiten durch die Propheten zu den Vätern geredet hat« (Hebr. 1,1), wie zu sagen, dass »Menschen, vom Heiligen Geist getrieben, von Gott her redeten« (2. Petr. 1,21). Gott sprach nicht so, dass die Persönlichkeit der menschlichen Autoren ausgelöscht wurde, und Menschen sprachen nicht so, dass das Wort des göttlichen Autors verdorben wurde. Gott sprach. Menschen sprachen. Keine dieser Wahrheiten darf die andere schmälern. ..."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -680,7 +680,7 @@ msgid ""
 "witness. The testimony of the Bible is the testimony of God. And the chief "
 "reason why the Christian believes in the divine origin of the Bible is that "
 "Jesus Christ Himself taught it."
-msgstr "Dies also war Christi Sicht der Schriften. Ihr Zeugnis war Gottes Zeugnis. Das Zeugnis der Bibel ist das Zeugnis Gottes. Und der Hauptgrund, warum der Christ an den göttlichen Ursprung der Bibel glaubt, ist, dass Jesus Christus selbst es gelehrt hat."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -689,7 +689,7 @@ msgid ""
 "adequate, equipped for every good work.</emphasis>\" If we accept that the "
 "Bible really is God speaking to us, it follows that it will be our authority "
 "in all matters of faith and conduct."
-msgstr "2. Tim. 3,16 fährt fort: »<emphasis>und nützlich zur Lehre, zur Zurechtweisung, zur Erziehung in der Gerechtigkeit, damit der Mensch Gottes vollkommen sei, zu jedem guten Werk ausgerüstet.</emphasis>« Wenn wir annehmen, dass die Bibel wirklich Gottes Reden zu uns ist, folgt daraus, dass sie unsere Autorität in allen Fragen des Glaubens und des Lebenswandels ist."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
 msgid "A Book that Works"
@@ -700,7 +700,7 @@ msgid ""
 "What will studying the Bible do for you? 1 Thess.2:13 says that the Bible \" "
 "<emphasis>performs its work in you who believe.</emphasis>\" Beside each "
 "scripture, write down the work the Word performs."
-msgstr "Was wird das Bibelstudium für Sie tun? 1. Thess. 2,13 sagt, dass die Bibel »<emphasis>in euch, die ihr glaubt, wirkt.</emphasis>« Schreiben Sie neben jede Schriftstelle auf, welches Werk das Wort tut."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><table><title>
 msgid "What does Bible study do for Christians?"
@@ -733,7 +733,7 @@ msgstr "Apostelgeschichte 20,32"
 msgid ""
 "builds up -- \" ...the word of His grace, which is able to build you up and "
 "to give you the inheritance among all those who are sanctified. \""
-msgstr "erbaut -- »...das Wort seiner Gnade, das die Kraft hat, euch aufzubauen und euch das Erbe unter allen Geheiligten zu geben.«"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 msgid "Rom. 15:4"
@@ -798,13 +798,13 @@ msgid ""
 "knowledge? Find the answers by examining the first half of the sentence, in "
 "v.31. \" <emphasis>If you abide in My word, then you are truly disciples of "
 "Mine...</emphasis>\""
-msgstr "Joh. 8,32: »<emphasis>und ihr werdet die Wahrheit erkennen, und die Wahrheit wird euch frei machen.</emphasis>« Dies wird gewöhnlich für sich allein zitiert. Ist es eine bedingte oder eine unbedingte Verheißung? Gilt sie für jede Art von Wissen? Finden Sie die Antworten, indem Sie die erste Hälfte des Satzes in V. 31 untersuchen: »<emphasis>Wenn ihr in meinem Wort bleibt, seid ihr wirklich meine Jünger...</emphasis>«"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
 "We see that this is a conditional promise, specifically speaking of the "
 "truth of God's word."
-msgstr "Wir sehen, dass dies eine bedingte Verheißung ist, die speziell von der Wahrheit des Wortes Gottes spricht."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -813,14 +813,14 @@ msgid ""
 "here and there by waves, and carried about by every wind of doctrine...</"
 "emphasis>\"One thing studying the Bible does for us is to ground us in the "
 "truth, with the result that we won't be easily \"blown away.\""
-msgstr "Das in Eph. 4,14 verwendete griechische Wort für »Wind« bedeutet einen <emphasis>heftigen Wind.</emphasis> »<emphasis>Damit wir nicht mehr Kinder seien, hin- und hergeworfen von den Wellen und umhergetrieben von jedem Wind der Lehre...</emphasis>« Eine Wirkung des Bibelstudiums ist, dass es uns in der Wahrheit gründet, sodass wir nicht leicht »weggeblasen« werden."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
 "<emphasis>But Jesus answered and said to them,</emphasis>\" <emphasis>You "
 "are mistaken [KJV Ye do err], not understanding the Scriptures, or the power "
 "of God.</emphasis>\" Mt.22:29"
-msgstr "<emphasis>Jesus aber antwortete und sprach zu ihnen:</emphasis> »<emphasis>Ihr irrt, weil ihr weder die Schriften noch die Kraft Gottes kennt.</emphasis>« Mt. 22,29"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
 msgid "What 2 things do we need to know to be kept from error?"
@@ -888,7 +888,7 @@ msgid ""
 "2 Tim.2:15 (KJV) \" <emphasis>Study to show thyself approved unto God, a "
 "workman that needeth not to be ashamed, rightly dividing the word of truth.</"
 "emphasis>\""
-msgstr "2. Tim. 2,15 (KJV): »<emphasis>Bemühe dich, dich Gott bewährt zu erweisen, als einen Arbeiter, der sich nicht zu schämen braucht, der das Wort der Wahrheit recht teilt.</emphasis>«"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -896,7 +896,7 @@ msgid ""
 "all wisdom teaching and admonishing one another with psalms and hymns and "
 "spiritual songs, singing with thankfulness in your hearts to God.</"
 "emphasis>\""
-msgstr "Kol. 3,16: »<emphasis>Lasst das Wort Christi reichlich in euch wohnen; lehrt und ermahnt einander in aller Weisheit mit Psalmen, Lobgesängen und geistlichen Liedern und singt Gott dankbar in euren Herzen.</emphasis>«"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
 msgid "If you're rich in something, how much of it do you have?"
@@ -913,7 +913,7 @@ msgid ""
 "Shepherd. But beyond this, my son, be warned: the writing of many books is "
 "endless, and excessive devotion to books is wearying to the body.</"
 "emphasis>\""
-msgstr "Pred. 12,11-12: »<emphasis>Die Worte der Weisen sind wie Treiberstacheln, und die Sammlungen sind wie fest eingeschlagene Nägel; sie sind von einem Hirten gegeben. Darüber hinaus, mein Sohn, lass dich warnen: des Büchermachens ist kein Ende, und viel Studieren ermüdet den Leib.</emphasis>«"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Appendix: \"Once for All\""
@@ -923,7 +923,7 @@ msgstr "Anhang: <quote>Einer für Alle</quote>"
 msgid ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</"
 "emphasis>InterVarsity Press 1978, pp.106-107"
-msgstr "John R. W. Stott, <emphasis>Christ the Controversialist,</emphasis> InterVarsity Press 1978, S. 106-107"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -936,7 +936,7 @@ msgid ""
 "refers to the faith which was once for all delivered to the saints (Jude 3), "
 "and Romans says, \" <emphasis>Christ also died for sins once for all</"
 "emphasis>\" (Rom.6:10, see also 1 Pe.3:18; Heb.9:26-28)."
-msgstr "Die Wahrheit von der Endgültigkeit der Initiative Gottes in Christus wird durch ein Wort des griechischen Testaments ausgedrückt, nämlich durch die Adverbien <foreignphrase>hapax</foreignphrase> und <foreignphrase>ephapax</foreignphrase>. Es wird in der Authorized Version gewöhnlich mit »once« übersetzt und bedeutet »ein für alle Mal«. Es wird für etwas gebraucht, das so getan ist, dass es dauerhafte Gültigkeit hat und keiner Wiederholung bedarf, und wird im NT sowohl auf Offenbarung als auch auf Erlösung angewandt. So spricht Judas von dem Glauben, der den Heiligen ein für alle Mal überliefert wurde (Jud. 3), und der Römerbrief sagt: »<emphasis>Christus ist ein für alle Mal der Sünde gestorben</emphasis>« (Röm. 6,10; siehe auch 1. Petr. 3,18; Hebr. 9,26-28)."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -949,7 +949,7 @@ msgid ""
 "merits. The Reformers great watchwords were <foreignphrase>sola scriptura</"
 "foreignphrase>for our authority and <foreignphrase>sola gratia</"
 "foreignphrase>for our salvation."
-msgstr "So können wir sagen, dass Gott ein für alle Mal gesprochen hat und Christus ein für alle Mal gelitten hat. Das bedeutet, dass die christliche Offenbarung und die christliche Erlösung in Christus gleichermaßen vollständig sind. Zu keiner von beiden kann etwas hinzugefügt werden, ohne Christus herabzusetzen... Dies sind die zwei Felsen, auf denen die protestantische Reformation gebaut wurde -- Gottes offenbartes Wort ohne Hinzufügung menschlicher Traditionen und Christi vollendetes Werk ohne Hinzufügung menschlicher Verdienste. Die großen Schlagworte der Reformatoren waren <foreignphrase>sola scriptura</foreignphrase> für unsere Autorität und <foreignphrase>sola gratia</foreignphrase> für unser Heil."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Supplement: Bible Reading Programs"
@@ -960,7 +960,7 @@ msgid ""
 "Here are some easy programs to systematically read your Bible. You can do "
 "more than one at a time if you like, for instance #1 with #4, or #2 with #5. "
 "Vary the program from year to year to keep it fresh!"
-msgstr "Hier sind einige einfache Pläne, um Ihre Bibel systematisch zu lesen. Sie können, wenn Sie möchten, mehrere gleichzeitig verwenden, zum Beispiel Nr. 1 mit Nr. 4 oder Nr. 2 mit Nr. 5. Wechseln Sie den Plan von Jahr zu Jahr, damit es frisch bleibt!"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 msgid "New Testament in a Year: read one chapter each day, 5 days a week."
@@ -1021,14 +1021,14 @@ msgid ""
 "their followers. 2 Pe.3:16 <quote>...in which are some things hard to "
 "understand, which the untaught and unstable distort, as they do also the "
 "rest of the Scriptures, to their own destruction.</quote>"
-msgstr "Wir haben bereits die »3 Ks« kennengelernt: Inhalt, Kontext, Querverweis. Nun wollen wir dies erweitern, indem wir kurz in die biblische Hermeneutik eintauchen, deren Ziel es ist, die vom ursprünglichen Autor (und Autor!) beabsichtigte Bedeutung zu entdecken. Während viele Anwendungen eines Abschnitts gültig sein können, ist nur eine Auslegung gültig. Die Schrift selbst sagt dies, indem sie erklärt, dass keine Schriftstelle eigenmächtig ausgelegt werden darf (2. Petr. 1,20 KJV <quote>Knowing this first, that no prophesy of scripture is of any private interpretation.</quote>). Bestimmte Regeln helfen, die richtige Bedeutung zu entdecken; indem Menschen diese Regeln missachtet haben, haben sie viel Unheil über sich und ihre Anhänger gebracht. 2. Petr. 3,16 <quote>...in denen manches schwer zu verstehen ist, was die Unwissenden und Ungefestigten verdrehen, wie auch die übrigen Schriften, zu ihrem eigenen Verderben.</quote>"
+msgstr ""
 
 #. type: Content of: <chapter><para>
 msgid ""
 "How do we go about discovering the intended meaning of a passage? Let's say "
 "your attention has been drawn to a particular verse whose meaning is not "
 "clear to you. How do you study it out? Keep these rules in mind:"
-msgstr "Wie gehen wir vor, um die beabsichtigte Bedeutung eines Abschnitts zu entdecken? Angenommen, Ihre Aufmerksamkeit wurde auf einen bestimmten Vers gelenkt, dessen Bedeutung Ihnen nicht klar ist. Wie studieren Sie ihn aus? Behalten Sie diese Regeln im Sinn:"
+msgstr ""
 
 #. type: Content of: <chapter><section><title>
 msgid "Rule 1 - Interpret according to the exact meaning of the words."
@@ -1039,7 +1039,7 @@ msgid ""
 "The more precise we can be with the exact, original meaning of the words the "
 "better our interpretation will be. Try to find the exact meaning of the key "
 "words by following these steps:"
-msgstr "Je genauer wir die ursprüngliche Bedeutung der Wörter erfassen, desto besser wird unsere Auslegung sein. Versuchen Sie, die genaue Bedeutung der Schlüsselwörter mit folgenden Schritten zu finden:"
+msgstr ""
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 msgid "Definition"
@@ -1063,7 +1063,7 @@ msgid ""
 "isn't the English word good enough? <emphasis>Because more than one Greek "
 "word may be translated into the same English word, and the Greek words may "
 "have different shades of meaning.</emphasis>"
-msgstr "Vergleichen Sie Schrift mit Schrift. Zu sehen, wie dasselbe griechische oder hebräische Wort (nicht das englische Wort) in der Schrift verwendet wird, kann die Definition klären oder neues Licht darauf werfen. Wie verwendet derselbe Autor dieses Wort anderswo? Andere Autoren? Ihre Nachschlagewerke können auch Verwendungen des Wortes in außerbiblischen Dokumenten zeigen. Warum müssen wir zu den Originalsprachen gehen; warum reicht das englische Wort nicht aus? <emphasis>Weil mehr als ein griechisches Wort mit demselben englischen Wort übersetzt werden kann und die griechischen Wörter unterschiedliche Bedeutungsnuancen haben können.</emphasis>"
+msgstr ""
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 1A"
@@ -1076,7 +1076,7 @@ msgid ""
 "He is too holy or something. But that doesn't seem right, so let's look it "
 "up in Spiros Zodhiates' <emphasis>The Complete Word Study New Testament</"
 "emphasis> (AMG Publishers, 1991)."
-msgstr "Joh. 20,17 <emphasis>»Touch me not«</emphasis> (KJV) klingt hart, nicht wahr? Es klingt, als wolle Jesus nach seiner Auferstehung nicht berührt werden, als sei er zu heilig oder etwas dergleichen. Aber das scheint nicht zu passen, also schlagen wir es in Spiros Zodhiates' <emphasis>The Complete Word Study New Testament</emphasis> (AMG Publishers, 1991) nach."
+msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1093,7 +1093,7 @@ msgid ""
 "or repeated action or, when it is negated, a command to stop doing "
 "something. \" This is a negative command, so it is to stop doing something "
 "that is already occurring. So, what have we found?"
-msgstr "Definition: Wenn wir zu Johannes 20,17 gehen, sehen wir über dem Wort »Touch« »pim680«. Die Buchstaben geben einen Code für die Wortform an, und die Zahl verweist auf Strong's Wörterbuchnummer. Schlagen wir die Definition nach (S. 879): »680. Haptomai; von hapto (681), berühren. Bezieht sich auf ein Anfassen eines Gegenstands, das eine verändernde Wirkung auf ihn ausübt... Unterschieden von pselaphao (5584), das eigentlich nur bedeutet, die Oberfläche von etwas zu berühren.« Nun schlagen wir »pim« nach. Die Grammatikcodes bei Zodhiates stehen direkt nach der Offenbarung; auf S. 849 sehen wir, dass pim für »present imperative active (80)« steht. Auf S. 857: »Present Imperative. Im Aktiv kann er einen Befehl bezeichnen, künftig etwas zu tun, das fortdauernde oder wiederholte Handlung einschließt, oder, wenn er verneint ist, einen Befehl, etwas zu beenden.« Dies ist ein verneinter Befehl, also soll etwas beendet werden, das bereits geschieht. Was haben wir also gefunden?"
+msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1111,7 +1111,7 @@ msgstr "Beispiel 1B"
 msgid ""
 "In James 5:14, <emphasis>Elders are told to pray and anoint someone who is "
 "sick</emphasis>. What is this anointing?"
-msgstr "In Jakobus 5,14 wird den <emphasis>Ältesten gesagt, sie sollen beten und einen Kranken salben</emphasis>. Was ist diese Salbung?"
+msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1122,7 +1122,7 @@ msgid ""
 "active. \"The aorist participle expresses simple action, as opposed to "
 "continuous action...When its relationship to the main verb is temporal, it "
 "usually signifies action prior to that of the main verb.\" (Zodhiates p.851)"
-msgstr "Definition von aleipho (218) - »mit Öl behandeln« (Strong's); aber es gibt auch ein anderes griechisches Wort, das mit »salben« übersetzt wird, chrio (5548) - »mit Öl bestreichen oder einreiben, d. h. zu einem Amt oder religiösen Dienst weihen« (Strong's). Da es ein Verb ist, beachten Sie auch die Zeitform: »apta«, Aorist Partizip Aktiv. »Das Aorist-Partizip drückt einfache Handlung aus, im Gegensatz zu fortdauernder Handlung... Wenn seine Beziehung zum Hauptverb zeitlich ist, bezeichnet es gewöhnlich eine Handlung, die der Handlung des Hauptverbs vorausgeht.« (Zodhiates S. 851)"
+msgstr ""
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 msgid "Mt.6:17 But you, when you fast, anoint your head"
@@ -1188,7 +1188,7 @@ msgid ""
 "references and the definitions, and sum up the difference: "
 "<emphasis>\"aleipho\" is a practical use of oil and \"chrio\" is a "
 "spiritual</emphasis>"
-msgstr "Was ist also der Unterschied zwischen aleipho und chrio? Schauen Sie noch einmal auf die Querverweise und Definitionen und fassen Sie den Unterschied zusammen: <emphasis>»aleipho« ist ein praktischer Gebrauch von Öl und »chrio« ist ein geistlicher</emphasis>"
+msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1196,7 +1196,7 @@ msgid ""
 "oil at that time, when the good Samaritan cared for the man beat up by "
 "robbers he poured oil and wine in the wound. So oil had a medicinal use in "
 "Jesus' day."
-msgstr "Als Illustration (auch wenn das Wort nicht verwendet wird) für den praktischen Gebrauch von Öl damals: Als der barmherzige Samariter den Mann versorgte, der von Räubern geschlagen worden war, goss er Öl und Wein in die Wunde. Öl hatte also zur Zeit Jesu eine medizinische Verwendung."
+msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1204,7 +1204,7 @@ msgid ""
 "<emphasis>\"Is any among you sick? Let him call for the elders of the "
 "church; and let them pray over him, anointing him with oil in the name of "
 "the Lord.\"</emphasis>Is \"anointing\" spiritual or practical? Practical!"
-msgstr "Wenden wir nun das, was wir durch diese Wortstudie gelernt haben, auf Jakobus 5,14 an: <emphasis>»Ist jemand unter euch krank? Er rufe die Ältesten der Gemeinde zu sich, und sie sollen über ihm beten und ihn mit Öl salben im Namen des Herrn.«</emphasis> Ist diese »Salbung« geistlich oder praktisch? Praktisch!"
+msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1214,7 +1214,7 @@ msgid ""
 "5 is saying that the elders should give the sick person medicine and pray "
 "for him in the name of the Lord. Doesn't that express a beautiful balance of "
 "practical and spiritual in our God!"
-msgstr "Und die griechische Zeitform, das Aorist-Partizip, wäre besser mit »nachdem sie gesalbt hatten« zu übersetzen; die Reihenfolge ist also zuerst die Salbung, dann das Gebet (»im Namen des Herrn« bezieht sich auf das Gebet, nicht auf die Salbung). Jakobus 5 sagt, dass die Ältesten dem Kranken Medizin geben und im Namen des Herrn für ihn beten sollen. Drückt das nicht ein schönes Gleichgewicht von Praktischem und Geistlichem bei unserem Gott aus!"
+msgstr ""
 
 #. type: Content of: <chapter><section><title>
 msgid "Rule 2 - Interpret within the biblical context"
@@ -1228,7 +1228,7 @@ msgid ""
 "supplies what we need to correctly interpret the passage. Context is key. If "
 "confusion remains as to the meaning after we have interpreted the text "
 "within its context, we have to look further."
-msgstr "Legen Sie Schrift im Einklang mit anderer Schrift aus. Was sagen die Verse davor und danach? Was ist das Thema des Kapitels? Des Buches? Passt Ihre Auslegung dazu? Wenn nicht, ist sie fehlerhaft. Gewöhnlich liefert der Kontext das, was wir brauchen, um den Abschnitt richtig auszulegen. Kontext ist entscheidend. Wenn nach der Auslegung im Kontext weiterhin Unklarheit über die Bedeutung besteht, müssen wir weiter suchen."
+msgstr ""
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 2A"
@@ -1238,7 +1238,7 @@ msgstr "Beispiel 2A"
 msgid ""
 "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and the "
 "Spirit.\"</emphasis>In context, what is the water under discussion here?"
-msgstr "In einer früheren Lektion betrachteten wir Joh. 3,5 <emphasis>»aus Wasser und Geist geboren«.</emphasis> Was ist im Zusammenhang hier mit dem Wasser gemeint?"
+msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1246,7 +1246,7 @@ msgid ""
 "the subject being discussed by Jesus and Nicodemus. Watch out for a sudden "
 "change of topic, it may be a clue that your interpretation has been "
 "derailed! The water is the amniotic fluid, \"born of water\" = natural birth."
-msgstr "Die Wassertaufe ist hier nicht das Thema; das wäre ein großer Wechsel gegenüber dem Thema, über das Jesus und Nikodemus sprechen. Achten Sie auf einen plötzlichen Themenwechsel; er kann ein Hinweis sein, dass Ihre Auslegung entgleist ist! Das Wasser ist das Fruchtwasser; »aus Wasser geboren« = natürliche Geburt."
+msgstr ""
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 2B"
@@ -1257,7 +1257,7 @@ msgid ""
 "1 Cor.14:34 <quote>Let the women keep silent in the churches</quote>has to "
 "be taken within the biblical context of 1 Cor.11:5 <quote>every woman [...] "
 "while praying or prophesying [...]</quote>"
-msgstr "1. Kor. 14,34 <quote>Die Frauen sollen in den Gemeinden schweigen</quote> muss im biblischen Zusammenhang von 1. Kor. 11,5 verstanden werden: <quote>jede Frau [...], die betet oder weissagt [...]</quote>"
+msgstr ""
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 2C"
@@ -1274,7 +1274,7 @@ msgid ""
 "for his hearers to respond to the gospel. If baptism were the pathway to "
 "being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did "
 "not send me to baptize, but to preach the gospel\"</emphasis>?"
-msgstr "Apg. 2,38 <quote>Und Petrus sprach zu ihnen: »Tut Buße, und jeder von euch lasse sich taufen auf den Namen Jesu Christi zur Vergebung eurer Sünden [...]«</quote>. Lehrt dies Wiedergeburt durch die Taufe? Wenn dies der einzige Schriftvers wäre, den wir hätten, müssten wir das schließen. Aber im Licht der klaren Lehre an anderer Stelle, dass Wiedergeburt durch den Glauben an Christus geschieht, müssen wir es anders auslegen. Petrus fordert die Taufe als Antwort seiner Zuhörer auf das Evangelium. Wenn die Taufe der Weg zur Wiedergeburt wäre, wie könnte Paulus in 1. Kor. 1,17 schreiben: <emphasis>»Denn Christus hat mich nicht gesandt zu taufen, sondern das Evangelium zu verkündigen«</emphasis>?"
+msgstr ""
 
 #. type: Content of: <chapter><section><title>
 msgid "Rule 3 - Interpret within the historical and cultural context"
@@ -1286,7 +1286,7 @@ msgid ""
 "<quote>What did it mean to the original readers?</quote>; later we can ask, "
 "<quote>What does it mean to me?</quote>. We have to take into account the "
 "historical and cultural background of the author and the recipients."
-msgstr "Zunächst fragen wir nicht <quote>Was bedeutet es für mich?</quote>, sondern <quote>Was bedeutete es für die ursprünglichen Leser?</quote>; später können wir fragen: <quote>Was bedeutet es für mich?</quote>. Wir müssen den historischen und kulturellen Hintergrund des Autors und der Empfänger berücksichtigen."
+msgstr ""
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 3A"
@@ -1299,7 +1299,7 @@ msgid ""
 "Jesus die on Friday afternoon and rise Sunday morning yet \"be raised on the "
 "third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't help "
 "explain the apparent contradiction."
-msgstr "<quote>3 Tage und 3 Nächte</quote> (Mt. 12,40) haben manche zu einer »Mittwochs-Kreuzigungs-Theorie« geführt, besonders die Sekte des Armstrongismus. Wie konnte Jesus am Freitagnachmittag sterben und am Sonntagmorgen auferstehen und doch »am dritten Tag auferweckt werden« (Mt. 16,21)? Exakte Bedeutungen von »drei« oder »Tage« helfen nicht, den scheinbaren Widerspruch zu erklären."
+msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1311,7 +1311,7 @@ msgid ""
 "p.m. = day 1. Friday 6 p.m. to Saturday 6 p.m. = day 2. Saturday 6 p.m. to "
 "Sunday 5 or so a.m. = day 3. Interpreting within the cultural context keeps "
 "us out of trouble."
-msgstr "Wir brauchen eine historische Einzelheit: Juden zählten jeden Teil eines Tages als ganzen Tag, so wie wir Wassereimer zählen würden (wenn es sechseinhalb Eimer Wasser gäbe, würden wir sagen, es seien sieben Eimer, auch wenn einer nur teilweise voll ist). Im jüdischen Denken zählte also jeder Teil eines Tages als ganzer Tag, und Tage begannen um 18 Uhr und endeten um 18 Uhr. Freitag von 15 bis 18 Uhr = Tag 1. Freitag 18 Uhr bis Samstag 18 Uhr = Tag 2. Samstag 18 Uhr bis Sonntag etwa 5 Uhr morgens = Tag 3. Die Auslegung im kulturellen Kontext bewahrt uns vor Problemen."
+msgstr ""
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 3B"
@@ -1325,7 +1325,7 @@ msgid ""
 "dismemberment would happen to them if they didn't live up to their part of "
 "the contract. But in this case only God goes thru, making it a unilateral "
 "covenant."
-msgstr "1. Mose 15,7-21. Der historische Kontext ist, dass das Zerteilen von Tieren und das Hindurchgehen zwischen den Stücken zur Zeit Abrahams die übliche Weise war, einen Vertrag zu schließen. Beide Parteien gingen hindurch und verpflichteten sich damit, dass ihnen Zerstückelung widerfahren solle, wenn sie ihren Teil des Vertrags nicht erfüllten. In diesem Fall geht jedoch nur Gott hindurch und macht es zu einem einseitigen Bund."
+msgstr ""
 
 #. type: Content of: <chapter><section><title>
 msgid "Rule 4 - Interpret according to the normal usage of words in language"
@@ -1337,7 +1337,7 @@ msgstr ""
 msgid ""
 "Let literal language be literal and figurative language be figurative. And "
 "watch out for idioms, which have special meanings."
-msgstr "Lassen Sie wörtliche Sprache wörtlich und bildliche Sprache bildlich sein. Achten Sie auch auf Redewendungen, die besondere Bedeutungen haben."
+msgstr ""
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 4A"
@@ -1345,14 +1345,14 @@ msgstr "Beispiel 4A"
 
 #. type: Content of: <chapter><section><section><para>
 msgid "<quote>evil eye</quote>in Mt.6:23."
-msgstr "<quote>böses Auge</quote> in Mt. 6,23."
+msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
 "Rule 1, definition of \"evil\" and \"eye\" - no help here. Rule 2, context: "
 "seems to confuse us even more. It doesn't seem to fit with what goes before "
 "and after! This should tip us off that we aren't understanding it rightly!!"
-msgstr "Regel 1, Definition von »böse« und »Auge« - hier keine Hilfe. Regel 2, Kontext: scheint uns noch mehr zu verwirren. Es passt scheinbar nicht zu dem, was davor und danach steht! Das sollte uns darauf hinweisen, dass wir es nicht richtig verstehen!!"
+msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1362,7 +1362,7 @@ msgid ""
 "because I am generous [lit. \"good\"]?</emphasis>\" We find that having an "
 "\"evil eye\" is a Hebrew idiom for being stingy or envious. Now go back to "
 "Mt.6 and notice how this understanding ties in so perfectly to the context."
-msgstr "Was wir hier haben, ist eine hebräische Redewendung: <quote>böses Auge</quote>. Schlagen wir andere Verwendungen dieser Redewendung nach: Mt. 20,15 »<emphasis>Ist es mir nicht erlaubt, mit dem Meinen zu tun, was ich will? Oder ist dein Auge neidisch [wörtlich »böse«], weil ich gütig [wörtlich »gut«] bin?</emphasis>« Wir sehen, dass ein »böses Auge« eine hebräische Redewendung für Geiz oder Neid ist. Gehen Sie nun zurück zu Mt. 6 und beachten Sie, wie dieses Verständnis so vollkommen zum Kontext passt."
+msgstr ""
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 4B"
@@ -1390,7 +1390,7 @@ msgid ""
 "interpretation that you just proved God to be a man, you just proved that He "
 "is a bird</quote>. The Mormons had to laugh as they realised the "
 "ridiculousness of their position."
-msgstr "Hinweise auf Körperteile Gottes werden von den Heiligen der Letzten Tage benutzt, um zu beweisen, dass Gott einst ein Mensch war wie wir. Sobald sie Menschen davon überzeugt haben, lehren sie weiter, dass wir Gott werden können, wie er ist! Bei einem Vortrag forderte eine Gruppe mormonischer Ältester Walter Martin (Autor von <emphasis>Kingdom of the Cults</emphasis>) mit einer Aufzählung solcher Verse heraus. Dr. Martin bat die Mormonen daraufhin, noch eine weitere Schriftstelle zu lesen: Ps. 91,4 <quote>Er wird dich mit seinen Fittichen decken; und unter seinen Flügeln wirst du Zuflucht finden</quote>. W. M. sagte: <quote>Nach denselben Auslegungsregeln, mit denen ihr gerade bewiesen habt, dass Gott ein Mensch ist, habt ihr gerade bewiesen, dass er ein Vogel ist</quote>. Die Mormonen mussten lachen, als sie die Lächerlichkeit ihrer Position erkannten."
+msgstr ""
 
 #. type: Content of: <chapter><section><title>
 msgid ""
@@ -1420,7 +1420,7 @@ msgid ""
 "one point. It's dangerous to get our doctrine from parables; they can be "
 "twisted to say all sorts of things. We need to get our doctrine from clear "
 "scriptures that lay it out; then if a parable illustrates that, fine."
-msgstr "Einige Gleichnisse sind Allegorien; zum Beispiel ist das Gleichnis vom Sämann eine Allegorie: Der Same ist das Wort Gottes, die Dornen sind Sorgen und Begierden usw. Aber die meisten Gleichnisse sind keine Allegorien, sondern einfache Geschichten, die einen Punkt veranschaulichen. Es ist gefährlich, unsere Lehre aus Gleichnissen abzuleiten; sie können verdreht werden, um allerlei Dinge zu sagen. Wir müssen unsere Lehre aus klaren Schriftstellen gewinnen, die sie darlegen; wenn ein Gleichnis sie dann veranschaulicht, ist das gut."
+msgstr ""
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 5A"
@@ -1453,14 +1453,14 @@ msgstr "Beispiel 5B"
 msgid ""
 "The parable of the unrighteous steward in Lk.16:1-9. What is the point of "
 "the parable? Is it an allegory?"
-msgstr "Das Gleichnis vom ungerechten Verwalter in Lk. 16,1-9. Was ist der Punkt des Gleichnisses? Ist es eine Allegorie?"
+msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
 "The steward is commended for only one thing, his shrewdness in using what he "
 "had to prepare for a time when he wouldn't have it. But he is not commended "
 "for his unethical behavior in cheating his master."
-msgstr "Der Verwalter wird nur für eine Sache gelobt: für seine Klugheit, das zu nutzen, was er hatte, um sich auf eine Zeit vorzubereiten, in der er es nicht mehr haben würde. Er wird jedoch nicht für sein unethisches Verhalten gelobt, mit dem er seinen Herrn betrog."
+msgstr ""
 
 #. type: Content of the bibletime entity
 msgid "<application>BibleTime</application>"
@@ -1484,21 +1484,21 @@ msgstr "Harman"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 msgid "The BibleTime Team"
-msgstr "Das BibleTime-Team"
+msgstr ""
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 msgid ""
 "<copyright> <year>1999-2026</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
-msgstr "<copyright> <year>1999-2026</year> <holder>Das &bibletime;-Team (bt-devel@crosswire.org)</holder> </copyright>"
+msgstr ""
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 msgid ""
 "This document was originally created by Mr. Bob Harman and is licensed under "
 "the terms of the license <ulink url=\"http://creativecommons.org/licenses/by-"
 "sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</ulink>."
-msgstr "Dieses Dokument wurde ursprünglich von Herrn Bob Harman erstellt und steht unter den Bedingungen der Lizenz <ulink url=\"http://creativecommons.org/licenses/by-sa/3.0/\">»Creative Commons Attribution-Share Alike«</ulink>."
+msgstr ""
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 msgid ""
@@ -1529,7 +1529,7 @@ msgid ""
 "denominational doctrine. We recommend you to read and study the scriptures "
 "to understand what they say. If you start with the attitude that you want to "
 "have the Lord sow his word in your heart He will not disappoint you."
-msgstr "Das &bibletime;-Team hofft, dass dieses HowTo die Leser dazu anregt, die Schriften zu studieren, um zu sehen, was sie sagen. Dieser besondere Studienführer wurde ausgewählt, weil er darauf achtet, keine bestimmte konfessionelle Lehre zu vertreten. Wir empfehlen Ihnen, die Schriften zu lesen und zu studieren, um zu verstehen, was sie sagen. Wenn Sie mit der Haltung beginnen, dass der Herr sein Wort in Ihr Herz säen soll, wird er Sie nicht enttäuschen."
+msgstr ""
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 msgid "Bible"

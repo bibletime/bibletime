@@ -300,48 +300,6 @@ ${BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL}")
     CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/pdf.xsl.in"
                    "${BT_DOCBOOK_PDF_XSL}" @ONLY)
 
-    IF(NOT DEFINED BT_FOP_CONFIG)
-        FIND_FILE(BT_FOP_SERIF_FONT
-            NAMES "ipam.ttf" "fonts-japanese-mincho.ttf"
-            HINTS
-                "/usr/share/fonts/opentype/ipafont-mincho/"
-                "/usr/share/fonts/truetype/"
-            NO_DEFAULT_PATH)
-        FIND_FILE(BT_FOP_SERIF_BOLD_FONT
-            NAMES "ipamp.ttf" "ipam.ttf" "fonts-japanese-mincho.ttf"
-            HINTS
-                "/usr/share/fonts/opentype/ipafont-mincho/"
-                "/usr/share/fonts/truetype/"
-            NO_DEFAULT_PATH)
-        FIND_FILE(BT_FOP_SANS_FONT
-            NAMES "ipag.ttf" "fonts-japanese-gothic.ttf"
-            HINTS
-                "/usr/share/fonts/opentype/ipafont-gothic/"
-                "/usr/share/fonts/truetype/"
-            NO_DEFAULT_PATH)
-        FIND_FILE(BT_FOP_SANS_BOLD_FONT
-            NAMES "ipagp.ttf" "ipag.ttf" "fonts-japanese-gothic.ttf"
-            HINTS
-                "/usr/share/fonts/opentype/ipafont-gothic/"
-                "/usr/share/fonts/truetype/"
-            NO_DEFAULT_PATH)
-        IF(BT_FOP_SERIF_FONT AND BT_FOP_SERIF_BOLD_FONT AND
-           BT_FOP_SANS_FONT AND BT_FOP_SANS_BOLD_FONT)
-            SET(BT_FOP_CONFIG "${DOCS_BINARY_DIR}/fop.xconf")
-            CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/fop.xconf.in"
-                           "${BT_FOP_CONFIG}" @ONLY)
-            MESSAGE(STATUS "Using FOP font configuration: ${BT_FOP_CONFIG}")
-        ELSE()
-            MESSAGE(WARNING
-                    "Japanese-capable IPA fonts were not found. PDF output "
-                    "for CJK languages may contain missing glyph markers. "
-                    "Install fonts-ipafont-gothic and fonts-ipafont-mincho, "
-                    "or set -DBT_FOP_CONFIG=path/to/fop.xconf.")
-        ENDIF()
-    ELSE()
-        MESSAGE(STATUS "Using user-specified FOP font configuration: \
-${BT_FOP_CONFIG}")
-    ENDIF()
     FUNCTION(GeneratePdfDoc doc)
         STRING(TOUPPER "${doc}" udoc)
         IF(${BUILD_${udoc}_PDF})
@@ -373,15 +331,9 @@ ${BT_FOP_CONFIG}")
 
                 SET(dp "${DOCS_BINARY_DIR}/${doc}/pdf/${l}")
                 FILE(MAKE_DIRECTORY "${dp}")
-                IF("${l}" STREQUAL "ja" AND BT_FOP_CONFIG)
-                    SET(fopConfigArgs "-c" "${BT_FOP_CONFIG}")
-                ELSE()
-                    SET(fopConfigArgs)
-                ENDIF()
                 ADD_CUSTOM_COMMAND(OUTPUT "${dp}/${doc}.pdf"
                     COMMENT "Generating ${dp}/${doc}.pdf"
-                    COMMAND "${FOP_COMMAND}" ${fopConfigArgs}
-                        -pdf "${dp}/${doc}.pdf"
+                    COMMAND "${FOP_COMMAND}" -pdf "${dp}/${doc}.pdf"
                         -fo "${dx}/${doc}.fo"
                     DEPENDS "${doc}_xslfo_${l}")
                 AddDocSubTarget("${doc}_pdf" "${doc}_pdf_${l}"

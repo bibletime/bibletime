@@ -1774,7 +1774,7 @@ msgstr "BibleTime tiimi"
 msgid ""
 "<copyright> <year>1999-2026</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
-msgstr "<copyright> <year>1999-2026</year> <holder>&bibletime;-tiimi (bt-devel@crosswire.org)</holder> </copyright>"
+msgstr ""
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 msgid ""
