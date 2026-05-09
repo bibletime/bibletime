@@ -34,7 +34,7 @@ BtWelcomeDialog::BtWelcomeDialog(QWidget *parent, Qt::WindowFlags wflags)
     QVBoxLayout * mainLayout = new QVBoxLayout(this);
 
     m_iconLabel = new QLabel(this);
-    m_iconLabel->setPixmap(BtIcons::instance().icon_bibletime.pixmap(48));
+    m_iconLabel->setPixmap(BtIcons::icon_bibletime().pixmap(48));
     mainLayout->addWidget(m_iconLabel, 0, Qt::AlignHCenter);
 
     m_label = new QLabel(this);

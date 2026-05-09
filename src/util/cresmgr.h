@@ -19,7 +19,7 @@
 class QIcon;
 
 #define BT_GETICON2(fname,name) \
-    inline QIcon const & fname() { return BtIcons::instance().icon_ ## name; }
+    inline QIcon const & fname() { return BtIcons::icon_ ## name(); }
 #define BT_GETICON(name) BT_GETICON2(icon,name)
 
 namespace CResMgr {
