@@ -33,7 +33,6 @@ CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,
     QHBoxLayout* layout = new QHBoxLayout(this);
     layout->setSpacing(0);
     layout->setContentsMargins(0, 0, 0, 0);
-    layout->setDirection( QBoxLayout::LeftToRight );
 
     m_widget = new BtBibleKeyWidget(m_modules.first(), m_key, this);
     setFocusProxy(m_widget);
