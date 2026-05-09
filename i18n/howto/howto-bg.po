@@ -28,7 +28,7 @@ msgstr "Целта на изучаването"
 
 #. type: Content of: <chapter><sect1><para><blockquote><attribution>
 msgid "Jn.5:39-40"
-msgstr ""
+msgstr "Йоан 5:39-40"
 
 #. type: Content of: <chapter><sect1><para><blockquote><para>
 msgid ""
@@ -36,6 +36,9 @@ msgid ""
 "life; and it is these that bear witness of Me; and you are unwilling to come "
 "to Me, that you may have life."
 msgstr ""
+"Вие изследвате Писанията, защото мислите, че в тях имате вечен живот; и "
+"те са, които свидетелстват за Мен; но не искате да дойдете при Мен, за "
+"да имате живот."
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -43,12 +46,18 @@ msgid ""
 "said <quote>we go to the cradle only for the sake of the baby</quote>; just "
 "so in Bible study, we do it not for its own sake but for fellowship with God."
 msgstr ""
+"Главната цел на книгата е да ни доведе до Личността. Мартин Лутер "
+"казва: <quote>отиваме при яслата само заради Бебето</quote>; така е и "
+"при изучаването на Библията - правим го не заради самото изучаване, а "
+"заради общението с Бога."
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.97, 104."
 msgstr ""
+"Джон Р. У. Стот, <emphasis>Christ the Controversialist</emphasis>, "
+"InterVarsity Press 1978, стр. 97, 104."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -58,6 +67,11 @@ msgid ""
 "\" Their study was an end in itself. In this they were grievously deceived. "
 "[...]"
 msgstr ""
+"Юдеите, на които Исус говореше [...], си представяха, че да притежаваш "
+"Писанието е равносилно на това да притежаваш живота. Хилел обичал да "
+"казва: \"Който е придобил за себе си думите на Тората, е придобил за "
+"себе си живота на бъдещия свят.\" Тяхното изучаване беше самоцел. В това "
+"те бяха тежко заблудени. [...]"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -81,6 +95,10 @@ msgid ""
 "scriptures brings hearing, reading, studying and memorization together and "
 "cements the word in our minds."
 msgstr ""
+"Слушането и четенето дават телескопичен поглед върху Писанието, докато "
+"изучаването и запаметяването дават микроскопичен поглед върху "
+"Писанието. Размишлението върху Писанията събира слушането, четенето, "
+"изучаването и запаметяването и закрепва словото в умовете ни."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Hear"
@@ -91,6 +109,8 @@ msgid ""
 "Lk.11:28 <quote>blessed are those who hear the word of God, and observe it.</"
 "quote>"
 msgstr ""
+"Лука 11:28 <quote>блажени са онези, които слушат Божието слово и го "
+"пазят.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Read"
@@ -101,12 +121,16 @@ msgid ""
 "Rev.1:3 <quote>Blessed is he who reads and those who hear the words of this "
 "prophecy [...]</quote>"
 msgstr ""
+"Откр. 1:3 <quote>Блажен е този, който чете, и онези, които слушат "
+"думите на това пророчество [...]</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 msgid ""
 "1 Tim.4:13 <quote>give attention to the public reading of Scripture [...]</"
 "quote>"
 msgstr ""
+"1 Тим. 4:13 <quote>отдавай се на публичното четене на Писанието "
+"[...]</quote>"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 msgid "Study"
@@ -118,6 +142,9 @@ msgid ""
 "Thessalonica, for they received the word with great eagerness, examining the "
 "Scriptures daily, to see whether these things were so.</quote>"
 msgstr ""
+"Деян. 17:11 <quote>А тези бяха по-благородни от солунците, защото "
+"приеха словото с голямо усърдие и всеки ден изследваха Писанията, за да "
+"видят дали това е така.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 msgid ""
@@ -125,6 +152,9 @@ msgid ""
 "God as a workman who does not need to be ashamed, handling accurately the "
 "word of truth.</quote>"
 msgstr ""
+"2 Тим. 2:15 <quote>Старай се [KJV `Study'] да се представиш одобрен "
+"пред Бога като работник, който няма от какво да се срамува, като вярно "
+"разпределяш словото на истината.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Memorize"
@@ -135,6 +165,8 @@ msgid ""
 "Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against "
 "Thee.</quote>"
 msgstr ""
+"Пс. 119:11 <quote>В сърцето си скрих Твоето слово, за да не съгреша "
+"против Теб.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Meditate"
@@ -147,6 +179,10 @@ msgid ""
 "streams of water, Which yields its fruit in its season, And its leaf does "
 "not wither; And in whatever he does, he prospers.</quote>"
 msgstr ""
+"Пс. 1:2-3 <quote>Но насладата му е в закона на Господа, и върху Неговия "
+"закон размишлява ден и нощ. Той ще бъде като дърво, посадено при водни "
+"потоци, което дава плода си на времето си, и листът му не повяхва; и "
+"във всичко, което върши, успява.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 msgid ""
@@ -156,6 +192,12 @@ msgid ""
 "the Bible more than they need to study and memorize it. This is so that they "
 "become familiar with the overall message of the Bible."
 msgstr ""
+"Навигаторите илюстрират това, като казват, че както палецът може да "
+"докосне всички пръсти, така можем да размишляваме върху Словото, докато "
+"вършим която и да е от първите четири дейности. Размишлението е ключ "
+"към откровението. Новият християнин има повече нужда да слуша и чете "
+"Библията, отколкото да я изучава и запаметява. Това е така, за да се "
+"запознае с общото послание на Библията."
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Types of Bible Studies"
@@ -217,6 +259,8 @@ msgid ""
 "What do the verses around it say? \"Context is king\" is the rule -- the "
 "passage must make sense within the structure of the entire passage and book."
 msgstr ""
+"Какво казват стиховете около него? \"Контекстът е цар\" е правилото -- "
+"пасажът трябва да има смисъл в структурата на целия пасаж и книга."
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 msgid "Cross-reference"
@@ -244,10 +288,15 @@ msgid ""
 "relate to the thought of the key verse. Once you find it, write it as Roman "
 "numeral One of your outline:"
 msgstr ""
+"Нека заедно изучим Мат. 6:1-18. Прочетете го първо сами, като търсите "
+"ключовия стих, стиха, който обобщава целия пасаж. Мислите, че сте го "
+"намерили? Проверете, като изберете различни места в пасажа и се "
+"запитате дали те се отнасят към мисълта на ключовия стих. Щом го "
+"намерите, запишете го като римска цифра едно във вашия план:"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 msgid "Beware of practicing your righteousness before men to be noticed"
-msgstr ""
+msgstr "Пазете се да не вършите праведността си пред хората, за да бъдете забелязани"
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -255,18 +304,21 @@ msgid ""
 "give any examples? What area of our lives is being addressed? <emphasis>Our "
 "motives!</emphasis> What sub-headings develop this thought?"
 msgstr ""
+"Какво означава <quote>да вършите праведността си</quote>? Дава ли "
+"пасажът примери? Коя област от живота ни се разглежда? <emphasis>Нашите "
+"мотиви!</emphasis> Кои подзаглавия развиват тази мисъл?"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 msgid "When you give"
-msgstr ""
+msgstr "Когато даваш"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 msgid "When you fast"
-msgstr ""
+msgstr "Когато постиш"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 msgid "When you pray"
-msgstr ""
+msgstr "Когато се молиш"
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -280,19 +332,19 @@ msgstr ""
 msgid ""
 "don't sound a trumpet. (how might someone <quote>sound a trumpet</"
 "quote>today?)"
-msgstr ""
+msgstr "не тръби пред себе си. (как би могъл някой да <quote>тръби</quote> днес?)"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 msgid "do it secretly."
-msgstr ""
+msgstr "прави го тайно."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 msgid "etc."
-msgstr ""
+msgstr "и т.н."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 msgid "When you give <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Когато даваш <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Worksheet: How to Use a Concordance"
@@ -316,19 +368,19 @@ msgstr "Под думата има списък от стихове, сред к
 
 #. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 msgid "<quote>Faithful are the wounds of a friend</quote>"
-msgstr ""
+msgstr "<quote>Верни са раните от приятел</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 msgid "<quote>We are ambassadors of Christ.</quote>"
-msgstr ""
+msgstr "<quote>Ние сме посланици на Христос.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 msgid "The story of the rich man and Lazarus."
-msgstr ""
+msgstr "Историята за богаташа и Лазар."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 msgid "Find these verses: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Намерете тези стихове: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "To Do a Topical Study"
@@ -341,6 +393,11 @@ msgid ""
 "it. Then you could look up related words and references listed for them, e."
 "g.  \"redeem, redeemed, ransom,\" even \"buy\" or \"bought.\""
 msgstr ""
+"Да кажем, че искате да направите изучаване на думата \"изкупление\". "
+"Първо бихте потърсили тази дума в конкорданса и бихте прегледали "
+"посочените към нея препратки. След това можете да потърсите сродни думи "
+"и препратките към тях, напр. \"изкупвам, изкупен, откуп\", дори \"купувам\" "
+"или \"купен\"."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "To Clarify Word Meanings in the Greek and Hebrew"
@@ -354,20 +411,27 @@ msgid ""
 "both being translated \"judge\" in English? (We're using Strong's from here "
 "out.)"
 msgstr ""
+"Ами ако забележите противоречие в KJV между Мат. 7:1 <quote>Не съдете, "
+"за да не бъдете съдени</quote> и 1 Кор. 2:15 <quote>Духовният човек "
+"съди всичко.</quote> Може би тук има две различни гръцки думи, които и "
+"двете се превеждат на английски като \"съдя\"? (Оттук нататък използваме "
+"Strong's.)"
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 msgid "Look up \"judge\"."
-msgstr ""
+msgstr "Потърсете \"judge\"."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 msgid ""
 "Go down the column of entries to Mt.7:1. To the right is a number, 2919. "
 "This refers to the Greek word used. Write it down."
 msgstr ""
+"Слезте надолу по колоната с вписвания до Мат. 7:1. Вдясно има число, "
+"2919. То се отнася до използваната гръцка дума. Запишете го."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 msgid "Now look up \"judgeth\"."
-msgstr ""
+msgstr "Сега потърсете \"judgeth\"."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 msgid "Go down the column to 1 Cor.2:15 . . . . . 350."
@@ -379,6 +443,9 @@ msgid ""
 "language is Greek, while the OT is Hebrew.) Compare the meaning of 2919 with "
 "the meaning of 350 and you have your answer!"
 msgstr ""
+"Обърнете назад към гръцкия речник. (Помнете, че сте в НЗ, така че "
+"езикът е гръцки, докато СЗ е на иврит.) Сравнете значението на 2919 със "
+"значението на 350 и ще имате отговора!"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "To Find Meanings of Names"
@@ -420,6 +487,9 @@ msgid ""
 "name. Study of the Bible is one of the primary ways that we learn to "
 "communicate with God."
 msgstr ""
+"Разбирането на Божието слово е от голямо значение за всички, които "
+"призовават Божието име. Изучаването на Библията е един от основните "
+"начини, по които се учим да общуваме с Бога."
 
 #. type: Content of: <chapter><sect1><title>
 msgid "A Book that is Unique"
@@ -427,25 +497,33 @@ msgstr "Книга, която е уникална"
 
 #. type: Content of: <chapter><sect1><para>
 msgid "The Bible stands alone in many ways. It is unique in:"
-msgstr ""
+msgstr "Библията е единствена по много начини. Тя е уникална в:"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 msgid ""
 "popularity. Bible sales in North America: more than $500 million per year. "
 "The Bible is both the all-time and year-to-year best seller!"
 msgstr ""
+"популярност. Продажбите на Библии в Северна Америка са повече от 500 "
+"милиона долара годишно. Библията е най-продаваната книга както за "
+"всички времена, така и всяка година!"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 msgid ""
 "authorship. It was written over a period of 1600 years by 40 different "
 "authors from different backgrounds, yet reads as if written by one."
 msgstr ""
+"авторство. Тя е писана в продължение на 1600 години от 40 различни "
+"автори с различен произход, но се чете така, сякаш е написана от един."
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 msgid ""
 "preservation. F. F. Bruce in <emphasis>Are New Testament Documents Reliable?"
 "</emphasis> compares New Testament manuscripts with other ancient texts:"
 msgstr ""
+"съхранение. Ф. Ф. Брус в <emphasis>Are New Testament Documents "
+"Reliable?</emphasis> сравнява новозаветните ръкописи с други древни "
+"текстове:"
 
 #. type: Content of: <chapter><sect1><table><title>
 msgid "Comparison of New Testament manuscripts with other ancient texts."
@@ -489,7 +567,7 @@ msgstr "1300 години"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 msgid "Tacitus"
@@ -509,7 +587,7 @@ msgstr "1000 години"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 msgid "20"
-msgstr ""
+msgstr "20"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 msgid "Caesar's <emphasis>Gallic War</emphasis>"
@@ -525,7 +603,7 @@ msgstr "950 години"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 msgid "10"
-msgstr ""
+msgstr "10"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 msgid "Livy's <emphasis>Roman History</emphasis>"
@@ -568,6 +646,13 @@ msgid ""
 "gospel from 130 A. D. How many manuscripts do we have to compare to each "
 "other? 5,000 in Greek and 10,000 in Latin!"
 msgstr ""
+"Съществуват десет копия на Цезаровата <emphasis>Галска война</emphasis>"
+", най-ранното от които е преписано 900 години след като Цезар е написал "
+"оригинала и т.н. За Новия Завет имаме пълни ръкописи, датиращи от 350 "
+"г. сл. Хр., папируси, съдържащи по-голямата част от Новия Завет от "
+"200-те години, и фрагмент от Евангелието на Йоан от 130 г. сл. Хр. "
+"Колко ръкописа имаме, за да ги сравняваме помежду им? 5 000 на гръцки и "
+"10 000 на латински!"
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 msgid ""
@@ -575,6 +660,9 @@ msgid ""
 "vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of Life</"
 "emphasis>p. 25-26"
 msgstr ""
+"Текстовият критик Ф. Дж. А. Хорт, \"The New Testament in the Original "
+"Greek\", том 1, стр. 561, Macmillan Co., цитиран в <emphasis>Questions "
+"of Life</emphasis> стр. 25-26"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -599,6 +687,12 @@ msgid ""
 "As we read the Bible, God's Spirit is there to speak it to our hearts in a "
 "continually-fresh way."
 msgstr ""
+"<emphasis>Евр. 4:12</emphasis> \"<emphasis>Защото Божието слово е живо и "
+"действено...</emphasis>\" Исус каза <emphasis>(Мат. 4:4),</emphasis>\" "
+"<emphasis>Писано е: Човек няма да живее само с хляб, а с всяко слово, "
+"което излиза [букв., излиза непрестанно] от Божиите уста.</emphasis>\" "
+"Когато четем Библията, Божият Дух е там, за да говори това на сърцата "
+"ни по постоянно свеж начин."
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -606,12 +700,17 @@ msgid ""
 "God-breathed].</emphasis>\" Do you believe this? Before you answer, consider "
 "Jesus' attitude toward the Scriptures."
 msgstr ""
+"2 Тим. 3:16 заявява: \" <emphasis>Цялото Писание е вдъхновено от Бога "
+"[букв., боговдъхновено].</emphasis>\" Вярвате ли това? Преди да "
+"отговорите, помислете за отношението на Исус към Писанията."
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.93-95"
 msgstr ""
+"Джон Р. У. Стот, <emphasis>Christ the Controversialist</emphasis>, "
+"InterVarsity Press 1978, стр. 93-95"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -630,6 +729,21 @@ msgid ""
 "of the divine Author. God spoke. Men spoke.  Neither truth must be allowed "
 "to detract from the other.  ..."
 msgstr ""
+"Той се позоваваше на човешките автори, но приемаше за даденост, че зад "
+"всички тях стои един-единствен божествен Автор. Той можеше еднакво да "
+"каже 'Мойсей каза' или 'Бог каза' (Марк 7:10). Той можеше да цитира "
+"коментар на разказвача в Битие 2:24 като изказване на самия Творец "
+"(Мат. 19:4-5). По същия начин каза: 'Добре пророкува Исая за вас, "
+"лицемери, както е писано', когато това, което после цитира, е пряка реч "
+"на Господ Бог (Марк 7:6 &amp; Ис. 29:13). От самия Исус новозаветните "
+"автори са получили убеждението си за двойното авторство на Писанието. "
+"За тях беше също толкова вярно да кажат, че 'Бог някога говори на "
+"бащите ни чрез пророците' (Евр. 1:1), както и да кажат, че 'човеци, "
+"движени от Светия Дух, говориха от Бога' (2 Пет. 1:21). Бог не говори "
+"така, че да заличи личността на човешките автори, нито хората говориха "
+"така, че да покварят Словото на божествения Автор. Бог говори. Хора "
+"говориха. Нито една от двете истини не трябва да омаловажава другата. "
+"..."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -638,6 +752,10 @@ msgid ""
 "reason why the Christian believes in the divine origin of the Bible is that "
 "Jesus Christ Himself taught it."
 msgstr ""
+"Такъв, следователно, беше възгледът на Христос за Писанията. Тяхното "
+"свидетелство беше Божие свидетелство. Свидетелството на Библията е "
+"свидетелството на Бога. И главната причина християнинът да вярва в "
+"божествения произход на Библията е, че сам Исус Христос го е учил."
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -647,6 +765,11 @@ msgid ""
 "Bible really is God speaking to us, it follows that it will be our authority "
 "in all matters of faith and conduct."
 msgstr ""
+"2 Тим. 3:16 продължава: \" <emphasis>и полезно за поука, за изобличение, "
+"за поправление, за наставление в правдата, за да бъде Божият човек "
+"съвършен, напълно подготвен за всяко добро дело.</emphasis>\" Ако "
+"приемаме, че Библията наистина е Бог, който говори на нас, следва, че "
+"тя ще бъде нашият авторитет във всички въпроси на вярата и поведението."
 
 #. type: Content of: <chapter><sect1><title>
 msgid "A Book that Works"
@@ -658,6 +781,9 @@ msgid ""
 "<emphasis>performs its work in you who believe.</emphasis>\" Beside each "
 "scripture, write down the work the Word performs."
 msgstr ""
+"Какво ще направи изучаването на Библията за вас? 1 Сол. 2:13 казва, че "
+"Библията \" <emphasis>действа във вас, които вярвате.</emphasis>\" До "
+"всеки стих запишете делото, което Словото извършва."
 
 #. type: Content of: <chapter><sect1><table><title>
 msgid "What does Bible study do for Christians?"
@@ -689,6 +815,8 @@ msgid ""
 "builds up -- \" ...the word of His grace, which is able to build you up and "
 "to give you the inheritance among all those who are sanctified. \""
 msgstr ""
+"изгражда -- \" ...словото на Неговата благодат, което може да ви изгради "
+"и да ви даде наследството между всички осветени. \""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 msgid "Rom. 15:4"
@@ -748,12 +876,20 @@ msgid ""
 "v.31. \" <emphasis>If you abide in My word, then you are truly disciples of "
 "Mine...</emphasis>\""
 msgstr ""
+"Йоан 8:32 \" <emphasis>и ще познаете истината, и истината ще ви направи "
+"свободни.</emphasis>\" Това обикновено се цитира само по себе си. "
+"Условно или безусловно обещание е това? Отнася ли се за всякакъв вид "
+"знание? Намерете отговорите, като разгледате първата половина на "
+"изречението, в ст. 31. \" <emphasis>Ако пребъдете в Моето слово, тогава "
+"наистина сте Мои ученици...</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
 "We see that this is a conditional promise, specifically speaking of the "
 "truth of God's word."
 msgstr ""
+"Виждаме, че това е условно обещание, което говори конкретно за истината "
+"на Божието слово."
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -763,6 +899,11 @@ msgid ""
 "emphasis>\"One thing studying the Bible does for us is to ground us in the "
 "truth, with the result that we won't be easily \"blown away.\""
 msgstr ""
+"Гръцката дума за \"вятър\", използвана в Еф. 4:14, означава <emphasis>"
+"силен вятър.</emphasis>\" <emphasis>В резултат на това вече не трябва да "
+"бъдем деца, блъскани насам-натам от вълни и носени от всеки вятър на "
+"учение...</emphasis>\" Едно нещо, което изучаването на Библията прави за "
+"нас, е да ни утвърди в истината, така че да не бъдем лесно \"отнесени\"."
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -770,6 +911,9 @@ msgid ""
 "are mistaken [KJV Ye do err], not understanding the Scriptures, or the power "
 "of God.</emphasis>\" Mt.22:29"
 msgstr ""
+"<emphasis>А Исус им отговори и каза:</emphasis>\" <emphasis>Заблуждавате "
+"се [KJV Ye do err], понеже не познавате Писанията, нито Божията "
+"сила.</emphasis>\" Мат. 22:29"
 
 #. type: Content of: <chapter><sect1><para>
 msgid "What 2 things do we need to know to be kept from error?"
@@ -809,7 +953,7 @@ msgstr "Колко от изброените предмети служат за 
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 msgid "How many are offensive?"
@@ -817,7 +961,7 @@ msgstr "Колко - за нападение?"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 msgid "One"
-msgstr ""
+msgstr "Едно"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 msgid "Which one(s)?"
@@ -837,6 +981,9 @@ msgid ""
 "workman that needeth not to be ashamed, rightly dividing the word of truth.</"
 "emphasis>\""
 msgstr ""
+"2 Тим. 2:15 (KJV) \" <emphasis>Study to show thyself approved unto God, "
+"a workman that needeth not to be ashamed, rightly dividing the word of "
+"truth.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -845,6 +992,10 @@ msgid ""
 "spiritual songs, singing with thankfulness in your hearts to God.</"
 "emphasis>\""
 msgstr ""
+"Кол. 3:16 \" <emphasis>Нека Христовото слово се вселява във вас богато; "
+"с всяка мъдрост се учете и увещавайте един друг с псалми, химни и "
+"духовни песни, като пеете с благодарност в сърцата си към "
+"Бога.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
 msgid "If you're rich in something, how much of it do you have?"
@@ -862,6 +1013,11 @@ msgid ""
 "endless, and excessive devotion to books is wearying to the body.</"
 "emphasis>\""
 msgstr ""
+"Екл. 12:11-12 \" <emphasis>Думите на мъдрите са като остени, и "
+"съставителите на тези сборници са като здраво забити гвоздеи; те са "
+"дадени от един Пастир. Но освен това, сине мой, бъди предупреден: "
+"писането на много книги няма край, и прекомерната отдаденост на книги "
+"изморява тялото.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Appendix: \"Once for All\""
@@ -872,6 +1028,8 @@ msgid ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</"
 "emphasis>InterVarsity Press 1978, pp.106-107"
 msgstr ""
+"Джон Р. У. Стот, <emphasis>Christ the Controversialist,</emphasis> "
+"InterVarsity Press 1978, стр. 106-107"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -885,6 +1043,16 @@ msgid ""
 "and Romans says, \" <emphasis>Christ also died for sins once for all</"
 "emphasis>\" (Rom.6:10, see also 1 Pe.3:18; Heb.9:26-28)."
 msgstr ""
+"Истината относно окончателността на Божията инициатива в Христос се "
+"предава с една дума от гръцкия Завет, а именно наречието <foreignphrase>"
+"hapax</foreignphrase> и <foreignphrase>ephapax</foreignphrase>. В "
+"Authorized Version тя обикновено се превежда once, със значение веднъж "
+"завинаги. Използва се за нещо, което е извършено с постоянна валидност "
+"и никога не се нуждае от повторение, и се прилага в НЗ както към "
+"откровението, така и към изкуплението. Така Юда говори за вярата, която "
+"веднъж завинаги е предадена на светиите (Юда 3), а Римляни казва: \" "
+"<emphasis>Христос също умря за греховете веднъж завинаги</emphasis>\" "
+"(Рим. 6:10, виж също 1 Пет. 3:18; Евр. 9:26-28)."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -898,6 +1066,16 @@ msgid ""
 "foreignphrase>for our authority and <foreignphrase>sola gratia</"
 "foreignphrase>for our salvation."
 msgstr ""
+"Следователно можем да кажем, че Бог е говорил веднъж завинаги и Христос "
+"е пострадал веднъж завинаги. Това означава, че християнското откровение "
+"и християнското изкупление са еднакво завършени в Христос. Нищо не може "
+"да бъде добавено към нито едното, без да се накърни Христос... Това са "
+"двете скали, върху които е изградена протестантската Реформация -- "
+"Божието открито слово без добавяне на човешки традиции и завършеното "
+"дело на Христос без добавяне на човешки заслуги. Големите лозунги на "
+"реформаторите бяха <foreignphrase>sola scriptura</foreignphrase> за "
+"нашия авторитет и <foreignphrase>sola gratia</foreignphrase> за нашето "
+"спасение."
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Supplement: Bible Reading Programs"
@@ -909,6 +1087,10 @@ msgid ""
 "more than one at a time if you like, for instance #1 with #4, or #2 with #5. "
 "Vary the program from year to year to keep it fresh!"
 msgstr ""
+"Ето няколко лесни програми за систематично четене на Библията. Можете "
+"да правите повече от една едновременно, ако желаете, например #1 с #4 "
+"или #2 с #5. Променяйте програмата от година на година, за да я "
+"поддържате свежа!"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 msgid "New Testament in a Year: read one chapter each day, 5 days a week."
@@ -966,6 +1148,19 @@ msgid ""
 "understand, which the untaught and unstable distort, as they do also the "
 "rest of the Scriptures, to their own destruction.</quote>"
 msgstr ""
+"Вече научихме за \"3-те C\": съдържание, контекст, кръстосана препратка. "
+"Сега искаме да разширим това, като накратко навлезем в библейската "
+"херменевтика, чиято цел е да открие значението, което първоначалният "
+"автор (и Автор!) е възнамерявал. Макар че много приложения на един "
+"пасаж могат да бъдат валидни, само една интерпретация е валидна. Самото "
+"Писание казва това, като заявява, че никое пророчество на Писанието не "
+"е от частно тълкуване (2 Пет. 1:20 KJV <quote>Knowing this first, that "
+"no prophesy of scripture is of any private interpretation.</quote>). "
+"Някои правила помагат за откриване на правилното значение; като "
+"пренебрегват тези правила, хората са донесли много беди върху себе си и "
+"последователите си. 2 Пет. 3:16 <quote>...в които има някои неща, "
+"трудни за разбиране, които неучените и неустойчивите изопачават, както "
+"и останалите Писания, за собствената си погибел.</quote>"
 
 #. type: Content of: <chapter><para>
 msgid ""
@@ -973,6 +1168,9 @@ msgid ""
 "your attention has been drawn to a particular verse whose meaning is not "
 "clear to you. How do you study it out? Keep these rules in mind:"
 msgstr ""
+"Как да открием предназначеното значение на един пасаж? Да кажем, че "
+"вниманието ви е привлечено от определен стих, чието значение не ви е "
+"ясно. Как го изучавате? Имайте предвид тези правила:"
 
 #. type: Content of: <chapter><section><title>
 msgid "Rule 1 - Interpret according to the exact meaning of the words."
@@ -984,16 +1182,21 @@ msgid ""
 "better our interpretation will be. Try to find the exact meaning of the key "
 "words by following these steps:"
 msgstr ""
+"Колкото по-точни можем да бъдем относно точния, първоначален смисъл на "
+"думите, толкова по-добро ще бъде нашето тълкуване. Опитайте се да "
+"намерите точното значение на ключовите думи, като следвате тези стъпки:"
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 msgid "Definition"
-msgstr ""
+msgstr "Определение"
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
 msgid ""
 "Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb "
 "tense is also crucial."
 msgstr ""
+"Потърсете определението в гръцки или еврейски речник. За глаголите "
+"глаголното време също е решаващо."
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
 msgid ""
@@ -1006,6 +1209,15 @@ msgid ""
 "word may be translated into the same English word, and the Greek words may "
 "have different shades of meaning.</emphasis>"
 msgstr ""
+"Сравнявайте Писание с Писание. Да видим как една и съща гръцка или "
+"еврейска дума (не английската дума) се използва в Писанието може да "
+"изясни или да хвърли нова светлина върху определението. Как същият "
+"автор използва тази дума на други места? Други автори? Вашите справочни "
+"средства могат да дадат и употреби на думата в небиблейски документи. "
+"Защо трябва да отиваме към оригиналните езици; защо английската дума не "
+"е достатъчна? <emphasis>Защото повече от една гръцка дума може да бъде "
+"преведена с една и съща английска дума, а гръцките думи могат да имат "
+"различни оттенъци на значение.</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 1A"
@@ -1019,6 +1231,12 @@ msgid ""
 "up in Spiros Zodhiates' <emphasis>The Complete Word Study New Testament</"
 "emphasis> (AMG Publishers, 1991)."
 msgstr ""
+"Йоан 20:17 <emphasis>\"Не се допирай до Мен\"</emphasis> (KJV) звучи "
+"сурово, нали? Звучи така, сякаш Исус не иска да бъде докосван сега, "
+"когато е възкръснал, сякаш е твърде свят или нещо подобно. Но това не "
+"изглежда правилно, затова нека го проверим в <emphasis>The Complete "
+"Word Study New Testament</emphasis> на Спирос Зодхиатес (AMG "
+"Publishers, 1991)."
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1036,22 +1254,40 @@ msgid ""
 "something. \" This is a negative command, so it is to stop doing something "
 "that is already occurring. So, what have we found?"
 msgstr ""
+"Определение: Като отворим Йоан 20:17, над думата \"Touch\" виждаме "
+"\"pim680.\" Буквите ни дават код за частта на речта, а числото се отнася "
+"до справката в речника на Strong. Нека потърсим определението (стр. "
+"879). \"680. Haptomai; от hapto (681), докосвам. Отнася се до такова "
+"боравене с предмет, което оказва променящо влияние върху него... "
+"Различава се от pselaphao (5584), което всъщност означава само да се "
+"докосне повърхността на нещо.\" Сега потърсете \"pim.\" Граматичните "
+"кодове при Зодхиатес са веднага след Откровение; на стр. 849 виждаме, "
+"че pim означава \"present imperative active (80)\". На стр. 857: \"Present "
+"Imperative. В деятелен залог може да показва заповед да се направи нещо "
+"в бъдеще, което включва продължително или повтарящо се действие, или, "
+"когато е отрицателно, заповед да се спре да се прави нещо.\" Това е "
+"отрицателна заповед, следователно означава да се спре нещо, което вече "
+"се случва. И така, какво открихме?"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
 "<emphasis>Mary is already clinging to Jesus, and he is saying to stop "
 "holding him!</emphasis>"
 msgstr ""
+"<emphasis>Мария вече се държи за Исус, а той й казва да престане да го "
+"държи!</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 1B"
-msgstr ""
+msgstr "Пример 1Б"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
 "In James 5:14, <emphasis>Elders are told to pray and anoint someone who is "
 "sick</emphasis>. What is this anointing?"
 msgstr ""
+"В Яков 5:14 <emphasis>на старейшините е казано да се молят и да помажат "
+"някого, който е болен</emphasis>. Какво е това помазване?"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1063,55 +1299,65 @@ msgid ""
 "continuous action...When its relationship to the main verb is temporal, it "
 "usually signifies action prior to that of the main verb.\" (Zodhiates p.851)"
 msgstr ""
+"Определение на aleipho (218) - \"намазвам с масло\" (Strong's); но имаме "
+"и друга гръцка дума, превеждана \"помазвам\", chrio (5548) - \"намазвам "
+"или натривам с масло, т.е. посвещавам за служба или религиозно "
+"служение\" (Strong's). Тъй като е глагол, помислете и за времето, \"apta\" "
+"аористно деятелно причастие. \"Аористното причастие изразява просто "
+"действие, за разлика от продължително действие... Когато отношението му "
+"към главния глагол е времево, то обикновено означава действие преди "
+"действието на главния глагол.\" (Зодхиатес, стр. 851)"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 msgid "Mt.6:17 But you, when you fast, anoint your head"
-msgstr ""
+msgstr "Мат. 6:17 А ти, когато постиш, помажи главата си"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 msgid "Mk.16:1 [the women] brought spices that they might come and anoint Him."
-msgstr ""
+msgstr "Марк 16:1 [жените] купиха аромати, за да дойдат и да Го помажат."
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 msgid ""
 "Mk.6:13 And they were...anointing with oil many sick people and healing them."
-msgstr ""
+msgstr "Марк 6:13 И те... помазваха с масло много болни и ги изцеляваха."
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 msgid "Lk.7:38 [...] kissing His feet and anointing them with the perfume"
-msgstr ""
+msgstr "Лука 7:38 [...] целуваше нозете Му и ги помазваше с мирото"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 msgid ""
 "Jn.12:3 Mary [...] anointed the feet of Jesus, and wiped them with her hair"
-msgstr ""
+msgstr "Йоан 12:3 Мария [...] помаза нозете на Исус и ги избърса с косата си"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
 msgid ""
 "Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Кръстосани препратки за aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 msgid ""
 "Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me "
 "to preach [...]</quote>"
 msgstr ""
+"Лука 4:18 <quote>Духът на Господа е върху Мен, защото Ме е помазал да "
+"благовестя [...]</quote>"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 msgid "Acts 4:27 Jesus, whom Thou hast anointed"
-msgstr ""
+msgstr "Деян. 4:27 Исус, когото Ти си помазал"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 msgid "Acts 10:38 God anointed Jesus with the Holy Ghost and power"
-msgstr ""
+msgstr "Деян. 10:38 Бог помаза Исус със Светия Дух и със сила"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 msgid "2 Cor.1:21 Now He who...anointed us is God"
-msgstr ""
+msgstr "2 Кор. 1:21 А Този, който... ни помаза, е Бог"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
 msgid "Cross-references of chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Кръстосани препратки за chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1120,6 +1366,10 @@ msgid ""
 "<emphasis>\"aleipho\" is a practical use of oil and \"chrio\" is a "
 "spiritual</emphasis>"
 msgstr ""
+"И така, каква е разликата между aleipho и chrio? Прегледайте отново "
+"кръстосаните препратки и определенията и обобщете разликата: <emphasis>"
+"\"aleipho\" е практическа употреба на масло, а \"chrio\" е "
+"духовна</emphasis>"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1128,6 +1378,10 @@ msgid ""
 "robbers he poured oil and wine in the wound. So oil had a medicinal use in "
 "Jesus' day."
 msgstr ""
+"Като илюстрация (макар думата да не се използва) на практическата "
+"употреба на маслото по онова време: когато добрият самарянин се погрижи "
+"за човека, пребит от разбойници, той изля масло и вино в раната. Така "
+"че маслото е имало медицинска употреба в дните на Исус."
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1136,6 +1390,11 @@ msgid ""
 "church; and let them pray over him, anointing him with oil in the name of "
 "the Lord.\"</emphasis>Is \"anointing\" spiritual or practical? Practical!"
 msgstr ""
+"Сега нека приложим наученото от това изучаване на думата към Яков 5:14 "
+"<emphasis>\"Болен ли е някой между вас? Нека повика църковните "
+"старейшини; и нека се молят над него, като го помажат с масло в "
+"Господното име.\"</emphasis> Духовно или практическо е \"помазването\"? "
+"Практическо!"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1146,6 +1405,12 @@ msgid ""
 "for him in the name of the Lord. Doesn't that express a beautiful balance of "
 "practical and spiritual in our God!"
 msgstr ""
+"А времето на гръцки, аористното причастие, би било по-добре преведено "
+"\"след като са помазали\", така че редът е първо помазването, после "
+"молитвата (\"в Господното име\" се отнася до молитвата, не до "
+"помазването). Яков 5 казва, че старейшините трябва да дадат на болния "
+"лекарство и да се молят за него в Господното име. Не изразява ли това "
+"прекрасен баланс между практическото и духовното в нашия Бог!"
 
 #. type: Content of: <chapter><section><title>
 msgid "Rule 2 - Interpret within the biblical context"
@@ -1160,6 +1425,13 @@ msgid ""
 "confusion remains as to the meaning after we have interpreted the text "
 "within its context, we have to look further."
 msgstr ""
+"Тълкувайте Писанието в хармония с друго Писание. Какво казват стиховете "
+"от двете страни? Каква е темата на главата? На книгата? Съвпада ли "
+"вашето тълкуване с тях? Ако не, то е погрешно. Обикновено контекстът "
+"дава това, което ни е нужно, за да тълкуваме пасажа правилно. "
+"Контекстът е ключът. Ако след като сме тълкували текста в неговия "
+"контекст остава неяснота относно значението, трябва да търсим "
+"по-нататък."
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 2A"
@@ -1170,6 +1442,8 @@ msgid ""
 "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and the "
 "Spirit.\"</emphasis>In context, what is the water under discussion here?"
 msgstr ""
+"В предишен урок разгледахме Йоан 3:5 <emphasis>\"роден от вода и "
+"Дух.\"</emphasis> В контекста каква е водата, за която се говори тук?"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1178,6 +1452,10 @@ msgid ""
 "change of topic, it may be a clue that your interpretation has been "
 "derailed! The water is the amniotic fluid, \"born of water\" = natural birth."
 msgstr ""
+"Тук не се обсъжда водно кръщение; това би било голяма смяна на темата, "
+"която Исус и Никодим обсъждат. Внимавайте за внезапна смяна на темата, "
+"тя може да е знак, че тълкуването ви е излязло от релси! Водата е "
+"околоплодната течност, \"роден от вода\" = естествено раждане."
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 2B"
@@ -1189,6 +1467,9 @@ msgid ""
 "be taken within the biblical context of 1 Cor.11:5 <quote>every woman [...] "
 "while praying or prophesying [...]</quote>"
 msgstr ""
+"1 Кор. 14:34 <quote>Жените да мълчат в църквите</quote> трябва да се "
+"разглежда в библейския контекст на 1 Кор. 11:5 <quote>всяка жена [...] "
+"когато се моли или пророкува [...]</quote>"
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 2C"
@@ -1206,6 +1487,16 @@ msgid ""
 "being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did "
 "not send me to baptize, but to preach the gospel\"</emphasis>?"
 msgstr ""
+"Деян. 2:38 <quote>А Петър им каза: \"Покайте се, и всеки от вас нека се "
+"кръсти в името на Исус Христос за прощение на греховете ви "
+"[...]\"</quote>. Това учи ли кръщелно възраждане? Ако това беше "
+"единственият стих от Писанието, който имахме, трябваше да заключим "
+"това. Но в светлината на ясното учение другаде, че възраждането става "
+"чрез вяра в Христос, трябва да го тълкуваме иначе. Петър настоява "
+"кръщението като начин слушателите му да отговорят на благовестието. Ако "
+"кръщението беше пътят към новорождението, как Павел би могъл да напише "
+"1 Кор. 1:17 <emphasis>\"Защото Христос не ме изпрати да кръщавам, а да "
+"проповядвам благовестието\"</emphasis>?"
 
 #. type: Content of: <chapter><section><title>
 msgid "Rule 3 - Interpret within the historical and cultural context"
@@ -1218,6 +1509,10 @@ msgid ""
 "<quote>What does it mean to me?</quote>. We have to take into account the "
 "historical and cultural background of the author and the recipients."
 msgstr ""
+"Отначало не питаме <quote>Какво означава това за мен?</quote>, а <quote>"
+"Какво означаваше това за първоначалните читатели?</quote>; по-късно "
+"можем да попитаме: <quote>Какво означава това за мен?</quote>. Трябва "
+"да вземем предвид историческия и културния фон на автора и получателите."
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 3A"
@@ -1231,6 +1526,12 @@ msgid ""
 "third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't help "
 "explain the apparent contradiction."
 msgstr ""
+"<quote>3 дни &amp; 3 нощи</quote> (Мат. 12:40) са накарали някои да "
+"измислят \"теория за разпятие в сряда\", особено култа на армстронгизма. "
+"Как Исус може да умре в петък следобед и да възкръсне в неделя сутрин, "
+"и все пак \"да бъде възкресен на третия ден\" (Мат. 16:21)? Точните "
+"значения на \"три\" или \"дни\" няма да помогнат да се обясни привидното "
+"противоречие."
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1243,6 +1544,14 @@ msgid ""
 "Sunday 5 or so a.m. = day 3. Interpreting within the cultural context keeps "
 "us out of trouble."
 msgstr ""
+"Нужна ни е историческа подробност: юдеите брояха всяка част от деня "
+"като цял ден, както ние бихме броили кофи вода (ако има шест и половина "
+"кофи вода, бихме казали, че има 7 кофи, дори ако една е само частично "
+"пълна). Така че за юдейския ум всяка част от деня се броеше за цял ден, "
+"а дните започваха в 18 ч. и завършваха в 18 ч. Петък от 15 до 18 ч. = "
+"ден 1. Петък 18 ч. до събота 18 ч. = ден 2. Събота 18 ч. до неделя "
+"около 5 ч. = ден 3. Тълкуването в културния контекст ни пази от "
+"неприятности."
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 3B"
@@ -1257,6 +1566,12 @@ msgid ""
 "the contract. But in this case only God goes thru, making it a unilateral "
 "covenant."
 msgstr ""
+"Бит. 15:7-21. Историческият контекст е, че разсичането на животни на "
+"две и след това минаването между частите е било обичайният начин за "
+"сключване на договор в дните на Авраам. И двете страни минавали между "
+"тях, като поемали обещание, че ще бъдат разсечени, ако не изпълнят "
+"своята част от договора. Но в този случай само Бог минава, правейки "
+"едностранен завет."
 
 #. type: Content of: <chapter><section><title>
 msgid "Rule 4 - Interpret according to the normal usage of words in language"
@@ -1267,6 +1582,8 @@ msgid ""
 "Let literal language be literal and figurative language be figurative. And "
 "watch out for idioms, which have special meanings."
 msgstr ""
+"Нека буквалният език бъде буквален, а образният език - образен. И "
+"внимавайте за идиоми, които имат специални значения."
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 4A"
@@ -1274,7 +1591,7 @@ msgstr "Пример 4.1"
 
 #. type: Content of: <chapter><section><section><para>
 msgid "<quote>evil eye</quote>in Mt.6:23."
-msgstr ""
+msgstr "<quote>зло око</quote> в Мат. 6:23."
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1282,6 +1599,10 @@ msgid ""
 "seems to confuse us even more. It doesn't seem to fit with what goes before "
 "and after! This should tip us off that we aren't understanding it rightly!!"
 msgstr ""
+"Правило 1, определението на \"зло\" и \"око\" - тук няма помощ. Правило 2, "
+"контекст: сякаш ни обърква още повече. Изглежда не пасва на това, което "
+"е преди и след него! Това трябва да ни подскаже, че не го разбираме "
+"правилно!!"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1292,6 +1613,13 @@ msgid ""
 "\"evil eye\" is a Hebrew idiom for being stingy or envious. Now go back to "
 "Mt.6 and notice how this understanding ties in so perfectly to the context."
 msgstr ""
+"Тук имаме еврейски идиом, <quote>зло око</quote>. Нека потърсим други "
+"употреби на този идиом: Мат. 20:15 \" <emphasis>Не ми ли е позволено да "
+"правя каквото искам със своето? Или окото ти е завистливо [букв. "
+"\"зло\"], защото аз съм щедър [букв. \"добър\"]?</emphasis>\" Откриваме, че "
+"да имаш \"зло око\" е еврейски идиом за скъперничество или завист. Сега "
+"се върнете към Мат. 6 и забележете колко съвършено това разбиране се "
+"връзва с контекста."
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 4B"
@@ -1299,11 +1627,11 @@ msgstr "Пример 4.2"
 
 #. type: Content of: <chapter><section><section><para>
 msgid "Is.59:1 <quote>The Lord's hand is not short;</quote>"
-msgstr ""
+msgstr "Ис. 59:1 <quote>Ръката на Господа не е скъсена;</quote>"
 
 #. type: Content of: <chapter><section><section><para>
 msgid "Deut.33:27 <quote>Underneath are the everlasting arms.</quote>"
-msgstr ""
+msgstr "Втор. 33:27 <quote>Отдолу са вечните мишци.</quote>"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1319,6 +1647,18 @@ msgid ""
 "is a bird</quote>. The Mormons had to laugh as they realised the "
 "ridiculousness of their position."
 msgstr ""
+"Препратките към части от Божието тяло се използват от светиите от "
+"последните дни, за да докажат, че Бог някога е бил човек точно като "
+"нас. След като убедят хората в това, те продължават да учат, че можем "
+"да станем Бог точно като Него! На една лекция група мормонски "
+"старейшини предизвикали Уолтър Мартин (автор на <emphasis>Kingdom of "
+"the Cults</emphasis>) с изброяване на такива стихове. Д-р Мартин тогава "
+"помолил мормоните да прочетат още едно писание: Пс. 91:4 <quote>Той ще "
+"те покрие с перата Си; и под крилете Му ще се уповаваш</quote>. У. М. "
+"казал: <quote>По същите правила за тълкуване, с които току-що "
+"доказахте, че Бог е човек, току-що доказахте, че Той е птица</quote>. "
+"Мормоните трябвало да се засмеят, когато осъзнали нелепостта на "
+"позицията си."
 
 #. type: Content of: <chapter><section><title>
 msgid ""
@@ -1333,6 +1673,8 @@ msgid ""
 "An allegory is: <emphasis>A story where each element has a meaning.</"
 "emphasis>"
 msgstr ""
+"Алегорията е: <emphasis>Разказ, в който всеки елемент има "
+"значение.</emphasis>"
 
 #. type: Content of: <chapter><section><para>
 msgid "Every parable is an allegory, true or false?"
@@ -1347,6 +1689,12 @@ msgid ""
 "twisted to say all sorts of things. We need to get our doctrine from clear "
 "scriptures that lay it out; then if a parable illustrates that, fine."
 msgstr ""
+"Някои притчи са алегории, например притчата за сеяча е алегория: семето "
+"е Божието слово, тръните са грижи и алчност и т.н. Но повечето притчи "
+"не са алегории, а просто истории, които илюстрират една мисъл. Опасно е "
+"да извличаме учението си от притчи; те могат да бъдат изкривени, за да "
+"казват всякакви неща. Трябва да получаваме учението си от ясни писания, "
+"които го излагат; ако после притча го илюстрира, добре."
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 5A"
@@ -1358,6 +1706,9 @@ msgid ""
 "illustrates one lesson: boldness in prayer.  If we draw it into an allegory, "
 "what do we have?"
 msgstr ""
+"Притчата за вдовицата и неправедния съдия в Лука 18:1-8. Тази история "
+"илюстрира един урок: дръзновение в молитвата. Ако я превърнем в "
+"алегория, какво получаваме?"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1376,6 +1727,8 @@ msgid ""
 "The parable of the unrighteous steward in Lk.16:1-9. What is the point of "
 "the parable? Is it an allegory?"
 msgstr ""
+"Притчата за неправедния настойник в Лука 16:1-9. Каква е поуката от "
+"притчата? Алегория ли е?"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1383,14 +1736,18 @@ msgid ""
 "had to prepare for a time when he wouldn't have it. But he is not commended "
 "for his unethical behavior in cheating his master."
 msgstr ""
+"Настойникът е похвален само за едно нещо - за своята досетливост да "
+"използва това, което има, за да се подготви за време, когато няма да го "
+"има. Но той не е похвален за неетичното си поведение, с което мами "
+"господаря си."
 
 #. type: Content of the bibletime entity
 msgid "<application>BibleTime</application>"
-msgstr ""
+msgstr "<application>BibleTime</application>"
 
 #. type: Content of the kapp entity
 msgid "&bibletimehandbook;"
-msgstr ""
+msgstr "&bibletimehandbook;"
 
 #. type: Content of: <book><bookinfo><title>
 msgid "The Biblestudy HowTo"
@@ -1398,15 +1755,15 @@ msgstr "Ръководство за изучаване на Библията"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 msgid "Bob"
-msgstr ""
+msgstr "Боб"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 msgid "Harman"
-msgstr ""
+msgstr "Харман"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 msgid "The BibleTime Team"
-msgstr ""
+msgstr "Екипът на BibleTime"
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
@@ -1414,6 +1771,8 @@ msgid ""
 "<copyright> <year>1999-2026</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
 msgstr ""
+"<copyright> <year>1999-2026</year> <holder>Екипът на &bibletime; "
+"(bt-devel@crosswire.org)</holder> </copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 msgid ""
@@ -1421,12 +1780,18 @@ msgid ""
 "the terms of the license <ulink url=\"http://creativecommons.org/licenses/by-"
 "sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</ulink>."
 msgstr ""
+"Този документ първоначално е създаден от г-н Боб Харман и е лицензиран "
+"съгласно условията на лиценза <ulink "
+"url=\"http://creativecommons.org/licenses/by-sa/3.0/\"> \"Creative Commons "
+"Attribution-Share Alike\"</ulink>."
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 msgid ""
 "Scripture quotes are from the New American Standard Bible unless otherwise "
 "indicated."
 msgstr ""
+"Цитатите от Писанието са от New American Standard Bible, освен ако не е "
+"посочено друго."
 
 #. type: Content of: <book><bookinfo><abstract><title>
 msgid "Abstract"
@@ -1437,6 +1802,8 @@ msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
 "Bible."
 msgstr ""
+"<application>Biblestudy HowTo</application> е ръководство за изучаване "
+"на Библията."
 
 #. type: Content of: <book><bookinfo><abstract><para>
 msgid ""
@@ -1447,11 +1814,18 @@ msgid ""
 "to understand what they say. If you start with the attitude that you want to "
 "have the Lord sow his word in your heart He will not disappoint you."
 msgstr ""
+"Надеждата на екипа на &bibletime; е, че това HowTo ще подтикне "
+"читателите да изучават Писанията, за да видят какво казват. Това "
+"конкретно учебно ръководство е избрано, защото внимава да не защитава "
+"някакво определено деноминационно учение. Препоръчваме ви да четете и "
+"изучавате Писанията, за да разберете какво казват. Ако започнете с "
+"нагласата, че искате Господ да посее словото Си в сърцето ви, Той няма "
+"да ви разочарова."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 msgid "Bible"
-msgstr ""
+msgstr "Библия"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 msgid "HowTo"
-msgstr ""
+msgstr "HowTo"

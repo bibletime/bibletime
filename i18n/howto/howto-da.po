@@ -20,7 +20,7 @@ msgstr ""
 
 #. type: Content of: <chapter><title>
 msgid "Bible Study Basics"
-msgstr ""
+msgstr "Grundlæggende bibelstudium"
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Our Purpose as we Approach the Bible"
@@ -67,6 +67,11 @@ msgid ""
 "\" Their study was an end in itself. In this they were grievously deceived. "
 "[...]"
 msgstr ""
+"De jøder, som Jesus talte til [...], forestillede sig, at det at eje "
+"Skriften var det samme som at eje livet. Hillel plejede at sige: \"Den, "
+"der har tilegnet sig Torahens ord, har tilegnet sig livet i den "
+"kommende verden.\" Deres studium var et mål i sig selv. I dette tog de "
+"sørgeligt fejl. [...]"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -91,6 +96,10 @@ msgid ""
 "scriptures brings hearing, reading, studying and memorization together and "
 "cements the word in our minds."
 msgstr ""
+"At høre og læse giver et teleskopisk overblik over Skriften, mens "
+"studium og udenadslære giver et mikroskopisk syn på Skriften. At "
+"meditere over Skrifterne samler hørelse, læsning, studium og "
+"udenadslære og fæstner ordet i vores sind."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Hear"
@@ -182,6 +191,12 @@ msgid ""
 "the Bible more than they need to study and memorize it. This is so that they "
 "become familiar with the overall message of the Bible."
 msgstr ""
+"Navigatørerne illustrerer dette ved at sige, at ligesom tommelfingeren "
+"kan røre alle fingrene, kan vi meditere over Ordet, mens vi gør en "
+"hvilken som helst af de første fire ting. Meditation er en nøgle til "
+"åbenbaring. En ny kristen har mere brug for at høre og læse Bibelen end "
+"for at studere og lære den udenad. Det er for at blive fortrolig med "
+"Bibelens samlede budskab."
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Types of Bible Studies"
@@ -241,6 +256,8 @@ msgid ""
 "What do the verses around it say? \"Context is king\" is the rule -- the "
 "passage must make sense within the structure of the entire passage and book."
 msgstr ""
+"Hvad siger versene omkring det? \"Konteksten er konge\" er reglen -- "
+"afsnittet skal give mening inden for hele afsnittets og bogens struktur."
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 msgid "Cross-reference"
@@ -268,6 +285,11 @@ msgid ""
 "relate to the thought of the key verse. Once you find it, write it as Roman "
 "numeral One of your outline:"
 msgstr ""
+"Lad os studere Mt.6:1-18 sammen. Læs det først for dig selv og se efter "
+"nøgleverset, det vers der sammenfatter hele afsnittet. Tror du, at du "
+"har fundet det? Prøv det ved at vælge forskellige steder i afsnittet og "
+"spørge dig selv, om de hænger sammen med nøgleversets tanke. Når du har "
+"fundet det, så skriv det som romertal I i din disposition:"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 msgid "Beware of practicing your righteousness before men to be noticed"
@@ -281,6 +303,9 @@ msgid ""
 "give any examples? What area of our lives is being addressed? <emphasis>Our "
 "motives!</emphasis> What sub-headings develop this thought?"
 msgstr ""
+"Hvad betyder <quote>at øve jeres retfærdighed</quote>? Giver afsnittet "
+"eksempler? Hvilket område af vores liv behandles? <emphasis>Vore "
+"motiver!</emphasis> Hvilke underoverskrifter udvikler denne tanke?"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 msgid "When you give"
@@ -299,12 +324,16 @@ msgid ""
 "Now fill in the outline with specific instructions of how to avoid wrong "
 "ways of practicing our righteousness:"
 msgstr ""
+"Udfyld nu dispositionen med konkrete anvisninger på, hvordan man undgår "
+"forkerte måder at øve sin retfærdighed på:"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 msgid ""
 "don't sound a trumpet. (how might someone <quote>sound a trumpet</"
 "quote>today?)"
 msgstr ""
+"lad være med at blæse i basun. (hvordan kunne nogen <quote>blæse i "
+"basun</quote> i dag?)"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 msgid "do it secretly."
@@ -316,7 +345,7 @@ msgstr "osv."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 msgid "When you give <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Når du giver <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Worksheet: How to Use a Concordance"
@@ -336,15 +365,15 @@ msgstr "Slå ordet op alfabetisk."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 msgid "Go down the column of listings until you find your verse."
-msgstr ""
+msgstr "Gå ned gennem listen, indtil du finder dit vers."
 
 #. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 msgid "<quote>Faithful are the wounds of a friend</quote>"
-msgstr ""
+msgstr "<quote>Trofast er en vens sår</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 msgid "<quote>We are ambassadors of Christ.</quote>"
-msgstr ""
+msgstr "<quote>Vi er Kristi ambassadører.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 msgid "The story of the rich man and Lazarus."
@@ -352,7 +381,7 @@ msgstr "Historien om den rige mand og Lazarus."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 msgid "Find these verses: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Find disse vers: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "To Do a Topical Study"
@@ -365,6 +394,10 @@ msgid ""
 "it. Then you could look up related words and references listed for them, e."
 "g.  \"redeem, redeemed, ransom,\" even \"buy\" or \"bought.\""
 msgstr ""
+"Lad os sige, at du ville lave et studium af ordet \"forløsning\". Først "
+"ville du slå ordet op i konkordansen og slå de henvisninger op, der "
+"står ved det. Derefter kunne du slå beslægtede ord og henvisninger op, "
+"f.eks. \"forløse, forløst, løsesum,\" ja endda \"købe\" eller \"købt.\""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "To Clarify Word Meanings in the Greek and Hebrew"
@@ -378,24 +411,31 @@ msgid ""
 "both being translated \"judge\" in English? (We're using Strong's from here "
 "out.)"
 msgstr ""
+"Hvad hvis du lagde mærke til en tilsyneladende modsigelse i KJV mellem "
+"Mt.7:1 <quote>Døm ikke, for at I ikke skal dømmes</quote> og 1 Kor.2:15 "
+"<quote>Den åndelige dømmer alt.</quote> Måske er der to forskellige "
+"græske ord her, som begge oversættes med \"dømme\" på engelsk? (Vi bruger "
+"Strong's herfra.)"
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 msgid "Look up \"judge\"."
-msgstr ""
+msgstr "Slå \"judge\" op."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 msgid ""
 "Go down the column of entries to Mt.7:1. To the right is a number, 2919. "
 "This refers to the Greek word used. Write it down."
 msgstr ""
+"Gå ned gennem indgangene til Mt.7:1. Til højre står et tal, 2919. Det "
+"henviser til det græske ord, der bruges. Skriv det ned."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 msgid "Now look up \"judgeth\"."
-msgstr ""
+msgstr "Slå nu \"judgeth\" op."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 msgid "Go down the column to 1 Cor.2:15 . . . . . 350."
-msgstr ""
+msgstr "Gå ned gennem kolonnen til 1 Kor.2:15 . . . . . 350."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 msgid ""
@@ -403,6 +443,9 @@ msgid ""
 "language is Greek, while the OT is Hebrew.) Compare the meaning of 2919 with "
 "the meaning of 350 and you have your answer!"
 msgstr ""
+"Slå op bagest i den græske ordbog. (Husk, at du er i NT, så sproget er "
+"græsk, mens GT er hebraisk.) Sammenlign betydningen af 2919 med "
+"betydningen af 350, og så har du svaret!"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "To Find Meanings of Names"
@@ -445,6 +488,9 @@ msgid ""
 "name. Study of the Bible is one of the primary ways that we learn to "
 "communicate with God."
 msgstr ""
+"At forstå Guds ord er af stor betydning for alle, der påkalder Guds "
+"navn. Bibelstudium er en af de vigtigste måder, hvorpå vi lærer at "
+"kommunikere med Gud."
 
 #. type: Content of: <chapter><sect1><title>
 msgid "A Book that is Unique"
@@ -452,25 +498,33 @@ msgstr "En Bog der er Unik"
 
 #. type: Content of: <chapter><sect1><para>
 msgid "The Bible stands alone in many ways. It is unique in:"
-msgstr ""
+msgstr "Bibelen står alene på mange måder. Den er enestående i:"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 msgid ""
 "popularity. Bible sales in North America: more than $500 million per year. "
 "The Bible is both the all-time and year-to-year best seller!"
 msgstr ""
+"popularitet. Bibelsalget i Nordamerika er over 500 millioner dollar om "
+"året. Bibelen er både tidernes og årets bestseller!"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 msgid ""
 "authorship. It was written over a period of 1600 years by 40 different "
 "authors from different backgrounds, yet reads as if written by one."
 msgstr ""
+"forfatterskab. Den blev skrevet over en periode på 1600 år af 40 "
+"forskellige forfattere med forskellig baggrund, men læses, som om den "
+"var skrevet af én."
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 msgid ""
 "preservation. F. F. Bruce in <emphasis>Are New Testament Documents Reliable?"
 "</emphasis> compares New Testament manuscripts with other ancient texts:"
 msgstr ""
+"bevarelse. F. F. Bruce sammenligner i <emphasis>Are New Testament "
+"Documents Reliable?</emphasis> Det Nye Testamentes håndskrifter med "
+"andre antikke tekster:"
 
 #. type: Content of: <chapter><sect1><table><title>
 msgid "Comparison of New Testament manuscripts with other ancient texts."
@@ -595,6 +649,13 @@ msgid ""
 "gospel from 130 A. D. How many manuscripts do we have to compare to each "
 "other? 5,000 in Greek and 10,000 in Latin!"
 msgstr ""
+"Der findes ti kopier af Cæsars <emphasis>Gallerkrigen</emphasis>, "
+"hvoraf den tidligste blev kopieret 900 år efter, at Cæsar skrev "
+"originalen, osv. For Det Nye Testamente har vi fuldstændige "
+"håndskrifter fra 350 e.Kr., papyri med det meste af Det Nye Testamente "
+"fra 200-tallet og et fragment af Johannesevangeliet fra 130 e.Kr. Hvor "
+"mange håndskrifter har vi at sammenligne med hinanden? 5.000 på græsk "
+"og 10.000 på latin!"
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 msgid ""
@@ -602,6 +663,9 @@ msgid ""
 "vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of Life</"
 "emphasis>p. 25-26"
 msgstr ""
+"Tekstkritikeren F. J. A. Hort, \"The New Testament in the Original "
+"Greek\", bind 1 s. 561, Macmillan Co., citeret i <emphasis>Questions of "
+"Life</emphasis> s. 25-26"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -626,6 +690,12 @@ msgid ""
 "As we read the Bible, God's Spirit is there to speak it to our hearts in a "
 "continually-fresh way."
 msgstr ""
+"<emphasis>Hebr.4:12</emphasis> \"<emphasis>For Guds ord er levende og "
+"virksomt...</emphasis>\" Jesus sagde <emphasis>(Mt.4:4),</emphasis>\" "
+"<emphasis>Der står skrevet: Mennesket skal ikke leve af brød alene, men "
+"af hvert ord, der udgår [bogst., er ved at udgå] af Guds "
+"mund.</emphasis>\" Når vi læser Bibelen, er Guds Ånd der for at tale det "
+"til vore hjerter på en stadig frisk måde."
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -633,6 +703,9 @@ msgid ""
 "God-breathed].</emphasis>\" Do you believe this? Before you answer, consider "
 "Jesus' attitude toward the Scriptures."
 msgstr ""
+"2 Tim.3:16 erklærer: \" <emphasis>Hele Skriften er indblæst af Gud "
+"[bogst., Gud-åndet].</emphasis>\" Tror du det? Før du svarer, så overvej "
+"Jesu holdning til Skrifterne."
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 msgid ""
@@ -659,6 +732,21 @@ msgid ""
 "of the divine Author. God spoke. Men spoke.  Neither truth must be allowed "
 "to detract from the other.  ..."
 msgstr ""
+"Han henviste til de menneskelige forfattere, men tog det for givet, at "
+"der bag dem alle stod én guddommelig Forfatter. Han kunne lige så godt "
+"sige 'Moses sagde' som 'Gud sagde' (Mk.7:10). Han kunne citere "
+"fortællerens kommentar i 1 Mosebog 2:24 som Skaberens egen udtalelse "
+"(Mt.19:4-5). På samme måde sagde han: 'Esajas profeterede ret om jer "
+"hyklere, som der står skrevet', når det, han derefter citerede, er "
+"Herren Guds direkte tale (Mk.7:6 &amp; Es.29:13). Det er fra Jesus "
+"selv, at Det Nye Testamentes forfattere har fået deres overbevisning om "
+"Skriftens dobbelte forfatterskab. For dem var det lige så sandt at "
+"sige, at 'Gud fordum talte til fædrene ved profeterne' (Hebr.1:1), som "
+"det var at sige, at 'mennesker drevet af Helligånden talte fra Gud' (2 "
+"Pet.1:21). Gud talte ikke sådan, at han udslettede de menneskelige "
+"forfatteres personlighed, og mennesker talte ikke sådan, at de "
+"fordærvede den guddommelige Forfatters ord. Gud talte. Mennesker talte. "
+"Ingen af sandhederne må få lov at svække den anden. ..."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -667,6 +755,10 @@ msgid ""
 "reason why the Christian believes in the divine origin of the Bible is that "
 "Jesus Christ Himself taught it."
 msgstr ""
+"Dette var altså Kristi syn på Skrifterne. Deres vidnesbyrd var Guds "
+"vidnesbyrd. Bibelens vidnesbyrd er Guds vidnesbyrd. Og hovedårsagen "
+"til, at den kristne tror på Bibelens guddommelige oprindelse, er, at "
+"Jesus Kristus selv lærte det."
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -676,6 +768,11 @@ msgid ""
 "Bible really is God speaking to us, it follows that it will be our authority "
 "in all matters of faith and conduct."
 msgstr ""
+"2 Tim.3:16 fortsætter: \" <emphasis>og nyttig til undervisning, til "
+"retledning, til opdragelse i retfærdighed, så Guds menneske kan være "
+"fuldkomment, udrustet til al god gerning.</emphasis>\" Hvis vi "
+"accepterer, at Bibelen virkelig er Gud, der taler til os, følger det, "
+"at den vil være vores autoritet i alle spørgsmål om tro og livsførelse."
 
 #. type: Content of: <chapter><sect1><title>
 msgid "A Book that Works"
@@ -687,6 +784,9 @@ msgid ""
 "<emphasis>performs its work in you who believe.</emphasis>\" Beside each "
 "scripture, write down the work the Word performs."
 msgstr ""
+"Hvad vil bibelstudium gøre for dig? 1 Thess.2:13 siger, at Bibelen \" "
+"<emphasis>er virksom i jer, som tror.</emphasis>\" Skriv ved hvert "
+"skriftsted, hvad Ordet udretter."
 
 #. type: Content of: <chapter><sect1><table><title>
 msgid "What does Bible study do for Christians?"
@@ -694,7 +794,7 @@ msgstr "Hvad gør bibelsstudie for kristne?"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 msgid "Reference"
-msgstr ""
+msgstr "Henvisning"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 msgid "Action"
@@ -720,6 +820,8 @@ msgid ""
 "builds up -- \" ...the word of His grace, which is able to build you up and "
 "to give you the inheritance among all those who are sanctified. \""
 msgstr ""
+"opbygger -- \" ...ordet om hans nåde, som formår at opbygge jer og give "
+"jer arven blandt alle dem, der er helliget. \""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 msgid "Rom. 15:4"
@@ -783,12 +885,19 @@ msgid ""
 "v.31. \" <emphasis>If you abide in My word, then you are truly disciples of "
 "Mine...</emphasis>\""
 msgstr ""
+"Joh.8:32 \" <emphasis>og I skal kende sandheden, og sandheden skal gøre "
+"jer frie.</emphasis>\" Dette citeres normalt alene. Er det et betinget "
+"eller ubetinget løfte? Gælder det alle slags kundskab? Find svarene ved "
+"at undersøge første halvdel af sætningen, i v.31. \" <emphasis>Hvis I "
+"bliver i mit ord, er I sandelig mine disciple...</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
 "We see that this is a conditional promise, specifically speaking of the "
 "truth of God's word."
 msgstr ""
+"Vi ser, at dette er et betinget løfte, som specifikt handler om "
+"sandheden i Guds ord."
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -798,6 +907,11 @@ msgid ""
 "emphasis>\"One thing studying the Bible does for us is to ground us in the "
 "truth, with the result that we won't be easily \"blown away.\""
 msgstr ""
+"Det græske ord for \"vind\" i Ef.4:14 betyder en <emphasis>voldsom "
+"vind.</emphasis>\" <emphasis>Så skal vi ikke længere være børn, der "
+"kastes og drives hid og did af hver lærdoms vind...</emphasis>\" Én ting "
+"bibelstudium gør for os, er at grundfæste os i sandheden, så vi ikke "
+"let bliver \"blæst omkuld.\""
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -805,6 +919,9 @@ msgid ""
 "are mistaken [KJV Ye do err], not understanding the Scriptures, or the power "
 "of God.</emphasis>\" Mt.22:29"
 msgstr ""
+"<emphasis>Men Jesus svarede og sagde til dem:</emphasis>\" <emphasis>I "
+"farer vild [KJV Ye do err], fordi I hverken kender Skrifterne eller "
+"Guds kraft.</emphasis>\" Mt.22:29"
 
 #. type: Content of: <chapter><sect1><para>
 msgid "What 2 things do we need to know to be kept from error?"
@@ -872,6 +989,9 @@ msgid ""
 "workman that needeth not to be ashamed, rightly dividing the word of truth.</"
 "emphasis>\""
 msgstr ""
+"2 Tim.2:15 (KJV) \" <emphasis>Study to show thyself approved unto God, a "
+"workman that needeth not to be ashamed, rightly dividing the word of "
+"truth.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -880,6 +1000,9 @@ msgid ""
 "spiritual songs, singing with thankfulness in your hearts to God.</"
 "emphasis>\""
 msgstr ""
+"Kol.3:16 \" <emphasis>Lad Kristi ord bo rigt iblandt jer; undervis og "
+"forman hinanden med al visdom med salmer, hymner og åndelige sange, og "
+"syng med taknemlighed i jeres hjerter til Gud.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
 msgid "If you're rich in something, how much of it do you have?"
@@ -897,6 +1020,11 @@ msgid ""
 "endless, and excessive devotion to books is wearying to the body.</"
 "emphasis>\""
 msgstr ""
+"Præd.12:11-12 \" <emphasis>De vises ord er som pigkæppe, og mestre i "
+"disse samlinger er som fastslåede søm; de er givet af én hyrde. Men ud "
+"over dette, min søn, lad dig advare: der er ingen ende på at skrive "
+"mange bøger, og overdreven hengivenhed til bøger trætter "
+"kroppen.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Appendix: \"Once for All\""
@@ -907,6 +1035,8 @@ msgid ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</"
 "emphasis>InterVarsity Press 1978, pp.106-107"
 msgstr ""
+"John R. W. Stott, <emphasis>Christ the Controversialist,</emphasis> "
+"InterVarsity Press 1978, s. 106-107"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -920,6 +1050,16 @@ msgid ""
 "and Romans says, \" <emphasis>Christ also died for sins once for all</"
 "emphasis>\" (Rom.6:10, see also 1 Pe.3:18; Heb.9:26-28)."
 msgstr ""
+"Sandheden om Guds endelige initiativ i Kristus formidles af ét ord i "
+"Det Græske Testamente, nemlig adverbiet <foreignphrase>"
+"hapax</foreignphrase> og <foreignphrase>ephapax</foreignphrase>. Det "
+"oversættes normalt i Authorized Version med once, som betyder én gang "
+"for alle. Det bruges om noget, der er gjort med varig gyldighed og "
+"aldrig behøver gentagelse, og anvendes i NT både om åbenbaring og "
+"forløsning. Således taler Judas om troen, som én gang for alle blev "
+"overgivet til de hellige (Jud 3), og Romerbrevet siger: \" <emphasis>"
+"Kristus døde også én gang for alle for synder</emphasis>\" (Rom.6:10, se "
+"også 1 Pet.3:18; Hebr.9:26-28)."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 msgid ""
@@ -933,6 +1073,16 @@ msgid ""
 "foreignphrase>for our authority and <foreignphrase>sola gratia</"
 "foreignphrase>for our salvation."
 msgstr ""
+"Således kan vi sige, at Gud har talt én gang for alle, og at Kristus "
+"har lidt én gang for alle. Det betyder, at den kristne åbenbaring og "
+"den kristne forløsning begge er fuldendte i Kristus. Intet kan føjes "
+"til nogen af dem uden at krænke Kristus... Dette er de to klipper, som "
+"den protestantiske reformation blev bygget på -- Guds åbenbarede ord "
+"uden tilføjelse af menneskelige traditioner og Kristi fuldbragte værk "
+"uden tilføjelse af menneskelige fortjenester. Reformatorernes store "
+"løsenord var <foreignphrase>sola scriptura</foreignphrase> for vores "
+"autoritet og <foreignphrase>sola gratia</foreignphrase> for vores "
+"frelse."
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Supplement: Bible Reading Programs"
@@ -944,6 +1094,10 @@ msgid ""
 "more than one at a time if you like, for instance #1 with #4, or #2 with #5. "
 "Vary the program from year to year to keep it fresh!"
 msgstr ""
+"Her er nogle enkle programmer til systematisk at læse din Bibel. Du kan "
+"gøre mere end ét ad gangen, hvis du vil, for eksempel nr. 1 sammen med "
+"nr. 4 eller nr. 2 sammen med nr. 5. Variér programmet fra år til år for "
+"at holde det friskt!"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 msgid "New Testament in a Year: read one chapter each day, 5 days a week."
@@ -1003,6 +1157,19 @@ msgid ""
 "understand, which the untaught and unstable distort, as they do also the "
 "rest of the Scriptures, to their own destruction.</quote>"
 msgstr ""
+"Vi har allerede lært om de \"3 K'er\": indhold, kontekst, "
+"krydshenvisning. Nu vil vi udvide det ved kort at dykke ned i bibelsk "
+"hermeneutik, hvis mål er at opdage den betydning, den oprindelige "
+"forfatter (og Forfatter!) tilsigtede. Mens mange anvendelser af et "
+"afsnit kan være gyldige, er kun én fortolkning gyldig. Skriften siger "
+"selv dette ved at sige, at ingen profeti i Skriften er af privat "
+"fortolkning (2 Pet.1:20 KJV <quote>Knowing this first, that no prophesy "
+"of scripture is of any private interpretation.</quote>). Visse regler "
+"hjælper til at opdage den rette betydning; ved at ignorere disse regler "
+"har mennesker bragt meget besvær over sig selv og deres efterfølgere. 2 "
+"Pet.3:16 <quote>...i dem er der noget, som er vanskeligt at forstå, og "
+"som ukyndige og ustadige fordrejer, ligesom de også gør med de øvrige "
+"Skrifter, til deres egen undergang.</quote>"
 
 #. type: Content of: <chapter><para>
 msgid ""
@@ -1010,6 +1177,10 @@ msgid ""
 "your attention has been drawn to a particular verse whose meaning is not "
 "clear to you. How do you study it out? Keep these rules in mind:"
 msgstr ""
+"Hvordan går vi frem for at opdage den tilsigtede betydning af et "
+"afsnit? Lad os sige, at din opmærksomhed er blevet rettet mod et "
+"bestemt vers, hvis betydning ikke er klar for dig. Hvordan studerer du "
+"det? Husk disse regler:"
 
 #. type: Content of: <chapter><section><title>
 msgid "Rule 1 - Interpret according to the exact meaning of the words."
@@ -1021,6 +1192,9 @@ msgid ""
 "better our interpretation will be. Try to find the exact meaning of the key "
 "words by following these steps:"
 msgstr ""
+"Jo mere præcise vi kan være med ordenes nøjagtige, oprindelige "
+"betydning, desto bedre bliver vores fortolkning. Prøv at finde "
+"nøgleordenes nøjagtige betydning ved at følge disse trin:"
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 msgid "Definition"
@@ -1031,6 +1205,8 @@ msgid ""
 "Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb "
 "tense is also crucial."
 msgstr ""
+"Slå definitionen op i en græsk eller hebraisk ordbog. For verber er "
+"verbets tid også afgørende."
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
 msgid ""
@@ -1043,6 +1219,15 @@ msgid ""
 "word may be translated into the same English word, and the Greek words may "
 "have different shades of meaning.</emphasis>"
 msgstr ""
+"Sammenlign Skrift med Skrift. At se, hvordan det samme græske eller "
+"hebraiske ord (ikke det danske ord) bruges i Skriften, kan tydeliggøre "
+"eller kaste nyt lys over definitionen. Hvordan bruger samme forfatter "
+"dette ord andre steder? Andre forfattere? Dine opslagsværker kan også "
+"give eksempler på ordets brug i ikke-bibelske dokumenter. Hvorfor må vi "
+"gå til originalsprogene; hvorfor er det danske ord ikke godt nok? "
+"<emphasis>Fordi mere end ét græsk ord kan oversættes med det samme "
+"danske ord, og de græske ord kan have forskellige "
+"betydningsnuancer.</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 1A"
@@ -1056,6 +1241,11 @@ msgid ""
 "up in Spiros Zodhiates' <emphasis>The Complete Word Study New Testament</"
 "emphasis> (AMG Publishers, 1991)."
 msgstr ""
+"Joh.20:17 <emphasis>\"Rør mig ikke\"</emphasis> (KJV) lyder hårdt, ikke? "
+"Det lyder som om Jesus ikke vil røres nu, hvor han er opstået, som om "
+"han er for hellig eller noget. Men det virker ikke rigtigt, så lad os "
+"slå det op i Spiros Zodhiates' <emphasis>The Complete Word Study New "
+"Testament</emphasis> (AMG Publishers, 1991)."
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1073,12 +1263,28 @@ msgid ""
 "something. \" This is a negative command, so it is to stop doing something "
 "that is already occurring. So, what have we found?"
 msgstr ""
+"Definition: Når vi slår op i Joh.20:17, ser vi over ordet \"Touch\" "
+"\"pim680.\" Bogstaverne giver os en kode for ordklassen, og tallet "
+"henviser til Strong's ordbogsreference. Lad os slå definitionen op (s. "
+"879). \"680. Haptomai; fra hapto (681), røre. Henviser til sådan "
+"håndtering af en genstand, at man udøver en ændrende indflydelse på "
+"den... Adskilt fra pselaphao (5584), som egentlig kun betyder at røre "
+"ved overfladen af noget.\" Slå nu \"pim\" op. Grammatikkoderne hos "
+"Zodhiates står lige efter Åbenbaringen; på s. 849 ser vi, at pim står "
+"for \"present imperative active (80)\". På s. 857: \"Present Imperative. I "
+"aktiv form kan det betegne en befaling om at gøre noget i fremtiden, "
+"som indebærer vedvarende eller gentagen handling, eller, når den er "
+"nægtet, en befaling om at holde op med at gøre noget.\" Dette er en "
+"negativ befaling, så det betyder at holde op med noget, der allerede "
+"foregår. Hvad har vi altså fundet?"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
 "<emphasis>Mary is already clinging to Jesus, and he is saying to stop "
 "holding him!</emphasis>"
 msgstr ""
+"<emphasis>Maria klamrer sig allerede til Jesus, og han siger, at hun "
+"skal holde op med at holde fast i ham!</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 1B"
@@ -1089,6 +1295,8 @@ msgid ""
 "In James 5:14, <emphasis>Elders are told to pray and anoint someone who is "
 "sick</emphasis>. What is this anointing?"
 msgstr ""
+"I Jak.5:14 <emphasis>bliver de ældste bedt om at bede og salve en, der "
+"er syg</emphasis>. Hvad er denne salvelse?"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1100,6 +1308,14 @@ msgid ""
 "continuous action...When its relationship to the main verb is temporal, it "
 "usually signifies action prior to that of the main verb.\" (Zodhiates p.851)"
 msgstr ""
+"Definition af aleipho (218) - \"at oliere\" (Strong's); men vi har også "
+"et andet græsk ord, der oversættes \"salve\", chrio (5548) - \"at smøre "
+"eller gnide med olie, dvs. indvie til et embede eller religiøs "
+"tjeneste\" (Strong's). Da det er et verbum, skal du også overveje tiden, "
+"\"apta\" aorist participium aktiv. \"Aorist participium udtrykker enkel "
+"handling i modsætning til vedvarende handling... Når dets forhold til "
+"hovedverbet er tidsligt, betegner det normalt en handling før "
+"hovedverbets handling.\" (Zodhiates s. 851)"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 msgid "Mt.6:17 But you, when you fast, anoint your head"
@@ -1127,7 +1343,7 @@ msgstr "Joh.12:3 Maria [...] salvede Jesu fødder og tørrede dem med sit hår"
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
 msgid ""
 "Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Krydshenvisninger for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 msgid ""
@@ -1151,7 +1367,7 @@ msgstr "2. Kor.1.21 Og den...som salvede os, er Gud"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
 msgid "Cross-references of chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Krydshenvisninger for chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1160,6 +1376,10 @@ msgid ""
 "<emphasis>\"aleipho\" is a practical use of oil and \"chrio\" is a "
 "spiritual</emphasis>"
 msgstr ""
+"Så hvad er forskellen mellem aleipho og chrio? Se tilbage over "
+"krydshenvisningerne og definitionerne, og sammenfat forskellen: "
+"<emphasis>\"aleipho\" er en praktisk brug af olie, og \"chrio\" er en "
+"åndelig</emphasis>"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1168,6 +1388,10 @@ msgid ""
 "robbers he poured oil and wine in the wound. So oil had a medicinal use in "
 "Jesus' day."
 msgstr ""
+"Som illustration (selv om ordet ikke bruges) af den praktiske brug af "
+"olie dengang: da den barmhjertige samaritaner tog sig af manden, der "
+"var blevet overfaldet af røvere, hældte han olie og vin i såret. Olie "
+"havde altså en medicinsk brug på Jesu tid."
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1176,6 +1400,11 @@ msgid ""
 "church; and let them pray over him, anointing him with oil in the name of "
 "the Lord.\"</emphasis>Is \"anointing\" spiritual or practical? Practical!"
 msgstr ""
+"Lad os nu anvende det, vi lige har lært gennem dette ordstudium, på "
+"Jak.5:14 <emphasis>\"Er nogen iblandt jer syg? Han skal kalde "
+"menighedens ældste til sig, og de skal bede over ham og salve ham med "
+"olie i Herrens navn.\"</emphasis> Er \"salvelse\" åndelig eller praktisk? "
+"Praktisk!"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1186,6 +1415,12 @@ msgid ""
 "for him in the name of the Lord. Doesn't that express a beautiful balance of "
 "practical and spiritual in our God!"
 msgstr ""
+"Og tiden på græsk, aorist participium, ville bedre oversættes \"efter at "
+"have salvet\", så rækkefølgen er først salvelsen, derefter bønnen (\"i "
+"Herrens navn\" henviser til bønnen, ikke til salvelsen). Jakobsbrevet 5 "
+"siger, at de ældste skal give den syge medicin og bede for ham i "
+"Herrens navn. Udtrykker det ikke en smuk balance mellem det praktiske "
+"og det åndelige hos vores Gud!"
 
 #. type: Content of: <chapter><section><title>
 msgid "Rule 2 - Interpret within the biblical context"
@@ -1200,6 +1435,12 @@ msgid ""
 "confusion remains as to the meaning after we have interpreted the text "
 "within its context, we have to look further."
 msgstr ""
+"Fortolk Skriften i harmoni med anden Skrift. Hvad siger versene på hver "
+"side? Hvad er kapitlets tema? Bogen? Passer din fortolkning med disse? "
+"Hvis ikke, er den mangelfuld. Som regel giver konteksten det, vi "
+"behøver for at fortolke afsnittet korrekt. Konteksten er nøglen. Hvis "
+"der stadig er uklarhed om betydningen, efter at vi har fortolket "
+"teksten i dens kontekst, må vi se videre."
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 2A"
@@ -1210,6 +1451,8 @@ msgid ""
 "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and the "
 "Spirit.\"</emphasis>In context, what is the water under discussion here?"
 msgstr ""
+"I en tidligere lektion overvejede vi Joh.3:5 <emphasis>\"født af vand og "
+"Ånd.\"</emphasis> Hvad er det vand, der tales om her i konteksten?"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1218,6 +1461,10 @@ msgid ""
 "change of topic, it may be a clue that your interpretation has been "
 "derailed! The water is the amniotic fluid, \"born of water\" = natural birth."
 msgstr ""
+"Vanddåb er ikke emnet her; det ville være et stort skift fra det emne, "
+"Jesus og Nikodemus taler om. Pas på et pludseligt emneskift, det kan "
+"være et tegn på, at din fortolkning er kørt af sporet! Vandet er "
+"fostervandet, \"født af vand\" = naturlig fødsel."
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 2B"
@@ -1229,6 +1476,9 @@ msgid ""
 "be taken within the biblical context of 1 Cor.11:5 <quote>every woman [...] "
 "while praying or prophesying [...]</quote>"
 msgstr ""
+"1 Kor.14:34 <quote>Kvinderne skal tie i menighederne</quote> må forstås "
+"inden for den bibelske kontekst af 1 Kor.11:5 <quote>enhver kvinde "
+"[...] mens hun beder eller profeterer [...]</quote>"
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 2C"
@@ -1246,6 +1496,15 @@ msgid ""
 "being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did "
 "not send me to baptize, but to preach the gospel\"</emphasis>?"
 msgstr ""
+"ApG.2:38 <quote>Og Peter sagde til dem: \"Omvend jer, og lad jer alle "
+"døbe i Jesu Kristi navn til jeres synders forladelse [...]\"</quote>. "
+"Lærer dette dåbsgenfødelse? Hvis dette var det eneste vers i Skriften, "
+"vi havde, måtte vi konkludere det. Men i lyset af den klare lære andre "
+"steder om, at genfødelse sker ved tro på Kristus, må vi fortolke det "
+"anderledes. Peter opfordrer til dåb som en måde, hans tilhørere kan "
+"reagere på evangeliet på. Hvis dåb var vejen til at blive født på ny, "
+"hvordan kunne Paulus så skrive 1 Kor.1:17 <emphasis>\"For Kristus sendte "
+"mig ikke for at døbe, men for at forkynde evangeliet\"</emphasis>?"
 
 #. type: Content of: <chapter><section><title>
 msgid "Rule 3 - Interpret within the historical and cultural context"
@@ -1258,6 +1517,10 @@ msgid ""
 "<quote>What does it mean to me?</quote>. We have to take into account the "
 "historical and cultural background of the author and the recipients."
 msgstr ""
+"Først spørger vi ikke <quote>Hvad betyder det for mig?</quote> men "
+"<quote>Hvad betød det for de oprindelige læsere?</quote>; senere kan vi "
+"spørge: <quote>Hvad betyder det for mig?</quote>. Vi må tage hensyn til "
+"forfatterens og modtagernes historiske og kulturelle baggrund."
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 3A"
@@ -1271,6 +1534,12 @@ msgid ""
 "third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't help "
 "explain the apparent contradiction."
 msgstr ""
+"<quote>3 dage &amp; 3 nætter</quote> (Mt.12:40) har fået nogle til at "
+"komme med en \"onsdagskorsfæstelsesteori\", især Armstrongismens kult. "
+"Hvordan kunne Jesus dø fredag eftermiddag og opstå søndag morgen og "
+"alligevel \"opstå på den tredje dag\" (Mt.16:21)? Nøjagtige betydninger "
+"af \"tre\" eller \"dage\" hjælper ikke med at forklare den tilsyneladende "
+"modsigelse."
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1283,6 +1552,14 @@ msgid ""
 "Sunday 5 or so a.m. = day 3. Interpreting within the cultural context keeps "
 "us out of trouble."
 msgstr ""
+"Vi behøver en historisk oplysning: Jøder regnede enhver del af en dag "
+"som en hel dag, ligesom vi ville tælle spande vand (hvis der var seks "
+"og en halv spand vand, ville vi sige, at der var 7 spande, selv om én "
+"kun var delvis fuld). For jødisk tankegang talte enhver del af en dag "
+"altså som en hel dag, og dage begyndte kl. 18 og sluttede kl. 18. "
+"Fredag fra kl. 15 til 18 = dag 1. Fredag kl. 18 til lørdag kl. 18 = dag "
+"2. Lørdag kl. 18 til søndag omkring kl. 5 = dag 3. Fortolkning inden "
+"for den kulturelle kontekst holder os ude af problemer."
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 3B"
@@ -1297,6 +1574,12 @@ msgid ""
 "the contract. But in this case only God goes thru, making it a unilateral "
 "covenant."
 msgstr ""
+"1 Mos.15:7-21. Den historiske kontekst er, at det at skære dyr i to og "
+"derefter gå mellem stykkerne var den normale måde at indgå en pagt på "
+"Abrahams tid. Begge parter gik imellem og aflagde løfte om, at de selv "
+"skulle blive sønderlemmet, hvis de ikke opfyldte deres del af aftalen. "
+"Men i dette tilfælde er det kun Gud, der går igennem, og dermed gør han "
+"det til en ensidig pagt."
 
 #. type: Content of: <chapter><section><title>
 msgid "Rule 4 - Interpret according to the normal usage of words in language"
@@ -1308,6 +1591,8 @@ msgid ""
 "Let literal language be literal and figurative language be figurative. And "
 "watch out for idioms, which have special meanings."
 msgstr ""
+"Lad bogstaveligt sprog være bogstaveligt og billedligt sprog være "
+"billedligt. Og pas på idiomer, som har særlige betydninger."
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 4A"
@@ -1315,7 +1600,7 @@ msgstr "Eksempel 4A"
 
 #. type: Content of: <chapter><section><section><para>
 msgid "<quote>evil eye</quote>in Mt.6:23."
-msgstr ""
+msgstr "<quote>ondt øje</quote> i Mt.6:23."
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1323,6 +1608,10 @@ msgid ""
 "seems to confuse us even more. It doesn't seem to fit with what goes before "
 "and after! This should tip us off that we aren't understanding it rightly!!"
 msgstr ""
+"Regel 1, definitionen af \"ond\" og \"øje\" - ingen hjælp her. Regel 2, "
+"kontekst: synes at forvirre os endnu mere. Det ser ikke ud til at passe "
+"med det, der kommer før og efter! Det bør gøre os opmærksomme på, at vi "
+"ikke forstår det rigtigt!!"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1333,6 +1622,14 @@ msgid ""
 "\"evil eye\" is a Hebrew idiom for being stingy or envious. Now go back to "
 "Mt.6 and notice how this understanding ties in so perfectly to the context."
 msgstr ""
+"Det, vi har her, er et hebraisk idiom, <quote>ondt øje</quote>. Lad os "
+"slå andre forekomster af dette idiom op: Mt.20:15 \" <emphasis>Har jeg "
+"ikke lov til at gøre, hvad jeg vil, med det, der er mit? Eller er dit "
+"øje misundeligt [bogst. \"ondt\"], fordi jeg er gavmild [bogst. "
+"\"god\"]?</emphasis>\" Vi finder, at det at have et \"ondt øje\" er et "
+"hebraisk idiom for at være nærig eller misundelig. Gå nu tilbage til "
+"Mt.6 og læg mærke til, hvor perfekt denne forståelse passer til "
+"konteksten."
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 4B"
@@ -1360,12 +1657,26 @@ msgid ""
 "is a bird</quote>. The Mormons had to laugh as they realised the "
 "ridiculousness of their position."
 msgstr ""
+"Henvisninger til Guds kropsdele bruges af sidste dages hellige til at "
+"bevise, at Gud engang var et menneske ligesom os. Når de har overbevist "
+"mennesker om det, fortsætter de med at lære, at vi kan blive Gud "
+"ligesom han er! Ved et foredrag udfordrede en gruppe mormonældster "
+"Walter Martin (forfatter til <emphasis>Kingdom of the Cults</emphasis>) "
+"med en opregning af vers som disse. Dr. Martin bad derefter mormonerne "
+"læse endnu et skriftsted: Sl.91:4 <quote>Han skal dække dig med sine "
+"fjer; og under hans vinger skal du finde tillid</quote>. W.M. sagde: "
+"<quote>Med de samme fortolkningsregler, som I lige har brugt til at "
+"bevise, at Gud er et menneske, har I lige bevist, at han er en "
+"fugl</quote>. Mormonerne måtte le, da de indså det latterlige i deres "
+"position."
 
 #. type: Content of: <chapter><section><title>
 msgid ""
 "Rule 5 - Understand the purpose of parables and the difference between a "
 "parable and an allegory"
 msgstr ""
+"Regel 5 - Forstå formålet med lignelser og forskellen mellem en "
+"lignelse og en allegori"
 
 #. type: Content of: <chapter><section><para>
 msgid ""
@@ -1388,6 +1699,13 @@ msgid ""
 "twisted to say all sorts of things. We need to get our doctrine from clear "
 "scriptures that lay it out; then if a parable illustrates that, fine."
 msgstr ""
+"Nogle lignelser er allegorier, for eksempel er lignelsen om sædemanden "
+"en allegori: sæden er Guds ord, tornene er bekymringer og begær osv. "
+"Men de fleste lignelser er ikke allegorier, men ganske enkelt "
+"fortællinger, der illustrerer ét punkt. Det er farligt at hente vores "
+"lære fra lignelser; de kan vrides til at sige alle mulige ting. Vi må "
+"hente vores lære fra klare skriftsteder, der lægger den frem; hvis en "
+"lignelse så illustrerer det, fint."
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 5A"
@@ -1399,12 +1717,18 @@ msgid ""
 "illustrates one lesson: boldness in prayer.  If we draw it into an allegory, "
 "what do we have?"
 msgstr ""
+"Lignelsen om enken og den uretfærdige dommer i Luk.18:1-8. Denne "
+"fortælling illustrerer én lære: frimodighed i bøn. Hvis vi gør den til "
+"en allegori, hvad får vi så?"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
 "All sorts of violence happens to the meanings: God is reluctant to protect "
 "the rights of widows, prayer \"bothers\" Him, etc."
 msgstr ""
+"Alle mulige former for vold sker mod betydningerne: Gud er "
+"tilbageholdende med at beskytte enkernes rettigheder, bøn \"generer\" "
+"ham, osv."
 
 #. type: Content of: <chapter><section><section><title>
 msgid "Example 5B"
@@ -1415,6 +1739,8 @@ msgid ""
 "The parable of the unrighteous steward in Lk.16:1-9. What is the point of "
 "the parable? Is it an allegory?"
 msgstr ""
+"Lignelsen om den uretfærdige forvalter i Luk.16:1-9. Hvad er lignelsens "
+"pointe? Er den en allegori?"
 
 #. type: Content of: <chapter><section><section><para>
 msgid ""
@@ -1422,6 +1748,9 @@ msgid ""
 "had to prepare for a time when he wouldn't have it. But he is not commended "
 "for his unethical behavior in cheating his master."
 msgstr ""
+"Forvalteren roses kun for én ting, hans klogskab i at bruge det, han "
+"havde, til at forberede sig på en tid, hvor han ikke længere ville have "
+"det. Men han roses ikke for sin uetiske adfærd ved at snyde sin herre."
 
 #. type: Content of the bibletime entity
 msgid "<application>BibleTime</application>"
@@ -1437,15 +1766,15 @@ msgstr "Guiden til Bibelstudie"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 msgid "Bob"
-msgstr ""
+msgstr "Bob"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 msgid "Harman"
-msgstr ""
+msgstr "Harman"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 msgid "The BibleTime Team"
-msgstr ""
+msgstr "BibleTime-holdet"
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
@@ -1453,6 +1782,8 @@ msgid ""
 "<copyright> <year>1999-2026</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
 msgstr ""
+"<copyright> <year>1999-2026</year> <holder>&bibletime;-holdet "
+"(bt-devel@crosswire.org)</holder> </copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 msgid ""
@@ -1460,6 +1791,10 @@ msgid ""
 "the terms of the license <ulink url=\"http://creativecommons.org/licenses/by-"
 "sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</ulink>."
 msgstr ""
+"Dette dokument blev oprindeligt oprettet af hr. Bob Harman og er "
+"licenseret under betingelserne i licensen <ulink "
+"url=\"http://creativecommons.org/licenses/by-sa/3.0/\"> \"Creative Commons "
+"Kreditering-Deling på samme vilkår\"</ulink>."
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 msgid ""
@@ -1478,6 +1813,8 @@ msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
 "Bible."
 msgstr ""
+"<application>Biblestudy HowTo</application> er en vejledning i at "
+"studere Bibelen."
 
 #. type: Content of: <book><bookinfo><abstract><para>
 msgid ""
@@ -1488,11 +1825,18 @@ msgid ""
 "to understand what they say. If you start with the attitude that you want to "
 "have the Lord sow his word in your heart He will not disappoint you."
 msgstr ""
+"Det er &bibletime;-holdets håb, at denne HowTo vil tilskynde læserne "
+"til at studere Skrifterne for at se, hvad de siger. Denne særlige "
+"studievejledning er valgt, fordi den passer på ikke at fremme nogen "
+"bestemt konfessionel lære. Vi anbefaler dig at læse og studere "
+"Skrifterne for at forstå, hvad de siger. Hvis du begynder med den "
+"indstilling, at du ønsker, at Herren skal så sit ord i dit hjerte, vil "
+"han ikke skuffe dig."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 msgid "Bible"
-msgstr ""
+msgstr "Bibel"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 msgid "HowTo"
-msgstr ""
+msgstr "HowTo"
