@@ -281,9 +281,6 @@ void BibleTime::processCommandline(bool const ignoreSession,
         btConfig().setValue(QStringLiteral("state/crashedLastTime"), true);
     }
     btConfig().sync();
-
-    // temporary for testing
-    Q_EMIT colorThemeChanged();
 }
 
 bool BibleTime::event(QEvent* event) {
