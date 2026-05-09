@@ -786,200 +786,132 @@ msgid "Auto Scrolling"
 msgstr "Автопрокрутка"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"The currently active window can be auto scrolled up or down.  Start "
-"scrolling by press Shift+Down. You can increase the scrolling speed by "
-"pressing Shift+Down multiple times. To pause scrolling press Space. To start "
-"scrolling again at the previous speed press Space again. To slow down "
-"scrolling or scroll the other direction press Shift+Up one or more times. "
-"Pressing any other key or changing the active window will stop the scrolling."
-msgstr ""
+msgid "The currently active window can be auto scrolled up or down.  Start scrolling by press Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling."
+msgstr "Текущее активное окно можно автоматически прокручивать вверх или вниз. Чтобы начать прокрутку, нажмите Shift+Down. Скорость прокрутки можно увеличить, несколько раз нажав Shift+Down. Чтобы приостановить прокрутку, нажмите Space. Чтобы продолжить прокрутку с прежней скоростью, снова нажмите Space. Чтобы замедлить прокрутку или прокручивать в другом направлении, нажмите Shift+Up один или несколько раз. Нажатие любой другой клавиши или смена активного окна остановит прокрутку."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Read window placement"
-msgstr ""
+msgstr "Размещение окон чтения"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"Of course, you can open multiple works at the same time.  There are several "
-"possibilities for arranging the read windows on the desk. Please have a look "
-"at the entry <guimenu>Window</guimenu> in the main menu. There you can see "
-"that you can either control the placement of the read windows completely "
-"yourself, or have &bibletime; handle the placement automatically. To achieve "
-"this, you have to select one of the automatic placement modes available at "
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> </menuchoice>. Just try it out, it's simple and works."
-msgstr ""
+msgid "Of course, you can open multiple works at the same time.  There are several possibilities for arranging the read windows on the desk. Please have a look at the entry <guimenu>Window</guimenu> in the main menu. There you can see that you can either control the placement of the read windows completely yourself, or have &bibletime; handle the placement automatically. To achieve this, you have to select one of the automatic placement modes available at <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</guimenuitem> </menuchoice>. Just try it out, it's simple and works."
+msgstr "Разумеется, можно открыть несколько модулей одновременно. Существует несколько способов расположить окна чтения на рабочей области. Посмотрите пункт <guimenu>Окно</guimenu> в главном меню. Там можно либо полностью управлять размещением окон чтения самостоятельно, либо поручить &bibletime; размещать их автоматически. Для этого выберите один из автоматических режимов размещения в <menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Режим расположения</guimenuitem> </menuchoice>. Просто попробуйте — это просто и работает."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Editing your own commentary"
-msgstr ""
+msgstr "Редактирование собственного комментария"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"To be able to store your own comments about parts of the Bible, you have "
-"install a certain work from the library of the <ulink url=\"http://"
-"www.crosswire.org\">&cbs;</ulink>.  This work is called \"Personal "
-"commentary\"."
-msgstr ""
+msgid "To be able to store your own comments about parts of the Bible, you have install a certain work from the library of the <ulink url=\"http://www.crosswire.org\">&cbs;</ulink>.  This work is called \"Personal commentary\"."
+msgstr "Чтобы сохранять собственные комментарии к отрывкам Библии, необходимо установить специальный модуль из библиотеки <ulink url=\"http://www.crosswire.org\">&cbs;</ulink>. Этот модуль называется \"Personal commentary\"."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"Open the personal commentary by clicking on its symbol in the Bookshelf with "
-"a <mousebutton>left</mousebutton> mouse button.  You can edit this "
-"commentary by just clicking on any verse.  A dialog opens which allows you "
-"to add or edit text for that verse."
-msgstr ""
+msgid "Open the personal commentary by clicking on its symbol in the Bookshelf with a <mousebutton>left</mousebutton> mouse button.  You can edit this commentary by just clicking on any verse.  A dialog opens which allows you to add or edit text for that verse."
+msgstr "Откройте личный комментарий, щёлкнув его значок на книжной полке <mousebutton>левой</mousebutton> кнопкой мыши. Этот комментарий можно редактировать, просто щёлкнув любой стих. Откроется диалог, в котором можно добавить или изменить текст для этого стиха."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
-msgid ""
-"If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice> is "
-"deactivated, please check if you have write permission for the files of the "
-"personal commentary."
-msgstr ""
+msgid "If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice> is deactivated, please check if you have write permission for the files of the personal commentary."
+msgstr "Если пункт <menuchoice> <guimenu>Редактировать этот модуль</guimenu> </menuchoice> неактивен, проверьте, есть ли у вас право записи в файлы личного комментария."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
-msgid ""
-"Drag &amp; drop works here. Drop a verse reference and the text of the verse "
-"will be inserted."
-msgstr ""
+msgid "Drag &amp; drop works here. Drop a verse reference and the text of the verse will be inserted."
+msgstr "Перетаскивайте сюда модули. Перетащите ссылку на стих, и текст стиха будет вставлен."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Searching text in an open read window"
-msgstr ""
+msgstr "Поиск текста в открытом окне чтения"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-msgid ""
-"You can look for a word or phrase in the open read window (e.g. the chapter "
-"of a bible that you're reading) just like you are used to from other "
-"programs. This function can be reached either by clicking with the "
-"<mousebutton>right</mousebutton> mouse button and selecting "
-"<guimenuitem>Find...</guimenuitem>, or by using the shortcut <keycombo "
-"action=\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how "
-"you can search in entire works."
-msgstr ""
+msgid "You can look for a word or phrase in the open read window (e.g. the chapter of a bible that you're reading) just like you are used to from other programs. This function can be reached either by clicking with the <mousebutton>right</mousebutton> mouse button and selecting <guimenuitem>Find...</guimenuitem>, or by using the shortcut <keycombo action=\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how you can search in entire works."
+msgstr "Вы можете искать слово или фразу в открытом окне чтения (например, в главе Библии, которую читаете) так же, как в других программах. Эта функция доступна либо через щелчок <mousebutton>правой</mousebutton> кнопкой мыши и выбор <guimenuitem>Найти...</guimenuitem>, либо с помощью сочетания клавиш <keycombo action=\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>. Далее описано, как выполнять поиск по целым модулям."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Accessing the search dialog"
-msgstr ""
+msgstr "Доступ к диалогу поиска"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-msgid ""
-"You can search in a work by clicking with the <mousebutton>right</"
-"mousebutton> mouse button on its symbol in the <guimenu>Bookshelf</guimenu> "
-"and selecting <guimenuitem>Search in work(s)</guimenuitem>. By holding "
-"&Shift; or &Ctrl; and clicking on other work's names you can select more "
-"than one. Then follow the same procedure to open the search dialog. You will "
-"be searching in all of these works at the same time."
-msgstr ""
+msgid "You can search in a work by clicking with the <mousebutton>right</mousebutton> mouse button on its symbol in the <guimenu>Bookshelf</guimenu> and selecting <guimenuitem>Search in work(s)</guimenuitem>. By holding &Shift; or &Ctrl; and clicking on other work's names you can select more than one. Then follow the same procedure to open the search dialog. You will be searching in all of these works at the same time."
+msgstr "Чтобы искать в модуле, щёлкните его значок на <guimenu>книжной полке</guimenu> <mousebutton>правой</mousebutton> кнопкой мыши и выберите <guimenuitem>Искать в модуле(ях)</guimenuitem>. Удерживая &Shift; или &Ctrl; и щёлкая названия других модулей, можно выбрать несколько модулей. Затем тем же способом откройте диалог поиска. Поиск будет выполняться во всех выбранных модулях одновременно."
 
 #. type: Content of: <chapter><sect1><sect2><para>
-msgid ""
-"You can also access the search dialog by clicking on <menuchoice> "
-"<guimenu>Search</guimenu> </menuchoice> from the main menu, and selecting "
-"the appropriate entry."
-msgstr ""
+msgid "You can also access the search dialog by clicking on <menuchoice> <guimenu>Search</guimenu> </menuchoice> from the main menu, and selecting the appropriate entry."
+msgstr "Диалог поиска также можно открыть из главного меню, выбрав <menuchoice> <guimenu>Поиск</guimenu> </menuchoice> и соответствующий пункт."
 
 #. type: Content of: <chapter><sect1><sect2><para>
-msgid ""
-"A third possibility to start searches is to click on the search symbol in an "
-"open read window."
-msgstr ""
+msgid "A third possibility to start searches is to click on the search symbol in an open read window."
+msgstr "Третий способ начать поиск — щёлкнуть значок поиска в открытом окне чтения."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Search configuration"
-msgstr ""
+msgstr "Настройка поиска"
 
 #. type: Content of: <chapter><sect1><sect2><screenshot><screeninfo>
 msgid "Search Text Dialog Options Tab"
-msgstr ""
+msgstr "Вкладка параметров диалога поиска текста"
 
 #. type: Content of: <chapter><sect1><sect2><screenshot><mediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"ss_searchopts.png\" width=\"100%\" "
-"contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"ss_searchopts.png\" width=\"100%\" contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"ss_searchopts.png\" width=\"100%\" contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><screenshot>
-msgid ""
-"<placeholder type=\"screeninfo\" id=\"0\"/> <placeholder "
-"type=\"mediaobject\" id=\"1\"/>"
-msgstr ""
+msgid "<placeholder type=\"screeninfo\" id=\"0\"/> <placeholder type=\"mediaobject\" id=\"1\"/>"
+msgstr "<placeholder type=\"screeninfo\" id=\"0\"/> <placeholder type=\"mediaobject\" id=\"1\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Selecting works"
-msgstr ""
+msgstr "Выбор модулей"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"At the top of the options tab you will find <guibutton>Choose</"
-"guibutton>(works). If you would like to search in multiple works, click on "
-"this button and you will be offered a menu where you can select the works "
-"you want to search in."
-msgstr ""
+msgid "At the top of the options tab you will find <guibutton>Choose</guibutton>(works). If you would like to search in multiple works, click on this button and you will be offered a menu where you can select the works you want to search in."
+msgstr "В верхней части вкладки параметров находится кнопка <guibutton>Выбрать</guibutton> (модули). Если вы хотите искать в нескольких модулях, нажмите эту кнопку, и появится меню, в котором можно выбрать нужные модули."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Using Search Scopes"
-msgstr ""
+msgstr "Использование областей поиска"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"You can narrow the scope of your search to certain parts of the Bible by "
-"selecting one of the predefined scopes from the list in <guimenu>Search "
-"scope</guimenu>. You can define your own search ranges by clicking the "
-"<guibutton>Setup ranges</guibutton> button."
-msgstr ""
+msgid "You can narrow the scope of your search to certain parts of the Bible by selecting one of the predefined scopes from the list in <guimenu>Search scope</guimenu>. You can define your own search ranges by clicking the <guibutton>Setup ranges</guibutton> button."
+msgstr "Можно сузить область поиска до определённых частей Библии, выбрав одну из предварительно заданных областей в списке <guimenu>Область поиска</guimenu>. Собственные диапазоны поиска можно задать, нажав кнопку <guibutton>Настроить диапазоны</guibutton>."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Basic Search Syntax Introduction"
-msgstr ""
+msgstr "Введение в основной синтаксис поиска"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"Enter the search phrase separated by spaces.  By default the search function "
-"will return results that match all the words.  If you want to find any of "
-"the words entered, select the <guimenu>Some words</guimenu> button.  If you "
-"want to perform a more complex search, select the <guimenu>Free</guimenu> "
-"button.  You can see examples of searches by clicking on <guimenu>full "
-"syntax</guimenu>."
-msgstr ""
+msgid "Enter the search phrase separated by spaces.  By default the search function will return results that match all the words.  If you want to find any of the words entered, select the <guimenu>Some words</guimenu> button.  If you want to perform a more complex search, select the <guimenu>Free</guimenu> button.  You can see examples of searches by clicking on <guimenu>full syntax</guimenu>."
+msgstr "Введите поисковую фразу, разделяя слова пробелами. По умолчанию поиск вернёт результаты, содержащие все слова. Если нужно найти любое из введённых слов, выберите кнопку <guimenu>Некоторые слова</guimenu>. Для более сложного поиска выберите кнопку <guimenu>Свободный</guimenu>. Примеры поиска можно посмотреть, щёлкнув <guimenu>полный синтаксис</guimenu>."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"You can use wildcards: '*' matches any number of characters, while '?' will "
-"match any single character. The use of parenthesis allows you to group your "
-"search terms, e.g. '(Jesus OR spirit) AND God'."
-msgstr ""
+msgid "You can use wildcards: '*' matches any number of characters, while '?' will match any single character. The use of parenthesis allows you to group your search terms, e.g. '(Jesus OR spirit) AND God'."
+msgstr "Можно использовать подстановочные символы: '*' соответствует любому числу символов, а '?' — одному символу. Скобки позволяют группировать поисковые выражения, например '(Jesus OR spirit) AND God'."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"To search text other than the main text, enter the text type followed by "
-"':', and then the search term.  Refer to the table below for examples."
-msgstr ""
+msgid "To search text other than the main text, enter the text type followed by ':', and then the search term.  Refer to the table below for examples."
+msgstr "Чтобы искать не в основном тексте, введите тип текста, затем ':', а затем поисковый запрос. Примеры приведены в таблице ниже."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><title>
 msgid "Search Types"
-msgstr ""
+msgstr "Типы поиска"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 msgid "Prefix"
-msgstr ""
+msgstr "Префикс"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 msgid "Meaning"
-msgstr ""
+msgstr "Значение"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 msgid "Example"
-msgstr ""
+msgstr "Пример"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 msgid "heading:"
-msgstr ""
+msgstr "heading:"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 msgid "searches headings"
-msgstr ""
+msgstr "ищет в заголовках"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 msgid "heading:Jesus"
@@ -987,195 +919,135 @@ msgstr "heading:Иисус"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 msgid "footnote:"
-msgstr ""
+msgstr "footnote:"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 msgid "searches footnotes"
-msgstr ""
+msgstr "ищет в сносках"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 msgid "footnote:Moses"
-msgstr ""
+msgstr "footnote:Moses"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 msgid "strong:"
-msgstr ""
+msgstr "strong:"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 msgid "searches Strong's Numbers"
-msgstr ""
+msgstr "ищет номера Стронга"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 msgid "strong:G535"
-msgstr ""
+msgstr "strong:G535"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 msgid "morph:"
-msgstr ""
+msgstr "morph:"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 msgid "searches morphology codes"
-msgstr ""
+msgstr "ищет морфологические коды"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 msgid "morph:N-GSM"
-msgstr ""
+msgstr "morph:N-GSM"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid "Available text types: <placeholder type=\"table\" id=\"0\"/>"
-msgstr ""
+msgstr "Доступные типы текста: <placeholder type=\"table\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
-msgid ""
-"You can right click on an installed work and select <guimenu>About</guimenu> "
-"to find which of the above search criteria may work for you.  Not all works "
-"have the built in features for performing this type of search."
-msgstr ""
+msgid "You can right click on an installed work and select <guimenu>About</guimenu> to find which of the above search criteria may work for you.  Not all works have the built in features for performing this type of search."
+msgstr "Можно щёлкнуть установленный модуль правой кнопкой мыши и выбрать <guimenu>О модуле</guimenu>, чтобы узнать, какие из указанных выше критериев поиска могут быть доступны. Не все модули имеют встроенные возможности для такого поиска."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"&bibletime; uses the Lucene search engine to perform your searches. It has "
-"many advanced features, and you can read more about it here: <ulink "
-"url=\"http://lucene.apache.org/java/docs/index.html\"> http://"
-"lucene.apache.org/java/docs/index.html</ulink>."
-msgstr ""
+msgid "&bibletime; uses the Lucene search engine to perform your searches. It has many advanced features, and you can read more about it here: <ulink url=\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/java/docs/index.html</ulink>."
+msgstr "&bibletime; использует поисковый движок Lucene для выполнения поиска. Он имеет много расширенных возможностей; подробнее можно прочитать здесь: <ulink url=\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/java/docs/index.html</ulink>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Search results"
-msgstr ""
+msgstr "Результаты поиска"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-msgid ""
-"Here you can see how many instances of the search string were found, sorted "
-"by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse "
-"button allows you to copy, save, or print all verses that were found in a "
-"certain work at once. This also works when you click on one or more of the "
-"references to copy, save or print them. Clicking on a particular reference "
-"opens that verse up in context in the preview window below."
-msgstr ""
+msgid "Here you can see how many instances of the search string were found, sorted by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse button allows you to copy, save, or print all verses that were found in a certain work at once. This also works when you click on one or more of the references to copy, save or print them. Clicking on a particular reference opens that verse up in context in the preview window below."
+msgstr "Здесь показано, сколько вхождений поисковой строки найдено, с группировкой по модулям. Щелчок по модулю <mousebutton>правой</mousebutton> кнопкой мыши позволяет сразу скопировать, сохранить или распечатать все стихи, найденные в данном модуле. То же работает при щелчке по одной или нескольким ссылкам, чтобы скопировать, сохранить или распечатать их. Щелчок по конкретной ссылке открывает этот стих в контексте в окне предварительного просмотра ниже."
 
 #. type: Content of: <chapter><sect1><sect2><tip><para>
-msgid ""
-"Drag a reference and drop it on a work symbol on the Bookshelf to open the "
-"work at that verse in a new read window."
-msgstr ""
+msgid "Drag a reference and drop it on a work symbol on the Bookshelf to open the work at that verse in a new read window."
+msgstr "Перетащите ссылку на значок модуля на книжной полке, чтобы открыть модуль на этом стихе в новом окне чтения."
 
 #. type: Content of: <chapter><sect1><sect2><tip><para>
-msgid ""
-"Drag a reference and drop it on an open read window, and it will jump to "
-"that verse."
-msgstr ""
+msgid "Drag a reference and drop it on an open read window, and it will jump to that verse."
+msgstr "Перетащите ссылку в открытое окно чтения, и оно перейдёт к этому стиху."
 
 #. type: Content of: <chapter><sect1><sect2><tip><para>
 msgid "Select references and drag them to the Bookshelf to create bookmarks."
-msgstr ""
+msgstr "Выберите ссылки и перетащите их на книжную полку, чтобы создать закладки."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Search result analysis"
-msgstr ""
+msgstr "Анализ результатов поиска"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
-msgid ""
-"Click on <guibutton>Search analysis</guibutton> to open the search analysis "
-"display. This gives a simple graphic analysis of the number of instances the "
-"search string was found in each book of the Bible, and you can also save the "
-"analysis."
-msgstr ""
+msgid "Click on <guibutton>Search analysis</guibutton> to open the search analysis display. This gives a simple graphic analysis of the number of instances the search string was found in each book of the Bible, and you can also save the analysis."
+msgstr "Нажмите <guibutton>Анализ поиска</guibutton>, чтобы открыть отображение анализа поиска. Оно показывает простую графическую статистику количества вхождений поисковой строки в каждой книге Библии; этот анализ также можно сохранить."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><screenshot><screeninfo>
 msgid "Search Analysis Dialog Box"
-msgstr ""
+msgstr "Диалоговое окно анализа поиска"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><screenshot><mediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"ss_searchanal.png\" width=\"100%\" "
-"contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"ss_searchanal.png\" width=\"100%\" contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"ss_searchanal.png\" width=\"100%\" contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><title>
 msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
-msgstr ""
+msgstr "<guimenuitem>Менеджер книжной полки</guimenuitem>"
 
 #. type: Content of: <chapter><sect1><para>
-msgid ""
-"The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your "
-"Bookshelf. You can install new works to your Bookshelf, and update or remove "
-"existing works from your Bookshelf. Access it by clicking <menuchoice> "
-"<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </"
-"menuchoice> in the main menu."
-msgstr ""
+msgid "The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your Bookshelf. You can install new works to your Bookshelf, and update or remove existing works from your Bookshelf. Access it by clicking <menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </menuchoice> in the main menu."
+msgstr "<guimenuitem>Менеджер книжной полки</guimenuitem> — это инструмент для управления вашей книжной полкой. С его помощью можно устанавливать новые модули, а также обновлять или удалять уже существующие. Открыть его можно из главного меню: <menuchoice> <guimenu>Настройки</guimenu> <guimenuitem>Менеджер книжной полки</guimenuitem> </menuchoice>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Install works"
-msgstr ""
+msgstr "Установка модулей"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-msgid ""
-"With this facility, you can connect to a repository of works (called "
-"\"library\"), and transfer one or more works to your local Bookshelf. These "
-"libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's "
-"online repository of &sword; modules, or another site offering &sword; "
-"modules). &bibletime; will automatically maintain a list of remote libraries "
-"and the works available from them."
-msgstr ""
+msgid "With this facility, you can connect to a repository of works (called \"library\"), and transfer one or more works to your local Bookshelf. These libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's online repository of &sword; modules, or another site offering &sword; modules). &bibletime; will automatically maintain a list of remote libraries and the works available from them."
+msgstr "С помощью этой функции можно подключиться к хранилищу модулей (так называемой «библиотеке») и перенести один или несколько модулей на локальную книжную полку. Такие библиотеки могут быть локальными (например, CD с &sword;) или удалёнными (например, онлайн-хранилище модулей &sword; Crosswire или другой сайт, предлагающий модули &sword;). &bibletime; автоматически поддерживает список удалённых библиотек и доступных в них модулей."
 
 #. type: Content of: <chapter><sect1><sect2><para>
-msgid ""
-"To begin the installation process, select one or more libraries that you "
-"want to install works from.  Then click on the <guibutton>Next</guibutton> "
-"button. Then select one or more languages and click the <guibutton>Next</"
-"guibutton> button. You will see a list of categories. Double-click on a "
-"category to see works for that category. Select one or more works and then "
-"click on the <guibutton>Install Works</guibutton>. After the works are "
-"installed, click on the <guibutton>Finish</guibutton>."
-msgstr ""
+msgid "To begin the installation process, select one or more libraries that you want to install works from.  Then click on the <guibutton>Next</guibutton> button. Then select one or more languages and click the <guibutton>Next</guibutton> button. You will see a list of categories. Double-click on a category to see works for that category. Select one or more works and then click on the <guibutton>Install Works</guibutton>. After the works are installed, click on the <guibutton>Finish</guibutton>."
+msgstr "Чтобы начать установку, выберите одну или несколько библиотек, из которых хотите установить модули. Затем нажмите кнопку <guibutton>Далее</guibutton>. После этого выберите один или несколько языков и снова нажмите <guibutton>Далее</guibutton>. Появится список категорий. Дважды щёлкните категорию, чтобы увидеть модули в ней. Выберите один или несколько модулей и нажмите <guibutton>Установить модули</guibutton>. После установки нажмите <guibutton>Готово</guibutton>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Update works"
-msgstr ""
+msgstr "Обновление модулей"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-msgid ""
-"If there are any works that can be updated, they will be shown. Select one "
-"or more work and click the <guibutton>Update Works</guibutton>. After the "
-"works are updated, click on the <guibutton>Finish</guibutton>."
-msgstr ""
+msgid "If there are any works that can be updated, they will be shown. Select one or more work and click the <guibutton>Update Works</guibutton>. After the works are updated, click on the <guibutton>Finish</guibutton>."
+msgstr "Если есть модули, которые можно обновить, они будут показаны. Выберите один или несколько модулей и нажмите <guibutton>Обновить модули</guibutton>. После обновления нажмите <guibutton>Готово</guibutton>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Remove works"
-msgstr ""
+msgstr "Удаление модулей"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-msgid ""
-"This facility allows you to delete one or more of the works from your "
-"Bookshelf too free up disk space. Simply choose the works` and click on the "
-"<guibutton>Remove works</guibutton> button."
-msgstr ""
+msgid "This facility allows you to delete one or more of the works from your Bookshelf too free up disk space. Simply choose the works` and click on the <guibutton>Remove works</guibutton> button."
+msgstr "Эта функция позволяет удалить один или несколько модулей с книжной полки, чтобы освободить место на диске. Просто выберите модули и нажмите кнопку <guibutton>Удалить модули</guibutton>."
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Exporting and Printing"
-msgstr ""
+msgstr "Экспорт и печать"
 
 #. type: Content of: <chapter><sect1><para>
-msgid ""
-"In many places, you can open a context menu by clicking with the "
-"<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
-"allow you to <guimenuitem>Select</guimenuitem>, <guimenuitem>Copy</"
-"guimenuitem> (to clipboard), <guimenuitem>Save</guimenuitem> or "
-"<guimenuitem>Print</guimenuitem> text. This works for example in the read "
-"windows, when you click on the normal text or the verse reference, or in the "
-"search result page when you click on a work or one or more verse references. "
-"It is pretty straightforward, so just try it out."
-msgstr ""
+msgid "In many places, you can open a context menu by clicking with the <mousebutton>right</mousebutton> mouse button. Depending on context, it will allow you to <guimenuitem>Select</guimenuitem>, <guimenuitem>Copy</guimenuitem> (to clipboard), <guimenuitem>Save</guimenuitem> or <guimenuitem>Print</guimenuitem> text. This works for example in the read windows, when you click on the normal text or the verse reference, or in the search result page when you click on a work or one or more verse references. It is pretty straightforward, so just try it out."
+msgstr "Во многих местах можно открыть контекстное меню щелчком <mousebutton>правой</mousebutton> кнопкой мыши. В зависимости от контекста оно позволяет <guimenuitem>выделить</guimenuitem>, <guimenuitem>скопировать</guimenuitem> (в буфер обмена), <guimenuitem>сохранить</guimenuitem> или <guimenuitem>напечатать</guimenuitem> текст. Это работает, например, в окнах чтения при щелчке по обычному тексту или ссылке на стих, а также на странице результатов поиска при щелчке по модулю или одной/нескольким ссылкам на стихи. Всё довольно просто, попробуйте."
 
 #. type: Content of: <chapter><sect1><para>
-msgid ""
-"Printing from &bibletime; is rather basic and is intended as a utility. If "
-"you are composing a document or presentation containing text from "
-"&bibletime; works, we suggest that you use one of the presentation or "
-"editing tools on your system to format your document, rather than printing "
-"from &bibletime; directly."
-msgstr ""
+msgid "Printing from &bibletime; is rather basic and is intended as a utility. If you are composing a document or presentation containing text from &bibletime; works, we suggest that you use one of the presentation or editing tools on your system to format your document, rather than printing from &bibletime; directly."
+msgstr "Печать из &bibletime; довольно проста и предназначена как вспомогательная функция. Если вы готовите документ или презентацию с текстом из модулей &bibletime;, рекомендуется форматировать документ в одной из программ для редактирования или подготовки презентаций, а не печатать напрямую из &bibletime;."
 
 #. type: Content of: <chapter><title>
 msgid "Reference"
@@ -1183,717 +1055,479 @@ msgstr "Ссылка"
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Main menu reference"
-msgstr ""
+msgstr "Справочник главного меню"
 
 #. type: Content of: <chapter><sect1><para>
-msgid ""
-"In this section you can find detailed descriptions of all entries in the "
-"main menu of &bibletime;. They are ordered in just the way they appear in "
-"&bibletime;, with all the sub-items listed under the major menu item they "
-"belong to. You can also see the shortcut of each item;a complete listing of "
-"all shortcuts can be found in the <link linkend=\"hdbk-reference-"
-"shortcuts\">shortcuts section</link>."
-msgstr ""
+msgid "In this section you can find detailed descriptions of all entries in the main menu of &bibletime;. They are ordered in just the way they appear in &bibletime;, with all the sub-items listed under the major menu item they belong to. You can also see the shortcut of each item;a complete listing of all shortcuts can be found in the <link linkend=\"hdbk-reference-shortcuts\">shortcuts section</link>."
+msgstr "В этом разделе приведены подробные описания всех пунктов главного меню &bibletime;. Они расположены в том же порядке, в каком отображаются в &bibletime;, а все подпункты перечислены под соответствующим главным пунктом меню. Также показано сочетание клавиш для каждого пункта; полный список всех сочетаний находится в <link linkend=\"hdbk-reference-shortcuts\">разделе сочетаний клавиш</link>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "<guimenu>File</guimenu>"
-msgstr ""
+msgstr "<guimenu>Файл</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_folder_open.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_folder_open.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_folder_open.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Файл</guimenu> <guimenuitem>Открыть модуль</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Open work.</action> This will give you a menu that will allow you to "
-"open installed books."
-msgstr ""
+msgid "<action>Open work.</action> This will give you a menu that will allow you to open installed books."
+msgstr "<action>Открывает модуль.</action> Будет показано меню, позволяющее открыть установленные книги."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_exit.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_exit.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_exit.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+Q</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>File</guimenu> <guimenuitem>Quit</"
-"guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Файл</guimenu> <guimenuitem>Выход</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Closes &bibletime;.</action> &bibletime; will ask you if you want to "
-"write unsaved changes to disk."
-msgstr ""
+msgid "<action>Closes &bibletime;.</action> &bibletime; will ask you if you want to write unsaved changes to disk."
+msgstr "<action>Закрывает &bibletime;.</action> &bibletime; спросит, нужно ли записать несохранённые изменения на диск."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 msgid "<placeholder type=\"variablelist\" id=\"0\"/>"
-msgstr ""
+msgstr "<placeholder type=\"variablelist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "<guimenu>View</guimenu>"
-msgstr ""
+msgstr "<guimenu>Вид</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_window_fullscreen.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_window_fullscreen.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_window_fullscreen.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F5</keycap> </"
-"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>View</guimenu> <guimenuitem>Fullscreen mode</guimenuitem> </"
-"menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F5</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>View</guimenu> <guimenuitem>Fullscreen mode</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F5</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вид</guimenu> <guimenuitem>Полноэкранный режим</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Toggles full screen display.</action> Toggle this setting to "
-"maximize the &bibletime; window."
-msgstr ""
+msgid "<action>Toggles full screen display.</action> Toggle this setting to maximize the &bibletime; window."
+msgstr "<action>Переключает полноэкранное отображение.</action> Включите этот параметр, чтобы развернуть окно &bibletime; на весь экран."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_books.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_books.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_books.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вид</guimenu> <guimenuitem>Показать книжную полку</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Toggles display of the Bookshelf.</action> Toggle this setting to "
-"turn the Bookshelf on the left pane on or off. This can be handy if you need "
-"more space for the Mag."
-msgstr ""
+msgid "<action>Toggles display of the Bookshelf.</action> Toggle this setting to turn the Bookshelf on the left pane on or off. This can be handy if you need more space for the Mag."
+msgstr "<action>Переключает отображение книжной полки.</action> Включайте или выключайте книжную полку на левой панели. Это может быть удобно, если нужно больше места для окна увеличения."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вид</guimenu> <guimenuitem>Показать закладки</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Toggles display of the Bookmarks.</action> Toggle this setting to "
-"turn the Bookmarks on the left pane on or off. This can be handy if you need "
-"more space for the Mag."
-msgstr ""
+msgid "<action>Toggles display of the Bookmarks.</action> Toggle this setting to turn the Bookmarks on the left pane on or off. This can be handy if you need more space for the Mag."
+msgstr "<action>Переключает отображение закладок.</action> Включайте или выключайте закладки на левой панели. Это может быть удобно, если нужно больше места для окна увеличения."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_document_magnifier.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_document_magnifier.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_document_magnifier.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вид</guimenu> <guimenuitem>Показать увеличитель</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
-"setting to turn the Mag on the left pane on or off."
-msgstr ""
+msgid "<action>Toggles display of the Mag(nifying glass).</action> Toggle this setting to turn the Mag on the left pane on or off."
+msgstr "<action>Переключает отображение увеличителя.</action> Включайте или выключайте увеличитель на левой панели."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">View</guimenu> <guimenuitem>Show parallel text headers</guimenuitem> </"
-"menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>View</guimenu> <guimenuitem>Show parallel text headers</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вид</guimenu> <guimenuitem>Показать заголовки параллельных текстов</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Toggles viewing of additional works</action> Toggle this setting to "
-"allow you to view additional works in parallel to your current open books."
-msgstr ""
+msgid "<action>Toggles viewing of additional works</action> Toggle this setting to allow you to view additional works in parallel to your current open books."
+msgstr "<action>Переключает просмотр дополнительных модулей</action> Включите этот параметр, чтобы просматривать дополнительные модули параллельно с текущими открытыми книгами."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F6</keycap> </"
-"keycombo> </shortcut> <guimenu>View</guimenu> <guimenuitem>Toolbars</"
-"guimenuitem> <guimenuitem>Show main</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F6</keycap> </keycombo> </shortcut> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> <guimenuitem>Show main</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F6</keycap> </keycombo> </shortcut> <guimenu>Вид</guimenu> <guimenuitem>Панели инструментов</guimenuitem> <guimenuitem>Показать главную</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Toggles Main Toolbar display.</action> Toggle this setting to turn "
-"the main toolbar on or off."
-msgstr ""
+msgid "<action>Toggles Main Toolbar display.</action> Toggle this setting to turn the main toolbar on or off."
+msgstr "<action>Переключает отображение главной панели инструментов.</action> Включайте или выключайте главную панель инструментов."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
-"<guimenuitem>Show navigation</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> <guimenuitem>Show navigation</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu>Вид</guimenu> <guimenuitem>Панели инструментов</guimenuitem> <guimenuitem>Показать навигацию</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Toggles Navigation in works.</action> Toggle this setting to add or "
-"remove the navigation combo box in works.  This can be handy to view the "
-"full toolbar in the open works"
-msgstr ""
+msgid "<action>Toggles Navigation in works.</action> Toggle this setting to add or remove the navigation combo box in works.  This can be handy to view the full toolbar in the open works"
+msgstr "<action>Переключает навигацию в модулях.</action> Включайте или выключайте поле навигации в модулях. Это может быть удобно для просмотра полной панели инструментов в открытых модулях."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
-"<guimenuitem>Show works</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> <guimenuitem>Show works</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu>Вид</guimenu> <guimenuitem>Панели инструментов</guimenuitem> <guimenuitem>Показать модули</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Toggles Toolbars in works.</action> Toggle this setting to add or "
-"remove the works icons in the open works."
-msgstr ""
+msgid "<action>Toggles Toolbars in works.</action> Toggle this setting to add or remove the works icons in the open works."
+msgstr "<action>Переключает панели инструментов в модулях.</action> Включайте или выключайте значки модулей в открытых модулях."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
-"<guimenuitem>Show tools</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> <guimenuitem>Show tools</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu>Вид</guimenu> <guimenuitem>Панели инструментов</guimenuitem> <guimenuitem>Показать инструменты</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Toggles tools in works.</action> Toggle this setting to add or "
-"remove the tools icons in the open works."
-msgstr ""
+msgid "<action>Toggles tools in works.</action> Toggle this setting to add or remove the tools icons in the open works."
+msgstr "<action>Переключает инструменты в модулях.</action> Включайте или выключайте значки инструментов в открытых модулях."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
-"<guimenuitem>Show format</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> <guimenuitem>Show format</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu>Вид</guimenu> <guimenuitem>Панели инструментов</guimenuitem> <guimenuitem>Показать форматирование</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Toggles format.</action> Toggle this setting when editing HTML in "
-"Personal Commentaries. It will add or remove the formatting toolbar."
-msgstr ""
+msgid "<action>Toggles format.</action> Toggle this setting when editing HTML in Personal Commentaries. It will add or remove the formatting toolbar."
+msgstr "<action>Переключает форматирование.</action> Используйте этот параметр при редактировании HTML в личных комментариях. Он добавляет или убирает панель форматирования."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
-"<guimenuitem>Show toolbars in text windows</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> <guimenuitem>Show toolbars in text windows</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu>Вид</guimenu> <guimenuitem>Панели инструментов</guimenuitem> <guimenuitem>Показать панели инструментов в текстовых окнах</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Toggles toolbars in works.</action> Toggle this setting to add or "
-"remove the complete toolbar in open works."
-msgstr ""
+msgid "<action>Toggles toolbars in works.</action> Toggle this setting to add or remove the complete toolbar in open works."
+msgstr "<action>Переключает панели инструментов в модулях.</action> Включайте или выключайте полную панель инструментов в открытых модулях."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "<guimenu>Search</guimenu>"
-msgstr ""
+msgstr "<guimenu>Поиск</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_find.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_find.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_find.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Search in "
-"standard bible</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Search in standard bible</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Поиск</guimenu> <guimenuitem>Искать в стандартной Библии</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Opens the Search Dialog to search in the standard Bible only</"
-"action>. More works can be added in the Search Dialog. A more detailed "
-"search description can be found in the <link linkend=\"hdbk-op-"
-"search\">Searching in works</link> section."
-msgstr ""
+msgid "<action>Opens the Search Dialog to search in the standard Bible only</action>. More works can be added in the Search Dialog. A more detailed search description can be found in the <link linkend=\"hdbk-op-search\">Searching in works</link> section."
+msgstr "<action>Открывает диалог поиска только в стандартной Библии</action>. В диалоге поиска можно добавить другие модули. Более подробное описание поиска находится в разделе <link linkend=\"hdbk-op-search\">Поиск в модулях</link>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+O</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Search in "
-"open work(s)</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Поиск</guimenu> <guimenuitem>Искать в открытом модуле(ях)</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Opens the Search Dialog to search in all open works</action>. Works "
-"can be added or removed in the Search Dialog. A more detailed search "
-"description can be found in the <link linkend=\"hdbk-op-search\">Searching "
-"in works</link> section."
-msgstr ""
+msgid "<action>Opens the Search Dialog to search in all open works</action>. Works can be added or removed in the Search Dialog. A more detailed search description can be found in the <link linkend=\"hdbk-op-search\">Searching in works</link> section."
+msgstr "<action>Открывает диалог поиска во всех открытых модулях</action>. Модули можно добавлять или удалять в диалоге поиска. Более подробное описание поиска находится в разделе <link linkend=\"hdbk-op-search\">Поиск в модулях</link>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "<guimenu>Window</guimenu>"
-msgstr ""
+msgstr "<guimenu>Окно</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+W</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Close "
-"window</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Close window</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Окно</guimenu> <guimenuitem>Закрыть окно</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 msgid "<action>Closes active window</action>."
-msgstr ""
+msgstr "<action>Закрывает активное окно</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Close "
-"all</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Окно</guimenu> <guimenuitem>Закрыть все</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 msgid "<action>Closes all open windows</action>."
-msgstr ""
+msgstr "<action>Закрывает все открытые окна</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_cascade.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_cascade.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_cascade.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+J</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Cascade</"
-"guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+J</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+J</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Окно</guimenu> <guimenuitem>Каскадом</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 msgid "<action>Cascades all open windows</action>."
-msgstr ""
+msgstr "<action>Располагает все открытые окна каскадом</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_tile.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_tile.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_tile.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+I</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile</"
-"guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+I</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+I</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Окно</guimenu> <guimenuitem>Плиткой</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 msgid "<action>Tiles all open windows</action>."
-msgstr ""
+msgstr "<action>Располагает все открытые окна плиткой</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_tile_vert.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_tile_vert.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_tile_vert.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+G</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
-"vertically</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+G</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+G</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Окно</guimenu> <guimenuitem>Плиткой вертикально</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 msgid "<action>Automatically tiles all open windows vertically</action>."
-msgstr ""
+msgstr "<action>Автоматически располагает все открытые окна вертикальной плиткой</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_tile_horiz.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_tile_horiz.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_tile_horiz.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+H</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
-"horizontally</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+H</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+H</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Окно</guimenu> <guimenuitem>Плиткой горизонтально</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 msgid "<action>Automatically tiles all open windows horizontally</action>."
-msgstr ""
+msgstr "<action>Автоматически располагает все открытые окна горизонтальной плиткой</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Режим расположения</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Controls the basic window arrangement behaviour</action>. In the "
-"opening context menu, you can either specify that you want to take care of "
-"the window arrangement yourself (Manual mode), Tabbed, Auto-tile vertically, "
-"Auto-tile horizontally, Auto-tile or Auto-cascade.  Just try them out!"
-msgstr ""
+msgid "<action>Controls the basic window arrangement behaviour</action>. In the opening context menu, you can either specify that you want to take care of the window arrangement yourself (Manual mode), Tabbed, Auto-tile vertically, Auto-tile horizontally, Auto-tile or Auto-cascade.  Just try them out!"
+msgstr "<action>Управляет основным поведением расположения окон</action>. В открывшемся контекстном меню можно выбрать самостоятельное управление расположением окон (ручной режим), вкладки, автоматическую вертикальную плитку, автоматическую горизонтальную плитку, автоматическую плитку или автоматический каскад. Просто попробуйте эти варианты!"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu> Window</guimenu> <guimenuitem>Save session</"
-"guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu> Window</guimenu> <guimenuitem>Save session</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu> Окно</guimenu> <guimenuitem>Сохранить сеанс</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Directly saves the current session</action>. This will open a "
-"context menu where you can select an existing session to save to. It will be "
-"overwritten with your current session. See the next item on how to save to a "
-"new session."
-msgstr ""
+msgid "<action>Directly saves the current session</action>. This will open a context menu where you can select an existing session to save to. It will be overwritten with your current session. See the next item on how to save to a new session."
+msgstr "<action>Непосредственно сохраняет текущий сеанс</action>. Откроется контекстное меню, где можно выбрать существующий сеанс для сохранения. Он будет перезаписан текущим сеансом. Следующий пункт описывает, как сохранить новый сеанс."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</"
-"keycap></keycombo> </shortcut> <guimenu>Window</guimenu> <guimenuitem>Save "
-"as new session</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo> </shortcut> <guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo> </shortcut> <guimenu>Окно</guimenu> <guimenuitem>Сохранить как новый сеанс</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Saves the current session under a new name</action>. This will ask "
-"for a new name to save the session to."
-msgstr ""
+msgid "<action>Saves the current session under a new name</action>. This will ask for a new name to save the session to."
+msgstr "<action>Сохраняет текущий сеанс под новым именем</action>. Будет запрошено новое имя для сохранения сеанса."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Load session</"
-"guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Load session</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Загрузить сеанс</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Loads an existing session</action>. This will open a context menu "
-"where you can select an existing session to load."
-msgstr ""
+msgid "<action>Loads an existing session</action>. This will open a context menu where you can select an existing session to load."
+msgstr "<action>Загружает существующий сеанс</action>. Откроется контекстное меню, где можно выбрать существующий сеанс для загрузки."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Delete session</"
-"guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Delete session</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Удалить сеанс</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Deletes an existing session</action>. This will open a context menu "
-"where you can select an existing session that should be deleted."
-msgstr ""
+msgid "<action>Deletes an existing session</action>. This will open a context menu where you can select an existing session that should be deleted."
+msgstr "<action>Удаляет существующий сеанс</action>. Откроется контекстное меню, где можно выбрать сеанс, который следует удалить."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "<guimenu>Settings</guimenu>"
-msgstr ""
+msgstr "<guimenu>Настройки</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_configure.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_configure.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_configure.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem> </"
-"menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Настройки</guimenu> <guimenuitem>Настроить &bibletime;</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Opens &bibletime;'s main configuration dialog</action>. You can "
-"configure all kinds of nice settings there to adapt &bibletime; to your "
-"needs.  Please see the <link linkend=\"hdbk-config-bt\">Configuring "
-"&bibletime; section</link> for details."
-msgstr ""
+msgid "<action>Opens &bibletime;'s main configuration dialog</action>. You can configure all kinds of nice settings there to adapt &bibletime; to your needs.  Please see the <link linkend=\"hdbk-config-bt\">Configuring &bibletime; section</link> for details."
+msgstr "<action>Открывает главный диалог настроек &bibletime;</action>. Здесь можно настроить различные параметры, чтобы приспособить &bibletime; к своим нуждам. Подробности см. в разделе <link linkend=\"hdbk-config-bt\">Настройка &bibletime;</link>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_configuresword.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_configuresword.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_configuresword.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F4</keycap> </"
-"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </"
-"menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Настройки</guimenu> <guimenuitem>Менеджер книжной полки</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Opens a dialog where you can change your &sword; configuration and "
-"manage your bookshelf</action>. Please see the <link linkend=\"hdbk-op-"
-"bookshelfmanager\">Bookshelf Manager section</link> for details."
-msgstr ""
+msgid "<action>Opens a dialog where you can change your &sword; configuration and manage your bookshelf</action>. Please see the <link linkend=\"hdbk-op-bookshelfmanager\">Bookshelf Manager section</link> for details."
+msgstr "<action>Открывает диалог, в котором можно изменить конфигурацию &sword; и управлять книжной полкой</action>. Подробности см. в разделе <link linkend=\"hdbk-op-bookshelfmanager\">Менеджер книжной полки</link>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "<guimenu>Help</guimenu>"
-msgstr ""
+msgstr "<guimenu>Справка</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_contents2.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_contents2.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_contents2.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </"
-"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Справка</guimenu> <guimenuitem>Руководство</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 msgid "<action>Opens &bibletime;'s user guide</action> You are reading it now."
-msgstr ""
+msgstr "<action>Открывает руководство пользователя &bibletime;</action> Сейчас вы его читаете."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F2</keycap> </"
-"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>Help</guimenu> <guimenuitem>Bible Study HowTo</guimenuitem> </"
-"menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Help</guimenu> <guimenuitem>Bible Study HowTo</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Справка</guimenu> <guimenuitem>Как изучать Библию</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Opens a guide on how to study the Bible</action> It is the hope of "
-"the &bibletime; team that this HowTo will provoke the readers to study the "
-"scriptures to see what they say. This particular study guide has been chosen "
-"as it takes care not to advocate any particular denominational doctrine. We "
-"expect you to read and study the scriptures to understand what they say. If "
-"you start with the attitude that you want to have the Lord sow his word in "
-"your heart He will not disappoint you."
-msgstr ""
+msgid "<action>Opens a guide on how to study the Bible</action> It is the hope of the &bibletime; team that this HowTo will provoke the readers to study the scriptures to see what they say. This particular study guide has been chosen as it takes care not to advocate any particular denominational doctrine. We expect you to read and study the scriptures to understand what they say. If you start with the attitude that you want to have the Lord sow his word in your heart He will not disappoint you."
+msgstr "<action>Открывает руководство по изучению Библии</action>. Команда &bibletime; надеется, что это руководство побудит читателей изучать Писание и увидеть, что оно говорит. Это учебное руководство выбрано потому, что оно старается не отстаивать какое-либо конкретное конфессиональное учение. Мы ожидаем, что вы будете читать и изучать Писание, чтобы понять, что оно говорит. Если вы начнёте с желанием, чтобы Господь посеял Своё слово в вашем сердце, Он вас не разочарует."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> </"
-"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem> </"
-"menuchoice>"
-msgstr ""
+msgid "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Справка</guimenu> <guimenuitem>Совет дня</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Opens a helpful tip</action> The Tip of the Day provides a useful "
-"tip that will assist in the use of &bibletime;."
-msgstr ""
+msgid "<action>Opens a helpful tip</action> The Tip of the Day provides a useful tip that will assist in the use of &bibletime;."
+msgstr "<action>Открывает полезный совет</action>. Совет дня содержит полезную подсказку, помогающую пользоваться &bibletime;."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
-"menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu>Справка</guimenu> <guimenuitem>О программе</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Opens a window about &bibletime; project information</action> "
-"contains information about &bibletime; software version, project "
-"contributors, &sword; software version, &qt; software version and the "
-"license agreement."
-msgstr ""
+msgid "<action>Opens a window about &bibletime; project information</action> contains information about &bibletime; software version, project contributors, &sword; software version, &qt; software version and the license agreement."
+msgstr "<action>Открывает окно с информацией о проекте &bibletime;</action>. Оно содержит сведения о версии &bibletime;, участниках проекта, версии &sword;, версии &qt; и лицензионном соглашении."
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Works reference"
-msgstr ""
+msgstr "Справочник по модулям"
 
 #. type: Content of: <chapter><sect1><para>
-msgid ""
-"In this section you can find descriptions of the icons associated with open "
-"works."
-msgstr ""
+msgid "In this section you can find descriptions of the icons associated with open works."
+msgstr "В этом разделе приведены описания значков, связанных с открытыми модулями."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
-msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/></"
-"guimenu> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/></guimenu> </menuchoice>"
+msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/></guimenu> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid "Scrolls forward through history."
-msgstr ""
+msgstr "Прокручивает вперёд по истории."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_back.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_back.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_back.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid "Scrolls back through history."
-msgstr ""
+msgstr "Прокручивает назад по истории."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid "Select an installed bible."
-msgstr ""
+msgstr "Выбрать установленную Библию."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_bible_add.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_bible_add.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_bible_add.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid "Select an additional bible."
-msgstr ""
+msgstr "Выбрать дополнительную Библию."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid "Search in selected works."
-msgstr ""
+msgstr "Искать в выбранных модулях."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_displayconfig.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_displayconfig.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_displayconfig.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid "Display configuration."
-msgstr ""
+msgstr "Настройки отображения."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid "Select an installed commentary."
-msgstr ""
+msgstr "Выбрать установленный комментарий."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_commentary_add.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_commentary_add.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_commentary_add.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid "Select additional commentary."
-msgstr ""
+msgstr "Выбрать дополнительный комментарий."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_sync.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_sync.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_sync.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid "Synchronize displayed entry with active Bible window."
-msgstr ""
+msgstr "Синхронизировать отображаемую запись с активным окном Библии."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid "Select a book."
-msgstr ""
+msgstr "Выбрать книгу."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_lexicon.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_lexicon.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_lexicon.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid "Select an installed glossary or devotional."
-msgstr ""
+msgstr "Выбрать установленный словарь, глоссарий или чтение на каждый день."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_lexicon_add.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_lexicon_add.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_lexicon_add.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 msgid "Select an additional glossary or devotional."
-msgstr ""
+msgstr "Выбрать дополнительный словарь, глоссарий или чтение на каждый день."
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Shortcuts index"
-msgstr ""
+msgstr "Указатель сочетаний клавиш"
 
 #. type: Content of: <chapter><sect1><para>
-msgid ""
-"This is an index of all shortcuts and their corresponding description in the "
-"handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to "
-"directly find out which shortcuts a certain menu item has, you can either "
-"look at the entry itself in &bibletime; (as it always shows the shortcut), "
-"or you can look it in the <link linkend=\"hdbk-reference-menus\">Main Menu "
-"reference</link>."
-msgstr ""
+msgid "This is an index of all shortcuts and their corresponding description in the handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to directly find out which shortcuts a certain menu item has, you can either look at the entry itself in &bibletime; (as it always shows the shortcut), or you can look it in the <link linkend=\"hdbk-reference-menus\">Main Menu reference</link>."
+msgstr "Это указатель всех сочетаний клавиш и соответствующих описаний в руководстве. Сочетания отсортированы примерно по алфавиту. Если вы хотите узнать, какое сочетание клавиш есть у определённого пункта меню, можно посмотреть сам пункт в &bibletime; (там сочетание всегда отображается) или найти его в <link linkend=\"hdbk-reference-menus\">справочнике главного меню</link>."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 msgid "Shortcut"
-msgstr ""
+msgstr "Сочетание клавиш"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 msgid "Description"
@@ -1901,425 +1535,330 @@ msgstr "Описание"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Alt;+Left</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Alt;+Left</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "Moves back in the history of read windows."
-msgstr ""
+msgstr "Переходит назад по истории окон чтения."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Alt;+Right</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Alt;+Right</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "Moves forward in the history of read windows."
-msgstr ""
+msgstr "Переходит вперёд по истории окон чтения."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
-"<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> "
-"</menuchoice> </link> equivalent; opens the search dialog to search in the "
-"default bible."
-msgstr ""
+msgid "<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> <guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> </menuchoice> </link> equivalent; opens the search dialog to search in the default bible."
+msgstr "Эквивалент <link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> <guimenu>Поиск</guimenu> <guimenuitem>Искать в стандартной Библии</guimenuitem> </menuchoice> </link>; открывает диалог поиска в стандартной Библии."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </menuchoice> "
-"equivalent; toggle automatic window tiling."
-msgstr ""
+msgid "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </menuchoice> equivalent; toggle automatic window tiling."
+msgstr "Эквивалент <menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Режим расположения</guimenuitem> <guimenuitem>Автоматически плиткой вертикально</guimenuitem> </menuchoice>; переключает автоматическое расположение окон плиткой."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </menuchoice> "
-"equivalent; toggle automatic window tiling."
-msgstr ""
+msgid "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </menuchoice> equivalent; toggle automatic window tiling."
+msgstr "Эквивалент <menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Режим расположения</guimenuitem> <guimenuitem>Автоматически плиткой горизонтально</guimenuitem> </menuchoice>; переключает автоматическое расположение окон плиткой."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> equivalent; "
-"toggle automatic window tiling."
-msgstr ""
+msgid "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> equivalent; toggle automatic window tiling."
+msgstr "Эквивалент <menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Режим расположения</guimenuitem> <guimenuitem>Автоматически плиткой</guimenuitem> </menuchoice>; переключает автоматическое расположение окон плиткой."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
-"equivalent; toggle automatic window cascading."
-msgstr ""
+msgid "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> equivalent; toggle automatic window cascading."
+msgstr "Эквивалент <menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Режим расположения</guimenuitem> <guimenuitem>Автоматически каскадом</guimenuitem> </menuchoice>; переключает автоматическое расположение окон каскадом."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
-"equivalent; toggle manual window placement."
-msgstr ""
+msgid "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> equivalent; toggle manual window placement."
+msgstr "Эквивалент <menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Режим расположения</guimenuitem> <guimenuitem>Ручной режим</guimenuitem> </menuchoice>; переключает ручное размещение окон."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> equivalent; "
-"organizes windows with tabs across the top."
-msgstr ""
+msgid "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> equivalent; organizes windows with tabs across the top."
+msgstr "Эквивалент <menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Режим расположения</guimenuitem> <guimenuitem>Вкладки</guimenuitem> </menuchoice>; размещает окна во вкладках сверху."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
-"menuchoice> </link> equivalent; saves current layout as new session."
-msgstr ""
+msgid "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </menuchoice> </link> equivalent; saves current layout as new session."
+msgstr "Эквивалент <link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Сохранить как новый сеанс</guimenuitem> </menuchoice> </link>; сохраняет текущую раскладку как новый сеанс."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
-"</link> equivalent; closes all open windows."
-msgstr ""
+msgid "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> </link> equivalent; closes all open windows."
+msgstr "Эквивалент <link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Закрыть все</guimenuitem> </menuchoice> </link>; закрывает все открытые окна."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "Select all. This selects all text in read windows."
-msgstr ""
+msgstr "Выбрать всё. Выделяет весь текст в окнах чтения."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+C</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+C</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "Copy. This copies the selected text to the clipboard."
-msgstr ""
+msgstr "Копировать. Копирует выделенный текст в буфер обмена."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "Search. This lets you search within the text of a read window."
-msgstr ""
+msgstr "Поиск. Позволяет искать в тексте окна чтения."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+G</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+G</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </"
-"menuchoice> </link> equivalent."
-msgstr ""
+msgid "<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </menuchoice> </link> equivalent."
+msgstr "Эквивалент <link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Плиткой вертикально</guimenuitem> </menuchoice> </link>."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+H</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+H</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </"
-"menuchoice> </link> equivalent."
-msgstr ""
+msgid "<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </menuchoice> </link> equivalent."
+msgstr "Эквивалент <link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Плиткой горизонтально</guimenuitem> </menuchoice> </link>."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+I</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+I</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<link linkend=\"hdbk-reference-menus-window-tile\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> </"
-"link> windows equivalent."
-msgstr ""
+msgid "<link linkend=\"hdbk-reference-menus-window-tile\"> <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> </link> windows equivalent."
+msgstr "Эквивалент размещения окон <link linkend=\"hdbk-reference-menus-window-tile\"> <menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Плиткой</guimenuitem> </menuchoice> </link>."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+J</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+J</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </"
-"link> windows equivalent."
-msgstr ""
+msgid "<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </link> windows equivalent."
+msgstr "Эквивалент размещения окон <link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> <guimenu>Окно</guimenu> <guimenuitem>Каскадом</guimenuitem> </menuchoice> </link>."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+L</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+L</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"Change location. Changes focus to the toolbar field for the selected work."
-msgstr ""
+msgid "Change location. Changes focus to the toolbar field for the selected work."
+msgstr "Изменить расположение. Переводит фокус в поле панели инструментов выбранного модуля."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+N</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+N</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "Search with works of this window."
-msgstr ""
+msgstr "Искать в модулях этого окна."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
-"<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> "
-"</menuchoice> </link> equivalent; opens the search dialog to search in all "
-"currently opened works."
-msgstr ""
+msgid "<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> <guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> </menuchoice> </link> equivalent; opens the search dialog to search in all currently opened works."
+msgstr "Эквивалент <link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> <guimenu>Поиск</guimenu> <guimenuitem>Искать в открытом модуле(ях)</guimenuitem> </menuchoice> </link>; открывает диалог поиска во всех текущих открытых модулях."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
-"<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
-"link> equivalent; closes &bibletime;."
-msgstr ""
+msgid "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> <guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </link> equivalent; closes &bibletime;."
+msgstr "Эквивалент <link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> <guimenu>Файл</guimenu> <guimenuitem>Выход</guimenuitem> </menuchoice> </link>; закрывает &bibletime;."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "Closes the current window."
-msgstr ""
+msgstr "Закрывает текущее окно."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
-"menuchoice> equivalent; opens the handbook."
-msgstr ""
+msgid "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice> equivalent; opens the handbook."
+msgstr "Эквивалент <menuchoice> <guimenu>Справка</guimenu> <guimenuitem>Руководство</guimenuitem> </menuchoice>; открывает руководство."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy HowTo</"
-"guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo."
-msgstr ""
+msgid "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy HowTo</guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo."
+msgstr "Эквивалент <menuchoice> <guimenu>Справка</guimenu> <guimenuitem>Как изучать Библию</guimenuitem> </menuchoice>; открывает руководство по изучению Библии."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the Day</"
-"guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;."
-msgstr ""
+msgid "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;."
+msgstr "<menuchoice> <guimenu>Справка</guimenu> <guimenuitem>Совет дня</guimenuitem> </menuchoice> открывает полезный совет по использованию &bibletime;."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
-"<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
-"guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf Manager."
-msgstr ""
+msgid "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> <menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf Manager."
+msgstr "Эквивалент <link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> <menuchoice> <guimenu>Настройки</guimenu> <guimenuitem>Менеджер книжной полки</guimenuitem> </menuchoice> </link>; открывает менеджер книжной полки."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
-"<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
-"menuchoice> </link> equivalent; toggles display of the Bookshelf."
-msgstr ""
+msgid "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </menuchoice> </link> equivalent; toggles display of the Bookshelf."
+msgstr "Эквивалент <link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> <guimenu>Вид</guimenu> <guimenuitem>Показать книжную полку</guimenuitem> </menuchoice> </link>; переключает отображение книжной полки."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
-"<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"
-"link> equivalent; toggles display of the mag(nifying glass)."
-msgstr ""
+msgid "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> <guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </link> equivalent; toggles display of the mag(nifying glass)."
+msgstr "Эквивалент <link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> <guimenu>Вид</guimenu> <guimenuitem>Показать увеличитель</guimenuitem> </menuchoice> </link>; переключает отображение увеличителя."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Down</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+Down</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll down</"
-"guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll down</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu>Вид</guimenu> <guimenuitem>Автопрокрутка вниз</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Up</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+Up</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll up</"
-"guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll up</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu>Вид</guimenu> <guimenuitem>Автопрокрутка вверх</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-msgid ""
-"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll pause</"
-"guimenuitem> </menuchoice>"
-msgstr ""
+msgid "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll pause</guimenuitem> </menuchoice>"
+msgstr "<menuchoice> <guimenu>Вид</guimenu> <guimenuitem>Пауза автопрокрутки</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Starting &bibletime;"
-msgstr ""
+msgstr "Запуск &bibletime;"
 
 #. type: Content of: <chapter><sect1><title>
 msgid "How to start &bibletime;"
-msgstr ""
+msgstr "Как запустить &bibletime;"
 
 #. type: Content of: <chapter><sect1><sect2><para><mediaobject>
-msgid ""
-"<imageobject> <imagedata fileref=\"i_bibletime.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgid "<imageobject> <imagedata fileref=\"i_bibletime.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr "<imageobject> <imagedata fileref=\"i_bibletime.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject><phrase>
 msgid "&bibletime; start icon"
-msgstr ""
+msgstr "Значок запуска &bibletime;"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-msgid ""
-"&bibletime; is an executable file that is integrated with the desktop. You "
-"can launch &bibletime; from the Start Menu with this icon: <placeholder "
-"type=\"mediaobject\" id=\"0\"/>"
-msgstr ""
+msgid "&bibletime; is an executable file that is integrated with the desktop. You can launch &bibletime; from the Start Menu with this icon: <placeholder type=\"mediaobject\" id=\"0\"/>"
+msgstr "&bibletime; — это исполняемый файл, интегрированный с рабочим столом. &bibletime; можно запустить из меню «Пуск» с помощью этого значка: <placeholder type=\"mediaobject\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><para><screen>
 #, no-wrap
 msgid "bibletime"
-msgstr ""
+msgstr "bibletime"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-msgid ""
-"&bibletime; can also be launched from a terminal command prompt. To launch "
-"&bibletime;, open a terminal window and type: <placeholder type=\"screen\" "
-"id=\"0\"/>"
-msgstr ""
+msgid "&bibletime; can also be launched from a terminal command prompt. To launch &bibletime;, open a terminal window and type: <placeholder type=\"screen\" id=\"0\"/>"
+msgstr "&bibletime; также можно запустить из командной строки терминала. Чтобы запустить &bibletime;, откройте окно терминала и введите: <placeholder type=\"screen\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Startup customization"
-msgstr ""
+msgstr "Настройка запуска"
 
 #. type: Content of: <chapter><sect1><sect2><para><screen>
 #, no-wrap
 msgid "bibletime --open-default-bible \"&lt;random&gt;\""
-msgstr ""
+msgstr "bibletime --open-default-bible \"&lt;random&gt;\""
 
 #. type: Content of: <chapter><sect1><sect2><para><screen>
 #, no-wrap
 msgid "bibletime --open-default-bible \"John 3:16\""
-msgstr ""
+msgstr "bibletime --open-default-bible \"John 3:16\""
 
 #. type: Content of: <chapter><sect1><sect2><para>
-msgid ""
-"From a terminal you can use &bibletime; to open a random verse in the "
-"default bible: <placeholder type=\"screen\" id=\"0\"/> To open at a given "
-"passage like John 3:16, use: <placeholder type=\"screen\" id=\"1\"/> You can "
-"also use booknames in your current bookname language."
-msgstr ""
+msgid "From a terminal you can use &bibletime; to open a random verse in the default bible: <placeholder type=\"screen\" id=\"0\"/> To open at a given passage like John 3:16, use: <placeholder type=\"screen\" id=\"1\"/> You can also use booknames in your current bookname language."
+msgstr "Из терминала можно использовать &bibletime;, чтобы открыть случайный стих в стандартной Библии: <placeholder type=\"screen\" id=\"0\"/> Чтобы открыть заданный отрывок, например John 3:16, используйте: <placeholder type=\"screen\" id=\"1\"/> Можно также использовать названия книг на текущем языке названий книг."
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Starting &bibletime; for the first time"
-msgstr ""
+msgstr "Первый запуск &bibletime;"
 
 #. type: Content of: <chapter><sect1><para>
-msgid ""
-"If you are starting &bibletime; for the first time, you will want to "
-"configure the following options, available under the <link linkend=\"hdbk-"
-"reference-menus-settings\">Settings menu bar</link>."
-msgstr ""
+msgid "If you are starting &bibletime; for the first time, you will want to configure the following options, available under the <link linkend=\"hdbk-reference-menus-settings\">Settings menu bar</link>."
+msgstr "Если вы запускаете &bibletime; впервые, стоит настроить следующие параметры, доступные в <link linkend=\"hdbk-reference-menus-settings\">меню настроек</link>."
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 msgid "<interface>Bookshelf Manager</interface>"
-msgstr ""
+msgstr "<interface>Менеджер книжной полки</interface>"
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Modifies your Bookshelf</action>.  This dialog lets you modify your "
-"Bookshelf, add or delete works from your system.  It will only be shown if "
-"no default Bookshelf can be found.  Please see <link linkend=\"hdbk-op-"
-"bookshelfmanager\">The Bookshelf Manager section</link> for further details. "
-"If you start off with an empty Bookshelf, it will be helpful to install at "
-"least one Bible, Commentary, Lexicon and one Book to get to know "
-"&bibletime;'s basic features quickly.  You will be presented with a list of "
-"works that are available from the &cbs; and other repositories;"
-msgstr ""
+msgid "<action>Modifies your Bookshelf</action>.  This dialog lets you modify your Bookshelf, add or delete works from your system.  It will only be shown if no default Bookshelf can be found.  Please see <link linkend=\"hdbk-op-bookshelfmanager\">The Bookshelf Manager section</link> for further details. If you start off with an empty Bookshelf, it will be helpful to install at least one Bible, Commentary, Lexicon and one Book to get to know &bibletime;'s basic features quickly.  You will be presented with a list of works that are available from the &cbs; and other repositories;"
+msgstr "<action>Изменяет вашу книжную полку</action>. Этот диалог позволяет изменять книжную полку, добавлять или удалять модули из системы. Он будет показан только в том случае, если не найдена стандартная книжная полка. Подробности см. в <link linkend=\"hdbk-op-bookshelfmanager\">разделе о менеджере книжной полки</link>. Если вы начинаете с пустой книжной полкой, полезно установить хотя бы одну Библию, комментарий, лексикон и одну книгу, чтобы быстро познакомиться с основными возможностями &bibletime;. Вам будет представлен список модулей, доступных из &cbs; и других хранилищ;"
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 msgid "<interface>Configure &bibletime; dialog</interface>"
-msgstr ""
+msgstr "<interface>Диалог настройки &bibletime;</interface>"
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-msgid ""
-"<action>Customizes &bibletime;.</action>This dialog lets you adapt "
-"&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "
-"detailed description</link> of this dialog."
-msgstr ""
+msgid "<action>Customizes &bibletime;.</action>This dialog lets you adapt &bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the detailed description</link> of this dialog."
+msgstr "<action>Настраивает &bibletime;.</action> Этот диалог позволяет приспособить &bibletime; к вашим нуждам. См. <link linkend=\"hdbk-config-bt\">подробное описание</link> этого диалога."
 
 #. type: Content of the bibletime entity
 msgid "<application>BibleTime</application>"
@@ -2327,122 +1866,113 @@ msgstr "<application>BibleTime</application>"
 
 #. type: Content of the sword entity
 msgid "<application>SWORD</application>"
-msgstr ""
+msgstr "<application>SWORD</application>"
 
 #. type: Content of the cbs entity
 msgid "<application>Crosswire Bible Society</application>"
-msgstr ""
+msgstr "<application>Библейское общество Crosswire</application>"
 
 #. type: Content of the qt entity
 msgid "<application>Qt</application>"
-msgstr ""
+msgstr "<application>Qt</application>"
 
 #. type: Content of the Shift entity
 msgid "Shift"
-msgstr ""
+msgstr "Shift"
 
 #. type: Content of the Ctrl entity
 msgid "Ctrl"
-msgstr ""
+msgstr "Ctrl"
 
 #. type: Content of the Alt entity
 msgid "Alt"
-msgstr ""
+msgstr "Alt"
 
 #. type: Content of the Space entity
 msgid "Space"
-msgstr ""
+msgstr "Пробел"
 
 #. type: Content of: <book><bookinfo><title>
 msgid "The &bibletime; Handbook"
-msgstr ""
+msgstr "Руководство &bibletime;"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 msgid "Fred"
-msgstr ""
+msgstr "Fred"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 msgid "Saalbach"
-msgstr ""
+msgstr "Saalbach"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 msgid "Jeffrey"
-msgstr ""
+msgstr "Jeffrey"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 msgid "Hoyt"
-msgstr ""
+msgstr "Hoyt"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 msgid "Martin"
-msgstr ""
+msgstr "Martin"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 msgid "Gruner"
-msgstr ""
+msgstr "Gruner"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 msgid "Thomas"
-msgstr ""
+msgstr "Thomas"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 msgid "Abthorpe"
-msgstr ""
+msgstr "Abthorpe"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 msgid "Gary"
-msgstr ""
+msgstr "Gary"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 msgid "Holmlund"
-msgstr ""
+msgstr "Holmlund"
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
-msgid ""
-"<copyright> <year>1999-2026</year> <holder>The &bibletime; Team</holder> </"
-"copyright>"
-msgstr ""
+msgid "<copyright> <year>1999-2026</year> <holder>The &bibletime; Team</holder> </copyright>"
+msgstr "<copyright> <year>1999-2026</year> <holder>Команда &bibletime;</holder> </copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
-msgid ""
-"The &bibletime; Handbook is distributed with the &bibletime; study program."
-msgstr ""
+msgid "The &bibletime; Handbook is distributed with the &bibletime; study program."
+msgstr "Руководство &bibletime; распространяется вместе с программой для изучения Библии &bibletime;."
 
 #. type: Content of: <book><bookinfo>
 msgid "<date>December 2019</date>"
-msgstr ""
+msgstr "<date>Декабрь 2019</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 msgid "3.0.0+"
-msgstr ""
+msgstr "3.0.0+"
 
 #. type: Content of: <book><bookinfo><abstract><para>
-msgid ""
-"&bibletime; is a completely free Bible study program. The program's user "
-"interface is built with the &qt; framework, which makes it run on several "
-"operating systems including Linux, Windows, FreeBSD and Mac OS X. The "
-"software uses the &sword; programming library to work with over 900 free "
-"Bible texts, commentaries, dictionaries and books in over 50 languages "
-"provided by the &cbs; and several other repositories."
-msgstr ""
+msgid "&bibletime; is a completely free Bible study program. The program's user interface is built with the &qt; framework, which makes it run on several operating systems including Linux, Windows, FreeBSD and Mac OS X. The software uses the &sword; programming library to work with over 900 free Bible texts, commentaries, dictionaries and books in over 50 languages provided by the &cbs; and several other repositories."
+msgstr "&bibletime; — полностью бесплатная программа для изучения Библии. Пользовательский интерфейс программы построен на платформе &qt;, благодаря чему она работает в нескольких операционных системах, включая Linux, Windows, FreeBSD и Mac OS X. Программа использует библиотеку &sword; для работы с более чем 900 бесплатными библейскими текстами, комментариями, словарями и книгами на более чем 50 языках, предоставляемыми &cbs; и несколькими другими хранилищами."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 msgid "Qt5"
-msgstr ""
+msgstr "Qt5"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 msgid "BibleTime"
-msgstr ""
+msgstr "BibleTime"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 msgid "SWORD"
-msgstr ""
+msgstr "SWORD"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 msgid "Crosswire"
-msgstr ""
+msgstr "Crosswire"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 msgid "Help dialog"
-msgstr ""
+msgstr "Диалог справки"
