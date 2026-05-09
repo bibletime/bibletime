@@ -182,7 +182,7 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid "Fonts can be installed from a number of sources:"
-msgstr ""
+msgstr "A betűkészletek több forrásból is telepíthetők:"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 msgid "Your *nix distribution."
@@ -480,6 +480,10 @@ msgid ""
 "type=\"variablelist\" id=\"0\"/> There are several other repositories that "
 "&bibletime; will load and use."
 msgstr ""
+"Több mint 280 dokumentum érhető el 50 nyelven a <ulink url=\"http://"
+"www.crosswire.org\">&cbs;</ulink> oldalról. Ezek közé tartoznak: "
+"<placeholder type=\"variablelist\" id=\"0\"/> Több más adattár is van, "
+"amelyet a &bibletime; be tud tölteni és használni."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Motivation"
@@ -583,7 +587,7 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Opening works"
-msgstr ""
+msgstr "Művek megnyitása"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -593,6 +597,11 @@ msgid ""
 "display its contents. Then just double-click on one of the works to open it "
 "for reading. A read window will appear in the Desk area."
 msgstr ""
+"Ha olvasásra meg szeretne nyitni egy művet a könyvespolcról, egyszerűen "
+"kattintson duplán a <mousebutton>bal egérgombbal</mousebutton> a kívánt "
+"kategóriára (Bibliák, Kommentárok, Lexikonok, Könyvek, Áhítatok vagy "
+"Szójegyzékek), hogy megjelenjen a tartalma. Ezután kattintson duplán az "
+"egyik műre a megnyitásához. Egy olvasóablak jelenik meg az asztal területén."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -762,7 +771,7 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Auto Scrolling"
-msgstr ""
+msgstr "Automatikus görgetés"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -773,6 +782,14 @@ msgid ""
 "scrolling or scroll the other direction press Shift+Up one or more times. "
 "Pressing any other key or changing the active window will stop the scrolling."
 msgstr ""
+"Az éppen aktív ablak automatikusan görgethető felfelé vagy lefelé. A "
+"görgetés indításához nyomja meg a Shift+Down billentyűt. A görgetési "
+"sebességet a Shift+Down többszöri megnyomásával növelheti. A görgetés "
+"szüneteltetéséhez nyomja meg a Space billentyűt. Az előző sebességgel "
+"történő folytatáshoz nyomja meg ismét a Space billentyűt. A lassításhoz vagy "
+"az ellenkező irányú görgetéshez nyomja meg egyszer vagy többször a Shift+Up "
+"billentyűt. Bármely más billentyű lenyomása vagy az aktív ablak "
+"megváltoztatása leállítja a görgetést."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 msgid "Read window placement"
@@ -820,6 +837,11 @@ msgid ""
 "commentary by just clicking on any verse.  A dialog opens which allows you "
 "to add or edit text for that verse."
 msgstr ""
+"Nyissa meg a személyes kommentárt a könyvespolcon lévő jelére kattintva a "
+"<mousebutton>bal</mousebutton> egérgombbal. Ezt a kommentárt úgy "
+"szerkesztheti, hogy egyszerűen rákattint bármelyik versre. Megnyílik egy "
+"párbeszédablak, amelyben szöveget adhat hozzá az adott vershez vagy "
+"szerkesztheti azt."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
 msgid ""
@@ -987,6 +1009,9 @@ msgid ""
 "match any single character. The use of parenthesis allows you to group your "
 "search terms, e.g. '(Jesus OR spirit) AND God'."
 msgstr ""
+"Használhat helyettesítő karaktereket: a '*' tetszőleges számú karaktert, míg "
+"a '?' egyetlen karaktert helyettesít. A zárójelek használatával "
+"csoportosíthatja a keresési kifejezéseket, pl. '(Jesus OR spirit) AND God'."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
@@ -1182,7 +1207,7 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Install works"
-msgstr ""
+msgstr "Művek telepítése"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 msgid ""
@@ -1193,6 +1218,12 @@ msgid ""
 "modules). &bibletime; will automatically maintain a list of remote libraries "
 "and the works available from them."
 msgstr ""
+"Ezzel a lehetőséggel csatlakozhat egy műveket tartalmazó adattárhoz "
+"(úgynevezett „könyvtárhoz”), és egy vagy több művet átmásolhat a helyi "
+"könyvespolcára. Ezek a könyvtárak lehetnek helyiek (pl. egy &sword; CD), "
+"vagy távoliak (pl. a Crosswire online &sword; modul-adattára, vagy más "
+"&sword; modulokat kínáló webhely). A &bibletime; automatikusan karbantartja "
+"a távoli könyvtárak és az azokban elérhető művek listáját."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 msgid ""
@@ -1204,10 +1235,18 @@ msgid ""
 "click on the <guibutton>Install Works</guibutton>. After the works are "
 "installed, click on the <guibutton>Finish</guibutton>."
 msgstr ""
+"A telepítés megkezdéséhez válasszon ki egy vagy több könyvtárat, ahonnan "
+"műveket szeretne telepíteni. Ezután kattintson a <guibutton>Következő</"
+"guibutton> gombra. Ezután válasszon ki egy vagy több nyelvet, majd "
+"kattintson a <guibutton>Következő</guibutton> gombra. Megjelenik a "
+"kategóriák listája. Kattintson duplán egy kategóriára, hogy lássa az ahhoz "
+"tartozó műveket. Válasszon ki egy vagy több művet, majd kattintson a "
+"<guibutton>Művek telepítése</guibutton> gombra. A művek telepítése után "
+"kattintson a <guibutton>Befejezés</guibutton> gombra."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Update works"
-msgstr ""
+msgstr "Művek frissítése"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 msgid ""
@@ -1215,10 +1254,13 @@ msgid ""
 "or more work and click the <guibutton>Update Works</guibutton>. After the "
 "works are updated, click on the <guibutton>Finish</guibutton>."
 msgstr ""
+"Ha vannak frissíthető művek, azok megjelennek. Válasszon ki egy vagy több "
+"művet, majd kattintson a <guibutton>Művek frissítése</guibutton> gombra. A "
+"művek frissítése után kattintson a <guibutton>Befejezés</guibutton> gombra."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Remove works"
-msgstr ""
+msgstr "Művek eltávolítása"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 msgid ""
@@ -1226,22 +1268,15 @@ msgid ""
 "Bookshelf too free up disk space. Simply choose the works` and click on the "
 "<guibutton>Remove works</guibutton> button."
 msgstr ""
+"Ez a lehetőség azt is lehetővé teszi, hogy egy vagy több művet töröljön a "
+"könyvespolcáról, így lemezterületet szabadítva fel. Egyszerűen válassza ki a "
+"műveket, majd kattintson a <guibutton>Művek eltávolítása</guibutton> gombra."
 
 #. type: Content of: <chapter><sect1><title>
 msgid "Exporting and Printing"
 msgstr "Exportálás és Nyomtatás"
 
 #. type: Content of: <chapter><sect1><para>
-#, fuzzy
-#| msgid ""
-#| "In many places, you can open a context menu by clicking with the "
-#| "<mousebutton>right</mousebutton> mouse button. Depending on context, it "
-#| "will allow you to <guimenuitem>Select</guimenuitem>, <guimenuitem>Copy</"
-#| "guimenuitem> (to clipboard), <guimenuitem>Save</guimenuitem> or "
-#| "<guimenuitem>Print</guimenuitem> text. This works for example in the read "
-#| "windows, when you click on the normal text or the verse reference, or in "
-#| "the search result page when you click on a work or one or more verse "
-#| "references. It is pretty straightforward, so just try it out."
 msgid ""
 "In many places, you can open a context menu by clicking with the "
 "<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
@@ -1252,13 +1287,14 @@ msgid ""
 "search result page when you click on a work or one or more verse references. "
 "It is pretty straightforward, so just try it out."
 msgstr ""
-"Több helyen van lehetősége helyi menüt nyitni a <mousebutton>jobb</"
-"mousebutton> egérgombbal. Helyzettől függően lehetősége van "
-"<guimenuitem>Kijelölni</guimenuitem>, <guimenuitem>Másolni</guimenuitem> (a "
-"vágólapra), <guimenuitem>Menteni</guimenuitem> vagy <guimenuitem>Nyomtatni</"
-"guimenuitem>. Ilyen menü nyílik meg például az olvasási ablakban, vagy a "
-"keresési ablakban, mikor egy találatra kattint. Tényleg ilyen egyszerű, csak "
-"próbálja ki."
+"Több helyen a <mousebutton>jobb</mousebutton> egérgombbal kattintva helyi "
+"menüt nyithat meg. A helyzettől függően ez lehetővé teszi a szöveg "
+"<guimenuitem>Kijelölését</guimenuitem>, <guimenuitem>Másolását</guimenuitem> "
+"(a vágólapra), <guimenuitem>Mentését</guimenuitem> vagy "
+"<guimenuitem>Nyomtatását</guimenuitem>. Ez működik például az "
+"olvasóablakokban, amikor a normál szövegre vagy a vershivatkozásra kattint, "
+"illetve a keresési eredmények oldalán, amikor egy műre vagy egy vagy több "
+"vershivatkozásra kattint. Elég egyszerű, próbálja ki."
 
 #. type: Content of: <chapter><sect1><para>
 msgid ""
@@ -1400,12 +1436,17 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_books.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_books.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
 ">View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">Nézet</guimenu> <guimenuitem>Könyvespolc megjelenítése</guimenuitem> </"
+"menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 msgid ""
@@ -1422,12 +1463,17 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
 ">View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">Nézet</guimenu> <guimenuitem>Könyvjelzők megjelenítése</guimenuitem> </"
+"menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 msgid ""
@@ -1444,12 +1490,17 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_document_magnifier.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_document_magnifier.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
 ">View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">Nézet</guimenu> <guimenuitem>Nagyító megjelenítése</guimenuitem> </"
+"menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 msgid ""
@@ -1465,6 +1516,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
@@ -1472,12 +1525,18 @@ msgid ""
 ">View</guimenu> <guimenuitem>Show parallel text headers</guimenuitem> </"
 "menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">Nézet</guimenu> <guimenuitem>Párhuzamos szövegfejlécek megjelenítése</"
+"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 msgid ""
 "<action>Toggles viewing of additional works</action> Toggle this setting to "
 "allow you to view additional works in parallel to your current open books."
 msgstr ""
+"<action>További művek megjelenítésének átkapcsolása</action> Kapcsolja be "
+"ezt a beállítást, ha további műveket szeretne párhuzamosan látni a jelenleg "
+"megnyitott könyveivel."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 msgid ""
@@ -2612,33 +2671,39 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Down</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+Down</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll down</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>Nézet</guimenu> <guimenuitem>Automatikus görgetés "
+"lefelé</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Up</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+Up</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll up</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>Nézet</guimenu> <guimenuitem>Automatikus görgetés "
+"felfelé</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll pause</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>Nézet</guimenu> <guimenuitem>Automatikus görgetés "
+"szüneteltetése</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Starting &bibletime;"
@@ -2739,6 +2804,15 @@ msgid ""
 "&bibletime;'s basic features quickly.  You will be presented with a list of "
 "works that are available from the &cbs; and other repositories;"
 msgstr ""
+"<action>Módosítja a könyvespolcot</action>. Ez a párbeszédablak lehetővé "
+"teszi a könyvespolc módosítását, művek hozzáadását vagy törlését a "
+"rendszerből. Csak akkor jelenik meg, ha nem található alapértelmezett "
+"könyvespolc. További részletekért lásd <link linkend=\"hdbk-op-"
+"bookshelfmanager\">A könyvespolc-kezelő szakaszt</link>. Ha üres "
+"könyvespolccal indul, hasznos legalább egy Bibliát, kommentárt, lexikont és "
+"egy könyvet telepíteni, hogy gyorsan megismerje a &bibletime; alapvető "
+"funkcióit. Megjelenik majd a &cbs; és más adattárakból elérhető művek "
+"listája;"
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 msgid "<interface>Configure &bibletime; dialog</interface>"
@@ -2784,7 +2858,7 @@ msgstr "Alt"
 
 #. type: Content of the Space entity
 msgid "Space"
-msgstr ""
+msgstr "Szóköz"
 
 #. type: Content of: <book><bookinfo><title>
 msgid "The &bibletime; Handbook"
@@ -2824,11 +2898,11 @@ msgstr "Abthorpe"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 msgid "Gary"
-msgstr ""
+msgstr "Gary"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 msgid "Holmlund"
-msgstr ""
+msgstr "Holmlund"
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
@@ -2836,6 +2910,8 @@ msgid ""
 "<copyright> <year>1999-2026</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
+"<copyright> <year>1999-2026</year> <holder>A &bibletime; csapata</holder> </"
+"copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 msgid ""
@@ -2844,11 +2920,11 @@ msgstr "A &bibletime; kézikönyv a &bibletime; programmal együtt terjesztve."
 
 #. type: Content of: <book><bookinfo>
 msgid "<date>December 2019</date>"
-msgstr ""
+msgstr "<date>2019. december</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 msgid "3.0.0+"
-msgstr ""
+msgstr "3.0.0+"
 
 #. type: Content of: <book><bookinfo><abstract><para>
 msgid ""
@@ -2859,10 +2935,16 @@ msgid ""
 "Bible texts, commentaries, dictionaries and books in over 50 languages "
 "provided by the &cbs; and several other repositories."
 msgstr ""
+"A &bibletime; egy teljesen ingyenes bibliatanulmányozó program. A program "
+"felhasználói felülete a &qt; keretrendszerre épül, ezért több operációs "
+"rendszeren is fut, köztük Linuxon, Windowson, FreeBSD-n és Mac OS X-en. A "
+"szoftver a &sword; programkönyvtárat használja, hogy több mint 900 ingyenes "
+"bibliai szöveggel, kommentárral, szótárral és könyvvel dolgozzon, több mint "
+"50 nyelven, amelyeket a &cbs; és több más adattár biztosít."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 msgid "Qt5"
-msgstr ""
+msgstr "Qt5"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 msgid "BibleTime"
