@@ -399,8 +399,7 @@ void CBookmarkIndex::paintEvent(QPaintEvent * event) {
     if (!arrowInitialized) {
         arrowInitialized = true;
         pix =
-            BtIcons::instance().icon_pointing_arrow.pixmap(
-                util::tool::mWidth(*this, 1));
+            BtIcons::icon_pointing_arrow().pixmap(util::tool::mWidth(*this, 1));
         halfPixHeight = pix.height() / 2;
     }
 

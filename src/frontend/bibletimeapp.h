@@ -20,8 +20,6 @@
 #include <QString>
 
 
-class BtIcons;
-
 /**
   The BibleTimeApp class is used to clean up all instances of the backend and to
   delete all created module objects.
@@ -40,7 +38,6 @@ public: // methods:
     bool initBtConfig();
     void initLightDarkPalette();
     bool initDisplayTemplateManager();
-    void initIcons();
     void initBackends();
 
     bool debugMode() const noexcept { return m_debugMode; }
@@ -51,7 +48,6 @@ private: // fields:
 
     bool m_init;
     bool m_debugMode;
-    BtIcons * m_icons;
     std::optional<CSwordBackend> m_backend;
 
 };

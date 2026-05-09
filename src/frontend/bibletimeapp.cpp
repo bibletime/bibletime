@@ -40,7 +40,6 @@
 #include "../backend/config/btconfig.h"
 #include "../backend/managers/cdisplaytemplatemgr.h"
 #include "../util/btassert.h"
-#include "../util/bticons.h"
 #ifdef Q_OS_WIN
 #include "../util/directory.h"
 #endif
@@ -114,7 +113,6 @@ BibleTimeApp::BibleTimeApp(int &argc, char **argv)
     : QApplication(argc, argv)
     , m_init(false)
     , m_debugMode(qgetenv("BIBLETIME_DEBUG") == QByteArrayLiteral("1"))
-    , m_icons(nullptr)
 {
     setApplicationName(QStringLiteral("bibletime"));
     setApplicationVersion(BT_VERSION);
@@ -167,7 +165,6 @@ BibleTimeApp::~BibleTimeApp() {
 
     delete CDisplayTemplateMgr::instance();
     m_backend.reset();
-    delete m_icons;
 
     BtConfig::destroyInstance();
 }
@@ -273,8 +270,6 @@ bool BibleTimeApp::initDisplayTemplateManager() {
     message::showCritical(nullptr, tr("Fatal error!"), errorMessage);
     return false;
 }
-
-void BibleTimeApp::initIcons() { m_icons = new BtIcons(); }
 
 void BibleTimeApp::initBackends() {
     // On Windows the sword.conf must be created before the initialization of sword

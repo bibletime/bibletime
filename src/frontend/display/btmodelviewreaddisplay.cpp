@@ -26,9 +26,6 @@
 #include <QScrollBar>
 #include <QString>
 #include <QTextEdit>
-#ifdef BUILD_TEXT_TO_SPEECH
-#include <QTextToSpeech>
-#endif
 #include <QTimer>
 #include <QToolBar>
 #include <QVariant>
@@ -46,6 +43,9 @@
 #include "../cexportmanager.h"
 #include "../debugwindow.h"
 #include "../displaywindow/cdisplaywindow.h"
+#ifdef BUILD_TEXT_TO_SPEECH
+#include "../texttospeech.h"
+#endif
 #include "../keychooser/ckeychooser.h"
 #include "modelview/btqmlinterface.h"
 #include "modelview/btquickwidget.h"
@@ -280,7 +280,7 @@ void BtModelViewReadDisplay::print(TextPart const type,
 #ifdef BUILD_TEXT_TO_SPEECH
 void BtModelViewReadDisplay::speakSelectedText() {
     if (auto const * const qml = qmlInterface(); qml && qml->selection())
-        BibleTime::instance()->speakText(qml->getSelectedText());
+        BtTextToSpeech::speakText(qml->getSelectedText());
 }
 #endif
 

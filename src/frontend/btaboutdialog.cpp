@@ -111,7 +111,7 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
     QWidget *top = new QWidget(this);
     QHBoxLayout *topLayout = new QHBoxLayout;
     m_iconLabel = new QLabel(this);
-    m_iconLabel->setPixmap(BtIcons::instance().icon_bibletime.pixmap(48));
+    m_iconLabel->setPixmap(BtIcons::icon_bibletime().pixmap(48));
     topLayout->addWidget(m_iconLabel);
     m_versionLabel = new QLabel(this);
     QFont font = m_versionLabel->font();
