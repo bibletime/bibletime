@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2025-02-15 17:45+0200\n"
+"POT-Creation-Date: 2026-05-08 12:47-0400\n"
 "PO-Revision-Date: 2011-12-11 21:42+0000\n"
 "Last-Translator: 866a45e7e8ba2bb0117088114bace64d, 2016\n"
 "Language-Team: Lithuanian (http://app.transifex.com/bibletime/bibletime/"
@@ -179,8 +179,9 @@ msgid ""
 "HOWTO</ulink>."
 msgstr ""
 "Išsamesni šriftų diegimo nurodymai yra už šio žinyno ribų. Tolimesnei "
-"informacijai, galbūt, norėtumėte kreiptis į <ulink url=\"http://www.linux."
-"org/docs/ldp/howto/Unicode-HOWTO-2.html\"> Unicode INSTRUKCIJĄ</ulink>."
+"informacijai, galbūt, norėtumėte kreiptis į <ulink url=\"http://"
+"www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\"> Unicode INSTRUKCIJĄ</"
+"ulink>."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid "Fonts can be installed from a number of sources:"
@@ -239,11 +240,11 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 msgid ""
-"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;"
-"cat_id=FontDownloads\"> SIL unicode fonts</ulink>"
+"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?"
+"site_id=nrsi&amp;cat_id=FontDownloads\"> SIL unicode fonts</ulink>"
 msgstr ""
-"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;"
-"cat_id=FontDownloads\"> SIL unicode šriftai</ulink>"
+"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?"
+"site_id=nrsi&amp;cat_id=FontDownloads\"> SIL unicode šriftai</ulink>"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 msgid "Excellent Unicode fonts from the Summer Institute of Linguistics."
@@ -377,8 +378,8 @@ msgid ""
 msgstr ""
 "&bibletime; yra sukurta naudoti su veiklomis, užkoduotomis vienu iš &sword; "
 "projekto palaikomų formatų. Visą informaciją apie palaikomus dokumentų "
-"formatus galite rasti &cbs; &sword; projekto <ulink url=\"http://www."
-"crosswire.org/sword/develop/index.jsp\"> kūrėjų sekcijoje</ulink>."
+"formatus galite rasti &cbs; &sword; projekto <ulink url=\"http://"
+"www.crosswire.org/sword/develop/index.jsp\"> kūrėjų sekcijoje</ulink>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Available works"
@@ -709,8 +710,9 @@ msgstr "Jūsų asmeninių komentarų redagavimas"
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 msgid ""
 "To be able to store your own comments about parts of the Bible, you have "
-"install a certain work from the library of the <ulink url=\"http://www."
-"crosswire.org\">&cbs;</ulink>.  This work is called \"Personal commentary\"."
+"install a certain work from the library of the <ulink url=\"http://"
+"www.crosswire.org\">&cbs;</ulink>.  This work is called \"Personal "
+"commentary\"."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
@@ -732,6 +734,81 @@ msgstr ""
 msgid ""
 "Drag &amp; drop works here. Drop a verse reference and the text of the verse "
 "will be inserted."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><title>
+msgid "Editing rich text notes"
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"&bibletime; also includes a simple rich text editor for notes which are not "
+"tied to a particular Bible verse. Open it from <menuchoice> <guimenu>File</"
+"guimenu> <guimenuitem>Text Editor</guimenuitem> </menuchoice> or by pressing "
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap> </keycombo>."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"The text editor can format text as bold, italic, underline, headings, bullet "
+"and numbered lists, links, single or double spaced paragraphs, and aligned "
+"paragraphs. It can also apply font choices, font colors, page background "
+"colors, and different highlight colors.  Use the editor's <guimenu>Format</"
+"guimenu> menu or keyboard shortcuts to apply these formats."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"The <guimenu>Insert</guimenu> menu can add simple tables and pictures.  The "
+"<guimenu>Search</guimenu> menu can find text in the current document.  The "
+"<guimenu>Tools</guimenu> menu provides spell checking and a thesaurus when "
+"the required open source dictionary tools are installed on your system."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"The editor has a small toolbar for common actions such as new, open, save, "
+"print, undo, redo, cut, copy, paste, find, spell check, thesaurus, "
+"formatting, lists, links, tables, and pictures. The status bar shows the "
+"current text format, cursor line, column, document position, date and time, "
+"and whether the document has unsaved changes."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"Text editor documents are saved as HTML by default so rich formatting is "
+"preserved. If you save as plain text, formatting such as colors, highlights, "
+"links, and headings will not be stored. The editor remembers the last file "
+"it had open and restores the cursor location the next time it is opened, if "
+"the file still exists. When saving over an existing document, the editor "
+"first writes a <filename>.bak</filename> backup beside the original file."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"While you are editing, the text editor periodically writes an autosaved "
+"recovery copy. If &bibletime; or the editor closes unexpectedly, the editor "
+"offers to restore that recovery copy the next time it is opened. A normal "
+"save or clean close removes the recovery copy."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"To insert a link, select the link text and choose <menuchoice> "
+"<guimenu>Format</guimenu> <guimenuitem>Link</guimenuitem> </menuchoice> or "
+"press <keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap> </keycombo>.  "
+"Enter the link text and URL in the dialog. To open a link while editing, "
+"hold &Ctrl; and click the link."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><sect3><para>
+msgid ""
+"You can also send text from an open read window to the text editor. Open the "
+"text editor first, then use the read window's <mousebutton>right</"
+"mousebutton> mouse button context menu and choose <menuchoice> <guimenu>Send "
+"to Text Editor</guimenu> </menuchoice>.  Bible windows can send the selected "
+"text, the current reference with text, or the chapter. Other read windows "
+"can send the selected text or the current entry."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -930,13 +1007,13 @@ msgstr ""
 msgid ""
 "&bibletime; uses the Lucene search engine to perform your searches. It has "
 "many advanced features, and you can read more about it here: <ulink "
-"url=\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache."
-"org/java/docs/index.html</ulink>."
+"url=\"http://lucene.apache.org/java/docs/index.html\"> http://"
+"lucene.apache.org/java/docs/index.html</ulink>."
 msgstr ""
 "&bibletime; jūsų paieškoms atlikti naudoja Lucene paieškos modulį. Jame yra "
 "daug išplėstinių ypatybių, o daugiau apie jį galite perskaityti čia: <ulink "
-"url=\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache."
-"org/java/docs/index.html</ulink>."
+"url=\"http://lucene.apache.org/java/docs/index.html\"> http://"
+"lucene.apache.org/java/docs/index.html</ulink>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 msgid "Search results"
@@ -1062,10 +1139,11 @@ msgid ""
 "<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
 "allow you to <guimenuitem>Select</guimenuitem>, <guimenuitem>Copy</"
 "guimenuitem> (to clipboard), <guimenuitem>Save</guimenuitem> or "
-"<guimenuitem>Print</guimenuitem> text. This works for example in the read "
-"windows, when you click on the normal text or the verse reference, or in the "
-"search result page when you click on a work or one or more verse references. "
-"It is pretty straightforward, so just try it out."
+"<guimenuitem>Print</guimenuitem> text, or <guimenuitem>Send to Text Editor</"
+"guimenuitem>. This works for example in the read windows, when you click on "
+"the normal text or the verse reference, or in the search result page when "
+"you click on a work or one or more verse references. It is pretty "
+"straightforward, so just try it out."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
@@ -1122,6 +1200,30 @@ msgid ""
 msgstr ""
 "<action>Atverti veiklą.</action> Tai jums parodys meniu, kuriame leidžiama "
 "atverti įdiegtas knygas."
+
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#, fuzzy
+#| msgid ""
+#| "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;"
+#| "+S</keycap></keycombo> </shortcut> <guimenu>Window</guimenu> "
+#| "<guimenuitem>Save as new session</guimenuitem> </menuchoice>"
+msgid ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;"
+"+E</keycap></keycombo> </shortcut> <guimenu>File</guimenu> <guimenuitem>Text "
+"Editor</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</"
+"keycap></keycombo> </shortcut> <guimenu>Langas</guimenu> "
+"<guimenuitem>Išsaugoti kaip naują sesiją</guimenuitem> </menuchoice>"
+
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+msgid ""
+"<action>Open the rich text editor.</action> This opens a simple editor for "
+"notes which are not tied to a particular Bible verse. It supports rich "
+"formatting and saves HTML documents by default. It also supports printing, "
+"search, spell check, thesaurus lookup, tables, pictures, autosave recovery, "
+"and backup files when saving over an existing document."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 msgid ""
@@ -2180,6 +2282,222 @@ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+C</keycap></keycombo>"
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "Copy. This copies the selected text to the clipboard."
 msgstr "Kopijuoti. Tai nukopijuoja pažymėtą tekstą į iškarpinę."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+E</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<link linkend=\"hdbk-reference-menus-window-tile\"> <menuchoice> "
+#| "<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> </"
+#| "link> windows equivalent."
+msgid ""
+"<link linkend=\"hdbk-reference-menus-file-text-editor\"> <menuchoice> "
+"<guimenu>File</guimenu> <guimenuitem>Text Editor</guimenuitem> </menuchoice> "
+"</link> equivalent; opens the rich text editor."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-tile\"> <menuchoice> "
+"<guimenu>Langas</guimenu> <guimenuitem>Iškloti</guimenuitem> </menuchoice> </"
+"link> langus ekvivalentas."
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
+msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+P</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "Print. In the rich text editor, prints the current document."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
+msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+K</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, inserts or edits a link."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
+msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+1</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid ""
+"In the rich text editor, applies single spacing to the current paragraph."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
+msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+2</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid ""
+"In the rich text editor, applies double spacing to the current paragraph."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+F</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, opens the font chooser."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+H</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, applies the current highlight color."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, chooses the highlight color."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+C</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, chooses the font color."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+B</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, chooses the page background color."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+0</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, applies normal text formatting."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+1</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, applies heading 1 formatting."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+2</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, applies heading 2 formatting."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+8</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, starts a bullet list."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+7</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, starts a numbered list."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+T</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, inserts a table."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid ""
+#| "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+msgid ""
+"<keycombo action=\"simul\"> <keycap>&Ctrl;+&Shift;+P</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, inserts a picture."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "<keycap>F7</keycap>"
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, starts spell check."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#, fuzzy
+#| msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
+msgid "<keycombo action=\"simul\"> <keycap>&Shift;+F7</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+msgid "In the rich text editor, opens the thesaurus."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
