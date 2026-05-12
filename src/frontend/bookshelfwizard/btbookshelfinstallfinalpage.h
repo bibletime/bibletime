@@ -14,6 +14,7 @@
 
 #include "btbookshelfwizardpage.h"
 
+#include <limits>
 #include <QList>
 #include <QObject>
 #include <QString>
@@ -31,6 +32,12 @@ class QWidget;
 class BtBookshelfInstallFinalPage final: public BtBookshelfWizardPage {
 
     Q_OBJECT
+
+public: // constants:
+
+    // Maximum number of modules the current QProgressBar logic can handle:
+    static constexpr int const MAX_MODULES =
+            std::numeric_limits<int>::max() / 100;
 
 public: // methods:
 
