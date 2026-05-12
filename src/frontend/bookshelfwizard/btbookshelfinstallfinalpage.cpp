@@ -60,8 +60,6 @@ BtBookshelfInstallFinalPage::BtBookshelfInstallFinalPage(QWidget * parent)
     m_verticalLayout->addWidget(m_msgLabel2);
 
     m_progressBar = new QProgressBar(this);
-    m_progressBar->setMinimum(0);
-    m_progressBar->setMaximum(100);
     m_verticalLayout->addWidget(m_progressBar,Qt::AlignCenter);
 
     QHBoxLayout * const horizontalLayout = new QHBoxLayout();
@@ -118,7 +116,10 @@ void BtBookshelfInstallFinalPage::initializePage() {
 
     // Install works:
     auto & btWiz = btWizard();
+
     m_modules = btWiz.selectedWorks().values();
+    BT_ASSERT(!m_modules.empty());
+
     m_thread = new BtInstallThread(m_modules, btWiz.installPath(), this);
     BT_CONNECT(m_thread, &BtInstallThread::preparingInstall,
                this,     &BtBookshelfInstallFinalPage::slotInstallStarted,
@@ -132,7 +133,11 @@ void BtBookshelfInstallFinalPage::initializePage() {
     BT_CONNECT(m_thread, &BtInstallThread::finished,
                this,     &BtBookshelfInstallFinalPage::slotThreadFinished,
                Qt::QueuedConnection);
+
     m_progressBar->setValue(0);
+    BT_ASSERT(m_modules.size() <= MAX_MODULES); // No int overflow
+    m_progressBar->setMaximum(m_modules.size() * 100);
+
     m_stopButton->setEnabled(true);
     m_installFailed = false;
     m_installCompleted = false;
@@ -156,8 +161,14 @@ void BtBookshelfInstallFinalPage::slotInstallStarted(int moduleIndex) {
     m_lastStatus = -1;
 }
 
-void BtBookshelfInstallFinalPage::slotStatusUpdated(int moduleIndex, int status)
+void BtBookshelfInstallFinalPage::slotStatusUpdated(int const moduleIndex,
+                                                    int const status)
 {
+    BT_ASSERT(moduleIndex >= 0);
+    BT_ASSERT(moduleIndex < m_modules.size());
+    BT_ASSERT(status >= 0);
+    BT_ASSERT(status <= 100);
+
     // Skip initial high value sent by Sword:
     if (m_lastStatus == -1 && status > 80)
         return;
@@ -167,21 +178,22 @@ void BtBookshelfInstallFinalPage::slotStatusUpdated(int moduleIndex, int status)
 
     m_lastStatus = status;
 
-    int const perModuleIncrement = 100 / m_modules.count();
-    m_progressBar->setValue((moduleIndex * perModuleIncrement)
-                            + (status * perModuleIncrement / 100));
+    m_progressBar->setValue(moduleIndex * 100 + status);
 }
 
-void BtBookshelfInstallFinalPage::slotOneItemCompleted(int moduleIndex,
-                                                       bool successful)
+void BtBookshelfInstallFinalPage::slotOneItemCompleted(int const moduleIndex,
+                                                       bool const successful)
 {
-    m_progressBar->setValue((moduleIndex + 1) * (100 / m_modules.count()));
+    BT_ASSERT(moduleIndex >= 0);
+    BT_ASSERT(moduleIndex < m_modules.size());
+
+    m_progressBar->setValue((moduleIndex + 1) * 100);
     if (!successful)
         m_installFailed = true;
 }
 
 void BtBookshelfInstallFinalPage::slotThreadFinished() {
-    m_progressBar->setValue(100);
+    m_progressBar->setValue(m_progressBar->maximum());
     m_stopButton->setEnabled(false);
     if (m_installFailed) {
         m_msgLabel->setText(

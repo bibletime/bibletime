@@ -46,6 +46,7 @@
 #include "../../util/btconnect.h"
 #include "../btbookshelfgroupingmenu.h"
 #include "../btbookshelfview.h"
+#include "btbookshelfinstallfinalpage.h"
 #include "btbookshelfwizard.h"
 #include "btinstallpagemodel.h"
 
@@ -314,8 +315,11 @@ void BtBookshelfWorksPage::slotGroupingActionTriggered(
     m_bookshelfView->setRootIsDecorated(!grouping.list().isEmpty());
 }
 
-bool BtBookshelfWorksPage::isComplete() const
-{ return checkedModules().count() > 0; }
+bool BtBookshelfWorksPage::isComplete() const {
+    auto const numModules = checkedModules().size();
+    return (numModules > 0)
+            && (numModules <= BtBookshelfInstallFinalPage::MAX_MODULES);
+}
 
 void BtBookshelfWorksPage::slotGroupingOrderChanged(
         BtBookshelfTreeModel::Grouping const & g)
