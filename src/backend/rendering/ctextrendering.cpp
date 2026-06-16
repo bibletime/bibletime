@@ -341,62 +341,7 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k) const
                 if (preverseHeading.isEmpty())
                     continue;
 
-                static QString const greaterOrS(
-                            QStringLiteral(">\x20\x09\x0d\x0a"));
-                for (auto i = preverseHeading.indexOf('<');
-                     i >= 0;
-                     i = preverseHeading.indexOf('<', i))
-                {
-                    auto ref = QStringView(preverseHeading).mid(i + 1);
-                    if (ref.startsWith(QStringLiteral("title"))) {
-                        ref = ref.mid(5); // strlen("title")
-                        if (!ref.isEmpty() && greaterOrS.contains(ref[0])) {
-                            auto const charsUntilTagEnd = ref.indexOf('>');
-                            if (charsUntilTagEnd < 0)
-                                break;
-                            // Remove entire <title> tag:
-                            preverseHeading.remove(i, charsUntilTagEnd + 7);
-                        } else {
-                            i += 7; // strlen("<title?")
-                        }
-                    } else if (ref.startsWith(QStringLiteral("/title"))) {
-                        ref = ref.mid(6); // strlen("/title")
-                        if (!ref.isEmpty() && greaterOrS.contains(ref[0])) {
-                            auto const charsUntilTagEnd = ref.indexOf('>');
-                            if (charsUntilTagEnd < 0)
-                                break;
-                            // Remove entire </title> tag:
-                            preverseHeading.remove(i, charsUntilTagEnd + 8);
-                        } else {
-                            i += 8; // strlen("</title?")
-                        }
-                    } else if (ref.startsWith(QStringLiteral("div"))) {
-                        ref = ref.mid(3); // strlen("div")
-                        if (!ref.isEmpty() && greaterOrS.contains(ref[0])) {
-                            auto const charsUntilTagEnd = ref.indexOf('>');
-                            if (charsUntilTagEnd < 0)
-                                break;
-                            if (charsUntilTagEnd > 0) {
-                                if (ref[charsUntilTagEnd - 1] == '/') {
-                                    // Remove entire invalid empty <div/> tag:
-                                    preverseHeading.remove(
-                                                i,
-                                                charsUntilTagEnd + 5);
-                                } else {
-                                    i += charsUntilTagEnd + 5;
-                                }
-                            } else {
-                                i += 5; // strlen("<div>")
-                            }
-                        } else {
-                            i += 5; // strlen("<div?")
-                        }
-                    } else {
-                        i += 3; // strlen("<?>")
-                    }
-                }
-
-                /// \todo Take care of the heading type!
+                preverseHeading = preverseHeading.toHtmlEscaped();
                 if (!preverseHeading.isEmpty())
                     entry = QStringLiteral(
                                 "<div%1 class=\"sectiontitle\">%2</div>")
