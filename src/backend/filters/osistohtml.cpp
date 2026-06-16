@@ -353,7 +353,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                     const sword::SWBuf n = tag.getAttribute("n");
 
                     buf.append("\">");
-                    buf.append( (n.length() > 0) ? n.c_str() : "*" );
+                    buf.append( (n.length() > 0) ? QString::fromUtf8(n.c_str()).toHtmlEscaped().toUtf8().constData() : "*" );
                     buf.append("</span> ");
 
                     myUserData->noteTypes.emplace_back(UserData::Footnote);
