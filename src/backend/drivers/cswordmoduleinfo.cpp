@@ -16,6 +16,7 @@
 #include <cassert>
 #include <CLucene.h>
 #include <optional>
+#include <QRegularExpression>
 #include <QByteArray>
 #include <QCoreApplication>
 #include <QDebug>
@@ -659,6 +660,17 @@ void CSwordModuleInfo::deleteIndex() {
 }
 
 void CSwordModuleInfo::deleteIndexForModule(const QString & name) {
+    // Sanitize: reject module names that could cause path traversal
+    static QRegularExpression const safeNameRe(
+                QStringLiteral("^[a-zA-Z0-9_\\-.\\(\\) ]+$"));
+    if (name.isEmpty()
+        || name.contains(QStringLiteral(".."))
+        || name.contains(QChar('/'))
+        || name.contains(QChar('\\'))
+        || !safeNameRe.match(name).hasMatch()) {
+        qWarning() << "Rejecting unsafe module name for index deletion:" << name;
+        return;
+    }
     QDir(QStringLiteral("%1/%2").arg(getGlobalBaseIndexLocation(), name))
             .removeRecursively();
 }
