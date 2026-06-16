@@ -82,8 +82,19 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
         return m_entries;
     }
 
+    // Sanitize module name to prevent path traversal in cache file path.
+    // Replace path separators and other dangerous characters.
+    QString safeName = name();
+    for (auto & c : safeName) {
+        if (c == QLatin1Char('/') || c == QLatin1Char('\\')) {
+            c = QLatin1Char('_');
+        } else if (!c.isLetterOrNumber() && c != QLatin1Char('-')
+                   && c != QLatin1Char('_') && c != QLatin1Char('.')) {
+            c = QLatin1Char('_');
+        }
+    }
     QFile cacheFile(QStringLiteral("%1/%2")
-                    .arg(DU::getUserCacheDir().absolutePath(), name()));
+                    .arg(DU::getUserCacheDir().absolutePath(), safeName));
 
     QString const moduleVersion = config(CSwordModuleInfo::ModuleVersion);
 
