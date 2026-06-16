@@ -409,7 +409,14 @@ BtConfig::StringMap BtConfig::getSearchScopesForCurrentLocale(const QStringList&
     // Apply translation for default search scope names:
     for (auto it = storedMap.cbegin(); it != storedMap.cend(); ++it) {
         if (m_defaultSearchScopes.contains(it.key())) {
-            map.insert(tr(it.key().toUtf8()), it.value());
+            // Escape percent signs in the key before passing to tr()
+            // to prevent format specifier injection (e.g., %1, %n).
+            // The original keys from m_defaultSearchScopes are safe
+            // (hardcoded ASCII), but the stored config may contain
+            // user-modified keys that share names with defaults.
+            QString safeKey = it.key();
+            safeKey.replace(QChar('%'), QStringLiteral("%%"));
+            map.insert(tr(safeKey.toUtf8().constData()), it.value());
         } else {
             map.insert(it.key(), it.value());
         }
