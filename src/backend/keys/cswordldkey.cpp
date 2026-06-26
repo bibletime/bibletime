@@ -75,7 +75,10 @@ QString CSwordLDKey::key() const {
     if (m_module->isUnicode()) {
         return QString::fromUtf8(m_key.getText());
     } else {
-        return util::cp1252::toUnicode(m_key.getText());
+        bool error;
+        auto converted = util::cp1252::toUnicode(m_key.getText(), error);
+        BT_ASSERT(!error);
+        return converted;
     }
 }
 
@@ -90,7 +93,9 @@ bool CSwordLDKey::setKey(const QString &newKey) {
         return setKey(newKey.toUtf8().constData());
     }
     else {
-        return setKey(util::cp1252::fromUnicode(newKey).constData());
+        bool error;
+        auto converted = util::cp1252::fromUnicode(newKey, error);
+        return error ? false : setKey(converted.constData());
     }
 }
 

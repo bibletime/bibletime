@@ -20,19 +20,19 @@
 namespace util {
 namespace cp1252 {
 
-QString toUnicode(QByteArray const & data) {
+QString toUnicode(QByteArray const & data, bool & error) {
     QStringDecoder decoder("Windows-1252", QStringDecoder::Flag::Stateless);
     // Do not use auto here due to QTBUG-117705/QTBUG-117902:
     QString result = decoder(data);
-    BT_ASSERT(!decoder.hasError());
+    error = decoder.hasError();
     return result;
 }
 
-QByteArray fromUnicode(QString const & str) {
+QByteArray fromUnicode(QString const & str, bool & error) {
     QStringEncoder encoder("Windows-1252", QStringEncoder::Flag::Stateless);
     // Do not use auto here due to QTBUG-117705/QTBUG-117902:
     QByteArray result = encoder(str);
-    BT_ASSERT(!encoder.hasError());
+    error = encoder.hasError();
     return result;
 }
 

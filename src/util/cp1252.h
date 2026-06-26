@@ -19,8 +19,8 @@
 namespace util {
 namespace cp1252 {
 
-QString toUnicode(QByteArray const & data);
-QByteArray fromUnicode(QString const & str);
+QString toUnicode(QByteArray const & data, bool & error);
+QByteArray fromUnicode(QString const & str, bool & error);
 
 } /* namespace cp1252 { */
 } /* namespace util { */

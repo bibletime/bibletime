@@ -20,6 +20,8 @@
 #include <QIODevice>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
+#include <utility>
+#include "../../util/btassert.h"
 #include "../../util/cp1252.h"
 #include "../../util/directory.h"
 #include "../keys/cswordldkey.h"
@@ -177,7 +179,10 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
         } while (!m.popError());
     } else {
         do {
-            m_entries.append(util::cp1252::toUnicode(m.getKeyText()));
+            bool error;
+            auto converted = util::cp1252::toUnicode(m.getKeyText(), error);
+            BT_ASSERT(!error);
+            m_entries.append(std::move(converted));
             m.increment();
         } while (!m.popError());
     }
