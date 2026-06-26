@@ -235,8 +235,8 @@ QString decodeStrongs(QString const & data) {
         if (module) {
             QSharedPointer<CSwordKey> key(module->createKey());
             auto lexModule = qobject_cast<CSwordLexiconModuleInfo *>(module);
-            key->setKey(lexModule->normalizeStrongsKey(strongs));
-            text = key->renderedText();
+            if (key->setKey(lexModule->normalizeStrongsKey(strongs)))
+                text = key->renderedText();
         }
         //if the module could not be found just display an empty lemma info
 

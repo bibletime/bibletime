@@ -49,7 +49,10 @@ QString CSwordTreeKey::key() const {
         return QString::fromUtf8(m_key.getText());
     }
     else {
-        return util::cp1252::toUnicode(m_key.getText());
+        bool error;
+        auto converted = util::cp1252::toUnicode(m_key.getText(), error);
+        BT_ASSERT(!error);
+        return converted;
     }
 }
 
@@ -63,7 +66,9 @@ bool CSwordTreeKey::setKey(const QString &newKey) {
         return setKey(newKey.toUtf8().constData());
     }
     else {
-        return setKey(util::cp1252::fromUnicode(newKey).constData());
+        bool error;
+        auto converted = util::cp1252::fromUnicode(newKey, error);
+        return error ? false : setKey(converted.constData());
     }
 }
 
@@ -88,7 +93,10 @@ QString CSwordTreeKey::getLocalNameUnicode() {
         return QString::fromUtf8(m_key.getLocalName());
     }
     else {
-        return util::cp1252::toUnicode(m_key.getLocalName());
+        bool error;
+        auto converted = util::cp1252::toUnicode(m_key.getLocalName(), error);
+        BT_ASSERT(!error);
+        return converted;
     }
 }
 
