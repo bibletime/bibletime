@@ -12,15 +12,13 @@
 
 #include "cp1252.h"
 
-#include <QDebug>
 #ifdef BT_CP1252_USE_QT
 #include <QStringDecoder>
 #include <QStringEncoder>
 #else
+#include <QDebug>
 #include <optional>
-#endif
 #include <unicode/ucnv.h>
-#ifndef BT_CP1252_USE_QT
 #include "btassert.h"
 #endif
 
