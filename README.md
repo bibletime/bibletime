@@ -12,9 +12,10 @@ The following requirements are needed only if you want to develop BibleTime.
 
 ### BUILD REQUIREMENTS
  - A C++17 compiler.
- - [Qt 6.7+](https://www.qt.io) (built against ICU)
+ - [Qt 6.7+](https://www.qt.io)
  - [Sword 1.8.1+](https://crosswire.org/sword) (built against ICU)
  - [CLucene 2.3.3.4+](https://clucene.sf.net)
+ - [ICU](https://icu.unicode.org) (if Qt is built without ICU support)
  - [CMake 3.25+](https://cmake.org)
  - [pkg-config](https://www.freedesktop.org/wiki/Software/pkg-config/) (or
    [pkgconf](https://gitea.treehouse.systems/ariadne/pkgconf))
