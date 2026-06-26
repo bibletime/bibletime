@@ -47,6 +47,15 @@
 /** Opens the optionsdialog of BibleTime. */
 void BibleTime::slotSettingsOptions() {
     CConfigurationDialog *dlg = new CConfigurationDialog(this);
+
+    #ifdef BUILD_TEXT_TO_SPEECH
+    // reset current text-to-speech instance, will be recreated based on current
+    // config when needed:
+    #define BUILD_TEXT_TO_SPEECH_ACTION m_textToSpeech.reset();
+    #else
+    #define BUILD_TEXT_TO_SPEECH_ACTION
+    #endif
+
     BT_CONNECT(dlg,  &BtConfigDialog::signalSettingsChanged,
                [this]{
                    CSwordBackend::instance().setBooknameLanguage(
@@ -63,13 +72,9 @@ void BibleTime::slotSettingsOptions() {
                    refreshDisplayWindows();
                    refreshProfileMenus();
                    m_infoDisplay->updateColors();
-
-                   #ifdef BUILD_TEXT_TO_SPEECH
-                   // reset current text-to-speech instance, will be recreated
-                   // based on current config when needed
-                   m_textToSpeech.reset();
-                   #endif
+                   BUILD_TEXT_TO_SPEECH_ACTION
                });
+    #undef BUILD_TEXT_TO_SPEECH_ACTION
 
     dlg->show();
 }
