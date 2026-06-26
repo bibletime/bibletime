@@ -22,9 +22,11 @@ MESSAGE(STATUS "Found Qt6: ${Qt6_VERSION}")
 GET_TARGET_PROPERTY(QT_ENABLED_PRIVATE_FEATURES Qt6::Core
     QT_ENABLED_PRIVATE_FEATURES)
 IF("icu" IN_LIST QT_ENABLED_PRIVATE_FEATURES)
-    MESSAGE(STATUS "Qt6 found seems to have required ICU support.")
+    MESSAGE(STATUS "Qt6 found seems to have ICU support.")
 ELSE()
-    MESSAGE(FATAL_ERROR "Qt6 found seems to lack required ICU support!")
+    MESSAGE(STATUS "Qt6 found seems to lack ICU support, building against ICU.")
+    FIND_PACKAGE(ICU REQUIRED COMPONENTS uc)
+    MESSAGE(STATUS "Found ICU: ${ICU_VERSION}")
 ENDIF()
 FIND_PACKAGE(PkgConfig REQUIRED)
 pkg_search_module(Sword REQUIRED IMPORTED_TARGET sword>=1.8.1)
@@ -65,6 +67,7 @@ TARGET_COMPILE_DEFINITIONS("bibletime" PRIVATE
     "BT_RUNTIME_DOCDIR=\"${BT_RUNTIME_DOCDIR}\""
     "BT_VERSION=\"${PROJECT_VERSION}\""
     "BT_HOMEPAGE=\"${PROJECT_HOMEPAGE}\""
+    "$<$<IN_LIST:icu,${QT_ENABLED_PRIVATE_FEATURES}>:BT_CP1252_USE_QT>"
     "QT_NO_KEYWORDS"
     "QT_DISABLE_DEPRECATED_UP_TO=0x060500"
     "$<$<CXX_COMPILER_ID:MSVC>:SWUSINGDLL>"
@@ -95,6 +98,7 @@ TARGET_INCLUDE_DIRECTORIES("bibletime" PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview/"
 )
 TARGET_LINK_LIBRARIES("bibletime" PRIVATE
+    "$<$<NOT:$<IN_LIST:icu,${QT_ENABLED_PRIVATE_FEATURES}>>:ICU::uc>"
     PkgConfig::CLucene
     PkgConfig::Sword
     Qt::Network
