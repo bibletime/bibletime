@@ -293,22 +293,24 @@ CDisplayWindow::CDisplayWindow(BtModuleList const & modules,
                           m_displayWidget,
                           &BtModelViewReadDisplay::speakSelectedText);
     speakSelectedTextAction.setEnabled(hasSelection);
+    #define BUILD_TEXT_TO_SPEECH_CAPTURE , &speakSelectedTextAction
+    #define BUILD_TEXT_TO_SPEECH_ACTION \
+        speakSelectedTextAction.setEnabled(newSelection.has_value());
+    #else
+    #define BUILD_TEXT_TO_SPEECH_CAPTURE
+    #define BUILD_TEXT_TO_SPEECH_ACTION
     #endif
     BT_CONNECT(m_displayWidget->qmlInterface(),
                &BtQmlInterface::selectionChanged,
                this,
-               [&copySelectedTextAction
-                #ifdef BUILD_TEXT_TO_SPEECH
-                , &speakSelectedTextAction
-                #endif
-               ](
+               [&copySelectedTextAction BUILD_TEXT_TO_SPEECH_CAPTURE](
                  std::optional<BtQmlInterface::Selection> const & newSelection)
                {
                 copySelectedTextAction.setEnabled(newSelection.has_value());
-                #ifdef BUILD_TEXT_TO_SPEECH
-                speakSelectedTextAction.setEnabled(newSelection.has_value());
-                #endif
+                BUILD_TEXT_TO_SPEECH_ACTION
                });
+    #undef BUILD_TEXT_TO_SPEECH_CAPTURE
+    #undef BUILD_TEXT_TO_SPEECH_ACTION
     initAddAction(QStringLiteral("copyByReferences"),
                   m_displayWidget,
                   &BtModelViewReadDisplay::copyByReferences);
