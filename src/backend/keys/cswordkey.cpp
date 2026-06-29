@@ -19,10 +19,12 @@
 #include "../drivers/cswordmoduleinfo.h"
 
 // Sword includes:
+#ifdef __GNUC__
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wextra-semi"
 #pragma GCC diagnostic ignored "-Wsuggest-override"
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#endif
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wsuggest-destructor-override"
@@ -34,7 +36,9 @@
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+#ifdef __GNUC__
 #pragma GCC diagnostic pop
+#endif
 
 
 CSwordKey::~CSwordKey() noexcept = default;

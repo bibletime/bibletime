@@ -37,12 +37,16 @@
 #include "btbookshelfwizardenums.h"
 
 // Sword includes:
+#ifdef __GNUC__
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wextra-semi"
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#endif
 #include <installmgr.h>
 #include <swbuf.h>
+#ifdef __GNUC__
 #pragma GCC diagnostic pop
+#endif
 
 
 namespace {
