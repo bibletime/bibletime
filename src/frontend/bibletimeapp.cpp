@@ -47,10 +47,14 @@
 #include "settingsdialogs/cdisplaysettings.h"
 
 // Sword includes:
+#ifdef __GNUC__
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wextra-semi"
+#endif
 #include <swlog.h>
+#ifdef __GNUC__
 #pragma GCC diagnostic pop
+#endif
 
 
 class QMessageLogContext;

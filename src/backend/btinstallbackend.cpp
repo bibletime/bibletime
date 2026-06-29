@@ -23,14 +23,18 @@
 #include "btinstallmgr.h"
 
 // Sword includes:
+#ifdef __GNUC__
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wsuggest-override"
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#endif
 #include <installmgr.h>
 #include <multimapwdef.h>
 #include <swconfig.h>
 #include <swbuf.h>
+#ifdef __GNUC__
 #pragma GCC diagnostic pop
+#endif
 
 
 using namespace sword;
