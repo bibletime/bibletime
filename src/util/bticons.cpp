@@ -147,7 +147,37 @@ BT_REGULAR_ICON(icon_exit, "exit.svg")
 BT_REGULAR_ICON(icon_export, "export.svg")
 BT_REGULAR_ICON(icon_file_save, "file_save.svg")
 BT_REGULAR_ICON(icon_fileclose, "fileclose.svg")
-BT_REGULAR_ICON(icon_find, "find.svg")
+    // Manually implement the function to force a safe buffer size
+    QIcon const & icon_find() {
+    static QIcon *safeIcon = nullptr;
+
+    if (!safeIcon) {
+        // 1. Instantiate your custom class using the raw filename
+        BtRegularIcon rawIcon(QStringLiteral("find.svg"));
+
+        // 2. Extract a standard pixmap. (Pick a standard safe maximum size, like 128x128)
+        // This forces BtRegularIcon to resolve its internal resource path
+        // and safely reads the image data.
+        QPixmap originalPixmap = rawIcon.pixmap(QSize(128, 128));
+
+        if (!originalPixmap.isNull()) {
+            // 3. Explicitly resize the pixmap. This steps down the internal cache layout
+            // bounds so Qt 6 never triggers the massive buffer calculation warning.
+            QPixmap safePixmap = originalPixmap.scaled(
+                QSize(128, 128),
+                Qt::KeepAspectRatio,
+                Qt::SmoothTransformation
+            );
+            safeIcon = new QIcon(safePixmap);
+        } else {
+            // Fallback to the raw object directly if resolution failed
+            safeIcon = new QIcon(rawIcon);
+        }
+    }
+
+    return *safeIcon;
+}
+
 BT_REGULAR_ICON(icon_flag, "flag.svg")
 BT_REGULAR_ICON(icon_folder_open, "folder-open.svg")
 BT_REGULAR_ICON(icon_folder, "folder.svg")
