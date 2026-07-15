@@ -25,6 +25,7 @@
 #include <utility>
 #include "../../util/btassert.h"
 #include "../../util/directory.h"
+#include "../../backend/config/btconfig.h"
 #include "../../backend/managers/cdisplaytemplatemgr.h"
 
 
@@ -32,6 +33,12 @@ namespace ColorManager {
 namespace {
 
 bool darkMode() {
+    switch (btConfig().value<int>(QStringLiteral("GUI/lightDarkMode"), 0)) {
+        case 1: return false;
+        case 2: return true;
+        default: break;
+    }
+
     switch (QApplication::styleHints()->colorScheme()) {
         case Qt::ColorScheme::Dark: return true;
         case Qt::ColorScheme::Light: return false;
