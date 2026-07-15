@@ -1,0 +1,333 @@
+/**
+ * Theme by BibleTime - www.bibletime.info *
+ */
+body {
+    background-color: #0d1117;
+    color: #DBC8DA;
+    /*
+    E7D9E6
+    */
+}
+#content {
+    margin:10px;
+}
+#content > table {
+    margin: 0;
+    padding: 0;
+    border-spacing:10px;
+}
+#content > table th {
+    padding: 0 0 2px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 110%;
+    border-bottom: 1px dotted #7B7B7B;
+}
+
+a {
+    text-decoration:none;
+    font-weight:normal;
+    color: #7B7B7B;
+    padding:0 2px;
+}
+a:hover {
+    text-decoration:none;
+    color: #5296cc;
+    padding:0 2px;
+}
+
+.inline {
+    display: inline;
+}
+
+/* Settings which apply to all entries in all modules */
+.entry {
+    padding: 2px;
+     /*vertical-align: middle;*/
+     text-align: justify;
+}
+td.entry, td.currententry {
+    vertical-align: top;
+     text-align: justify !important;
+}
+#printer .entry {
+    font-size: 90%;
+    text-align: left;
+}
+.entry[dir=rtl] {
+    text-align: right !important;
+}
+#printer .entry[dir=rtl] {
+    text-align:right !important;
+}
+
+/* Keep the values the same as in .entry (take the border into account!) */
+.currententry {
+    padding: 2px;
+     /*vertical-align: middle;*/
+    text-align: justify;
+    background-color: #4D4258;
+}
+.currententry[dir=rtl] {
+    text-align:right !important;
+}
+.currententry.inline {
+    line-height:1.4em;
+}
+div.currententry {
+}
+span.currententry {
+    background-color: #5C4F6A !important;
+}
+
+/* Space between the columns of modules displayed side by side */
+td.entry + td.entry {
+    margin-left: 5px;
+}
+
+/* Several additional settings for display of modules*/
+#bible div.currententry, #bible td.currententry {
+    border: 1px solid #BC9ADE;
+    padding: 2px;
+}
+
+
+/*Same for books!*/
+#book div.currententry, #book td.currententry {
+    border: 1px solid #B7B7B7;
+    padding: 2px;
+}
+#book .entryname + .entry {
+    margin-top:2px;
+    padding-top:1px;
+}
+/* To remove the gap between the entrynam and the entry's content*/
+#book .entry > *, #book .currententry > * {
+    margin-top:0px;
+    padding-top:0px;
+}
+
+.entryname {
+    font-size:80%;
+    padding:0 2px 0 0;
+    vertical-align:super;
+}
+.entry[dir=rtl] .entryname, .currententry[dir=rtl] .entryname {
+    padding: 0 0 0 2px;
+    font-size: 80%;
+    vertical-align: super;
+}
+.entryname a, #printer .entryname  {
+}
+
+#printer .entry  .entry, #printer .entry .sectiontitle , #printer .entry .booktitle {
+    padding-top: 0.05em;
+    margin-left: 10px;
+}
+
+.footnote {
+    vertical-align:super;
+    font-weight: normal;
+    color: #5296cc;
+    font-size: 80%;
+    cursor: help;
+}
+
+.footnote:before { content:"("; }
+.footnote:after { content:")"; }
+
+.footnotepre {
+     font-style: italic;
+}
+
+
+.crossreference {
+    font-size: 80%;
+    color: #5296cc;
+}
+#bible .crossreference:before  { content:" ["; }
+#bible .crossreference:after  { content:"]"; }
+
+.crossreference a {
+    color: #5296cc;
+}
+.crossreference a:hover {
+    color: #5296cc;
+}
+
+.alternative {}
+.alternative:before { content:"'"attr(alternative); }
+.alternative:after{ content:"'";}
+
+.abbreviation {
+
+}
+
+.sectiontitle {
+    font-weight: bold;
+    font-size: 110%;
+}
+#printer .sectiontitle {
+    font-weight: bold;
+    font-size: 100%;
+}
+* + .sectiontitle {
+    margin-top:15px;
+}
+
+.booktitle {
+    font-weight: bold;
+    font-size: 120%;
+    font-variant: small-caps;
+}
+#printer .booktitle {
+    font-weight: bold;
+    font-size: 120%;
+    font-variant: small-caps;
+}
+.foreign {ae0152
+}
+.jesuswords {
+    color:#E81F66;
+}
+
+.introduction {
+    font-size:80%;
+    text-align:justify;
+}
+
+.quotation {
+}
+.poetry {
+}
+.sup {
+    vertical-align: super;
+}
+.sub {
+    vertical-align: sub;
+}
+.right {
+    text-align: right;
+}
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight:bold;
+}
+.illuminated {
+}
+.italic {
+    font-style:italic;
+}
+.line-through {
+    text-decoration: line-through;
+}
+.normal {
+}
+.small-caps {
+   font-variant: small-caps;
+}
+.underline {
+    text-decoration: underline;
+}
+
+.inscription {
+}
+.mentioned {
+}
+.name > .geographic {
+}
+.name > .holiday {
+}
+.name > .nonhuman {
+}
+.name > .person {
+}
+.name > .ritual {
+}
+.name > .divine {
+   font-variant: small-caps;
+}
+
+.transchange {
+    font-style:italic;
+}
+.transchange > .added {
+    background-color:inherit;
+}
+.transchange > .amplified {
+}
+.transchange > .changed {
+}
+.transchange > .deleted {
+}
+.transchange > .moved {
+}
+.transchange > .tenseChange {
+}
+
+.morphSegmentation {
+    border-right: 2px solid gray;
+}
+
+#infodisplay {
+    margin:0;
+    padding:0;
+}
+
+#infodisplay .footnoteinfo h3, #infodisplay .strongsinfo h3, #infodisplay .morphinfo h3, #infodisplay .translationinfo h3, #infodisplay .crossrefinfo h3, #infodisplay .moduleinfo h3 {
+    padding:4px 4px 2px 0;
+    color:darkGray;
+    font-weight:bold;
+    border-bottom:1px solid gray;
+    text-align: right;
+}
+
+#infodisplay > p, #infodisplay * > p,
+#infodisplay > .para, #infodisplay * > .para
+{ /* We only format the first p child in a special way */
+    text-align:justify !important;
+    color:black;
+    margin:0px;
+    padding:0px;
+}
+
+/*Required for cross references*/
+#infodisplay .entry {
+    padding:2px;
+    text-align:justify !important;
+    margin-bottom:10px;
+    margin-left:15px;
+}
+#infodisplay .entry[dir=rtl] {
+    text-align: right !important;
+}
+#infodisplay .entry .entry { /*No smaller font size for nested entries*/
+    margin:0px;
+}
+#infodisplay .entry .entry[dir=rtl] { /*No smaller font size for nested entries*/
+    text-align: right !important;
+}
+#infodisplay .entryname {
+    padding:2px;
+    margin:0px;
+    text-align:left !important;
+    font-weight:bold;
+}
+
+#infodisplay .rangeheading {
+    color:black;
+    font-weight:bold;
+    margin-left:-10px;
+}
+
+#printer .rangeheading {
+    border-bottom:1px solid black;
+    color:black;
+}
+
+.highlightwords {
+    background-color: #9F007B;
+}
