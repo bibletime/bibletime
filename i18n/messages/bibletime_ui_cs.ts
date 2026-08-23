@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<TS version="2.0" language="cs">
 <context>
     <name></name>
     <message>
@@ -34,12 +34,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="860"/>
         <source>&amp;Search</source>
-        <translation>&amp;Hledat</translation>
+        <translation>&amp;Hledání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="864"/>
         <source>Sw&amp;itch session</source>
-        <translation>Přepnout relaci</translation>
+        <translation>&amp;Přepnout sezení</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="867"/>
@@ -60,18 +60,18 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/bibletime_init.cpp" line="139"/>
         <source>Ctrl+O</source>
         <comment>Search|Search works in active window/tab</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="147"/>
         <source>Ctrl+Shift+O</source>
         <comment>Search|Search in all open works</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+O</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="426"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation>Otevřít příručku Jak studovat Bibli obsaženou v BibleTime. &lt;br/&gt;Tato příručka je úvod do efektivního studia Bible.</translation>
+        <translation>Otevřete návod ke studiu Bible, který je součástí aplikace BibleTime.&lt;br/&gt;Tento návod představuje úvod do účinného studia Bible.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="435"/>
@@ -81,52 +81,52 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="861"/>
         <source>&amp;Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Okna</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="865"/>
         <source>&amp;Delete session</source>
-        <translation>S&amp;mazat relaci</translation>
+        <translation>S&amp;mazat sezení</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="863"/>
         <source>&amp;Arrangement mode</source>
-        <translation>&amp;Mód rozvržení</translation>
+        <translation>Režim &amp;uspořádání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="382"/>
         <source>&amp;Manual mode</source>
-        <translation>&amp;Ruční mód</translation>
+        <translation>&amp;Ruční režim</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="391"/>
         <source>Auto-tile &amp;vertically</source>
-        <translation>Automaticky dlaždice &amp;vertikálně</translation>
+        <translation>Automatické rozložení dlaždic &amp;svisle</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="397"/>
         <source>Auto-tile &amp;horizontally</source>
-        <translation>Automaticky dlaždice &amp;horizontálně</translation>
+        <translation>Automatické rozložení dlaždic &amp;vodorovně</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="406"/>
         <source>Auto-&amp;cascade</source>
-        <translation>&amp;Automaticky kaskádovat</translation>
+        <translation>Automatické rozložení dlaždic s&amp;tupňovitě</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="379"/>
         <source>&amp;Cascade</source>
-        <translation>&amp;Kaskádovat</translation>
+        <translation>S&amp;tupňovitě</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="367"/>
         <source>Tile &amp;vertically</source>
-        <translation>Rozmístit &amp;vertikálně</translation>
+        <translation>Rozmístit dlaždice &amp;svisle</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="371"/>
         <source>Tile &amp;horizontally</source>
-        <translation>Rozmístit &amp;horizontálně</translation>
+        <translation>Rozmístit dlaždice &amp;vodorovně</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="363"/>
@@ -136,7 +136,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="365"/>
         <source>Close all open windows inside BibleTime</source>
-        <translation>Zavře všechna okna uvnitř BibleTime</translation>
+        <translation>Zavře všechna otevřená okna v BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="413"/>
@@ -151,62 +151,62 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="424"/>
         <source>&amp;Bible Study Howto</source>
-        <translation>Návod, jak studovat &amp;Bibli</translation>
+        <translation>Návod ke studiu &amp;Bible</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="366"/>
         <source>Error locating handbook!</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při vyhledávání příručky!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="367"/>
         <source>A suitable installed handbook could not be found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se najít příslušnou nainstalovanou příručku!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="373"/>
         <source>Error opening handbook!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se otevřít příručku!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="374"/>
         <source>The installed handbook could not be opened!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nainstalovanou příručku se nepodařilo otevřít!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="382"/>
         <source>Error locating howto!</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při vyhledávání návodu!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="383"/>
         <source>A suitable installed howto could not be found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se najít vhodný nainstalovaný návod!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="389"/>
         <source>Error opening howto!</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při otevírání návodu!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="390"/>
         <source>The installed howto could not be opened!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nainstalovaný návod se nepodařilo otevřít!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="671"/>
         <source>Please enter a name for the new session.</source>
-        <translation>Vložte prosím název pro novou relaci</translation>
+        <translation>Vložte, prosím, název pro nové sezení.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="679"/>
         <source>Session already exists</source>
-        <translation>Relace již existuje</translation>
+        <translation>Sezení již existuje</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="680"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
-        <translation>Relace &quot;%1&quot; již existuje. Použijte prosím jiný název.</translation>
+        <translation>Sezení s názvem &quot;%1&quot; již existuje. Použijte, prosím, jiný název.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="295"/>
@@ -216,17 +216,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="337"/>
         <source>Auto scroll up</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaticky posouvat nahoru</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="341"/>
         <source>Auto scroll down</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaticky posouvat dolů</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="353"/>
         <source>Search in all &amp;open works...</source>
-        <translation type="unfinished">Hledat v &amp;otevřených dílech...</translation>
+        <translation>Hledat ve všech &amp;otevřených dílech...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="357"/>
@@ -236,7 +236,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="410"/>
         <source>Save as &amp;new session...</source>
-        <translation>Uložit &amp;nové sezení...</translation>
+        <translation>Uložit jako &amp;nové sezení...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="411"/>
@@ -246,27 +246,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="384"/>
         <source>Manually arrange the open windows</source>
-        <translation>Rozmístit otevřená okna manuálně</translation>
+        <translation>Uspořádat otevřená okna ručně</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="393"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
-        <translation>Automaticky dlaždice z otevřených oken vertikálně (umísťovat vedle sebe)</translation>
+        <translation>Otevřená okna automaticky uspořádat svisle vedle sebe (umísťovat vedle sebe)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="399"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
-        <translation>Automaticky dlaždice z otevřených oken horizontálně (umísťovat nad sebe)</translation>
+        <translation>Otevřená okna automaticky uspořádat vodorovně vedle sebe (umísťovat nad sebe)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="402"/>
         <source>Auto-&amp;tile</source>
-        <translation>&amp;Dlaždice automaticky</translation>
+        <translation>Automatické rozložení &amp;dlaždic</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="404"/>
         <source>Automatically tile the open windows</source>
-        <translation>Automaticky rozmístit otevřená okna dlaždicově</translation>
+        <translation>Automaticky rozložit otevřená okna vedle sebe</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="386"/>
@@ -281,12 +281,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="408"/>
         <source>Automatically cascade the open windows</source>
-        <translation>Automaticky okna do kaskády</translation>
+        <translation>Automaticky uspořádat otevřená okna stupňovitě</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="380"/>
         <source>Cascade the open windows</source>
-        <translation>Kaskádovat otevřená okna</translation>
+        <translation>Uspořádat otevřená okna stupňovitě</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="376"/>
@@ -301,37 +301,37 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="369"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
-        <translation>Vertikální dlaždice z otevřených oken (umísťovat vedle sebe)</translation>
+        <translation>Otevřená okna uspořádat svisle vedle sebe</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="373"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
-        <translation>Horizontální dlaždice z otevřených oken (umísťovat nad sebe)</translation>
+        <translation>Otevřená okna uspořádat vodorovně nad sebe</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="360"/>
         <source>Close &amp;window</source>
-        <translation>&amp;Zavřít okno</translation>
+        <translation>Zavřít &amp;okno</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="361"/>
         <source>Close the current open window</source>
-        <translation>Zavřít otevřené okno</translation>
+        <translation>Zavřít nyní otevřené okno</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="418"/>
         <source>&amp;Configure BibleTime...</source>
-        <translation>&amp;Nastavit BibleTime</translation>
+        <translation>&amp;Nastavit BibleTime...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="419"/>
         <source>Set BibleTime&apos;s preferences</source>
-        <translation>Předvolby BibleTime</translation>
+        <translation>Nastavit předvolby BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="415"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
-        <translation>Nastavit vaši knihovnu a instalovat/aktualizovat/odinstalovat/sestavit rejstřík díla</translation>
+        <translation>Nastavit vaši knihovnu a instalovat/aktualizovat/odstranit/sestavit rejstřík díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="422"/>
@@ -341,297 +341,297 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="430"/>
         <source>&amp;Tip of the day...</source>
-        <translation>&amp;Tip dne...</translation>
+        <translation>&amp;Rada dne...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="431"/>
         <source>Show tips about BibleTime</source>
-        <translation>Zobrazit tipy BibleTime</translation>
+        <translation>Zobrazit rady k BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="302"/>
         <source>Toggle visibility of the bookshelf window</source>
-        <translation>Zobrazit/skrýt okno knihovny</translation>
+        <translation>Přepnout viditelnost okna s knihovnou</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="64"/>
         <source>Ctrl+Q</source>
         <comment>File|Quit</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="72"/>
         <source>F11</source>
         <comment>View|Full screen</comment>
-        <translation type="unfinished"></translation>
+        <translation>F11</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="85"/>
         <source>F8</source>
         <comment>View|Show mag</comment>
-        <translation type="unfinished"></translation>
+        <translation>F8</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="96"/>
         <source>F6</source>
         <comment>View|Show main toolbar</comment>
-        <translation type="unfinished"></translation>
+        <translation>F6</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="119"/>
         <source>Shift+Up</source>
         <comment>View|Scroll|Auto scroll up</comment>
-        <translation type="unfinished"></translation>
+        <translation>Shift+šipka nahoru</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="124"/>
         <source>Shift+Down</source>
         <comment>View|Scroll|Auto scroll down</comment>
-        <translation type="unfinished"></translation>
+        <translation>Shift+šipka dolů</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="130"/>
         <source>Space</source>
         <comment>View|Scroll|Auto scroll pause</comment>
-        <translation type="unfinished"></translation>
+        <translation>Mezerník</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="154"/>
         <source>Ctrl+Alt+F</source>
         <comment>Search|Search in the default Bible</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+F</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="161"/>
         <source>Ctrl+W</source>
         <comment>Windows|Close window</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="168"/>
         <source>Ctrl+Alt+W</source>
         <comment>Windows|Close all windows</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+W</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="175"/>
         <source>Ctrl+G</source>
         <comment>Windows|Tile vertically</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="182"/>
         <source>Ctrl+H</source>
         <comment>Windows|Tile horizontally</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+H</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="187"/>
         <source>Ctrl+I</source>
         <comment>Windows|Tile</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+I</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="192"/>
         <source>Ctrl+J</source>
         <comment>Windows|Cascade</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+J</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="201"/>
         <source>Ctrl+Alt+M</source>
         <comment>Windows|Arrangement mode|Manual</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+M</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="209"/>
         <source>Ctrl+Alt+T</source>
         <comment>Windows|Arrangement mode|Tabbed</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+T</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="217"/>
         <source>Ctrl+Alt+G</source>
         <comment>Windows|Arrangement mode|Auto tile vertically</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+G</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="227"/>
         <source>Ctrl+Alt+H</source>
         <comment>Windows|Arrangement mode|Auto tile horizontally</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+H</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="236"/>
         <source>Ctrl+Alt+I</source>
         <comment>Windows|Arrangement mode|Auto tile</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+I</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="243"/>
         <source>Ctrl+Alt+J</source>
         <comment>Windows|Arrangement mode|Auto cascade</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+J</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="251"/>
         <source>Ctrl+Alt+S</source>
         <comment>Windows|Save as new session...</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Alt+S</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="258"/>
         <source>F4</source>
         <comment>Settings|Bookshelf Manager...</comment>
-        <translation type="unfinished"></translation>
+        <translation>F4</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="270"/>
         <source>F1</source>
         <comment>Help|Handbook</comment>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="276"/>
         <source>F2</source>
         <comment>Help|Bible Study Howto</comment>
-        <translation type="unfinished"></translation>
+        <translation>F2</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="281"/>
         <source>F3</source>
         <comment>Help|Tip of the day...</comment>
-        <translation type="unfinished"></translation>
+        <translation>F3</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="297"/>
         <source>&amp;Full screen</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Celá obrazovka</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="298"/>
         <source>Display BibleTime in full screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit BibleTime na celé obrazovce</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="306"/>
         <source>Toggle visibility of the bookmarks window</source>
-        <translation>Zobrazit/skrýt okno záložek</translation>
+        <translation>Přepnout viditelnost okna záložek</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="309"/>
         <source>Toggle visibility of the mag window</source>
-        <translation>Zobrazit/skrýt okno lupy</translation>
+        <translation>Přepnout viditelnost okna lupy</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="313"/>
         <source>Toggle the works header row visibility in windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Přepnout viditelnost řádku záhlaví díla v oknech</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="317"/>
         <source>Toggle the main toolbar visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Přepnout viditelnost hlavního pruhu nástrojů</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="319"/>
         <source>Show navigation toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit pruh nástrojů pro přesun</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="321"/>
         <source>Toggle the navigation toolbar visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Přepnout viditelnost pruhu nástrojů pro přesun</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="325"/>
         <source>Toggle the works toolbar visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Přepnout viditelnost pruhu nástrojů pro díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="329"/>
         <source>Toggle the window tools toolbar visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Přepnout viditelnost pruhu nástrojů pro okna</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="334"/>
         <source>Toggle the location of subwindow-specific toolbars between the main window and subwindows</source>
-        <translation type="unfinished"></translation>
+        <translation>Přepnout umístění panelů nástrojů zvláštních pro dílčí okna mezi hlavním oknem a dílčími okny</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="339"/>
         <source>Adjust automatic scrolling speed in the up direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit rychlost automatického posouvání nahoru</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="343"/>
         <source>Adjust automatic scrolling speed in the down direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit rychlost automatického posouvání dolů</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="345"/>
         <source>Pause auto scroll</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozastavit automatické posouvání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="346"/>
         <source>Pause/resume auto scrolling</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozastavit/Obnovit automatické posouvání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="349"/>
         <source>&amp;Search works in active window/tab...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Hledat díla v činném okně/kartě...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="351"/>
         <source>Search in all works in the active open window or tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Hledat ve všech dílech v činném otevřeném okně nebo kartě</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="850"/>
         <source>Main toolbar</source>
-        <translation>Hlavní nástrojová lišta</translation>
+        <translation>Hlavní nástrojový pruh</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="851"/>
         <source>Navigation toolbar</source>
-        <translation>Navigační lišta</translation>
+        <translation>Pruh nástrojů pro přesun</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="852"/>
         <source>Works toolbar</source>
-        <translation>Lišta děl</translation>
+        <translation>Pruh nástrojů pro díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="853"/>
         <source>Tools toolbar</source>
-        <translation>Nástrojová lišta</translation>
+        <translation>Pruh nástrojů</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="872"/>
         <source>Show &quot;What&apos;s this widget&quot; dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit dialogové okno „Co je to?“</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="858"/>
         <source>Scroll</source>
-        <translation type="unfinished"></translation>
+        <translation>Posouvat</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="315"/>
         <source>Show main toolbar</source>
-        <translation>Zobrazit hlavní nástrojovou lištu</translation>
+        <translation>Zobrazit hlavní pruh nástrojů</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="323"/>
         <source>Show works toolbar</source>
-        <translation>Zobrazit lištu děl</translation>
+        <translation>Zobrazit pruh nástrojů pro díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="327"/>
         <source>Show tools toolbar</source>
-        <translation>Zobrazit lištu nástrojů</translation>
+        <translation>Zobrazit pruh nástrojů</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="300"/>
@@ -651,17 +651,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="857"/>
         <source>Toolbars</source>
-        <translation>Nástrojové lišty</translation>
+        <translation>Panely nástrojů</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="332"/>
         <source>Show toolbars in text windows</source>
-        <translation>Zobrazit nástrojové lišty v textových oknech</translation>
+        <translation>Zobrazit panely nástrojů v textových oknech</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="311"/>
         <source>Show parallel text headers</source>
-        <translation>Zobrazit paralelní záhlaví textů</translation>
+        <translation>Zobrazit záhlaví  souběžných textů</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="862"/>
@@ -686,17 +686,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="100"/>
         <source>Initializing the SWORD engine...</source>
-        <translation>Spouštění enginu SWORD...</translation>
+        <translation>Spouští se stroj SWORD...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="113"/>
         <source>Creating BibleTime&apos;s user interface...</source>
-        <translation>Vytváření uživatelského rozhraní BibleTime...</translation>
+        <translation>Vytváří se uživatelské rozhraní BibleTime...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="121"/>
         <source>Initializing menu- and toolbars...</source>
-        <translation>Spouštění menu a panelů nástrojů...</translation>
+        <translation>Spouští se nabídky a panely nástrojů...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="195"/>
@@ -706,17 +706,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="196"/>
         <source>Enter the unlock key for %1.</source>
-        <translation>Vložte klíč pro %1.</translation>
+        <translation>Vložte odemykací klíč pro %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="224"/>
         <source>Warning: Invalid unlock key!</source>
-        <translation>Varování neplatný klíč!</translation>
+        <translation>Varování neplatný odemykací klíč!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="225"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
-        <translation>Vámi vložený klíč neodemkl tento modul. Prosím zkuste to znovu.</translation>
+        <translation>Vámi vložený odemykací klíč neodemkl tento modul. Prosím, zkuste to znovu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="433"/>
@@ -744,22 +744,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="187"/>
         <source>Migration to the new configuration system is not yet implemented. Proceeding might result in &lt;b&gt;loss of data&lt;/b&gt;. Please backup your configuration files before you continue!&lt;br/&gt;&lt;br/&gt;Do you want to continue? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation>Migrace do nové konfigurace není ještě implementována. Pokračování může vést ke &lt;b&gt; ztrátě dat &lt;/b&gt;. Prosím zazálohujte svoji konfigurace než budete pokračovat! &lt;br/&gt; &lt;br/&gt; Přejete si pokračovat? Stiskněte &quot;No&quot; pro okamžité ukončení BibleTime.</translation>
+        <translation>Přechod na nový nastavovací systém zatím nebyl proveden. Pokračování může vést ke &lt;b&gt;ztrátě dat&lt;/b&gt;. Zazálohujte, prosím, svoje nastavení, než budete pokračovat! &lt;br/&gt; &lt;br/&gt;Přejete si pokračovat? Stiskněte &quot;Ne&quot; pro okamžité ukončení BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="199"/>
         <source>Error loading configuration!</source>
-        <translation>Chyba při nahrávání konfigurace.</translation>
+        <translation>Chyba při nahrávání nastavení.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="200"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation>Chyba při nahrání konfigurace BibleTime.  Zdá se, že stávající konfigurace je novější než použitá verze BibleTime. Zřejmě došlo k nahrání nižší verze BibleTime. Nahrání novější konfigurace může vést ke &lt;b&gt;ztrátě dat&lt;/b&gt;. &lt;br/&gt;&lt;br/&gt; Chcete se přesto pokusit nahrát novější konfiguraci? Stiskněte &quot;Ne&quot; pro okamžité ukončení BibleTime.</translation>
+        <translation>Chyba při nahrání nastavení BibleTime. Zdá se, že stávající nastavení je novější než použitá verze BibleTime. Zřejmě došlo k nahrání nižší verze BibleTime. Nahrání novějšího nastavení může vést ke &lt;b&gt;ztrátě dat&lt;/b&gt;. &lt;br/&gt;&lt;br/&gt; Chcete se přesto pokusit nahrát novější nastavení? Stiskněte &quot;Ne&quot; pro okamžité ukončení BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="273"/>
         <source>Fatal error!</source>
-        <translation>Kritická chyba!</translation>
+        <translation>Závažná chyba!</translation>
     </message>
 </context>
 <context>
@@ -767,7 +767,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="99"/>
         <source>Updating Works</source>
-        <translation>Aktualizace děl</translation>
+        <translation>Aktualizují se díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="101"/>
@@ -777,7 +777,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="105"/>
         <source>Installing Works</source>
-        <translation>Instaluji díla</translation>
+        <translation>Instalují se díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="107"/>
@@ -787,32 +787,32 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="60"/>
         <source>Choose Languages</source>
-        <translation>Vyberte jazyk</translation>
+        <translation>Vyberte jazyky</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="61"/>
         <source>Choose one or more languages to install works from.</source>
-        <translation>Vyberte jeden nebo více jazyků k instalaci děl.</translation>
+        <translation>Vyberte jeden nebo více jazyků, ze kterých chcete díla nainstalovat.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="75"/>
         <source>Choose Remote Libraries</source>
-        <translation>Vyberte zdroje Knihoven</translation>
+        <translation>Vyberte vzdálené knihovny</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="77"/>
         <source>Choose one or more remote libraries to install works from.</source>
-        <translation>Vyberte jeden nebo více zdrojů odkud se bude instalovat.</translation>
+        <translation>Vyberte jednu nebo více vzdálených knihoven, ze kterých chcete díla nainstalovat.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="84"/>
         <source>Updating Remote Libraries</source>
-        <translation>Aktualizace zdrojů Knihovny</translation>
+        <translation>Aktualizují se vzdálené knihovny</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="86"/>
         <source>Updating information from remote libraries.</source>
-        <translation>Aktualizace informací zdrojů Knihovny.</translation>
+        <translation>Aktualizace informací ze vzdálených knihoven.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="75"/>
@@ -828,57 +828,57 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="80"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;WARNING&lt;/span&gt;: Installing or updating works uses the internet. If you live in a persecuted country you may not want to do this.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;VAROVÁNÍ&lt;/span&gt;: Instalace nebo aktualizace děl se děje pomocí internetu. Jestliže žijete v zemi, kde jsou porušována lidská práva, zvažte tuto akci.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;VAROVÁNÍ&lt;/span&gt;: Instalace nebo aktualizace aplikací vyžaduje připojení k internetu. Pokud žijete v zemi, kde dochází k pronásledování, možná to nebudete chtít provést.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="86"/>
         <source>Bookshelf task</source>
-        <translation>Akce knihovny</translation>
+        <translation>Činnost knihovny</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="89"/>
         <source>Install additional works (uses internet)</source>
-        <translation>Instalce dalších děl (použije internet)</translation>
+        <translation>Nainstalovat další díla (vyžaduje připojení k internetu)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="93"/>
         <source>Update installed works (uses internet)</source>
-        <translation>Aktualizace instalovaných děl (použije internet)</translation>
+        <translation>Aktualizovat nainstalovaná díla (vyžaduje připojení k internetu)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="96"/>
         <source>Remove installed works</source>
-        <translation>Odstranění instalovaných děl</translation>
+        <translation>Odstranit nainstalovaná díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="203"/>
         <source>Install Works</source>
-        <translation>Instalace děl</translation>
+        <translation>Instalovat díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="204"/>
         <source>Choose one or more works to install.</source>
-        <translation>Vyber jedno nebo více děl k instalaci.</translation>
+        <translation>Vyberte jedno nebo více děl k instalaci.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="209"/>
         <source>Update Works</source>
-        <translation>Aktualizivat díla</translation>
+        <translation>Aktualizovat díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="210"/>
         <source>Choose one or more works to update.</source>
-        <translation>Vyber jedno nebo více děl k aktualizaci.</translation>
+        <translation>Vyberte jedno nebo více děl k aktualizaci.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="216"/>
         <source>Remove Works</source>
-        <translation>Odebrání děl</translation>
+        <translation>Odebrat díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="217"/>
         <source>Choose one or more works to remove.</source>
-        <translation>Vyber jedno nebo více děl k odstranění.</translation>
+        <translation>Vyberte jedno nebo více děl k odstranění.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="100"/>
@@ -888,7 +888,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="103"/>
         <source>The Bookshelf Manager will close when the current download finishes.</source>
-        <translation>Správce knihovny bude zavřen po skončení stahování.</translation>
+        <translation>Správce knihovny se zavře po dokončení nynějšího stahování.</translation>
     </message>
 </context>
 <context>
@@ -896,17 +896,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="196"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
-        <translation>BibleTime je jednoduše použitelný nástroj pro studium Bible.</translation>
+        <translation>BibleTime je snadno použitelný, ale výkonný nástroj pro studium Bible.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="345"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
-        <translation>BibleTime je uvolněn pod licencí GPL. Můžete si tento program stáhnout a používat jej pro osobní, privátní, veřejné nebo i komerční účely bez omezení. Pokud však program distribuujete dále, musíte spolu s ním distribuovat i jeho zdrojové kódy.</translation>
+        <translation>BibleTime je uvolněn pod licencí GPL. Můžete si tento program stáhnout a používat jej pro osobní, soukromé, veřejné nebo i obchodní účely bez omezení. Pokud však program šíříte dále, musíte spolu s ním poskytovat i jeho zdrojové kódy.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="351"/>
         <source>The complete legally binding license is below.</source>
-        <translation>Kompletní závazná licence je níže.</translation>
+        <translation>Úplné znění právně závazné licence je uvedeno níže.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="181"/>
@@ -936,27 +936,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="239"/>
         <source>project manager</source>
-        <translation>manažer projektu</translation>
+        <translation>správce projektu</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>tester</source>
-        <translation>tester</translation>
+        <translation>zkoušeč</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>usability expert</source>
-        <translation>expert na použitelnost</translation>
+        <translation>odborník na použitelnost</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="308"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation>BibleTime použivá SWORD projekt. Projekt SWORD je softwarový projekt CrossWire Bible Society. Jeho cílem je vytvořit multiplatformní softwarové nástroje &amp;mdash; pod licencí GNU GPL &amp;mdash;, které umožní programátorům a společenstvím kolem Bible vytvářet &quot;Biblický software&quot; snáze a efektivněji.</translation>
+        <translation>BibleTime použivá projekt SWORD. Projekt SWORD je softwarový projekt CrossWire Bible Society. Jeho cílem je vytvořit multiplatformní softwarové nástroje &amp;mdash; pod licencí GNU GPL &amp;mdash;, které umožní programátorům a biblickým společnostem vytvářet &quot;Biblický software&quot; rychleji a snadněji.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="314"/>
         <source>The SWORD Project: </source>
-        <translation>Projekt SWORD:</translation>
+        <translation>Projekt SWORD: </translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="322"/>
@@ -966,7 +966,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="325"/>
         <source>Qt toolkit version %1</source>
-        <translation>Qt toolkit verze %1</translation>
+        <translation>Verze sady nástrojů Qt %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="332"/>
@@ -981,7 +981,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="207"/>
         <source>designer</source>
-        <translation>designér</translation>
+        <translation>návrhář</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="206"/>
@@ -1011,17 +1011,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="228"/>
         <source>howto</source>
-        <translation>howto</translation>
+        <translation>návod</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="208"/>
         <source>artist</source>
-        <translation>designér</translation>
+        <translation>umělec</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
         <source>(c)1999-2026, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
+        <translation>(c) 1999–2026, The BibleTime Team</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
@@ -1037,7 +1037,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="291"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
-        <translation>Některá jména mohou chybět, prosím vypňte problém %1 pokud jste si všimli chyby nebo vynechání.</translation>
+        <translation>Některá jména mohou chybět, nahlaste, prosím, pokud jste si všimli chyby nebo vynechání, tento problém %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="302"/>
@@ -1047,17 +1047,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="306"/>
         <source>SWORD library version %1</source>
-        <translation>Knihovna SWORD verze %1</translation>
+        <translation>Verze knihovny SWORD %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="327"/>
         <source>This program uses Qt version %1.</source>
-        <translation>Tento program využívá Qt verze %1.</translation>
+        <translation>Tento program používá verzi Qt %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="329"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
-        <translation>Qt je multiplatformní aplikační framework pro tvorbu uživatelských rozhraní vytvořený v jazyce C++. Je poskytována za podmínek licence LGPL.</translation>
+        <translation>Qt je vícesystémový aplikační framework pro tvorbu uživatelských rozhraní vytvořený v jazyce C++. Byl vydán pod licencí LGPL.</translation>
     </message>
 </context>
 <context>
@@ -1065,22 +1065,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="114"/>
         <source>Select book</source>
-        <translation>Vyberte knihu</translation>
+        <translation>Vybrat knihu</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="131"/>
         <source>Select chapter</source>
-        <translation>Vyberte kapitolu</translation>
+        <translation>Vybrat kapitolu</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="150"/>
         <source>Select verse</source>
-        <translation>Vyberte verš</translation>
+        <translation>Vybrat verš</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="176"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation>Rolujte položkami seznamu. Stiskněte a pohybujte tlačítkem myši na posunutí položky.</translation>
+        <translation>Procházejte položky v seznamu. Stisknutím tlačítka a pohybem myši můžete hodnotu položky zvýšit nebo snížit.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="178"/>
@@ -1133,12 +1133,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="205"/>
         <source>&amp;About...</source>
-        <translation>&amp;O ...</translation>
+        <translation>&amp;O díle...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="207"/>
         <source>There are currently no works installed. Please click the button below to install new works.</source>
-        <translation>Aktuálně nejsou nainstalována žádná díla. Pro instalaci děl klikněte prosím na tlačítko níže.</translation>
+        <translation>V současnosti nejsou nainstalována žádná díla. Chcete-li nainstalovat nová díla, klepněte, prosím, na tlačítko níže.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="209"/>
@@ -1148,17 +1148,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="104"/>
         <source>Warning: Module locked!</source>
-        <translation>Varování: modul uzamčen!</translation>
+        <translation>Varování: modul uzamknut!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="105"/>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
-        <translation>Zkoušíte přistoupit k uzamčenému modulu. K odemčení modulu vložte prosím v následujícím dialogu klíč.</translation>
+        <translation>Snažíte se otevřít šifrovaný modul. Chcete-li modul otevřít, zadejte, prosím, v následujícím dialogovém okně odemykací klíč.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="194"/>
         <source>&amp;Search in %1...</source>
-        <translation>&amp;Vyhledat v %1...</translation>
+        <translation>&amp;Hledat v %1...</translation>
     </message>
 </context>
 <context>
@@ -1166,17 +1166,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="107"/>
         <source>Category/Language</source>
-        <translation>Kategorie/Jazyk</translation>
+        <translation>Skupina/Jazyk</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="108"/>
         <source>Category</source>
-        <translation>Kategorie</translation>
+        <translation>Skupina</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="109"/>
         <source>Language/Category</source>
-        <translation>Jazyk/kategorie</translation>
+        <translation>Jazyk/Skupina</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="110"/>
@@ -1194,22 +1194,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="96"/>
         <source>Stop</source>
-        <translation>Stop</translation>
+        <translation>Zastavit</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="154"/>
         <source>Installing &quot;%1&quot;</source>
-        <translation>Instaluji &quot;%1&quot;</translation>
+        <translation>Instaluje se &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="188"/>
         <source>Some of the selected works were not installed.</source>
-        <translation>Některá díla nebyla instalována.</translation>
+        <translation>Některá z vybraných děl nebyla nainstalována.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="191"/>
         <source>The selected works have been installed.</source>
-        <translation>Vybraná díla byla instalována.</translation>
+        <translation>Vybraná díla byla nainstalována.</translation>
     </message>
 </context>
 <context>
@@ -1233,7 +1233,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfremovefinalpage.cpp" line="53"/>
         <source>The selected works have been removed.</source>
-        <translation>Vybraná díla bala odstraněna.</translation>
+        <translation>Vybraná díla byla odstraněna.</translation>
     </message>
 </context>
 <context>
@@ -1246,7 +1246,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="141"/>
         <source>&lt; Add new remote library &gt;</source>
-        <translation>&lt;Přidat nový instalační zdroj&gt;</translation>
+        <translation>&lt;Přidat novou vzdálenou knihovnu&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="143"/>
@@ -1256,12 +1256,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="185"/>
         <source>Delete Source</source>
-        <translation>Odstranit zdroj</translation>
+        <translation>Smazat zdroj</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="186"/>
         <source>Do you really want to delete this source?</source>
-        <translation>Opravdu chcete odstranit zdoj?</translation>
+        <translation>Opravdu chcete smazat tento zdoj?</translation>
     </message>
 </context>
 <context>
@@ -1269,7 +1269,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="82"/>
         <source>Stop</source>
-        <translation>Stop</translation>
+        <translation>Zastavit</translation>
     </message>
 </context>
 <context>
@@ -1293,7 +1293,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="177"/>
         <source>Show/hide works</source>
-        <translation>Zobrazit/skrýt díla</translation>
+        <translation>Zobrazit/Skrýt díla</translation>
     </message>
 </context>
 <context>
@@ -1306,17 +1306,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="207"/>
         <source>Install Works &gt;</source>
-        <translation>Instalovat díla&gt;</translation>
+        <translation>Instalovat díla &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="213"/>
         <source>Update Works &gt;</source>
-        <translation>Aktualizovat díla&gt;</translation>
+        <translation>Aktualizovat díla &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="220"/>
         <source>Remove Works &gt;</source>
-        <translation>Odstranit díla&gt;</translation>
+        <translation>Odstranit díla &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="224"/>
@@ -1326,22 +1326,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="225"/>
         <source>The folder where the new works will be installed</source>
-        <translation>Adresář, kam budou nová díla instalována:</translation>
+        <translation>Adresář, kam budou nová díla instalována</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="230"/>
         <source>There are no works to update.</source>
-        <translation>Žádná díla k aktualizaci.</translation>
+        <translation>Nejsou dostupná žádná díla k aktualizaci.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="232"/>
         <source>No works are currently installed so they cannot be removed.</source>
-        <translation>Žádná díla instalována, proto nemohou být odstraněna.</translation>
+        <translation>V současnosti nejsou nainstalována žádná díla, takže je nelze odstranit.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="237"/>
         <source>No works can be installed with the current selection of remote libraries and languages. Please go back and make a different selection.</source>
-        <translation>Žádná díla k instalaci s aktuálním výběrem, vzdálenými zdroji nebo výběrem jazyka. Prosím vraťte se zpět a proveďte jiný výběr.</translation>
+        <translation>S nynějším výběrem vzdálených knihoven a jazyků nelze nainstalovat žádná díla. Vraťte se, prosím, zpět a proveďte jiný výběr.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="242"/>
@@ -1404,7 +1404,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="133"/>
         <source>Default Session</source>
-        <translation>Defaultní relace</translation>
+        <translation>Výchozí sezení</translation>
     </message>
 </context>
 <context>
@@ -1412,27 +1412,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="131"/>
         <source>Copy by References</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopírovat podle odkazů</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="132"/>
         <source>&amp;Work:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dílo:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="133"/>
         <source>&amp;First:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;První:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="134"/>
         <source>&amp;Last:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Poslední:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="135"/>
         <source>Copy size is too large!</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost kopie je příliš velká!</translation>
     </message>
 </context>
 <context>
@@ -1470,12 +1470,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="153"/>
         <source>Use alternative textual variant</source>
-        <translation>Použít alternativní varianty textu</translation>
+        <translation>Použít alternativní textovou variantu</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="154"/>
         <source>Show scripture cross-references</source>
-        <translation>Ukázat odkaz v Bibli</translation>
+        <translation>Zobrazit odkazy na biblické verše</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="155"/>
@@ -1495,7 +1495,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="166"/>
         <source>Display settings: No options available</source>
-        <translation>Nastavení zobrazení: Žádné volby k dispozici</translation>
+        <translation>Nastavení zobrazení: nejsou dostupné žádné volby</translation>
     </message>
 </context>
 <context>
@@ -1513,7 +1513,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="78"/>
         <source>Title:</source>
-        <translation>Nadpis:</translation>
+        <translation>Název:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="79"/>
@@ -1539,7 +1539,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="147"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="148"/>
         <source>Underline</source>
-        <translation>Podtržené</translation>
+        <translation>Podtržení</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="149"/>
@@ -1549,7 +1549,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="150"/>
         <source>Align left</source>
-        <translation>Zarovnat doleva</translation>
+        <translation>Zarovnat vlevo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="151"/>
@@ -1559,7 +1559,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="152"/>
         <source>Align center</source>
-        <translation type="unfinished"></translation>
+        <translation>Zarovnat na střed</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="153"/>
@@ -1569,7 +1569,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="154"/>
         <source>Align right</source>
-        <translation>Zarovnat doprava</translation>
+        <translation>Zarovnat vpravo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="156"/>
@@ -1593,7 +1593,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="127"/>
         <source>The text you want to search for</source>
         <comment>findWidget</comment>
-        <translation>Text, který chcete hledat</translation>
+        <translation>Text, který chcete vyhledat</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="129"/>
@@ -1608,7 +1608,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="131"/>
         <source>Match case</source>
-        <translation>Shodný případ</translation>
+        <translation>Rozlišovat velikost písmen</translation>
     </message>
 </context>
 <context>
@@ -1616,12 +1616,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="158"/>
         <source>&amp;Language:</source>
-        <translation>&amp;Jazyky:</translation>
+        <translation>&amp;Jazyk:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="159"/>
         <source>The font selection below will apply to all texts in this language</source>
-        <translation>Výběr písma bude použit pro všechna díla v tomto jazyce</translation>
+        <translation>Výběr písma níže se použije na všechny texty v tomto jazyce</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="160"/>
@@ -1639,37 +1639,37 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="99"/>
         <source>Indexed Works</source>
-        <translation>Indexovaná díla</translation>
+        <translation>Rejstříkovaná díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="106"/>
         <source>Unindexed Works</source>
-        <translation>Neindexovaná díla</translation>
+        <translation>Nerejstříkovaná díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="116"/>
         <source>%1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 KiB</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="122"/>
         <source>0 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>0 KiB</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="130"/>
         <source>Manage Search Indexes</source>
-        <translation type="unfinished"></translation>
+        <translation>Spravovat vyhledávací rejstříky</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="133"/>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
-        <translation>Pokud je vybráno, ty rejstříky které nenáleží žádnému dílu, budou smazány při stratu BibleTime</translation>
+        <translation>Pokud je vybráno, ty rejstříky, které nenáleží žádnému dílu, budou při spuštění BibleTime smazány</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="136"/>
         <source>Automatically delete orphaned indexes when BibleTime starts</source>
-        <translation>Automaticky smazat osiřelé rejstríky při startu BibleTime</translation>
+        <translation>Automaticky smazat osiřelé rejstříky při spuštění BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="139"/>
@@ -1689,7 +1689,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="144"/>
         <source>Create new indexes for the selected works</source>
-        <translation>Vytvořit nový rejstřík pro vybraná díla</translation>
+        <translation>Vytvořit nové rejstříky pro vybraná díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="145"/>
@@ -1699,7 +1699,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="147"/>
         <source>Work</source>
-        <translation>Text</translation>
+        <translation>Dílo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="147"/>
@@ -1731,12 +1731,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="64"/>
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="75"/>
         <source>Show password</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit heslo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="71"/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrýt heslo</translation>
     </message>
 </context>
 <context>
@@ -1757,7 +1757,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechoosermenu.cpp" line="52"/>
         <source>NONE</source>
-        <translation>Žádný modul</translation>
+        <translation>ŽÁDNÝ MODUL</translation>
     </message>
 </context>
 <context>
@@ -1765,7 +1765,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="36"/>
         <source>Preparing to index modules...</source>
-        <translation>Připravuji indexaci mudulů...</translation>
+        <translation>Připravuje se rejstříjování mudulů...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="36"/>
@@ -1780,22 +1780,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="75"/>
         <source>Creating index for work: %1</source>
-        <translation>Vytváření rejstříku pro dílo %1</translation>
+        <translation>Vytváří se rejstříky pro dílo %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="86"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation>&lt;UNKNOWN EXCEPTION&gt;</translation>
+        <translation>&lt;NEZNÁMÁ VÝJIMKA&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="90"/>
         <source>Indexing aborted</source>
-        <translation>Indexování zrušeno</translation>
+        <translation>Rejstříkování zrušeno</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="91"/>
         <source>An internal error occurred while building the index:&lt;br/&gt;&lt;br/&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Při vytváření rejstříku došlo k vnitřní chybě: &lt;br/&gt;&lt;br/&gt;%1</translation>
     </message>
 </context>
 <context>
@@ -1803,7 +1803,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/models/btmoduletextmodel.cpp" line="419"/>
         <source>Click to edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Klepněte pro upravení</translation>
     </message>
 </context>
 <context>
@@ -1833,13 +1833,13 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="58"/>
         <source>Edit Plain text</source>
         <comment>Personal Commentary Editor</comment>
-        <translation type="unfinished"></translation>
+        <translation>Upravit prostý text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="60"/>
         <source>Edit HTML text</source>
         <comment>Personal Commentary Editor</comment>
-        <translation type="unfinished"></translation>
+        <translation>Upravit HTML text</translation>
     </message>
 </context>
 <context>
@@ -1847,7 +1847,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/display/modelview/btqmlinterface.cpp" line="149"/>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Upravit %1</translation>
     </message>
 </context>
 <context>
@@ -1860,7 +1860,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="63"/>
         <source>Select the works which should be searched.</source>
-        <translation>Vyberte díla která mají být prohledána.</translation>
+        <translation>Vyberte díla, která mají být prohledána.</translation>
     </message>
 </context>
 <context>
@@ -1873,17 +1873,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="128"/>
         <source>Select first or second shortcut and type the shortcut with keyboard</source>
-        <translation>Zvolte primární nebo sekundární zkratku a stiskněte příslušné klávesy</translation>
+        <translation>Vyberte první nebo druhou klávesovou zkratku a zadejte ji pomocí klávesnice</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="131"/>
         <source>First shortcut</source>
-        <translation>Primární zkratka</translation>
+        <translation>První zkratka</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="134"/>
         <source>Second shortcut</source>
-        <translation>Sekundární zkratka</translation>
+        <translation>Druhá zkratka</translation>
     </message>
 </context>
 <context>
@@ -1897,22 +1897,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="135"/>
         <source>Action</source>
-        <translation>Vliv</translation>
+        <translation>Činnost</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="136"/>
         <source>Shortcut</source>
-        <translation>Horká klávesa</translation>
+        <translation>Zkratka</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="137"/>
         <source>Alternate</source>
-        <translation type="unfinished"></translation>
+        <translation>Náhradní</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="150"/>
         <source>Shortcut for selected action name</source>
-        <translation>Zástupce pro vybraný název akce</translation>
+        <translation>Zkratka pro vybraný název činnosti</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="158"/>
@@ -1922,12 +1922,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="164"/>
         <source>Default</source>
-        <translation>Defaultní</translation>
+        <translation>Výchozí</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="170"/>
         <source>Custom</source>
-        <translation>Uživatelský</translation>
+        <translation>Vlastní</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="190"/>
@@ -1951,7 +1951,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="54"/>
         <source>Updating remote library &quot;%1&quot;</source>
-        <translation>Aktualizuji vzdálené zdroje knihovny &quot;%1&quot;</translation>
+        <translation>Aktualizují se vzdálené knihovny &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="67"/>
@@ -1961,7 +1961,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="70"/>
         <source>The following remote libraries failed to update: </source>
-        <translation>Tyto zdroje selhaly při aktualizaci:</translation>
+        <translation>Následující vzdálené knihovny se nepodařilo aktualizovat: </translation>
     </message>
 </context>
 <context>
@@ -1970,12 +1970,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="64"/>
         <source>%1: %2</source>
         <comment>module name: module description</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1: %2</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="143"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>Standardní díla jsou použita pokud není vybráno jiné dílo, například pokud bylo kliknuto na odkaz v Bibli nebo ve slovníku.</translation>
+        <translation>Výchozí díla se používají v případech, kdy není uvedeno žádné určité dílo, například když byl klepnut hypertextový odkaz na Bibli nebo slovník.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="146"/>
@@ -1985,17 +1985,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="148"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>Standardní Bible je použita když je kliknuto na odkaz</translation>
+        <translation>Po klepnutí na hypertextový odkaz vedoucí do Bible se otevře standardní verze Bible</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="151"/>
         <source>Commentary:</source>
-        <translation>Komentáře:</translation>
+        <translation>Výkladový komentář:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="153"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>Standardní komentář je použit pokud je kliknuto na odkaz v komentáři</translation>
+        <translation>Standardní komentář se zobrazí po klepnutí na hypertextový odkaz vedoucí do výkladového komentáře</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="156"/>
@@ -2005,57 +2005,57 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="158"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Standardní slovník je použit pokud je kliknuto na odkaz ve slovníku</translation>
+        <translation>Výchozí slovník se použije, když uživatel klepne na hypertextový odkaz vedoucí do slovníku</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="161"/>
         <source>Daily devotional:</source>
-        <translation>Denní ztišení:</translation>
+        <translation>Denní modlitba:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="163"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Denní ztišení bude zobrazeno</translation>
+        <translation>K zobrazení krátké úvodní modlitby bude použita standardní modlitba</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="167"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Hebrew Strong&apos;s lexicon:</translation>
+        <translation>Hebrejský Strongův slovník:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Statndardní Hebrew Strong&apos;s slovník je použit pokud je kliknuto na odkaz v Hebrew Strong&apos;s slovníku</translation>
+        <translation>Po klepnutí na hypertextový odkaz vedoucí do hebrejského slovníku se otevře standardní hebrejský slovník</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Greek Strong&apos;s lexicon:</translation>
+        <translation>Řecký Strongův slovník:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Standardní Greek Strong&apos;s slovník je požit pokud je kliknuto na odkaz v Greek Strong&apos;s slovníku:</translation>
+        <translation>Po klepnutí na hypertextový odkaz vedoucí do řeckého slovníku se otevře standardní řecký slovník</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Hebrew morphological lexicon:</translation>
+        <translation>Morfologický slovník hebrejštiny:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Standardní morphological lexicon for Hebrew texts je použit pokud je kliknuto na odkaz v morphological lexicon for Hebrew</translation>
+        <translation>Při klepnutí na hypertextový odkaz na morfologickou značku v hebrejském textu se použije standardní morfologický slovník pro hebrejské texty</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="185"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Greek morphological lexicon:</translation>
+        <translation>Morfologický slovník řečtiny:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="187"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Standardní Greek morphological lexicon je použit pokud je kliknuto na odkaz v Greek morphological lexicon</translation>
+        <translation>Při klepnutí na hypertextový odkaz na morfologickou značku v řeckém textu se použije standardní morfologický slovník pro řecké texty</translation>
     </message>
 </context>
 <context>
@@ -2063,7 +2063,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="78"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. These settings apply to newly opened display windows only. You can override these settings in each display window.</source>
-        <translation>Filtry kontrolují vzhled textu. Nastavte zde defaultní nastavení pro všechny filtry. Tato nastavení jsou aplikována pouze na nově otevřená okna. Můžete změnit tato nastavení pro každé otevřené okno.</translation>
+        <translation>Filtry ovlivňují vzhled textu. Zde můžete nastavit výchozí nastavení pro všechny filtry. Tato nastavení se vztahují pouze na nově otevřená okna zobrazení. V každém okně se zobrazeným textem můžete tato nastavení přepsat.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="83"/>
@@ -2073,12 +2073,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="84"/>
         <source>Show section headings</source>
-        <translation>Ukaž hlavičku sekce</translation>
+        <translation>Zobrazit nadpisy oddílů</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="85"/>
         <source>Show scripture cross-references</source>
-        <translation>Ukázat odkaz v Bibli</translation>
+        <translation>Zobrazit odkazy na biblické verše</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="86"/>
@@ -2103,7 +2103,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="90"/>
         <source>Use textual variants</source>
-        <translation>Ukaž textové varianty</translation>
+        <translation>Použít textové varianty</translation>
     </message>
 </context>
 <context>
@@ -2111,27 +2111,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="116"/>
         <source>Text-to-speech</source>
-        <translation type="unfinished"></translation>
+        <translation>Převod textu na řeč</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="119"/>
         <source>No Qt text-to-speech plug-ins were found. Please install a plugin and restart the application.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nebyly nalezeny žádné přídavné moduly pro převod textu na řeč pro Qt. Nainstalujte prosím přídavný modul a spusťte program znovu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="121"/>
         <source>Text-to-speech engine:</source>
-        <translation type="unfinished"></translation>
+        <translation>Modul pro převod textu na řeč:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="122"/>
         <source>Text-to-speech language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Jazyk pro převod textu na řeč:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="123"/>
         <source>Text-to-speech voice:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hlas pro převod textu na řeč:</translation>
     </message>
 </context>
 <context>
@@ -2139,7 +2139,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="57"/>
         <source>Add/remove/replace</source>
-        <translation>Přidat/odstranit/nahradit</translation>
+        <translation>Přidat/Odstranit/Nahradit</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="60"/>
@@ -2162,87 +2162,87 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="79"/>
         <source>Tip Of The Day</source>
-        <translation>Tip dne</translation>
+        <translation>Rada dne</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="98"/>
         <source>Show tips at startup</source>
-        <translation>Zobrazovat tipy při startu</translation>
+        <translation>Zobrazit rady při spuštění</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="110"/>
         <source>Next Tip</source>
-        <translation>Další tip</translation>
+        <translation>Další rada</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="137"/>
         <source>The currently active window can be auto scrolled up or down. Start scrolling by pressing Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
-        <translation type="unfinished"></translation>
+        <translation>V nyní činném okně lze automaticky posouvat obsah nahoru nebo dolů. Posouvání spustíte stisknutím kláves Shift + šipka dolů. Rychlost posouvání můžete zvýšit opakovaným stisknutím kláves Shift + šipka dolů. Posouvání pozastavíte stisknutím mezerníku. Chcete-li pokračovat v posouvání předchozí rychlostí, stiskněte mezerník znovu. Chcete-li posouvání zpomalit nebo posouvat opačným směrem, stiskněte jednou nebo vícekrát klávesy Shift + šipka nahoru. Stisknutím jakékoli jiné klávesy nebo přepnutím do jiného činného okna se posouvání zastaví.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="145"/>
         <source>To add multiple Bible works in parallel in your active Bible or commentary window select this icon and choose another Bible or commentary work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chcete-li v činném okně s Biblí nebo výkladovým komentářem zobrazit více biblických textů vedle sebe, klepněte na tuto ikonu a vyberte další biblický text nebo výkladový komentář.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="149"/>
         <source>To add multiple commentary works in parallel in your active commentary window select this icon and choose another commentary work.</source>
-        <translation>Pro přidání dalších komentářů paralelně ve vašem aktivním okně vyberte tuto ikonu a přidejte další komentář.</translation>
+        <translation>Pro přidání dalších děl s výkladovými komentáři vedle sebe ve vašem činném okně s komentáři klepněte na tuto ikonu a vyberte další biblický text nebo výkladový komentář.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="153"/>
         <source>To learn more about the BibleTime project please go to our web site.</source>
-        <translation>Pro získání dalších informací ohledně projektu BibleTime navštivte naše webové stránky.</translation>
+        <translation>Pro získání dalších informací ohledně projektu BibleTime navštivte naše internetové stránky.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="156"/>
         <source>To synchronize a commentary window with the active Bible window, activate the commentary window and select this icon.</source>
-        <translation>Pro synchronizaci okna komentáře s aktivním oknem biblí, aktivujte okno komentáře a vyberte tuto ikonu.</translation>
+        <translation>Pro synchronizaci okna výkladového komentáře s činným oknem Bible, zapněte okno s výkladovým komentářem a klepněte na tuto ikonu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="159"/>
         <source>Select the icon again to stop the synchronization.</source>
-        <translation>Vyberte opět ikonu pro zastavení synchronizace.</translation>
+        <translation>Chcete-li synchronizaci zastavit, klepněte na ikonu znovu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="161"/>
         <source>To create a bookmark drag any verse reference from a Bible or commentary work into the Bookmarks window. An arrow will indicate the position that the bookmark will go when you release the cursor. Other works will have a reference in the upper left corner that can be used to create a bookmark.</source>
-        <translation>Pro vytvoření záložky uchopte myší odkaz verše z komentáře či bible a vložte ho do okna Záložky. Šipka indikuje pozici, kam bude umístěna záložka když pustíte daný odkaz. Ostatní díla mají odkaz v levém horním rohu, což může být použito též na vytvoření záložky.</translation>
+        <translation>Pro vytvoření záložky uchopte myší odkaz verše z výkladového komentáře či Bible a vložte ho do okna Záložky. Šipka označí místo, kam se záložka umístí, jakmile uvolníte tlačítko myši. U některých děl se v levém horním rohu nachází odkaz, který lze použít k vytvoření záložky.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="166"/>
         <source>To change a bookmark title or description, right click on the bookmark and select the Edit Bookmark menu. After finishing the edit the description can be seen by hovering over the bookmark.</source>
-        <translation>Pro změnu názvu záložky klikněte pravým tlačítkem myši na vybranou záložku a vyberte Editovat záložku. Po ukončení editace můžete najetím myši na záložku vidět název.</translation>
+        <translation>Pro změnu názvu nebo popisu záložky klepněte pravým tlačítkem myši na vybranou záložku a vyberte Upravit záložku. Po dokončení úprav se popis zobrazí po najetí ukazovátkem myši na záložku.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="170"/>
         <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
-        <translation>Pro získání více informací ohledně díla, otevřte Správce knihovny, klikněte pravým tlačítekm na dílo a vyberte menu &quot;O díle&quot;.</translation>
+        <translation>Pro získání více informací o díle, přejděte do okna Knihovna, klepněte pravým tlačítekm na dílo a vyberte položku O díle.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="173"/>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
-        <translation>Okna Knihovna, Záložky a Lupa mohou být přesunuta do nového umístění uchopením za záhlaví okna. Mohou být umístěna nalevo, napravo, nahoru či dolů. Může být změněna jejich velikost uchopením za hranu jejich okna a posunutím.</translation>
+        <translation>Okna Knihovna, Záložky a Lupa mohou být přesunuta do nového umístění po uchopení za záhlaví okna jejich přetažením. Lze je umístit vlevo, vpravo, nad nebo pod okny s díly. Lze je umisťovat jedno na druhé, přičemž se zobrazí záložky, díky nimž lze vybrat jednotlivá okna. Jejich velikost lze změnit tažením ohraničení mezi daným oknem a jiným oknem.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="179"/>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
-        <translation>Můžete prohledávat Strongova čísla v díle. Začněte v díle, které obsahuje strongova čísla a najeďte nad slovo. Klikněte pravým tlačítkem a použijte vyvolané menu. Prohledávací dialog bude zobrazen na práci se Strongovými čísly v jiných částech díla.</translation>
+        <translation>Můžete prohledávat Strongova čísla v díle. Začněte v díle, které obsahuje Strongova čísla a najeďte nad slovo. Klepněte pravým tlačítkem na slovo a použijte vyvolanou vyhledávací nabídku. Zobrazí se vyhledávací dialogové okno, ve kterém si můžete prohlédnout, kde se stejné Strongovo číslo vyskytuje na dalších místech v díle.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="184"/>
         <source>You can save personal notes for specific verse references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source, English as the language,  and look under Commentary. Once installed, open it like any other window, or in  parallel with a bible. Click a verse to edit it.</source>
-        <translation type="unfinished"></translation>
+        <translation>K jednotlivým veršům si můžete ukládat osobní poznámky. K tomu je nutné nainstalovat doplněk Osobní komentář. Otevřete Správce knihovny, jako zdroj vyberte Crosswire, jako jazyk Angličtina a vyhledejte položku Výkladový komentář. Po instalaci jej otevřete jako jakékoli jiné okno nebo vedle Bible. Klepnutím na verš jej můžete upravit.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="193"/>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
-        <translation>Můžete uložit otevřená okna do relace. Později můžete tuto relaci opětovně vyvolat. Můžete uložit více relací. Relace jsou dostupné v menu Okno.</translation>
+        <translation>Otevřená okna můžete uložit do sezení. Takové sezení lze později snadno vyvolatt. Můžete uložit libovolný počet sezení. K funkci sezení se dostanete přes položku nabídky Okno.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="189"/>
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
-        <translation>Můžete vidět Strongova čísla v okně Lupa při najetí myší nad slovo v bibli, kde jsou Strongova čísla. Měli byste mít instalovány lexikony Strongových řeckých a hebrejských ze zdrojů Crosswire.</translation>
+        <translation>Můžete vidět Strongova čísla v okně Lupa při najetí myší nad slovo v biblickém textu, které obsahuje Strongova čísla. Měli byste mít nainstalované slovníky StrongsGreek a StrongsHebrew od společnosti Crosswire.</translation>
     </message>
 </context>
 <context>
@@ -2260,12 +2260,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="73"/>
         <source>Before you can use this application some works must be installed. Various works such as Bibles, books, commentaries, and lexicons are available from remote libraries.</source>
-        <translation type="unfinished"></translation>
+        <translation>Než budete moci tuto aplikaci používat, je třeba nainstalovat některá díla. Ze vzdálených knihoven jsou dostupná různá díla, jako jsou Bible, knihy, výkladové komentáře a slovníky.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="77"/>
         <source>Choose the &quot;Install works&quot; button to download works. The menu &quot;Settings &gt; Bookshelf Manager&quot; also installs works and can be used later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klepnutím na tlačítko Nainstalovat díla si je stáhnete. Díla lze nainstalovat také prostřednictvím nabídky Nastavení → Správce knihovny, kterou můžete využít později.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="81"/>
@@ -2283,31 +2283,31 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="99"/>
         <source>&quot;%1&quot; in the &quot;%2&quot; group</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;%1&quot; ve skupině &quot;%2&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="112"/>
         <source>Shortcut conflict detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Zjištěn střet zkratek</translation>
     </message>
     <message numerus="yes">
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="115"/>
         <source>The shortcut &quot;%1&quot; you want to assign to &quot;%2&quot; in the &quot;%3&quot; group conflicts with the following %n shortcut(s):</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Klávesová zkratka &quot;%1&quot;, kterou chcete přiřadit k &quot;%2&quot; ve skupině &quot;%3&quot;, je ve střetu s následující %n zkratkou:</numerusform>
+            <numerusform>Klávesová zkratka &quot;%1&quot;, kterou chcete přiřadit k &quot;%2&quot; ve skupině &quot;%3&quot;, je ve střetu s následujícími %n zkratkami:</numerusform>
+            <numerusform>Klávesová zkratka &quot;%1&quot;, kterou chcete přiřadit k &quot;%2&quot; ve skupině &quot;%3&quot;, je ve střetu s následujícími %n zkratkami:</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="125"/>
         <source>Do you want to clear these conflicting shortcuts and continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Chcete tyto střetávající se zkratky odstranit a pokračovat?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="176"/>
         <source>Choose action group:</source>
-        <translation>Zvolte skupinu akcí:</translation>
+        <translation>Zvolte skupinu činností:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="178"/>
@@ -2322,17 +2322,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="180"/>
         <source>Bible windows</source>
-        <translation>Okna biblí</translation>
+        <translation>Okna Biblí</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="181"/>
         <source>Commentary windows</source>
-        <translation>Okna komentářů</translation>
+        <translation>Okna výkladových komentářů</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="182"/>
         <source>Lexicon windows</source>
-        <translation>Okna lexikonů</translation>
+        <translation>Okna slovníků</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="183"/>
@@ -2385,7 +2385,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="66"/>
         <source>Save chapter as plain text</source>
-        <translation>Uložit kapitolu jako obyčejný text</translation>
+        <translation>Uložit kapitolu jako prostý text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="69"/>
@@ -2422,17 +2422,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="232"/>
         <source>Print...</source>
-        <translation>Tisknout...</translation>
+        <translation>Tisk...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="307"/>
         <source>Copying</source>
-        <translation>Kopíruji</translation>
+        <translation>Kopíruje se</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="342"/>
         <source>Saving</source>
-        <translation>Ukládám</translation>
+        <translation>Ukládá se</translation>
     </message>
 </context>
 <context>
@@ -2440,7 +2440,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="39"/>
         <source>Toggle tree view</source>
-        <translation>Zobrazení stromu</translation>
+        <translation>Přepnout zobrazení stromu</translation>
     </message>
 </context>
 <context>
@@ -2453,12 +2453,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="316"/>
         <source>The work to which the bookmark points to is not installed.</source>
-        <translation>Dílo na které záložka odkazuje není nainstalováno.</translation>
+        <translation>Dílo, na které záložka odkazuje, není nainstalováno.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="543"/>
         <source>Can drop only bookmarks or one folder</source>
-        <translation>Záložky nebo adresář můžete pouze \&quot;upustit\&quot;</translation>
+        <translation>Lze přetáhnout pouze záložky nebo jednu složku</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="92"/>
@@ -2473,7 +2473,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="122"/>
         <source>Rename folder</source>
-        <translation>Přejmenovat adresář</translation>
+        <translation>Přejmenovat složku</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="128"/>
@@ -2483,27 +2483,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="149"/>
         <source>Sort folder bookmarks...</source>
-        <translation>Třídit záložky v adresáři...</translation>
+        <translation>Seřadit záložky ve složkách...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="155"/>
         <source>Sort all bookmarks...</source>
-        <translation>Třídit všechny záložky...</translation>
+        <translation>Seřadit všechny záložky...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="168"/>
         <source>Import to folder...</source>
-        <translation>Importovat do adresáře...</translation>
+        <translation>Zavést do adresáře...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="181"/>
         <source>Export from folder...</source>
-        <translation>Exportovat z adresáře...</translation>
+        <translation>Vyvést z adresáře...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="194"/>
         <source>Print bookmarks...</source>
-        <translation>Tisknout záložky...</translation>
+        <translation>Tisk záložek...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="228"/>
@@ -2513,7 +2513,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="547"/>
         <source>Can&apos;t drop folder into the folder itself or into its subfolder</source>
-        <translation>Nemůžete \&quot;upustit\&quot; adresář do sebe sama nebo do svého podadresáře</translation>
+        <translation>Nelze přetáhnout složku do samotné složky ani do její podsložky</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="554"/>
@@ -2533,7 +2533,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="234"/>
         <source>Do you really want to delete the selected items and folders?</source>
-        <translation>Opravdu chcete smazat vybrané položky a adresáře?</translation>
+        <translation>Opravdu chcete smazat vybrané položky a složky?</translation>
     </message>
 </context>
 <context>
@@ -2576,7 +2576,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="60"/>
         <source>Synchronize the displayed entry of this work with the active Bible window</source>
-        <translation>Synchronizovat zobrazený vstup tohoto díla s aktivním oknem s Biblí</translation>
+        <translation>Synchronizovat zobrazený záznam tohoto díla s činným oknem s Biblí</translation>
     </message>
 </context>
 <context>
@@ -2592,47 +2592,47 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="120"/>
         <source>Language for names of Bible books:</source>
-        <translation>Jazyk jmen biblických knih:</translation>
+        <translation>Jazyk názvů biblických knih:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="121"/>
         <source>The languages which can be used for the biblical book names. Translations are provided by the Sword library.</source>
-        <translation>Jazyky, které mohou být použity pro názvy biblických knih. Překaldy jsou použity z knihovny Sword.</translation>
+        <translation>Jazyky, které lze použít pro názvy biblických knih. Překlady poskytuje knihovna Sword.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="125"/>
         <source>Show startup logo:</source>
-        <translation>Zobraz startovací logo:</translation>
+        <translation>Zobrazit úvodní logo:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="126"/>
         <source>Show the BibleTime logo on startup.</source>
-        <translation>Zobraz logo BibleTime při stratu programu.</translation>
+        <translation>Zobrazit značku BibleTime při spuštění programu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="128"/>
         <source>Light / dark Mode (Requires restart)</source>
-        <translation type="unfinished"></translation>
+        <translation>Světlý/Tmavý režim (vyžaduje opětovné spuštění)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="129"/>
         <source>System default</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí nastavení systému</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="130"/>
         <source>Light</source>
-        <translation type="unfinished"></translation>
+        <translation>Světlý</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="131"/>
         <source>Dark</source>
-        <translation>Tmavá</translation>
+        <translation>Tmavý</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="133"/>
         <source>Available display styles:</source>
-        <translation>Dostupné styly:</translation>
+        <translation>Dostupné styly zobrazení:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="134"/>
@@ -2642,7 +2642,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="140"/>
         <source>Did you know? You can help translating the GUI of BibleTime to your language at &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>S překladem uživatelského rozhraní aplikace BibleTime do vašeho jazyka můžete pomoci na &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifexu&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="236"/>
@@ -2746,7 +2746,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="118"/>
         <source>Display</source>
-        <translation>Zobrazit</translation>
+        <translation>Obraz</translation>
     </message>
 </context>
 <context>
@@ -2759,7 +2759,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="106"/>
         <source>Forward in history</source>
-        <translation>Dopředu v historii</translation>
+        <translation>Vpřed v historii</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="65"/>
@@ -2769,7 +2769,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="69"/>
         <source>Copy by references...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopírovat podle odkazů...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="73"/>
@@ -2784,12 +2784,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="81"/>
         <source>Page down</source>
-        <translation type="unfinished"></translation>
+        <translation>O stranu dolů</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="85"/>
         <source>Page up</source>
-        <translation type="unfinished"></translation>
+        <translation>O stranu nahoru</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="90"/>
@@ -2820,7 +2820,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="126"/>
         <source>Entry as plain text</source>
-        <translation>Záznam jako obyčejný text</translation>
+        <translation>Záznam jako prostý text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="132"/>
@@ -2830,28 +2830,28 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="137"/>
         <source>Speak selected text</source>
-        <translation type="unfinished"></translation>
+        <translation>Přečíst vybraný text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="208"/>
         <source>Work chooser buttons</source>
-        <translation>Tlaćítka pro výběr děl</translation>
+        <translation>Tlačítka pro výběr děl</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="236"/>
         <source>Text area header</source>
-        <translation>Hlavička textu</translation>
+        <translation>Záhlaví textového pole</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="368"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="381"/>
         <source>Saving</source>
-        <translation>Ukládám</translation>
+        <translation>Ukládá se</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="435"/>
         <source>&lt;NO WORKS&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;ŽÁDNÁ DÍLA&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="561"/>
@@ -2866,27 +2866,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="579"/>
         <source>Print...</source>
-        <translation>Tisknout...</translation>
+        <translation>Tisk...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="596"/>
         <source>DEBUG: Show raw text</source>
-        <translation type="unfinished"></translation>
+        <translation>LADĚNÍ: Zobrazit nezpracovaný text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="736"/>
         <source>Choose Standard Bible</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat výchozí Bibli</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="737"/>
         <source>Please choose a Bible in the Settings &gt; Configure dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>V dialogovém okně Nastavení → Díla zvolte Bibli.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="189"/>
         <source>Navigation</source>
-        <translation>Navigace</translation>
+        <translation>Přesun</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="223"/>
@@ -2899,22 +2899,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="59"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation>Rolujte položkami seznamu. Stiskněte a pohybujte tlačítkem myši na posunutí položky</translation>
+        <translation>Procházejte položky seznamu. Stisknutím tlačítka a pohybem myši můžete hodnotu položky zvýšit nebo snížit.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="57"/>
         <source>Entries of the current work</source>
-        <translation>Položky aktuálního díla</translation>
+        <translation>Položky nynějšího díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="58"/>
         <source>Next entry</source>
-        <translation>Další záznam</translation>
+        <translation>Další položka</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="60"/>
         <source>Previous entry</source>
-        <translation>Předchozí záznam</translation>
+        <translation>Předchozí položka</translation>
     </message>
 </context>
 <context>
@@ -2922,12 +2922,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="26"/>
         <source>Next entry</source>
-        <translation>Další záznam</translation>
+        <translation>Další položka</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="30"/>
         <source>Previous entry</source>
-        <translation>Předchozí záznam</translation>
+        <translation>Předchozí položka</translation>
     </message>
 </context>
 <context>
@@ -2961,7 +2961,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="931"/>
         <source>Category</source>
-        <translation>Kategorie</translation>
+        <translation>Skupina</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="935"/>
@@ -2991,17 +2991,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="947"/>
         <source>Unlock info</source>
-        <translation type="unfinished"></translation>
+        <translation>Odemknout informace</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="975"/>
         <source>Features</source>
-        <translation>Obsahuje</translation>
+        <translation>Vlastnosti</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="983"/>
         <source>Take care, this work contains cult / questionable material!</source>
-        <translation>Pozor, tento modul obsahuje kultovní / pochybné informace!</translation>
+        <translation>Pozor, toto dílo obsahuje sektářský/sporný obsah!</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="987"/>
@@ -3016,7 +3016,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="995"/>
         <source>Distribution source</source>
-        <translation>Zdroj šíření</translation>
+        <translation>Zdroj k šíření</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="996"/>
@@ -3031,32 +3031,32 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="998"/>
         <source>Copyright notes</source>
-        <translation>Poznámky k autorskému právu</translation>
+        <translation>Poznámky k autorským právům</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="999"/>
         <source>Copyright holder</source>
-        <translation>Držitel práv</translation>
+        <translation>Držitel autorských práv</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1000"/>
         <source>Copyright date</source>
-        <translation>Datum autorského práva</translation>
+        <translation>Datum ochrany autorských práv</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1001"/>
         <source>Copyright contact name</source>
-        <translation>Kontaktní jméno na autorská práva</translation>
+        <translation>Kontaktní osoba pro záležitosti autorských práv</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1002"/>
         <source>Copyright contact address</source>
-        <translation>Kontaktní adresa na autorská práva</translation>
+        <translation>Kontaktní adresa pro záležitosti týkající se autorských práv</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1003"/>
         <source>Copyright contact email</source>
-        <translation>Kontaktní email na autorská práva</translation>
+        <translation>E-mailová adresa pro záležitosti týkající se autorských práv</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1073"/>
@@ -3066,7 +3066,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1075"/>
         <source>Commentaries</source>
-        <translation>Komentáře</translation>
+        <translation>Výkladové komentáře</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1077"/>
@@ -3076,11 +3076,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1079"/>
         <source>Questionable</source>
-        <translation type="unfinished"></translation>
+        <translation>Sporný</translation>
     </message>
     <message>
         <source>Cults/Unorthodox</source>
-        <translation type="vanished">Cults/Unorthodox</translation>
+        <translation>Sekty/Neortodoxní náboženství</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1081"/>
@@ -3090,17 +3090,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1083"/>
         <source>Daily Devotionals</source>
-        <translation>Ranní zamyšlení</translation>
+        <translation>Denní modlitby</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1085"/>
         <source>Lexicons and Dictionaries</source>
-        <translation>Lexikony a slovníky</translation>
+        <translation>Slovníky</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1087"/>
         <source>Glossaries</source>
-        <translation>Glosáře</translation>
+        <translation>Slovníčky</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="1089"/>
@@ -3113,7 +3113,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="45"/>
         <source>Standard works</source>
-        <translation>Standard</translation>
+        <translation>Výchozí díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="46"/>
@@ -3123,7 +3123,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="43"/>
         <source>Desk</source>
-        <translation>Plocha</translation>
+        <translation>Díla</translation>
     </message>
 </context>
 <context>
@@ -3131,12 +3131,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="55"/>
         <source>New Installation Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Nový zdroj instalace</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="63"/>
         <source>Caption</source>
-        <translation>Titulek</translation>
+        <translation>Popisek</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="78"/>
@@ -3151,7 +3151,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="84"/>
         <source>Path</source>
-        <translation>Umístění</translation>
+        <translation>Cesta</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="89"/>
@@ -3181,12 +3181,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="107"/>
         <source>Get list...</source>
-        <translation>Získej seznam...</translation>
+        <translation>Získat seznam...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="108"/>
         <source>Download a list of sources from CrossWire server and add sources</source>
-        <translation>Ulož seznam zdrojů z Crosswire a přidej zdroj</translation>
+        <translation>Stáhnout seznam zdrojů ze serveru CrossWire a přidat zdroje</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="114"/>
@@ -3198,54 +3198,54 @@ This file is distributed under the same license as the Bibetime package.</transl
         <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
 
 Do you want to continue?</source>
-        <translation>Seznam zdrojů bude stažen ze vzdáleného serveru. Zdroje budou přidány k současnému seznamu. Nové zdroje nahradí staré zdroje pokud se zde vyskytují zdroje se stejným názvem. Můžete později odstranit zdroje které nechcete.
+        <translation>Seznam zdrojů bude stažen ze vzdáleného serveru. Zdroje budou přidány do nynějšího seznamu. Nový zdroj nahradí starý, pokud má stejný název. Zdroje, které si nechcete ponechat, můžete později odstranit.
 
 Chcete pokračovat?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="127"/>
         <source>Connecting...</source>
-        <translation>Připojování...</translation>
+        <translation>Připojuje se...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="128"/>
         <source>Cancel</source>
-        <translation>Zpět</translation>
+        <translation>Zrušit</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="133"/>
         <source>Downloading List</source>
-        <translation>Stahuji seznam</translation>
+        <translation>Stahuje se seznam</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="145"/>
         <source>Refreshing...</source>
-        <translation>Znovunačítám...</translation>
+        <translation>Obnovuje se...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="169"/>
         <source>Please provide a caption.</source>
-        <translation>Prosím zadejte titulek.</translation>
+        <translation>Poskytněte, prosím, popisek.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="173"/>
         <source>A source with this caption already exists. Please provide a different caption.</source>
-        <translation>Zdroj s tímto názvem již existuje. Prosím použijte jiný název.</translation>
+        <translation>Zdroj s tímto popiskem již existuje. Poskytněte, prosím, jiný popisek.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="180"/>
         <source>Please provide a server name.</source>
-        <translation>Prosím zadejte jméno serveru.</translation>
+        <translation>Poskytněte, prosím, název serveru.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="186"/>
         <source>Please provide a path.</source>
-        <translation>Prosím zadejte umístění.</translation>
+        <translation>Poskytněte, prosím, cestu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="190"/>
         <source>Please provide a valid, readable path.</source>
-        <translation>Prosím zadejte platnou cestu, ze které máte právo číst.</translation>
+        <translation>Poskytněte, prosím, platnou a čitelnou cestu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="194"/>
@@ -3258,27 +3258,27 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/debugwindow.cpp" line="70"/>
         <source>What&apos;s this widget?</source>
-        <translation type="unfinished"></translation>
+        <translation>Co je to?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/debugwindow.cpp" line="76"/>
         <source>&lt;b&gt;child of:&lt;/b&gt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;potomek:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/debugwindow.cpp" line="84"/>
         <source>&lt;b&gt;This Quick item is:&lt;/b&gt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Tato položka Quick je:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/debugwindow.cpp" line="89"/>
         <source>&lt;b&gt;This widget is:&lt;/b&gt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Toto je:&lt;/b&gt; %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/debugwindow.cpp" line="93"/>
         <source>No widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádná grafická součást</translation>
     </message>
 </context>
 <context>
@@ -3286,7 +3286,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="145"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
-        <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</translation>
+        <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Verze: %3&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="56"/>
@@ -3301,12 +3301,12 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="67"/>
         <source>DEBUG: Show raw text</source>
-        <translation type="unfinished"></translation>
+        <translation>LADĚNÍ: Zobrazit nezpracovaný text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="99"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
-        <translation>&lt;small&gt;Toto je oblast Lupa. Najeďte myší na odkaz nebo jinou položku, která obsahuje informace, a tato data budou zobrazena na krátkou dobu. Pohněte myší rychle nebo uzamkněte pohled na data stisknutím a držením klávesy Shift, když pohybujete myší.&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Toto je oblast prohlížeče lupa. Pokud najedete myší na odkazy nebo jiné položky obsahující data, jejich obsah se po krátké prodlevě zobrazí v lupě. Přesuňte myš na lupu rychle nebo, když pohybujete myší, zobrazení uzamkněte stisknutím a podržením klávesy Shift.&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -3321,7 +3321,7 @@ Chcete pokračovat?</translation>
         <source>Names of languages</source>
         <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
         <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
-        <translation>Jména jazyků</translation>
+        <translation>Názvy jazyků</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="82"/>
@@ -3561,7 +3561,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/backend/language.cpp" line="149"/>
         <source>Hebrew, Ancient</source>
-        <translation type="unfinished"></translation>
+        <translation>Stará hebrejština</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="150"/>
@@ -3620,7 +3620,7 @@ Chcete pokračovat?</translation>
     </message>
     <message>
         <source>Zapotec, San Juan Guelav໚</source>
-        <translation type="vanished">Zapotec, San Juan Guelav໚</translation>
+        <translation>Zapotec, San Juan Guelav໚</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="303"/>
@@ -3945,7 +3945,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/backend/language.cpp" line="172"/>
         <source>Kekchi</source>
-        <translation type="unfinished"></translation>
+        <translation>Qʼeqchiʼ</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="188"/>
@@ -3980,22 +3980,22 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/backend/language.cpp" line="297"/>
         <source>Yiddish</source>
-        <translation>Yiddish</translation>
+        <translation>Jidiš</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="298"/>
         <source>Yoruba</source>
-        <translation type="unfinished"></translation>
+        <translation>Jorubština</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="300"/>
         <source>Zapotec, San Juan Guelavía</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapotéčtina, San Juan Guelavía</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="301"/>
         <source>Zapotec, Mitla</source>
-        <translation>Zapotec, Mitla</translation>
+        <translation>Zapotéčtina, Mitla</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="302"/>
@@ -4005,27 +4005,27 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/backend/language.cpp" line="304"/>
         <source>Zapotec, Zoogocho</source>
-        <translation>Zapotec, Zoogocho</translation>
+        <translation>Zapotéčtina, Zoogocho</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="306"/>
         <source>Zapotec, Chichicapan</source>
-        <translation>Zapotec, Chichicapan</translation>
+        <translation>Zapotéčtina, Chichicapan</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="307"/>
         <source>Zapotec, Southern Rincon</source>
-        <translation>Zapotec, Southern Rincon</translation>
+        <translation>Zapotéčtina, Southern Rincon</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="309"/>
         <source>Zapotec, Yatee</source>
-        <translation>Zapotec, Yatee</translation>
+        <translation>Zapotéčtina, Yatee</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="310"/>
         <source>Zulu</source>
-        <translation>Zulu</translation>
+        <translation>Zuluština</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="160"/>
@@ -4143,22 +4143,22 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/util/tool.cpp" line="61"/>
         <source>Please check permissions etc.</source>
-        <translation>Zkontrolujte prosím přístupová práva atd.</translation>
+        <translation>Ověřte, prosím, oprávnění atd.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="54"/>
         <source>Error while writing to file.</source>
-        <translation>Chyba zápisu do souboru.</translation>
+        <translation>Chyba při zápisu do souboru.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="55"/>
         <source>Please check that enough disk space is available.</source>
-        <translation>Prosím zkontrolujte dostatek místa na disku.</translation>
+        <translation>Ověřte, prosím, že na disku je dostatek místa.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="60"/>
         <source>The file couldn&apos;t be opened for saving.</source>
-        <translation>Soubor nemůže být otevřen pro zápis.</translation>
+        <translation>Soubor se nepodařilo otevřít pro zápis.</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="154"/>
@@ -4188,7 +4188,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/backend/language.cpp" line="212"/>
         <source>Burmese</source>
-        <translation>Burmese</translation>
+        <translation>Barmština</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="237"/>
@@ -4198,7 +4198,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/backend/language.cpp" line="277"/>
         <source>Klingon</source>
-        <translation>Klingon</translation>
+        <translation>Klingonština</translation>
     </message>
     <message>
         <location filename="../../src/backend/language.cpp" line="296"/>
@@ -4213,27 +4213,27 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="188"/>
         <source>Export Bookmarks</source>
-        <translation>Export záložek</translation>
+        <translation>Vyvedení záložek</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="175"/>
         <source>Import bookmarks</source>
-        <translation>Import záložek</translation>
+        <translation>Zavedení záložek</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="96"/>
         <source>Parsing Strong&apos;s Numbers</source>
-        <translation>Analýza Strongových čísel</translation>
+        <translation>Rozbor Strongových čísel</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="26"/>
         <source>Indexed works</source>
-        <translation>Indexovaná díla</translation>
+        <translation>Rejstříkovaná díla</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="27"/>
         <source>Unindexed works</source>
-        <translation>Neindexovaná díla</translation>
+        <translation>Nerejstříkovaná díla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="46"/>
@@ -4243,42 +4243,42 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/main.cpp" line="49"/>
         <source>Output BibleTime version and exit</source>
-        <translation>Ukončit BibleTime</translation>
+        <translation>Zobrazit verzi programu BibleTime a skončit</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="52"/>
         <source>Open a clean session</source>
-        <translation>Otevřít prázdnou relaci</translation>
+        <translation>Otevřít prázdné sezení</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="55"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
-        <translation>Otevřít defaultní Bibli s odkazem &lt;ref&gt;</translation>
+        <translation>Otevřít výchozí Bibli s odkazem &lt;ref&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="58"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
-        <translation>Pro příkaz cmd s vloženým argumentem pomocí Qt toolkitu, viz %1.</translation>
+        <translation>Informace o argumentech příkazového řádku, které analyzuje nástrojová sada Qt, najdete v %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="108"/>
         <source>Error: %1 expects an argument. See --help for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba: Příkaz %1 vyžaduje argument. Podrobnosti viz příkaz --help.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="115"/>
         <source>Error: Invalid command-line argument: %1</source>
-        <translation>Chyba: Nesprávný argument: %1</translation>
+        <translation>Chyba: Neplatný argument příkazového řádku: %1</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="70"/>
         <source>CSS base template not found!</source>
-        <translation>CSS šablona nenalezena!</translation>
+        <translation>Základní šablona CSS nebyla nalezena!</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="87"/>
         <source>Default template &quot;%1&quot; not found!</source>
-        <translation>Defaultní šablona &quot;%1&quot; nenalezena!</translation>
+        <translation>Výchozí šablona &quot;%1&quot; nenalezena!</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="70"/>
@@ -4289,7 +4289,7 @@ Chcete pokračovat?</translation>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="78"/>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="158"/>
         <source>Cross references</source>
-        <translation>Křížový odkaz</translation>
+        <translation>Křížové odkazy</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="199"/>
@@ -4310,7 +4310,7 @@ Chcete pokračovat?</translation>
         <location filename="../../src/frontend/settingsdialogs/bttexttospeechsettings.cpp" line="31"/>
         <source>%1 (%2)</source>
         <comment>Locale language and territory</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 (%2)</translation>
     </message>
 </context>
 <context>
@@ -4349,20 +4349,20 @@ Chcete pokračovat?</translation>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="90"/>
         <source>Commit</source>
         <comment>Dialog Button</comment>
-        <translation>Potvrdit</translation>
+        <translation>Použít</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="91"/>
         <source>Finish</source>
         <comment>Dialog Button</comment>
-        <translation>Ukončit</translation>
+        <translation>Dokončit</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="92"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="68"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
-        <translation>Zpět</translation>
+        <translation>Zrušit</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="69"/>
@@ -4380,19 +4380,19 @@ Chcete pokračovat?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="71"/>
         <source>Apply</source>
         <comment>Dialog Button</comment>
-        <translation>Aplikovat</translation>
+        <translation>Použít</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="72"/>
         <source>Reset</source>
         <comment>Dialog Button</comment>
-        <translation>Resetovat</translation>
+        <translation>Obnovit nastavení</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="73"/>
         <source>Restore defaults</source>
         <comment>Dialog Button</comment>
-        <translation>Obnovit výchozí</translation>
+        <translation>Obnovit výchozí nastavení</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="93"/>
@@ -4417,7 +4417,7 @@ Chcete pokračovat?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="77"/>
         <source>Yes to all</source>
         <comment>Dialog Button</comment>
-        <translation>Ano všem</translation>
+        <translation>Ano pro všechny</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="78"/>
@@ -4429,7 +4429,7 @@ Chcete pokračovat?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="79"/>
         <source>No to all</source>
         <comment>Dialog Button</comment>
-        <translation>Ne všem</translation>
+        <translation>Ne pro všechny</translation>
     </message>
 </context>
 <context>
@@ -4457,7 +4457,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="113"/>
         <source>Choose works for the search</source>
-        <translation>Vzbrat díla pro vyhledávání</translation>
+        <translation>Vybrat díla pro vyhledávání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="116"/>
@@ -4468,12 +4468,12 @@ Chcete pokračovat?</translation>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="140"/>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="412"/>
         <source>All of the words (AND is added between the words)</source>
-        <translation>Všecha slova (AND je vloženo mezi všechna slova)</translation>
+        <translation>Všecha slova (AND je vloženo mezi slova)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="144"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
-        <translation> (&lt;a href=&apos;syntax_help&apos;&gt;plná sklatba&lt;/a&gt;)</translation>
+        <translation> (&lt;a href=&apos;syntax_help&apos;&gt;úplná skladba&lt;/a&gt;)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="155"/>
@@ -4483,7 +4483,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="176"/>
         <source>The text you want to search for</source>
-        <translation>Text, který chcete hledat</translation>
+        <translation>Text, který chcete vyhledat</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="180"/>
@@ -4493,18 +4493,18 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="368"/>
         <source>[No search scope]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Žádný rozsah vyhledávání]</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="413"/>
         <source>Some of the words</source>
-        <translation type="unfinished"></translation>
+        <translation>Některá slova</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="421"/>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="423"/>
         <source>Full syntax is used because text includes AND or OR</source>
-        <translation type="unfinished"></translation>
+        <translation>Používá se úplná skladba, protože text obsahuje operátory AND nebo OR</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
@@ -4514,7 +4514,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="118"/>
         <source>Configure predefined scopes for search</source>
-        <translation>Nastavit předdefinované rozsahy hledání</translation>
+        <translation>Nastavit předem stanovené rozsahy pro vyhledávání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
@@ -4524,27 +4524,27 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
         <source>Free</source>
-        <translation>Svobodný</translation>
+        <translation>Volné</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="141"/>
         <source>Some of the words (OR is added between the words)</source>
-        <translation>Některá z děl (OR je vloženo mezi všechna slova)</translation>
+        <translation>Některá slova (mezi slovy je vloženo OR)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="142"/>
         <source>Full lucene syntax</source>
-        <translation>Plný syntax lucene</translation>
+        <translation>Úplná skladba lucene</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="145"/>
         <source>Click the link to get help for search syntax</source>
-        <translation>Pro nápovědu k syntaxi vyhledávání klikněte na odkaz</translation>
+        <translation>Pro získání nápovědy ke skladbě vyhledávání klepněte na odkaz</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="166"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
-        <translation>Vyberte rozsah (knihy/kapitoly/verše k prohledání).&lt;/br&gt;Aplikovatelné na Bible a komentáře.</translation>
+        <translation>Vyberte rozsah (knihy/kapitoly/verše, ve kterých se má hledat).&lt;/br&gt;Platí pro Bible a výkladové komentáře.</translation>
     </message>
 </context>
 <context>
@@ -4552,7 +4552,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="114"/>
         <source>Text of the selected search result item</source>
-        <translation>Text vybraná položky výsledků hledání</translation>
+        <translation>Text vybrané položky výsledků hledání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="102"/>
@@ -4570,19 +4570,19 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="63"/>
         <source>Search Syntax Help</source>
-        <translation>Nápověda k syntaxi vyhledávání</translation>
+        <translation>Nápověda ke skladbě vyhledávání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="164"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="169"/>
         <source>Which words to find</source>
-        <translation>Vyberte slova k hledání</translation>
+        <translation>Která slova hledat</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="165"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="186"/>
         <source>Grouping and order</source>
-        <translation>Seskupení a srovnání</translation>
+        <translation>Seskupování a pořadí</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="166"/>
@@ -4600,7 +4600,7 @@ Chcete pokračovat?</translation>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="168"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="225"/>
         <source>Other syntax features</source>
-        <translation>Jiné vlastnosti syntaxe</translation>
+        <translation>Jiné vlastnosti skladby</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="178"/>
@@ -4611,7 +4611,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="179"/>
         <source>Finds verses with both &apos;Jesus&apos; and &apos;God&apos;</source>
-        <translation>Najdi verše s výskytem &quot;Ježíš&quot; a &quot;Bůh&quot;</translation>
+        <translation>Najde verše, ve kterých se vyskytují obě slova &quot;Ježíš&quot; a &quot;Bůh&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="180"/>
@@ -4622,7 +4622,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="181"/>
         <source>Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both</source>
-        <translation>Najdi verše, kde se vyskytuje &quot;Ježíš&quot; nebo &quot;Bůh&quot; nebo obojí</translation>
+        <translation>Najde verše, ve kterých se vyskytuje &quot;Ježíš&quot; nebo &quot;Bůh&quot; nebo obojí</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="182"/>
@@ -4634,7 +4634,7 @@ Chcete pokračovat?</translation>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="183"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="185"/>
         <source>Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;</source>
-        <translation>Najdi verše, kde se vyskytuje &quot;Ježíš&quot; ale nevyskytuje &quot;Bůh&quot;</translation>
+        <translation>Najde verše, ve kterých se vyskytuje &quot;Ježíš&quot; ale nevyskytuje &quot;Bůh&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="184"/>
@@ -4644,7 +4644,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="187"/>
         <source>Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.</source>
-        <translation>Slova mohou spojena &lt;strong&gt;závorkami&lt;/strong&gt;.  Přesný slovosled musí být definován &lt;strong&gt;uvozovkami&lt;/strong&gt;.</translation>
+        <translation>Slova lze seskupit pomocí &lt;strong&gt;závorek&lt;/strong&gt;. Přesný slovosled musí být stanoven &lt;strong&gt;uvozovkami&lt;/strong&gt;.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="189"/>
@@ -4655,7 +4655,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="190"/>
         <source>Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;</source>
-        <translation>Najdi verše s výskytem &quot;a&quot; AND &quot;b&quot;, a verše s výskytem &quot;c&quot;.</translation>
+        <translation>Najde verše, ve kterých se vyskytuje &quot;a&quot; AND &quot;b&quot;, a verše s výskytem &quot;c&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="191"/>
@@ -4670,28 +4670,28 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="195"/>
         <source>Finds all verses with &apos;says the LORD&apos;</source>
-        <translation>Najde všechny verše s &quot;says the lord&quot; (v angličtině)</translation>
+        <translation>Najde všechny verše, ve kterých se vyskytuje &quot;says the lord&quot; (v angličtině)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="158"/>
         <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&quot;#%1&quot;&gt;wildcards&lt;/a&gt; and &lt;a href=&quot;#%2&quot;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tato nápověda se týká především volby „Úplná skladba“. Volby „Všechna slova“ a „Některá slova“ mají omezenější skladbu; u nich jsou podporovány &lt;a href=&quot;#%1&quot;&gt;zástupné znaky&lt;/a&gt; a &lt;a href=&quot;#%2&quot;&gt;textová pole&lt;/a&gt;. Některé další syntaktické funkce mohou u voleb „Všechna slova“ a „Některá slova“ vést k podivným nebo nesprávným výsledkům.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="170"/>
         <source>Search terms are separated by spaces. &lt;code&gt;AND&lt;/code&gt; (all words), &lt;code&gt;OR&lt;/code&gt; (some words) and &lt;code&gt;NOT&lt;/code&gt; (not the following word) can be added between the words. If none is added explicitly &lt;code&gt;OR&lt;/code&gt; is used automatically. &lt;code&gt;+word&lt;/code&gt; means the word must be in the results, &lt;code&gt;-word&lt;/code&gt; means it must not be in the results.</source>
         <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Vyhledávací výrazy se oddělují mezerami. Mezi slova lze vložit &lt;code&gt;AND&lt;/code&gt; (všechna slova), &lt;code&gt;OR&lt;/code&gt; (některá slova) a &lt;code&gt;NOT&lt;/code&gt; (ne následující slovo). Pokud není výslovně uvedeno nic, použije se automaticky &lt;code&gt;OR&lt;/code&gt;. &lt;code&gt;+slovo&lt;/code&gt; znamená, že slovo musí být ve výsledcích, &lt;code&gt;-slovo&lt;/code&gt; znamená, že ve výsledcích být nesmí.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="192"/>
         <source>Finds e.g. &apos;...Isaiah says, &quot;Lord...&apos; but not &apos;...says the LORD&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Najde např. „...Izaiáš říká: ‚Pane...‘“, ale ne „...říká Hospodin“</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="197"/>
         <source>&lt;code&gt;*&lt;/code&gt; matches any sequence of 0 or more characters, while &lt;code&gt;?&lt;/code&gt; matches any single character. A wildcard can not be used in the beginning of a word.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;code&gt;*&lt;/code&gt; odpovídá libovolné posloupnosti 0 nebo více znaků, zatímco &lt;code&gt;?&lt;/code&gt; odpovídá libovolnému jedinému znaku. Zástupný znak nelze použít na začátku slova.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="201"/>
@@ -4741,12 +4741,12 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="211"/>
         <source>Searches headings</source>
-        <translation>Prohledávat záhlaví</translation>
+        <translation>Prohledávat nadpisy</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="212"/>
         <source>Searches footnotes</source>
-        <translation>Prohledávat zápatí</translation>
+        <translation>Prohledávat poznámky</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="213"/>
@@ -4761,7 +4761,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="215"/>
         <source>Examples:</source>
-        <translation>Příklad:</translation>
+        <translation>Příklady:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="216"/>
@@ -4772,7 +4772,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="217"/>
         <source>Finds headings with &apos;Jesus&apos;</source>
-        <translation>Najít záhlaví ve kterém je slovo &quot;ježíš&quot;</translation>
+        <translation>Vyhledá nadpisy obsahující slovo „Ježíš“</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="218"/>
@@ -4783,7 +4783,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="220"/>
         <source>Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;</source>
-        <translation>Najít zápatí s &quot;ježíš&quot; a &quot;řekl&quot;</translation>
+        <translation>Vyhledá poznámky obsahující slova „Ježíš“ a „řekl“</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="221"/>
@@ -4794,7 +4794,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="222"/>
         <source>Finds verses with Strong&apos;s Greek number 846</source>
-        <translation>Najít verše se Strongovým číslem 846</translation>
+        <translation>Vyhledá verše s číslem 846 podle řeckého Strongova seznamu</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="223"/>
@@ -4805,12 +4805,12 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="224"/>
         <source>Finds verses with morphology code &apos;N-NSF&apos;</source>
-        <translation>Najít verše s morfologií &apos;N-NSF&apos;</translation>
+        <translation>Vyhledá verše s morfologickým kódem &apos;N-NSF&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="226"/>
         <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&quot;%1&quot;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplikace BibleTime využívá vyhledávací stroj CLucene. Více informací najdete na internetové stránce věnované skladbě Lucene &lt;a href=&quot;%1&quot;&gt;&lt;/a&gt; (otevře se v externím prohlížeči).</translation>
     </message>
 </context>
 <context>
@@ -4823,7 +4823,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="146"/>
         <source>Hits</source>
-        <translation>Hity</translation>
+        <translation>Výsledky</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="160"/>
@@ -4851,24 +4851,24 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="212"/>
         <source>Print...</source>
-        <translation>Tisknout...</translation>
+        <translation>Tisk...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="166"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="177"/>
         <source>Copying search result</source>
-        <translation>Kopíruji výsledek hledání</translation>
+        <translation>Kopíruje se výsledek hledání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="192"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="203"/>
         <source>Saving search result</source>
-        <translation>Ukládám výsledek hledání</translation>
+        <translation>Ukládá se výsledek hledání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="218"/>
         <source>Printing search result</source>
-        <translation>Tisknu výsledek hledání</translation>
+        <translation>Tiskne se výsledek hledání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="145"/>
@@ -4881,32 +4881,32 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="222"/>
         <source>S&amp;earch range:</source>
-        <translation>Rozsah vyhledávání:</translation>
+        <translation>Rozsah vy&amp;hledávání:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="223"/>
         <source>Select a scope from the list to edit the searchranges</source>
-        <translation>Vyberte výběr ze seznamu k editaci rozsahu vyhledávání</translation>
+        <translation>Vyberte ze seznamu rozsah, abyste mohli upravit rozsahy vyhledávání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="234"/>
         <source>&amp;Name:</source>
-        <translation>Jméno:</translation>
+        <translation>&amp;Název:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="237"/>
         <source>Edi&amp;t current range:</source>
-        <translation>Upravit aktuální rozsah:</translation>
+        <translation>&amp;Upravit nynější rozsah:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="238"/>
         <source>Change the search ranges of the selected searchscope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation>Změňte vyhledávací rozsah. Podívejte se, jak jsou definovány vyhledávací rozsahy.</translation>
+        <translation>Změnit rozsahy vyhledávání u vybrané položky v rozsahu vyhledávání. Podívejte se na předem stanovené rozsahy vyhledávání, abyste zjistili, jak jsou vyhledávací rozsahy sestavovány.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="243"/>
         <source>Parsed search range:</source>
-        <translation>Rozeznaný rozsah:</translation>
+        <translation>Prohlédnutý rozsah vyhledávání:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="189"/>
@@ -4921,12 +4921,12 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="227"/>
         <source>Add a new search scope. First enter an appropriate name, then edit the search ranges.</source>
-        <translation>Přidat nový vyhledávací rozsah. Nejdříve zadejte vhodný název, potom parametry vyhledávání.</translation>
+        <translation>Přidat nový rozsah vyhledávání. Nejprve zadejte vhodný název a poté upravte rozsahy vyhledávání.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="231"/>
         <source>Delete current &amp;scope</source>
-        <translation>&amp;Smazat vybraný rozsah</translation>
+        <translation>&amp;Smazat nynější rozsah</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="232"/>
@@ -4936,12 +4936,12 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="235"/>
         <source>Change the name of the selected search scope</source>
-        <translation>Změnit jméno vybraného rozsahu vyhledávání</translation>
+        <translation>Změnit název vybraného rozsahu vyhledávání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="244"/>
         <source>The search ranges which will be used for the search, parsed to the canonical form</source>
-        <translation>Vyhledávací rozsahy jsou určeny pro zúžení vyhledávaní.</translation>
+        <translation>Vyhledávací rozsahy, které budou použity při vyhledávání, převedené do nejjednodušší podoby</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="220"/>
@@ -4954,7 +4954,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisdialog.cpp" line="83"/>
         <source>Analysis of search results</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozbor výsledků vyhledávání</translation>
     </message>
 </context>
 <context>
@@ -4962,22 +4962,22 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="206"/>
         <source>Save Search Analysis</source>
-        <translation>Uložit výsledky analýzy</translation>
+        <translation>Uložit rozbor vyhledávání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="221"/>
         <source>BibleTime Search Analysis</source>
-        <translation>BibleTime analýza výsledků</translation>
+        <translation>Rozbor vyhledávání BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="243"/>
         <source>Search text:</source>
-        <translation>Prohledat etxt:</translation>
+        <translation>Hledat text:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="247"/>
         <source>Results by work and book</source>
-        <translation>Výsledek k děl a knih</translation>
+        <translation>Výsledky podle díla a knihy</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="249"/>
@@ -4987,12 +4987,12 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="270"/>
         <source>Total hits</source>
-        <translation>Celkem</translation>
+        <translation>Celkový počet</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="281"/>
         <source>Created by &lt;a href=&quot;%1&quot;&gt;BibleTime&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Vytvořeno &lt;a href=&quot;%1&quot;&gt;BibleTime&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -5010,17 +5010,17 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="143"/>
         <source>The following modules need to be indexed before they can be searched in:</source>
-        <translation>Následující moduly musí být indexovány dříve mohou být prohledávány:</translation>
+        <translation>Následující moduly je třeba nejprve zrejstříkovat, aby v nich bylo možné provádět vyhledávání:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="146"/>
         <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
-        <translation>Indexovaní zabere určitou dobu. Klikněte &quot;Ano&quot; pro indexaci a vyhledávání nebo &quot;Ne&quot; pro zrišení vyhledávání.</translation>
+        <translation>Rejstříkování může trvat dlouho. Klepnutím na „Ano“ provedete rejstříkování modulů a spustíte vyhledávání, klepnutím na „Ne“ vyhledávání zrušíte.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="182"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation>&lt;UNKNOWN EXCEPTION&gt;</translation>
+        <translation>&lt;NEZNÁMÁ VÝJIMKA&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="186"/>
@@ -5030,32 +5030,32 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="187"/>
         <source>An internal error occurred while executing your search:&lt;br/&gt;&lt;br/&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Při provádění vyhledávání došlo k vnitřní chybě:&lt;br/&gt;&lt;br/&gt;%1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="61"/>
         <source>Drag any verse reference onto an open Bible window</source>
-        <translation>Uchopte myší odkaz do Okna s otevřenou biblí</translation>
+        <translation>Přetáhněte jakýkoli odkaz na verš do otevřeného okna s Biblí</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="69"/>
         <source>&amp;Analyze results...</source>
-        <translation>&amp;Analyzovat výsledky...</translation>
+        <translation>&amp;Rozebrat výsledky...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="70"/>
         <source>Show a graphical analysis of the search result</source>
-        <translation>Zobrazit grafickou analýzu výsledků vyhledávání</translation>
+        <translation>Zobrazit grafický rozbor výsledků vyhledávání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="73"/>
         <source>&amp;Manage Indexes...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Spravovat rejstříky...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="74"/>
         <source>Recreate search indexes</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovit vyhledávací rejstříky</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="78"/>
@@ -5096,29 +5096,29 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="113"/>
         <source>Print...</source>
-        <translation>Tisknout...</translation>
+        <translation>Tisk...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="122"/>
         <source>Printing search result</source>
-        <translation>Tisknu výsledek hledání</translation>
+        <translation>Tiskne se výsledek hledání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="98"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="108"/>
         <source>Saving search result</source>
-        <translation>Ukládám výsledek hledání</translation>
+        <translation>Ukládá se výsledek hledání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="75"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="84"/>
         <source>Copying search result</source>
-        <translation>Kopíruji výsledek hledání</translation>
+        <translation>Kopíruje se výsledek hledání</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="41"/>
         <source>Search result of the selected work</source>
-        <translation>Výsledky hledání z vybraného díla</translation>
+        <translation>Výsledky vyhledávání pro vybrané dílo</translation>
     </message>
 </context>
 </TS>
