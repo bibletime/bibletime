@@ -63,6 +63,12 @@ SET(BUILD_TEXT_TO_SPEECH "ON" CACHE BOOL
     "Whether to build BibleTime with text-to-speech (TTS) support. \
 This requires Qt's TextToSpeech module.")
 
+SET(BUILD_PHOS_SYNC "ON" CACHE BOOL
+    "Whether to build BibleTime with bookmark synchronization through the \
+Phos app for Nextcloud.")
+
+SET(BUILD_TESTING "OFF" CACHE BOOL "Whether to build the unit tests")
+
 SET(BUILD_HANDBOOK_HTML "ON" CACHE BOOL
     "Whether to build and install the handbook in HTML format")
 SET(BUILD_HANDBOOK_HTML_LANGUAGES "" CACHE STRING
@@ -178,6 +184,14 @@ ENDIF()
 #
 IF(BUILD_BIBLETIME)
     INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTApplication.cmake")
+ENDIF()
+
+######################################################
+# Unit tests:
+#
+IF(BUILD_TESTING AND BUILD_BIBLETIME)
+    ENABLE_TESTING()
+    ADD_SUBDIRECTORY(tests)
 ENDIF()
 
 ######################################################
