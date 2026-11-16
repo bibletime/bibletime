@@ -13,6 +13,9 @@
 #pragma once
 
 #include <QAbstractItemModel>
+#include <QList>
+#include <QString>
+#include <QStringList>
 
 
 class BtBookmarksModelPrivate;
@@ -31,6 +34,22 @@ public: // methods:
 
     enum BookmarksRoles {
         TypeRole = Qt::UserRole + 1
+    };
+
+    /** A bookmark as synchronization sees it. */
+    struct SyncEntry {
+        QString id;
+        /** Names of the folders it is in, from the top level down. */
+        QStringList folder;
+        QString module;
+        /** The key in English. */
+        QString key;
+        QString description;
+        /** Empty when the bookmark shows its default title. */
+        QString title;
+        /** Seconds since the epoch. */
+        qint64 created = 0;
+        qint64 modified = 0;
     };
 
     BtBookmarksModel(QObject * parent = nullptr);
@@ -80,8 +99,13 @@ public: // methods:
       \param[in] row new item will occupy given row.
       \param[in] parent if invalid new item will be placed on top level.
       \param[in] toCopy item to copy.
+      \param[in] keepIds whether the copied bookmarks keep their ids (when the
+          originals are removed afterwards, i.e. the items are moved).
     */
-    void copyItems(int row, const QModelIndex & parent, const QModelIndexList & toCopy);
+    void copyItems(int row,
+                   QModelIndex const & parent,
+                   QModelIndexList const & toCopy,
+                   bool keepIds = false);
 
     /**
       \returns whether item of index is a folder.
@@ -130,6 +154,38 @@ public: // methods:
     */
     QHash<int, QByteArray> roleNames() const override;
 
+    /** \returns the model of the default bookmarks file, if loaded. */
+    static BtBookmarksModel * defaultModel() noexcept;
+
+    /** \returns all bookmarks, folder by folder. */
+    QList<SyncEntry> syncEntries() const;
+
+    /**
+      \returns the paths of the folders that hold bookmarks or no other
+          folders (the others are implied by these paths).
+    */
+    QList<QStringList> syncFolders() const;
+
+    /** Creates the folders of \a path that are missing. */
+    QModelIndex ensureSyncFolder(QStringList const & path);
+
+    /**
+      Removes the folder at \a path if it is empty.
+      \returns false when the folder still has items.
+    */
+    bool removeSyncFolderIfEmpty(QStringList const & path);
+
+    /** Adds or updates (and moves) the bookmark with the entry's id. */
+    void setSyncEntry(SyncEntry const & entry);
+
+    /** Removes the bookmark with the given id. */
+    bool removeSyncEntry(QString const & id);
+
+Q_SIGNALS:
+
+    /** Emitted whenever bookmarks or folders were changed. */
+    void bookmarksChanged();
+
 public Q_SLOTS:
 
     /**
@@ -156,6 +212,7 @@ public Q_SLOTS:
 private:
 
     bool slotSave() { return save(); }
+    QModelIndex indexOfItem(void * item) const;
 
 private: // fields:
     Q_DECLARE_PRIVATE(BtBookmarksModel)
