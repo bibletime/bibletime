@@ -32,6 +32,7 @@ class BtFindWidget;
 class BtModuleChooserBar;
 class BtModelViewReadDisplay;
 class BtOpenWorkAction;
+class BtPhosSync;
 class CBookmarkIndex;
 class CDisplayWindow;
 class CKeyChooser;
@@ -476,6 +477,9 @@ private: // fields:
     int m_autoScrollSpeed = 0;
     QTimer m_autoScrollTimer;
     QPointer<Search::CSearchDialog> m_searchDialog;
+#ifdef BUILD_PHOS_SYNC
+    BtPhosSync * m_phosSync = nullptr;
+#endif
 
     QAction * m_debugWidgetAction = nullptr;
     QPointer<QWidget> m_debugWindow;

@@ -26,10 +26,14 @@
 #include <QSplashScreen>
 #include <QSplitter>
 #include <type_traits>
+#include "../backend/btbookmarksmodel.h"
 #include "../backend/config/btconfig.h"
 #include "../backend/drivers/cswordmoduleinfo.h"
 #include "../backend/keys/cswordversekey.h"
 #include "../backend/managers/cswordbackend.h"
+#ifdef BUILD_PHOS_SYNC
+#include "../backend/phossync/btphossync.h"
+#endif
 #include "../util/btassert.h"
 #include "../util/cresmgr.h"
 #include "../util/directory.h"
@@ -125,6 +129,9 @@ BibleTime::BibleTime(BibleTimeApp & app, QWidget *parent, Qt::WindowFlags flags)
     initMenubar();
     initToolbars();
     initConnections();
+#ifdef BUILD_PHOS_SYNC
+    m_phosSync = new BtPhosSync(BtBookmarksModel::defaultModel(), this);
+#endif
 
     setWindowTitle(QStringLiteral("BibleTime " BT_VERSION));
     setWindowIcon(CResMgr::mainWindow::icon());
@@ -132,6 +139,9 @@ BibleTime::BibleTime(BibleTimeApp & app, QWidget *parent, Qt::WindowFlags flags)
 }
 
 BibleTime::~BibleTime() {
+#ifdef BUILD_PHOS_SYNC
+    m_phosSync->shutdown();
+#endif
     delete m_debugWindow;
     m_bookshelfDock->saveBookshelfState();
     saveProfile();
