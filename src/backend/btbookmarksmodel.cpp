@@ -24,16 +24,19 @@
 
 #include <algorithm>
 #include <memory>
+#include <QDateTime>
 #include <QDir>
 #include <QDomElement>
 #include <QDomNode>
 #include <QFile>
 #include <QIODevice>
 #include <QList>
+#include <QSet>
 #include <QString>
 #include <QTextStream>
 #include <QTime>
 #include <QTimer>
+#include <QUuid>
 #include <utility>
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
@@ -54,6 +57,11 @@ namespace {
 
 inline QString toHeader(QString const & key, QString const & moduleName)
 { return QStringLiteral("%1 (%2)").arg(key).arg(moduleName); }
+
+inline QString newBookmarkId()
+{ return QUuid::createUuid().toString(QUuid::Id128); }
+
+inline qint64 nowSecs() { return QDateTime::currentSecsSinceEpoch(); }
 
 class BookmarkFolder;
 
@@ -143,10 +151,23 @@ public:
 
     QString const & moduleName() const { return m_moduleName; }
 
+    /** A stable id (32 hex digits) for synchronization. */
+    QString const & id() const { return m_id; }
+    void setId(QString const & id) { m_id = id; }
+
+    /** Creation and modification time in seconds since the epoch. */
+    qint64 created() const { return m_created; }
+    void setCreated(qint64 created) { m_created = created; }
+    qint64 modified() const { return m_modified; }
+    void setModified(qint64 modified) { m_modified = modified; }
+
 private:
     QString m_key;
     QString m_description;
     QString m_moduleName;
+    QString m_id;
+    qint64 m_created = 0;
+    qint64 m_modified = 0;
 
 };
 
@@ -196,8 +217,11 @@ public:
     /** Returns true if the given item is this or a direct or indirect subitem of this. */
     bool hasDescendant(BookmarkItemBase const * item) const;
 
-    /** Creates a deep copy of this item. */
-    BookmarkFolder * deepCopy() const;
+    /**
+      Creates a deep copy of this item. The bookmarks of the copy get new ids
+      unless \a keepIds is set (when the copy replaces the original).
+    */
+    BookmarkFolder * deepCopy(bool keepIds = false) const;
 
 private: // Fields:
 
@@ -254,6 +278,60 @@ public: // methods:
             if(!m_saveTimer.isActive())
                 m_saveTimer.start();
         }
+        Q_EMIT q_ptr->bookmarksChanged();
+    }
+
+    /**
+      Gives bookmarks without an id, or with an id used before, a new id.
+      \returns whether anything was changed.
+    */
+    bool ensureIds(BookmarkItemBase * item, QSet<QString> & used) {
+        bool changed = false;
+        if (auto * const b = dynamic_cast<BookmarkItem *>(item)) {
+            if (b->id().isEmpty() || used.contains(b->id())) {
+                b->setId(newBookmarkId());
+                changed = true;
+            }
+            used.insert(b->id());
+            if (b->created() <= 0) {
+                b->setCreated(nowSecs());
+                changed = true;
+            }
+            if (b->modified() <= 0) {
+                b->setModified(b->created());
+                changed = true;
+            }
+        } else if (auto * const f = dynamic_cast<BookmarkFolder *>(item)) {
+            for (auto * const c : f->children())
+                changed = ensureIds(c, used) || changed;
+        }
+        return changed;
+    }
+
+    BookmarkItem * findById(BookmarkItemBase * item, QString const & id) const {
+        if (auto * const b = dynamic_cast<BookmarkItem *>(item))
+            return b->id() == id ? b : nullptr;
+        if (auto * const f = dynamic_cast<BookmarkFolder *>(item))
+            for (auto * const c : f->children())
+                if (auto * const r = findById(c, id))
+                    return r;
+        return nullptr;
+    }
+
+    /** The row after the last folder or bookmark (before placeholder items). */
+    static int appendRow(BookmarkFolder const * f) {
+        auto n = f->children().size();
+        while (n > 0 && !dynamic_cast<BookmarkFolder const *>(f->children()[n - 1])
+               && !dynamic_cast<BookmarkItem const *>(f->children()[n - 1]))
+            --n;
+        return static_cast<int>(n);
+    }
+
+    static QStringList folderPath(BookmarkFolder const * f) {
+        QStringList path;
+        for (; f && f->parent(); f = f->parent())
+            path.prepend(f->text());
+        return path;
     }
 
     /** Loads a list of items (with subitem trees) from a named file
@@ -324,6 +402,11 @@ public: // methods:
                 newBookmarkItem->setText(
                             element.attribute(QStringLiteral("title")));
             }
+            newBookmarkItem->setId(element.attribute(QStringLiteral("id")));
+            newBookmarkItem->setCreated(
+                        element.attribute(QStringLiteral("created")).toLongLong());
+            newBookmarkItem->setModified(
+                        element.attribute(QStringLiteral("modified")).toLongLong());
             return newBookmarkItem;
         }
         return nullptr;
@@ -405,6 +488,11 @@ public: // methods:
             if (!bookmarkItem->text().isEmpty()) {
                 elem.setAttribute(QStringLiteral("title"), bookmarkItem->text());
             }
+            elem.setAttribute(QStringLiteral("id"), bookmarkItem->id());
+            elem.setAttribute(QStringLiteral("created"),
+                              QString::number(bookmarkItem->created()));
+            elem.setAttribute(QStringLiteral("modified"),
+                              QString::number(bookmarkItem->modified()));
             parentElement.appendChild(elem);
         }
     }
@@ -441,17 +529,25 @@ bool BookmarkFolder::hasDescendant(BookmarkItemBase const * const item) const {
     return false;
 }
 
-BookmarkFolder * BookmarkFolder::deepCopy() const {
+BookmarkFolder * BookmarkFolder::deepCopy(bool const keepIds) const {
     BookmarkFolder* newFolder = new BookmarkFolder(this->text());
     for (auto const * const subitem : children()) {
         if (BookmarkItem const * const bmItem =
                 dynamic_cast<BookmarkItem const *>(subitem))
         {
-            newFolder->addChild(new BookmarkItem(*bmItem));
+            auto * const copy = new BookmarkItem(*bmItem);
+            if (keepIds) {
+                copy->setModified(nowSecs());
+            } else {
+                copy->setId(newBookmarkId());
+                copy->setCreated(nowSecs());
+                copy->setModified(copy->created());
+            }
+            newFolder->addChild(copy);
         } else if (BookmarkFolder const * const bmFolder =
                            dynamic_cast<BookmarkFolder const *>(subitem))
         {
-            newFolder->addChild(bmFolder->deepCopy());
+            newFolder->addChild(bmFolder->deepCopy(keepIds));
         }
     }
     return newFolder;
@@ -463,6 +559,9 @@ BookmarkItem::BookmarkItem(CSwordModuleInfo const & module,
                                const QString & title)
         : m_description(description)
         , m_moduleName(module.name())
+        , m_id(newBookmarkId())
+        , m_created(nowSecs())
+        , m_modified(m_created)
 {
     Q_UNUSED(title)
 
@@ -491,6 +590,9 @@ BookmarkItem::BookmarkItem(const BookmarkItem & other)
         , m_key(other.m_key)
         , m_description(other.m_description)
         , m_moduleName(other.m_moduleName)
+        , m_id(other.m_id)
+        , m_created(other.m_created)
+        , m_modified(other.m_modified)
 {
     setText(toHeader(key(), module() ? module()->name() : QObject::tr("unknown")));
 }
@@ -642,6 +744,8 @@ bool BtBookmarksModel::setData(const QModelIndex & index, const QVariant & val, 
     BookmarkItemBase * i = d->item(index);
     if (role == Qt::DisplayRole || role == Qt::EditRole) {
         i->setText(val.toString());
+        if (auto * const b = dynamic_cast<BookmarkItem *>(i))
+            b->setModified(nowSecs());
         if(dynamic_cast<BookmarkFolder *>(i) || dynamic_cast<BookmarkItem *>(i))
             d->needSave();
         return true;
@@ -711,6 +815,15 @@ bool BtBookmarksModel::load(QString fileName, const QModelIndex & rootItem) {
     if(items.size() == 0)
         return false;
 
+    QSet<QString> usedIds;
+    d->ensureIds(d->m_rootItem, usedIds);
+    bool idsChanged = false;
+    for (auto * const item : items)
+        idsChanged = d->ensureIds(item, usedIds) || idsChanged;
+    // keep the ids that were just given out
+    if (idsChanged && d->m_defaultModel == this && !d->m_saveTimer.isActive())
+        d->m_saveTimer.start();
+
     auto const numChildren = i->children().size();
     beginInsertRows(rootItem, numChildren, numChildren + items.size() - 1);
     i->insertChildren(numChildren, items);
@@ -730,7 +843,10 @@ bool BtBookmarksModel::isBookmark(const QModelIndex &index) const
     return d->itemAs<BookmarkItem const>(index);
 }
 
-void BtBookmarksModel::copyItems(int row, const QModelIndex & parent, const QModelIndexList & toCopy)
+void BtBookmarksModel::copyItems(int row,
+                                 QModelIndex const & parent,
+                                 QModelIndexList const & toCopy,
+                                 bool const keepIds)
 {
     Q_D(BtBookmarksModel);
     BT_ASSERT(dynamic_cast<BookmarkFolder *>(d->item(parent)));
@@ -757,12 +873,20 @@ void BtBookmarksModel::copyItems(int row, const QModelIndex & parent, const QMod
             }
         }
         else {
-            newList.append(new BookmarkItem(*(d->itemAs<BookmarkItem>(index))));
+            auto * const copy = new BookmarkItem(*(d->itemAs<BookmarkItem>(index)));
+            if (keepIds) {
+                copy->setModified(nowSecs());
+            } else {
+                copy->setId(newBookmarkId());
+                copy->setCreated(nowSecs());
+                copy->setModified(copy->created());
+            }
+            newList.append(copy);
         }
     }
 
     if (!bookmarksOnly && toCopy.count() == 1)
-        newList.append(d->itemAs<BookmarkFolder const>(toCopy[0])->deepCopy());
+        newList.append(d->itemAs<BookmarkFolder const>(toCopy[0])->deepCopy(keepIds));
     if (!bookmarksOnly && toCopy.count() > 1) {
         // wrong amount of items
         moreThanOneFolder = true;
@@ -815,6 +939,7 @@ void BtBookmarksModel::setDescription(const QModelIndex &index, const QString &d
 
     if (BookmarkItem * const i = d->itemAs<BookmarkItem>(index)) {
         i->setDescription(description);
+        i->setModified(nowSecs());
         d->needSave();
     }
 }
@@ -942,4 +1067,166 @@ QHash<int, QByteArray> BtBookmarksModel::roleNames() const {
                        QByteArrayLiteral("itemtype"))
     };
     return staticRoleNames;
+}
+
+BtBookmarksModel * BtBookmarksModel::defaultModel() noexcept
+{ return BtBookmarksModelPrivate::m_defaultModel; }
+
+QModelIndex BtBookmarksModel::indexOfItem(void * const item) const {
+    Q_D(const BtBookmarksModel);
+    auto * const i = static_cast<BookmarkItemBase *>(item);
+    if (!i || i == d->m_rootItem || !i->parent())
+        return QModelIndex();
+    return createIndex(i->index(), 0, i);
+}
+
+QList<BtBookmarksModel::SyncEntry> BtBookmarksModel::syncEntries() const {
+    Q_D(const BtBookmarksModel);
+    QList<SyncEntry> out;
+    QList<BookmarkFolder const *> folders{d->m_rootItem};
+    for (qsizetype n = 0; n < folders.size(); ++n) {
+        auto const path = BtBookmarksModelPrivate::folderPath(folders[n]);
+        for (auto const * const c : folders[n]->children()) {
+            if (auto const * const f = dynamic_cast<BookmarkFolder const *>(c)) {
+                folders.append(f);
+            } else if (auto const * const b =
+                               dynamic_cast<BookmarkItem const *>(c))
+            {
+                SyncEntry e;
+                e.id = b->id();
+                e.folder = path;
+                e.module = b->moduleName();
+                e.key = b->englishKey();
+                e.description = b->description();
+                auto const * const m = b->module();
+                if (b->text() != toHeader(b->key(), m ? m->name() : b->moduleName()))
+                    e.title = b->text();
+                e.created = b->created();
+                e.modified = b->modified();
+                out.append(std::move(e));
+            }
+        }
+    }
+    return out;
+}
+
+QList<QStringList> BtBookmarksModel::syncFolders() const {
+    Q_D(const BtBookmarksModel);
+    QList<QStringList> out;
+    QList<BookmarkFolder const *> folders{d->m_rootItem};
+    for (qsizetype n = 0; n < folders.size(); ++n) {
+        bool hasBookmarks = false;
+        bool hasFolders = false;
+        for (auto const * const c : folders[n]->children()) {
+            if (auto const * const f = dynamic_cast<BookmarkFolder const *>(c)) {
+                folders.append(f);
+                hasFolders = true;
+            } else if (dynamic_cast<BookmarkItem const *>(c)) {
+                hasBookmarks = true;
+            }
+        }
+        // a folder that only holds other folders is implied by their paths
+        if (n > 0 && (hasBookmarks || !hasFolders))
+            out.append(BtBookmarksModelPrivate::folderPath(folders[n]));
+    }
+    return out;
+}
+
+QModelIndex BtBookmarksModel::ensureSyncFolder(QStringList const & path) {
+    Q_D(BtBookmarksModel);
+    BookmarkFolder * f = d->m_rootItem;
+    for (auto const & name : path) {
+        BookmarkFolder * next = nullptr;
+        for (auto * const c : f->children()) {
+            auto * const sub = dynamic_cast<BookmarkFolder *>(c);
+            if (sub && sub->text() == name) {
+                next = sub;
+                break;
+            }
+        }
+        if (!next) {
+            auto const parentIndex = indexOfItem(f);
+            auto const idx = addFolder(BtBookmarksModelPrivate::appendRow(f),
+                                       parentIndex, name);
+            next = static_cast<BookmarkFolder *>(idx.internalPointer());
+        }
+        f = next;
+    }
+    return indexOfItem(f);
+}
+
+bool BtBookmarksModel::removeSyncFolderIfEmpty(QStringList const & path) {
+    Q_D(BtBookmarksModel);
+    if (path.isEmpty())
+        return false;
+    BookmarkFolder * f = d->m_rootItem;
+    for (auto const & name : path) {
+        BookmarkFolder * next = nullptr;
+        for (auto * const c : f->children()) {
+            auto * const sub = dynamic_cast<BookmarkFolder *>(c);
+            if (sub && sub->text() == name) {
+                next = sub;
+                break;
+            }
+        }
+        if (!next)
+            return true; // not there: nothing to do
+        f = next;
+    }
+    if (!f->children().isEmpty())
+        return false;
+    auto const idx = indexOfItem(f);
+    return removeRows(idx.row(), 1, idx.parent());
+}
+
+void BtBookmarksModel::setSyncEntry(SyncEntry const & entry) {
+    Q_D(BtBookmarksModel);
+    auto const folderIndex = ensureSyncFolder(entry.folder);
+    auto * const folder = static_cast<BookmarkFolder *>(d->item(folderIndex));
+    BookmarkItem * b = d->findById(d->m_rootItem, entry.id);
+    if (b && b->parent() != folder) {
+        // move it into its folder
+        auto const oldIndex = indexOfItem(b);
+        auto * const oldFolder = b->parent();
+        auto const row = oldIndex.row();
+        auto const to = BtBookmarksModelPrivate::appendRow(folder);
+        beginMoveRows(oldIndex.parent(), row, row, folderIndex, to);
+        oldFolder->children().removeAt(row);
+        folder->insertChild(to, b);
+        endMoveRows();
+    }
+    bool const isNew = !b;
+    if (isNew)
+        b = new BookmarkItem(nullptr);
+    b->setId(entry.id);
+    b->setModule(entry.module);
+    b->setKey(entry.key);
+    b->setDescription(entry.description);
+    b->setCreated(entry.created);
+    b->setModified(entry.modified);
+    if (entry.title.isEmpty()) {
+        auto const * const m = b->module();
+        b->setText(toHeader(b->key(), m ? m->name() : entry.module));
+    } else {
+        b->setText(entry.title);
+    }
+    if (isNew) {
+        auto const row = BtBookmarksModelPrivate::appendRow(folder);
+        beginInsertRows(folderIndex, row, row);
+        folder->insertChild(row, b);
+        endInsertRows();
+    } else {
+        auto const idx = indexOfItem(b);
+        Q_EMIT dataChanged(idx, idx);
+    }
+    d->needSave();
+}
+
+bool BtBookmarksModel::removeSyncEntry(QString const & id) {
+    Q_D(BtBookmarksModel);
+    auto * const b = d->findById(d->m_rootItem, id);
+    if (!b)
+        return false;
+    auto const idx = indexOfItem(b);
+    return removeRows(idx.row(), 1, idx.parent());
 }

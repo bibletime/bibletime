@@ -558,7 +558,10 @@ void CBookmarkIndex::dropEvent(QDropEvent * event) {
         if (dropAction == copy) {
             m_bookmarksModel->copyItems(indexUnderParent, parentIndex, newList);
         } else if (dropAction == move) {
-            m_bookmarksModel->copyItems(indexUnderParent, parentIndex, newList);
+            m_bookmarksModel->copyItems(indexUnderParent,
+                                        parentIndex,
+                                        newList,
+                                        true /* keep ids */);
             deleteEntries();
         } else { // user canceled
             return;
